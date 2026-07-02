@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DCAPアジャイルシート</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+
+    <header>
+      <h1>DCAPアジャイルシート</h1>
+      <p class="tagline">VIGOR LAB — Small Fires for an Independent Life</p>
+      <p class="version">v2</p>
+    </header>
+
+    <section class="intro">
+      <p>考えすぎて止まっている。そんなときのシートです。<br>Planから始めず、Doから始めます。</p>
+    </section>
+
+    <section class="input-section">
+      <form id="dcap-form" novalidate>
+
+        <div class="field">
+          <label for="stuck">1. 今、止まっていること</label>
+          <textarea id="stuck" name="stuck" rows="3" placeholder="例：メールの返信をどう書くか考えすぎている"></textarea>
+        </div>
+
+        <div class="field">
+          <label for="goal">2. 本当は進めたいこと</label>
+          <textarea id="goal" name="goal" rows="3" placeholder="例：提案書の作成を進めたい"></textarea>
+        </div>
+
+        <div class="field">
+          <label for="next-do">3. 次の15分でできること <span class="required">*</span></label>
+          <textarea id="next-do" name="next-do" rows="3" placeholder="例：提案書の最初の1段落だけ書く"></textarea>
+          <p class="field-hint" id="next-do-error" hidden>入力してください。</p>
+        </div>
+
+        <div class="form-actions">
+          <button type="submit" class="btn-primary">シートを生成する</button>
+          <button type="button" id="reset-btn" class="btn-secondary">リセット</button>
+        </div>
+
+      </form>
+    </section>
+
+    <section class="output-section" id="output-section" hidden>
+
+      <div class="output-header">
+        <h2>あなたのDoシート</h2>
+        <button id="copy-btn" class="btn-copy">コピー</button>
+      </div>
+
+      <div class="output-block output-main">
+        <div class="block-label">今すぐやるDo</div>
+        <div class="block-content" id="out-do"></div>
+      </div>
+
+      <div class="output-block">
+        <div class="block-label">やった後に見るポイント</div>
+        <div class="block-content" id="out-check"></div>
+      </div>
+
+      <div class="output-block">
+        <div class="block-label">次の小さなDo</div>
+        <div class="block-content" id="out-next"></div>
+      </div>
+
+      <div class="output-block">
+        <div class="block-label">次の一手</div>
+        <div class="block-content" id="out-plan"></div>
+      </div>
+
+    </section>
+
+    <section class="history-section" id="history-section" hidden>
+      <div class="history-header">
+        <h2 class="history-title">これまでのDo</h2>
+        <button type="button" id="clear-history-btn" class="btn-clear-history">履歴をクリア</button>
+      </div>
+      <ul class="history-list" id="history-list"></ul>
+    </section>
+
+    <footer>
+      <p>VIGOR LAB &mdash; Small Fires for an Independent Life</p>
+    </footer>
+
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
