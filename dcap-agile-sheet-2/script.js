@@ -181,6 +181,28 @@ document.addEventListener('DOMContentLoaded', function () {
     localStorage.setItem('dcap-history', JSON.stringify(history));
   }
 
+  function restoreForm(entry) {
+    document.getElementById('stuck').value   = entry.stuck  || '';
+    document.getElementById('goal').value    = entry.goal   || '';
+    document.getElementById('next-do').value = entry.nextDo || '';
+
+    outputSec.hidden = true;
+    errorMsg.hidden  = true;
+
+    var fieldIds = ['stuck', 'goal', 'next-do'];
+    for (var i = 0; i < fieldIds.length; i++) {
+      var el = document.getElementById(fieldIds[i]);
+      if (el.value) {
+        el.classList.add('field-restored');
+        (function (elem) {
+          setTimeout(function () { elem.classList.remove('field-restored'); }, 800);
+        })(el);
+      }
+    }
+
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
+
   function renderHistory() {
     var history = loadHistory();
     var section = document.getElementById('history-section');
@@ -191,15 +213,24 @@ document.addEventListener('DOMContentLoaded', function () {
       return;
     }
 
-    list.innerHTML = history.map(function (entry) {
+    list.innerHTML = history.map(function (entry, index) {
       var sub      = entry.goal || entry.stuck;
       var subLabel = entry.goal ? '目標：' : '止まっていたこと：';
-      return '<li class="history-item">' +
+      return '<li class="history-item" data-index="' + index + '">' +
         '<div class="history-date">' + formatDate(entry.date) + '</div>' +
         '<div class="history-next-do">' + esc(truncate(entry.nextDo, 30)) + '</div>' +
         (sub ? '<div class="history-sub">' + esc(subLabel + sub) + '</div>' : '') +
         '</li>';
     }).join('');
+
+    var items = list.querySelectorAll('.history-item');
+    for (var i = 0; i < items.length; i++) {
+      items[i].addEventListener('click', function () {
+        var idx = parseInt(this.getAttribute('data-index'), 10);
+        var h = loadHistory();
+        if (h[idx]) restoreForm(h[idx]);
+      });
+    }
 
     section.hidden = false;
   }
