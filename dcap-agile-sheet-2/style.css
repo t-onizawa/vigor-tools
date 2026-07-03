@@ -179,6 +179,13 @@ textarea::placeholder {
   border-top: 1px solid var(--border);
 }
 
+.output-guidance {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  line-height: 1.7;
+  margin-bottom: 1.5rem;
+}
+
 .output-header {
   display: flex;
   justify-content: space-between;
