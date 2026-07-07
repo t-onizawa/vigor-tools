@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>15分Do変換ツール — VIGOR TOOLS</title>
+  <link rel="stylesheet" href="../../shared.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+
+    <nav class="breadcrumb">
+      <a href="../../">VIGOR TOOLS</a>
+      <span> › </span>
+      <a href="../">思考整理</a>
+      <span> › </span>
+      <span>15分Do変換ツール</span>
+    </nav>
+
+    <header class="page-header">
+      <h1>15分Do変換ツール</h1>
+      <p class="page-desc">「やりたいけど進まない」を、今日できる15分に変える。</p>
+    </header>
+
+    <div id="form-section">
+
+      <div class="form-field">
+        <label class="field-label" for="input-goal">やりたいこと</label>
+        <p class="field-hint">例：副業を始めたい、部屋を片付けたい、旅行計画を立てたい</p>
+        <textarea
+          id="input-goal"
+          class="input-goal"
+          placeholder="やりたいこと・気になっていることを書いてください"
+          rows="3"
+        ></textarea>
+      </div>
+
+      <div class="form-field">
+        <label class="field-label">止まっている理由</label>
+        <div class="choice-grid" id="reason-grid">
+          <button type="button" class="choice-btn" data-group="reason" data-value="start">何から始めるかわからない</button>
+          <button type="button" class="choice-btn" data-group="reason" data-value="lazy">面倒くさい</button>
+          <button type="button" class="choice-btn" data-group="reason" data-value="perfect">完璧にやろうとしている</button>
+          <button type="button" class="choice-btn" data-group="reason" data-value="time">時間がない</button>
+          <button type="button" class="choice-btn" data-group="reason" data-value="worry">不安がある</button>
+          <button type="button" class="choice-btn" data-group="reason" data-value="other">その他</button>
+        </div>
+      </div>
+
+      <div class="form-field">
+        <label class="field-label">今日使える時間</label>
+        <div class="choice-grid choice-grid--time" id="time-grid">
+          <button type="button" class="choice-btn" data-group="time" data-value="5">5分</button>
+          <button type="button" class="choice-btn" data-group="time" data-value="15">15分</button>
+          <button type="button" class="choice-btn" data-group="time" data-value="30">30分</button>
+        </div>
+      </div>
+
+      <p id="error-msg" class="error-msg" aria-live="polite"></p>
+
+      <button id="convert-btn" class="convert-btn">変換する →</button>
+
+    </div>
+
+    <div id="result-section" class="result-panel hidden" aria-live="polite">
+
+      <div class="result-meta">
+        <span id="result-goal"></span>
+        <span class="result-meta-sep"> / </span>
+        <span id="result-reason"></span>
+        <span class="result-meta-sep"> / </span>
+        <span id="result-time"></span>
+      </div>
+
+      <div class="result-card result-card--highlight">
+        <div class="result-card-label">最初のDo</div>
+        <p class="result-card-body" id="out-first"></p>
+      </div>
+
+      <div class="result-card">
+        <div class="result-card-label" id="label-do">15分でやること</div>
+        <p class="result-card-body" id="out-do"></p>
+      </div>
+
+      <div class="result-card result-card--not">
+        <div class="result-card-label">やらなくていいこと</div>
+        <p class="result-card-body" id="out-not"></p>
+      </div>
+
+      <div class="result-card">
+        <div class="result-card-label">次に確認すること</div>
+        <p class="result-card-body" id="out-next"></p>
+      </div>
+
+      <div class="action-row">
+        <button id="copy-btn" class="action-btn">結果をコピー</button>
+        <button id="reset-btn" class="action-btn action-btn--ghost">やり直す</button>
+      </div>
+
+    </div>
+
+    <section class="related-tools">
+      <h2 class="related-heading">関連ツール</h2>
+      <div class="related-list">
+        <a class="related-item" href="../dcap/">
+          <span class="related-badge">思考ツール</span>
+          <span class="related-name">DCAp アジャイルシート</span>
+          <span class="related-status">→</span>
+        </a>
+        <div class="related-item related-item--coming">
+          <span class="related-badge">思考ツール</span>
+          <span class="related-name">迷い整理ツール</span>
+          <span class="related-status">準備中</span>
+        </div>
+      </div>
+    </section>
+
+    <p class="bookmark-tip">このページをブックマークしておくと、次回もすぐ使えます。</p>
+
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
