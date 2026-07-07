@@ -1,0 +1,95 @@
+.page-desc {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  margin-top: 0.5rem;
+  line-height: 1.7;
+}
+
+.memo-section {
+  margin-top: 2.5rem;
+  padding-top: 2rem;
+  border-top: 1px solid var(--border);
+}
+
+.memo-heading {
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  margin-bottom: 0.5rem;
+}
+
+.memo-desc {
+  font-size: 0.78rem;
+  color: var(--text-light);
+  margin-bottom: 1.25rem;
+  line-height: 1.6;
+}
+
+.memo-field {
+  margin-bottom: 1.25rem;
+}
+
+.memo-label {
+  display: block;
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--text);
+  margin-bottom: 0.4rem;
+}
+
+.memo-textarea {
+  width: 100%;
+  padding: 0.75rem 0.9rem;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  font-family: inherit;
+  font-size: 0.85rem;
+  color: var(--text);
+  background: var(--bg);
+  line-height: 1.6;
+  resize: vertical;
+  min-height: 60px;
+  transition: border-color 0.15s;
+}
+
+.memo-textarea:focus {
+  outline: none;
+  border-color: #999;
+}
+
+.memo-input {
+  width: 100%;
+  padding: 0.75rem 0.9rem;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  font-family: inherit;
+  font-size: 0.85rem;
+  color: var(--text);
+  background: var(--bg);
+  transition: border-color 0.15s;
+}
+
+.memo-input:focus {
+  outline: none;
+  border-color: #999;
+}
+
+.memo-clear-btn {
+  margin-top: 0.25rem;
+  padding: 0.5rem 1rem;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background: transparent;
+  font-family: inherit;
+  font-size: 0.78rem;
+  color: var(--text-muted);
+  cursor: pointer;
+  transition: border-color 0.15s, color 0.15s;
+}
+
+.memo-clear-btn:hover {
+  border-color: #999;
+  color: var(--text);
+}
