@@ -1,3 +1,4 @@
+const STORAGE_KEY = 'vigor-rayban-meta-checklist';
 const TOTAL = 24;
 
 const progressText = document.querySelector('.progress-text');
@@ -21,13 +22,26 @@ function updateProgress() {
     result.className = 'result incomplete';
     result.textContent = `あと ${TOTAL - count} 項目を確認してください`;
   }
+
+  const state = {};
+  allCheckboxes.forEach((cb, i) => { state[i] = cb.checked; });
+  localStorage.setItem(STORAGE_KEY, JSON.stringify(state));
+}
+
+function restoreState() {
+  const saved = localStorage.getItem(STORAGE_KEY);
+  if (!saved) return;
+  const state = JSON.parse(saved);
+  allCheckboxes.forEach((cb, i) => { if (state[i]) cb.checked = true; });
 }
 
 checkboxes.forEach(cb => cb.addEventListener('change', updateProgress));
 
 resetBtn.addEventListener('click', () => {
   allCheckboxes.forEach(cb => { cb.checked = false; });
+  localStorage.removeItem(STORAGE_KEY);
   updateProgress();
 });
 
+restoreState();
 updateProgress();

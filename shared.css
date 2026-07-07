@@ -205,3 +205,77 @@ body {
 @media (max-width: 480px) {
   .tools-grid { grid-template-columns: 1fr 1fr; }
 }
+
+/* 関連ツールセクション */
+.related-tools {
+  margin-top: 2.5rem;
+  padding-top: 2rem;
+  border-top: 1px solid var(--border);
+}
+
+.related-heading {
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  margin-bottom: 0.9rem;
+}
+
+.related-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.related-item {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.7rem 1rem;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  text-decoration: none;
+  color: var(--text);
+  background: var(--bg);
+  transition: border-color 0.15s;
+}
+
+a.related-item:hover {
+  border-color: #aaa;
+}
+
+.related-item--coming {
+  opacity: 0.45;
+  cursor: default;
+}
+
+.related-badge {
+  font-size: 0.68rem;
+  color: var(--text-muted);
+  background: var(--surface);
+  padding: 0.15rem 0.45rem;
+  border-radius: 3px;
+  flex-shrink: 0;
+}
+
+.related-name {
+  font-size: 0.85rem;
+  font-weight: 600;
+  flex: 1;
+}
+
+.related-status {
+  font-size: 0.7rem;
+  color: var(--text-light);
+  flex-shrink: 0;
+}
+
+/* ブックマーク促進 */
+.bookmark-tip {
+  margin-top: 1.75rem;
+  text-align: center;
+  font-size: 0.78rem;
+  color: var(--text-light);
+  line-height: 1.6;
+}
