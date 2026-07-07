@@ -1,0 +1,207 @@
+/* VIGOR TOOLS - 共通スタイル */
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --bg: #ffffff;
+  --surface: #f5f5f5;
+  --border: #e2e2e2;
+  --text: #1a1a1a;
+  --text-muted: #8a8a8a;
+  --text-light: #bbb;
+  --radius: 8px;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Hiragino Kaku Gothic ProN',
+               'Hiragino Sans', 'Meiryo', sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.6;
+  font-size: 16px;
+  padding: 24px 16px 64px;
+  -webkit-font-smoothing: antialiased;
+}
+
+.container {
+  max-width: 640px;
+  margin: 0 auto;
+}
+
+/* Breadcrumb */
+.breadcrumb {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  flex-wrap: wrap;
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  margin-bottom: 1.75rem;
+}
+.breadcrumb a {
+  color: var(--text-muted);
+  text-decoration: none;
+}
+.breadcrumb a:hover { color: var(--text); }
+.breadcrumb .sep { color: var(--text-light); }
+
+/* Page header */
+.page-header {
+  margin-bottom: 2rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 1px solid var(--border);
+}
+.page-header h1 {
+  font-size: 1.4rem;
+  font-weight: 700;
+  margin-bottom: 0.4rem;
+  line-height: 1.4;
+}
+.page-header p {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+}
+
+/* Progress bar */
+.progress-bar { margin-bottom: 2rem; }
+.progress-text { font-size: 0.8rem; color: #555; margin-bottom: 6px; }
+.bar-bg {
+  background: var(--border);
+  border-radius: 4px;
+  height: 5px;
+  overflow: hidden;
+}
+.bar-fill {
+  background: var(--text);
+  height: 5px;
+  border-radius: 4px;
+  width: 0%;
+  transition: width 0.3s ease;
+}
+
+/* Section */
+.section { margin-bottom: 2rem; }
+.section-title {
+  font-size: 0.88rem;
+  font-weight: 700;
+  border-left: 3px solid var(--text);
+  padding-left: 0.6rem;
+  margin-bottom: 0.9rem;
+}
+
+/* Checklist */
+.checklist { list-style: none; }
+.checklist li { margin-bottom: 0.6rem; }
+.checklist label {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  cursor: pointer;
+  font-size: 0.88rem;
+  line-height: 1.5;
+}
+.checklist input[type="checkbox"] {
+  width: 17px;
+  height: 17px;
+  flex-shrink: 0;
+  margin-top: 2px;
+  accent-color: var(--text);
+  cursor: pointer;
+}
+.checklist label:has(input:checked) {
+  color: var(--text-light);
+  text-decoration: line-through;
+}
+
+/* Result */
+.result {
+  margin-top: 2rem;
+  padding: 1.1rem 1.25rem;
+  border-radius: var(--radius);
+  text-align: center;
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+.result.complete { background: var(--text); color: #fff; }
+.result.incomplete { background: var(--surface); color: #555; }
+.result.halfway { background: #f5f0e8; color: #7a6030; }
+
+/* Reset button */
+.reset-btn {
+  display: block;
+  margin: 0.75rem auto 0;
+  padding: 0.5rem 1.5rem;
+  background: transparent;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  font-size: 0.8rem;
+  cursor: pointer;
+  color: var(--text-muted);
+  font-family: inherit;
+  transition: border-color 0.2s, color 0.2s;
+}
+.reset-btn:hover { border-color: #888; color: var(--text); }
+
+/* Badge */
+.badge {
+  display: inline-block;
+  font-size: 0.68rem;
+  letter-spacing: 0.04em;
+  color: var(--text-muted);
+  background: var(--surface);
+  padding: 0.18rem 0.5rem;
+  border-radius: 4px;
+}
+
+/* Tool cards（カテゴリページ共通） */
+.tools-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 0.85rem;
+}
+.card {
+  display: flex;
+  flex-direction: column;
+  padding: 1.1rem;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  text-decoration: none;
+  color: var(--text);
+  background: var(--bg);
+  transition: border-color 0.15s, box-shadow 0.15s;
+}
+.card:hover {
+  border-color: #aaa;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.07);
+}
+.card--coming {
+  opacity: 0.4;
+  cursor: default;
+  pointer-events: none;
+}
+.card-top { margin-bottom: 0.65rem; }
+.card-title {
+  font-size: 0.95rem;
+  font-weight: 700;
+  line-height: 1.4;
+  margin-bottom: 0.45rem;
+}
+.card-desc {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  line-height: 1.55;
+  flex: 1;
+}
+.card-meta {
+  margin-top: 0.85rem;
+  font-size: 0.72rem;
+  color: var(--text-light);
+}
+
+@media (max-width: 480px) {
+  .tools-grid { grid-template-columns: 1fr 1fr; }
+}
