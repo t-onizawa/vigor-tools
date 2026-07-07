@@ -1,0 +1,52 @@
+const STORAGE_KEY = 'vigor-independence-checklist';
+
+const progressText = document.querySelector('.progress-text');
+const barFill = document.querySelector('.bar-fill');
+const result = document.querySelector('.result');
+const resetBtn = document.querySelector('.reset-btn');
+const checkboxes = document.querySelectorAll('input[type="checkbox"]');
+const TOTAL = checkboxes.length;
+
+function updateProgress() {
+  let count = 0;
+  checkboxes.forEach(cb => { if (cb.checked) count++; });
+
+  progressText.textContent = `${count} / ${TOTAL} 確認済み`;
+  barFill.style.width = `${(count / TOTAL) * 100}%`;
+
+  const pct = count / TOTAL;
+  if (count === TOTAL) {
+    result.className = 'result complete';
+    result.textContent = '準備は整っている — あとは踏み出すだけ';
+  } else if (pct >= 0.6) {
+    result.className = 'result halfway';
+    result.textContent = `着実に進んでいます — あと ${TOTAL - count} 項目`;
+  } else {
+    result.className = 'result incomplete';
+    result.textContent = `現在地を確認中 — あと ${TOTAL - count} 項目`;
+  }
+
+  const state = {};
+  checkboxes.forEach((cb, i) => { state[i] = cb.checked; });
+  localStorage.setItem(STORAGE_KEY, JSON.stringify(state));
+}
+
+function restoreState() {
+  const saved = localStorage.getItem(STORAGE_KEY);
+  if (!saved) return;
+  const state = JSON.parse(saved);
+  checkboxes.forEach((cb, i) => { if (state[i]) cb.checked = true; });
+}
+
+checkboxes.forEach(cb => cb.addEventListener('change', updateProgress));
+
+resetBtn.addEventListener('click', () => {
+  if (confirm('チェックをすべてリセットしますか？')) {
+    checkboxes.forEach(cb => { cb.checked = false; });
+    localStorage.removeItem(STORAGE_KEY);
+    updateProgress();
+  }
+});
+
+restoreState();
+updateProgress();

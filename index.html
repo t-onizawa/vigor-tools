@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>VIGOR TOOLS — 小さな実用ツール集</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- ヒーロー -->
+  <section class="hero">
+    <div class="hero-inner">
+      <span class="brand-label">VIGOR TOOLS</span>
+      <h1 class="hero-title">小さく動くための、<br>道具箱。</h1>
+      <p class="hero-desc">
+        チェックリストと思考ツールで、日常の「やること」を整理する。<br>
+        疲れているときでも、すぐ使えるシンプルな道具たち。
+      </p>
+    </div>
+  </section>
+
+  <div class="container">
+
+    <!-- おすすめ -->
+    <section class="section-block">
+      <h2 class="section-heading">まずはここから</h2>
+      <div class="featured-grid">
+
+        <a class="card card--featured" href="./dcap-agile-sheet-2/">
+          <div class="card-top">
+            <span class="badge">思考ツール</span>
+          </div>
+          <h3 class="card-title">DCAp アジャイルシート</h3>
+          <p class="card-desc">考えすぎて止まる人へ。小さく動くための行動シート</p>
+          <div class="card-arrow">→</div>
+        </a>
+
+        <a class="card card--featured" href="./travel-checklist/">
+          <div class="card-top">
+            <span class="badge">チェックリスト</span>
+          </div>
+          <h3 class="card-title">旅行準備チェック</h3>
+          <p class="card-desc">出発前に確認したい書類・持ち物・手続きを整理する</p>
+          <div class="card-arrow">→</div>
+        </a>
+
+        <a class="card card--featured" href="./independence-checklist/">
+          <div class="card-top">
+            <span class="badge">診断ツール</span>
+          </div>
+          <h3 class="card-title">独立準備チェック</h3>
+          <p class="card-desc">会社に頼らない場所を作るための、今の自分の現在地を確認する</p>
+          <div class="card-arrow">→</div>
+        </a>
+
+      </div>
+    </section>
+
+    <!-- すべてのツール -->
+    <section class="section-block">
+      <h2 class="section-heading">すべてのツール</h2>
+
+      <div class="filter-tabs" role="tablist">
+        <button class="tab active" data-cat="all">すべて</button>
+        <button class="tab" data-cat="checklist">チェックリスト</button>
+        <button class="tab" data-cat="thinking">思考ツール</button>
+        <button class="tab" data-cat="diagnosis">診断ツール</button>
+      </div>
+
+      <div class="tools-grid" id="tools-grid">
+
+        <a class="card" href="./travel-checklist/" data-cat="checklist">
+          <div class="card-top">
+            <span class="badge">チェックリスト</span>
+          </div>
+          <h3 class="card-title">旅行準備チェック</h3>
+          <p class="card-desc">出発前に確認したい書類・持ち物・手続きを整理する</p>
+          <div class="card-meta">31項目</div>
+        </a>
+
+        <a class="card" href="./moving-checklist/" data-cat="checklist">
+          <div class="card-top">
+            <span class="badge">チェックリスト</span>
+          </div>
+          <h3 class="card-title">引越しチェック</h3>
+          <p class="card-desc">やることが多い引越しを、漏れなく順番に進める</p>
+          <div class="card-meta">33項目</div>
+        </a>
+
+        <a class="card" href="./independence-checklist/" data-cat="diagnosis">
+          <div class="card-top">
+            <span class="badge">診断ツール</span>
+          </div>
+          <h3 class="card-title">独立準備チェック</h3>
+          <p class="card-desc">会社に頼らない場所を作るための、今の自分の現在地を確認する</p>
+          <div class="card-meta">25項目</div>
+        </a>
+
+        <a class="card" href="./rayban-meta-checklist/" data-cat="checklist">
+          <div class="card-top">
+            <span class="badge">チェックリスト</span>
+          </div>
+          <h3 class="card-title">Ray-Ban Meta 購入前チェック</h3>
+          <p class="card-desc">買って後悔しないために、購入前に確認しておきたい29項目</p>
+          <div class="card-meta">29項目</div>
+        </a>
+
+        <a class="card" href="./dcap-agile-sheet-2/" data-cat="thinking">
+          <div class="card-top">
+            <span class="badge">思考ツール</span>
+          </div>
+          <h3 class="card-title">DCAp アジャイルシート</h3>
+          <p class="card-desc">考えすぎて止まる人へ。小さく動くための行動シート</p>
+          <div class="card-meta">行動ツール</div>
+        </a>
+
+      </div>
+    </section>
+
+    <!-- カテゴリ説明 -->
+    <section class="section-block">
+      <h2 class="section-heading">カテゴリについて</h2>
+      <div class="cat-grid">
+
+        <div class="cat-item">
+          <div class="cat-name">チェックリスト</div>
+          <p class="cat-desc">準備・手続き・確認を、項目ごとに整理する。やることの全体像が見えると、迷わず動ける。</p>
+        </div>
+
+        <div class="cat-item">
+          <div class="cat-name">思考ツール</div>
+          <p class="cat-desc">考えすぎて止まる人へ。頭の中をシートに書き出し、次の小さな一手を見つけるための道具。</p>
+        </div>
+
+        <div class="cat-item">
+          <div class="cat-name">診断ツール</div>
+          <p class="cat-desc">スコアではなく、現在地を確認するための問いかけ。正解を出すのではなく、気づくために使う。</p>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- 追加予定 -->
+    <section class="section-block">
+      <h2 class="section-heading">追加予定のツール</h2>
+      <ul class="upcoming-list">
+        <li class="upcoming-item">
+          <span class="upcoming-name">15分Do変換ツール</span>
+          <span class="upcoming-badge">準備中</span>
+        </li>
+        <li class="upcoming-item">
+          <span class="upcoming-name">AI作業仕分けシート</span>
+          <span class="upcoming-badge">準備中</span>
+        </li>
+        <li class="upcoming-item">
+          <span class="upcoming-name">転職準備チェック</span>
+          <span class="upcoming-badge">検討中</span>
+        </li>
+        <li class="upcoming-item">
+          <span class="upcoming-name">副業スタートチェック</span>
+          <span class="upcoming-badge">検討中</span>
+        </li>
+      </ul>
+    </section>
+
+    <footer>
+      <p>VIGOR TOOLS &mdash; 小さく作って、早く出す</p>
+    </footer>
+
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
