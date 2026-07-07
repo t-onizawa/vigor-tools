@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI作業仕分けシート — VIGOR TOOLS</title>
+  <link rel="stylesheet" href="../../shared.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+
+    <nav class="breadcrumb">
+      <a href="../../">VIGOR TOOLS</a>
+      <span> › </span>
+      <a href="../">AI活用</a>
+      <span> › </span>
+      <span>AI作業仕分けシート</span>
+    </nav>
+
+    <header class="page-header">
+      <h1>AI作業仕分けシート</h1>
+      <p class="page-desc">その仕事、AIに任せていい？2ステップで判断する。</p>
+    </header>
+
+    <!-- STEP 1 -->
+    <div id="step1" class="step-block">
+      <p class="step-label">STEP 1 / 2</p>
+      <h2 class="step-question">その作業、どんな種類ですか？</h2>
+      <div class="choice-list">
+        <button class="choice-card" onclick="goStep2('info')">
+          <div class="choice-title">文章を書く・まとめる・変換する</div>
+          <div class="choice-examples">メール・翻訳・要約・議事録・フォーマット変換など</div>
+        </button>
+        <button class="choice-card" onclick="goStep2('research')">
+          <div class="choice-title">情報を調べる・整理する</div>
+          <div class="choice-examples">リサーチ・比較表・データ整理・リスト化など</div>
+        </button>
+        <button class="choice-card" onclick="goStep2('idea')">
+          <div class="choice-title">アイデアを出す・考えを整理する</div>
+          <div class="choice-examples">企画・壁打ち・選択肢を広げる・方向性を考えるなど</div>
+        </button>
+        <button class="choice-card" onclick="goStep2('decide')">
+          <div class="choice-title">判断する・決める・人に相談する</div>
+          <div class="choice-examples">意思決定・承認・感情整理・専門的な判断など</div>
+        </button>
+      </div>
+    </div>
+
+    <!-- STEP 2: 文章・情報系 -->
+    <div id="step2-info" class="step-block hidden">
+      <p class="step-label">STEP 2 / 2</p>
+      <h2 class="step-question">その作業に当てはまるものは？</h2>
+      <div class="choice-list">
+        <button class="choice-card" onclick="showResult('ai_solo')">
+          <div class="choice-title">一般的な内容・ミスしても修正できる</div>
+          <div class="choice-examples">公開情報・下書き段階・参考資料の整理など</div>
+        </button>
+        <button class="choice-card" onclick="showResult('ai_partner')">
+          <div class="choice-title">社内情報・個人情報が含まれる</div>
+          <div class="choice-examples">社内資料・個人名・機密情報が入る場合</div>
+        </button>
+        <button class="choice-card" onclick="showResult('ai_partner')">
+          <div class="choice-title">最終的に自分が責任を持つ重要な内容</div>
+          <div class="choice-examples">上司への報告・公式文書・重要な提案など</div>
+        </button>
+      </div>
+    </div>
+
+    <!-- STEP 2: リサーチ系（情報と同じ判断） -->
+    <div id="step2-research" class="step-block hidden">
+      <p class="step-label">STEP 2 / 2</p>
+      <h2 class="step-question">調べた結果をどう使いますか？</h2>
+      <div class="choice-list">
+        <button class="choice-card" onclick="showResult('ai_solo')">
+          <div class="choice-title">参考にする・自分で判断する素材として使う</div>
+          <div class="choice-examples">情報収集・候補リスト作成・比較のたたき台など</div>
+        </button>
+        <button class="choice-card" onclick="showResult('ai_partner')">
+          <div class="choice-title">そのまま提出・報告・共有する</div>
+          <div class="choice-examples">上司への報告資料・社外向け情報など</div>
+        </button>
+      </div>
+    </div>
+
+    <!-- STEP 2: アイデア系 -->
+    <div id="step2-idea" class="step-block hidden">
+      <p class="step-label">STEP 2 / 2</p>
+      <h2 class="step-question">今、どの段階ですか？</h2>
+      <div class="choice-list">
+        <button class="choice-card" onclick="showResult('ai_partner')">
+          <div class="choice-title">まだ広げる段階（出す・探す・増やす）</div>
+          <div class="choice-examples">アイデアをたくさん出したい・可能性を広げたい</div>
+        </button>
+        <button class="choice-card" onclick="showResult('self')">
+          <div class="choice-title">絞り込む段階（選ぶ・決める・優先する）</div>
+          <div class="choice-examples">どれにするか決めたい・自分の判断が必要な段階</div>
+        </button>
+      </div>
+    </div>
+
+    <!-- STEP 2: 判断・相談系 -->
+    <div id="step2-decide" class="step-block hidden">
+      <p class="step-label">STEP 2 / 2</p>
+      <h2 class="step-question">どんな種類の判断ですか？</h2>
+      <div class="choice-list">
+        <button class="choice-card" onclick="showResult('human')">
+          <div class="choice-title">専門知識が必要な判断</div>
+          <div class="choice-examples">法律・税務・医療・技術的な専門判断など</div>
+        </button>
+        <button class="choice-card" onclick="showResult('human')">
+          <div class="choice-title">組織・人間関係の判断</div>
+          <div class="choice-examples">上司への相談・チームの合意・感情的なサポートが必要</div>
+        </button>
+        <button class="choice-card" onclick="showResult('self')">
+          <div class="choice-title">自分の価値観・気持ちで決めること</div>
+          <div class="choice-examples">キャリア・生き方・優先順位・自分が責任を持つ選択</div>
+        </button>
+      </div>
+    </div>
+
+    <!-- 結果 -->
+    <div id="result-section" class="result-panel hidden">
+      <div class="sort-result" id="sort-result">
+        <div class="sort-tag" id="result-tag"></div>
+        <p class="sort-lead" id="result-lead"></p>
+        <p class="sort-body" id="result-body"></p>
+        <div class="sort-action-box">
+          <div class="sort-box-label">次のアクション</div>
+          <p id="result-action"></p>
+        </div>
+        <div class="sort-caution-box">
+          <div class="sort-box-label">注意</div>
+          <p id="result-caution"></p>
+        </div>
+        <a class="sort-link hidden" id="result-link" href=""></a>
+      </div>
+      <button class="retry-btn" onclick="retry()">やり直す</button>
+    </div>
+
+    <section class="related-tools">
+      <h2 class="related-heading">関連ツール</h2>
+      <div class="related-list">
+        <a class="related-item" href="../../thinking/15min-do/">
+          <span class="related-badge">思考ツール</span>
+          <span class="related-name">15分Do変換ツール</span>
+          <span class="related-status">→</span>
+        </a>
+        <a class="related-item" href="../../thinking/dcap/">
+          <span class="related-badge">思考ツール</span>
+          <span class="related-name">DCAp アジャイルシート</span>
+          <span class="related-status">→</span>
+        </a>
+        <div class="related-item related-item--coming">
+          <span class="related-badge">診断ツール</span>
+          <span class="related-name">AIツール選び診断</span>
+          <span class="related-status">準備中</span>
+        </div>
+      </div>
+    </section>
+
+    <p class="bookmark-tip">仕事でAIを使う前に、まず確認。ブックマークしておくと便利です。</p>
+
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
