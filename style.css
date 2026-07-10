@@ -367,6 +367,13 @@ footer {
   font-size: 0.88rem;
   font-weight: 700;
   line-height: 1.45;
+  margin-bottom: 0.35rem;
+}
+
+.worry-copy {
+  font-size: 0.78rem;
+  color: var(--text-muted);
+  line-height: 1.55;
   margin-bottom: 0.85rem;
 }
 
