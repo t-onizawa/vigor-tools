@@ -1,49 +1,36 @@
 <svg width="1200" height="630" viewBox="0 0 1200 630" fill="none" xmlns="http://www.w3.org/2000/svg">
-  <!-- Background -->
   <rect width="1200" height="630" fill="#FFFFFF"/>
-  <!-- Subtle border -->
-  <rect x="1" y="1" width="1198" height="628" rx="20" fill="none" stroke="#F0F0F0" stroke-width="2"/>
 
-  <!-- Symbol 200×200 at left, vertically centered (y=215 so center=315) -->
-  <g transform="translate(80,215)">
-    <rect width="200" height="200" rx="44" fill="#000000"/>
-    <!-- V path scaled from 512→200 (×0.390625) -->
-    <!-- M128→50, 112→44, 256→100, 400→156, 384→150, stroke-width 72→28 -->
-    <path d="M50 44 L100 156 L150 44"
-          stroke="#FFFFFF"
-          stroke-width="28"
-          stroke-linecap="butt"
-          stroke-linejoin="miter"
-          stroke-miterlimit="10"
-          fill="none"/>
-  </g>
-
-  <!-- VIGOR TOOLS — two lines, bold -->
-  <text x="328" y="300"
+  <text x="80" y="185"
         font-family="-apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Helvetica Neue', Arial, sans-serif"
-        font-weight="700"
-        font-size="88"
-        letter-spacing="-1"
-        fill="#000000">VIGOR</text>
-  <text x="328" y="396"
-        font-family="-apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Helvetica Neue', Arial, sans-serif"
-        font-weight="700"
-        font-size="88"
-        letter-spacing="-1"
-        fill="#000000">TOOLS</text>
+        font-weight="800"
+        font-size="96"
+        letter-spacing="-3"
+        fill="#111111">VIGOR TOOLS</text>
 
-  <!-- Tagline -->
-  <text x="330" y="454"
+  <text x="80" y="250"
         font-family="-apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Hiragino Sans', 'Helvetica Neue', Arial, sans-serif"
         font-weight="400"
-        font-size="26"
-        fill="#999999">小さな実用ツール集</text>
+        font-size="38"
+        fill="#111111">小さく動くための、道具箱。</text>
 
-  <!-- URL — bottom right -->
-  <text x="1120" y="580"
+  <rect x="80" y="297" width="48" height="3" rx="1" fill="#111111"/>
+
+  <text x="80" y="362"
+        font-family="-apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Hiragino Sans', 'Helvetica Neue', Arial, sans-serif"
+        font-weight="300"
+        font-size="27"
+        fill="#666666">チェックリストと思考ツールで、</text>
+
+  <text x="80" y="404"
+        font-family="-apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Hiragino Sans', 'Helvetica Neue', Arial, sans-serif"
+        font-weight="300"
+        font-size="27"
+        fill="#666666">日常の「やること」を整理する。</text>
+
+  <text x="80" y="578"
         font-family="-apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Helvetica Neue', Arial, sans-serif"
-        font-weight="400"
+        font-weight="300"
         font-size="20"
-        text-anchor="end"
-        fill="#CCCCCC">vigorlab.net</text>
+        fill="#BBBBBB">vigorlab.net</text>
 </svg>
