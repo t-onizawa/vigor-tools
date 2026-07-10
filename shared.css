@@ -206,7 +206,7 @@ body {
   .tools-grid { grid-template-columns: 1fr 1fr; }
 }
 
-/* 関連ツールセクション */
+/* 次はこちらセクション */
 .related-tools {
   margin-top: 2.5rem;
   padding-top: 2rem;
@@ -219,7 +219,14 @@ body {
   letter-spacing: 0.12em;
   text-transform: uppercase;
   color: var(--text-muted);
-  margin-bottom: 0.9rem;
+  margin-bottom: 0.35rem;
+}
+
+.related-sub {
+  font-size: 0.78rem;
+  color: var(--text-muted);
+  line-height: 1.55;
+  margin-bottom: 1rem;
 }
 
 .related-list {
