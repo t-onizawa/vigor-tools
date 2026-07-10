@@ -36,6 +36,88 @@
 
   <div class="container">
 
+    <!-- ① 困りごとから探す -->
+    <section class="section-block">
+      <h2 class="section-heading">困りごとから探す</h2>
+      <p class="section-subtext">今の悩みから、使えるツールを探せます。</p>
+      <div class="worry-grid">
+
+        <div class="worry-card" data-href="./thinking/15min-do/" role="button" tabindex="0">
+          <p class="worry-q">何から始めれば<br>いいかわからない</p>
+          <ul class="worry-links">
+            <li>
+              <a href="./thinking/15min-do/" class="worry-link worry-link--primary">
+                <span class="badge">おすすめ</span>15分Do変換ツール
+              </a>
+            </li>
+            <li><a href="./thinking/dcap/" class="worry-link">DCAp アジャイルシート</a></li>
+            <li><a href="./work/independence/" class="worry-link">独立準備チェック</a></li>
+          </ul>
+        </div>
+
+        <div class="worry-card" data-href="./money/fixed-cost-check/" role="button" tabindex="0">
+          <p class="worry-q">お金が不安</p>
+          <ul class="worry-links">
+            <li>
+              <a href="./money/fixed-cost-check/" class="worry-link worry-link--primary">
+                <span class="badge">おすすめ</span>固定費チェック
+              </a>
+            </li>
+            <li><a href="./work/resignation-check/" class="worry-link">退職チェック</a></li>
+          </ul>
+        </div>
+
+        <a class="worry-card" href="./buy/rayban-meta/">
+          <p class="worry-q">買うか迷っている</p>
+          <ul class="worry-links">
+            <li>
+              <span class="worry-link worry-link--primary">
+                <span class="badge">おすすめ</span>Ray-Ban Meta 購入前チェック
+              </span>
+            </li>
+          </ul>
+        </a>
+
+        <a class="worry-card" href="./ai/task-sort/">
+          <p class="worry-q">AIを使うべきか<br>わからない</p>
+          <ul class="worry-links">
+            <li>
+              <span class="worry-link worry-link--primary">
+                <span class="badge">おすすめ</span>AI作業仕分けシート
+              </span>
+            </li>
+          </ul>
+        </a>
+
+      </div>
+    </section>
+
+    <!-- ② まずはここから -->
+    <section class="section-block">
+      <h2 class="section-heading">まずはここから</h2>
+      <div class="featured-grid">
+        <a class="card card--featured" href="./thinking/15min-do/">
+          <div class="card-top"><span class="badge">思考ツール</span></div>
+          <h3 class="card-title">15分Do変換ツール</h3>
+          <p class="card-desc">「やりたいけど進まない」を今日できる15分に変える</p>
+          <div class="card-arrow">→</div>
+        </a>
+        <a class="card card--featured" href="./travel/checklist/">
+          <div class="card-top"><span class="badge">チェックリスト</span></div>
+          <h3 class="card-title">旅行準備チェック</h3>
+          <p class="card-desc">出発前に確認したい書類・持ち物・手続きを整理する</p>
+          <div class="card-arrow">→</div>
+        </a>
+        <a class="card card--featured" href="./money/fixed-cost-check/">
+          <div class="card-top"><span class="badge">チェックリスト</span></div>
+          <h3 class="card-title">固定費チェック</h3>
+          <p class="card-desc">毎月なんとなく払っている支出を見える化する</p>
+          <div class="card-arrow">→</div>
+        </a>
+      </div>
+    </section>
+
+    <!-- ③ カテゴリから探す -->
     <section class="section-block">
       <h2 class="section-heading">カテゴリから探す</h2>
       <div class="cat-nav-grid">
@@ -77,30 +159,7 @@
       </div>
     </section>
 
-    <section class="section-block">
-      <h2 class="section-heading">まずはここから</h2>
-      <div class="featured-grid">
-        <a class="card card--featured" href="./thinking/15min-do/">
-          <div class="card-top"><span class="badge">思考ツール</span></div>
-          <h3 class="card-title">15分Do変換ツール</h3>
-          <p class="card-desc">「やりたいけど進まない」を今日できる15分に変える</p>
-          <div class="card-arrow">→</div>
-        </a>
-        <a class="card card--featured" href="./travel/checklist/">
-          <div class="card-top"><span class="badge">チェックリスト</span></div>
-          <h3 class="card-title">旅行準備チェック</h3>
-          <p class="card-desc">出発前に確認したい書類・持ち物・手続きを整理する</p>
-          <div class="card-arrow">→</div>
-        </a>
-        <a class="card card--featured" href="./money/fixed-cost-check/">
-          <div class="card-top"><span class="badge">チェックリスト</span></div>
-          <h3 class="card-title">固定費チェック</h3>
-          <p class="card-desc">毎月なんとなく払っている支出を見える化する</p>
-          <div class="card-arrow">→</div>
-        </a>
-      </div>
-    </section>
-
+    <!-- ④ 最近追加 -->
     <section class="section-block">
       <h2 class="section-heading">最近追加</h2>
       <div class="tools-grid">
@@ -116,11 +175,11 @@
           <p class="card-desc">その仕事、AIに任せていい？2ステップで判断する</p>
           <div class="card-meta">AI活用</div>
         </a>
-        <a class="card" href="./money/fixed-cost-check/">
-          <div class="card-top"><span class="badge">チェックリスト</span></div>
-          <h3 class="card-title">固定費チェック</h3>
-          <p class="card-desc">毎月なんとなく払っている支出を見える化する</p>
-          <div class="card-meta">お金</div>
+        <a class="card" href="./thinking/dcap/">
+          <div class="card-top"><span class="badge">思考ツール</span></div>
+          <h3 class="card-title">DCAp アジャイルシート</h3>
+          <p class="card-desc">計画より先に動く。Do→Check→Act→small plan</p>
+          <div class="card-meta">思考整理</div>
         </a>
       </div>
     </section>
