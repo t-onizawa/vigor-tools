@@ -1,13 +1,20 @@
 <svg width="32" height="32" viewBox="0 0 512 512" fill="none" xmlns="http://www.w3.org/2000/svg">
   <style>
-    .bg { fill: #111111; }
-    .v  { stroke: #FFFFFF; }
+    .bg  { fill: #111111; }
+    .rim { stroke: rgba(255,255,255,0.12); }
+    .v   { stroke: #FFFFFF; }
     @media (prefers-color-scheme: dark) {
-      .bg { fill: #F5F5F5; }
-      .v  { stroke: #111111; }
+      .bg  { fill: #EEEEEE; }
+      .rim { stroke: rgba(0,0,0,0.10); }
+      .v   { stroke: #111111; }
     }
   </style>
+  <!-- Background -->
   <rect class="bg" width="512" height="512" rx="80"/>
+  <!-- 1px rim to separate icon from dark/light tab backgrounds -->
+  <rect class="rim" x="8" y="8" width="496" height="496" rx="74"
+        stroke-width="16" fill="none"/>
+  <!-- V mark -->
   <path class="v"
         d="M88 96 L256 416 L424 96"
         stroke-width="96"
