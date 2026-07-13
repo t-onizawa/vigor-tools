@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="ガジェットを買う前に5つの質問に答えるだけ。衝動買いか本当に必要か、後悔しない判断ができる。">
+  <title>ガジェット購入チェック — VIGOR TOOLS</title>
+  <link rel="stylesheet" href="../../shared.css">
+  <link rel="stylesheet" href="style.css">
+  <!-- OGP -->
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="VIGOR TOOLS">
+  <meta property="og:title" content="ガジェット購入チェック — VIGOR TOOLS">
+  <meta property="og:description" content="ガジェットを買う前に5つの質問に答えるだけ。衝動買いか本当に必要か、後悔しない判断ができる。">
+  <meta property="og:url" content="https://vigorlab.net/buy/gadget-check/">
+  <meta property="og:image" content="https://vigorlab.net/assets/brand/og-image.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="ガジェット購入チェック — VIGOR TOOLS">
+  <meta name="twitter:description" content="ガジェットを買う前に5つの質問に答えるだけ。衝動買いか本当に必要か、後悔しない判断ができる。">
+  <meta name="twitter:image" content="https://vigorlab.net/assets/brand/og-image.png">
+  <link rel="canonical" href="https://vigorlab.net/buy/gadget-check/">
+  <link rel="icon" href="/assets/brand/favicon.svg" type="image/svg+xml">
+  <link rel="alternate icon" href="/assets/brand/favicon.ico">
+  <link rel="apple-touch-icon" href="/assets/brand/apple-touch-icon.png">
+  <link rel="manifest" href="/assets/brand/site.webmanifest">
+</head>
+<body>
+  <div class="container">
+
+    <nav class="breadcrumb">
+      <a href="../../">VIGOR TOOLS</a>
+      <span class="sep">›</span>
+      <a href="../">買い物</a>
+      <span class="sep">›</span>
+      <span>ガジェット購入チェック</span>
+    </nav>
+
+    <header class="page-header">
+      <h1>ガジェット購入チェック</h1>
+      <p>5つの質問で、「これ、今買っていい？」を判定します。</p>
+    </header>
+
+    <form id="check-form" novalidate>
+
+      <div class="q-block" id="q1">
+        <p class="q-num">Q1 · 財布</p>
+        <p class="q-text">価格について、正直に言うと？</p>
+        <div class="options">
+          <label class="opt"><input type="radio" name="q1" value="2"><span>余裕で払える（家計に影響しない）</span></label>
+          <label class="opt"><input type="radio" name="q1" value="1"><span>少し迷うが、払えなくはない</span></label>
+          <label class="opt"><input type="radio" name="q1" value="0"><span>正直きつい</span></label>
+        </div>
+      </div>
+
+      <div class="q-block" id="q2">
+        <p class="q-num">Q2 · 熟考期間</p>
+        <p class="q-text">欲しいと思い始めてから、どのくらい？</p>
+        <div class="options">
+          <label class="opt"><input type="radio" name="q2" value="2"><span>1ヶ月以上前から</span></label>
+          <label class="opt"><input type="radio" name="q2" value="1"><span>1週間〜1ヶ月くらい</span></label>
+          <label class="opt"><input type="radio" name="q2" value="0"><span>3日以内（今日知った・つい最近）</span></label>
+        </div>
+      </div>
+
+      <div class="q-block" id="q3">
+        <p class="q-num">Q3 · 必要性</p>
+        <p class="q-text">今、同じ用途を満たすものが手元にある？</p>
+        <div class="options">
+          <label class="opt"><input type="radio" name="q3" value="2"><span>まったくない（代替品なし）</span></label>
+          <label class="opt"><input type="radio" name="q3" value="1"><span>あるけど古い・壊れかけ</span></label>
+          <label class="opt"><input type="radio" name="q3" value="0"><span>問題なく使えるものがある</span></label>
+        </div>
+      </div>
+
+      <div class="q-block" id="q4">
+        <p class="q-num">Q4 · 影響度</p>
+        <p class="q-text">もし買わなかったら、1週間後はどうなっている？</p>
+        <div class="options">
+          <label class="opt"><input type="radio" name="q4" value="2"><span>毎日不便を感じるはず</span></label>
+          <label class="opt"><input type="radio" name="q4" value="1"><span>少し不便だが何とかなる</span></label>
+          <label class="opt"><input type="radio" name="q4" value="0"><span>たぶん忘れている</span></label>
+        </div>
+      </div>
+
+      <div class="q-block" id="q5">
+        <p class="q-num">Q5 · 調査度</p>
+        <p class="q-text">このガジェット、どのくらい調べた？</p>
+        <div class="options">
+          <label class="opt"><input type="radio" name="q5" value="2"><span>レビューも競合品も十分比較した</span></label>
+          <label class="opt"><input type="radio" name="q5" value="1"><span>いくつかレビューを見た</span></label>
+          <label class="opt"><input type="radio" name="q5" value="0"><span>まだほとんど調べていない</span></label>
+        </div>
+      </div>
+
+      <p class="form-error" id="form-error" hidden>全ての質問に答えてください。</p>
+      <button type="submit" class="btn-check">判定する</button>
+
+    </form>
+
+    <section class="result-section" id="result-section" hidden>
+
+      <div class="verdict-box" id="verdict-box">
+        <p class="verdict-score" id="verdict-score"></p>
+        <p class="verdict-title" id="verdict-title"></p>
+        <p class="verdict-desc" id="verdict-desc"></p>
+      </div>
+
+      <div class="score-detail">
+        <p class="score-heading">スコア内訳</p>
+        <div class="score-row">
+          <span class="score-cat">財布</span>
+          <div class="score-bar-wrap"><div class="score-bar" id="bar-budget"></div></div>
+        </div>
+        <div class="score-row">
+          <span class="score-cat">熟考期間</span>
+          <div class="score-bar-wrap"><div class="score-bar" id="bar-time"></div></div>
+        </div>
+        <div class="score-row">
+          <span class="score-cat">必要性</span>
+          <div class="score-bar-wrap"><div class="score-bar" id="bar-need"></div></div>
+        </div>
+        <div class="score-row">
+          <span class="score-cat">影響度</span>
+          <div class="score-bar-wrap"><div class="score-bar" id="bar-impact"></div></div>
+        </div>
+        <div class="score-row">
+          <span class="score-cat">調査度</span>
+          <div class="score-bar-wrap"><div class="score-bar" id="bar-research"></div></div>
+        </div>
+      </div>
+
+      <button type="button" class="reset-btn" id="reset-btn">もう一度チェック</button>
+
+    </section>
+
+    <section class="related-tools">
+      <h2 class="related-heading">次はこちら</h2>
+      <p class="related-sub">今の状況に合わせて、次に使えるツールです。</p>
+      <div class="related-list">
+        <a class="related-item" href="../../money/fixed-cost-check/">
+          <span class="related-badge">チェックリスト</span>
+          <span class="related-name">固定費チェック</span>
+          <span class="related-status">→</span>
+        </a>
+        <a class="related-item" href="../rayban-meta/">
+          <span class="related-badge">チェックリスト</span>
+          <span class="related-name">Ray-Ban Meta 購入前チェック</span>
+          <span class="related-status">→</span>
+        </a>
+        <a class="related-item" href="../../thinking/15min-do/">
+          <span class="related-badge">思考ツール</span>
+          <span class="related-name">15分Do変換ツール</span>
+          <span class="related-status">→</span>
+        </a>
+      </div>
+    </section>
+
+    <p class="bookmark-tip">このページをブックマークしておくと、次回もすぐ使えます。</p>
+
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
