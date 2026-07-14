@@ -1,8 +1,9 @@
 # VIGOR LAB — Charter
 
 ```
-Version: 1.0
+Version: 1.1
 Created: 2026-07-14
+Updated: 2026-07-14
 
 This document is a living document.
 It evolves together with VIGOR LAB.
@@ -15,8 +16,17 @@ VISION.md がプロダクト（VIGOR TOOLS）の憲法であるのに対し、
 プロダクトが生まれても、本書はそのまま適用される。
 
 本書は完成版ではなく、育てていく前提の文書である。ただし
-VISION.md や Backlog.md よりも変更頻度は低くあるべきだ。Mission は
-特に変わらない。変えるとしたら、それは VIGOR LAB そのものが変わるとき。
+VISION.md や Backlog.md よりも変更頻度は低くあるべきだ。Philosophy と
+Mission は特に変わらない。変えるとしたら、それは VIGOR LAB そのものが
+変わるとき。
+
+---
+
+## Philosophy
+
+> 人は、一人で何度も同じ壁にぶつからなくていい。
+> 誰かの気付きは、次の人の一歩になる。
+> そのために、今、あなたのもやもやを使えるカタチにする。
 
 ---
 
@@ -33,6 +43,7 @@ VISION.md や Backlog.md よりも変更頻度は低くあるべきだ。Mission
 ## Scope（適用範囲）
 
 本書は VIGOR LAB 全体に適用される。VIGOR TOOLS に限定されない。
+Philosophy・Mission ともに、以下の適用範囲に従う。
 
 ```
 VIGOR LAB Charter
@@ -154,9 +165,17 @@ VIGOR LAB Charter  ←→  Roles.md
 ## 変更履歴
 
 ```
-v1  2026-07-14
+v1.0  2026-07-14
     初版制定。Mission / Scope / Operating Principles /
     Decision Making / Development System / Documents を確立。
     Missionを VIGOR LAB全体で唯一のものとし、VISION.mdからは
     Missionを分離した。
+
+v1.1  2026-07-14
+    Missionの上位階層としてPhilosophyを追加。
+    「人は、一人で何度も同じ壁にぶつからなくていい。
+    誰かの気付きは、次の人の一歩になる。
+    そのために、今、あなたのもやもやを使えるカタチにする。」
+    説明文は付けず、3行のみで完結させる方針とした
+    （現在地の解説はCharter外の時間軸を持つ文書に委ねる）。
 ```
