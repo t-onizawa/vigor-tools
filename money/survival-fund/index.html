@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="貯蓄額と退職金の見込みから、辞めても何ヶ月生活できるかを計算する。判定はせず、今の状態だけを返す生活防衛資金シミュレーター。">
+  <title>生活防衛資金シミュレーター — VIGOR TOOLS</title>
+  <link rel="stylesheet" href="../../shared.css">
+  <link rel="stylesheet" href="style.css">
+  <!-- OGP -->
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="VIGOR TOOLS">
+  <meta property="og:title" content="生活防衛資金シミュレーター — VIGOR TOOLS">
+  <meta property="og:description" content="貯蓄額と退職金の見込みから、辞めても何ヶ月生活できるかを計算する。判定はせず、今の状態だけを返す生活防衛資金シミュレーター。">
+  <meta property="og:url" content="https://vigorlab.net/money/survival-fund/">
+  <meta property="og:image" content="https://vigorlab.net/assets/brand/og-image.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="生活防衛資金シミュレーター — VIGOR TOOLS">
+  <meta name="twitter:description" content="貯蓄額と退職金の見込みから、辞めても何ヶ月生活できるかを計算する。判定はせず、今の状態だけを返す生活防衛資金シミュレーター。">
+  <meta name="twitter:image" content="https://vigorlab.net/assets/brand/og-image.png">
+  <link rel="canonical" href="https://vigorlab.net/money/survival-fund/">
+  <link rel="icon" href="/assets/brand/favicon.svg" type="image/svg+xml">
+  <link rel="alternate icon" href="/assets/brand/favicon.ico">
+  <link rel="apple-touch-icon" href="/assets/brand/apple-touch-icon.png">
+  <link rel="manifest" href="/assets/brand/site.webmanifest">
+</head>
+<body>
+  <div class="container">
+
+    <nav class="breadcrumb">
+      <a href="../../">VIGOR TOOLS</a>
+      <span class="sep">›</span>
+      <a href="../">お金</a>
+      <span class="sep">›</span>
+      <span>生活防衛資金シミュレーター</span>
+    </nav>
+
+    <header class="page-header">
+      <h1>生活防衛資金シミュレーター</h1>
+      <p class="page-desc">貯金で、あと何ヶ月生活できるか。それだけを計算します。</p>
+    </header>
+
+    <form id="calc-form" novalidate>
+
+      <div class="field-block">
+        <label for="savings">今の貯蓄額（円）</label>
+        <input type="number" id="savings" name="savings" inputmode="numeric" min="0" placeholder="例：3000000">
+      </div>
+
+      <div class="field-block">
+        <label for="monthly-expense">毎月の生活費（円）</label>
+        <input type="number" id="monthly-expense" name="monthly-expense" inputmode="numeric" min="0" placeholder="例：220000">
+        <p class="field-hint"><a href="../fixed-cost-check/">固定費チェックで確認する →</a></p>
+      </div>
+
+      <div class="field-block">
+        <label for="severance">退職金の見込み額（円・任意）</label>
+        <input type="number" id="severance" name="severance" inputmode="numeric" min="0" placeholder="0">
+      </div>
+
+      <p class="form-error" id="form-error" hidden>貯蓄額と毎月の生活費を入力してください。</p>
+      <button type="submit" class="btn-check">計算する</button>
+
+    </form>
+
+    <section class="result-section" id="result-section" hidden>
+
+      <div class="months-box">
+        <p class="months-label">生活防衛資金は</p>
+        <p class="months-value"><span id="months-number">0</span>ヶ月分</p>
+        <p class="months-state" id="months-state"></p>
+      </div>
+
+      <div class="breakdown">
+        <p class="breakdown-heading">内訳</p>
+        <p class="breakdown-formula" id="breakdown-formula"></p>
+      </div>
+
+      <p class="disclaimer">
+        ※この数字は概算です。税金・社会保険料の変化、失業保険の受給期間などは考慮していません。
+      </p>
+
+      <div class="history-save" id="history-save-block">
+        <button type="button" class="btn-save-history" id="save-history-btn">この結果を判断履歴に残す</button>
+      </div>
+      <div class="history-saved" id="history-saved-block" hidden>
+        <p class="saved-message">この結果を判断履歴に保存しました。</p>
+        <a href="/history/" class="history-link">判断履歴を見る →</a>
+      </div>
+
+      <button type="button" class="reset-btn" id="reset-btn">もう一度計算する</button>
+
+    </section>
+
+    <section class="related-tools">
+      <h2 class="related-heading">次はこちら</h2>
+      <p class="related-sub">今の状況に合わせて、次に使えるツールです。</p>
+      <div class="related-list">
+        <a class="related-item" href="../../work/independence/">
+          <span class="related-badge">診断ツール</span>
+          <span class="related-name">独立準備チェック</span>
+          <span class="related-status">→</span>
+        </a>
+        <a class="related-item" href="../../work/resignation-check/">
+          <span class="related-badge">チェックリスト</span>
+          <span class="related-name">退職チェック</span>
+          <span class="related-status">→</span>
+        </a>
+        <a class="related-item" href="../fixed-cost-check/">
+          <span class="related-badge">チェックリスト</span>
+          <span class="related-name">固定費チェック</span>
+          <span class="related-status">→</span>
+        </a>
+      </div>
+    </section>
+
+    <p class="bookmark-tip">このページをブックマークしておくと、次回もすぐ使えます。</p>
+
+  </div>
+
+  <script src="/shared-history.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>

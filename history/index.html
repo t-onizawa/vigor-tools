@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="ツールを使った結果を、必要な分だけ自分で残せる場所。判断履歴はあなたのブラウザだけに保存され、VIGORのサーバーには送信されません。">
+  <title>判断履歴 — VIGOR TOOLS</title>
+  <link rel="stylesheet" href="../shared.css">
+  <link rel="stylesheet" href="style.css">
+  <!-- OGP -->
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="VIGOR TOOLS">
+  <meta property="og:title" content="判断履歴 — VIGOR TOOLS">
+  <meta property="og:description" content="ツールを使った結果を、必要な分だけ自分で残せる場所。判断履歴はあなたのブラウザだけに保存され、VIGORのサーバーには送信されません。">
+  <meta property="og:url" content="https://vigorlab.net/history/">
+  <meta property="og:image" content="https://vigorlab.net/assets/brand/og-image.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="判断履歴 — VIGOR TOOLS">
+  <meta name="twitter:description" content="ツールを使った結果を、必要な分だけ自分で残せる場所。判断履歴はあなたのブラウザだけに保存され、VIGORのサーバーには送信されません。">
+  <meta name="twitter:image" content="https://vigorlab.net/assets/brand/og-image.png">
+  <link rel="canonical" href="https://vigorlab.net/history/">
+  <link rel="icon" href="/assets/brand/favicon.svg" type="image/svg+xml">
+  <link rel="alternate icon" href="/assets/brand/favicon.ico">
+  <link rel="apple-touch-icon" href="/assets/brand/apple-touch-icon.png">
+  <link rel="manifest" href="/assets/brand/site.webmanifest">
+</head>
+<body>
+  <div class="container">
+
+    <nav class="breadcrumb">
+      <a href="../">VIGOR TOOLS</a>
+      <span class="sep">›</span>
+      <span>判断履歴</span>
+    </nav>
+
+    <header class="page-header">
+      <h1>判断履歴</h1>
+      <p>使ったツールの、最新の結果だけを残しています。</p>
+    </header>
+
+    <div class="history-list" id="history-list"></div>
+
+    <div class="history-empty" id="history-empty" hidden>
+      <p>まだ記録がありません。</p>
+      <a href="../" class="empty-link">困りごとから探す →</a>
+    </div>
+
+    <div class="history-clear-block" id="history-clear-block" hidden>
+      <button type="button" class="btn-clear-all" id="clear-all-btn">判断履歴をすべて削除</button>
+    </div>
+
+    <p class="privacy-note">
+      この記録は、あなたのブラウザだけに保存されています。<br>
+      VIGORのサーバーには送信されません。他の端末では見られません。
+    </p>
+
+  </div>
+
+  <script src="/shared-history.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>

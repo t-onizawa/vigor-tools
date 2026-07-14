@@ -1,0 +1,126 @@
+.history-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  margin-bottom: 1.5rem;
+}
+
+.history-card {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 1rem 1.1rem;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background: var(--bg);
+}
+
+.history-card-label {
+  font-size: 0.92rem;
+  font-weight: 700;
+  margin-bottom: 0.3rem;
+}
+
+.history-card-result {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+}
+
+.history-card-actions {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  flex-shrink: 0;
+}
+
+.history-card-link {
+  font-size: 0.8rem;
+  color: var(--text);
+  text-decoration: none;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.history-card-link:hover {
+  text-decoration: underline;
+}
+
+.history-card-remove {
+  font-size: 0.75rem;
+  color: var(--text-light);
+  background: none;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 0.35rem 0.65rem;
+  cursor: pointer;
+  font-family: inherit;
+  transition: color 0.15s, border-color 0.15s;
+}
+
+.history-card-remove:hover {
+  color: #c0392b;
+  border-color: #c0392b;
+}
+
+.history-empty {
+  padding: 2rem 1rem;
+  text-align: center;
+  color: var(--text-muted);
+  font-size: 0.88rem;
+}
+
+.history-empty .empty-link {
+  display: inline-block;
+  margin-top: 0.75rem;
+  color: var(--text);
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.history-empty .empty-link:hover {
+  text-decoration: underline;
+}
+
+.history-clear-block {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.btn-clear-all {
+  font-size: 0.8rem;
+  color: var(--text-light);
+  background: none;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 0.5rem 1.2rem;
+  cursor: pointer;
+  font-family: inherit;
+  transition: color 0.15s, border-color 0.15s;
+}
+
+.btn-clear-all:hover {
+  color: #c0392b;
+  border-color: #c0392b;
+}
+
+.privacy-note {
+  font-size: 0.75rem;
+  color: var(--text-light);
+  line-height: 1.7;
+  text-align: center;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--border);
+}
+
+@media (max-width: 480px) {
+  .history-card {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .history-card-actions {
+    width: 100%;
+    justify-content: space-between;
+  }
+}
