@@ -38,6 +38,11 @@
   color: var(--text-muted);
 }
 
+.field-hint--profile {
+  color: var(--text-light);
+  line-height: 1.6;
+}
+
 .form-error {
   margin-top: 0.65rem;
   margin-bottom: 0.5rem;

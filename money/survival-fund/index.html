@@ -51,6 +51,10 @@
         <label for="monthly-expense">毎月の生活費（円）</label>
         <input type="number" id="monthly-expense" name="monthly-expense" inputmode="numeric" min="0" placeholder="例：220000">
         <p class="field-hint"><a href="../fixed-cost-check/">固定費チェックで確認する →</a></p>
+        <p class="field-hint field-hint--profile" id="subscription-hint" hidden>
+          参考：サブスク月額合計 <span id="subscription-amount">0</span>円
+          （<span id="subscription-date"></span>時点、生活費の一部として含めてください）
+        </p>
       </div>
 
       <div class="field-block">
@@ -111,6 +115,11 @@
           <span class="related-name">固定費チェック</span>
           <span class="related-status">→</span>
         </a>
+        <a class="related-item" href="../subscriptions/">
+          <span class="related-badge">計算</span>
+          <span class="related-name">サブスク年間総額計算</span>
+          <span class="related-status">→</span>
+        </a>
       </div>
     </section>
 
@@ -119,6 +128,7 @@
   </div>
 
   <script src="/shared-history.js"></script>
+  <script src="/shared-profile.js"></script>
   <script src="script.js"></script>
 </body>
 </html>

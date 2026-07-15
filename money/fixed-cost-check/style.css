@@ -5,6 +5,37 @@
   line-height: 1.7;
 }
 
+.profile-summary {
+  padding: 1rem 1.1rem;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background: var(--surface);
+  margin-bottom: 1.5rem;
+}
+
+.profile-summary-label {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  margin-bottom: 0.3rem;
+}
+
+.profile-summary-value {
+  font-size: 1.3rem;
+  font-weight: 800;
+  margin-bottom: 0.4rem;
+}
+
+.profile-summary-link {
+  font-size: 0.78rem;
+  color: var(--text);
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.profile-summary-link:hover {
+  text-decoration: underline;
+}
+
 .memo-section {
   margin-top: 2.5rem;
   padding-top: 2rem;

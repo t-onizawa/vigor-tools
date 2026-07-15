@@ -40,6 +40,14 @@
       <p class="page-desc">毎月なんとなく払っている支出を見える化し、「まずここから見直せばいい」を見つける。</p>
     </header>
 
+    <div class="profile-summary" id="profile-summary" hidden>
+      <p class="profile-summary-label">
+        サブスク月額合計（<span id="profile-summary-date"></span>時点）
+      </p>
+      <p class="profile-summary-value"><span id="profile-summary-amount">0</span>円</p>
+      <a href="../subscriptions/" class="profile-summary-link">サブスク年間総額計算で見直す →</a>
+    </div>
+
     <div class="progress-bar">
       <div class="bar-fill"></div>
     </div>
@@ -138,6 +146,11 @@
       <h2 class="related-heading">次はこちら</h2>
       <p class="related-sub">今の状況に合わせて、次に使えるツールです。</p>
             <div class="related-list">
+        <a class="related-item" href="../subscriptions/">
+          <span class="related-badge">計算</span>
+          <span class="related-name">サブスク年間総額計算</span>
+          <span class="related-status">→</span>
+        </a>
         <a class="related-item" href="../survival-fund/">
           <span class="related-badge">計算</span>
           <span class="related-name">生活防衛資金シミュレーター</span>
@@ -159,6 +172,7 @@
     <p class="bookmark-tip">毎月の見直し習慣に。このページをブックマークしておくと便利です。</p>
 
   </div>
+  <script src="/shared-profile.js"></script>
   <script src="script.js"></script>
 </body>
 </html>

@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="サブスクを月額・年額で入力するだけで、年間総額と月額合計を計算する。固定費チェックへそのまま反映できる。">
+  <title>サブスク年間総額計算 — VIGOR TOOLS</title>
+  <link rel="stylesheet" href="../../shared.css">
+  <link rel="stylesheet" href="style.css">
+  <!-- OGP -->
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="VIGOR TOOLS">
+  <meta property="og:title" content="サブスク年間総額計算 — VIGOR TOOLS">
+  <meta property="og:description" content="サブスクを月額・年額で入力するだけで、年間総額と月額合計を計算する。固定費チェックへそのまま反映できる。">
+  <meta property="og:url" content="https://vigorlab.net/money/subscriptions/">
+  <meta property="og:image" content="https://vigorlab.net/assets/brand/og-image.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="サブスク年間総額計算 — VIGOR TOOLS">
+  <meta name="twitter:description" content="サブスクを月額・年額で入力するだけで、年間総額と月額合計を計算する。固定費チェックへそのまま反映できる。">
+  <meta name="twitter:image" content="https://vigorlab.net/assets/brand/og-image.png">
+  <link rel="canonical" href="https://vigorlab.net/money/subscriptions/">
+  <link rel="icon" href="/assets/brand/favicon.svg" type="image/svg+xml">
+  <link rel="alternate icon" href="/assets/brand/favicon.ico">
+  <link rel="apple-touch-icon" href="/assets/brand/apple-touch-icon.png">
+  <link rel="manifest" href="/assets/brand/site.webmanifest">
+</head>
+<body>
+  <div class="container">
+
+    <nav class="breadcrumb">
+      <a href="../../">VIGOR TOOLS</a>
+      <span class="sep">›</span>
+      <a href="../">お金</a>
+      <span class="sep">›</span>
+      <span>サブスク年間総額計算</span>
+    </nav>
+
+    <header class="page-header">
+      <h1>サブスク年間総額計算</h1>
+      <p class="page-desc">サブスクを1つずつ入力するだけで、月額合計と年間総額が見えます。</p>
+    </header>
+
+    <div class="sub-list" id="sub-list"></div>
+
+    <button type="button" class="btn-add-row" id="add-row-btn">＋ サブスクを追加する</button>
+
+    <p class="form-error" id="form-error" hidden>金額を入力してください。</p>
+    <button type="button" class="btn-check" id="calc-btn">計算する</button>
+
+    <section class="result-section" id="result-section" hidden>
+
+      <div class="total-box">
+        <div class="total-row">
+          <p class="total-label">月額合計</p>
+          <p class="total-value"><span id="monthly-total">0</span>円</p>
+        </div>
+        <div class="total-row">
+          <p class="total-label">年間総額</p>
+          <p class="total-value"><span id="annual-total">0</span>円</p>
+        </div>
+      </div>
+
+      <p class="disclaimer">
+        ※月額換算は「年額 ÷ 12」の概算です。
+      </p>
+
+      <div class="history-save" id="history-save-block">
+        <button type="button" class="btn-save-history" id="save-history-btn">この結果を判断履歴に残す</button>
+      </div>
+      <div class="history-saved" id="history-saved-block" hidden>
+        <p class="saved-message">この結果を判断履歴に保存しました。</p>
+        <a href="/history/" class="history-link">判断履歴を見る →</a>
+      </div>
+
+      <div class="profile-save" id="profile-save-block">
+        <button type="button" class="btn-save-profile" id="save-profile-btn">固定費チェックへ反映する</button>
+        <p class="profile-hint">サブスクの月額合計を、固定費チェックで参照できるようにします。</p>
+      </div>
+      <div class="profile-saved" id="profile-saved-block" hidden>
+        <p class="saved-message">固定費チェックへ反映しました。</p>
+        <a href="../fixed-cost-check/" class="history-link">固定費チェックを見る →</a>
+      </div>
+
+      <button type="button" class="reset-btn" id="reset-btn">もう一度計算する</button>
+
+    </section>
+
+    <section class="related-tools">
+      <h2 class="related-heading">次はこちら</h2>
+      <p class="related-sub">今の状況に合わせて、次に使えるツールです。</p>
+      <div class="related-list">
+        <a class="related-item" href="../fixed-cost-check/">
+          <span class="related-badge">チェックリスト</span>
+          <span class="related-name">固定費チェック</span>
+          <span class="related-status">→</span>
+        </a>
+        <a class="related-item" href="../survival-fund/">
+          <span class="related-badge">計算</span>
+          <span class="related-name">生活防衛資金シミュレーター</span>
+          <span class="related-status">→</span>
+        </a>
+      </div>
+    </section>
+
+    <p class="bookmark-tip">サブスクは増えがち。定期的に見直すのにブックマークしておくと便利です。</p>
+
+  </div>
+
+  <script src="/shared-history.js"></script>
+  <script src="/shared-profile.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>

@@ -3,6 +3,19 @@ var resultSection = document.getElementById('result-section');
 var formError = document.getElementById('form-error');
 var currentResult = '';
 
+// 共通データ（Profile）：サブスク月額合計を「参考値」として表示する。
+// 生活費全体の一部でしかないため、自動入力はしない（誤解を招くため）。
+(function showSubscriptionHint() {
+  if (typeof VigorProfile === 'undefined') return;
+  var field = VigorProfile.get('monthlySubscriptionTotal');
+  if (!field) return;
+
+  document.getElementById('subscription-amount').textContent =
+    Number(field.value).toLocaleString('ja-JP');
+  document.getElementById('subscription-date').textContent = field.updatedAt;
+  document.getElementById('subscription-hint').hidden = false;
+})();
+
 form.addEventListener('submit', function (e) {
   e.preventDefault();
 

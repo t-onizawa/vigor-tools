@@ -54,6 +54,20 @@ resetBtn.addEventListener('click', () => {
 restoreState();
 updateProgress();
 
+// 共通データ（Profile）：サブスク年間総額計算で入力された月額合計を表示する
+function renderProfileSummary() {
+  if (typeof VigorProfile === 'undefined') return;
+  const field = VigorProfile.get('monthlySubscriptionTotal');
+  if (!field) return;
+
+  document.getElementById('profile-summary-amount').textContent =
+    Number(field.value).toLocaleString('ja-JP');
+  document.getElementById('profile-summary-date').textContent = field.updatedAt;
+  document.getElementById('profile-summary').hidden = false;
+}
+
+renderProfileSummary();
+
 // 見直し候補メモ
 const memoFields = {
   today: document.getElementById('memo-today'),
