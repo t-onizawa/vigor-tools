@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="AIに相談すべきか、専門家や信頼できる人に相談すべきか迷ったときの比較シート。判定はせず、理由を書き出して整理する。">
+  <title>AIに聞くべきか、人に聞くべきか 判断シート — VIGOR TOOLS</title>
+  <link rel="stylesheet" href="../../shared.css">
+  <link rel="stylesheet" href="style.css">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="VIGOR TOOLS">
+  <meta property="og:title" content="AIに聞くべきか、人に聞くべきか 判断シート — VIGOR TOOLS">
+  <meta property="og:description" content="AIに相談すべきか、専門家や信頼できる人に相談すべきか迷ったときの比較シート。判定はせず、理由を書き出して整理する。">
+  <meta property="og:url" content="https://vigorlab.net/ai/ai-or-human/">
+  <meta property="og:image" content="https://vigorlab.net/assets/brand/og-image.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="AIに聞くべきか、人に聞くべきか 判断シート — VIGOR TOOLS">
+  <meta name="twitter:description" content="AIに相談すべきか、専門家や信頼できる人に相談すべきか迷ったときの比較シート。判定はせず、理由を書き出して整理する。">
+  <meta name="twitter:image" content="https://vigorlab.net/assets/brand/og-image.png">
+  <link rel="canonical" href="https://vigorlab.net/ai/ai-or-human/">
+  <link rel="icon" href="/assets/brand/favicon.svg" type="image/svg+xml">
+  <link rel="alternate icon" href="/assets/brand/favicon.ico">
+  <link rel="apple-touch-icon" href="/assets/brand/apple-touch-icon.png">
+  <link rel="manifest" href="/assets/brand/site.webmanifest">
+</head>
+<body>
+  <div class="container">
+    <nav class="breadcrumb">
+      <a href="../../">VIGOR TOOLS</a>
+      <span class="sep">›</span>
+      <a href="../">AI活用</a>
+      <span class="sep">›</span>
+      <span>AIに聞くべきか、人に聞くべきか 判断シート</span>
+    </nav>
+
+    <header class="page-header">
+      <h1>AIに聞くべきか、人に聞くべきか 判断シート</h1>
+      <p class="page-desc">判定はしません。頭の中にある理由を、そのまま書き出すだけです。</p>
+    </header>
+
+    <div class="field-block">
+      <label for="topic">何について相談しようとしていますか？（任意）</label>
+      <input type="text" id="topic" placeholder="例：転職の相談、体調のこと">
+    </div>
+
+    <div class="compare-grid">
+      <div class="compare-col">
+        <label for="ai-reasons">AIに向いている理由</label>
+        <textarea id="ai-reasons" rows="8" placeholder="例：&#10;すぐに壁打ちしたい&#10;人に話す前に整理したい"></textarea>
+      </div>
+      <div class="compare-col">
+        <label for="human-reasons">人に相談すべき理由</label>
+        <textarea id="human-reasons" rows="8" placeholder="例：&#10;専門的な判断が必要&#10;責任のある決断だから"></textarea>
+      </div>
+    </div>
+
+    <p class="auto-save-note">入力内容は、このブラウザに自動で保存されます。</p>
+
+    <div class="history-save" id="history-save-block" hidden>
+      <button type="button" class="btn-save-history" id="save-history-btn">この内容を判断履歴に残す</button>
+    </div>
+    <div class="history-saved" id="history-saved-block" hidden>
+      <p class="saved-message">この内容を判断履歴に保存しました。</p>
+      <a href="/history/" class="history-link">判断履歴を見る →</a>
+    </div>
+
+    <section class="related-tools">
+      <h2 class="related-heading">次はこちら</h2>
+      <p class="related-sub">今の状況に合わせて、次に使えるツールです。</p>
+      <div class="related-list">
+        <a class="related-item" href="../task-sort/">
+          <span class="related-badge">思考ツール</span>
+          <span class="related-name">AI作業仕分けシート</span>
+          <span class="related-status">→</span>
+        </a>
+      </div>
+    </section>
+
+    <p class="bookmark-tip">気持ちが変わるたびに、書き直してかまいません。</p>
+  </div>
+
+  <script src="/shared-history.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>

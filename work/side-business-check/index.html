@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="副業を始めていい時期か、5つの質問で状態を確認する診断ツール。判定は断定せず、今の状態を言葉で返す。">
+  <title>副業しどき診断 — VIGOR TOOLS</title>
+  <link rel="stylesheet" href="../../shared.css">
+  <link rel="stylesheet" href="style.css">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="VIGOR TOOLS">
+  <meta property="og:title" content="副業しどき診断 — VIGOR TOOLS">
+  <meta property="og:description" content="副業を始めていい時期か、5つの質問で状態を確認する診断ツール。判定は断定せず、今の状態を言葉で返す。">
+  <meta property="og:url" content="https://vigorlab.net/work/side-business-check/">
+  <meta property="og:image" content="https://vigorlab.net/assets/brand/og-image.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="副業しどき診断 — VIGOR TOOLS">
+  <meta name="twitter:description" content="副業を始めていい時期か、5つの質問で状態を確認する診断ツール。判定は断定せず、今の状態を言葉で返す。">
+  <meta name="twitter:image" content="https://vigorlab.net/assets/brand/og-image.png">
+  <link rel="canonical" href="https://vigorlab.net/work/side-business-check/">
+  <link rel="icon" href="/assets/brand/favicon.svg" type="image/svg+xml">
+  <link rel="alternate icon" href="/assets/brand/favicon.ico">
+  <link rel="apple-touch-icon" href="/assets/brand/apple-touch-icon.png">
+  <link rel="manifest" href="/assets/brand/site.webmanifest">
+</head>
+<body>
+  <div class="container">
+    <nav class="breadcrumb">
+      <a href="../../">VIGOR TOOLS</a>
+      <span class="sep">›</span>
+      <a href="../">仕事</a>
+      <span class="sep">›</span>
+      <span>副業しどき診断</span>
+    </nav>
+
+    <header class="page-header">
+      <h1>副業しどき診断</h1>
+      <p class="page-desc">5つの質問で、「今、始めていい時期か」を確認します。</p>
+    </header>
+
+    <form id="check-form" novalidate>
+
+      <div class="q-block" id="q1">
+        <p class="q-num">Q1 · 本業</p>
+        <p class="q-text">今の本業の状況は？</p>
+        <div class="options">
+          <label class="opt"><input type="radio" name="q1" value="2"><span>余裕がある</span></label>
+          <label class="opt"><input type="radio" name="q1" value="1"><span>やや忙しい</span></label>
+          <label class="opt"><input type="radio" name="q1" value="0"><span>かなり忙しい</span></label>
+        </div>
+      </div>
+
+      <div class="q-block" id="q2">
+        <p class="q-num">Q2 · スキル</p>
+        <p class="q-text">副収入につながりそうなスキルは？</p>
+        <div class="options">
+          <label class="opt"><input type="radio" name="q2" value="2"><span>既にある</span></label>
+          <label class="opt"><input type="radio" name="q2" value="1"><span>学びながらできそう</span></label>
+          <label class="opt"><input type="radio" name="q2" value="0"><span>まだ何ができるか分からない</span></label>
+        </div>
+      </div>
+
+      <div class="q-block" id="q3">
+        <p class="q-num">Q3 · 周囲の理解</p>
+        <p class="q-text">家族・周囲の理解は？</p>
+        <div class="options">
+          <label class="opt"><input type="radio" name="q3" value="2"><span>理解・応援がある</span></label>
+          <label class="opt"><input type="radio" name="q3" value="1"><span>特に反対はされていない</span></label>
+          <label class="opt"><input type="radio" name="q3" value="0"><span>まだ相談できていない</span></label>
+        </div>
+      </div>
+
+      <div class="q-block" id="q4">
+        <p class="q-num">Q4 · 資金</p>
+        <p class="q-text">収入への影響は、どこまで許容できる？</p>
+        <div class="options">
+          <label class="opt"><input type="radio" name="q4" value="2"><span>収入がゼロでも当面困らない</span></label>
+          <label class="opt"><input type="radio" name="q4" value="1"><span>多少のリスクは許容できる</span></label>
+          <label class="opt"><input type="radio" name="q4" value="0"><span>収入を絶対に減らせない</span></label>
+        </div>
+      </div>
+
+      <div class="q-block" id="q5">
+        <p class="q-num">Q5 · 理由の明確さ</p>
+        <p class="q-text">副業を始めたい理由は？</p>
+        <div class="options">
+          <label class="opt"><input type="radio" name="q5" value="2"><span>はっきりしている</span></label>
+          <label class="opt"><input type="radio" name="q5" value="1"><span>漠然とある</span></label>
+          <label class="opt"><input type="radio" name="q5" value="0"><span>まだよく分からない</span></label>
+        </div>
+      </div>
+
+      <p class="form-error" id="form-error" hidden>全ての質問に答えてください。</p>
+      <button type="submit" class="btn-check">診断する</button>
+
+    </form>
+
+    <section class="result-section" id="result-section" hidden>
+
+      <div class="verdict-box" id="verdict-box">
+        <p class="verdict-score" id="verdict-score"></p>
+        <p class="verdict-title" id="verdict-title"></p>
+        <p class="verdict-desc" id="verdict-desc"></p>
+      </div>
+
+      <div class="history-save" id="history-save-block">
+        <button type="button" class="btn-save-history" id="save-history-btn">この結果を判断履歴に残す</button>
+      </div>
+      <div class="history-saved" id="history-saved-block" hidden>
+        <p class="saved-message">この結果を判断履歴に保存しました。</p>
+        <a href="/history/" class="history-link">判断履歴を見る →</a>
+      </div>
+
+      <button type="button" class="reset-btn" id="reset-btn">もう一度診断する</button>
+
+    </section>
+
+    <section class="related-tools">
+      <h2 class="related-heading">次はこちら</h2>
+      <p class="related-sub">今の状況に合わせて、次に使えるツールです。</p>
+      <div class="related-list">
+        <a class="related-item" href="../independence/">
+          <span class="related-badge">診断ツール</span>
+          <span class="related-name">独立準備チェック</span>
+          <span class="related-status">→</span>
+        </a>
+        <a class="related-item" href="../../ai/task-sort/">
+          <span class="related-badge">思考ツール</span>
+          <span class="related-name">AI作業仕分けシート</span>
+          <span class="related-status">→</span>
+        </a>
+      </div>
+    </section>
+
+    <p class="bookmark-tip">このページをブックマークしておくと、次回もすぐ使えます。</p>
+  </div>
+
+  <script src="/shared-history.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>

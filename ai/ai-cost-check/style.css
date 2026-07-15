@@ -1,0 +1,257 @@
+.page-desc {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  margin-top: 0.5rem;
+  line-height: 1.7;
+}
+
+.field-block {
+  margin-bottom: 1.1rem;
+}
+
+.field-block label {
+  display: block;
+  font-size: 0.85rem;
+  font-weight: 700;
+  margin-bottom: 0.4rem;
+}
+
+.field-block input[type="number"] {
+  width: 100%;
+  padding: 0.7rem 0.85rem;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  font-size: 0.95rem;
+  font-family: inherit;
+  color: var(--text);
+  background: var(--bg);
+}
+
+.field-block input[type="number"]:focus {
+  outline: none;
+  border-color: #aaa;
+}
+
+.field-hint {
+  margin-top: 0.4rem;
+  font-size: 0.76rem;
+  color: var(--text-muted);
+}
+
+/* ========================
+   Subscription rows
+   ======================== */
+.sub-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  margin-bottom: 0.85rem;
+}
+
+.sub-row {
+  display: grid;
+  grid-template-columns: 1fr 6.5rem 4.5rem auto;
+  gap: 0.5rem;
+  align-items: center;
+  padding: 0.6rem;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+}
+
+.sub-row input[type="text"],
+.sub-row input[type="number"] {
+  width: 100%;
+  padding: 0.55rem 0.6rem;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  font-size: 0.88rem;
+  font-family: inherit;
+  color: var(--text);
+  background: var(--bg);
+}
+
+.sub-row select {
+  width: 100%;
+  padding: 0.55rem 0.4rem;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  font-size: 0.82rem;
+  font-family: inherit;
+  color: var(--text);
+  background: var(--bg);
+}
+
+.sub-row input:focus,
+.sub-row select:focus {
+  outline: none;
+  border-color: #aaa;
+}
+
+.sub-row-remove {
+  background: none;
+  border: none;
+  color: var(--text-light);
+  font-size: 1.1rem;
+  cursor: pointer;
+  padding: 0.3rem 0.5rem;
+  line-height: 1;
+}
+
+.sub-row-remove:hover {
+  color: #c0392b;
+}
+
+.btn-add-row {
+  display: block;
+  width: 100%;
+  padding: 0.6rem;
+  margin-bottom: 1.25rem;
+  background: transparent;
+  border: 1px dashed var(--border);
+  border-radius: var(--radius);
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  cursor: pointer;
+  font-family: inherit;
+  transition: border-color 0.15s, color 0.15s;
+}
+
+.btn-add-row:hover {
+  border-color: #aaa;
+  color: var(--text);
+}
+
+.form-error {
+  margin-bottom: 0.75rem;
+  font-size: 0.8rem;
+  color: #c0392b;
+  text-align: center;
+}
+
+.btn-check {
+  display: block;
+  width: 100%;
+  padding: 0.85rem;
+  background: var(--text);
+  color: #fff;
+  border: none;
+  border-radius: var(--radius);
+  font-size: 0.95rem;
+  font-weight: 700;
+  cursor: pointer;
+  font-family: inherit;
+  letter-spacing: 0.02em;
+  transition: opacity 0.15s;
+}
+
+.btn-check:hover {
+  opacity: 0.85;
+}
+
+/* ========================
+   Result
+   ======================== */
+.total-box {
+  padding: 1.5rem;
+  border-radius: var(--radius);
+  background: var(--surface);
+  margin-bottom: 1rem;
+}
+
+.total-row {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  padding: 0.4rem 0;
+}
+
+.total-row + .total-row {
+  border-top: 1px solid var(--border);
+  margin-top: 0.4rem;
+  padding-top: 0.85rem;
+}
+
+.total-label {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+}
+
+.total-value {
+  font-size: 1.5rem;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+}
+
+.disclaimer {
+  font-size: 0.74rem;
+  color: var(--text-light);
+  line-height: 1.7;
+  margin-bottom: 1.5rem;
+}
+
+/* ========================
+   Save actions（判断履歴・共通データ）
+   ======================== */
+.history-save,
+.history-saved,
+.profile-save,
+.profile-saved {
+  text-align: center;
+  margin-bottom: 1rem;
+  padding: 1rem;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+}
+
+.btn-save-history,
+.btn-save-profile {
+  padding: 0.6rem 1.4rem;
+  background: transparent;
+  border: 1px solid var(--text);
+  border-radius: 6px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  cursor: pointer;
+  color: var(--text);
+  font-family: inherit;
+  transition: background 0.15s, color 0.15s;
+}
+
+.btn-save-history:hover,
+.btn-save-profile:hover {
+  background: var(--text);
+  color: #fff;
+}
+
+.profile-hint {
+  margin-top: 0.5rem;
+  font-size: 0.74rem;
+  color: var(--text-light);
+}
+
+.saved-message {
+  font-size: 0.85rem;
+  color: var(--text);
+  margin-bottom: 0.5rem;
+}
+
+.history-link {
+  font-size: 0.82rem;
+  color: var(--text);
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.history-link:hover {
+  text-decoration: underline;
+}
+
+@media (max-width: 480px) {
+  .sub-row {
+    grid-template-columns: 1fr;
+  }
+
+  .total-value {
+    font-size: 1.3rem;
+  }
+}
