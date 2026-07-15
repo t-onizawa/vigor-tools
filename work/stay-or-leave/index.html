@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="続ける理由と辞めたい理由を書き出すだけ。判定は出さず、頭の中で絡まっている理由を、自分の言葉で整理する比較シート。">
+  <title>続ける理由 vs 辞めたい理由 比較シート — VIGOR TOOLS</title>
+  <link rel="stylesheet" href="../../shared.css">
+  <link rel="stylesheet" href="style.css">
+  <!-- OGP -->
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="VIGOR TOOLS">
+  <meta property="og:title" content="続ける理由 vs 辞めたい理由 比較シート — VIGOR TOOLS">
+  <meta property="og:description" content="続ける理由と辞めたい理由を書き出すだけ。判定は出さず、頭の中で絡まっている理由を、自分の言葉で整理する比較シート。">
+  <meta property="og:url" content="https://vigorlab.net/work/stay-or-leave/">
+  <meta property="og:image" content="https://vigorlab.net/assets/brand/og-image.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="続ける理由 vs 辞めたい理由 比較シート — VIGOR TOOLS">
+  <meta name="twitter:description" content="続ける理由と辞めたい理由を書き出すだけ。判定は出さず、頭の中で絡まっている理由を、自分の言葉で整理する比較シート。">
+  <meta name="twitter:image" content="https://vigorlab.net/assets/brand/og-image.png">
+  <link rel="canonical" href="https://vigorlab.net/work/stay-or-leave/">
+  <link rel="icon" href="/assets/brand/favicon.svg" type="image/svg+xml">
+  <link rel="alternate icon" href="/assets/brand/favicon.ico">
+  <link rel="apple-touch-icon" href="/assets/brand/apple-touch-icon.png">
+  <link rel="manifest" href="/assets/brand/site.webmanifest">
+</head>
+<body>
+  <div class="container">
+
+    <nav class="breadcrumb">
+      <a href="../../">VIGOR TOOLS</a>
+      <span class="sep">›</span>
+      <a href="../">仕事</a>
+      <span class="sep">›</span>
+      <span>続ける理由 vs 辞めたい理由 比較シート</span>
+    </nav>
+
+    <header class="page-header">
+      <h1>続ける理由 vs 辞めたい理由 比較シート</h1>
+      <p class="page-desc">判定はしません。頭の中にある理由を、そのまま書き出すだけです。</p>
+    </header>
+
+    <div class="field-block">
+      <label for="topic">何について考えていますか？（任意）</label>
+      <input type="text" id="topic" placeholder="例：今の仕事、この習い事">
+    </div>
+
+    <div class="compare-grid">
+      <div class="compare-col">
+        <label for="stay-reasons">続ける理由</label>
+        <textarea id="stay-reasons" rows="8" placeholder="例：&#10;安定した収入がある&#10;人間関係は悪くない&#10;今辞めると次が見つかるか不安"></textarea>
+      </div>
+      <div class="compare-col">
+        <label for="leave-reasons">辞めたい理由</label>
+        <textarea id="leave-reasons" rows="8" placeholder="例：&#10;やりたいことができていない&#10;このままでいいのか、ずっと引っかかっている"></textarea>
+      </div>
+    </div>
+
+    <p class="auto-save-note">入力内容は、このブラウザに自動で保存されます。</p>
+
+    <div class="history-save" id="history-save-block" hidden>
+      <button type="button" class="btn-save-history" id="save-history-btn">この内容を判断履歴に残す</button>
+    </div>
+    <div class="history-saved" id="history-saved-block" hidden>
+      <p class="saved-message">この内容を判断履歴に保存しました。</p>
+      <a href="/history/" class="history-link">判断履歴を見る →</a>
+    </div>
+
+    <p class="next-step-note">
+      書き出せたら、次はこちらのツールで具体的に確認してみましょう。
+    </p>
+
+    <section class="related-tools">
+      <h2 class="related-heading">次はこちら</h2>
+      <p class="related-sub">今の状況に合わせて、次に使えるツールです。</p>
+      <div class="related-list">
+        <a class="related-item" href="../resignation-check/">
+          <span class="related-badge">チェックリスト</span>
+          <span class="related-name">退職チェック</span>
+          <span class="related-status">→</span>
+        </a>
+        <a class="related-item" href="../independence/">
+          <span class="related-badge">診断ツール</span>
+          <span class="related-name">独立準備チェック</span>
+          <span class="related-status">→</span>
+        </a>
+        <a class="related-item" href="../../money/survival-fund/">
+          <span class="related-badge">計算</span>
+          <span class="related-name">生活防衛資金シミュレーター</span>
+          <span class="related-status">→</span>
+        </a>
+        <a class="related-item" href="../../thinking/15min-do/">
+          <span class="related-badge">思考ツール</span>
+          <span class="related-name">15分Do変換ツール</span>
+          <span class="related-status">→</span>
+        </a>
+      </div>
+    </section>
+
+    <p class="bookmark-tip">気持ちが変わるたびに、書き直してかまいません。</p>
+
+  </div>
+
+  <script src="/shared-history.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
