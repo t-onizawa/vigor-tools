@@ -299,10 +299,6 @@ footer {
     grid-template-columns: 1fr;
   }
 
-  .worry-grid {
-    grid-template-columns: 1fr;
-  }
-
   .cat-grid {
     grid-template-columns: 1fr;
     gap: 0;
@@ -344,6 +340,12 @@ footer {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 0.85rem;
+}
+
+@media (max-width: 600px) {
+  .worry-grid {
+    grid-template-columns: 1fr;
+  }
 }
 
 .worry-card {
