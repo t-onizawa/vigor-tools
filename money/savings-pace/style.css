@@ -1,0 +1,149 @@
+.page-desc {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  margin-top: 0.5rem;
+  line-height: 1.7;
+}
+
+.field-block {
+  margin-bottom: 1.1rem;
+}
+
+.field-block label {
+  display: block;
+  font-size: 0.85rem;
+  font-weight: 700;
+  margin-bottom: 0.4rem;
+}
+
+.field-block input[type="number"] {
+  width: 100%;
+  padding: 0.7rem 0.85rem;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  font-size: 0.95rem;
+  font-family: inherit;
+  color: var(--text);
+  background: var(--bg);
+}
+
+.field-block input[type="number"]:focus {
+  outline: none;
+  border-color: #aaa;
+}
+
+.field-hint {
+  margin-top: 0.4rem;
+  font-size: 0.76rem;
+  color: var(--text-muted);
+}
+
+.form-error {
+  margin-top: 0.65rem;
+  margin-bottom: 0.5rem;
+  font-size: 0.8rem;
+  color: #c0392b;
+  text-align: center;
+}
+
+.btn-check {
+  display: block;
+  width: 100%;
+  padding: 0.85rem;
+  margin-top: 1.5rem;
+  background: var(--text);
+  color: #fff;
+  border: none;
+  border-radius: var(--radius);
+  font-size: 0.95rem;
+  font-weight: 700;
+  cursor: pointer;
+  font-family: inherit;
+  letter-spacing: 0.02em;
+  transition: opacity 0.15s;
+}
+
+.btn-check:hover {
+  opacity: 0.85;
+}
+
+.total-box {
+  padding: 2rem 1.5rem;
+  border-radius: var(--radius);
+  background: var(--surface);
+  text-align: center;
+  margin-bottom: 1.25rem;
+}
+
+.total-label {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  margin-bottom: 0.4rem;
+}
+
+.total-value {
+  font-size: 2.2rem;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  margin-bottom: 0.5rem;
+}
+
+.total-sub {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+}
+
+.disclaimer {
+  font-size: 0.74rem;
+  color: var(--text-light);
+  line-height: 1.7;
+  margin-bottom: 1.5rem;
+}
+
+.history-save,
+.history-saved {
+  text-align: center;
+  margin-bottom: 1.25rem;
+  padding: 1rem;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+}
+
+.btn-save-history {
+  padding: 0.6rem 1.4rem;
+  background: transparent;
+  border: 1px solid var(--text);
+  border-radius: 6px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  cursor: pointer;
+  color: var(--text);
+  font-family: inherit;
+  transition: background 0.15s, color 0.15s;
+}
+
+.btn-save-history:hover {
+  background: var(--text);
+  color: #fff;
+}
+
+.saved-message {
+  font-size: 0.85rem;
+  color: var(--text);
+  margin-bottom: 0.5rem;
+}
+
+.history-link {
+  font-size: 0.82rem;
+  color: var(--text);
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.history-link:hover {
+  text-decoration: underline;
+}
+
+@media (max-width: 480px) {
+  .total-value { font-size: 1.7rem; }
+}

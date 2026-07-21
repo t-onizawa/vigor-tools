@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="大きすぎるタスクを、AIに渡せる粒度のステップに分解する。判定はせず、書き出して整理するだけのシート。">
+  <title>タスクをAIに任せられる形へ分解するシート — VIGOR TOOLS</title>
+  <link rel="stylesheet" href="../../shared.css">
+  <link rel="stylesheet" href="style.css">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="VIGOR TOOLS">
+  <meta property="og:title" content="タスクをAIに任せられる形へ分解するシート — VIGOR TOOLS">
+  <meta property="og:description" content="大きすぎるタスクを、AIに渡せる粒度のステップに分解する。判定はせず、書き出して整理するだけのシート。">
+  <meta property="og:url" content="https://vigorlab.net/ai/task-breakdown/">
+  <meta property="og:image" content="https://vigorlab.net/assets/brand/og-image.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="タスクをAIに任せられる形へ分解するシート — VIGOR TOOLS">
+  <meta name="twitter:description" content="大きすぎるタスクを、AIに渡せる粒度のステップに分解する。判定はせず、書き出して整理するだけのシート。">
+  <meta name="twitter:image" content="https://vigorlab.net/assets/brand/og-image.png">
+  <link rel="canonical" href="https://vigorlab.net/ai/task-breakdown/">
+  <link rel="icon" href="/assets/brand/favicon.svg" type="image/svg+xml">
+  <link rel="alternate icon" href="/assets/brand/favicon.ico">
+  <link rel="apple-touch-icon" href="/assets/brand/apple-touch-icon.png">
+  <link rel="manifest" href="/assets/brand/site.webmanifest">
+</head>
+<body>
+  <div class="container">
+    <nav class="breadcrumb">
+      <a href="../../">VIGOR TOOLS</a>
+      <span class="sep">›</span>
+      <a href="../">AI活用</a>
+      <span class="sep">›</span>
+      <span>タスクをAIに任せられる形へ分解するシート</span>
+    </nav>
+
+    <header class="page-header">
+      <h1>タスクをAIに任せられる形へ分解するシート</h1>
+      <p class="page-desc">大きなタスクを、そのままAIに渡さない。小さなステップに分けて書き出すだけです。</p>
+    </header>
+
+    <div class="field-block">
+      <label for="task-name">元のタスク</label>
+      <input type="text" id="task-name" placeholder="例：来月のイベント企画">
+    </div>
+
+    <div class="field-block">
+      <label for="steps">分解したステップ</label>
+      <textarea id="steps" rows="8" placeholder="例：&#10;候補日を3つ出す&#10;会場の条件をリストにする&#10;告知文の下書きを作る"></textarea>
+    </div>
+
+    <p class="auto-save-note">入力内容は、このブラウザに自動で保存されます。</p>
+
+    <div class="history-save" id="history-save-block" hidden>
+      <button type="button" class="btn-save-history" id="save-history-btn">この内容を判断履歴に残す</button>
+    </div>
+    <div class="history-saved" id="history-saved-block" hidden>
+      <p class="saved-message">この内容を判断履歴に保存しました。</p>
+      <a href="/history/" class="history-link">判断履歴を見る →</a>
+    </div>
+
+    <section class="related-tools">
+      <h2 class="related-heading">次はこちら</h2>
+      <p class="related-sub">今の状況に合わせて、次に使えるツールです。</p>
+      <div class="related-list">
+        <a class="related-item" href="../task-sort/">
+          <span class="related-badge">思考ツール</span>
+          <span class="related-name">AI作業仕分けシート</span>
+          <span class="related-status">→</span>
+        </a>
+        <a class="related-item" href="../prep-for-ai/">
+          <span class="related-badge">テンプレート</span>
+          <span class="related-name">AIへ渡す前の情報整理シート</span>
+          <span class="related-status">→</span>
+        </a>
+      </div>
+    </section>
+
+    <p class="bookmark-tip">このページをブックマークしておくと、次回もすぐ使えます。</p>
+  </div>
+
+  <script src="/shared-history.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>

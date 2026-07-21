@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="迷っている2つの選択肢を、名前をつけて理由を書き出すだけの比較シート。判定はせず、頭の中を整理する。">
+  <title>迷っている選択肢の比較シート — VIGOR TOOLS</title>
+  <link rel="stylesheet" href="../../shared.css">
+  <link rel="stylesheet" href="style.css">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="VIGOR TOOLS">
+  <meta property="og:title" content="迷っている選択肢の比較シート — VIGOR TOOLS">
+  <meta property="og:description" content="迷っている2つの選択肢を、名前をつけて理由を書き出すだけの比較シート。判定はせず、頭の中を整理する。">
+  <meta property="og:url" content="https://vigorlab.net/thinking/options-compare/">
+  <meta property="og:image" content="https://vigorlab.net/assets/brand/og-image.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="迷っている選択肢の比較シート — VIGOR TOOLS">
+  <meta name="twitter:description" content="迷っている2つの選択肢を、名前をつけて理由を書き出すだけの比較シート。判定はせず、頭の中を整理する。">
+  <meta name="twitter:image" content="https://vigorlab.net/assets/brand/og-image.png">
+  <link rel="canonical" href="https://vigorlab.net/thinking/options-compare/">
+  <link rel="icon" href="/assets/brand/favicon.svg" type="image/svg+xml">
+  <link rel="alternate icon" href="/assets/brand/favicon.ico">
+  <link rel="apple-touch-icon" href="/assets/brand/apple-touch-icon.png">
+  <link rel="manifest" href="/assets/brand/site.webmanifest">
+</head>
+<body>
+  <div class="container">
+    <nav class="breadcrumb">
+      <a href="../../">VIGOR TOOLS</a>
+      <span class="sep">›</span>
+      <a href="../">思考整理</a>
+      <span class="sep">›</span>
+      <span>迷っている選択肢の比較シート</span>
+    </nav>
+
+    <header class="page-header">
+      <h1>迷っている選択肢の比較シート</h1>
+      <p class="page-desc">判定はしません。2つの選択肢の理由を、そのまま書き出すだけです。</p>
+    </header>
+
+    <div class="compare-grid">
+      <div class="compare-col">
+        <label for="option-a-name">選択肢A</label>
+        <input type="text" id="option-a-name" placeholder="例：今の家に住み続ける">
+        <textarea id="option-a-reasons" rows="6" placeholder="Aを選ぶ理由"></textarea>
+      </div>
+      <div class="compare-col">
+        <label for="option-b-name">選択肢B</label>
+        <input type="text" id="option-b-name" placeholder="例：引っ越す">
+        <textarea id="option-b-reasons" rows="6" placeholder="Bを選ぶ理由"></textarea>
+      </div>
+    </div>
+
+    <p class="auto-save-note">入力内容は、このブラウザに自動で保存されます。</p>
+
+    <div class="history-save" id="history-save-block" hidden>
+      <button type="button" class="btn-save-history" id="save-history-btn">この内容を判断履歴に残す</button>
+    </div>
+    <div class="history-saved" id="history-saved-block" hidden>
+      <p class="saved-message">この内容を判断履歴に保存しました。</p>
+      <a href="/history/" class="history-link">判断履歴を見る →</a>
+    </div>
+
+    <section class="related-tools">
+      <h2 class="related-heading">次はこちら</h2>
+      <p class="related-sub">今の状況に合わせて、次に使えるツールです。</p>
+      <div class="related-list">
+        <a class="related-item" href="../decision-checklist/">
+          <span class="related-badge">チェックリスト</span>
+          <span class="related-name">決断前の確認シート</span>
+          <span class="related-status">→</span>
+        </a>
+        <a class="related-item" href="../decision-deadline/">
+          <span class="related-badge">テンプレート</span>
+          <span class="related-name">決断期限メモ</span>
+          <span class="related-status">→</span>
+        </a>
+      </div>
+    </section>
+
+    <p class="bookmark-tip">気持ちが変わるたびに、書き直してかまいません。</p>
+  </div>
+
+  <script src="/shared-history.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>

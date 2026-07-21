@@ -97,7 +97,7 @@ body {
 }
 
 .checklist label:has(input:checked) {
-  color: #aaa;
+  color: #6b6b6b;
   text-decoration: line-through;
 }
 
@@ -106,7 +106,7 @@ body {
 }
 
 .checklist--ref label:has(input:checked) {
-  color: #bbb;
+  color: #6b6b6b;
 }
 
 .result {

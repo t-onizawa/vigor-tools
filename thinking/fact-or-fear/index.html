@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="不安なことを、実際に起きている事実と、頭の中の想像に分けて書き出す。判定はせず、区別するだけのシート。">
+  <title>不安を事実と想像に分けるシート — VIGOR TOOLS</title>
+  <link rel="stylesheet" href="../../shared.css">
+  <link rel="stylesheet" href="style.css">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="VIGOR TOOLS">
+  <meta property="og:title" content="不安を事実と想像に分けるシート — VIGOR TOOLS">
+  <meta property="og:description" content="不安なことを、実際に起きている事実と、頭の中の想像に分けて書き出す。判定はせず、区別するだけのシート。">
+  <meta property="og:url" content="https://vigorlab.net/thinking/fact-or-fear/">
+  <meta property="og:image" content="https://vigorlab.net/assets/brand/og-image.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="不安を事実と想像に分けるシート — VIGOR TOOLS">
+  <meta name="twitter:description" content="不安なことを、実際に起きている事実と、頭の中の想像に分けて書き出す。判定はせず、区別するだけのシート。">
+  <meta name="twitter:image" content="https://vigorlab.net/assets/brand/og-image.png">
+  <link rel="canonical" href="https://vigorlab.net/thinking/fact-or-fear/">
+  <link rel="icon" href="/assets/brand/favicon.svg" type="image/svg+xml">
+  <link rel="alternate icon" href="/assets/brand/favicon.ico">
+  <link rel="apple-touch-icon" href="/assets/brand/apple-touch-icon.png">
+  <link rel="manifest" href="/assets/brand/site.webmanifest">
+</head>
+<body>
+  <div class="container">
+    <nav class="breadcrumb">
+      <a href="../../">VIGOR TOOLS</a>
+      <span class="sep">›</span>
+      <a href="../">思考整理</a>
+      <span class="sep">›</span>
+      <span>不安を事実と想像に分けるシート</span>
+    </nav>
+
+    <header class="page-header">
+      <h1>不安を事実と想像に分けるシート</h1>
+      <p class="page-desc">判定はしません。事実と、頭の中の想像を、分けて書き出すだけです。</p>
+    </header>
+
+    <div class="compare-grid">
+      <div class="compare-col">
+        <label for="facts">実際に起きている事実</label>
+        <textarea id="facts" rows="8" placeholder="例：来月の売上目標が未達"></textarea>
+      </div>
+      <div class="compare-col">
+        <label for="fears">頭の中で想像していること</label>
+        <textarea id="fears" rows="8" placeholder="例：このままだと評価が下がるかもしれない"></textarea>
+      </div>
+    </div>
+
+    <p class="auto-save-note">入力内容は、このブラウザに自動で保存されます。</p>
+
+    <div class="history-save" id="history-save-block" hidden>
+      <button type="button" class="btn-save-history" id="save-history-btn">この内容を判断履歴に残す</button>
+    </div>
+    <div class="history-saved" id="history-saved-block" hidden>
+      <p class="saved-message">この内容を判断履歴に保存しました。</p>
+      <a href="/history/" class="history-link">判断履歴を見る →</a>
+    </div>
+
+    <section class="related-tools">
+      <h2 class="related-heading">次はこちら</h2>
+      <p class="related-sub">今の状況に合わせて、次に使えるツールです。</p>
+      <div class="related-list">
+        <a class="related-item" href="../decision-checklist/">
+          <span class="related-badge">チェックリスト</span>
+          <span class="related-name">決断前の確認シート</span>
+          <span class="related-status">→</span>
+        </a>
+        <a class="related-item" href="../../thinking/15min-do/">
+          <span class="related-badge">思考ツール</span>
+          <span class="related-name">15分Do変換ツール</span>
+          <span class="related-status">→</span>
+        </a>
+      </div>
+    </section>
+
+    <p class="bookmark-tip">気持ちが変わるたびに、書き直してかまいません。</p>
+  </div>
+
+  <script src="/shared-history.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>

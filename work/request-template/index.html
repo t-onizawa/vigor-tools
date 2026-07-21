@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="人に何かを依頼するとき、曖昧な依頼文にならないためのテンプレート。目的・期限・完了条件を整理してコピーする。">
+  <title>依頼文を明確にするテンプレ — VIGOR TOOLS</title>
+  <link rel="stylesheet" href="../../shared.css">
+  <link rel="stylesheet" href="style.css">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="VIGOR TOOLS">
+  <meta property="og:title" content="依頼文を明確にするテンプレ — VIGOR TOOLS">
+  <meta property="og:description" content="人に何かを依頼するとき、曖昧な依頼文にならないためのテンプレート。目的・期限・完了条件を整理してコピーする。">
+  <meta property="og:url" content="https://vigorlab.net/work/request-template/">
+  <meta property="og:image" content="https://vigorlab.net/assets/brand/og-image.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="依頼文を明確にするテンプレ — VIGOR TOOLS">
+  <meta name="twitter:description" content="人に何かを依頼するとき、曖昧な依頼文にならないためのテンプレート。目的・期限・完了条件を整理してコピーする。">
+  <meta name="twitter:image" content="https://vigorlab.net/assets/brand/og-image.png">
+  <link rel="canonical" href="https://vigorlab.net/work/request-template/">
+  <link rel="icon" href="/assets/brand/favicon.svg" type="image/svg+xml">
+  <link rel="alternate icon" href="/assets/brand/favicon.ico">
+  <link rel="apple-touch-icon" href="/assets/brand/apple-touch-icon.png">
+  <link rel="manifest" href="/assets/brand/site.webmanifest">
+</head>
+<body>
+  <div class="container">
+    <nav class="breadcrumb">
+      <a href="../../">VIGOR TOOLS</a>
+      <span class="sep">›</span>
+      <a href="../">仕事</a>
+      <span class="sep">›</span>
+      <span>依頼文を明確にするテンプレ</span>
+    </nav>
+
+    <header class="page-header">
+      <h1>依頼文を明確にするテンプレ</h1>
+      <p class="page-desc">3つの欄を埋めてコピーするだけ。「何をどこまでやればいいか」が伝わる依頼文になります。</p>
+    </header>
+
+    <div class="field-block">
+      <label for="what">お願いしたいこと</label>
+      <textarea id="what" rows="3" placeholder="例：資料のレイアウトを整えてほしい"></textarea>
+    </div>
+    <div class="field-block">
+      <label for="deadline">期限</label>
+      <textarea id="deadline" rows="2" placeholder="例：今週金曜の17時まで"></textarea>
+    </div>
+    <div class="field-block">
+      <label for="done">完了の条件</label>
+      <textarea id="done" rows="3" placeholder="例：フォントとサイズが統一されていればOK"></textarea>
+    </div>
+
+    <button type="button" class="btn-copy" id="copy-btn">まとめてコピーする</button>
+    <p class="copy-note" id="copy-note" hidden>コピーしました。</p>
+
+    <p class="auto-save-note">入力内容は、このブラウザに自動で保存されます。</p>
+
+    <div class="history-save" id="history-save-block" hidden>
+      <button type="button" class="btn-save-history" id="save-history-btn">この内容を判断履歴に残す</button>
+    </div>
+    <div class="history-saved" id="history-saved-block" hidden>
+      <p class="saved-message">この内容を判断履歴に保存しました。</p>
+      <a href="/history/" class="history-link">判断履歴を見る →</a>
+    </div>
+
+    <section class="related-tools">
+      <h2 class="related-heading">次はこちら</h2>
+      <p class="related-sub">今の状況に合わせて、次に使えるツールです。</p>
+      <div class="related-list">
+        <a class="related-item" href="../meeting-check/">
+          <span class="related-badge">チェックリスト</span>
+          <span class="related-name">会議で確認すべきこと整理シート</span>
+          <span class="related-status">→</span>
+        </a>
+        <a class="related-item" href="../priority-sheet/">
+          <span class="related-badge">テンプレート</span>
+          <span class="related-name">仕事の優先順位整理シート</span>
+          <span class="related-status">→</span>
+        </a>
+      </div>
+    </section>
+
+    <p class="bookmark-tip">よく使う型は、ブックマークしておくと便利です。</p>
+  </div>
+
+  <script src="/shared-history.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>

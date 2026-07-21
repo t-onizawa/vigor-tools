@@ -25,7 +25,7 @@ body {
 
 .back-link a {
   font-size: 0.78rem;
-  color: #999;
+  color: #6b6b6b;
   text-decoration: none;
   letter-spacing: 0.02em;
 }
@@ -58,7 +58,7 @@ body {
 
 .score-note {
   font-size: 0.8rem;
-  color: #888;
+  color: #6b6b6b;
   line-height: 1.6;
   margin-bottom: 2rem;
   padding: 0.75rem 1rem;
@@ -131,7 +131,7 @@ body {
 }
 
 .checklist label:has(input:checked) {
-  color: #bbb;
+  color: #6b6b6b;
   text-decoration: line-through;
 }
 
@@ -163,7 +163,7 @@ body {
   border-radius: 6px;
   font-size: 0.8rem;
   cursor: pointer;
-  color: #888;
+  color: #6b6b6b;
   font-family: inherit;
   transition: border-color 0.2s, color 0.2s;
 }

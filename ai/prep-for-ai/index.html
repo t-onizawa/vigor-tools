@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="AIに質問する前に、目的・背景・欲しい形式を整理する。曖昧な回答が返ってくる前に、伝えることを整えるシート。">
+  <title>AIへ渡す前の情報整理シート — VIGOR TOOLS</title>
+  <link rel="stylesheet" href="../../shared.css">
+  <link rel="stylesheet" href="style.css">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="VIGOR TOOLS">
+  <meta property="og:title" content="AIへ渡す前の情報整理シート — VIGOR TOOLS">
+  <meta property="og:description" content="AIに質問する前に、目的・背景・欲しい形式を整理する。曖昧な回答が返ってくる前に、伝えることを整えるシート。">
+  <meta property="og:url" content="https://vigorlab.net/ai/prep-for-ai/">
+  <meta property="og:image" content="https://vigorlab.net/assets/brand/og-image.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="AIへ渡す前の情報整理シート — VIGOR TOOLS">
+  <meta name="twitter:description" content="AIに質問する前に、目的・背景・欲しい形式を整理する。曖昧な回答が返ってくる前に、伝えることを整えるシート。">
+  <meta name="twitter:image" content="https://vigorlab.net/assets/brand/og-image.png">
+  <link rel="canonical" href="https://vigorlab.net/ai/prep-for-ai/">
+  <link rel="icon" href="/assets/brand/favicon.svg" type="image/svg+xml">
+  <link rel="alternate icon" href="/assets/brand/favicon.ico">
+  <link rel="apple-touch-icon" href="/assets/brand/apple-touch-icon.png">
+  <link rel="manifest" href="/assets/brand/site.webmanifest">
+</head>
+<body>
+  <div class="container">
+    <nav class="breadcrumb">
+      <a href="../../">VIGOR TOOLS</a>
+      <span class="sep">›</span>
+      <a href="../">AI活用</a>
+      <span class="sep">›</span>
+      <span>AIへ渡す前の情報整理シート</span>
+    </nav>
+
+    <header class="page-header">
+      <h1>AIへ渡す前の情報整理シート</h1>
+      <p class="page-desc">3つの欄を埋めてコピーするだけ。曖昧な質問を、伝わる形に整えます。</p>
+    </header>
+
+    <div class="field-block">
+      <label for="purpose">目的（何をしてほしいか）</label>
+      <textarea id="purpose" rows="3" placeholder="例：この文章を要約してほしい"></textarea>
+    </div>
+    <div class="field-block">
+      <label for="context">背景・前提（AIが知っておくべき情報）</label>
+      <textarea id="context" rows="3" placeholder="例：社内向けの報告書。読み手は非専門家"></textarea>
+    </div>
+    <div class="field-block">
+      <label for="format">欲しい出力の形</label>
+      <textarea id="format" rows="3" placeholder="例：箇条書きで3点、200字以内"></textarea>
+    </div>
+
+    <button type="button" class="btn-copy" id="copy-btn">まとめてコピーする</button>
+    <p class="copy-note" id="copy-note" hidden>コピーしました。</p>
+
+    <p class="auto-save-note">入力内容は、このブラウザに自動で保存されます。</p>
+
+    <div class="history-save" id="history-save-block" hidden>
+      <button type="button" class="btn-save-history" id="save-history-btn">この内容を判断履歴に残す</button>
+    </div>
+    <div class="history-saved" id="history-saved-block" hidden>
+      <p class="saved-message">この内容を判断履歴に保存しました。</p>
+      <a href="/history/" class="history-link">判断履歴を見る →</a>
+    </div>
+
+    <section class="related-tools">
+      <h2 class="related-heading">次はこちら</h2>
+      <p class="related-sub">今の状況に合わせて、次に使えるツールです。</p>
+      <div class="related-list">
+        <a class="related-item" href="../task-sort/">
+          <span class="related-badge">思考ツール</span>
+          <span class="related-name">AI作業仕分けシート</span>
+          <span class="related-status">→</span>
+        </a>
+        <a class="related-item" href="../task-breakdown/">
+          <span class="related-badge">テンプレート</span>
+          <span class="related-name">タスクをAIに任せられる形へ分解するシート</span>
+          <span class="related-status">→</span>
+        </a>
+      </div>
+    </section>
+
+    <p class="bookmark-tip">よく使う型は、ブックマークしておくと便利です。</p>
+  </div>
+
+  <script src="/shared-history.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>

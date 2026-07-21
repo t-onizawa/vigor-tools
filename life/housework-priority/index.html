@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="家事のうち、減らせそうなものを書き出して整理する。判定はせず、優先順位を自分の言葉で並べるだけのシート。">
+  <title>家事を減らす優先順位シート — VIGOR TOOLS</title>
+  <link rel="stylesheet" href="../../shared.css">
+  <link rel="stylesheet" href="style.css">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="VIGOR TOOLS">
+  <meta property="og:title" content="家事を減らす優先順位シート — VIGOR TOOLS">
+  <meta property="og:description" content="家事のうち、減らせそうなものを書き出して整理する。判定はせず、優先順位を自分の言葉で並べるだけのシート。">
+  <meta property="og:url" content="https://vigorlab.net/life/housework-priority/">
+  <meta property="og:image" content="https://vigorlab.net/assets/brand/og-image.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="家事を減らす優先順位シート — VIGOR TOOLS">
+  <meta name="twitter:description" content="家事のうち、減らせそうなものを書き出して整理する。判定はせず、優先順位を自分の言葉で並べるだけのシート。">
+  <meta name="twitter:image" content="https://vigorlab.net/assets/brand/og-image.png">
+  <link rel="canonical" href="https://vigorlab.net/life/housework-priority/">
+  <link rel="icon" href="/assets/brand/favicon.svg" type="image/svg+xml">
+  <link rel="alternate icon" href="/assets/brand/favicon.ico">
+  <link rel="apple-touch-icon" href="/assets/brand/apple-touch-icon.png">
+  <link rel="manifest" href="/assets/brand/site.webmanifest">
+</head>
+<body>
+  <div class="container">
+    <nav class="breadcrumb">
+      <a href="../../">VIGOR TOOLS</a>
+      <span class="sep">›</span>
+      <a href="../">暮らし</a>
+      <span class="sep">›</span>
+      <span>家事を減らす優先順位シート</span>
+    </nav>
+
+    <header class="page-header">
+      <h1>家事を減らす優先順位シート</h1>
+      <p class="page-desc">減らせそうな家事を、上から順に書き出すだけです。</p>
+    </header>
+
+    <div class="field-block">
+      <label for="tasks">減らせそうな家事（優先順に）</label>
+      <textarea id="tasks" rows="8" placeholder="例：&#10;1. 食洗機を導入して皿洗いをやめる&#10;2. 掃除機がけを2日に1回にする&#10;3. 洗濯を乾燥機付きにする"></textarea>
+    </div>
+
+    <p class="auto-save-note">入力内容は、このブラウザに自動で保存されます。</p>
+
+    <div class="history-save" id="history-save-block" hidden>
+      <button type="button" class="btn-save-history" id="save-history-btn">この内容を判断履歴に残す</button>
+    </div>
+    <div class="history-saved" id="history-saved-block" hidden>
+      <p class="saved-message">この内容を判断履歴に保存しました。</p>
+      <a href="/history/" class="history-link">判断履歴を見る →</a>
+    </div>
+
+    <section class="related-tools">
+      <h2 class="related-heading">次はこちら</h2>
+      <p class="related-sub">今の状況に合わせて、次に使えるツールです。</p>
+      <div class="related-list">
+        <a class="related-item" href="../../thinking/not-to-do/">
+          <span class="related-badge">テンプレート</span>
+          <span class="related-name">やらないことリスト</span>
+          <span class="related-status">→</span>
+        </a>
+        <a class="related-item" href="../moving-cost/">
+          <span class="related-badge">計算</span>
+          <span class="related-name">引越し費用シミュレーター</span>
+          <span class="related-status">→</span>
+        </a>
+      </div>
+    </section>
+
+    <p class="bookmark-tip">このページをブックマークしておくと、次回もすぐ使えます。</p>
+  </div>
+
+  <script src="/shared-history.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
