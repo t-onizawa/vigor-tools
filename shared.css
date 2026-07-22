@@ -202,6 +202,23 @@ body {
   font-size: 0.72rem;
   color: var(--text-light);
 }
+.card-status-badge {
+  margin-left: 0.4em;
+}
+.card-status-badge::before {
+  content: "・";
+  margin-right: 0.3em;
+}
+.card-status-badge--standalone {
+  display: block;
+  margin-top: 0.85rem;
+  margin-left: 0;
+  font-size: 0.72rem;
+  color: var(--text-light);
+}
+.card-status-badge--standalone::before {
+  content: none;
+}
 
 @media (max-width: 480px) {
   .tools-grid { grid-template-columns: 1fr 1fr; }
