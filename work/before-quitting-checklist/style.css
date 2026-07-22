@@ -1,0 +1,23 @@
+/* このページだけの追加調整（shared.cssは変更しない） */
+
+/* 結果カードと次のカテゴリ見出しの間の余白 */
+.result {
+  margin-bottom: 2rem;
+}
+
+/* カテゴリ見出しと補足文を近づけ、補足文とチェック項目の間に通常の余白を確保 */
+.section-title {
+  margin-bottom: 0.4rem;
+}
+.section-note {
+  font-size: 0.82rem;
+  color: var(--text-muted);
+  line-height: 1.6;
+  margin-bottom: 0.9rem;
+}
+
+@media (max-width: 480px) {
+  .result {
+    margin-bottom: 1.5rem;
+  }
+}
