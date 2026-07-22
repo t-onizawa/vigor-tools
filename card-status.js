@@ -82,15 +82,15 @@
     if (tool.type === 'checklist') {
       var done = checklistDoneCount(tool.storageKey, tool.total);
       if (done === 0) return null;
-      if (done >= tool.total) return '完了';
-      return done + ' / ' + tool.total + '項目';
+      if (done >= tool.total) return { text: '完了', done: true };
+      return { text: done + ' / ' + tool.total + '項目', done: false };
     }
     if (tool.type === 'history') {
-      return historyItems[tool.toolId] ? tool.label : null;
+      return historyItems[tool.toolId] ? { text: tool.label, done: true } : null;
     }
     if (tool.type === 'draft-or-history') {
-      if (historyItems[tool.toolId]) return tool.historyLabel;
-      if (hasDraftContent(tool.draftKey)) return tool.draftLabel;
+      if (historyItems[tool.toolId]) return { text: tool.historyLabel, done: true };
+      if (hasDraftContent(tool.draftKey)) return { text: tool.draftLabel, done: false };
       return null;
     }
     return null;
@@ -110,18 +110,18 @@
       }
       if (!tool) return;
 
-      var text;
+      var result;
       try {
-        text = badgeFor(tool, historyItems);
+        result = badgeFor(tool, historyItems);
       } catch (e) {
-        text = null;
+        result = null;
       }
-      if (!text) return;
+      if (!result || !result.text) return;
 
       var meta = link.querySelector('.card-meta');
       var badge = document.createElement('span');
-      badge.className = 'card-status-badge';
-      badge.textContent = text;
+      badge.className = 'card-status-badge' + (result.done ? ' card-status-badge--done' : '');
+      badge.textContent = result.text;
 
       if (meta) {
         meta.appendChild(badge);
