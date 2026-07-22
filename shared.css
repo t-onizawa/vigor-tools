@@ -120,6 +120,7 @@ body {
 /* Result */
 .result {
   margin-top: 2rem;
+  margin-bottom: 2rem;
   padding: 1.1rem 1.25rem;
   border-radius: var(--radius);
   text-align: center;
@@ -204,6 +205,7 @@ body {
 
 @media (max-width: 480px) {
   .tools-grid { grid-template-columns: 1fr 1fr; }
+  .result { margin-bottom: 1.5rem; }
 }
 
 /* 次はこちらセクション */
