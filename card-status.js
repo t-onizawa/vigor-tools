@@ -96,18 +96,24 @@
     return null;
   }
 
-  function run() {
-    var historyItems = getHistoryItems();
+  function findTool(href) {
+    for (var i = 0; i < TOOLS.length; i++) {
+      if (href.indexOf(TOOLS[i].match) !== -1) return TOOLS[i];
+    }
+    return null;
+  }
+
+  function makeBadge(result) {
+    var badge = document.createElement('span');
+    badge.className = 'card-status-badge' + (result.done ? ' card-status-badge--done' : '');
+    badge.textContent = result.text;
+    return badge;
+  }
+
+  function decorateCards(historyItems) {
     var links = document.querySelectorAll('a.card[href]');
     links.forEach(function (link) {
-      var href = link.getAttribute('href') || '';
-      var tool = null;
-      for (var i = 0; i < TOOLS.length; i++) {
-        if (href.indexOf(TOOLS[i].match) !== -1) {
-          tool = TOOLS[i];
-          break;
-        }
-      }
+      var tool = findTool(link.getAttribute('href') || '');
       if (!tool) return;
 
       var result;
@@ -119,9 +125,7 @@
       if (!result || !result.text) return;
 
       var meta = link.querySelector('.card-meta');
-      var badge = document.createElement('span');
-      badge.className = 'card-status-badge' + (result.done ? ' card-status-badge--done' : '');
-      badge.textContent = result.text;
+      var badge = makeBadge(result);
 
       if (meta) {
         meta.appendChild(badge);
@@ -135,6 +139,31 @@
         link.insertBefore(badge, arrow);
       }
     });
+  }
+
+  function decorateWorryLinks(historyItems) {
+    // 「困りごとから探す」の一覧リンクにも、同じ状態バッジをそのまま追記する
+    var links = document.querySelectorAll('a.worry-link[href]');
+    links.forEach(function (link) {
+      var tool = findTool(link.getAttribute('href') || '');
+      if (!tool) return;
+
+      var result;
+      try {
+        result = badgeFor(tool, historyItems);
+      } catch (e) {
+        result = null;
+      }
+      if (!result || !result.text) return;
+
+      link.appendChild(makeBadge(result));
+    });
+  }
+
+  function run() {
+    var historyItems = getHistoryItems();
+    decorateCards(historyItems);
+    decorateWorryLinks(historyItems);
   }
 
   try {
