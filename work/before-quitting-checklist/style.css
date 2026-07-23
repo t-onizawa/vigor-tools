@@ -1,12 +1,71 @@
 /* このページだけの追加調整（結果カード下の余白はshared.cssに共通化済み） */
+/* Founderレビュー：文字量・情報設計の見直し（この1ツールのみ対象） */
 
-/* カテゴリ見出しと補足文を近づけ、補足文とチェック項目の間に通常の余白を確保 */
+/* 見出し・補足文・チェック項目の階層をはっきり分ける */
 .section-title {
-  margin-bottom: 0.4rem;
+  font-size: 1.05rem;
+  margin-bottom: 0.35rem;
 }
 .section-note {
-  font-size: 0.82rem;
+  font-size: 0.95rem;
   color: var(--text-muted);
   line-height: 1.6;
-  margin-bottom: 0.9rem;
+  margin-bottom: 0.5rem;
+}
+
+/* 詳細説明は「詳しく見る」に分離し、初期表示の文字量を減らす */
+.section-details {
+  margin-bottom: 1rem;
+}
+.section-details summary {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  cursor: pointer;
+  width: fit-content;
+}
+.section-details summary:hover {
+  color: var(--text);
+}
+.section-details p {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  line-height: 1.6;
+  margin-top: 0.6rem;
+}
+
+/* チェック項目は16px以上、1行で読める長さに短縮済み */
+.checklist label {
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+/* 結果メッセージ：完了時は複数行のため左寄せ・行間広めに */
+.result {
+  font-size: 1rem;
+  white-space: pre-line;
+}
+.result.complete {
+  text-align: left;
+  line-height: 1.7;
+}
+
+/* 完了後の次の一歩は1つだけ、はっきり見せる */
+.next-step {
+  margin-bottom: 2rem;
+}
+.next-step-link {
+  display: block;
+  width: 100%;
+  padding: 0.85rem 1.25rem;
+  background: var(--text);
+  color: #fff;
+  text-align: center;
+  text-decoration: none;
+  border-radius: var(--radius);
+  font-size: 0.95rem;
+  font-weight: 700;
+  box-sizing: border-box;
+}
+.next-step-link:hover {
+  opacity: 0.85;
 }
