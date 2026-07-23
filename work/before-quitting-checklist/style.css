@@ -15,22 +15,69 @@
 
 /* 詳細説明は「詳しく見る」に分離し、初期表示の文字量を減らす */
 .section-details {
-  margin-bottom: 1rem;
+  margin: 0 0 0.85rem;
 }
+
+/* summaryを1つの押せる行として整える。標準の三角マーカーは消し、
+   CSSで統一したシェブロンに置き換える */
 .section-details summary {
-  font-size: 0.8rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  width: fit-content;
+  margin-left: -0.5rem;
+  padding: 0.3rem 0.5rem;
+  border-radius: 6px;
+  font-size: 0.82rem;
+  font-weight: 600;
+  line-height: 1.4;
+  letter-spacing: 0.01em;
   color: var(--text-muted);
   cursor: pointer;
-  width: fit-content;
+  list-style: none;
+  user-select: none;
+  transition: background-color 0.15s ease, color 0.15s ease;
 }
-.section-details summary:hover {
+.section-details summary::-webkit-details-marker {
+  display: none;
+}
+.section-details summary::marker {
+  content: none;
+}
+.section-details summary:hover,
+.section-details summary:focus-visible {
   color: var(--text);
+  background: var(--surface);
 }
+.section-details summary:focus-visible {
+  outline: 2px solid var(--text);
+  outline-offset: 1px;
+}
+
+/* シェブロン：閉時は右向き、開くと下向きに回転 */
+.section-details summary::after {
+  content: "";
+  width: 6px;
+  height: 6px;
+  flex-shrink: 0;
+  border-right: 1.5px solid currentColor;
+  border-bottom: 1.5px solid currentColor;
+  transform: rotate(-45deg);
+  transition: transform 0.15s ease;
+}
+.section-details[open] summary::after {
+  transform: rotate(45deg);
+}
+
+/* 開いた本文は「一段下の補足情報」に見えるよう、地の色を変えた箱にする */
 .section-details p {
-  font-size: 0.9rem;
+  margin: 0.5rem 0 0;
+  padding: 0.7rem 0.85rem;
+  background: var(--surface);
+  border-radius: var(--radius);
+  font-size: 0.875rem;
   color: var(--text-muted);
-  line-height: 1.6;
-  margin-top: 0.6rem;
+  line-height: 1.65;
 }
 
 /* チェック項目は16px以上、1行で読める長さに短縮済み */
