@@ -7,6 +7,15 @@ function formatYen(n) {
   return Math.round(n).toLocaleString('ja-JP');
 }
 
+// 万円単位の表示用フォーマット。整数ならそのまま、端数があれば小数第1位まで表示する
+function formatMan(n) {
+  var rounded = Math.round(n * 10) / 10;
+  if (Number.isInteger(rounded)) {
+    return rounded.toLocaleString('ja-JP');
+  }
+  return rounded.toLocaleString('ja-JP', { minimumFractionDigits: 1, maximumFractionDigits: 1 });
+}
+
 form.addEventListener('submit', function (e) {
   e.preventDefault();
 
@@ -19,20 +28,23 @@ form.addEventListener('submit', function (e) {
   }
   formError.hidden = true;
 
-  var target = parseFloat(targetEl.value) || 0;
-  var current = parseFloat(currentEl.value) || 0;
-  var gap = target - current;
+  // 入力は万円単位。計算は円単位に揃えてから行う
+  var targetYen = (parseFloat(targetEl.value) || 0) * 10000;
+  var currentYen = (parseFloat(currentEl.value) || 0) * 10000;
+  var gapYen = targetYen - currentYen;
 
   var resultLabel = document.getElementById('result-label');
-  if (gap <= 0) {
+  if (gapYen <= 0) {
     resultLabel.textContent = 'すでに目標額に達しています。余裕額は';
-    gap = Math.abs(gap);
+    gapYen = Math.abs(gapYen);
   } else {
     resultLabel.textContent = 'あと必要な金額は';
   }
 
-  document.getElementById('gap-amount').textContent = formatYen(gap);
-  currentResult = formatYen(gap) + '円';
+  var gapMan = gapYen / 10000;
+  document.getElementById('gap-amount').textContent = formatMan(gapMan);
+  document.getElementById('gap-amount-yen').textContent = formatYen(gapYen);
+  currentResult = formatMan(gapMan) + '万円';
 
   document.getElementById('history-save-block').hidden = false;
   document.getElementById('history-saved-block').hidden = true;
