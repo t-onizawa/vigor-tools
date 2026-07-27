@@ -12,6 +12,32 @@
     ended: "終了"
   };
 
+  const eventStatusDateText = {
+    confirmed: {
+      heading: (year) => `${year}年の開催日`
+    },
+    scheduled_pending_official: {
+      heading: (year) => `${year}年の開催予定`,
+      note: "公式の詳細発表を確認中です"
+    },
+    unconfirmed: {
+      heading: (year) => `${year}年の開催情報`,
+      note: "日程は未確認です"
+    },
+    cancelled: {
+      heading: (year) => `${year}年の開催予定`,
+      note: "この開催は中止になりました"
+    },
+    postponed: {
+      heading: (year) => `${year}年の開催予定`,
+      note: "この開催は延期になりました"
+    },
+    ended: {
+      heading: (year) => `${year}年の開催実績`,
+      note: "この開催は終了しました"
+    }
+  };
+
   const highlightTimeLabels = {
     morning: "朝",
     daytime: "昼",
@@ -187,8 +213,24 @@
     section.hidden = false;
   }
 
+  function renderEventStatusDateText() {
+    const text = eventStatusDateText[currentYear.eventStatus] || eventStatusDateText.unconfirmed;
+    const noteEl = byId("event-status-note");
+
+    setText("dates-heading", text.heading(currentYear.year));
+
+    if (!text.note) {
+      noteEl.hidden = true;
+      return;
+    }
+
+    noteEl.textContent = text.note;
+    noteEl.hidden = false;
+  }
+
   setText("festival-name", festival.name);
   setText("festival-prefecture", festival.prefecture);
+  renderEventStatusDateText();
   setText("festival-dates", currentYear.dates.map(formatDate).join(" / "));
   setText("event-status", eventStatusLabels[currentYear.eventStatus] || "未確認");
   setText("festival-city", festival.city);

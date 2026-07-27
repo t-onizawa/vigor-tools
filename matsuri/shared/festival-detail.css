@@ -108,6 +108,12 @@ p {
   line-height: 1.4;
 }
 
+.section-label-note {
+  margin: -4px 0 8px;
+  color: var(--muted);
+  font-size: 0.95rem;
+}
+
 .status-badge {
   display: inline-flex;
   width: fit-content;
