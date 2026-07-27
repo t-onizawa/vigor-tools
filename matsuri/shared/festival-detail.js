@@ -175,6 +175,18 @@
     }
   }
 
+  function renderHighlightComment(comment) {
+    const section = byId("highlight-comment-section");
+
+    if (!comment) {
+      section.remove();
+      return;
+    }
+
+    setText("highlight-comment-text", comment);
+    section.hidden = false;
+  }
+
   setText("festival-name", festival.name);
   setText("festival-prefecture", festival.prefecture);
   setText("festival-dates", currentYear.dates.map(formatDate).join(" / "));
@@ -198,6 +210,7 @@
     )
   );
 
+  renderHighlightComment(festival.constantInfo.highlightComment);
   renderAtmosphereMedia(festival.constantInfo.atmosphereMedia);
 
   byId("constant-sources").append(
