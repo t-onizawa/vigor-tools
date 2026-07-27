@@ -18,6 +18,11 @@ CLAUDE.md は「どう作るか」（ファイル構成・公開前チェック�
 組織原則やプロダクト哲学と重複する内容は、今後 CHARTER.md / VISION.md 側に
 寄せていく方針（詳細は CHARTER.md の Documents / Non-Goals を参照）。
 
+`matsuri/` は VIGOR TOOLS とは別プロダクト「VIGOR MATSURI」（VIGOR LABの
+姉妹プロジェクト）。企画判断基準は `matsuri/CONCEPT.md`、未着手項目は
+`matsuri/Backlog.md` を参照する。本書の開発方針・小ツールの基本方針・
+デザイン方針はVIGOR LAB全体の運用ルールとして両プロダクトに共通適用される。
+
 ---
 
 ## プロジェクトの目的
