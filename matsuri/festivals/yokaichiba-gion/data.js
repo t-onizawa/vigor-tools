@@ -1,0 +1,57 @@
+const FESTIVAL = {
+  id: "yokaichiba-gion",
+  name: "八日市場の祇園祭",
+  officialName: "八重垣神社祇園祭",
+  prefecture: "千葉県",
+  city: "匝瑳市",
+  areaTag: "chiba",
+  constantInfo: {
+    schedulePattern: "毎年8月4日・5日固定",
+    features: {
+      hasDashi: false,
+      hasMikoshi: true,
+      hasDanceOnDashi: "n/a",
+      hasParade: "n/a",
+      highlightTime: "night",
+      hayashiNote: "「あんりゃあ、どした」という独特の掛け声とともに、水を掛け合いながら渡御する。"
+    },
+    access: {
+      nearestStation: "JR総武本線 八日市場駅（徒歩約5分）"
+    },
+    mapReference: {
+      label: "八重垣神社",
+      pointType: "shrine",
+      query: "八重垣神社 千葉県匝瑳市八日市場イ2939",
+      lat: null,
+      lng: null,
+      mapUrl: "https://www.google.com/maps/search/?api=1&query=八重垣神社+千葉県匝瑳市八日市場イ2939",
+      note: "八重垣神社は八日市場の祇園祭の中心となる神社です。"
+    },
+    highlightComment: "初日夜は女性だけで担ぐ「女神輿」が特徴。",
+    atmosphereMedia: [],
+    confirmation: {
+      verified: true,
+      confirmedDate: "2026-07-28",
+      sources: [
+        "https://maruchiba.jp/event/detail_12967.html",
+        "https://www.city.sosa.lg.jp/page/page000941.html"
+      ]
+    }
+  },
+  yearlyInfo: [
+    {
+      year: 2026,
+      eventStatus: "scheduled_pending_official",
+      dates: ["2026-08-04", "2026-08-05"],
+      access: {
+        hasParking: true,
+        parkingNote: "無料駐車場あり（大型バス用はなし、第三者情報）。"
+      },
+      confirmation: {
+        confirmedDate: "2026-07-28",
+        sources: ["https://www.city.sosa.lg.jp/page/page000941.html"],
+        note: "毎年8月4日・5日固定という恒常パターンによる確認。匝瑳市公式サイトでも2026年日程を直接確認。"
+      }
+    }
+  ]
+};
