@@ -98,6 +98,12 @@ h1 {
   font-size: 0.9rem;
 }
 
+.lab-mission {
+  margin-top: 1.5rem;
+  color: var(--muted);
+  font-size: 0.82rem;
+}
+
 @media (min-width: 720px) {
   .site-shell {
     padding-top: 5rem;
