@@ -1,7 +1,7 @@
 # VIGOR MATSURI — 祭りデータ スキーマ設計（情報設計担当）
 
 ```
-Version: 0.6（試作検証用）
+Version: 0.7（試作検証用）
 Created: 2026-07-27
 Updated: 2026-07-27
 Scope: 石岡のおまつり1件のプロトタイプ検証のみ。8件展開時の見直しを前提とする。
@@ -128,6 +128,48 @@ Scope: 石岡のおまつり1件のプロトタイプ検証のみ。8件展開�
    （神輿の巡行日が最終日のみ等）は`yearlyInfo`の構造化フィールドを
    増やさず、`confirmation.note`等の自由記述で補う。
 
+10. **地図の参照地点（`mapReference`）は「市区町村」でも
+    「最寄り駅」でもない、祭りごとに選ぶ1点として持つ**
+    （石岡・佐原の調査で判明）
+    「初めて訪れる人が開催場所を把握できる」ことが目的のため、
+    行政区画の中心でも駅でもなく、**その祭りを理解する上で意味の
+    ある1点**を選ぶ。石岡は祭礼の中心である神社（`pointType: "shrine"`）、
+    佐原は観覧の中心地である橋（`pointType: "viewing_point"`）を選んで
+    おり、同じ`pointType`にはならない。この差はスキーマの不備では
+    なく、祭りごとに実際に意味のある地点が異なることの表れであり、
+    `pointType`をenumとして持つことでこの違いを構造化して残す。
+
+    `constantInfo`に`access`と並ぶ形で`mapReference`を新設する
+    （時系列で変わらない情報のため恒常情報側に置く。年度別の
+    臨時マップ等が必要になった場合は、その時点で`yearlyInfo`側への
+    追加を検討する）。緯度・経度は分かる場合のみ入れる任意項目とし、
+    分からない場合は`null`のまま検索クエリ文字列（`query`）だけで
+    埋め込み地図・外部リンクの両方を成立させる（座標を推測で
+    埋めない）。`mapReference`が`null`の場合、地図セクション自体を
+    非表示にする（`highlightComment`・`atmosphereMedia`と同じ
+    null非表示パターン）。
+
+    ```json
+    "mapReference": {
+      "label": "常陸國總社宮",
+      "pointType": "shrine",
+      "query": "常陸國總社宮 茨城県石岡市総社2丁目8-1",
+      "lat": null,
+      "lng": null,
+      "mapUrl": "https://www.google.com/maps/search/?api=1&query=%E5%B8%B8%E9%99%B8%E5%9C%8B%E7%B8%BD%E7%A4%BE%E5%AE%AE%20%E7%9F%B3%E5%B2%A1%E5%B8%82%E7%B7%8F%E7%A4%BE2%E4%B8%81%E7%9B%AE8-1",
+      "note": "総社宮は祭礼の中心となる神社です。祭りの巡行・観覧は石岡駅周辺の市街地に広がり、総社宮からは徒歩約20分離れています。"
+    }
+    ```
+
+    `pointType`の取りうる値：
+
+    ```
+    main_venue      主会場（メイン会場が単一の場所に定まる祭り向け）
+    shrine          祭礼の中心となる神社
+    viewing_point   観覧の基準地点（会場が広域に及ぶ祭り向け）
+    other           上記に当てはまらない地点
+    ```
+
 ---
 
 ## スキーマ（例示）
@@ -153,6 +195,15 @@ Scope: 石岡のおまつり1件のプロトタイプ検証のみ。8件展開�
     },
     "access": {
       "nearestStation": "JR常磐線 石岡駅（西口からすぐ）"
+    },
+    "mapReference": {
+      "label": "常陸國總社宮",
+      "pointType": "shrine",
+      "query": "常陸國總社宮 茨城県石岡市総社2丁目8-1",
+      "lat": null,
+      "lng": null,
+      "mapUrl": "https://www.google.com/maps/search/?api=1&query=常陸國總社宮+石岡市総社2丁目8-1",
+      "note": "総社宮は祭礼の中心となる神社です。祭りの巡行・観覧は石岡駅周辺の市街地に広がり、総社宮からは徒歩約20分離れています。"
     },
     "highlightComment": null,
     "atmosphereMedia": [],
@@ -369,4 +420,15 @@ v0.6  2026-07-27
     一次情報（自治体・神社・祭り公式）を優先する。佐原の大祭
     夏祭りのdata.jsではWikipedia・個人ブログを外し、香取市公式の
     URLのみを採用した。
+
+v0.7  2026-07-28
+    地図参照地点（constantInfo.mapReference）を新設。市区町村・
+    最寄り駅とは別に、祭りごとに意味のある1点（label/pointType/
+    query/lat/lng/mapUrl/note）を持たせる。pointTypeは
+    main_venue/shrine/viewing_point/otherの4種。lat/lngは
+    任意項目とし、未確認なら検索クエリ文字列のみで地図・外部リンクを
+    成立させる（座標を推測で埋めない）。nullの場合は地図セクションを
+    非表示にする、既存のnull非表示パターンを踏襲。石岡は神社
+    （常陸國總社宮）、佐原は観覧の基準地点（忠敬橋）を選定し、
+    同じpointTypeにならないことを確認した（詳細は各研究記録参照）。
 ```
