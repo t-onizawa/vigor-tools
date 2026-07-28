@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>VIGOR MATSURI</title>
+    <link rel="stylesheet" href="shared/festival-list.css">
+  </head>
+  <body>
+    <main class="page-shell">
+      <header class="list-header">
+        <p class="project-label">VIGOR MATSURI</p>
+        <h1>行ってみたい祭りを、見つけやすくする。</h1>
+        <p class="header-description">
+          山車、神輿、踊り、夜の見どころなどを小さく整理して、次に訪ねたい祭りを選びやすくします。
+        </p>
+      </header>
+
+      <section class="filter-section" aria-label="絞り込み">
+        <label class="filter-toggle">
+          <input id="upcoming-only-toggle" type="checkbox">
+          <span>これから開催される祭り</span>
+        </label>
+      </section>
+
+      <p id="festival-count" class="count-text" aria-live="polite">読み込み中です</p>
+      <div id="festival-list" class="festival-list" aria-live="polite"></div>
+
+      <p class="disclaimer">
+        掲載内容は各祭りの詳細ページに記載の出典・確認日に基づきます。最新の開催情報は公式サイトでご確認ください。
+      </p>
+    </main>
+
+    <script src="shared/festival-list.js"></script>
+  </body>
+</html>
