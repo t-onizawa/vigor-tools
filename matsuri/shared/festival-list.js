@@ -170,10 +170,10 @@
 
   function pickCardMedia(features) {
     if (features.hasDashi === true) {
-      return { file: "dashi", label: "山車" };
+      return { file: "dashi", label: "山車", tagText: "山車の祭り" };
     }
     if (features.hasMikoshi === true) {
-      return { file: "mikoshi", label: "神輿" };
+      return { file: "mikoshi", label: "神輿", tagText: "神輿の祭り" };
     }
     return null;
   }
@@ -291,7 +291,7 @@
 
       const tag = document.createElement("span");
       tag.className = "media-tag";
-      tag.textContent = cardMedia.label;
+      tag.textContent = cardMedia.tagText;
 
       mediaBox.append(img, tag);
       card.append(mediaBox);
