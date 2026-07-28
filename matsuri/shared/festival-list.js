@@ -1,5 +1,5 @@
 (function () {
-  const FESTIVAL_SLUGS = ["ishioka-omatsuri", "sawara-natsu-matsuri"];
+  const FESTIVAL_SLUGS = ["ishioka-omatsuri", "sawara-natsu-matsuri", "sawara-aki-matsuri"];
   const UPCOMING_STATUSES = new Set(["confirmed", "scheduled_pending_official"]);
 
   const eventStatusLabels = {
@@ -272,7 +272,7 @@
       : items;
 
     list.replaceChildren(...visibleItems.map(renderFestivalCard));
-    count.textContent = `${visibleItems.length}件中${items.length}件を表示`;
+    count.textContent = `${items.length}件中${visibleItems.length}件を表示`;
   }
 
   async function init() {
