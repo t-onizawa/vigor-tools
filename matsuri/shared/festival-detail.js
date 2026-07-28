@@ -183,7 +183,8 @@
 
   function renderAtmosphereMedia(mediaItems) {
     const section = byId("atmosphere-media-section");
-    const media = mediaItems && mediaItems[0];
+    const galleryItems = mediaItems ? mediaItems.slice(0, 3) : [];
+    const media = galleryItems[0];
 
     if (!section) {
       return;
@@ -214,6 +215,7 @@
         iframe.allowFullscreen = true;
 
         byId("atmosphere-media-frame").append(iframe);
+        renderAtmosphereMediaGallery(galleryItems.slice(1));
         section.hidden = false;
       } else {
         section.remove();
@@ -222,6 +224,74 @@
       console.warn("[festival-detail] atmosphereMediaの描画に失敗", err);
       section.remove();
     }
+  }
+
+  function createAtmosphereMediaGalleryItem(media) {
+    const item = document.createElement("div");
+    item.className = "media-gallery-item";
+
+    const thumb = document.createElement("button");
+    thumb.className = "media-gallery-thumb";
+    thumb.type = "button";
+    thumb.setAttribute("aria-label", `動画を再生：${media.title}`);
+
+    const image = document.createElement("img");
+    image.src = `https://i.ytimg.com/vi/${media.contentId}/hqdefault.jpg`;
+    image.alt = "";
+    image.loading = "lazy";
+    thumb.append(image);
+
+    thumb.addEventListener("click", () => {
+      const iframe = document.createElement("iframe");
+      iframe.className = "media-gallery-embed";
+      iframe.src = `https://www.youtube.com/embed/${media.contentId}`;
+      iframe.title = media.title;
+      iframe.allow =
+        "accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share";
+      iframe.allowFullscreen = true;
+
+      thumb.replaceWith(iframe);
+    });
+
+    const caption = document.createElement("p");
+    caption.className = "media-gallery-caption";
+    caption.textContent = `過去開催時の様子（${media.publishedYear}年）`;
+
+    const meta = document.createElement("p");
+    meta.className = "media-gallery-meta";
+    meta.textContent = `${media.publisher} ／ 確認日：${media.checkedDate}`;
+
+    const link = document.createElement("a");
+    link.className = "media-gallery-link";
+    link.href = media.url;
+    link.target = "_blank";
+    link.rel = "noopener noreferrer";
+    link.textContent = "YouTubeで見る →";
+
+    item.append(thumb, caption, meta, link);
+    return item;
+  }
+
+  function renderAtmosphereMediaGallery(mediaItems) {
+    const gallery = byId("atmosphere-media-gallery");
+
+    if (!gallery) {
+      return;
+    }
+
+    const galleryItems = mediaItems.filter((media) => media.type === "youtube");
+
+    if (!galleryItems.length) {
+      gallery.hidden = true;
+      gallery.replaceChildren();
+      return;
+    }
+
+    gallery.replaceChildren();
+    galleryItems.forEach((media) => {
+      gallery.append(createAtmosphereMediaGalleryItem(media));
+    });
+    gallery.hidden = false;
   }
 
   function renderMapReference(mapReference) {
