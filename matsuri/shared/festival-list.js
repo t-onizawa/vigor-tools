@@ -1,5 +1,5 @@
 (function () {
-  const FESTIVAL_SLUGS = ["ishioka-omatsuri", "sawara-natsu-matsuri", "sawara-aki-matsuri", "chichibu-yomatsuri"];
+  const FESTIVAL_SLUGS = ["ishioka-omatsuri", "sawara-natsu-matsuri", "sawara-aki-matsuri", "chichibu-yomatsuri", "itako-gion", "hitachi-furyumono", "ryugasaki-tsukumai", "shimodate-gion", "tsuchiura-gion", "makabe-gion"];
   const UPCOMING_STATUSES = new Set(["confirmed", "scheduled_pending_official"]);
 
   const eventStatusLabels = {
