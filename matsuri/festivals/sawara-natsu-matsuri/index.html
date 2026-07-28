@@ -3,13 +3,13 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>佐原の大祭 夏祭り | VIGOR MATSURI</title>
+    <title>佐原の大祭 夏祭り | 祭を探す</title>
     <link rel="stylesheet" href="../../shared/festival-detail.css">
   </head>
   <body>
     <main class="page-shell" aria-labelledby="festival-name">
       <header class="festival-header">
-        <p class="project-label">VIGOR MATSURI</p>
+        <p class="back-link"><a href="../../index.html">← 祭を探す</a></p>
         <h1 id="festival-name"></h1>
         <p class="prefecture" id="festival-prefecture"></p>
       </header>
@@ -24,15 +24,11 @@
       </section>
 
       <section class="info-section media-section" id="atmosphere-media-section" aria-labelledby="atmosphere-media-heading" hidden>
-        <h2 id="atmosphere-media-heading">祭りの様子を動画で見る</h2>
+        <h2 class="sr-only" id="atmosphere-media-heading">祭りの様子を動画で見る</h2>
         <p class="media-notice" id="atmosphere-media-notice"></p>
         <div class="media-frame" id="atmosphere-media-frame"></div>
         <p class="source-meta" id="atmosphere-media-meta"></p>
-      </section>
-
-      <section class="info-section" aria-labelledby="city-heading">
-        <h2 id="city-heading">開催地</h2>
-        <p id="festival-city"></p>
+        <p><a id="atmosphere-media-link" href="#" target="_blank" rel="noopener noreferrer">YouTubeで見る →</a></p>
       </section>
 
       <section class="info-section" aria-labelledby="features-heading">
@@ -40,24 +36,26 @@
         <div class="feature-grid" id="feature-grid"></div>
       </section>
 
-      <section class="info-section" aria-labelledby="highlight-time-heading">
-        <h2 id="highlight-time-heading">見どころの時間帯</h2>
-        <p id="highlight-time"></p>
+      <section class="info-section" id="highlight-comment-section" aria-labelledby="highlight-comment-heading" hidden>
+        <h2 id="highlight-comment-heading">一言見どころコメント</h2>
+        <p id="highlight-comment-text"></p>
       </section>
 
       <section class="info-section" aria-labelledby="access-heading">
-        <h2 id="access-heading">アクセス</h2>
+        <h2 id="access-heading">開催地・アクセス</h2>
         <div class="detail-list" id="access-list"></div>
+      </section>
+
+      <section class="info-section media-section" id="map-section" aria-labelledby="map-heading" hidden>
+        <h2 id="map-heading">地図</h2>
+        <div class="media-frame map-frame" id="map-frame"></div>
+        <p class="source-meta" id="map-note"></p>
+        <p><a id="map-external-link" href="#" target="_blank" rel="noopener noreferrer">Googleマップで見る →</a></p>
       </section>
 
       <section class="info-section" aria-labelledby="hayashi-heading">
         <h2 id="hayashi-heading">お囃子の特徴</h2>
         <p id="hayashi-note"></p>
-      </section>
-
-      <section class="info-section" id="highlight-comment-section" aria-labelledby="highlight-comment-heading" hidden>
-        <h2 id="highlight-comment-heading">一言見どころコメント</h2>
-        <p id="highlight-comment-text"></p>
       </section>
 
       <section class="info-section sources-section" aria-labelledby="sources-heading">

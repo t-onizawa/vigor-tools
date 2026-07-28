@@ -89,6 +89,20 @@
     return item;
   }
 
+  function createNeutralFeatureBadge(label, value) {
+    const item = document.createElement("div");
+    item.className = "feature-badge is-neutral";
+
+    const labelEl = document.createElement("strong");
+    labelEl.textContent = label;
+
+    const valueEl = document.createElement("span");
+    valueEl.textContent = value;
+
+    item.append(labelEl, valueEl);
+    return item;
+  }
+
   function createDetailItem(term, value, note) {
     const item = document.createElement("div");
     item.className = "detail-item";
@@ -171,32 +185,69 @@
     const section = byId("atmosphere-media-section");
     const media = mediaItems && mediaItems[0];
 
+    if (!section) {
+      return;
+    }
+
     if (!media) {
       section.remove();
       return;
     }
 
-    setText(
-      "atmosphere-media-notice",
-      `参考：2026年の映像ではありません。掲載しているのは${media.publishedYear}年（${media.title}）の様子です。`
-    );
-    setText(
-      "atmosphere-media-meta",
-      `公開元：${media.publisher} ／ 確認日：${media.checkedDate}`
-    );
+    try {
+      setText("atmosphere-media-notice", `過去開催時の様子（${media.publishedYear}年）`);
+      setText(
+        "atmosphere-media-meta",
+        `公開元：${media.publisher} ／ 確認日：${media.checkedDate}`
+      );
 
-    if (media.type === "youtube") {
+      const mediaLink = byId("atmosphere-media-link");
+      mediaLink.href = media.url;
+
+      if (media.type === "youtube") {
+        const iframe = document.createElement("iframe");
+        iframe.src = `https://www.youtube.com/embed/${media.contentId}`;
+        iframe.title = media.title;
+        iframe.loading = "lazy";
+        iframe.allow =
+          "accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share";
+        iframe.allowFullscreen = true;
+
+        byId("atmosphere-media-frame").append(iframe);
+        section.hidden = false;
+      } else {
+        section.remove();
+      }
+    } catch (err) {
+      console.warn("[festival-detail] atmosphereMediaの描画に失敗", err);
+      section.remove();
+    }
+  }
+
+  function renderMapReference(mapReference) {
+    const section = byId("map-section");
+
+    if (!section) {
+      return;
+    }
+
+    if (!mapReference) {
+      section.remove();
+      return;
+    }
+
+    try {
       const iframe = document.createElement("iframe");
-      iframe.src = `https://www.youtube.com/embed/${media.contentId}`;
-      iframe.title = media.title;
+      iframe.src = `https://www.google.com/maps?q=${encodeURIComponent(mapReference.query)}&output=embed`;
+      iframe.title = mapReference.label;
       iframe.loading = "lazy";
-      iframe.allow =
-        "accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share";
-      iframe.allowFullscreen = true;
 
-      byId("atmosphere-media-frame").append(iframe);
+      byId("map-frame").append(iframe);
+      setText("map-note", mapReference.note);
+      byId("map-external-link").href = mapReference.mapUrl;
       section.hidden = false;
-    } else {
+    } catch (err) {
+      console.warn("[festival-detail] mapReferenceの描画に失敗", err);
       section.remove();
     }
   }
@@ -233,17 +284,19 @@
   renderEventStatusDateText();
   setText("festival-dates", currentYear.dates.map(formatDate).join(" / "));
   setText("event-status", eventStatusLabels[currentYear.eventStatus] || "未確認");
-  setText("festival-city", festival.city);
-  setText("highlight-time", highlightTimeLabels[features.highlightTime] || "未確認");
   setText("hayashi-note", features.hayashiNote);
 
   const featureGrid = byId("feature-grid");
   featureItems.forEach(([label, value]) => {
     featureGrid.append(createFeatureBadge(label, value));
   });
+  featureGrid.append(
+    createNeutralFeatureBadge("見どころ", highlightTimeLabels[features.highlightTime] || "未確認")
+  );
 
   const accessList = byId("access-list");
   accessList.append(
+    createDetailItem("開催地", festival.city),
     createDetailItem("最寄駅", festival.constantInfo.access.nearestStation),
     createDetailItem(
       "駐車場",
@@ -254,6 +307,7 @@
 
   renderHighlightComment(festival.constantInfo.highlightComment);
   renderAtmosphereMedia(festival.constantInfo.atmosphereMedia);
+  renderMapReference(festival.constantInfo.mapReference);
 
   byId("constant-sources").append(
     createSourceBlock("恒常情報", festival.constantInfo.confirmation)

@@ -18,6 +18,15 @@ const FESTIVAL = {
     access: {
       nearestStation: "JR成田線 佐原駅（徒歩約10分）"
     },
+    mapReference: {
+      label: "忠敬橋（小野川・本宿地区）",
+      pointType: "viewing_point",
+      query: "忠敬橋 千葉県香取市佐原",
+      lat: null,
+      lng: null,
+      mapUrl: "https://www.google.com/maps/search/?api=1&query=忠敬橋+千葉県香取市佐原",
+      note: "山車の曳き回し・のの字廻しは本宿地区一帯で行われます。忠敬橋周辺は代表的な観覧スポットの一つです。"
+    },
     highlightComment: null,
     atmosphereMedia: [],
     confirmation: {

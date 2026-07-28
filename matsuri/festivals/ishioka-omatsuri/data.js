@@ -18,6 +18,15 @@ const FESTIVAL = {
     access: {
       nearestStation: "JR常磐線 石岡駅（西口からすぐ）"
     },
+    mapReference: {
+      label: "常陸國總社宮",
+      pointType: "shrine",
+      query: "常陸國總社宮 茨城県石岡市総社2丁目8-1",
+      lat: null,
+      lng: null,
+      mapUrl: "https://www.google.com/maps/search/?api=1&query=常陸國總社宮+石岡市総社2丁目8-1",
+      note: "総社宮は祭礼の中心となる神社です。祭りの巡行・観覧は石岡駅周辺の市街地に広がり、総社宮からは徒歩約20分離れています。"
+    },
     highlightComment: null,
     atmosphereMedia: [
       {
