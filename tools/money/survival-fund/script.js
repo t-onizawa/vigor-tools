@@ -80,7 +80,7 @@ document.getElementById('save-history-btn').addEventListener('click', function (
       'survival-fund',
       '生活防衛資金シミュレーター',
       currentResult,
-      '/money/survival-fund/'
+      '/tools/money/survival-fund/'
     );
   }
   if (saved) {

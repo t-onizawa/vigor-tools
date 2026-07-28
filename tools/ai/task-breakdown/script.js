@@ -55,7 +55,7 @@ document.getElementById('save-history-btn').addEventListener('click', function (
 
   var saved = false;
   if (typeof VigorHistory !== 'undefined') {
-    saved = VigorHistory.save('task-breakdown', 'タスクをAIに任せられる形へ分解するシート', description, '/ai/task-breakdown/');
+    saved = VigorHistory.save('task-breakdown', 'タスクをAIに任せられる形へ分解するシート', description, '/tools/ai/task-breakdown/');
   }
   if (saved) {
     saveBlock.hidden = true;

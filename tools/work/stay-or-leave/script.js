@@ -73,7 +73,7 @@ document.getElementById('save-history-btn').addEventListener('click', function (
       'stay-or-leave',
       '続ける理由 vs 辞めたい理由 比較シート',
       description,
-      '/work/stay-or-leave/'
+      '/tools/work/stay-or-leave/'
     );
   }
   if (saved) {

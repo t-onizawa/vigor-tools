@@ -57,7 +57,7 @@ form.addEventListener('submit', function (e) {
 document.getElementById('save-history-btn').addEventListener('click', function () {
   var saved = false;
   if (typeof VigorHistory !== 'undefined') {
-    saved = VigorHistory.save('savings-gap', '退職までに必要な貯金差額計算', currentResult, '/money/savings-gap/');
+    saved = VigorHistory.save('savings-gap', '退職までに必要な貯金差額計算', currentResult, '/tools/money/savings-gap/');
   }
   if (saved) {
     document.getElementById('history-save-block').hidden = true;

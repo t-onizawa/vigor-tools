@@ -43,7 +43,7 @@ document.getElementById('save-history-btn').addEventListener('click', function (
       'target-daily-rate',
       '独立後の目標日給計算',
       currentResult,
-      '/work/target-daily-rate/'
+      '/tools/work/target-daily-rate/'
     );
   }
   if (saved) {

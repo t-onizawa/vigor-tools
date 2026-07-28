@@ -67,7 +67,7 @@ document.getElementById('copy-btn').addEventListener('click', function () {
 document.getElementById('save-history-btn').addEventListener('click', function () {
   var saved = false;
   if (typeof VigorHistory !== 'undefined') {
-    saved = VigorHistory.save('request-template', '依頼文を明確にするテンプレ', '依頼文を整理した', '/work/request-template/');
+    saved = VigorHistory.save('request-template', '依頼文を明確にするテンプレ', '依頼文を整理した', '/tools/work/request-template/');
   }
   if (saved) {
     saveBlock.hidden = true;

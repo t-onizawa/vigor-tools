@@ -41,7 +41,7 @@ document.getElementById('save-history-btn').addEventListener('click', function (
       'travel-budget',
       '旅行予算シミュレーター',
       currentResult,
-      '/travel/budget/'
+      '/tools/travel/budget/'
     );
   }
   if (saved) {

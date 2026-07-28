@@ -53,7 +53,7 @@ function updateSaveButtonVisibility() {
 document.getElementById('save-history-btn').addEventListener('click', function () {
   var saved = false;
   if (typeof VigorHistory !== 'undefined') {
-    saved = VigorHistory.save('bonus-plan', 'ボーナスの使い道比較シート', 'ボーナスの使い道を書き出した', '/money/bonus-plan/');
+    saved = VigorHistory.save('bonus-plan', 'ボーナスの使い道比較シート', 'ボーナスの使い道を書き出した', '/tools/money/bonus-plan/');
   }
   if (saved) {
     saveBlock.hidden = true;

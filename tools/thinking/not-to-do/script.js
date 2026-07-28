@@ -43,7 +43,7 @@ document.getElementById('save-history-btn').addEventListener('click', function (
       'not-to-do',
       'やらないことリスト',
       'やめること・手放すことを書き出した',
-      '/thinking/not-to-do/'
+      '/tools/thinking/not-to-do/'
     );
   }
   if (saved) {

@@ -77,7 +77,7 @@ function showResult(scores) {
         'side-business-check',
         '副業しどき診断',
         currentResult,
-        '/work/side-business-check/'
+        '/tools/work/side-business-check/'
       );
     }
     if (saved) {

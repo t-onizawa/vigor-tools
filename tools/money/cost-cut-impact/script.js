@@ -34,7 +34,7 @@ form.addEventListener('submit', function (e) {
 document.getElementById('save-history-btn').addEventListener('click', function () {
   var saved = false;
   if (typeof VigorHistory !== 'undefined') {
-    saved = VigorHistory.save('cost-cut-impact', '固定費削減による年間効果計算', currentResult, '/money/cost-cut-impact/');
+    saved = VigorHistory.save('cost-cut-impact', '固定費削減による年間効果計算', currentResult, '/tools/money/cost-cut-impact/');
   }
   if (saved) {
     document.getElementById('history-save-block').hidden = true;

@@ -35,7 +35,7 @@ form.addEventListener('submit', function (e) {
 document.getElementById('save-history-btn').addEventListener('click', function () {
   var saved = false;
   if (typeof VigorHistory !== 'undefined') {
-    saved = VigorHistory.save('savings-pace', '独立準備の貯金ペース計算', currentResult, '/money/savings-pace/');
+    saved = VigorHistory.save('savings-pace', '独立準備の貯金ペース計算', currentResult, '/tools/money/savings-pace/');
   }
   if (saved) {
     document.getElementById('history-save-block').hidden = true;

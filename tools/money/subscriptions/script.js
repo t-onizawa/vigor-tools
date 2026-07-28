@@ -88,7 +88,7 @@ document.getElementById('save-history-btn').addEventListener('click', function (
       'subscriptions',
       'サブスク年間総額計算',
       '月額' + formatYen(currentMonthlyTotal) + '円 / 年間' + formatYen(currentAnnualTotal) + '円',
-      '/money/subscriptions/'
+      '/tools/money/subscriptions/'
     );
   }
   if (saved) {
@@ -104,7 +104,7 @@ document.getElementById('save-profile-btn').addEventListener('click', function (
       'monthlySubscriptionTotal',
       Math.round(currentMonthlyTotal),
       'サブスク年間総額計算',
-      '/money/subscriptions/'
+      '/tools/money/subscriptions/'
     );
   }
   if (saved) {

@@ -39,7 +39,7 @@ textEl.addEventListener('input', function () {
 document.getElementById('save-history-btn').addEventListener('click', function () {
   var saved = false;
   if (typeof VigorHistory !== 'undefined') {
-    saved = VigorHistory.save('housework-priority', '家事を減らす優先順位シート', '減らせそうな家事を書き出した', '/life/housework-priority/');
+    saved = VigorHistory.save('housework-priority', '家事を減らす優先順位シート', '減らせそうな家事を書き出した', '/tools/life/housework-priority/');
   }
   if (saved) {
     saveBlock.hidden = true;

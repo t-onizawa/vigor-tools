@@ -57,7 +57,7 @@ document.getElementById('save-history-btn').addEventListener('click', function (
 
   var saved = false;
   if (typeof VigorHistory !== 'undefined') {
-    saved = VigorHistory.save('decision-deadline', '決断期限メモ', description, '/thinking/decision-deadline/');
+    saved = VigorHistory.save('decision-deadline', '決断期限メモ', description, '/tools/thinking/decision-deadline/');
   }
   if (saved) {
     saveBlock.hidden = true;

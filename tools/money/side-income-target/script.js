@@ -37,7 +37,7 @@ form.addEventListener('submit', function (e) {
 document.getElementById('save-history-btn').addEventListener('click', function () {
   var saved = false;
   if (typeof VigorHistory !== 'undefined') {
-    saved = VigorHistory.save('side-income-target', '副収入の月額目標計算', currentResult, '/money/side-income-target/');
+    saved = VigorHistory.save('side-income-target', '副収入の月額目標計算', currentResult, '/tools/money/side-income-target/');
   }
   if (saved) {
     document.getElementById('history-save-block').hidden = true;

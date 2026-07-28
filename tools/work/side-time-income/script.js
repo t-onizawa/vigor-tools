@@ -35,7 +35,7 @@ form.addEventListener('submit', function (e) {
 document.getElementById('save-history-btn').addEventListener('click', function () {
   var saved = false;
   if (typeof VigorHistory !== 'undefined') {
-    saved = VigorHistory.save('side-time-income', '副業に使える時間から月収目標を逆算', currentResult, '/work/side-time-income/');
+    saved = VigorHistory.save('side-time-income', '副業に使える時間から月収目標を逆算', currentResult, '/tools/work/side-time-income/');
   }
   if (saved) {
     document.getElementById('history-save-block').hidden = true;

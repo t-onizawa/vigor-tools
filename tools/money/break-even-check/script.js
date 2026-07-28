@@ -39,7 +39,7 @@ document.getElementById('save-history-btn').addEventListener('click', function (
       'break-even-check',
       '「元取れてる？」損益分岐点チェック',
       currentResult,
-      '/money/break-even-check/'
+      '/tools/money/break-even-check/'
     );
   }
   if (saved) {

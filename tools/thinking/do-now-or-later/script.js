@@ -53,7 +53,7 @@ function updateSaveButtonVisibility() {
 document.getElementById('save-history-btn').addEventListener('click', function () {
   var saved = false;
   if (typeof VigorHistory !== 'undefined') {
-    saved = VigorHistory.save('do-now-or-later', '今やる理由／後回しにする理由比較', '今やるか後回しかを書き出した', '/thinking/do-now-or-later/');
+    saved = VigorHistory.save('do-now-or-later', '今やる理由／後回しにする理由比較', '今やるか後回しかを書き出した', '/tools/thinking/do-now-or-later/');
   }
   if (saved) {
     saveBlock.hidden = true;

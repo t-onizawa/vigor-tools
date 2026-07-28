@@ -71,7 +71,7 @@ document.getElementById('save-history-btn').addEventListener('click', function (
       'prep-for-ai',
       'AIへ渡す前の情報整理シート',
       'AIへ渡す情報を整理した',
-      '/ai/prep-for-ai/'
+      '/tools/ai/prep-for-ai/'
     );
   }
   if (saved) {

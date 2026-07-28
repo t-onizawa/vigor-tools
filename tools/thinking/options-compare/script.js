@@ -63,7 +63,7 @@ document.getElementById('save-history-btn').addEventListener('click', function (
 
   var saved = false;
   if (typeof VigorHistory !== 'undefined') {
-    saved = VigorHistory.save('options-compare', '迷っている選択肢の比較シート', description, '/thinking/options-compare/');
+    saved = VigorHistory.save('options-compare', '迷っている選択肢の比較シート', description, '/tools/thinking/options-compare/');
   }
   if (saved) {
     saveBlock.hidden = true;

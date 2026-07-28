@@ -53,7 +53,7 @@ function updateSaveButtonVisibility() {
 document.getElementById('save-history-btn').addEventListener('click', function () {
   var saved = false;
   if (typeof VigorHistory !== 'undefined') {
-    saved = VigorHistory.save('fact-or-fear', '不安を事実と想像に分けるシート', '事実と想像を分けて書き出した', '/thinking/fact-or-fear/');
+    saved = VigorHistory.save('fact-or-fear', '不安を事実と想像に分けるシート', '事実と想像を分けて書き出した', '/tools/thinking/fact-or-fear/');
   }
   if (saved) {
     saveBlock.hidden = true;

@@ -63,7 +63,7 @@ document.getElementById('save-history-btn').addEventListener('click', function (
 
   var saved = false;
   if (typeof VigorHistory !== 'undefined') {
-    saved = VigorHistory.save('stay-compare', '宿泊先比較シート', description, '/travel/stay-compare/');
+    saved = VigorHistory.save('stay-compare', '宿泊先比較シート', description, '/tools/travel/stay-compare/');
   }
   if (saved) {
     saveBlock.hidden = true;

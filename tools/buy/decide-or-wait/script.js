@@ -53,7 +53,7 @@ function updateSaveButtonVisibility() {
 document.getElementById('save-history-btn').addEventListener('click', function () {
   var saved = false;
   if (typeof VigorHistory !== 'undefined') {
-    saved = VigorHistory.save('decide-or-wait', '買う／見送る比較シート', '買う理由と見送る理由を書き出した', '/buy/decide-or-wait/');
+    saved = VigorHistory.save('decide-or-wait', '買う／見送る比較シート', '買う理由と見送る理由を書き出した', '/tools/buy/decide-or-wait/');
   }
   if (saved) {
     saveBlock.hidden = true;

@@ -42,7 +42,7 @@ document.getElementById('save-history-btn').addEventListener('click', function (
       'ai-cost-check',
       'AI利用料、元取れてる？計算',
       currentResult,
-      '/ai/ai-cost-check/'
+      '/tools/ai/ai-cost-check/'
     );
   }
   if (saved) {

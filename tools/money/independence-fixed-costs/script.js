@@ -37,7 +37,7 @@ form.addEventListener('submit', function (e) {
 document.getElementById('save-history-btn').addEventListener('click', function () {
   var saved = false;
   if (typeof VigorHistory !== 'undefined') {
-    saved = VigorHistory.save('independence-fixed-costs', '独立後の固定費見積もり', currentResult, '/money/independence-fixed-costs/');
+    saved = VigorHistory.save('independence-fixed-costs', '独立後の固定費見積もり', currentResult, '/tools/money/independence-fixed-costs/');
   }
   if (saved) {
     document.getElementById('history-save-block').hidden = true;

@@ -75,7 +75,7 @@ document.getElementById('save-history-btn').addEventListener('click', function (
       'resignation-script',
       '退職の伝え方テンプレート',
       '退職の伝え方を準備した',
-      '/work/resignation-script/'
+      '/tools/work/resignation-script/'
     );
   }
   if (saved) {

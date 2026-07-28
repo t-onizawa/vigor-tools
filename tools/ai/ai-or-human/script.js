@@ -70,7 +70,7 @@ document.getElementById('save-history-btn').addEventListener('click', function (
       'ai-or-human',
       'AIに聞くべきか、人に聞くべきか 判断シート',
       description,
-      '/ai/ai-or-human/'
+      '/tools/ai/ai-or-human/'
     );
   }
   if (saved) {

@@ -39,7 +39,7 @@ textEl.addEventListener('input', function () {
 document.getElementById('save-history-btn').addEventListener('click', function () {
   var saved = false;
   if (typeof VigorHistory !== 'undefined') {
-    saved = VigorHistory.save('priority-sheet', '仕事の優先順位整理シート', '仕事の優先順位を書き出した', '/work/priority-sheet/');
+    saved = VigorHistory.save('priority-sheet', '仕事の優先順位整理シート', '仕事の優先順位を書き出した', '/tools/work/priority-sheet/');
   }
   if (saved) {
     saveBlock.hidden = true;

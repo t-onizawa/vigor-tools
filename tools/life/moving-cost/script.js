@@ -41,7 +41,7 @@ document.getElementById('save-history-btn').addEventListener('click', function (
       'moving-cost',
       '引越し費用シミュレーター',
       currentResult,
-      '/life/moving-cost/'
+      '/tools/life/moving-cost/'
     );
   }
   if (saved) {
