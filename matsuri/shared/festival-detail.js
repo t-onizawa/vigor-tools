@@ -370,6 +370,22 @@
     section.hidden = false;
   }
 
+  function renderHayashiNote(note) {
+    const section = byId("hayashi-section");
+
+    if (!section) {
+      return;
+    }
+
+    if (!note) {
+      section.remove();
+      return;
+    }
+
+    setText("hayashi-note", note);
+    section.hidden = false;
+  }
+
   function renderEventStatusDateText() {
     const text = eventStatusDateText[currentYear.eventStatus] || eventStatusDateText.unconfirmed;
     const noteEl = byId("event-status-note");
@@ -390,7 +406,7 @@
   renderEventStatusDateText();
   setText("festival-dates", currentYear.dates.map(formatDate).join(" / "));
   setText("event-status", eventStatusLabels[currentYear.eventStatus] || "未確認");
-  setText("hayashi-note", features.hayashiNote);
+  renderHayashiNote(features.hayashiNote);
 
   const featureGrid = byId("feature-grid");
   featureItems.forEach(([label, value]) => {
