@@ -168,6 +168,16 @@
     return "未確認";
   }
 
+  function pickCardMedia(features) {
+    if (features.hasDashi === true) {
+      return { file: "dashi", label: "山車" };
+    }
+    if (features.hasMikoshi === true) {
+      return { file: "mikoshi", label: "神輿" };
+    }
+    return null;
+  }
+
   function createMetaItem(label, value) {
     const item = document.createElement("span");
     item.className = "meta-item";
@@ -192,6 +202,7 @@
     const atmosphereMedia = Array.isArray(constantInfo.atmosphereMedia)
       ? constantInfo.atmosphereMedia
       : [];
+    const cardMedia = pickCardMedia(features);
 
     const card = document.createElement("a");
     card.className = "festival-card";
@@ -222,14 +233,19 @@
     date.className = "date-range";
     date.textContent = formatDateRange(yearlyInfo);
 
+    const allFeatureParts = [
+      { key: "山車", text: `山車${featureMark(features.hasDashi)}` },
+      { key: "神輿", text: `神輿${featureMark(features.hasMikoshi)}` },
+      { key: "踊り", text: `踊り${featureMark(features.hasDanceOnDashi)}` },
+      { key: "曳き回し", text: `曳き回し${featureMark(features.hasParade)}` }
+    ];
+
     const featureLine = document.createElement("p");
     featureLine.className = "feature-line";
-    featureLine.textContent = [
-      `山車${featureMark(features.hasDashi)}`,
-      `神輿${featureMark(features.hasMikoshi)}`,
-      `踊り${featureMark(features.hasDanceOnDashi)}`,
-      `曳き回し${featureMark(features.hasParade)}`
-    ].join(" ");
+    featureLine.textContent = allFeatureParts
+      .filter((part) => !cardMedia || part.key !== cardMedia.label)
+      .map((part) => part.text)
+      .join(" ");
 
     const meta = document.createElement("div");
     meta.className = "card-meta";
@@ -238,26 +254,48 @@
       createMetaItem("駐車場", parkingText(access.hasParking))
     );
 
+    const cardBody = document.createElement("div");
+    cardBody.className = "card-body";
+
     if (constantInfo.highlightComment) {
       const highlight = document.createElement("p");
       highlight.className = "highlight-comment";
       highlight.textContent = constantInfo.highlightComment;
-      card.append(topLine, title, date, featureLine, meta, highlight);
+      cardBody.append(topLine, title, date, featureLine, meta, highlight);
     } else {
-      card.append(topLine, title, date, featureLine, meta);
+      cardBody.append(topLine, title, date, featureLine, meta);
     }
 
     if (atmosphereMedia.length > 0) {
       const media = document.createElement("p");
       media.className = "media-label";
       media.textContent = "動画あり";
-      card.append(media);
+      cardBody.append(media);
     }
 
     const detail = document.createElement("span");
     detail.className = "detail-link-text";
     detail.textContent = "詳しく見る →";
-    card.append(detail);
+    cardBody.append(detail);
+
+    card.append(cardBody);
+
+    if (cardMedia) {
+      const mediaBox = document.createElement("div");
+      mediaBox.className = "card-media";
+
+      const img = document.createElement("img");
+      img.src = `shared/illustrations/${cardMedia.file}.png`;
+      img.alt = "";
+      img.loading = "lazy";
+
+      const tag = document.createElement("span");
+      tag.className = "media-tag";
+      tag.textContent = cardMedia.label;
+
+      mediaBox.append(img, tag);
+      card.append(mediaBox);
+    }
 
     return card;
   }

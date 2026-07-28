@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" fill="currentColor" aria-hidden="true">
+  <path fill-rule="evenodd" clip-rule="evenodd" d="
+    M60,200 A140,140 0 1,0 340,200 A140,140 0 1,0 60,200 Z
+    M140,170 A20,20 0 1,0 180,170 A20,20 0 1,0 140,170 Z
+    M220,170 A20,20 0 1,0 260,170 A20,20 0 1,0 220,170 Z
+    M175,260 A25,20 0 1,0 225,260 A25,20 0 1,0 175,260 Z
+  "/>
+</svg>

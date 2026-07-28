@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" fill="currentColor" aria-hidden="true">
+  <path fill="none" stroke="currentColor" stroke-width="14" stroke-linecap="round"
+    d="M150,80 A50,40 0 0,1 250,80"/>
+
+  <path fill-rule="evenodd" clip-rule="evenodd" d="
+    M90,225 A110,115 0 1,0 310,225 A110,115 0 1,0 90,225 Z
+    M136,120 L144,120 L144,330 L136,330 Z
+    M166,120 L174,120 L174,330 L166,330 Z
+    M196,120 L204,120 L204,330 L196,330 Z
+    M226,120 L234,120 L234,330 L226,330 Z
+    M256,120 L264,120 L264,330 L256,330 Z
+  "/>
+
+  <rect x="160" y="100" width="80" height="25"/>
+  <rect x="160" y="325" width="80" height="25"/>
+  <path fill="none" stroke="currentColor" stroke-width="10" stroke-linecap="round"
+    d="M200,350 L200,390"/>
+</svg>

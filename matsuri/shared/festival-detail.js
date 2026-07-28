@@ -47,6 +47,16 @@
     both: "昼・夜"
   };
 
+  const FEATURE_ICON_FILES = {
+    "山車": "dashi",
+    "神輿": "mikoshi",
+    "踊り": "odori",
+    "曳き回し": "hikimawashi",
+    "見どころ": "midokoro"
+  };
+
+  const iconCache = new Map();
+
   const featureItems = [
     ["山車", features.hasDashi],
     ["神輿", features.hasMikoshi],
@@ -60,6 +70,27 @@
 
   function setText(id, text) {
     byId(id).textContent = text;
+  }
+
+  async function loadIconSvg(label) {
+    const file = FEATURE_ICON_FILES[label];
+    if (!file) return null;
+    if (iconCache.has(file)) return iconCache.get(file);
+    const promise = fetch(`../../shared/icons/${file}.svg`)
+      .then((res) => (res.ok ? res.text() : null))
+      .catch(() => null);
+    iconCache.set(file, promise);
+    return promise;
+  }
+
+  async function attachFeatureIcon(item, label) {
+    const svgText = await loadIconSvg(label);
+    if (!svgText) return;
+    const wrap = document.createElement("span");
+    wrap.className = "feature-icon";
+    wrap.setAttribute("aria-hidden", "true");
+    wrap.innerHTML = svgText;
+    item.prepend(wrap);
   }
 
   function formatDate(dateText) {
@@ -363,11 +394,16 @@
 
   const featureGrid = byId("feature-grid");
   featureItems.forEach(([label, value]) => {
-    featureGrid.append(createFeatureBadge(label, value));
+    const badge = createFeatureBadge(label, value);
+    featureGrid.append(badge);
+    attachFeatureIcon(badge, label);
   });
-  featureGrid.append(
-    createNeutralFeatureBadge("見どころ", highlightTimeLabels[features.highlightTime] || "未確認")
+  const highlightBadge = createNeutralFeatureBadge(
+    "見どころ",
+    highlightTimeLabels[features.highlightTime] || "未確認"
   );
+  featureGrid.append(highlightBadge);
+  attachFeatureIcon(highlightBadge, "見どころ");
 
   const accessList = byId("access-list");
   accessList.append(
