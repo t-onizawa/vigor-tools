@@ -239,7 +239,12 @@
     image.src = `https://i.ytimg.com/vi/${media.contentId}/hqdefault.jpg`;
     image.alt = "";
     image.loading = "lazy";
-    thumb.append(image);
+
+    const playIcon = document.createElement("span");
+    playIcon.className = "media-gallery-play-icon";
+    playIcon.setAttribute("aria-hidden", "true");
+
+    thumb.append(image, playIcon);
 
     thumb.addEventListener("click", () => {
       const iframe = document.createElement("iframe");

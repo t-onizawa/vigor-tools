@@ -286,6 +286,7 @@ p {
 }
 
 .media-gallery-thumb {
+  position: relative;
   padding: 0;
   color: inherit;
   cursor: pointer;
@@ -305,6 +306,31 @@ p {
 .media-gallery-thumb img {
   display: block;
   object-fit: cover;
+}
+
+.media-gallery-play-icon {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  display: grid;
+  width: 34px;
+  height: 34px;
+  place-items: center;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.72);
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+}
+
+.media-gallery-play-icon::before {
+  content: "";
+  display: block;
+  width: 0;
+  height: 0;
+  margin-left: 3px;
+  border-top: 6px solid transparent;
+  border-bottom: 6px solid transparent;
+  border-left: 9px solid rgba(17, 17, 17, 0.78);
 }
 
 .media-gallery-embed {
