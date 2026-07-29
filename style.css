@@ -104,6 +104,31 @@ h1 {
   font-size: 0.82rem;
 }
 
+.privacy-content {
+  display: grid;
+  gap: 1rem;
+  padding-top: 2rem;
+  color: var(--muted);
+  font-size: 0.95rem;
+}
+
+.site-footer {
+  width: min(100%, 880px);
+  margin: -2rem auto 0;
+  padding: 0 1.25rem 3rem;
+  font-size: 0.78rem;
+}
+
+.site-footer a {
+  color: var(--muted);
+  text-decoration: none;
+}
+
+.site-footer a:hover {
+  color: var(--text);
+  text-decoration: underline;
+}
+
 @media (min-width: 720px) {
   .site-shell {
     padding-top: 5rem;
