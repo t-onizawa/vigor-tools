@@ -287,9 +287,9 @@
     }
   }
 
-  function applyHeroHeader(mediaItems) {
+  function applyHeroHeader(backgroundImage) {
     const header = document.querySelector(".festival-header");
-    const media = Array.isArray(mediaItems) ? mediaItems[0] : null;
+    const media = backgroundImage;
 
     if (!header || !media || media.type !== "youtube") {
       return;
@@ -480,7 +480,7 @@
 
   renderHighlightComment(festival.constantInfo.highlightComment);
   renderAtmosphereMedia(festival.constantInfo.atmosphereMedia);
-  applyHeroHeader(festival.constantInfo.atmosphereMedia);
+  applyHeroHeader(festival.constantInfo.backgroundImage);
   renderMapReference(festival.constantInfo.mapReference);
 
   byId("constant-sources").append(

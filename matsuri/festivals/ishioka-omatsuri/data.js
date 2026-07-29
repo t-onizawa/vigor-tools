@@ -41,6 +41,15 @@ const FESTIVAL = {
         checkedDate: "2026-07-27"
       }
     ],
+    backgroundImage: {
+      type: "youtube",
+      contentId: "8q5JKyKTBFQ",
+      sourceUrl: "https://www.youtube.com/watch?v=8q5JKyKTBFQ",
+      publisher: "祭のきせき（MatsuriNoKiseki）",
+      publisherType: "individual",
+      checkedDate: "2026-07-29",
+      note: "山車（幌獅子）・神輿が鮮明でサムネイルに文字オーバーレイがない。動画自体は36秒と短くatmosphereMediaの採用基準（内容量・尺）は満たさないため、atmosphereMediaには追加せず背景素材としてのみ採用した。"
+    },
     confirmation: {
       verified: true,
       confirmedDate: "2026-07-27",

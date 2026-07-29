@@ -335,16 +335,16 @@
     cardBody.append(detail);
 
     card.append(cardBody);
-    applyCardAtmosphereBackground(card, atmosphereMedia);
+    applyCardAtmosphereBackground(card, constantInfo.backgroundImage);
 
     return card;
   }
 
-  function applyCardAtmosphereBackground(card, mediaItems) {
-    const media = Array.isArray(mediaItems) ? mediaItems[0] : null;
-    if (!media || media.type !== "youtube") {
+  function applyCardAtmosphereBackground(card, backgroundImage) {
+    if (!backgroundImage || backgroundImage.type !== "youtube") {
       return;
     }
+    const media = backgroundImage;
 
     const bg = document.createElement("div");
     bg.className = "card-atmosphere-bg";

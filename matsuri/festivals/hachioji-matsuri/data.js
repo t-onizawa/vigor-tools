@@ -41,6 +41,15 @@ const FESTIVAL = {
         checkedDate: "2026-07-28"
       }
     ],
+    backgroundImage: {
+      type: "youtube",
+      contentId: "tc2NVsbHN1o",
+      sourceUrl: "https://www.youtube.com/watch?v=tc2NVsbHN1o",
+      publisher: "Japan Style",
+      publisherType: "individual",
+      checkedDate: "2026-07-29",
+      note: "夕方の山車と幌をつけた演者が鮮明でサムネイル画像自体には文字オーバーレイがない（動画冒頭のタイトルカードとは別）。動画自体は約14分でatmosphereMediaの目安（5分前後）をやや超えるため、atmosphereMediaには追加せず背景素材としてのみ採用した。"
+    },
     confirmation: {
       verified: true,
       confirmedDate: "2026-07-28",

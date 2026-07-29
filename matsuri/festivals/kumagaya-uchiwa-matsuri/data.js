@@ -41,6 +41,15 @@ const FESTIVAL = {
         checkedDate: "2026-07-28"
       }
     ],
+    backgroundImage: {
+      type: "youtube",
+      contentId: "g385qj9O0WA",
+      sourceUrl: "https://www.youtube.com/watch?v=g385qj9O0WA",
+      publisher: "祭のきせき（MatsuriNoKiseki）",
+      publisherType: "individual",
+      checkedDate: "2026-07-29",
+      note: "夕方の山車巡行と曳き手が鮮明でサムネイルに文字オーバーレイがない。動画自体は約104分の通し記録でatmosphereMediaの採用基準（長尺記録は不採用）を満たさないため、atmosphereMediaには追加せず背景素材としてのみ採用した。"
+    },
     confirmation: {
       verified: true,
       confirmedDate: "2026-07-28",
