@@ -28,6 +28,7 @@ const FESTIVAL = {
       note: "川越氷川神社は神幸祭の出発・還御地点で、実際の巡行ルートにも含まれます。"
     },
     highlightComment: "向かい合う山車同士が囃子で競演する「曳っかわせ」は、夜になると最高潮の盛り上がりを見せる。",
+    searchQuery: "川越まつり",
     atmosphereMedia: [],
     confirmation: {
       verified: true,

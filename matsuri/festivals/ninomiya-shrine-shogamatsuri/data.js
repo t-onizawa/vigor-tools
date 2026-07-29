@@ -28,6 +28,7 @@ const FESTIVAL = {
       note: "二宮神社の例祭日は9月9日固定です。"
     },
     highlightComment: null,
+    searchQuery: "二宮神社 しょうが祭り",
     atmosphereMedia: [],
     backgroundImage: {
       type: "youtube",

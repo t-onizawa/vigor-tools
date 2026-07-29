@@ -28,6 +28,7 @@ const FESTIVAL = {
       note: "八坂神社は龍ケ崎の撞舞・祇園祭の中心となる神社です。"
     },
     highlightComment: "カエルの面をつけた舞男が高さ約14mの柱に登り、綱の上で曲芸を行う「撞舞」は関東三奇祭の一つとされる。",
+    searchQuery: "龍ケ崎 撞舞",
     atmosphereMedia: [],
     backgroundImage: {
       type: "youtube",

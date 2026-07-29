@@ -499,6 +499,90 @@
     ended: "https://schema.org/EventScheduled"
   };
 
+  const SEARCH_LINK_ICONS = {
+    youtube:
+      '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><rect x="1" y="4" width="22" height="16" rx="4" fill="none" stroke="currentColor" stroke-width="1.6"/><polygon points="10,8.5 10,15.5 16,12"/></svg>',
+    instagram:
+      '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="6"/><circle cx="12" cy="12" r="5"/><circle cx="17.3" cy="6.7" r="1.1" fill="currentColor" stroke="none"/></svg>',
+    tiktok:
+      '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M14 2.5v11.2a3.6 3.6 0 1 1-2-3.23V2.5h2z"/><path d="M14 2.5c.3 2.3 2.1 4.1 4.2 4.4V8.9c-1.6-.1-3.1-.7-4.2-1.7V2.5z"/></svg>'
+  };
+
+  function normalizeForHashtag(text) {
+    return text
+      .replace(/[\s　]/g, "")
+      .replace(/[()（）]/g, "")
+      .replace(/[・･]/g, "")
+      .replace(/[「」『』]/g, "")
+      .replace(/[!！?？]/g, "");
+  }
+
+  function buildSearchLinkServices(festival) {
+    const query = festival.constantInfo.searchQuery || festival.name;
+    const hashtag = normalizeForHashtag(query);
+
+    return [
+      {
+        key: "youtube",
+        label: "YouTube",
+        url: `https://www.youtube.com/results?search_query=${encodeURIComponent(query)}`
+      },
+      {
+        key: "instagram",
+        label: "Instagram",
+        url: `https://www.instagram.com/explore/tags/${encodeURIComponent(hashtag)}/`
+      },
+      {
+        key: "tiktok",
+        label: "TikTok",
+        url: `https://www.tiktok.com/search?q=${encodeURIComponent(query)}`
+      }
+    ];
+  }
+
+  function renderSearchLinks(festival) {
+    const pageShell = document.querySelector(".page-shell");
+    if (!pageShell) return;
+
+    const section = document.createElement("section");
+    section.className = "info-section search-links-section";
+    section.setAttribute("aria-labelledby", "search-links-heading");
+
+    const heading = document.createElement("h2");
+    heading.id = "search-links-heading";
+    heading.textContent = "もっと雰囲気を見る";
+
+    const row = document.createElement("div");
+    row.className = "search-link-row";
+
+    buildSearchLinkServices(festival).forEach((service) => {
+      const link = document.createElement("a");
+      link.className = `search-link-button search-link-${service.key}`;
+      link.href = service.url;
+      link.target = "_blank";
+      link.rel = "noopener noreferrer";
+
+      const icon = document.createElement("span");
+      icon.className = "search-link-icon";
+      icon.setAttribute("aria-hidden", "true");
+      icon.innerHTML = SEARCH_LINK_ICONS[service.key];
+
+      const label = document.createElement("span");
+      label.className = "search-link-label";
+      label.textContent = service.label;
+
+      link.append(icon, label);
+      row.append(link);
+    });
+
+    const disclaimer = document.createElement("p");
+    disclaimer.className = "search-link-disclaimer";
+    disclaimer.textContent = "外部サイトの検索結果が開きます";
+
+    section.append(heading, row, disclaimer);
+    pageShell.append(section);
+  }
+
   function buildEventLocation(festival) {
     const mapReference = festival.constantInfo.mapReference;
     const address = `${festival.prefecture}${festival.city}`;
@@ -577,4 +661,5 @@
   }
 
   injectEventJsonLd(festival, currentYear);
+  renderSearchLinks(festival);
 })();
