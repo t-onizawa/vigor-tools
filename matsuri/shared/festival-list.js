@@ -310,6 +310,10 @@
       createMetaItem("駐車場", parkingText(access.hasParking))
     );
 
+    if (atmosphereMedia.length > 0) {
+      meta.append(createVideoBadge());
+    }
+
     const cardBody = document.createElement("div");
     cardBody.className = "card-body";
 
@@ -322,22 +326,30 @@
       cardBody.append(topLine, title, date, featureChips, meta);
     }
 
-    if (atmosphereMedia.length > 0) {
-      const media = document.createElement("p");
-      media.className = "media-label";
-      media.textContent = "動画あり";
-      cardBody.append(media);
-    }
-
-    const detail = document.createElement("span");
-    detail.className = "detail-link-text";
-    detail.textContent = "詳しく見る →";
-    cardBody.append(detail);
-
-    card.append(cardBody);
+    card.append(cardBody, createCardDetailButton());
     applyCardAtmosphereBackground(card, constantInfo.backgroundImage);
 
     return card;
+  }
+
+  function createVideoBadge() {
+    const badge = document.createElement("span");
+    badge.className = "meta-item meta-item--video";
+    badge.setAttribute("role", "img");
+    badge.setAttribute("aria-label", "動画あり");
+    badge.title = "動画あり";
+    badge.innerHTML =
+      '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true"><rect x="1" y="4" width="22" height="16" rx="4" fill="none" stroke="currentColor" stroke-width="1.6"/><polygon points="10,8.5 10,15.5 16,12" fill="currentColor"/></svg>';
+    return badge;
+  }
+
+  function createCardDetailButton() {
+    const button = document.createElement("span");
+    button.className = "card-detail-button";
+    button.setAttribute("aria-hidden", "true");
+    button.innerHTML =
+      '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>';
+    return button;
   }
 
   function applyCardAtmosphereBackground(card, backgroundImage) {

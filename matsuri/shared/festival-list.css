@@ -178,11 +178,37 @@ h1 {
   border: 1px solid var(--line);
   border-radius: 8px;
   background: var(--surface);
-  padding: 18px;
+  padding: 18px 18px 56px;
   transition:
     border-color 140ms ease,
     box-shadow 140ms ease,
     transform 140ms ease;
+}
+
+.card-detail-button {
+  position: absolute;
+  right: 14px;
+  bottom: 14px;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: var(--accent);
+  color: #ffffff;
+  transition: background-color 140ms ease;
+}
+
+.card-detail-button svg {
+  width: 18px;
+  height: 18px;
+}
+
+.festival-card:hover .card-detail-button,
+.festival-card:focus-visible .card-detail-button {
+  background: var(--accent-strong);
 }
 
 .card-atmosphere-bg {
@@ -346,8 +372,7 @@ h1 {
   margin-top: 12px;
 }
 
-.meta-item,
-.media-label {
+.meta-item {
   display: inline-flex;
   align-items: baseline;
   gap: 6px;
@@ -357,6 +382,18 @@ h1 {
   padding: 5px 10px;
   font-size: 0.86rem;
   line-height: 1.35;
+}
+
+.meta-item--video {
+  align-items: center;
+  padding: 5px 9px;
+  color: var(--accent);
+}
+
+.meta-item--video svg {
+  display: block;
+  width: 18px;
+  height: 14px;
 }
 
 .meta-label {
@@ -377,29 +414,10 @@ h1 {
   color: inherit;
 }
 
-.highlight-comment,
-.media-label {
-  margin: 12px 0 0;
-}
-
 .highlight-comment {
+  margin: 12px 0 0;
   color: var(--muted);
   font-size: 0.92rem;
-}
-
-.detail-link-text {
-  display: inline-block;
-  margin-top: 16px;
-  color: var(--accent);
-  font-weight: 700;
-  text-decoration: underline;
-  text-decoration-thickness: 1px;
-  text-underline-offset: 0.18em;
-}
-
-.detail-link-text:hover,
-.festival-card:hover .detail-link-text {
-  color: var(--accent-strong);
 }
 
 .disclaimer {
