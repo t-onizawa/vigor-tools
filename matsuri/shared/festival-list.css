@@ -170,9 +170,11 @@ h1 {
 }
 
 .festival-card {
+  position: relative;
   display: flex;
   align-items: stretch;
   gap: 14px;
+  overflow: hidden;
   border: 1px solid var(--line);
   border-radius: 8px;
   background: var(--surface);
@@ -181,6 +183,18 @@ h1 {
     border-color 140ms ease,
     box-shadow 140ms ease,
     transform 140ms ease;
+}
+
+.card-atmosphere-bg {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+  opacity: 0.15;
+  -webkit-mask-image: linear-gradient(to right, transparent 0%, black 100%);
+  mask-image: linear-gradient(to right, transparent 0%, black 100%);
+  pointer-events: none;
+  z-index: 0;
 }
 
 .festival-card:hover,
@@ -192,6 +206,8 @@ h1 {
 }
 
 .card-body {
+  position: relative;
+  z-index: 1;
   flex: 1 1 auto;
   min-width: 0;
 }

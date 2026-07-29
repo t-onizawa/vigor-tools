@@ -335,8 +335,21 @@
     cardBody.append(detail);
 
     card.append(cardBody);
+    applyCardAtmosphereBackground(card, atmosphereMedia);
 
     return card;
+  }
+
+  function applyCardAtmosphereBackground(card, mediaItems) {
+    const media = Array.isArray(mediaItems) ? mediaItems[0] : null;
+    if (!media || media.type !== "youtube") {
+      return;
+    }
+
+    const bg = document.createElement("div");
+    bg.className = "card-atmosphere-bg";
+    bg.style.backgroundImage = `url(https://i.ytimg.com/vi/${media.contentId}/hqdefault.jpg)`;
+    card.prepend(bg);
   }
 
   function render(items) {
