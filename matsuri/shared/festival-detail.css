@@ -269,7 +269,7 @@ p {
   font-style: italic;
 }
 
-.feature-badge.is-na span::before {
+.feature-badge.is-na .feature-badge-text span::before {
   content: "— ";
   font-style: normal;
 }
