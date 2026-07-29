@@ -29,6 +29,15 @@ const FESTIVAL = {
     },
     highlightComment: "担ぐ神輿として日本一の大きさ・重さ2トンとされる「平成神輿」が市街地を練り歩く。",
     atmosphereMedia: [],
+    backgroundImage: {
+      type: "youtube",
+      contentId: "BmhVeZsy6u8",
+      sourceUrl: "https://www.youtube.com/watch?v=BmhVeZsy6u8",
+      publisher: "田口祐也",
+      publisherType: "individual",
+      checkedDate: "2026-07-29",
+      note: "夜の神輿と担ぎ手が鮮明でサムネイルに文字オーバーレイがない。背景素材としてのみ採用（atmosphereMediaは空配列のまま）。"
+    },
     confirmation: {
       verified: true,
       confirmedDate: "2026-07-28",

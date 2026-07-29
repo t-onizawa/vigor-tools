@@ -29,6 +29,15 @@ const FESTIVAL = {
     },
     highlightComment: "カエルの面をつけた舞男が高さ約14mの柱に登り、綱の上で曲芸を行う「撞舞」は関東三奇祭の一つとされる。",
     atmosphereMedia: [],
+    backgroundImage: {
+      type: "youtube",
+      contentId: "hjTRYXQp9J8",
+      sourceUrl: "https://www.youtube.com/watch?v=hjTRYXQp9J8",
+      publisher: "茨城新聞動画ニュース",
+      publisherType: "local_media",
+      checkedDate: "2026-07-29",
+      note: "高さ14mの柱上で妙技を披露する舞男が鮮明でサムネイルに文字オーバーレイがない。背景素材としてのみ採用（atmosphereMediaは空配列のまま）。"
+    },
     confirmation: {
       verified: true,
       confirmedDate: "2026-07-28",

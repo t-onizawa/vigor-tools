@@ -29,6 +29,15 @@ const FESTIVAL = {
     },
     highlightComment: "初日夜は女性だけで担ぐ「女神輿」が特徴。",
     atmosphereMedia: [],
+    backgroundImage: {
+      type: "youtube",
+      contentId: "phMt_hzgi_U",
+      sourceUrl: "https://www.youtube.com/watch?v=phMt_hzgi_U",
+      publisher: "NORTHCHIBA（NPO法人）",
+      publisherType: "local_media",
+      checkedDate: "2026-07-29",
+      note: "神輿と提灯が鮮明でサムネイルに文字オーバーレイがない。背景素材としてのみ採用（atmosphereMediaは空配列のまま）。"
+    },
     confirmation: {
       verified: true,
       confirmedDate: "2026-07-28",

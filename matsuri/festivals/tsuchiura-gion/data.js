@@ -29,6 +29,15 @@ const FESTIVAL = {
     },
     highlightComment: null,
     atmosphereMedia: [],
+    backgroundImage: {
+      type: "youtube",
+      contentId: "a8WPmQ420EI",
+      sourceUrl: "https://www.youtube.com/watch?v=a8WPmQ420EI",
+      publisher: "めだか赤井",
+      publisherType: "individual",
+      checkedDate: "2026-07-29",
+      note: "山車巡行の様子でサムネイルに文字オーバーレイがない。背景素材としてのみ採用（atmosphereMediaは空配列のまま）。"
+    },
     confirmation: {
       verified: true,
       confirmedDate: "2026-07-28",

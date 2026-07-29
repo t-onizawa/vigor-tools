@@ -29,6 +29,15 @@ const FESTIVAL = {
     },
     highlightComment: null,
     atmosphereMedia: [],
+    backgroundImage: {
+      type: "youtube",
+      contentId: "s1T92XbdNXc",
+      sourceUrl: "https://www.youtube.com/watch?v=s1T92XbdNXc",
+      publisher: "祭のきせき（MatsuriNoKiseki）",
+      publisherType: "individual",
+      checkedDate: "2026-07-29",
+      note: "夜の山車巡行が鮮明で文字オーバーレイは「4K」の小さな表記のみ。背景素材としてのみ採用（atmosphereMediaは空配列のまま）。"
+    },
     confirmation: {
       verified: true,
       confirmedDate: "2026-07-28",

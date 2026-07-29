@@ -62,4 +62,9 @@ v0.1  2026-07-28
 v0.2  2026-07-28
     30件展開の最終レビューを踏まえ、匝瑳市公式サイトで最寄り駅・
     2026年日程を再確認。mapReference・highlightComment候補を追記。
+
+v0.3  2026-07-29（backgroundImage候補調査）
+    NORTHCHIBA（NPO法人、登録者5970人）の神輿と提灯の動画
+    （phMt_hzgi_U）を直接ページで確認。サムネイルに文字オーバーレイ
+    がなくbackgroundImageとして採用。
 ```

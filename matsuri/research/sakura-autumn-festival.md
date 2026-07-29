@@ -71,4 +71,9 @@ v0.4  2026-07-29
     が確定。hasDashi: true／hasDanceOnDashi: null（山車自体の上での
     踊りは未確認）で実装する。踊り文化はhighlightComment等の自由
     記述側で表現する。新しい構造化フィールドは追加しない。
+
+backgroundImage調査（2026-07-29）
+    祭のきせき（MatsuriNoKiseki、登録者9180人）の夜の山車巡行の動画
+    （s1T92XbdNXc）を直接ページで確認。文字オーバーレイは「4K」の
+    小さな表記のみでbackgroundImageとして採用。
 ```
