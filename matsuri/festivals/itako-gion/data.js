@@ -29,6 +29,15 @@ const FESTIVAL = {
     },
     highlightComment: null,
     atmosphereMedia: [],
+    backgroundImage: {
+      type: "youtube",
+      contentId: "DmYeAoFPNDA",
+      sourceUrl: "https://www.youtube.com/watch?v=DmYeAoFPNDA",
+      publisher: "茨城新聞動画ニュース",
+      publisherType: "local_media",
+      checkedDate: "2026-07-29",
+      note: "山車と担ぎ手が鮮明。小さな局ロゴのみでタイトル文字の支配はない。背景素材としてのみ採用（atmosphereMediaは空配列のまま）。"
+    },
     confirmation: {
       verified: true,
       confirmedDate: "2026-07-28",

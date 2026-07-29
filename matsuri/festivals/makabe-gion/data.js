@@ -29,6 +29,15 @@ const FESTIVAL = {
     },
     highlightComment: null,
     atmosphereMedia: [],
+    backgroundImage: {
+      type: "youtube",
+      contentId: "4uw1cV9qqdk",
+      sourceUrl: "https://www.youtube.com/watch?v=4uw1cV9qqdk",
+      publisher: "film sakura",
+      publisherType: "individual",
+      checkedDate: "2026-07-29",
+      note: "夜の山車と獅子頭・演者が鮮明。文字は右下の小さな制作者ロゴのみで主役を隠さない。背景素材としてのみ採用（atmosphereMediaは空配列のまま）。"
+    },
     confirmation: {
       verified: true,
       confirmedDate: "2026-07-28",

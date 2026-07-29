@@ -55,4 +55,9 @@ v0.2  2026-07-28
     あることを複数の神社情報源で確認し、eventStatusをunconfirmedから
     scheduled_pending_officialへ格上げした。mapReference・最寄り駅を
     追記し、分類を「条件付き公開可能」から「公開可能」へ昇格した。
+
+backgroundImage調査（2026-07-29）
+    まなダック（登録者1790人）の夕方の山車巡行の動画（wCcPkaSs4aE）を
+    直接ページで確認。サムネイルに文字オーバーレイがなくbackgroundImage
+    として採用。
 ```

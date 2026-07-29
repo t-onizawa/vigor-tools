@@ -29,6 +29,15 @@ const FESTIVAL = {
     },
     highlightComment: "初日「汐ふみ」では、神輿が太平洋の荒波に突進しもみ合う。",
     atmosphereMedia: [],
+    backgroundImage: {
+      type: "youtube",
+      contentId: "ZqexWGNN1HU",
+      sourceUrl: "https://www.youtube.com/watch?v=ZqexWGNN1HU",
+      publisher: "太田裕",
+      publisherType: "individual",
+      checkedDate: "2026-07-29",
+      note: "神輿が荒波に突進する「汐ふみ」が鮮明でサムネイルに文字オーバーレイがない。背景素材としてのみ採用（atmosphereMediaは空配列のまま）。"
+    },
     confirmation: {
       verified: true,
       confirmedDate: "2026-07-28",

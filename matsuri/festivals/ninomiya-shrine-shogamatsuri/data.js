@@ -29,6 +29,15 @@ const FESTIVAL = {
     },
     highlightComment: null,
     atmosphereMedia: [],
+    backgroundImage: {
+      type: "youtube",
+      contentId: "wCcPkaSs4aE",
+      sourceUrl: "https://www.youtube.com/watch?v=wCcPkaSs4aE",
+      publisher: "まなダック",
+      publisherType: "individual",
+      checkedDate: "2026-07-29",
+      note: "夕方の山車巡行が鮮明でサムネイルに文字オーバーレイがない。背景素材としてのみ採用（atmosphereMediaは空配列のまま）。"
+    },
     confirmation: {
       verified: true,
       confirmedDate: "2026-07-28",

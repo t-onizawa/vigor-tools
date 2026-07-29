@@ -29,6 +29,15 @@ const FESTIVAL = {
     },
     highlightComment: null,
     atmosphereMedia: [],
+    backgroundImage: {
+      type: "youtube",
+      contentId: "0M_1-qEMKbM",
+      sourceUrl: "https://www.youtube.com/watch?v=0M_1-qEMKbM",
+      publisher: "祭のきせき（MatsuriNoKiseki）",
+      publisherType: "individual",
+      checkedDate: "2026-07-29",
+      note: "神輿の町内巡行の様子が鮮明でサムネイルに文字オーバーレイがない。背景素材としてのみ採用（atmosphereMediaは空配列のまま）。"
+    },
     confirmation: {
       verified: true,
       confirmedDate: "2026-07-28",

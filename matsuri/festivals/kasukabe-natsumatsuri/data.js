@@ -29,6 +29,15 @@ const FESTIVAL = {
     },
     highlightComment: null,
     atmosphereMedia: [],
+    backgroundImage: {
+      type: "youtube",
+      contentId: "63Y5SIWDeBg",
+      sourceUrl: "https://www.youtube.com/watch?v=63Y5SIWDeBg",
+      publisher: "太田裕",
+      publisherType: "individual",
+      checkedDate: "2026-07-29",
+      note: "大人御輿パレードの担ぎ手が鮮明でサムネイルに文字オーバーレイがない。背景素材としてのみ採用（atmosphereMediaは空配列のまま）。"
+    },
     confirmation: {
       verified: true,
       confirmedDate: "2026-07-28",

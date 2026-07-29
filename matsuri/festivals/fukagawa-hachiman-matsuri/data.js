@@ -29,6 +29,15 @@ const FESTIVAL = {
     },
     highlightComment: "「水かけ祭り」として知られ、沿道から担ぎ手に一斉に水を浴びせる。江戸三大祭りの一つとされる。",
     atmosphereMedia: [],
+    backgroundImage: {
+      type: "youtube",
+      contentId: "UgDHWDI0zvA",
+      sourceUrl: "https://www.youtube.com/watch?v=UgDHWDI0zvA",
+      publisher: "AQUA Geo Graphic",
+      publisherType: "individual",
+      checkedDate: "2026-07-29",
+      note: "神輿連合渡御・水掛けの様子が鮮明でサムネイルに文字オーバーレイがない。背景素材としてのみ採用（atmosphereMediaは空配列のまま）。"
+    },
     confirmation: {
       verified: true,
       confirmedDate: "2026-07-28",

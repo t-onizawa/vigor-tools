@@ -29,6 +29,15 @@ const FESTIVAL = {
     },
     highlightComment: null,
     atmosphereMedia: [],
+    backgroundImage: {
+      type: "youtube",
+      contentId: "RWGWYmcLMCU",
+      sourceUrl: "https://www.youtube.com/watch?v=RWGWYmcLMCU",
+      publisher: "とちカルMOVIE",
+      publisherType: "individual",
+      checkedDate: "2026-07-29",
+      note: "鳥居をくぐる夜の彫刻屋台が鮮明でサムネイル自体には文字オーバーレイがない。背景素材としてのみ採用（atmosphereMediaは空配列のまま）。"
+    },
     confirmation: {
       verified: true,
       confirmedDate: "2026-07-28",
