@@ -197,6 +197,25 @@ h1 {
   z-index: 0;
 }
 
+.card-atmosphere-bg::before,
+.card-atmosphere-bg::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 5%;
+}
+
+.card-atmosphere-bg::before {
+  top: 0;
+  background: linear-gradient(to bottom, var(--surface), transparent);
+}
+
+.card-atmosphere-bg::after {
+  bottom: 0;
+  background: linear-gradient(to top, var(--surface), transparent);
+}
+
 .festival-card:hover,
 .festival-card:focus-visible {
   border-color: var(--text);
