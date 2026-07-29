@@ -550,9 +550,13 @@
     section.className = "info-section search-links-section";
     section.setAttribute("aria-labelledby", "search-links-heading");
 
+    const hasAtmosphereMedia =
+      Array.isArray(festival.constantInfo.atmosphereMedia) &&
+      festival.constantInfo.atmosphereMedia.length > 0;
+
     const heading = document.createElement("h2");
     heading.id = "search-links-heading";
-    heading.textContent = "もっと雰囲気を見る";
+    heading.textContent = hasAtmosphereMedia ? "もっと雰囲気を感じる" : "雰囲気を感じる";
 
     const row = document.createElement("div");
     row.className = "search-link-row";
