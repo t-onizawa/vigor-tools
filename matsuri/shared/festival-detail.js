@@ -103,20 +103,46 @@
     }).format(date);
   }
 
+  function formatDateList(dates) {
+    const runs = [];
+    let runStart = 0;
+
+    for (let i = 1; i <= dates.length; i++) {
+      const isLast = i === dates.length;
+      const isConsecutive =
+        !isLast &&
+        new Date(`${dates[i]}T00:00:00+09:00`) - new Date(`${dates[i - 1]}T00:00:00+09:00`) === 86400000;
+
+      if (!isConsecutive) {
+        runs.push(dates.slice(runStart, i));
+        runStart = i;
+      }
+    }
+
+    return runs
+      .map((run) =>
+        run.length >= 2 ? `${formatDate(run[0])}〜${formatDate(run[run.length - 1])}` : formatDate(run[0])
+      )
+      .join(" / ");
+  }
+
   function createFeatureBadge(label, value) {
     const item = document.createElement("div");
+    const state = availabilityState(value);
     item.className = "feature-badge";
+    item.classList.add(state.className);
+
+    const text = document.createElement("div");
+    text.className = "feature-badge-text";
 
     const labelEl = document.createElement("strong");
     labelEl.textContent = label;
 
     const valueEl = document.createElement("span");
-    const state = availabilityState(value);
-
-    item.classList.add(state.className);
     valueEl.textContent = state.label;
 
-    item.append(labelEl, valueEl);
+    text.append(labelEl, valueEl);
+    item.append(text);
     return item;
   }
 
@@ -124,13 +150,17 @@
     const item = document.createElement("div");
     item.className = "feature-badge is-neutral";
 
+    const text = document.createElement("div");
+    text.className = "feature-badge-text";
+
     const labelEl = document.createElement("strong");
     labelEl.textContent = label;
 
     const valueEl = document.createElement("span");
     valueEl.textContent = value;
 
-    item.append(labelEl, valueEl);
+    text.append(labelEl, valueEl);
+    item.append(text);
     return item;
   }
 
@@ -255,6 +285,22 @@
       console.warn("[festival-detail] atmosphereMediaの描画に失敗", err);
       section.remove();
     }
+  }
+
+  function applyHeroHeader(mediaItems) {
+    const header = document.querySelector(".festival-header");
+    const media = Array.isArray(mediaItems) ? mediaItems[0] : null;
+
+    if (!header || !media || media.type !== "youtube") {
+      return;
+    }
+
+    header.classList.add("has-hero");
+
+    const background = document.createElement("div");
+    background.className = "hero-background";
+    background.style.backgroundImage = `url(https://i.ytimg.com/vi/${media.contentId}/hqdefault.jpg)`;
+    header.prepend(background);
   }
 
   function createAtmosphereMediaGalleryItem(media) {
@@ -404,7 +450,7 @@
   setText("festival-name", festival.name);
   setText("festival-prefecture", festival.prefecture);
   renderEventStatusDateText();
-  setText("festival-dates", currentYear.dates.map(formatDate).join(" / "));
+  setText("festival-dates", formatDateList(currentYear.dates));
   setText("event-status", eventStatusLabels[currentYear.eventStatus] || "未確認");
   renderHayashiNote(features.hayashiNote);
 
@@ -434,6 +480,7 @@
 
   renderHighlightComment(festival.constantInfo.highlightComment);
   renderAtmosphereMedia(festival.constantInfo.atmosphereMedia);
+  applyHeroHeader(festival.constantInfo.atmosphereMedia);
   renderMapReference(festival.constantInfo.mapReference);
 
   byId("constant-sources").append(

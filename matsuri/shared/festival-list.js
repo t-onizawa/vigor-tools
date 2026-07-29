@@ -151,6 +151,22 @@
       return `${yearlyInfo.year}年 日程未確認`;
     }
 
+    const isFullyConsecutive = dates.every((date, i) => {
+      if (i === 0) return true;
+      return (
+        new Date(`${date}T00:00:00+09:00`) - new Date(`${dates[i - 1]}T00:00:00+09:00`) === 86400000
+      );
+    });
+
+    if (!isFullyConsecutive) {
+      return dates
+        .map((date) => {
+          const d = new Date(`${date}T00:00:00+09:00`);
+          return `${yearlyInfo.year}年${d.getMonth() + 1}月${d.getDate()}日(${weekday(d)})`;
+        })
+        .join(" / ");
+    }
+
     const start = new Date(`${dates[0]}T00:00:00+09:00`);
     const end = new Date(`${dates[dates.length - 1]}T00:00:00+09:00`);
 

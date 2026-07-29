@@ -52,6 +52,51 @@ a {
   border-bottom: 1px solid var(--line);
 }
 
+.festival-header.has-hero {
+  position: relative;
+  overflow: hidden;
+  width: 100vw;
+  margin-left: calc(50% - 50vw);
+  margin-right: calc(50% - 50vw);
+  border-bottom: none;
+  border-radius: 0;
+  padding: 32px 20px 28px;
+  background-color: var(--accent-strong);
+  color: #ffffff;
+}
+
+.hero-background {
+  position: absolute;
+  inset: -16px;
+  background-size: cover;
+  background-position: center;
+  filter: blur(14px);
+  transform: scale(1.1);
+  z-index: 0;
+}
+
+.festival-header.has-hero::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(17, 17, 17, 0.4) 0%, rgba(17, 17, 17, 0.7) 100%);
+  z-index: 1;
+}
+
+.festival-header.has-hero > *:not(.hero-background) {
+  position: relative;
+  z-index: 2;
+}
+
+.festival-header.has-hero .back-link a,
+.festival-header.has-hero .prefecture {
+  color: rgba(255, 255, 255, 0.85);
+}
+
+.festival-header.has-hero h1 {
+  color: #ffffff;
+}
+
 .project-label,
 .back-link,
 .section-label {
@@ -171,6 +216,11 @@ p {
   background: var(--badge);
 }
 
+.feature-badge-text {
+  flex: 1 1 auto;
+  min-width: 0;
+}
+
 .feature-badge strong,
 .detail-term {
   display: block;
@@ -233,6 +283,10 @@ p {
   grid-column: 1 / -1;
   background: var(--accent);
   border-color: var(--accent);
+  color: #ffffff;
+}
+
+.feature-badge.is-neutral strong {
   color: #ffffff;
 }
 
