@@ -442,4 +442,92 @@
   byId("yearly-sources").append(
     createSourceBlock(`${currentYear.year}年情報`, currentYear.confirmation)
   );
+
+  const schemaEventStatus = {
+    confirmed: "https://schema.org/EventScheduled",
+    scheduled_pending_official: "https://schema.org/EventScheduled",
+    unconfirmed: "https://schema.org/EventScheduled",
+    postponed: "https://schema.org/EventPostponed",
+    cancelled: "https://schema.org/EventCancelled",
+    ended: "https://schema.org/EventScheduled"
+  };
+
+  function buildEventLocation(festival) {
+    const mapReference = festival.constantInfo.mapReference;
+    const address = `${festival.prefecture}${festival.city}`;
+
+    if (mapReference) {
+      const location = {
+        "@type": "Place",
+        name: mapReference.label,
+        address
+      };
+      if (typeof mapReference.lat === "number" && typeof mapReference.lng === "number") {
+        location.geo = {
+          "@type": "GeoCoordinates",
+          latitude: mapReference.lat,
+          longitude: mapReference.lng
+        };
+      }
+      return location;
+    }
+
+    return {
+      "@type": "Place",
+      name: festival.city,
+      address
+    };
+  }
+
+  function buildEventDescription(festival) {
+    const highlight = festival.constantInfo.highlightComment;
+    if (highlight) {
+      return highlight;
+    }
+    return `${festival.prefecture}${festival.city}で開催される${festival.name}。${festival.constantInfo.schedulePattern}`;
+  }
+
+  function buildEventJsonLd(festival, yearlyInfo) {
+    const dates = Array.isArray(yearlyInfo.dates) ? yearlyInfo.dates : [];
+    if (dates.length === 0) {
+      return null;
+    }
+
+    const canonical = document.querySelector('link[rel="canonical"]');
+    const url = canonical ? canonical.href : undefined;
+
+    const jsonLd = {
+      "@context": "https://schema.org",
+      "@type": "Event",
+      name: festival.name,
+      startDate: dates[0],
+      endDate: dates[dates.length - 1],
+      eventStatus: schemaEventStatus[yearlyInfo.eventStatus] || "https://schema.org/EventScheduled",
+      eventAttendanceMode: "https://schema.org/OfflineEventAttendanceMode",
+      location: buildEventLocation(festival),
+      description: buildEventDescription(festival)
+    };
+
+    if (url) {
+      jsonLd.url = url;
+    }
+
+    return jsonLd;
+  }
+
+  function injectEventJsonLd(festival, yearlyInfo) {
+    try {
+      const jsonLd = buildEventJsonLd(festival, yearlyInfo);
+      if (!jsonLd) return;
+
+      const script = document.createElement("script");
+      script.type = "application/ld+json";
+      script.textContent = JSON.stringify(jsonLd);
+      document.head.appendChild(script);
+    } catch (err) {
+      console.warn("[festival-detail] schema.org/Event JSON-LDの生成に失敗", err);
+    }
+  }
+
+  injectEventJsonLd(festival, currentYear);
 })();
