@@ -29,6 +29,22 @@
     both: "昼・夜"
   };
 
+  const FEATURE_ICON_FILES = {
+    "山車": "dashi",
+    "神輿": "mikoshi",
+    "踊り": "odori",
+    "曳き回し": "hikimawashi"
+  };
+
+  const iconCache = new Map();
+
+  const cardFeatureItems = [
+    ["山車", "hasDashi"],
+    ["神輿", "hasMikoshi"],
+    ["踊り", "hasDanceOnDashi"],
+    ["曳き回し", "hasParade"]
+  ];
+
   async function loadFestival(slug) {
     try {
       const res = await fetch(`festivals/${slug}/data.js`);
@@ -145,17 +161,38 @@
     return `${yearlyInfo.year}年${start.getMonth() + 1}月${start.getDate()}日(${weekday(start)})〜${end.getDate()}日(${weekday(end)})`;
   }
 
-  function featureMark(value) {
+  function availabilityState(value) {
     if (value === true) {
-      return "○";
+      return { className: "is-yes", label: "あり" };
     }
     if (value === false) {
-      return "×";
+      return { className: "is-no", label: "なし" };
     }
     if (value === "n/a") {
-      return "－";
+      return { className: "is-na", label: "該当なし" };
     }
-    return "？";
+    return { className: "is-unknown", label: "未確認" };
+  }
+
+  async function loadIconSvg(label) {
+    const file = FEATURE_ICON_FILES[label];
+    if (!file) return null;
+    if (iconCache.has(file)) return iconCache.get(file);
+    const promise = fetch(`shared/icons/${file}.svg`)
+      .then((res) => (res.ok ? res.text() : null))
+      .catch(() => null);
+    iconCache.set(file, promise);
+    return promise;
+  }
+
+  async function attachFeatureIcon(item, label) {
+    const svgText = await loadIconSvg(label);
+    if (!svgText) return;
+    const wrap = document.createElement("span");
+    wrap.className = "card-feature-icon";
+    wrap.setAttribute("aria-hidden", "true");
+    wrap.innerHTML = svgText;
+    item.prepend(wrap);
   }
 
   function parkingText(value) {
@@ -168,19 +205,27 @@
     return "未確認";
   }
 
-  function pickCardMedia(features) {
-    if (features.hasDashi === true) {
-      return { file: "dashi", label: "山車", tagText: "山車の祭り" };
-    }
-    if (features.hasMikoshi === true) {
-      return { file: "mikoshi", label: "神輿", tagText: "神輿の祭り" };
-    }
-    return null;
+  function createFeatureChip(label, value) {
+    const item = document.createElement("span");
+    const state = availabilityState(value);
+    item.className = `card-feature-chip ${state.className}`;
+    item.title = `${label}: ${state.label}`;
+
+    const labelEl = document.createElement("span");
+    labelEl.className = "card-feature-label";
+    labelEl.textContent = label;
+
+    item.append(labelEl);
+    attachFeatureIcon(item, label);
+    return item;
   }
 
-  function createMetaItem(label, value) {
+  function createMetaItem(label, value, className) {
     const item = document.createElement("span");
     item.className = "meta-item";
+    if (className) {
+      item.classList.add(className);
+    }
 
     const labelEl = document.createElement("span");
     labelEl.className = "meta-label";
@@ -202,7 +247,6 @@
     const atmosphereMedia = Array.isArray(constantInfo.atmosphereMedia)
       ? constantInfo.atmosphereMedia
       : [];
-    const cardMedia = pickCardMedia(features);
 
     const card = document.createElement("a");
     card.className = "festival-card";
@@ -233,24 +277,20 @@
     date.className = "date-range";
     date.textContent = formatDateRange(yearlyInfo);
 
-    const allFeatureParts = [
-      { key: "山車", text: `山車${featureMark(features.hasDashi)}` },
-      { key: "神輿", text: `神輿${featureMark(features.hasMikoshi)}` },
-      { key: "踊り", text: `踊り${featureMark(features.hasDanceOnDashi)}` },
-      { key: "曳き回し", text: `曳き回し${featureMark(features.hasParade)}` }
-    ];
-
-    const featureLine = document.createElement("p");
-    featureLine.className = "feature-line";
-    featureLine.textContent = allFeatureParts
-      .filter((part) => !cardMedia || part.key !== cardMedia.label)
-      .map((part) => part.text)
-      .join(" ");
+    const featureChips = document.createElement("div");
+    featureChips.className = "card-feature-chips";
+    featureChips.append(
+      ...cardFeatureItems.map(([label, key]) => createFeatureChip(label, features[key]))
+    );
 
     const meta = document.createElement("div");
     meta.className = "card-meta";
     meta.append(
-      createMetaItem("見どころ", highlightTimeLabels[features.highlightTime] || "未確認"),
+      createMetaItem(
+        "見どころ",
+        highlightTimeLabels[features.highlightTime] || "未確認",
+        "meta-item--highlight-time"
+      ),
       createMetaItem("駐車場", parkingText(access.hasParking))
     );
 
@@ -261,9 +301,9 @@
       const highlight = document.createElement("p");
       highlight.className = "highlight-comment";
       highlight.textContent = constantInfo.highlightComment;
-      cardBody.append(topLine, title, date, featureLine, meta, highlight);
+      cardBody.append(topLine, title, date, featureChips, meta, highlight);
     } else {
-      cardBody.append(topLine, title, date, featureLine, meta);
+      cardBody.append(topLine, title, date, featureChips, meta);
     }
 
     if (atmosphereMedia.length > 0) {
@@ -280,23 +320,6 @@
 
     card.append(cardBody);
 
-    if (cardMedia) {
-      const mediaBox = document.createElement("div");
-      mediaBox.className = "card-media";
-
-      const img = document.createElement("img");
-      img.src = `shared/illustrations/${cardMedia.file}.png`;
-      img.alt = "";
-      img.loading = "lazy";
-
-      const tag = document.createElement("span");
-      tag.className = "media-tag";
-      tag.textContent = cardMedia.tagText;
-
-      mediaBox.append(img, tag);
-      card.append(mediaBox);
-    }
-
     return card;
   }
 
@@ -304,21 +327,35 @@
     const list = document.getElementById("festival-list");
     const count = document.getElementById("festival-count");
     const toggle = document.getElementById("upcoming-only-toggle");
+    const areaFilter = document.getElementById("area-filter");
 
-    const visibleItems = toggle.checked
-      ? items.filter((item) => UPCOMING_STATUSES.has(item.yearlyInfo.eventStatus))
-      : items;
+    const visibleItems = items.filter((item) => {
+      const passesUpcoming =
+        !toggle.checked || UPCOMING_STATUSES.has(item.yearlyInfo.eventStatus);
+      const passesArea = !areaFilter.value || item.festival.areaTag === areaFilter.value;
+      return passesUpcoming && passesArea;
+    });
 
     list.replaceChildren(...visibleItems.map(renderFestivalCard));
     count.textContent = `${items.length}件中${visibleItems.length}件を表示`;
+  }
+
+  function syncAreaFilterState(areaFilter) {
+    areaFilter.classList.toggle("is-filtering", areaFilter.value !== "");
   }
 
   async function init() {
     const loaded = await Promise.all(FESTIVAL_SLUGS.map(loadFestival));
     const items = sortFestivalItems(loaded.filter(Boolean).map(normalizeFestival).filter(Boolean));
     const toggle = document.getElementById("upcoming-only-toggle");
+    const areaFilter = document.getElementById("area-filter");
 
     toggle.addEventListener("change", () => render(items));
+    areaFilter.addEventListener("change", () => {
+      syncAreaFilterState(areaFilter);
+      render(items);
+    });
+    syncAreaFilterState(areaFilter);
     render(items);
   }
 

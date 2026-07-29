@@ -15,6 +15,9 @@
   --none-text: #6f7377;
   --unknown-bg: #ffffff;
   --unknown-text: #4d5358;
+  --accent: #26415e;
+  --accent-strong: #1a2e42;
+  --accent-muted: #b7c2cc;
 }
 
 * {
@@ -227,8 +230,15 @@ p {
 }
 
 .feature-badge.is-neutral {
-  background: #ffffff;
-  color: var(--text);
+  grid-column: 1 / -1;
+  background: var(--accent);
+  border-color: var(--accent);
+  color: #ffffff;
+}
+
+#atmosphere-media-link,
+#map-external-link {
+  color: var(--accent);
 }
 
 .detail-list {
@@ -448,5 +458,9 @@ p {
 
   .feature-grid {
     grid-template-columns: repeat(5, minmax(0, 1fr));
+  }
+
+  .feature-badge.is-neutral {
+    grid-column: auto;
   }
 }
