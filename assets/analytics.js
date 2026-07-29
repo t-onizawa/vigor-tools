@@ -1,6 +1,6 @@
 // Replace GA_MEASUREMENT_ID with the production GA4 measurement ID.
 (function () {
-  const GA_MEASUREMENT_ID = "G-XXXXXXXXXX";
+  const GA_MEASUREMENT_ID = "G-50STFBVFLW";
 
   if (GA_MEASUREMENT_ID === "G-XXXXXXXXXX") {
     return;
