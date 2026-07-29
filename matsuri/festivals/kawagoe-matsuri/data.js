@@ -29,7 +29,19 @@ const FESTIVAL = {
     },
     highlightComment: "向かい合う山車同士が囃子で競演する「曳っかわせ」は、夜になると最高潮の盛り上がりを見せる。",
     searchQuery: "川越まつり",
-    atmosphereMedia: [],
+    atmosphereMedia: [
+      {
+        type: "youtube",
+        url: "https://www.youtube.com/watch?v=E-G46iewLS0",
+        contentId: "E-G46iewLS0",
+        title: "川越まつり【埼玉県公式観光動画】",
+        publisher: "埼玉県（ちょこたび埼玉）",
+        publisherType: "government",
+        purpose: "festival_atmosphere",
+        publishedYear: 2011,
+        checkedDate: "2026-07-29"
+      }
+    ],
     confirmation: {
       verified: true,
       confirmedDate: "2026-07-28",

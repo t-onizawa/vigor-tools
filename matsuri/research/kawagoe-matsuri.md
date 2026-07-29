@@ -65,4 +65,10 @@ v0.2  2026-07-28
     hasParade・highlightComment候補・atmosphereMedia候補を追記。
     山車前部の囃子台（構造物に組み込まれた舞台）上で舞が披露される
     ことを公式サイトで確認し、hasDanceOnDashi=trueと判定した。
+
+atmosphereMedia調査（2026-07-29）
+    埼玉県公式観光チャンネル「ちょこたび埼玉」（ChokotabiSaitama、
+    登録者1340人）の「川越まつり【埼玉県公式観光動画】」
+    （E-G46iewLS0、約3分）を直接ページで確認。公式性・尺とも
+    採用基準を満たすためatmosphereMediaに採用した。
 ```

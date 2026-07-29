@@ -28,7 +28,19 @@ const FESTIVAL = {
       note: "神峰神社は7年に1度の大祭礼で4台の山車が一堂に会する中心地です。"
     },
     highlightComment: "高さ15m・重さ5tの大型山車が、5層の唐破風造りの屋形を左右に開いてからくり人形芝居を演じる。",
-    atmosphereMedia: [],
+    atmosphereMedia: [
+      {
+        type: "youtube",
+        url: "https://www.youtube.com/watch?v=_ToTEq0-H-0",
+        contentId: "_ToTEq0-H-0",
+        title: "日立風流物 ７年ぶり山車４台そろう【いばキラニュース】R8.5.7",
+        publisher: "茨城県（いばキラニュース）",
+        publisherType: "government",
+        purpose: "festival_atmosphere",
+        publishedYear: 2026,
+        checkedDate: "2026-07-29"
+      }
+    ],
     confirmation: {
       verified: true,
       confirmedDate: "2026-07-28",
