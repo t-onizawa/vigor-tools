@@ -203,7 +203,7 @@ h1 {
   position: absolute;
   left: 0;
   right: 0;
-  height: 5%;
+  height: 15%;
 }
 
 .card-atmosphere-bg::before {
