@@ -293,6 +293,14 @@
     date.className = "date-range";
     date.textContent = formatDateRange(yearlyInfo);
 
+    const headingText = document.createElement("div");
+    headingText.className = "card-heading-text";
+    headingText.append(title, date);
+
+    const headingRow = document.createElement("div");
+    headingRow.className = "card-heading-row";
+    headingRow.append(headingText, createCardDetailButton());
+
     const featureChips = document.createElement("div");
     featureChips.className = "card-feature-chips";
     featureChips.append(
@@ -321,12 +329,12 @@
       const highlight = document.createElement("p");
       highlight.className = "highlight-comment";
       highlight.textContent = constantInfo.highlightComment;
-      cardBody.append(topLine, title, date, featureChips, meta, highlight);
+      cardBody.append(topLine, headingRow, featureChips, meta, highlight);
     } else {
-      cardBody.append(topLine, title, date, featureChips, meta);
+      cardBody.append(topLine, headingRow, featureChips, meta);
     }
 
-    card.append(cardBody, createCardDetailButton());
+    card.append(cardBody);
     applyCardAtmosphereBackground(card, constantInfo.backgroundImage);
 
     return card;

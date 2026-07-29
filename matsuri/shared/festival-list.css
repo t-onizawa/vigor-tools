@@ -178,17 +178,27 @@ h1 {
   border: 1px solid var(--line);
   border-radius: 8px;
   background: var(--surface);
-  padding: 18px 18px 56px;
+  padding: 18px;
   transition:
     border-color 140ms ease,
     box-shadow 140ms ease,
     transform 140ms ease;
 }
 
+.card-heading-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.card-heading-text {
+  min-width: 0;
+  flex: 1 1 auto;
+}
+
 .card-detail-button {
-  position: absolute;
-  right: 14px;
-  bottom: 14px;
+  flex: none;
   z-index: 2;
   display: flex;
   align-items: center;
