@@ -541,6 +541,8 @@
   }
 
   function renderSearchLinks(festival) {
+    const featuresHeading = byId("features-heading");
+    const anchor = featuresHeading ? featuresHeading.closest("section") : null;
     const pageShell = document.querySelector(".page-shell");
     if (!pageShell) return;
 
@@ -580,7 +582,12 @@
     disclaimer.textContent = "外部サイトの検索結果が開きます";
 
     section.append(heading, row, disclaimer);
-    pageShell.append(section);
+
+    if (anchor && anchor.parentElement) {
+      anchor.parentElement.insertBefore(section, anchor);
+    } else {
+      pageShell.append(section);
+    }
   }
 
   function buildEventLocation(festival) {
