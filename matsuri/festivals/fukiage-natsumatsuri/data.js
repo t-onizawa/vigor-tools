@@ -28,7 +28,19 @@ const FESTIVAL = {
       note: "会場は吹上神社前と中山道の一部です。"
     },
     highlightComment: null,
-    atmosphereMedia: [],
+    atmosphereMedia: [
+      {
+        type: "youtube",
+        url: "https://www.youtube.com/watch?v=hTEbjQgFq3s",
+        contentId: "hTEbjQgFq3s",
+        title: "市制施行65周年記念「吹上夏まつり」",
+        publisher: "Konosu_city 鴻巣市チャンネル",
+        publisherType: "government",
+        purpose: "festival_atmosphere",
+        publishedYear: 2019,
+        checkedDate: "2026-07-29"
+      }
+    ],
     confirmation: {
       verified: true,
       confirmedDate: "2026-07-28",

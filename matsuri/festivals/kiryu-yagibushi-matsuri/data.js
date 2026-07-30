@@ -28,7 +28,19 @@ const FESTIVAL = {
       note: "美和神社は神輿の宵の出御・還御の基点です。"
     },
     highlightComment: null,
-    atmosphereMedia: [],
+    atmosphereMedia: [
+      {
+        type: "youtube",
+        url: "https://www.youtube.com/watch?v=LgcZuf72uSo",
+        contentId: "LgcZuf72uSo",
+        title: "#02　熱中しよう桐生八木節まつり",
+        publisher: "桐生市チャンネル【kiryucitychannel】",
+        publisherType: "government",
+        purpose: "festival_atmosphere",
+        publishedYear: 2023,
+        checkedDate: "2026-07-29"
+      }
+    ],
     backgroundImage: {
       type: "youtube",
       contentId: "0M_1-qEMKbM",

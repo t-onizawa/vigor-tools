@@ -28,7 +28,19 @@ const FESTIVAL = {
       note: "富岡八幡宮は深川八幡祭りの中心となる神社です。"
     },
     highlightComment: "「水かけ祭り」として知られ、沿道から担ぎ手に一斉に水を浴びせる。江戸三大祭りの一つとされる。",
-    atmosphereMedia: [],
+    atmosphereMedia: [
+      {
+        type: "youtube",
+        url: "https://www.youtube.com/watch?v=rn2T2df7Tmw",
+        contentId: "rn2T2df7Tmw",
+        title: "富岡八幡宮「水かけ祭り」　6年ぶり開催に熱気!(2023年8月13日)",
+        publisher: "ANNnewsCH",
+        publisherType: "local_media",
+        purpose: "festival_atmosphere",
+        publishedYear: 2023,
+        checkedDate: "2026-07-29"
+      }
+    ],
     backgroundImage: {
       type: "youtube",
       contentId: "UgDHWDI0zvA",

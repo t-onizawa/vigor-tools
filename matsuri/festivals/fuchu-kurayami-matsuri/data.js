@@ -28,7 +28,19 @@ const FESTIVAL = {
       note: "大國魂神社は府中くらやみ祭の中心となる神社です。"
     },
     highlightComment: null,
-    atmosphereMedia: [],
+    atmosphereMedia: [
+      {
+        type: "youtube",
+        url: "https://www.youtube.com/watch?v=SjlFwoYpenw",
+        contentId: "SjlFwoYpenw",
+        title: "【くらやみ祭 まるわかりガイド】#1 くらやみ祭って？編 《5月4・5日 LIVE配信!!》",
+        publisher: "J:COMチャンネル・J:テレ",
+        publisherType: "local_media",
+        purpose: "festival_atmosphere",
+        publishedYear: 2025,
+        checkedDate: "2026-07-29"
+      }
+    ],
     confirmation: {
       verified: true,
       confirmedDate: "2026-07-28",

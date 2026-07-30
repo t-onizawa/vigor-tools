@@ -28,7 +28,19 @@ const FESTIVAL = {
       note: "羽村市内6社の山車6基が羽村駅西口広場に集結します。多摩川では神輿の川入れ神事が行われます。"
     },
     highlightComment: null,
-    atmosphereMedia: [],
+    atmosphereMedia: [
+      {
+        type: "youtube",
+        url: "https://www.youtube.com/watch?v=UR38OymutQ0",
+        contentId: "UR38OymutQ0",
+        title: "2019年 羽村春まつり 八雲神社春季例大祭 ダイジェスト - Hamura Spring Festival Yagumo Shrine Ground Spring Festival",
+        publisher: "日本の祭さん。- お祭りライブ配信 日本の祭りを未来へ",
+        publisherType: "individual",
+        purpose: "festival_atmosphere",
+        publishedYear: 2019,
+        checkedDate: "2026-07-29"
+      }
+    ],
     confirmation: {
       verified: true,
       confirmedDate: "2026-07-28",

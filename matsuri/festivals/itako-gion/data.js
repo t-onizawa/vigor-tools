@@ -28,7 +28,19 @@ const FESTIVAL = {
       note: "素鵞熊野神社は天王山に鎮座し、潮来祇園祭禮の中心となる神社です。"
     },
     highlightComment: null,
-    atmosphereMedia: [],
+    atmosphereMedia: [
+      {
+        type: "youtube",
+        url: "https://www.youtube.com/watch?v=DmYeAoFPNDA",
+        contentId: "DmYeAoFPNDA",
+        title: "山車14台、勇壮に　潮来祇園祭礼",
+        publisher: "茨城新聞動画ニュース",
+        publisherType: "local_media",
+        purpose: "festival_atmosphere",
+        publishedYear: 2016,
+        checkedDate: "2026-07-29"
+      }
+    ],
     backgroundImage: {
       type: "youtube",
       contentId: "DmYeAoFPNDA",

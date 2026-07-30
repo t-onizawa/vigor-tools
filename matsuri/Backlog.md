@@ -299,7 +299,7 @@ atmosphereMedia調査時も、backgroundImageは別途独立して調査する�
 佐原の大祭 秋祭り・日立風流物）。成田祇園祭・木更津祇園祭は検索結果
 一覧を見ただけで個別の動画ページ確認は未実施。
 
-### 採用済み動画一覧（5/28件）
+### 採用済み動画一覧（12/28件）
 
 ```
 石岡のおまつり（既存）
@@ -327,6 +327,42 @@ atmosphereMedia調査時も、backgroundImageは別途独立して調査する�
   publisher: 茨城県（いばキラニュース、登録者9270人）
   publisherType: government
   尺: 約84秒 / 確認日: 2026-07-29
+
+府中くらやみ祭（2026-07-29追加）
+  url: https://www.youtube.com/watch?v=SjlFwoYpenw
+  publisher: J:COMチャンネル・J:テレ（local_media）
+  尺: 3分00秒 / 確認日: 2026-07-29
+
+深川八幡祭り（2026-07-29追加）
+  url: https://www.youtube.com/watch?v=rn2T2df7Tmw
+  publisher: ANNnewsCH（local_media）
+  尺: 4分48秒 / 確認日: 2026-07-29
+
+吹上夏まつり（2026-07-29追加）
+  url: https://www.youtube.com/watch?v=hTEbjQgFq3s
+  publisher: Konosu_city 鴻巣市チャンネル（government）
+  尺: 1分08秒 / 確認日: 2026-07-29
+
+羽村春祭り（2026-07-29追加）
+  url: https://www.youtube.com/watch?v=UR38OymutQ0
+  publisher: 日本の祭さん。- お祭りライブ配信 日本の祭りを未来へ
+             （individual、投稿者ページの実在・継続性確認済み）
+  尺: 4分01秒 / 確認日: 2026-07-29
+
+潮来祇園祭禮（2026-07-29追加）
+  url: https://www.youtube.com/watch?v=DmYeAoFPNDA
+  publisher: 茨城新聞動画ニュース（local_media）
+  尺: 1分25秒 / 確認日: 2026-07-29
+
+鹿沼今宮神社祭の屋台行事（2026-07-29追加）
+  url: https://www.youtube.com/watch?v=kBN_9CLRXxk
+  publisher: 下野新聞チャンネル（local_media）
+  尺: 1分04秒 / 確認日: 2026-07-29
+
+桐生八木節まつり（2026-07-29追加）
+  url: https://www.youtube.com/watch?v=LgcZuf72uSo
+  publisher: 桐生市チャンネル【kiryucitychannel】（government）
+  尺: 4分57秒 / 確認日: 2026-07-29
 ```
 
 ### 不採用理由一覧
@@ -354,15 +390,28 @@ atmosphereMedia調査時も、backgroundImageは別途独立して調査する�
              水郷佐原観光協会の公式チャンネルは存在を確認済みだが、
              そこからの具体的候補はまだ探せていない（Codexへの
              宿題）。
+
+春日部夏まつり
+  url: https://www.youtube.com/watch?v=LY5qWOwFN80
+  publisher: 一般社団法人春日部市観光協会
+  不採用理由: 公式性は高いが、14分00秒の構成の大半がインタビュー・
+             解説主体で、雰囲気を短時間でつかむ入口用途に合わない
+
+深谷まつり
+  不採用理由: 第三者候補（17分19秒）は通し記録寄りの長尺で、
+             入口用途に合わない。URL・投稿者は再特定できず未記載
+
+久留里夏祭り
+  url: https://www.youtube.com/watch?v=EtVSxuImx4w
+  publisher: horichannel
+  不採用理由: 1分08秒と尺は適切だが、特定の一場面のみで祭り全体の
+             複数要素が伝わらない
 ```
 
-### 残り未調査一覧（23件、優先順位なし）
+### 残り未調査一覧（10件、優先順位なし）
 
 ```
-府中くらやみ祭・深川八幡祭り・深谷まつり・吹上夏まつり・羽村春祭り・
-潮来祇園祭禮・鹿沼今宮神社祭の屋台行事・春日部夏まつり・
-桐生八木節まつり・久留里夏祭り・真壁祇園祭・
-二宮神社例大祭（しょうが祭り）・大原はだか祭り・
+真壁祇園祭・二宮神社例大祭（しょうが祭り）・大原はだか祭り・
 龍ケ崎の撞舞・八坂神社祇園祭・佐倉の秋祭り・佐原の大祭 夏祭り・
 下館祇園まつり・土浦八坂神社祇園祭・八日市場の祇園祭
 ```
@@ -505,4 +554,12 @@ atmosphereMedia調査時も、backgroundImageは別途独立して調査する�
     理由）を引き継ぎ資料として本ファイルに整理した。佐原の大祭の
     不採用記録が秋祭り側research/{slug}.mdにしかなく夏祭り側への
     記録漏れがあったため追記して解消した。
+
+2026-07-29（atmosphereMedia調査10件を反映）
+    Claude PMレビュー済みの基準に基づき10件を反映。府中くらやみ祭・
+    深川八幡祭り・吹上夏まつり・羽村春祭り・潮来祇園祭禮・鹿沼今宮
+    神社祭の屋台行事・桐生八木節まつりの7件を採用し、春日部夏まつり・
+    深谷まつり・久留里夏祭りの3件を不採用として理由を記録した。
+    羽村春祭りは第三者投稿者のページを再確認し、実在・継続的な活動を
+    確認した上で採用した。残り未調査一覧から今回の10件を除外した。
 ```

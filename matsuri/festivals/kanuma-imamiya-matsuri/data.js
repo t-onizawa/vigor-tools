@@ -28,7 +28,19 @@ const FESTIVAL = {
       note: "今宮神社は市内34ヶ町の氏神で、鹿沼今宮神社祭の屋台行事の中心です。"
     },
     highlightComment: null,
-    atmosphereMedia: [],
+    atmosphereMedia: [
+      {
+        type: "youtube",
+        url: "https://www.youtube.com/watch?v=kBN_9CLRXxk",
+        contentId: "kBN_9CLRXxk",
+        title: "彫刻屋台が集結 鹿沼秋まつり開幕",
+        publisher: "下野新聞チャンネル",
+        publisherType: "local_media",
+        purpose: "festival_atmosphere",
+        publishedYear: 2024,
+        checkedDate: "2026-07-29"
+      }
+    ],
     backgroundImage: {
       type: "youtube",
       contentId: "RWGWYmcLMCU",
