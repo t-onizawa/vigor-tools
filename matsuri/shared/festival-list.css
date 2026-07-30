@@ -398,7 +398,7 @@ h1 {
 .meta-item--video {
   align-items: center;
   padding: 5px 9px;
-  color: var(--accent);
+  color: #c0392b;
 }
 
 .meta-item--video svg {
