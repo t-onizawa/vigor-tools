@@ -364,6 +364,10 @@
 
   function applyCardAtmosphereBackground(card, backgroundImage) {
     if (!backgroundImage || backgroundImage.type !== "youtube") {
+      const fallback = document.createElement("div");
+      fallback.className = "card-atmosphere-fallback";
+      fallback.setAttribute("aria-hidden", "true");
+      card.prepend(fallback);
       return;
     }
     const media = backgroundImage;
@@ -388,7 +392,9 @@
     });
 
     list.replaceChildren(...visibleItems.map(renderFestivalCard));
-    count.textContent = `${items.length}件中${visibleItems.length}件を表示`;
+    count.textContent = (items.length === visibleItems.length)
+      ? `関東7都県・${items.length}件を掲載中`
+      : `${items.length}件中${visibleItems.length}件を表示`;
   }
 
   function syncAreaFilterState(areaFilter) {
