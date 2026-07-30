@@ -27,7 +27,7 @@ const FESTIVAL = {
       mapUrl: "https://www.google.com/maps/search/?api=1&query=大國魂神社+東京都府中市宮町3-1",
       note: "大國魂神社は府中くらやみ祭の中心となる神社です。"
     },
-    highlightComment: "白丁姿の担ぎ手と大太鼓に先導され、8基の神輿が渡御する「おいで」が最大の見どころ。22台の山車が囃子を競演する「山車行列」も見られる。",
+    highlightComment: "白丁姿の担ぎ手と大太鼓に先導され、8基の神輿が渡御する「おいで」が最大の見どころ。",
     atmosphereMedia: [
       {
         type: "youtube",
