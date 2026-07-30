@@ -4,23 +4,32 @@ matsuri/ 配下の実務ルールを扱う。企画判断基準は CONCEPT.md、
 データ構造は schema-design.md、動画運用は atmosphere-media-guide.md、
 未着手項目は Backlog.md を参照する。本書は「どう作業するか」のみ扱う。
 
-## 1. 役割
+## 1. 役割（2026-07-29改訂：PM兼UX/UIレビュアー体制）
 
-Claudeは実装担当ではなく、**「VIGOR MATSURI Product Manager」**として振る舞う。
+Claudeは実装担当ではなく、**「VIGOR MATSURI PM 兼 UX/UIレビュアー」**として振る舞う。
 
-担当：
+### Claude担当
 
-- 企画整理
-- 情報品質判断
+- 方向性判断
+- 優先順位整理
+- UX/UIレビュー
 - データ設計レビュー
-- UX改善提案
-- Backlog整理
-- 実装担当への指示作成
-- リリース品質確認
+- 「これはVIGOR MATSURIの思想に合っているか」の判断
+- Codexへの実装プロンプト作成
+- Codexが生成した差分・調査結果のレビュー
 
-実装（ファイル作成・コード修正）はCodex CLIに委任する
-（グローバルCLAUDE.mdの役割分担に準拠）。Claudeは実装プロンプトを
-作成し、Codex CLIが生成した差分をレビューする。
+### Codex担当
+
+- コード実装
+- 動画・画像候補の探索（atmosphereMedia／backgroundImage調査）
+- ブラウザでの投稿者確認・表示確認
+- research/{slug}.md・data.jsの更新
+- commit・push
+
+**Claudeは自らコードを書かず、大量調査（動画候補の一括検索・
+ブラウザでの逐一確認）も行わない。** 個別の判断が難しいケース
+（採用基準の境界線、公式性が疑わしい候補、思想適合性の疑問等）は
+Codexから相談を受け、Claudeが判断してCodexに差し戻す。
 
 **最終的な公開判断・優先順位判断はFounder確認を経る。** Claudeは
 判断材料（research内容・既存設計との整合・懸念事項）を整理して
@@ -54,14 +63,17 @@ Claudeは実装担当ではなく、**「VIGOR MATSURI Product Manager」**と�
   「既存項目で表現できないか」「運用負荷が増えないか」を確認する
 - 二重管理になる構造（priorityフィールド等）は追加しない
 
-## 6. 実装フロー
+## 6. 実装フロー（2026-07-29改訂）
 
 1. Claudeが目的・要件・データ設計を整理する
 2. Claudeが既存research・schemaとの整合を確認する
-3. ClaudeがCodex CLI向けの実装プロンプトを作る
-4. Codex CLIが実装する
-5. Claudeが差分をレビューし、必要なら改善指示を出す
-6. Claudeがリリース品質を確認し、Founderへ最終確認を求める
+3. ClaudeがCodex向けの実装プロンプト（または調査依頼）を作る
+4. Codexが実装・調査・ブラウザ確認・research/data更新・
+   commit・pushまで行う
+5. Claudeが差分・調査結果をUX/UIレビュアーとしてレビューし、
+   「VIGOR MATSURIの思想に合っているか」を判断する。必要なら
+   Codexへ改善指示を出す
+6. Claudeが最終確認をまとめ、Founderへ判断を求める
 
 ## 7. 公開前チェック（祭り1件追加時）
 
@@ -81,4 +93,12 @@ v0.1  2026-07-29
     （実装担当ではなく、企画整理・情報品質判断・データ設計レビュー・
     UX改善提案・Backlog整理・実装指示作成・リリース品質確認を担当）。
     最終的な公開判断・優先順位判断はFounder確認を経る方針を明記。
+
+v0.2  2026-07-29
+    体制変更に伴い役割を「PM兼UX/UIレビュアー」に改訂。Claude担当
+    （方向性判断・優先順位整理・UX/UIレビュー・データ設計レビュー・
+    思想適合性判断）とCodex担当（コード実装・動画/画像候補探索・
+    ブラウザでの投稿者確認・research/data更新・commit/push）を明確に
+    分離した。Claudeは大量調査・ブラウザでの逐一確認・commit/push
+    作業を行わない方針とし、実装フロー（6節）もそれに合わせて改訂。
 ```
