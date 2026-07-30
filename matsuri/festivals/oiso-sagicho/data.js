@@ -28,7 +28,17 @@ const FESTIVAL = {
       note: "左義長は大磯北浜海岸で行われます。"
     },
     highlightComment: "高さ7〜8mの「サイト（斎灯）」9基へ一斉に火が入る、国指定重要無形民俗文化財の火祭り。",
-    atmosphereMedia: [],
+    atmosphereMedia: [{
+      type: "youtube",
+      url: "https://www.youtube.com/watch?v=pI-nGnDhqyM",
+      contentId: "pI-nGnDhqyM",
+      title: "国指定重要無形民俗文化財 大磯の左義長｜神奈川県中郡大磯町",
+      publisher: "旅channel花鳥風月",
+      publisherType: "individual",
+      purpose: "festival_atmosphere",
+      publishedYear: 2024,
+      checkedDate: "2026-07-30"
+    }],
     backgroundImage: null,
     confirmation: {
       verified: true,

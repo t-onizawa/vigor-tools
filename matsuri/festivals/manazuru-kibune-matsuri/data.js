@@ -28,7 +28,17 @@ const FESTIVAL = {
       note: "貴船神社と真鶴港、町内が主な舞台です。"
     },
     highlightComment: "華やかな小早船と神輿船が海へ出る海上渡御が最大の見どころ。",
-    atmosphereMedia: [],
+    atmosphereMedia: [{
+      type: "youtube",
+      url: "https://www.youtube.com/watch?v=1-zR3BV_uCM",
+      contentId: "1-zR3BV_uCM",
+      title: "日本三大船祭り「真鶴貴船まつり」勇壮に海を彩る(2026年7月25日)",
+      publisher: "ANNnewsCH",
+      publisherType: "local_media",
+      purpose: "festival_atmosphere",
+      publishedYear: 2026,
+      checkedDate: "2026-07-30"
+    }],
     backgroundImage: null,
     confirmation: {
       verified: true,

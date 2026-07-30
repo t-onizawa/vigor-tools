@@ -28,7 +28,17 @@ const FESTIVAL = {
       note: "流鏑馬は鶴岡八幡宮の流鏑馬馬場で行われます。"
     },
     highlightComment: "武者装束の射手が疾走する馬上から的を射る流鏑馬が最大の見どころ。",
-    atmosphereMedia: [],
+    atmosphereMedia: [{
+      type: "youtube",
+      url: "https://www.youtube.com/watch?v=GdRw-F_UBM0",
+      contentId: "GdRw-F_UBM0",
+      title: "第67回 鎌倉まつり(流鏑馬)",
+      publisher: "西田忠夫",
+      publisherType: "individual",
+      purpose: "festival_atmosphere",
+      publishedYear: 2025,
+      checkedDate: "2026-07-30"
+    }],
     backgroundImage: null,
     confirmation: {
       verified: true,

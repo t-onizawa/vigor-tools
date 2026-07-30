@@ -28,7 +28,17 @@ const FESTIVAL = {
       note: "龍勢は椋神社の例大祭に奉納されます。"
     },
     highlightComment: "27流派が伝承する手作りロケット「龍勢」が、轟音とともに上空300〜500mへ打ち上がる。",
-    atmosphereMedia: [],
+    atmosphereMedia: [{
+      type: "youtube",
+      url: "https://www.youtube.com/watch?v=XwXlbg9G_5Q",
+      contentId: "XwXlbg9G_5Q",
+      title: "龍勢まつり【埼玉県公式観光動画】",
+      publisher: "ChokotabiSaitama",
+      publisherType: "tourism",
+      purpose: "festival_atmosphere",
+      publishedYear: 2011,
+      checkedDate: "2026-07-30"
+    }],
     backgroundImage: null,
     confirmation: {
       verified: true,

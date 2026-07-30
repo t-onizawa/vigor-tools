@@ -28,8 +28,25 @@ const FESTIVAL = {
       note: "祭りは沼田市中心市街地で行われます。"
     },
     highlightComment: "2つの巨大な天狗面を約300人の女性が担ぐ「天狗みこし」が祭りの華。",
-    atmosphereMedia: [],
-    backgroundImage: null,
+    atmosphereMedia: [{
+      type: "youtube",
+      url: "https://www.youtube.com/watch?v=pClpcvHinxY",
+      contentId: "pClpcvHinxY",
+      title: "沼田まつり",
+      publisher: "沼田市",
+      publisherType: "government",
+      purpose: "festival_atmosphere",
+      publishedYear: 2025,
+      checkedDate: "2026-07-30"
+    }],
+    backgroundImage: {
+      type: "youtube",
+      contentId: "pClpcvHinxY",
+      sourceUrl: "https://www.youtube.com/watch?v=pClpcvHinxY",
+      publisher: "沼田市",
+      publisherType: "government",
+      checkedDate: "2026-07-30"
+    },
     confirmation: {
       verified: true,
       confirmedDate: "2026-07-30",
