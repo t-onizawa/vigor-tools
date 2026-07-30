@@ -26,7 +26,17 @@ const FESTIVAL = {
       note: "本社神輿は浅草神社から氏子44町を渡御します。"
     },
     highlightComment: "本社神輿3基が早朝に同時に宮出しされ、浅草の氏子44町を一日かけて渡御する。",
-    atmosphereMedia: [],
+    atmosphereMedia: [{
+      type: "youtube",
+      url: "https://www.youtube.com/watch?v=JmGPsdiM3Z0",
+      contentId: "JmGPsdiM3Z0",
+      title: "令和8年 浅草神社例大祭 三社祭",
+      publisher: "台東区公式チャンネル",
+      publisherType: "government",
+      purpose: "festival_atmosphere",
+      publishedYear: 2026,
+      checkedDate: "2026-07-30"
+    }],
     backgroundImage: null,
     confirmation: {
       verified: true,

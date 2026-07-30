@@ -26,8 +26,25 @@ const FESTIVAL = {
       note: "神事は本牧神社と本牧漁港・沖合で行われます。"
     },
     highlightComment: "茅で作った馬首亀体の「お馬さま」を祭礼船で沖へ運び、本牧の災厄を託して海へ流す。",
-    atmosphereMedia: [],
-    backgroundImage: null,
+    atmosphereMedia: [{
+      type: "youtube",
+      url: "https://www.youtube.com/watch?v=sh00QNdZql4",
+      contentId: "sh00QNdZql4",
+      title: "本牧神社・お馬流し神事 神奈川県無形民俗文化財",
+      publisher: "hgwryt",
+      publisherType: "individual",
+      purpose: "festival_atmosphere",
+      publishedYear: 2014,
+      checkedDate: "2026-07-30"
+    }],
+    backgroundImage: {
+      type: "youtube",
+      contentId: "sh00QNdZql4",
+      sourceUrl: "https://www.youtube.com/watch?v=sh00QNdZql4",
+      publisher: "hgwryt",
+      publisherType: "individual",
+      checkedDate: "2026-07-30"
+    },
     confirmation: {
       verified: true,
       confirmedDate: "2026-07-30",

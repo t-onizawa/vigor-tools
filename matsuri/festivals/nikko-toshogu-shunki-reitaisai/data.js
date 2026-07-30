@@ -26,8 +26,25 @@ const FESTIVAL = {
       note: "18日の行列は二荒山神社から御旅所を経て東照宮へ還御します。"
     },
     highlightComment: "神輿3基と鎧武者が約1kmを進む「百物揃千人武者行列」が、春季例大祭を締めくくる。",
-    atmosphereMedia: [],
-    backgroundImage: null,
+    atmosphereMedia: [{
+      type: "youtube",
+      url: "https://www.youtube.com/watch?v=_8ZXncgd8BU",
+      contentId: "_8ZXncgd8BU",
+      title: "日光東照宮春季例大祭",
+      publisher: "15Tube〜栃木県公式〜",
+      publisherType: "government",
+      purpose: "festival_atmosphere",
+      publishedYear: 2016,
+      checkedDate: "2026-07-30"
+    }],
+    backgroundImage: {
+      type: "youtube",
+      contentId: "_8ZXncgd8BU",
+      sourceUrl: "https://www.youtube.com/watch?v=_8ZXncgd8BU",
+      publisher: "15Tube〜栃木県公式〜",
+      publisherType: "government",
+      checkedDate: "2026-07-30"
+    },
     confirmation: {
       verified: true,
       confirmedDate: "2026-07-30",

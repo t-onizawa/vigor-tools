@@ -26,7 +26,17 @@ const FESTIVAL = {
       note: "神幸祭は稲毛神社から氏子23町会を巡幸します。"
     },
     highlightComment: "「孔雀」「玉」と呼ばれる男女2基の大神輿が氏子23町会を巡り、神の結婚から御子神誕生までを表す。",
-    atmosphereMedia: [],
+    atmosphereMedia: [{
+      type: "youtube",
+      url: "https://www.youtube.com/watch?v=lEcivP5DoFM",
+      contentId: "lEcivP5DoFM",
+      title: "平成24年 川崎・稲毛神社 山王祭 ＜孔雀神輿・玉神輿＞銀柳街渡御",
+      publisher: "太田裕",
+      publisherType: "individual",
+      purpose: "festival_atmosphere",
+      publishedYear: 2012,
+      checkedDate: "2026-07-30"
+    }],
     backgroundImage: null,
     confirmation: {
       verified: true,
