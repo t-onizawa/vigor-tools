@@ -28,7 +28,17 @@ const FESTIVAL = {
       note: "住吉神社は青梅大祭の中心となる神社です。山車と居囃子は青梅街道周辺に展開します。"
     },
     highlightComment: "12町の山車が青梅街道を曳き回され、街道沿いでは居囃子が競演する。",
-    atmosphereMedia: [],
+    atmosphereMedia: [{
+      type: "youtube",
+      url: "https://www.youtube.com/watch?v=cAXb_-rZ0FQ",
+      contentId: "cAXb_-rZ0FQ",
+      title: "激震！青梅大祭2026 本祭り｜豪華絢爛な山車と喧嘩囃子の競演（東京都青梅市）4K",
+      publisher: "Matsuri Japan",
+      publisherType: "individual",
+      purpose: "festival_atmosphere",
+      publishedYear: 2026,
+      checkedDate: "2026-07-31"
+    }],
     backgroundImage: null,
     confirmation: {
       verified: true,
