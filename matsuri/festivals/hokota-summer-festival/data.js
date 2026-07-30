@@ -30,16 +30,23 @@ const FESTIVAL = {
     highlightComment: "各町の山車がお囃子を演奏し合う「音合わせ」の後、神輿が鉾神社へ宮入りする。",
     atmosphereMedia: [{
       type: "youtube",
-      url: "https://www.youtube.com/watch?v=qDQLSbF8PHE",
-      contentId: "qDQLSbF8PHE",
-      title: "[LIVE] 鉾田の夏祭り 茨城県鉾田市 2025年8月31日",
-      publisher: "Sawara Festival Japan",
+      url: "https://www.youtube.com/watch?v=ucByqyVTvn4",
+      contentId: "ucByqyVTvn4",
+      title: "【鉾田の夏祭り】鉾神社夏季例大祭2025",
+      publisher: "film sakura",
       publisherType: "individual",
       purpose: "festival_atmosphere",
       publishedYear: 2025,
       checkedDate: "2026-07-31"
     }],
-    backgroundImage: null,
+    backgroundImage: {
+      type: "youtube",
+      contentId: "haIcQjS6iu8",
+      sourceUrl: "https://www.youtube.com/watch?v=haIcQjS6iu8",
+      publisher: "お祭り散歩",
+      publisherType: "individual",
+      checkedDate: "2026-07-31"
+    },
     confirmation: {
       verified: true,
       confirmedDate: "2026-07-30",
