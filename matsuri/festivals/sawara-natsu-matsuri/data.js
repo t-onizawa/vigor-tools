@@ -27,7 +27,7 @@ const FESTIVAL = {
       mapUrl: "https://www.google.com/maps/search/?api=1&query=忠敬橋+千葉県香取市佐原",
       note: "山車の曳き回し・のの字廻しは本宿地区一帯で行われます。忠敬橋周辺は代表的な観覧スポットの一つです。"
     },
-    highlightComment: null,
+    highlightComment: "山車を豪快に回転させる「のの字廻し」の曲曳きが最大の見どころ。小江戸の町並みを進む姿も見応えがある。",
     atmosphereMedia: [],
     confirmation: {
       verified: true,

@@ -27,7 +27,7 @@ const FESTIVAL = {
       mapUrl: "https://www.google.com/maps/search/?api=1&query=八日町交差点+東京都八王子市",
       note: "甲州街道と国道16号が交差する八日町交差点は、交通規制区間の起点であり実質的な会場の中心です。"
     },
-    highlightComment: null,
+    highlightComment: "幅3m・高さ7mを超えるものもある彫刻山車が19台巡行する、日本遺産「桑都物語」の構成文化財。",
     atmosphereMedia: [
       {
         type: "youtube",

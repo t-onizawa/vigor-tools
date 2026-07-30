@@ -27,7 +27,7 @@ const FESTIVAL = {
       mapUrl: "https://www.google.com/maps/search/?api=1&query=今宮神社+栃木県鹿沼市今宮町1692",
       note: "今宮神社は市内34ヶ町の氏神で、鹿沼今宮神社祭の屋台行事の中心です。"
     },
-    highlightComment: null,
+    highlightComment: "ユネスコ無形文化遺産に登録された彫刻屋台が、夜には屋台同士が競演する「ぶっつけ」を繰り広げる。",
     atmosphereMedia: [
       {
         type: "youtube",

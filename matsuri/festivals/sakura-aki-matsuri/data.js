@@ -27,7 +27,7 @@ const FESTIVAL = {
       mapUrl: "https://www.google.com/maps/search/?api=1&query=麻賀多神社+千葉県佐倉市鏑木町933-1",
       note: "麻賀多神社は佐倉市の総鎮守で、佐倉の秋祭りの中心となる神社です。"
     },
-    highlightComment: null,
+    highlightComment: "「えっさのこらさのえっさっさ」という佐倉独自の掛け声とともに、山車・神輿・御神酒所あわせて20台以上が3日間練り歩く。",
     atmosphereMedia: [],
     backgroundImage: {
       type: "youtube",

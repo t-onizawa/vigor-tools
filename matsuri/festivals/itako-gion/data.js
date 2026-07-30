@@ -27,7 +27,7 @@ const FESTIVAL = {
       mapUrl: "https://www.google.com/maps/search/?api=1&query=素鵞熊野神社+茨城県潮来市潮来1337",
       note: "素鵞熊野神社は天王山に鎮座し、潮来祇園祭禮の中心となる神社です。"
     },
-    highlightComment: null,
+    highlightComment: "総欅造りの山車14台（うち3台は県指定文化財）が、「のの字廻し」「そろばん曳き」といった曲引きを披露する。",
     atmosphereMedia: [
       {
         type: "youtube",

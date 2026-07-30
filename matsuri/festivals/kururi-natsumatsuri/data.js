@@ -27,7 +27,7 @@ const FESTIVAL = {
       mapUrl: "https://www.google.com/maps/search/?api=1&query=久留里駅+千葉県君津市",
       note: "久留里駅前広場に山車・神輿が集合し、祭りの中心となります。"
     },
-    highlightComment: null,
+    highlightComment: "観光客も飛び入りで参加できる山車曳きが名物で、夜は提灯に灯がともり花火も打ち上げられる。",
     atmosphereMedia: [],
     confirmation: {
       verified: true,

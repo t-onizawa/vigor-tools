@@ -27,7 +27,7 @@ const FESTIVAL = {
       mapUrl: "https://www.google.com/maps/search/?api=1&query=五所駒瀧神社+茨城県桜川市真壁町山尾503",
       note: "五所駒瀧神社は真壁祇園祭の中心となる神社です。1986年に国の記録作成等の措置を講ずべき無形民俗文化財に指定されました。"
     },
-    highlightComment: null,
+    highlightComment: "400年の伝統を持ち、国の記録作成等の措置を講ずべき無形民俗文化財に指定された山車の勇壮な曳き回しが見どころ。",
     atmosphereMedia: [],
     backgroundImage: {
       type: "youtube",

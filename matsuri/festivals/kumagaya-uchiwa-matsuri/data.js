@@ -27,7 +27,7 @@ const FESTIVAL = {
       mapUrl: "https://www.google.com/maps/search/?api=1&query=八坂神社+埼玉県熊谷市鎌倉町44",
       note: "八坂神社は愛宕神社と合祀されており、熊谷うちわ祭の中心となる神社です。"
     },
-    highlightComment: null,
+    highlightComment: "最終日の夜、山車と屋台が向き合い囃子を競い合う「曳っ合せ叩き合い」が「関東一の祇園」のクライマックス。",
     atmosphereMedia: [
       {
         type: "youtube",

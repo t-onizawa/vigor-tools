@@ -27,7 +27,7 @@ const FESTIVAL = {
       mapUrl: "https://www.google.com/maps/search/?api=1&query=二宮神社+東京都あきる野市二宮2252",
       note: "二宮神社の例祭日は9月9日固定です。"
     },
-    highlightComment: null,
+    highlightComment: "生姜・里芋・牛の舌餅を神前に供える伝統から「しょうが祭り」と呼ばれ、山車2台・神輿13基・木遣りを伴う獅子頭が街を練る。",
     searchQuery: "二宮神社 しょうが祭り",
     atmosphereMedia: [],
     backgroundImage: {

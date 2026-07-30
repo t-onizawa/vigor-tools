@@ -27,7 +27,7 @@ const FESTIVAL = {
       mapUrl: "https://www.google.com/maps/search/?api=1&query=美和神社+群馬県桐生市宮本町2丁目1-1",
       note: "美和神社は神輿の宵の出御・還御の基点です。"
     },
-    highlightComment: null,
+    highlightComment: "6箇所の固定やぐらで踊られる「八木節おどり」に加え、全国から踊り手が集う「全日本八木節競演大会」も行われる。",
     atmosphereMedia: [
       {
         type: "youtube",

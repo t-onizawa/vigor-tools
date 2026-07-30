@@ -27,7 +27,7 @@ const FESTIVAL = {
       mapUrl: "https://www.google.com/maps/search/?api=1&query=羽村駅+東京都羽村市",
       note: "羽村市内6社の山車6基が羽村駅西口広場に集結します。多摩川では神輿の川入れ神事が行われます。"
     },
-    highlightComment: null,
+    highlightComment: "6社合同の山車6基が羽村駅前に集結し、桜が舞う多摩川を神輿が渡る「水入り渡御」を見せる。",
     atmosphereMedia: [
       {
         type: "youtube",

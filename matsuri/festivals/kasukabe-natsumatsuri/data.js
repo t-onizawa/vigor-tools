@@ -27,7 +27,7 @@ const FESTIVAL = {
       mapUrl: "https://www.google.com/maps/search/?api=1&query=春日部駅+埼玉県春日部市",
       note: "春日部駅東口地域が春日部夏まつりの会場です。"
     },
-    highlightComment: null,
+    highlightComment: "県・市指定無形民俗文化財に指定された内出町・八丁目下組の屋台上での演奏・舞に加え、20数基の神輿パレードが夜を彩る。",
     atmosphereMedia: [],
     backgroundImage: {
       type: "youtube",

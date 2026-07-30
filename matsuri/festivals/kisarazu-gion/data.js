@@ -27,7 +27,7 @@ const FESTIVAL = {
       mapUrl: "https://www.google.com/maps/search/?api=1&query=八剱八幡神社+千葉県木更津市富士見1丁目6-15",
       note: "八剱八幡神社は木更津祇園祭の中心となる神社です。"
     },
-    highlightComment: null,
+    highlightComment: "約170年前に造られた「関東随一の二天棒」、重さ1.5トンの大神輿が「関東三大神輿」の一つとして渡御する。",
     atmosphereMedia: [],
     confirmation: {
       verified: true,

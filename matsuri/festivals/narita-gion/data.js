@@ -27,7 +27,7 @@ const FESTIVAL = {
       mapUrl: "https://www.google.com/maps/search/?api=1&query=成田山新勝寺+千葉県成田市成田1",
       note: "成田山新勝寺は成田祇園祭の中心となる宗教施設です。"
     },
-    highlightComment: null,
+    highlightComment: "最終日、10台の山車・屋台が表参道の急坂を駆け上がる「総引き」が最大のハイライト。夜のライトアップも名物。",
     atmosphereMedia: [],
     confirmation: {
       verified: true,
