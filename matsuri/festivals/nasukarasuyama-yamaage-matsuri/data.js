@@ -18,7 +18,18 @@ const FESTIVAL = {
       note: "公演場所は当番町の市街地各所に移動します。公式開演日程を確認してください。"
     },
     highlightComment: "若衆が道路上に巨大な「はりか山」を組み上げ、舞台を移しながら歌舞伎舞踊を奉納する。",
-    atmosphereMedia: [], backgroundImage: null,
+    atmosphereMedia: [{
+      type: "youtube",
+      url: "https://www.youtube.com/watch?v=M4SQBolG2KQ",
+      contentId: "M4SQBolG2KQ",
+      title: "【公式】 山あげ祭PV short ver. 「yamaage」【那須烏山市】",
+      publisher: "那須烏山市",
+      publisherType: "government",
+      purpose: "festival_atmosphere",
+      publishedYear: 2016,
+      checkedDate: "2026-07-31"
+    }],
+    backgroundImage: null,
     confirmation: { verified: true, confirmedDate: "2026-07-31", sources: ["https://www.city.nasukarasuyama.lg.jp/yamaage-matsuri/"] }
   },
   yearlyInfo: [{

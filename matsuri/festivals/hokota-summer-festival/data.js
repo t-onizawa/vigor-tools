@@ -28,7 +28,17 @@ const FESTIVAL = {
       note: "神輿は鉾神社から宮出しされ、山車とともに鉾田市街地を巡行します。"
     },
     highlightComment: "各町の山車がお囃子を演奏し合う「音合わせ」の後、神輿が鉾神社へ宮入りする。",
-    atmosphereMedia: [],
+    atmosphereMedia: [{
+      type: "youtube",
+      url: "https://www.youtube.com/watch?v=qDQLSbF8PHE",
+      contentId: "qDQLSbF8PHE",
+      title: "[LIVE] 鉾田の夏祭り 茨城県鉾田市 2025年8月31日",
+      publisher: "Sawara Festival Japan",
+      publisherType: "individual",
+      purpose: "festival_atmosphere",
+      publishedYear: 2025,
+      checkedDate: "2026-07-31"
+    }],
     backgroundImage: null,
     confirmation: {
       verified: true,

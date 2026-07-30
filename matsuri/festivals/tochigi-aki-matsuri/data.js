@@ -18,7 +18,25 @@ const FESTIVAL = {
       note: "栃木市中心部の蔵の街大通り周辺で行われます。"
     },
     highlightComment: "江戸・明治期の人形山車が蔵の街を巡り、山車同士が囃子を競う「ぶっつけ」を繰り広げる。",
-    atmosphereMedia: [], backgroundImage: null,
+    atmosphereMedia: [{
+      type: "youtube",
+      url: "https://www.youtube.com/watch?v=84UVOyXBI1o",
+      contentId: "84UVOyXBI1o",
+      title: "とちぎ秋まつり",
+      publisher: "15Tube〜栃木県公式〜",
+      publisherType: "government",
+      purpose: "festival_atmosphere",
+      publishedYear: 2017,
+      checkedDate: "2026-07-31"
+    }],
+    backgroundImage: {
+      type: "youtube",
+      contentId: "84UVOyXBI1o",
+      sourceUrl: "https://www.youtube.com/watch?v=84UVOyXBI1o",
+      publisher: "15Tube〜栃木県公式〜",
+      publisherType: "government",
+      checkedDate: "2026-07-31"
+    },
     confirmation: { verified: true, confirmedDate: "2026-07-31", sources: ["https://www.city.tochigi.lg.jp/site/tourism/26060.html"] }
   },
   yearlyInfo: [{

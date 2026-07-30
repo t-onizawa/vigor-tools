@@ -18,7 +18,25 @@ const FESTIVAL = {
       note: "須賀神社と小山駅西口周辺の市街地で行われます。"
     },
     highlightComment: "『下野国誌』で「当国第一」と記された祇園祭で、須賀神社の大神輿が市街地を渡御する。",
-    atmosphereMedia: [], backgroundImage: null,
+    atmosphereMedia: [{
+      type: "youtube",
+      url: "https://www.youtube.com/watch?v=O3wbnJQxU0s",
+      contentId: "O3wbnJQxU0s",
+      title: "令和6年度 小山祇園祭　令和神輿",
+      publisher: "田口祐也",
+      publisherType: "individual",
+      purpose: "festival_atmosphere",
+      publishedYear: 2024,
+      checkedDate: "2026-07-31"
+    }],
+    backgroundImage: {
+      type: "youtube",
+      contentId: "O3wbnJQxU0s",
+      sourceUrl: "https://www.youtube.com/watch?v=O3wbnJQxU0s",
+      publisher: "田口祐也",
+      publisherType: "individual",
+      checkedDate: "2026-07-31"
+    },
     confirmation: { verified: true, confirmedDate: "2026-07-31", sources: ["https://www.city.oyama.tochigi.jp/kankou-bunka/miryoku/event/summer/page003807.html"] }
   },
   yearlyInfo: [{
