@@ -247,10 +247,10 @@ h1 {
   inset: 0;
   background-size: cover;
   background-position: center;
-  opacity: 0.6;
+  opacity: 0.75;
   transform: scale(1.35);
-  -webkit-mask-image: linear-gradient(to right, transparent 0%, transparent 55%, black 100%);
-  mask-image: linear-gradient(to right, transparent 0%, transparent 55%, black 100%);
+  -webkit-mask-image: linear-gradient(to right, transparent 0%, transparent 40%, black 100%);
+  mask-image: linear-gradient(to right, transparent 0%, transparent 40%, black 100%);
   pointer-events: none;
   z-index: 0;
 }
@@ -258,8 +258,8 @@ h1 {
 .card-atmosphere-fallback {
   position: absolute;
   inset: 0;
-  background: linear-gradient(120deg, var(--accent-muted) 0%, transparent 70%);
-  opacity: 0.35;
+  background: linear-gradient(120deg, var(--accent) 0%, transparent 85%);
+  opacity: 0.5;
   pointer-events: none;
   z-index: 0;
 }
