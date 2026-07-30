@@ -8,7 +8,7 @@ const FESTIVAL = {
     access: { nearestStation: "JR宇都宮線 間々田駅" },
     mapReference: { label: "間々田八幡宮", pointType: "shrine", query: "間々田八幡宮 栃木県小山市", lat: null, lng: null,
       mapUrl: "https://www.google.com/maps/search/?api=1&query=間々田八幡宮+栃木県小山市", note: "境内と間々田地区の町内で行われます。" },
-    highlightComment: "全長15mの7体の蛇が「ジャガマイタ」の掛け声とともに町を巡り、弁天池で水を飲む。",
+    highlightComment: "全長15mの7体の蛇が「ジャガマイタ」の掛け声とともに町を巡り、「水呑みの儀」を行う。",
     atmosphereMedia: [], backgroundImage: null,
     confirmation: { verified: true, confirmedDate: "2026-07-31", sources: ["https://www.city.oyama.tochigi.jp/cal.php?category=0&day=5&lc=0&mode=detail&month=5&year=2026"] }
   },
