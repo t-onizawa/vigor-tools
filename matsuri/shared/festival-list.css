@@ -42,7 +42,7 @@ a {
 .page-shell {
   width: min(100%, 960px);
   margin: 0 auto;
-  padding: 28px 18px 48px;
+  padding: 28px 16px 48px;
 }
 
 .list-header {
@@ -226,10 +226,10 @@ h1 {
   inset: 0;
   background-size: cover;
   background-position: center;
-  opacity: 0.32;
+  opacity: 0.6;
   transform: scale(1.35);
-  -webkit-mask-image: linear-gradient(to right, transparent 0%, black 100%);
-  mask-image: linear-gradient(to right, transparent 0%, black 100%);
+  -webkit-mask-image: linear-gradient(to right, transparent 0%, transparent 55%, black 100%);
+  mask-image: linear-gradient(to right, transparent 0%, transparent 55%, black 100%);
   pointer-events: none;
   z-index: 0;
 }
