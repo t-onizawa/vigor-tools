@@ -26,4 +26,9 @@
 
 ## 素材
 
-- atmosphereMedia / backgroundImage は不採用。
+- 2026-07-31に候補動画を確認。
+- 候補「【NTT東日本】祭り映像アーカイブ化｜前橋まつり」
+  https://www.youtube.com/watch?v=qQxyPXjAhXw
+  - 投稿者情報: NTT東日本YouTube公式チャンネルとして検索結果上では確認。
+  - 動画ページを直接開くと「この動画は再生できません」となり、尺・実映像・投稿者ページを再確認できなかった。
+  - atmosphereMedia / backgroundImage: 不採用。必須確認を完了できないため採用しない。

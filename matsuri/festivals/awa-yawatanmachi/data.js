@@ -18,7 +18,18 @@ const FESTIVAL = {
       note: "館山市・南房総市の参加神社が鶴谷八幡宮へ集結します。"
     },
     highlightComment: "館山・南房総から10社の神輿と5社の山車・お船が集結し、境内で神輿振りを競う寄り合い祭。",
-    atmosphereMedia: [], backgroundImage: null,
+    atmosphereMedia: [{
+      type: "youtube",
+      url: "https://www.youtube.com/watch?v=QMwU8zZTEhk",
+      contentId: "QMwU8zZTEhk",
+      title: "やわたんまち2024〜10社の神輿・山車4基・御船1基勢揃い〜圧巻の勇姿を見よ！",
+      publisher: "安房國テレビ",
+      publisherType: "local_media",
+      purpose: "festival_atmosphere",
+      publishedYear: 2024,
+      checkedDate: "2026-07-31"
+    }],
+    backgroundImage: null,
     confirmation: { verified: true, confirmedDate: "2026-07-30", sources: ["https://www.city.tateyama.chiba.jp/syougaigaku/page003452.html"] }
   },
   yearlyInfo: [{

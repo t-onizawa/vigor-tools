@@ -18,7 +18,25 @@ const FESTIVAL = {
       note: "金鑚神社と中山道を中心とした本庄市街地で行われます。"
     },
     highlightComment: "明治5年から大正13年に建造された市指定8基を含む、人形山車10基が中山道を巡行する。",
-    atmosphereMedia: [], backgroundImage: null,
+    atmosphereMedia: [{
+      type: "youtube",
+      url: "https://www.youtube.com/watch?v=L5DaP7RcvsU",
+      contentId: "L5DaP7RcvsU",
+      title: "令和元年度本庄まつり　Honjo Matsuri（Honjo Festival）2019",
+      publisher: "本庄市観光協会",
+      publisherType: "tourism",
+      purpose: "festival_atmosphere",
+      publishedYear: 2019,
+      checkedDate: "2026-07-31"
+    }],
+    backgroundImage: {
+      type: "youtube",
+      contentId: "L5DaP7RcvsU",
+      sourceUrl: "https://www.youtube.com/watch?v=L5DaP7RcvsU",
+      publisher: "本庄市観光協会",
+      publisherType: "tourism",
+      checkedDate: "2026-07-31"
+    },
     confirmation: { verified: true, confirmedDate: "2026-07-30", sources: ["https://www.honjo-kanko.jp/event/honjomatsuri/", "https://www.honjo-kanko.jp/honjo-matsuri/highlight/"] }
   },
   yearlyInfo: [{
