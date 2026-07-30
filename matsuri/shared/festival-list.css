@@ -279,6 +279,7 @@ h1 {
 }
 
 .status-scheduled_pending_official,
+.status-off_year,
 .status-unconfirmed {
   background: var(--unknown-bg);
   color: var(--unknown-text);

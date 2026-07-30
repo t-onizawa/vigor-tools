@@ -6,6 +6,7 @@
   const eventStatusLabels = {
     confirmed: "開催確認済み",
     scheduled_pending_official: "開催予定・公式詳細待ち",
+    off_year: "陰祭年（本祭なし）",
     unconfirmed: "未確認",
     cancelled: "中止",
     postponed: "延期",
@@ -19,6 +20,10 @@
     scheduled_pending_official: {
       heading: (year) => `${year}年の開催予定`,
       note: "公式の詳細発表を確認中です"
+    },
+    off_year: {
+      heading: (year) => `${year}年の開催について`,
+      note: "本祭りは実施されない陰祭年です"
     },
     unconfirmed: {
       heading: (year) => `${year}年の開催情報`,
@@ -493,6 +498,7 @@
   const schemaEventStatus = {
     confirmed: "https://schema.org/EventScheduled",
     scheduled_pending_official: "https://schema.org/EventScheduled",
+    off_year: "https://schema.org/EventScheduled",
     unconfirmed: "https://schema.org/EventScheduled",
     postponed: "https://schema.org/EventPostponed",
     cancelled: "https://schema.org/EventCancelled",
@@ -623,10 +629,12 @@
 
   function buildEventDescription(festival) {
     const highlight = festival.constantInfo.highlightComment;
-    if (highlight) {
-      return highlight;
+    const baseDescription = highlight ||
+      `${festival.prefecture}${festival.city}で開催される${festival.name}。${festival.constantInfo.schedulePattern}`;
+    if (currentYear.eventStatus === "off_year") {
+      return `${baseDescription} ${currentYear.year}年は陰祭年で、本祭りは隔年開催です。`;
     }
-    return `${festival.prefecture}${festival.city}で開催される${festival.name}。${festival.constantInfo.schedulePattern}`;
+    return baseDescription;
   }
 
   function buildEventJsonLd(festival, yearlyInfo) {

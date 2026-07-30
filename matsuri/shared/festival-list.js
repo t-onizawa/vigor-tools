@@ -1,10 +1,11 @@
 (function () {
-  const FESTIVAL_SLUGS = ["ishioka-omatsuri", "sawara-natsu-matsuri", "sawara-aki-matsuri", "chichibu-yomatsuri", "chichibu-ryusei-matsuri", "itako-gion", "hitachi-furyumono", "ryugasaki-tsukumai", "shimodate-gion", "tsuchiura-gion", "makabe-gion", "yuki-natsumatsuri", "hokota-summer-festival", "oarai-hassaku-matsuri", "kisarazu-gion", "kururi-natsumatsuri", "sakura-aki-matsuri", "ohara-hadaka-matsuri", "yokaichiba-gion", "narita-gion", "fukaya-matsuri", "fukiage-natsumatsuri", "kasukabe-natsumatsuri", "kawagoe-matsuri", "kumagaya-uchiwa-matsuri", "omiya-nakasendo-matsuri", "fuchu-kurayami-matsuri", "hachioji-matsuri", "ome-taisai", "hamura-haru-matsuri", "ninomiya-shrine-shogamatsuri", "fukagawa-hachiman-matsuri", "kamakura-matsuri-yabusame", "manazuru-kibune-matsuri", "oiso-sagicho", "kanuma-imamiya-matsuri", "kiryu-yagibushi-matsuri", "numata-matsuri"];
+  const FESTIVAL_SLUGS = ["ishioka-omatsuri", "sawara-natsu-matsuri", "sawara-aki-matsuri", "chichibu-yomatsuri", "chichibu-ryusei-matsuri", "itako-gion", "hitachi-furyumono", "ryugasaki-tsukumai", "shimodate-gion", "tsuchiura-gion", "makabe-gion", "yuki-natsumatsuri", "hokota-summer-festival", "oarai-hassaku-matsuri", "kisarazu-gion", "kururi-natsumatsuri", "sakura-aki-matsuri", "ohara-hadaka-matsuri", "yokaichiba-gion", "narita-gion", "fukaya-matsuri", "fukiage-natsumatsuri", "kasukabe-natsumatsuri", "kawagoe-matsuri", "kumagaya-uchiwa-matsuri", "omiya-nakasendo-matsuri", "fuchu-kurayami-matsuri", "hachioji-matsuri", "ome-taisai", "hamura-haru-matsuri", "ninomiya-shrine-shogamatsuri", "fukagawa-hachiman-matsuri", "sanja-matsuri", "nikko-toshogu-shunki-reitaisai", "honmoku-ouma-nagashi", "kawasaki-sannosai", "kanda-matsuri", "kamakura-matsuri-yabusame", "manazuru-kibune-matsuri", "oiso-sagicho", "kanuma-imamiya-matsuri", "kiryu-yagibushi-matsuri", "numata-matsuri"];
   const UPCOMING_STATUSES = new Set(["confirmed", "scheduled_pending_official"]);
 
   const eventStatusLabels = {
     confirmed: "開催確認済み",
     scheduled_pending_official: "開催予定・公式詳細待ち",
+    off_year: "陰祭年（本祭なし）",
     unconfirmed: "未確認",
     cancelled: "中止",
     postponed: "延期",
@@ -14,6 +15,7 @@
   const eventStatusGroups = {
     confirmed: 0,
     scheduled_pending_official: 0,
+    off_year: 1,
     unconfirmed: 1,
     postponed: 2,
     cancelled: 3,
