@@ -18,7 +18,18 @@ const FESTIVAL = {
       note: "祭頭囃は鹿島神宮境内と大町通り・仲町通り周辺で行われます。"
     },
     highlightComment: "色鮮やかな装束の囃人が十五、六人一組となり、太鼓と祭頭囃に合わせて樫棒を組みほぐす。",
-    atmosphereMedia: [], backgroundImage: null,
+    atmosphereMedia: [{
+      type: "youtube",
+      url: "https://www.youtube.com/watch?v=DKPsjTeZUQo",
+      contentId: "DKPsjTeZUQo",
+      title: "樫棒鳴らし華やかに 鹿島神宮・祭頭囃し",
+      publisher: "茨城新聞動画ニュース",
+      publisherType: "local_media",
+      purpose: "festival_atmosphere",
+      publishedYear: 2026,
+      checkedDate: "2026-07-31"
+    }],
+    backgroundImage: null,
     confirmation: { verified: true, confirmedDate: "2026-07-30", sources: ["https://kashimajingu.jp/news/%E7%A5%AD%E9%A0%AD%E7%A5%AD%E3%81%AE%E5%BE%A1%E6%A1%88%E5%86%85%E4%BB%A4%E5%92%8C6%E5%B9%B4/", "https://city.kashima.ibaraki.jp/site/bunkazai/50076.html"] }
   },
   yearlyInfo: [{

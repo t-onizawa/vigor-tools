@@ -18,7 +18,18 @@ const FESTIVAL = {
       note: "本祭は水戸駅北口から大工町交差点までの国道50号を中心に行われます。"
     },
     highlightComment: "15台の山車が囃子を競う大叩き合いと、水府提灯の行列が水戸の中心街を昼夜でつなぐ。",
-    atmosphereMedia: [], backgroundImage: null,
+    atmosphereMedia: [{
+      type: "youtube",
+      url: "https://www.youtube.com/watch?v=KsrAxgLMUjM",
+      contentId: "KsrAxgLMUjM",
+      title: "水戸黄門まつり MITO KOMON FESTIVAL 2025",
+      publisher: "Japan Trip Guide",
+      publisherType: "individual",
+      purpose: "festival_atmosphere",
+      publishedYear: 2025,
+      checkedDate: "2026-07-31"
+    }],
+    backgroundImage: null,
     confirmation: { verified: true, confirmedDate: "2026-07-30", sources: ["https://mitokoumon.com/koumon/honsai.html", "https://www.city.mito.lg.jp/page/124507.html"] }
   },
   yearlyInfo: [{
