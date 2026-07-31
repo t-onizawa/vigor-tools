@@ -237,7 +237,7 @@ h1 {
 .item-media {
   position: relative;
   width: calc(100% + 24px);
-  margin: 0 -12px 14px;
+  margin: 0 -12px;
   aspect-ratio: 16 / 9;
   overflow: hidden;
   background: var(--badge);
