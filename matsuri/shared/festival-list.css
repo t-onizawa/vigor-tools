@@ -210,8 +210,21 @@ h1 {
 }
 
 .festival-item--text {
-  padding-left: 12px;
-  border-left: 3px solid var(--accent);
+  margin: 14px 0;
+  padding: 0;
+  border: 1px solid var(--soft-line);
+  border-radius: 8px;
+  background: var(--surface);
+}
+
+.festival-item--text:hover,
+.festival-item--text:focus-visible {
+  background: var(--surface);
+  border-color: var(--text);
+}
+
+.festival-item--text .item-body {
+  padding: 16px 14px;
 }
 
 .festival-item--text .item-name {
@@ -456,7 +469,6 @@ h1 {
   .festival-list {
     grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 18px;
-    align-items: start;
   }
 
   .festival-item {
@@ -480,8 +492,11 @@ h1 {
   }
 
   .festival-item--text {
-    padding-left: 0;
-    border-left: 0;
+    margin: 0;
+  }
+
+  .festival-item--text .item-body {
+    padding: 16px 18px 20px;
   }
 
   .festival-item--text .item-name {
