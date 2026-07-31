@@ -46,7 +46,7 @@ a {
 }
 
 .list-header {
-  padding: 20px 0 32px;
+  padding: 20px 0 22px;
   border-bottom: 1px solid var(--line);
 }
 
@@ -191,104 +191,73 @@ h1 {
 
 .festival-list {
   display: grid;
-  gap: 14px;
+  gap: 0;
 }
 
-.festival-card {
-  position: relative;
-  display: flex;
-  align-items: stretch;
-  gap: 14px;
-  overflow: hidden;
-  border: 1px solid var(--soft-line);
-  border-radius: 8px;
-  background: var(--surface);
-  padding: 18px;
-  transition:
-    border-color 140ms ease,
-    box-shadow 140ms ease,
-    transform 140ms ease;
-}
-
-.card-heading-row {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 12px;
-}
-
-.card-heading-text {
+.festival-item {
+  display: block;
   min-width: 0;
-  flex: 1 1 auto;
-}
-
-.card-detail-button {
-  flex: none;
-  z-index: 2;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 36px;
-  height: 36px;
-  border-radius: 50%;
-  background: var(--accent);
-  color: #ffffff;
+  color: inherit;
+  padding: 22px 0;
+  border-bottom: 1px solid var(--soft-line);
   transition: background-color 140ms ease;
 }
 
-.card-detail-button svg {
-  width: 18px;
-  height: 18px;
-}
-
-.festival-card:hover .card-detail-button,
-.festival-card:focus-visible .card-detail-button {
-  background: var(--accent-strong);
-}
-
-.card-atmosphere-bg {
-  position: absolute;
-  inset: 0;
-  background-size: cover;
-  background-position: center;
-  opacity: 0.75;
-  transform: scale(1.35);
-  -webkit-mask-image: linear-gradient(to right, transparent 0%, transparent 40%, black 100%);
-  mask-image: linear-gradient(to right, transparent 0%, transparent 40%, black 100%);
-  pointer-events: none;
-  z-index: 0;
-}
-
-.card-atmosphere-fallback {
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(120deg, var(--accent) 0%, transparent 85%);
-  opacity: 0.12;
-  pointer-events: none;
-  z-index: 0;
-}
-
-.festival-card:hover,
-.festival-card:focus-visible {
-  border-color: var(--text);
-  box-shadow: 0 8px 24px rgb(17 17 17 / 8%);
-  transform: translateY(-1px);
+.festival-item:hover,
+.festival-item:focus-visible {
+  background: var(--surface);
   outline: 0;
 }
 
-.card-body {
+.item-media {
   position: relative;
-  z-index: 1;
-  flex: 1 1 auto;
+  width: calc(100% + 24px);
+  margin: 0 -12px 14px;
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+  background: var(--badge);
+}
+
+.item-media-img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.item-media--fallback {
+  background: linear-gradient(135deg, var(--accent) 0%, var(--accent-strong) 60%, #16232f 100%);
+}
+
+.item-video-badge {
+  position: absolute;
+  right: 10px;
+  bottom: 10px;
+  display: grid;
+  place-items: center;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background: rgb(17 17 17 / 55%);
+  color: #ffffff;
+}
+
+.item-video-badge svg {
+  display: block;
+  width: 15px;
+  height: 12px;
+}
+
+.item-body {
   min-width: 0;
 }
 
-.card-topline {
+.item-topline {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
   gap: 8px;
-  margin-bottom: 12px;
+  margin-bottom: 8px;
 }
 
 .prefecture {
@@ -339,16 +308,16 @@ h1 {
   border-color: var(--subtle);
 }
 
-.festival-name {
+.item-name {
   margin: 0;
-  font-size: 1.25rem;
+  font-size: 1.15rem;
   line-height: 1.35;
   letter-spacing: 0;
 }
 
-.date-range {
-  margin: 8px 0 0;
-  font-size: 1rem;
+.item-date {
+  margin: 6px 0 0;
+  font-size: 0.95rem;
   font-weight: 700;
 }
 
@@ -356,20 +325,20 @@ h1 {
   display: flex;
   flex-wrap: wrap;
   gap: 5px;
-  margin-top: 12px;
+  margin-top: 10px;
 }
 
 .card-feature-chip {
   display: inline-flex;
   align-items: center;
   gap: 4px;
-  min-height: 30px;
+  min-height: 28px;
   border: 1px solid var(--accent);
   border-radius: 999px;
   background: var(--surface);
   padding: 4px 7px;
   color: var(--text);
-  font-size: 0.8rem;
+  font-size: 0.76rem;
   font-weight: 700;
   line-height: 1.25;
 }
@@ -420,7 +389,7 @@ h1 {
   display: flex;
   flex-wrap: wrap;
   gap: 8px;
-  margin-top: 12px;
+  margin-top: 10px;
 }
 
 .meta-item {
@@ -430,21 +399,9 @@ h1 {
   border: 1px solid var(--soft-line);
   border-radius: 999px;
   background: var(--badge);
-  padding: 5px 10px;
-  font-size: 0.86rem;
+  padding: 4px 9px;
+  font-size: 0.82rem;
   line-height: 1.35;
-}
-
-.meta-item--video {
-  align-items: center;
-  padding: 5px 9px;
-  color: #c0392b;
-}
-
-.meta-item--video svg {
-  display: block;
-  width: 18px;
-  height: 14px;
 }
 
 .meta-label {
@@ -466,13 +423,15 @@ h1 {
 }
 
 .highlight-comment {
-  margin: 12px 0 0;
+  margin: 10px 0 0;
   color: var(--muted);
   font-size: 0.92rem;
   display: -webkit-box;
-  -webkit-line-clamp: 2;
+  -webkit-line-clamp: 1;
   -webkit-box-orient: vertical;
   overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 
 .disclaimer {
@@ -501,7 +460,32 @@ h1 {
     gap: 18px;
   }
 
-  .festival-card {
-    padding: 22px;
+  .festival-item {
+    padding: 0;
+    border: 1px solid var(--soft-line);
+    border-radius: 10px;
+    background: var(--surface);
+    overflow: hidden;
+    transition:
+      border-color 140ms ease,
+      box-shadow 140ms ease,
+      transform 140ms ease;
+  }
+
+  .festival-item:hover,
+  .festival-item:focus-visible {
+    background: var(--surface);
+    border-color: var(--text);
+    box-shadow: 0 8px 24px rgb(17 17 17 / 8%);
+    transform: translateY(-1px);
+  }
+
+  .item-media {
+    width: 100%;
+    margin: 0;
+  }
+
+  .item-body {
+    padding: 16px 18px 20px;
   }
 }

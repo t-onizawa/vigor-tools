@@ -292,6 +292,24 @@
     }
   }
 
+  function injectBrandMark() {
+    const header = document.querySelector(".festival-header");
+    const backLink = header ? header.querySelector(".back-link") : null;
+    if (!header || !backLink) {
+      return;
+    }
+
+    const mark = document.createElement("p");
+    mark.className = "brand-mark";
+
+    const link = document.createElement("a");
+    link.href = "../../index.html";
+    link.textContent = "MATSURI";
+
+    mark.append(link);
+    header.insertBefore(mark, backLink);
+  }
+
   function applyHeroHeader(backgroundImage) {
     const header = document.querySelector(".festival-header");
     if (!header) {
@@ -466,6 +484,7 @@
     noteEl.hidden = false;
   }
 
+  injectBrandMark();
   setText("festival-name", festival.name);
   setText("festival-prefecture", festival.prefecture);
   renderEventStatusDateText();

@@ -267,15 +267,17 @@
       : [];
 
     const card = document.createElement("a");
-    card.className = "festival-card";
+    card.className = "festival-item";
     card.href = `festivals/${festival.id}/index.html`;
     card.dataset.area = festival.areaTag || "";
     card.dataset.highlightTime = features.highlightTime || "";
     card.dataset.hasDanceOnDashi = String(features.hasDanceOnDashi);
     card.dataset.eventStatus = yearlyInfo.eventStatus || "";
 
+    card.append(createItemMedia(constantInfo.backgroundImage, atmosphereMedia.length > 0));
+
     const topLine = document.createElement("div");
-    topLine.className = "card-topline";
+    topLine.className = "item-topline";
 
     const prefecture = document.createElement("span");
     prefecture.className = "prefecture";
@@ -288,20 +290,12 @@
     topLine.append(prefecture, status);
 
     const title = document.createElement("h2");
-    title.className = "festival-name";
+    title.className = "item-name";
     title.textContent = festival.name || "名称未確認";
 
     const date = document.createElement("p");
-    date.className = "date-range";
+    date.className = "item-date";
     date.textContent = formatDateRange(yearlyInfo);
-
-    const headingText = document.createElement("div");
-    headingText.className = "card-heading-text";
-    headingText.append(title, date);
-
-    const headingRow = document.createElement("div");
-    headingRow.className = "card-heading-row";
-    headingRow.append(headingText, createCardDetailButton());
 
     const featureChips = document.createElement("div");
     featureChips.className = "card-feature-chips";
@@ -320,31 +314,25 @@
       createMetaItem("駐車場", parkingText(access.hasParking))
     );
 
-    if (atmosphereMedia.length > 0) {
-      meta.append(createVideoBadge());
-    }
-
-    const cardBody = document.createElement("div");
-    cardBody.className = "card-body";
+    const body = document.createElement("div");
+    body.className = "item-body";
+    body.append(topLine, title, date, featureChips, meta);
 
     if (constantInfo.highlightComment) {
       const highlight = document.createElement("p");
       highlight.className = "highlight-comment";
       highlight.textContent = constantInfo.highlightComment;
-      cardBody.append(topLine, headingRow, featureChips, meta, highlight);
-    } else {
-      cardBody.append(topLine, headingRow, featureChips, meta);
+      body.append(highlight);
     }
 
-    card.append(cardBody);
-    applyCardAtmosphereBackground(card, constantInfo.backgroundImage);
+    card.append(body);
 
     return card;
   }
 
   function createVideoBadge() {
     const badge = document.createElement("span");
-    badge.className = "meta-item meta-item--video";
+    badge.className = "item-video-badge";
     badge.setAttribute("role", "img");
     badge.setAttribute("aria-label", "動画あり");
     badge.title = "動画あり";
@@ -353,29 +341,28 @@
     return badge;
   }
 
-  function createCardDetailButton() {
-    const button = document.createElement("span");
-    button.className = "card-detail-button";
-    button.setAttribute("aria-hidden", "true");
-    button.innerHTML =
-      '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>';
-    return button;
-  }
+  function createItemMedia(backgroundImage, hasVideo) {
+    const media = document.createElement("div");
+    media.className = "item-media";
 
-  function applyCardAtmosphereBackground(card, backgroundImage) {
-    if (!backgroundImage || backgroundImage.type !== "youtube") {
-      const fallback = document.createElement("div");
-      fallback.className = "card-atmosphere-fallback";
-      fallback.setAttribute("aria-hidden", "true");
-      card.prepend(fallback);
-      return;
+    if (backgroundImage && backgroundImage.type === "youtube") {
+      const img = document.createElement("img");
+      img.className = "item-media-img";
+      img.src = `https://i.ytimg.com/vi/${backgroundImage.contentId}/hqdefault.jpg`;
+      img.alt = "";
+      img.loading = "lazy";
+      img.decoding = "async";
+      media.append(img);
+    } else {
+      media.classList.add("item-media--fallback");
+      media.setAttribute("aria-hidden", "true");
     }
-    const media = backgroundImage;
 
-    const bg = document.createElement("div");
-    bg.className = "card-atmosphere-bg";
-    bg.style.backgroundImage = `url(https://i.ytimg.com/vi/${media.contentId}/hqdefault.jpg)`;
-    card.prepend(bg);
+    if (hasVideo) {
+      media.append(createVideoBadge());
+    }
+
+    return media;
   }
 
   function render(items) {
