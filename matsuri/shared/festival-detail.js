@@ -294,17 +294,20 @@
 
   function applyHeroHeader(backgroundImage) {
     const header = document.querySelector(".festival-header");
-    const media = backgroundImage;
-
-    if (!header || !media || media.type !== "youtube") {
+    if (!header) {
       return;
     }
 
+    const media = backgroundImage;
     header.classList.add("has-hero");
 
     const background = document.createElement("div");
-    background.className = "hero-background";
-    background.style.backgroundImage = `url(https://i.ytimg.com/vi/${media.contentId}/hqdefault.jpg)`;
+    if (media && media.type === "youtube") {
+      background.className = "hero-background";
+      background.style.backgroundImage = `url(https://i.ytimg.com/vi/${media.contentId}/hqdefault.jpg)`;
+    } else {
+      background.className = "hero-background hero-background--fallback";
+    }
     header.prepend(background);
   }
 
@@ -421,6 +424,16 @@
     section.hidden = false;
   }
 
+  function relocateHighlightComment() {
+    const section = byId("highlight-comment-section");
+    const primaryInfo = document.querySelector(".primary-info");
+    if (!section || !primaryInfo || !primaryInfo.parentElement) {
+      return;
+    }
+    const nextSibling = primaryInfo.nextElementSibling;
+    primaryInfo.parentElement.insertBefore(section, nextSibling);
+  }
+
   function renderHayashiNote(note) {
     const section = byId("hayashi-section");
 
@@ -457,6 +470,7 @@
   renderEventStatusDateText();
   setText("festival-dates", formatDateList(currentYear.dates));
   setText("event-status", eventStatusLabels[currentYear.eventStatus] || "未確認");
+  byId("event-status").className = `status-badge status-${currentYear.eventStatus || "unknown"}`;
   renderHayashiNote(features.hayashiNote);
 
   const featureGrid = byId("feature-grid");
@@ -484,6 +498,7 @@
   );
 
   renderHighlightComment(festival.constantInfo.highlightComment);
+  relocateHighlightComment();
   renderAtmosphereMedia(festival.constantInfo.atmosphereMedia);
   applyHeroHeader(festival.constantInfo.backgroundImage);
   renderMapReference(festival.constantInfo.mapReference);
