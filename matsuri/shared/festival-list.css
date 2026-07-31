@@ -198,7 +198,7 @@ h1 {
   display: block;
   min-width: 0;
   color: inherit;
-  padding: 14px 0;
+  padding: 14px 0 0;
   border-bottom: 1px solid var(--soft-line);
   transition: background-color 140ms ease;
 }
@@ -254,7 +254,7 @@ h1 {
   min-width: 0;
   width: calc(100% + 24px);
   margin: 0 -12px;
-  padding: 14px 12px 2px;
+  padding: 14px 12px;
   background: var(--surface);
 }
 
