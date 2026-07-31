@@ -209,6 +209,15 @@ h1 {
   outline: 0;
 }
 
+.festival-item--text {
+  padding-left: 12px;
+  border-left: 3px solid var(--accent);
+}
+
+.festival-item--text .item-name {
+  font-size: 1.3rem;
+}
+
 .item-media {
   position: relative;
   width: calc(100% + 24px);
@@ -223,29 +232,6 @@ h1 {
   width: 100%;
   height: 100%;
   object-fit: cover;
-}
-
-.item-media--fallback {
-  background: linear-gradient(135deg, var(--accent) 0%, var(--accent-strong) 60%, #16232f 100%);
-}
-
-.item-video-badge {
-  position: absolute;
-  right: 10px;
-  bottom: 10px;
-  display: grid;
-  place-items: center;
-  width: 30px;
-  height: 30px;
-  border-radius: 50%;
-  background: rgb(17 17 17 / 55%);
-  color: #ffffff;
-}
-
-.item-video-badge svg {
-  display: block;
-  width: 15px;
-  height: 12px;
 }
 
 .item-body {
@@ -422,6 +408,18 @@ h1 {
   color: inherit;
 }
 
+.meta-item--video {
+  align-items: center;
+  padding: 4px 8px;
+  color: #c0392b;
+}
+
+.meta-item--video svg {
+  display: block;
+  width: 16px;
+  height: 13px;
+}
+
 .highlight-comment {
   margin: 10px 0 0;
   color: var(--muted);
@@ -458,6 +456,7 @@ h1 {
   .festival-list {
     grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 18px;
+    align-items: start;
   }
 
   .festival-item {
@@ -478,6 +477,15 @@ h1 {
     border-color: var(--text);
     box-shadow: 0 8px 24px rgb(17 17 17 / 8%);
     transform: translateY(-1px);
+  }
+
+  .festival-item--text {
+    padding-left: 0;
+    border-left: 0;
+  }
+
+  .festival-item--text .item-name {
+    font-size: 1.15rem;
   }
 
   .item-media {

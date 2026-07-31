@@ -266,15 +266,21 @@
       ? constantInfo.atmosphereMedia
       : [];
 
+    const hasPhoto = Boolean(
+      constantInfo.backgroundImage && constantInfo.backgroundImage.type === "youtube"
+    );
+
     const card = document.createElement("a");
-    card.className = "festival-item";
+    card.className = hasPhoto ? "festival-item" : "festival-item festival-item--text";
     card.href = `festivals/${festival.id}/index.html`;
     card.dataset.area = festival.areaTag || "";
     card.dataset.highlightTime = features.highlightTime || "";
     card.dataset.hasDanceOnDashi = String(features.hasDanceOnDashi);
     card.dataset.eventStatus = yearlyInfo.eventStatus || "";
 
-    card.append(createItemMedia(constantInfo.backgroundImage, atmosphereMedia.length > 0));
+    if (hasPhoto) {
+      card.append(createItemMedia(constantInfo.backgroundImage));
+    }
 
     const topLine = document.createElement("div");
     topLine.className = "item-topline";
@@ -314,6 +320,10 @@
       createMetaItem("駐車場", parkingText(access.hasParking))
     );
 
+    if (atmosphereMedia.length > 0) {
+      meta.append(createVideoBadge());
+    }
+
     const body = document.createElement("div");
     body.className = "item-body";
     body.append(topLine, title, date, featureChips, meta);
@@ -332,7 +342,7 @@
 
   function createVideoBadge() {
     const badge = document.createElement("span");
-    badge.className = "item-video-badge";
+    badge.className = "meta-item meta-item--video";
     badge.setAttribute("role", "img");
     badge.setAttribute("aria-label", "動画あり");
     badge.title = "動画あり";
@@ -341,26 +351,17 @@
     return badge;
   }
 
-  function createItemMedia(backgroundImage, hasVideo) {
+  function createItemMedia(backgroundImage) {
     const media = document.createElement("div");
     media.className = "item-media";
 
-    if (backgroundImage && backgroundImage.type === "youtube") {
-      const img = document.createElement("img");
-      img.className = "item-media-img";
-      img.src = `https://i.ytimg.com/vi/${backgroundImage.contentId}/hqdefault.jpg`;
-      img.alt = "";
-      img.loading = "lazy";
-      img.decoding = "async";
-      media.append(img);
-    } else {
-      media.classList.add("item-media--fallback");
-      media.setAttribute("aria-hidden", "true");
-    }
-
-    if (hasVideo) {
-      media.append(createVideoBadge());
-    }
+    const img = document.createElement("img");
+    img.className = "item-media-img";
+    img.src = `https://i.ytimg.com/vi/${backgroundImage.contentId}/hqdefault.jpg`;
+    img.alt = "";
+    img.loading = "lazy";
+    img.decoding = "async";
+    media.append(img);
 
     return media;
   }
