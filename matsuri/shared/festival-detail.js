@@ -420,6 +420,7 @@
       return;
     }
 
+    setText("highlight-comment-heading", "この祭りの見どころ");
     setText("highlight-comment-text", comment);
     section.hidden = false;
   }
@@ -524,9 +525,7 @@
     youtube:
       '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><rect x="1" y="4" width="22" height="16" rx="4" fill="none" stroke="currentColor" stroke-width="1.6"/><polygon points="10,8.5 10,15.5 16,12"/></svg>',
     instagram:
-      '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="6"/><circle cx="12" cy="12" r="5"/><circle cx="17.3" cy="6.7" r="1.1" fill="currentColor" stroke="none"/></svg>',
-    tiktok:
-      '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M14 2.5v11.2a3.6 3.6 0 1 1-2-3.23V2.5h2z"/><path d="M14 2.5c.3 2.3 2.1 4.1 4.2 4.4V8.9c-1.6-.1-3.1-.7-4.2-1.7V2.5z"/></svg>'
+      '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="6"/><circle cx="12" cy="12" r="5"/><circle cx="17.3" cy="6.7" r="1.1" fill="currentColor" stroke="none"/></svg>'
   };
 
   function normalizeForHashtag(text) {
@@ -552,11 +551,6 @@
         key: "instagram",
         label: "Instagram",
         url: `https://www.instagram.com/explore/tags/${encodeURIComponent(hashtag)}/`
-      },
-      {
-        key: "tiktok",
-        label: "TikTok",
-        url: `https://www.tiktok.com/search?q=${encodeURIComponent(query)}`
       }
     ];
   }
