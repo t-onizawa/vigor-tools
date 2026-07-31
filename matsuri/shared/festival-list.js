@@ -117,6 +117,27 @@
       : 1;
   }
 
+  function isEventStatusPastDue(yearlyInfo) {
+    const dates = yearlyInfo && Array.isArray(yearlyInfo.dates) ? yearlyInfo.dates : [];
+    if (dates.length === 0) {
+      return false;
+    }
+    const lastDate = dates[dates.length - 1];
+    const lastDateEnd = new Date(`${lastDate}T23:59:59+09:00`).getTime();
+    return Number.isFinite(lastDateEnd) && lastDateEnd < Date.now();
+  }
+
+  function getEffectiveEventStatus(yearlyInfo) {
+    const status = yearlyInfo && yearlyInfo.eventStatus;
+    if (
+      (status === "confirmed" || status === "scheduled_pending_official") &&
+      isEventStatusPastDue(yearlyInfo)
+    ) {
+      return "ended";
+    }
+    return status;
+  }
+
   function dateValue(yearlyInfo) {
     const firstDate = yearlyInfo && Array.isArray(yearlyInfo.dates) ? yearlyInfo.dates[0] : null;
     const time = firstDate ? new Date(`${firstDate}T00:00:00+09:00`).getTime() : NaN;
@@ -125,8 +146,8 @@
 
   function sortFestivalItems(items) {
     return [...items].sort((a, b) => {
-      const groupA = getEventStatusGroup(a.yearlyInfo.eventStatus);
-      const groupB = getEventStatusGroup(b.yearlyInfo.eventStatus);
+      const groupA = getEventStatusGroup(getEffectiveEventStatus(a.yearlyInfo));
+      const groupB = getEventStatusGroup(getEffectiveEventStatus(b.yearlyInfo));
 
       if (groupA !== groupB) {
         return groupA - groupB;
@@ -269,6 +290,7 @@
     const hasPhoto = Boolean(
       constantInfo.backgroundImage && constantInfo.backgroundImage.type === "youtube"
     );
+    const effectiveStatus = getEffectiveEventStatus(yearlyInfo);
 
     const card = document.createElement("a");
     card.className = hasPhoto ? "festival-item" : "festival-item festival-item--text";
@@ -276,7 +298,7 @@
     card.dataset.area = festival.areaTag || "";
     card.dataset.highlightTime = features.highlightTime || "";
     card.dataset.hasDanceOnDashi = String(features.hasDanceOnDashi);
-    card.dataset.eventStatus = yearlyInfo.eventStatus || "";
+    card.dataset.eventStatus = effectiveStatus || "";
 
     if (hasPhoto) {
       card.append(createItemMedia(constantInfo.backgroundImage));
@@ -292,8 +314,8 @@
     prefecture.textContent = festival.prefecture || "都道府県未確認";
 
     const status = document.createElement("span");
-    status.className = `status-badge status-${yearlyInfo.eventStatus || "unknown"}`;
-    status.textContent = eventStatusLabels[yearlyInfo.eventStatus] || "未確認";
+    status.className = `status-badge status-${effectiveStatus || "unknown"}`;
+    status.textContent = eventStatusLabels[effectiveStatus] || "未確認";
 
     topLine.append(prefecture, status);
 
@@ -404,7 +426,7 @@
 
     const visibleItems = items.filter((item) => {
       const passesUpcoming =
-        !toggle.checked || UPCOMING_STATUSES.has(item.yearlyInfo.eventStatus);
+        !toggle.checked || UPCOMING_STATUSES.has(getEffectiveEventStatus(item.yearlyInfo));
       const passesArea = !areaFilter.value || item.festival.areaTag === areaFilter.value;
       return passesUpcoming && passesArea;
     });

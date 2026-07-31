@@ -43,6 +43,29 @@
     }
   };
 
+  function isEventStatusPastDue(yearlyInfo) {
+    const dates = yearlyInfo && Array.isArray(yearlyInfo.dates) ? yearlyInfo.dates : [];
+    if (dates.length === 0) {
+      return false;
+    }
+    const lastDate = dates[dates.length - 1];
+    const lastDateEnd = new Date(`${lastDate}T23:59:59+09:00`).getTime();
+    return Number.isFinite(lastDateEnd) && lastDateEnd < Date.now();
+  }
+
+  function getEffectiveEventStatus(yearlyInfo) {
+    const status = yearlyInfo && yearlyInfo.eventStatus;
+    if (
+      (status === "confirmed" || status === "scheduled_pending_official") &&
+      isEventStatusPastDue(yearlyInfo)
+    ) {
+      return "ended";
+    }
+    return status;
+  }
+
+  const effectiveEventStatus = getEffectiveEventStatus(currentYear);
+
   const highlightTimeLabels = {
     morning: "朝",
     daytime: "昼",
@@ -470,7 +493,7 @@
   }
 
   function renderEventStatusDateText() {
-    const text = eventStatusDateText[currentYear.eventStatus] || eventStatusDateText.unconfirmed;
+    const text = eventStatusDateText[effectiveEventStatus] || eventStatusDateText.unconfirmed;
     const noteEl = byId("event-status-note");
 
     setText("dates-heading", text.heading(currentYear.year));
@@ -489,8 +512,8 @@
   setText("festival-prefecture", festival.prefecture);
   renderEventStatusDateText();
   setText("festival-dates", formatDateList(currentYear.dates));
-  setText("event-status", eventStatusLabels[currentYear.eventStatus] || "未確認");
-  byId("event-status").className = `status-badge status-${currentYear.eventStatus || "unknown"}`;
+  setText("event-status", eventStatusLabels[effectiveEventStatus] || "未確認");
+  byId("event-status").className = `status-badge status-${effectiveEventStatus || "unknown"}`;
   renderHayashiNote(features.hayashiNote);
 
   const featureGrid = byId("feature-grid");
