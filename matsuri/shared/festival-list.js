@@ -280,6 +280,8 @@
 
     if (hasPhoto) {
       card.append(createItemMedia(constantInfo.backgroundImage));
+    } else {
+      card.append(createDummyMedia(features));
     }
 
     const topLine = document.createElement("div");
@@ -364,6 +366,34 @@
     media.append(img);
 
     return media;
+  }
+
+  function pickDummyIconLabel(features) {
+    const found = cardFeatureItems.find(([, key]) => features[key] === true);
+    return found ? found[0] : null;
+  }
+
+  function createDummyMedia(features) {
+    const media = document.createElement("div");
+    media.className = "item-media item-media--icon";
+    media.setAttribute("aria-hidden", "true");
+
+    const label = pickDummyIconLabel(features);
+    if (label) {
+      const plate = document.createElement("span");
+      plate.className = "item-media-icon-plate";
+      media.append(plate);
+      attachDummyIcon(plate, label);
+    }
+
+    return media;
+  }
+
+  async function attachDummyIcon(container, label) {
+    const svgText = await loadIconSvg(label);
+    if (svgText) {
+      container.innerHTML = svgText;
+    }
   }
 
   function render(items) {
