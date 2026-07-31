@@ -3,7 +3,7 @@
 ```
 Status: Living backlog（固定ロードマップではない）
 Created: 2026-07-27
-Updated: 2026-07-31（掲載祭り75件へ到達）
+Updated: 2026-07-31（ブランド改修・一覧UI再設計・eventStatus自動判定）
 ```
 
 これは計画表ではない。優先度は仮説であり、公開後の反応で入れ替わる前提の
@@ -531,6 +531,19 @@ atmosphereMedia調査時も、backgroundImageは別途独立して調査する�
   都道府県ごと・祭りごとの個性を視覚的に表現する需要が出てきた場合は、
   今回の置き換えを起点に、イラスト表現の再導入（例：祭りごとの固有
   イラスト、地域単位のビジュアル差別化）を再検討する候補として記録する。
+- eventStatusの状態数の見直し候補（2026-07-31追加）：一覧の並び順が
+  日付経過で自動的に崩れる問題を、confirmed/scheduled_pending_official
+  の実効ステータスを表示時に動的判定する方式（データは書き換えず、
+  今日の日付とdates最終日を比較してendedとして扱う）で解消した
+  （shared/festival-list.js・festival-detail.js）。この対応を機に、
+  「開催予定・公式詳細待ち（scheduled_pending_official）」タグを
+  confirmedと統合すべきか、という論点が浮上した。現時点の判断は
+  **統合しない**：confirmedは公式情報で日程が確定、
+  scheduled_pending_officialは例年傾向からの予想で公式発表待ちという、
+  「日程を信頼していいか」という別の情報的価値を持つため。ただし
+  この判断はデータに基づいたものではなく、実際にscheduled_pending_
+  officialがどの程度使われ、confirmedへどの程度の頻度で更新されて
+  いるかを見てから再検討する余地がある候補として記録する。
 ```
 
 ---
@@ -684,4 +697,23 @@ backgroundImageとatmosphereMediaを別判定し、青梅大祭の動画1件の�
     75件時点の素材カバー率はbackgroundImage 35/75、
     atmosphereMedia 31/75。4件のmapReference.pointTypeを、定義済み
     enumのmain_venueへ統一した。
+
+2026-07-31（サイト全体ブランド改修・一覧UI再設計・eventStatus自動判定）
+    Codex利用枠復旧待ちのためClaudeが直接実装した一連の変更。
+    詳細ページのブランド統一（トークン同期・状態カラー・明朝体h1・
+    写真なしヒーロー・highlightComment格上げ）、TikTok導線の削除
+    （実機検証でTikTok側のBot対策により直接リンクがエラーになることを
+    確認）、一覧のモバイルUIをカード型からフィード型へ再設計（写真あり
+    はフルブリード画像＋白パネル本文、写真なしはアクセントボーダー付き
+    カード）、デスクトップの写真なしカードに特徴アイコンのダミー画像枠
+    を追加（本文の横軸を写真ありカードと揃える）。最後に、一覧の並び順
+    が日付経過で自動的に崩れる問題（confirmed/scheduled_pending_
+    officialのまま開催日を過ぎ続ける）を、data.jsは書き換えず表示時に
+    実効ステータスを動的判定する方式で解消した。この方式の代替案
+    （GitHub Actionsのcronバッチでdata.js自体を書き換える案）も検討
+    したが、.github/workflows/はroot直下でmatsuri担当の管轄外であり
+    統括担当への相談が必要になること、表示時判定なら同じ効果をより
+    小さい変更・より低いリスクで実現できることから見送った。
+    scheduled_pending_officialタグの要否も論点として浮上したため
+    「将来案（保留）」に記録した。
 ```
