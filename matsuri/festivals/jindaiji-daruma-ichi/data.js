@@ -13,7 +13,7 @@ const FESTIVAL = {
     },
     access: { nearestStation: "京王線 調布駅・つつじヶ丘駅からバス" },
     mapReference: {
-      label: "深大寺", pointType: "venue", query: "深大寺", lat: null, lng: null,
+      label: "深大寺", pointType: "main_venue", query: "深大寺", lat: null, lng: null,
       mapUrl: "https://www.google.com/maps/search/?api=1&query=深大寺",
       note: "元三大師大祭とだるま市が行われる深大寺境内を基準地点とした。"
     },

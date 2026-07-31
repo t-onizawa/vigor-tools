@@ -13,7 +13,7 @@ const FESTIVAL = {
     },
     access: { nearestStation: "東急池上線 池上駅" },
     mapReference: {
-      label: "池上本門寺", pointType: "venue", query: "池上本門寺", lat: null, lng: null,
+      label: "池上本門寺", pointType: "main_venue", query: "池上本門寺", lat: null, lng: null,
       mapUrl: "https://www.google.com/maps/search/?api=1&query=池上本門寺",
       note: "万灯練供養の到着地で法要会場となる池上本門寺を基準地点とした。"
     },

@@ -13,7 +13,7 @@ const FESTIVAL = {
     },
     access: { nearestStation: "京成本線 大神宮下駅" },
     mapReference: {
-      label: "意富比神社（船橋大神宮）", pointType: "venue", query: "意富比神社 船橋大神宮", lat: null, lng: null,
+      label: "意富比神社（船橋大神宮）", pointType: "main_venue", query: "意富比神社 船橋大神宮", lat: null, lng: null,
       mapUrl: "https://www.google.com/maps/search/?api=1&query=意富比神社+船橋大神宮",
       note: "奉納相撲と神楽が行われる意富比神社境内を基準地点とした。"
     },

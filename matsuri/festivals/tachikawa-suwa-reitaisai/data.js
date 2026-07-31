@@ -13,7 +13,7 @@ const FESTIVAL = {
     },
     access: { nearestStation: "JR中央線・南武線・青梅線 立川駅" },
     mapReference: {
-      label: "立川諏訪神社", pointType: "venue", query: "立川諏訪神社", lat: null, lng: null,
+      label: "立川諏訪神社", pointType: "main_venue", query: "立川諏訪神社", lat: null, lng: null,
       mapUrl: "https://www.google.com/maps/search/?api=1&query=立川諏訪神社",
       note: "例大祭の中心となる立川諏訪神社を基準地点とした。山車・神輿は周辺市街も巡行します。"
     },
