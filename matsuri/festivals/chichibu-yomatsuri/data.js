@@ -28,7 +28,25 @@ const FESTIVAL = {
       note: "秩父神社は例大祭の中心となる神社です。屋台の曳行・団子坂の曳き上げは秩父市街地一帯で行われます。"
     },
     highlightComment: "最大20tの屋台が「団子坂」と呼ばれる急坂を曳き上げられる。",
-    atmosphereMedia: [],
+    atmosphereMedia: [{
+      type: "youtube",
+      url: "https://www.youtube.com/watch?v=Hk3eNzg1Sls",
+      contentId: "Hk3eNzg1Sls",
+      title: "秩父夜祭【埼玉県公式観光動画】",
+      publisher: "ChokotabiSaitama",
+      publisherType: "tourism",
+      purpose: "festival_atmosphere",
+      publishedYear: 2011,
+      checkedDate: "2026-08-01"
+    }],
+    backgroundImage: {
+      type: "youtube",
+      contentId: "Hk3eNzg1Sls",
+      sourceUrl: "https://www.youtube.com/watch?v=Hk3eNzg1Sls",
+      publisher: "ChokotabiSaitama",
+      publisherType: "tourism",
+      checkedDate: "2026-08-01"
+    },
     confirmation: {
       verified: true,
       confirmedDate: "2026-07-28",

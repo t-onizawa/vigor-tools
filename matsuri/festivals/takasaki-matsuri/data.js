@@ -18,7 +18,25 @@ const FESTIVAL = {
       note: "山車・神輿が集まる高崎駅西口側の中心市街地を基準地点とした。"
     },
     highlightComment: "市内に38台ある江戸型山車から2026年は24台が出場し、巨大・創作だるまみこしと市街地を巡る。",
-    atmosphereMedia: [], backgroundImage: null,
+    atmosphereMedia: [{
+      type: "youtube",
+      url: "https://www.youtube.com/watch?v=rTzcVTaR4N4",
+      contentId: "rTzcVTaR4N4",
+      title: "山車・みこし・花火が競演　夏の一大イベント高崎まつりに９５万人　群馬・高崎市(25/08/25)",
+      publisher: "群馬テレビ・ぐんテレ",
+      publisherType: "local_media",
+      purpose: "festival_atmosphere",
+      publishedYear: 2025,
+      checkedDate: "2026-08-01"
+    }],
+    backgroundImage: {
+      type: "youtube",
+      contentId: "7s0uJ43p4Ek",
+      sourceUrl: "https://www.youtube.com/watch?v=7s0uJ43p4Ek",
+      publisher: "sugazane",
+      publisherType: "individual",
+      checkedDate: "2026-08-01"
+    },
     confirmation: { verified: true, confirmedDate: "2026-07-31", sources: ["https://www.takasaki-matsuri.jp/gaiyou/", "https://www.city.takasaki.gunma.jp/site/sightseeing/2157.html"] }
   },
   yearlyInfo: [{

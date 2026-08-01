@@ -18,7 +18,25 @@ const FESTIVAL = {
       note: "主要観覧地点は茅ヶ崎漁港西側の西浜海岸。寒川神社境内ではありません。"
     },
     highlightComment: "寒川町・茅ヶ崎市の34神社から約40基の神輿が夜明けの西浜海岸へ集まり、海で禊を行う。",
-    atmosphereMedia: [], backgroundImage: null,
+    atmosphereMedia: [{
+      type: "youtube",
+      url: "https://www.youtube.com/watch?v=BqBYrfEvXII",
+      contentId: "BqBYrfEvXII",
+      title: "湘南に夏を告げる「浜降祭」　朝焼けに38基の神輿が練り歩く　神奈川・茅ケ崎市(2026年7月20日)",
+      publisher: "ANNnewsCH",
+      publisherType: "local_media",
+      purpose: "festival_atmosphere",
+      publishedYear: 2026,
+      checkedDate: "2026-08-01"
+    }],
+    backgroundImage: {
+      type: "youtube",
+      contentId: "tmj6Wzq8JJQ",
+      sourceUrl: "https://www.youtube.com/watch?v=tmj6Wzq8JJQ",
+      publisher: "祭のきせき MatsuriNoKiseki",
+      publisherType: "individual",
+      checkedDate: "2026-08-01"
+    },
     confirmation: { verified: true, confirmedDate: "2026-07-31", sources: ["https://www.chigasaki-kankou.org/event/hamaori/", "https://samukawajinjya.jp/festival/"] }
   },
   yearlyInfo: [{

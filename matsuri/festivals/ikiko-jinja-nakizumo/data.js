@@ -9,7 +9,18 @@ const FESTIVAL = {
     mapReference: { label: "生子神社", pointType: "shrine", query: "生子神社 鹿沼市樅山町", lat: null, lng: null,
       mapUrl: "https://www.google.com/maps/search/?api=1&query=生子神社+鹿沼市樅山町", note: "生子神社境内の土俵で行われます。" },
     highlightComment: "力士姿の氏子が幼児を抱き上げ、「ヨイショ」の掛け声で先に泣いた方を勝ちとする奉納相撲。",
-    atmosphereMedia: [], backgroundImage: null,
+    atmosphereMedia: [{
+      type: "youtube",
+      url: "https://www.youtube.com/watch?v=mmSYVDfnCBU",
+      contentId: "mmSYVDfnCBU",
+      title: "元気いっぱい泣き相撲 鹿沼・生子神社",
+      publisher: "下野新聞チャンネル",
+      publisherType: "local_media",
+      purpose: "festival_atmosphere",
+      publishedYear: 2025,
+      checkedDate: "2026-08-01"
+    }],
+    backgroundImage: null,
     confirmation: { verified: true, confirmedDate: "2026-07-31", sources: ["https://www.city.kanuma.tochigi.jp/0299/info-0000001969-0.html"] }
   },
   yearlyInfo: [{ year: 2026, eventStatus: "scheduled_pending_official", dates: ["2026-09-20"],
