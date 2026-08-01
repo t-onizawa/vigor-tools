@@ -259,6 +259,13 @@
     return item;
   }
 
+  function createExperienceTagChip(label) {
+    const chip = document.createElement("span");
+    chip.className = "experience-tag-chip";
+    chip.textContent = label;
+    return chip;
+  }
+
   function createMetaItem(label, value, className) {
     const item = document.createElement("span");
     item.className = "meta-item";
@@ -332,6 +339,12 @@
     featureChips.append(
       ...cardFeatureItems.map(([label, key]) => createFeatureChip(label, features[key]))
     );
+
+    const experienceTag =
+      typeof EXPERIENCE_TAGS !== "undefined" ? EXPERIENCE_TAGS[festival.id] : undefined;
+    if (experienceTag) {
+      featureChips.append(createExperienceTagChip(experienceTag));
+    }
 
     const meta = document.createElement("div");
     meta.className = "card-meta";

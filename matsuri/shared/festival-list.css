@@ -357,6 +357,19 @@ h1 {
   margin-top: 10px;
 }
 
+.experience-tag-chip {
+  display: inline-flex;
+  align-items: center;
+  min-height: 24px;
+  border-radius: 999px;
+  padding: 3px 10px;
+  background: var(--accent);
+  color: #ffffff;
+  font-size: 0.7rem;
+  font-weight: 700;
+  line-height: 1.25;
+}
+
 .card-feature-chip {
   display: inline-flex;
   align-items: center;

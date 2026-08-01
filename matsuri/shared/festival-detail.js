@@ -100,6 +100,35 @@
     byId(id).textContent = text;
   }
 
+  async function loadExperienceTags() {
+    try {
+      const res = await fetch("../../shared/experience-tags.js");
+      if (!res.ok) return null;
+      const src = await res.text();
+      const factory = new Function(`${src}\nreturn EXPERIENCE_TAGS;`);
+      return factory();
+    } catch (err) {
+      console.warn("[festival-detail] experience-tags.jsの読み込みに失敗", err);
+      return null;
+    }
+  }
+
+  async function renderExperienceTag(festivalId) {
+    const tags = await loadExperienceTags();
+    const label = tags && tags[festivalId];
+    if (!label) {
+      return;
+    }
+    const prefectureEl = byId("festival-prefecture");
+    if (!prefectureEl || !prefectureEl.parentElement) {
+      return;
+    }
+    const chip = document.createElement("p");
+    chip.className = "experience-tag-chip";
+    chip.textContent = label;
+    prefectureEl.insertAdjacentElement("afterend", chip);
+  }
+
   async function loadIconSvg(label) {
     const file = FEATURE_ICON_FILES[label];
     if (!file) return null;
@@ -510,6 +539,7 @@
   injectBrandMark();
   setText("festival-name", festival.name);
   setText("festival-prefecture", festival.prefecture);
+  renderExperienceTag(festival.id);
   renderEventStatusDateText();
   setText("festival-dates", formatDateList(currentYear.dates));
   setText("event-status", eventStatusLabels[effectiveEventStatus] || "未確認");
