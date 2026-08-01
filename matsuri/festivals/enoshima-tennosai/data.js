@@ -18,7 +18,26 @@ const FESTIVAL = {
       note: "神輿の渡御経路に近い江の島弁天橋周辺を観覧基準地点とした。"
     },
     highlightComment: "海へ入った江島神社と小動神社の神輿が行き合い、二基で揉み合う「行合祭」が見どころ。",
-    atmosphereMedia: [], backgroundImage: null,
+    atmosphereMedia: [{
+      type: "youtube",
+      url: "https://www.youtube.com/watch?v=G_LYJVQ816E",
+      contentId: "G_LYJVQ816E",
+      title: "江ノ島天王祭海上渡御2026",
+      publisher: "oyr55",
+      publisherType: "individual",
+      purpose: "festival_atmosphere",
+      publishedYear: 2026,
+      checkedDate: "2026-08-01"
+    }],
+    backgroundImage: {
+      type: "youtube",
+      contentId: "G_LYJVQ816E",
+      sourceUrl: "https://www.youtube.com/watch?v=G_LYJVQ816E",
+      publisher: "oyr55",
+      publisherType: "individual",
+      checkedDate: "2026-08-01",
+      note: "江の島東浜で神輿が海へ入る場面を文字なしで捉え、横長トリミングでも海上渡御の主役が明確なため採用。"
+    },
     confirmation: { verified: true, confirmedDate: "2026-07-31", sources: ["https://www.fujisawa-kanko.jp/event/20260601.html", "https://enoshimajinja.or.jp/"] }
   },
   yearlyInfo: [{

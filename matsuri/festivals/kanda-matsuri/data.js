@@ -26,7 +26,17 @@ const FESTIVAL = {
       note: "本祭年の神幸祭は神田・日本橋・大手町・秋葉原一帯を巡ります。"
     },
     highlightComment: "隔年の本祭では神幸祭と町神輿の宮入りが行われる。次回の本祭は2027年。",
-    atmosphereMedia: [],
+    atmosphereMedia: [{
+      type: "youtube",
+      url: "https://www.youtube.com/watch?v=MThJ2cvI-Zk",
+      contentId: "MThJ2cvI-Zk",
+      title: "令和七年 神田祭 ３分ハイライト",
+      publisher: "江戸総鎮守 神田明神 公式チャンネル -KANDAMYOUJIN-",
+      publisherType: "official",
+      purpose: "festival_atmosphere",
+      publishedYear: 2025,
+      checkedDate: "2026-08-01"
+    }],
     backgroundImage: null,
     confirmation: {
       verified: true,

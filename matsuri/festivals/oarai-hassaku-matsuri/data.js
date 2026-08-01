@@ -29,7 +29,15 @@ const FESTIVAL = {
     },
     highlightComment: "山車巡行・神輿渡御・磯節踊りパレードが、歩行者天国となる大洗の商店街を進む。",
     atmosphereMedia: [],
-    backgroundImage: null,
+    backgroundImage: {
+      type: "youtube",
+      contentId: "dzjzbzqOU8E",
+      sourceUrl: "https://www.youtube.com/watch?v=dzjzbzqOU8E",
+      publisher: "まおしゅん",
+      publisherType: "individual",
+      checkedDate: "2026-08-01",
+      note: "夜の山車と囃子方を文字やニュース装飾なしで正面から捉え、フィードと詳細ヒーローの横長背景で主役が明確なため採用。"
+    },
     confirmation: {
       verified: true,
       confirmedDate: "2026-07-30",
