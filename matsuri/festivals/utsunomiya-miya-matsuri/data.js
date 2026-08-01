@@ -9,7 +9,11 @@ const FESTIVAL = {
     mapReference: { label: "宇都宮大通り", pointType: "viewing_point", query: "宇都宮大通り", lat: null, lng: null,
       mapUrl: "https://www.google.com/maps/search/?api=1&query=宇都宮大通り", note: "交通規制された大通り周辺が主会場です。" },
     highlightComment: "40基を超える神輿が宇都宮大通りを練り歩き、和太鼓・踊り・木遣りが続く。",
-    atmosphereMedia: [], backgroundImage: null,
+    atmosphereMedia: [{
+      type: "youtube", url: "https://www.youtube.com/watch?v=kAlToe4SJaQ", contentId: "kAlToe4SJaQ",
+      title: "ふるさと宮まつり開幕 50回の節目 県都に熱気 宇都宮", publisher: "下野新聞チャンネル", publisherType: "local_media",
+      purpose: "festival_atmosphere", publishedYear: 2025, checkedDate: "2026-08-01"
+    }], backgroundImage: null,
     confirmation: { verified: true, confirmedDate: "2026-07-31", sources: ["https://www.utsunomiya-cvb.org/event/detail_20002.html"] }
   },
   yearlyInfo: [{ year: 2026, eventStatus: "confirmed", dates: ["2026-08-01", "2026-08-02"],

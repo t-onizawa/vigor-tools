@@ -18,7 +18,11 @@ const FESTIVAL = {
       note: "中心商店街を主会場に市内一円で行われます。"
     },
     highlightComment: "祇園山車と神輿連合渡御が中心市街地を進み、市民参加の「だんべえ踊り」が加わる。",
-    atmosphereMedia: [], backgroundImage: null,
+    atmosphereMedia: [],
+    backgroundImage: {
+      type: "youtube", contentId: "roAVAD8Rsmw", sourceUrl: "https://www.youtube.com/watch?v=roAVAD8Rsmw",
+      publisher: "前橋まつりウェブ版チャンネル", publisherType: "official", checkedDate: "2026-08-01"
+    },
     confirmation: { verified: true, confirmedDate: "2026-07-30", sources: ["https://www.city.maebashi.gunma.jp/soshiki/sangyokeizai/kankoseisaku/gyomu/1/30004.html", "https://maebashi-festival.jp/"] }
   },
   yearlyInfo: [{

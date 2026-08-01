@@ -9,7 +9,15 @@ const FESTIVAL = {
     mapReference: { label: "鬼怒川温泉 くろがね橋", pointType: "viewing_point", query: "くろがね橋 鬼怒川温泉", lat: null, lng: null,
       mapUrl: "https://www.google.com/maps/search/?api=1&query=くろがね橋+鬼怒川温泉", note: "本祭はくろがね橋周辺、神事は龍王峡で行われます。" },
     highlightComment: "龍王太鼓が響く鬼怒川温泉街を、灯りをまとった万燈神輿と女性だけで担ぐ女樽神輿が渡御する。",
-    atmosphereMedia: [], backgroundImage: null,
+    atmosphereMedia: [{
+      type: "youtube", url: "https://www.youtube.com/watch?v=zqyU-lq8mlU", contentId: "zqyU-lq8mlU",
+      title: "鬼怒川温泉竜王祭2026", publisher: "蕎麦好きおやじ", publisherType: "individual",
+      purpose: "festival_atmosphere", publishedYear: 2026, checkedDate: "2026-08-01"
+    }],
+    backgroundImage: {
+      type: "youtube", contentId: "zqyU-lq8mlU", sourceUrl: "https://www.youtube.com/watch?v=zqyU-lq8mlU",
+      publisher: "蕎麦好きおやじ", publisherType: "individual", checkedDate: "2026-08-01"
+    },
     confirmation: { verified: true, confirmedDate: "2026-07-31", sources: ["https://www.nikko-kankou.org/event/403"] }
   },
   yearlyInfo: [{ year: 2026, eventStatus: "ended", dates: ["2026-07-24", "2026-07-25"],
