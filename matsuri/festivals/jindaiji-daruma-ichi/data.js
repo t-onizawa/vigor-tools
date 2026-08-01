@@ -18,7 +18,25 @@ const FESTIVAL = {
       note: "元三大師大祭とだるま市が行われる深大寺境内を基準地点とした。"
     },
     highlightComment: "境内に約300余のだるま店が並び、僧侶が新しいだるまの左目へ梵字で目入れする。",
-    atmosphereMedia: [], backgroundImage: null,
+    atmosphereMedia: [{
+      type: "youtube",
+      url: "https://www.youtube.com/watch?v=h9CoJaY8mKM",
+      contentId: "h9CoJaY8mKM",
+      title: "「深大寺だるま市」ダイジェスト(2018年3月12日号)",
+      publisher: "調布市動画ライブラリーChofuCity",
+      publisherType: "government",
+      purpose: "festival_atmosphere",
+      publishedYear: 2018,
+      checkedDate: "2026-08-01"
+    }],
+    backgroundImage: {
+      type: "youtube",
+      contentId: "h9CoJaY8mKM",
+      sourceUrl: "https://www.youtube.com/watch?v=h9CoJaY8mKM",
+      publisher: "調布市動画ライブラリーChofuCity",
+      publisherType: "government",
+      checkedDate: "2026-08-01"
+    },
     confirmation: { verified: true, confirmedDate: "2026-07-31", sources: ["https://www.jindaiji.or.jp/index.php"] }
   },
   yearlyInfo: [{

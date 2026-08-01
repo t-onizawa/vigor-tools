@@ -18,7 +18,15 @@ const FESTIVAL = {
       note: "奉納相撲と神楽が行われる意富比神社境内を基準地点とした。"
     },
     highlightComment: "10月20日の境内で、奉納の素人相撲「船橋のけんか相撲」と市指定文化財の神楽が行われる。",
-    atmosphereMedia: [], backgroundImage: null,
+    atmosphereMedia: [],
+    backgroundImage: {
+      type: "youtube",
+      contentId: "5vtUBfGl0-s",
+      sourceUrl: "https://www.youtube.com/watch?v=5vtUBfGl0-s",
+      publisher: "hanato45",
+      publisherType: "individual",
+      checkedDate: "2026-08-01"
+    },
     confirmation: { verified: true, confirmedDate: "2026-07-31", sources: ["https://www.oohijinja.jp/history.html"] }
   },
   yearlyInfo: [{

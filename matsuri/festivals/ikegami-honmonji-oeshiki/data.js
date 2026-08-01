@@ -18,7 +18,15 @@ const FESTIVAL = {
       note: "万灯練供養の到着地で法要会場となる池上本門寺を基準地点とした。"
     },
     highlightComment: "百数十講中・約3千人の万灯練供養が、池上徳持会館から本門寺まで約2kmを練り歩く。",
-    atmosphereMedia: [], backgroundImage: null,
+    atmosphereMedia: [],
+    backgroundImage: {
+      type: "youtube",
+      contentId: "2JDJFhwWnYI",
+      sourceUrl: "https://www.youtube.com/watch?v=2JDJFhwWnYI",
+      publisher: "日蓮宗大本山池上本門寺公式チャンネル",
+      publisherType: "official",
+      checkedDate: "2026-08-01"
+    },
     confirmation: { verified: true, confirmedDate: "2026-07-31", sources: ["https://honmonji.jp/oeshiki/", "https://www.honmonji.jp/outline/gyoji.html"] }
   },
   yearlyInfo: [{

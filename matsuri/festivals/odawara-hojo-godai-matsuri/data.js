@@ -18,7 +18,18 @@ const FESTIVAL = {
       note: "出陣式と武者行列の起点となる小田原城址公園を基準地点とした。"
     },
     highlightComment: "北条五代歴代城主を模した武者隊や鉄砲隊が、小田原城址公園から市街地を進む。",
-    atmosphereMedia: [], backgroundImage: null,
+    atmosphereMedia: [{
+      type: "youtube",
+      url: "https://www.youtube.com/watch?v=quCaBlDVBVA",
+      contentId: "quCaBlDVBVA",
+      title: "【小田原北条氏誕生500年】第59回小田原北條五代祭り",
+      publisher: "小田原市公式チャンネル",
+      publisherType: "government",
+      purpose: "festival_atmosphere",
+      publishedYear: 2023,
+      checkedDate: "2026-08-01"
+    }],
+    backgroundImage: null,
     confirmation: { verified: true, confirmedDate: "2026-07-31", sources: ["https://www.odawara-kankou.com/topics/article/hojogodai.html"] }
   },
   yearlyInfo: [{

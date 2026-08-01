@@ -18,7 +18,15 @@ const FESTIVAL = {
       note: "伊勢宮での神事後に鳥追い太鼓が巡行する中之条町中心商店街を基準地点とした。"
     },
     highlightComment: "直径1.5mの鳥追い太鼓を打ち鳴らして町を巡り、掛け声に応じて商店からみかんを投げる。",
-    atmosphereMedia: [], backgroundImage: null,
+    atmosphereMedia: [],
+    backgroundImage: {
+      type: "youtube",
+      contentId: "q_o_Ggar77o",
+      sourceUrl: "https://www.youtube.com/watch?v=q_o_Ggar77o",
+      publisher: "まつりと 日本のまつり探検プロジェクト",
+      publisherType: "local_media",
+      checkedDate: "2026-08-01"
+    },
     confirmation: { verified: true, confirmedDate: "2026-07-31", sources: ["https://www.town.nakanojo.gunma.jp/soshiki/9/1285.html", "https://nakanojo-kanko.jp/events/%E9%B3%A5%E8%BF%BD%E3%81%84%E7%A5%AD%E3%83%BB%E9%B3%A5%E8%BF%BD%E3%81%84%E5%A4%AA%E9%BC%93%E3%82%AE%E3%83%A3%E3%83%A9%E3%83%AA%E3%83%BC/"] }
   },
   yearlyInfo: [{
