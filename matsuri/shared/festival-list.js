@@ -174,6 +174,44 @@
     });
   }
 
+  function getTodayJstDateString() {
+    return new Intl.DateTimeFormat("sv-SE", { timeZone: "Asia/Tokyo" }).format(new Date());
+  }
+
+  function getUpcomingWindow() {
+    const start = new Date(`${getTodayJstDateString()}T00:00:00+09:00`).getTime();
+    return { start, end: start + 14 * 86400000 - 1 };
+  }
+
+  function matchingDatesInWindow(yearlyInfo, window) {
+    const dates = yearlyInfo && Array.isArray(yearlyInfo.dates) ? yearlyInfo.dates : [];
+    return dates
+      .map((date) => new Date(`${date}T00:00:00+09:00`).getTime())
+      .filter((time) => Number.isFinite(time) && time >= window.start && time <= window.end);
+  }
+
+  function getUpcomingSoonItems(items) {
+    const window = getUpcomingWindow();
+    const slugIndex = new Map(FESTIVAL_SLUGS.map((slug, index) => [slug, index]));
+
+    const matched = items
+      .map((item) => ({ item, matchingTimes: matchingDatesInWindow(item.yearlyInfo, window) }))
+      .filter(
+        ({ item, matchingTimes }) =>
+          UPCOMING_STATUSES.has(getEffectiveEventStatus(item.yearlyInfo)) &&
+          matchingTimes.length > 0
+      );
+
+    matched.sort((a, b) => {
+      const earliestA = Math.min(...a.matchingTimes);
+      const earliestB = Math.min(...b.matchingTimes);
+      if (earliestA !== earliestB) return earliestA - earliestB;
+      return (slugIndex.get(a.item.festival.id) ?? 0) - (slugIndex.get(b.item.festival.id) ?? 0);
+    });
+
+    return matched.slice(0, 3).map(({ item }) => item);
+  }
+
   function weekday(date) {
     return new Intl.DateTimeFormat("ja-JP", { weekday: "short" }).format(date);
   }
@@ -295,7 +333,7 @@
     return item;
   }
 
-  function renderFestivalCard(item) {
+  function renderFestivalCard(item, section = "list_grid") {
     const { festival, yearlyInfo } = item;
     const constantInfo = festival.constantInfo || {};
     const features = constantInfo.features || {};
@@ -392,7 +430,8 @@
         has_background_image: hasPhoto,
         has_atmosphere_media: atmosphereMedia.length > 0,
         experience_tag: experienceTag || "none",
-        link_url: card.href
+        link_url: card.href,
+        section
       });
     });
 
@@ -474,6 +513,23 @@
     return visibleItems.length;
   }
 
+  function renderUpcomingSoonSection(items) {
+    const section = document.getElementById("upcoming-soon-section");
+    const list = document.getElementById("upcoming-soon-list");
+    if (!section || !list) return;
+
+    const upcomingItems = getUpcomingSoonItems(items);
+
+    if (upcomingItems.length === 0) {
+      section.hidden = true;
+      list.replaceChildren();
+      return;
+    }
+
+    list.replaceChildren(...upcomingItems.map((item) => renderFestivalCard(item, "upcoming_soon")));
+    section.hidden = false;
+  }
+
   function syncAreaFilterState(areaFilter) {
     areaFilter.classList.toggle("is-filtering", areaFilter.value !== "");
   }
@@ -501,6 +557,7 @@
     });
     syncAreaFilterState(areaFilter);
     render(items);
+    renderUpcomingSoonSection(items);
   }
 
   window.__festivalList = {
