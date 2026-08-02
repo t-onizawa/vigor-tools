@@ -35,8 +35,16 @@
     "山車": "dashi",
     "神輿": "mikoshi",
     "踊り": "odori",
-    "曳き回し": "hikimawashi"
+    "曳き回し": "hikimawashi",
+    "見どころ": "midokoro"
   };
+
+  const UPCOMING_ICON_PRIORITY = [
+    ["神輿", "hasMikoshi"],
+    ["山車", "hasDashi"],
+    ["踊り", "hasDanceOnDashi"],
+    ["曳き回し", "hasParade"]
+  ];
 
   const iconCache = new Map();
 
@@ -210,6 +218,11 @@
     });
 
     return matched.slice(0, 3).map(({ item }) => item);
+  }
+
+  function isOngoingToday(yearlyInfo) {
+    const dates = yearlyInfo && Array.isArray(yearlyInfo.dates) ? yearlyInfo.dates : [];
+    return dates.includes(getTodayJstDateString());
   }
 
   function weekday(date) {
@@ -469,6 +482,11 @@
     return found ? found[0] : null;
   }
 
+  function pickUpcomingIconLabel(features) {
+    const found = UPCOMING_ICON_PRIORITY.find(([, key]) => features[key] === true);
+    return found ? found[0] : "見どころ";
+  }
+
   function createDummyMedia(features) {
     const media = document.createElement("div");
     media.className = "item-media item-media--icon";
@@ -490,6 +508,73 @@
     if (svgText) {
       container.innerHTML = svgText;
     }
+  }
+
+  function renderUpcomingSoonCard(item) {
+    const { festival, yearlyInfo } = item;
+    const constantInfo = festival.constantInfo || {};
+    const features = constantInfo.features || {};
+    const atmosphereMedia = Array.isArray(constantInfo.atmosphereMedia)
+      ? constantInfo.atmosphereMedia
+      : [];
+    const hasPhoto = Boolean(
+      constantInfo.backgroundImage && constantInfo.backgroundImage.type === "youtube"
+    );
+    const experienceTag =
+      typeof EXPERIENCE_TAGS !== "undefined" ? EXPERIENCE_TAGS[festival.id] : undefined;
+
+    const card = document.createElement("a");
+    card.className = "upcoming-mini-card";
+    card.href = `festivals/${festival.id}/`;
+
+    const media = document.createElement("div");
+    media.className = "upcoming-mini-media";
+
+    if (hasPhoto) {
+      const img = document.createElement("img");
+      img.className = "upcoming-mini-thumb";
+      img.src = `https://i.ytimg.com/vi/${constantInfo.backgroundImage.contentId}/hqdefault.jpg`;
+      img.alt = "";
+      img.loading = "lazy";
+      media.append(img);
+    } else {
+      media.classList.add("upcoming-mini-media--icon");
+      attachDummyIcon(media, pickUpcomingIconLabel(features));
+    }
+
+    const body = document.createElement("div");
+    body.className = "upcoming-mini-body";
+
+    const prefecture = document.createElement("span");
+    prefecture.className = "upcoming-mini-prefecture";
+    prefecture.textContent = festival.prefecture || "";
+
+    const name = document.createElement("span");
+    name.className = "upcoming-mini-name";
+    name.textContent = festival.name || "";
+
+    const date = document.createElement("span");
+    date.className = "upcoming-mini-date";
+    date.textContent = formatDateRange(yearlyInfo);
+
+    body.append(prefecture, name, date);
+    card.append(media, body);
+
+    card.addEventListener("click", () => {
+      sendGaEvent("festival_card_click", {
+        festival_slug: festival.id,
+        festival_name: festival.name,
+        prefecture: festival.prefecture,
+        event_status: getEffectiveEventStatus(yearlyInfo),
+        has_background_image: hasPhoto,
+        has_atmosphere_media: atmosphereMedia.length > 0,
+        experience_tag: experienceTag || "none",
+        link_url: card.href,
+        section: "upcoming_soon"
+      });
+    });
+
+    return card;
   }
 
   function render(items) {
@@ -520,13 +605,34 @@
 
     const upcomingItems = getUpcomingSoonItems(items);
 
-    if (upcomingItems.length === 0) {
+    const ongoingItems = upcomingItems.filter((item) => isOngoingToday(item.yearlyInfo));
+    const upcomingOnlyItems = upcomingItems.filter((item) => !isOngoingToday(item.yearlyInfo));
+
+    if (ongoingItems.length === 0 && upcomingOnlyItems.length === 0) {
       section.hidden = true;
       list.replaceChildren();
       return;
     }
 
-    list.replaceChildren(...upcomingItems.map((item) => renderFestivalCard(item, "upcoming_soon")));
+    const groups = [
+      ["開催中", ongoingItems],
+      ["まもなく開催", upcomingOnlyItems]
+    ];
+    const groupElements = groups
+      .filter(([, groupItems]) => groupItems.length > 0)
+      .map(([headingText, groupItems]) => {
+        const group = document.createElement("div");
+        group.className = "upcoming-soon-group";
+
+        const heading = document.createElement("h3");
+        heading.className = "upcoming-soon-group-heading";
+        heading.textContent = headingText;
+
+        group.append(heading, ...groupItems.map(renderUpcomingSoonCard));
+        return group;
+      });
+
+    list.replaceChildren(...groupElements);
     section.hidden = false;
   }
 
