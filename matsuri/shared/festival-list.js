@@ -47,6 +47,16 @@
     ["曳き回し", "hasParade"]
   ];
 
+  function sendGaEvent(name, params) {
+    try {
+      if (typeof window.gtag === "function") {
+        window.gtag("event", name, params);
+      }
+    } catch (err) {
+      // 計測失敗はUIに影響させないため握りつぶす
+    }
+  }
+
   async function loadFestival(slug) {
     try {
       const res = await fetch(`festivals/${slug}/data.js`);
@@ -298,6 +308,8 @@
       constantInfo.backgroundImage && constantInfo.backgroundImage.type === "youtube"
     );
     const effectiveStatus = getEffectiveEventStatus(yearlyInfo);
+    const experienceTag =
+      typeof EXPERIENCE_TAGS !== "undefined" ? EXPERIENCE_TAGS[festival.id] : undefined;
 
     const card = document.createElement("a");
     card.className = hasPhoto ? "festival-item" : "festival-item festival-item--text";
@@ -340,8 +352,6 @@
       ...cardFeatureItems.map(([label, key]) => createFeatureChip(label, features[key]))
     );
 
-    const experienceTag =
-      typeof EXPERIENCE_TAGS !== "undefined" ? EXPERIENCE_TAGS[festival.id] : undefined;
     if (experienceTag) {
       featureChips.append(createExperienceTagChip(experienceTag));
     }
@@ -373,6 +383,18 @@
     }
 
     card.append(body);
+    card.addEventListener("click", () => {
+      sendGaEvent("festival_card_click", {
+        festival_slug: festival.id,
+        festival_name: festival.name,
+        prefecture: festival.prefecture,
+        event_status: effectiveStatus,
+        has_background_image: hasPhoto,
+        has_atmosphere_media: atmosphereMedia.length > 0,
+        experience_tag: experienceTag || "none",
+        link_url: card.href
+      });
+    });
 
     return card;
   }
@@ -448,6 +470,8 @@
     count.textContent = (items.length === visibleItems.length)
       ? `関東7都県・${items.length}件を掲載中`
       : `${items.length}件中${visibleItems.length}件を表示`;
+
+    return visibleItems.length;
   }
 
   function syncAreaFilterState(areaFilter) {
@@ -460,10 +484,20 @@
     const toggle = document.getElementById("upcoming-only-toggle");
     const areaFilter = document.getElementById("area-filter");
 
-    toggle.addEventListener("change", () => render(items));
+    toggle.addEventListener("change", () => {
+      const visibleFestivalCount = render(items);
+      sendGaEvent("upcoming_filter_change", {
+        enabled: toggle.checked,
+        visible_festival_count: visibleFestivalCount
+      });
+    });
     areaFilter.addEventListener("change", () => {
       syncAreaFilterState(areaFilter);
-      render(items);
+      const visibleFestivalCount = render(items);
+      sendGaEvent("prefecture_filter_change", {
+        selected_prefecture: areaFilter.value || "all",
+        visible_festival_count: visibleFestivalCount
+      });
     });
     syncAreaFilterState(areaFilter);
     render(items);

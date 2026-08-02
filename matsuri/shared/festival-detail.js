@@ -100,6 +100,16 @@
     byId(id).textContent = text;
   }
 
+  function sendGaEvent(name, params) {
+    try {
+      if (typeof window.gtag === "function") {
+        window.gtag("event", name, params);
+      }
+    } catch (err) {
+      // 計測失敗はUIに影響させないため握りつぶす
+    }
+  }
+
   async function loadExperienceTags() {
     try {
       const res = await fetch("../../shared/experience-tags.js");
@@ -262,7 +272,7 @@
     return { label: "未確認", className: "is-unknown" };
   }
 
-  function createSourceBlock(title, confirmation) {
+  function createSourceBlock(title, confirmation, category) {
     const fragment = document.createDocumentFragment();
 
     const titleEl = document.createElement("p");
@@ -283,6 +293,17 @@
       link.textContent = source;
       link.target = "_blank";
       link.rel = "noopener noreferrer";
+      link.addEventListener("click", () => {
+        // 暫定名称：official_site_clickは出典・情報源リンク全般が対象で、公式サイト専用ではない。
+        // 出典種別はデータに構造化フィールドがないため、推測せずunknownを送る。
+        sendGaEvent("official_site_click", {
+          festival_slug: festival.id,
+          festival_name: festival.name,
+          source_type: "unknown",
+          source_label: category,
+          link_url: link.href
+        });
+      });
       item.append(link);
       listEl.append(item);
     });
@@ -324,6 +345,15 @@
       mediaLink.href = media.url;
 
       if (media.type === "youtube") {
+        mediaLink.addEventListener("click", () => {
+          sendGaEvent("atmosphere_youtube_click", {
+            festival_slug: festival.id,
+            festival_name: festival.name,
+            content_id: media.contentId,
+            link_url: mediaLink.href
+          });
+        });
+
         const iframe = document.createElement("iframe");
         iframe.src = `https://www.youtube.com/embed/${media.contentId}`;
         iframe.title = media.title;
@@ -407,6 +437,13 @@
     thumb.append(image, playIcon);
 
     thumb.addEventListener("click", () => {
+      sendGaEvent("atmosphere_youtube_click", {
+        festival_slug: festival.id,
+        festival_name: festival.name,
+        content_id: media.contentId,
+        link_url: `https://www.youtube.com/watch?v=${media.contentId}`
+      });
+
       const iframe = document.createElement("iframe");
       iframe.className = "media-gallery-embed";
       iframe.src = `https://www.youtube.com/embed/${media.contentId}`;
@@ -432,6 +469,14 @@
     link.target = "_blank";
     link.rel = "noopener noreferrer";
     link.textContent = "YouTubeで見る →";
+    link.addEventListener("click", () => {
+      sendGaEvent("atmosphere_youtube_click", {
+        festival_slug: festival.id,
+        festival_name: festival.name,
+        content_id: media.contentId,
+        link_url: link.href
+      });
+    });
 
     item.append(thumb, caption, meta, link);
     return item;
@@ -582,10 +627,14 @@
   renderMapReference(festival.constantInfo.mapReference);
 
   byId("constant-sources").append(
-    createSourceBlock("恒常情報", festival.constantInfo.confirmation)
+    createSourceBlock("恒常情報", festival.constantInfo.confirmation, "constant")
   );
   byId("yearly-sources").append(
-    createSourceBlock(`${currentYear.year}年情報`, currentYear.confirmation)
+    createSourceBlock(
+      `${currentYear.year}年情報`,
+      currentYear.confirmation,
+      `yearly_${currentYear.year}`
+    )
   );
 
   const schemaEventStatus = {
@@ -645,6 +694,7 @@
     const hasAtmosphereMedia =
       Array.isArray(festival.constantInfo.atmosphereMedia) &&
       festival.constantInfo.atmosphereMedia.length > 0;
+    const query = festival.constantInfo.searchQuery || festival.name;
 
     const heading = document.createElement("h2");
     heading.id = "search-links-heading";
@@ -659,6 +709,23 @@
       link.href = service.url;
       link.target = "_blank";
       link.rel = "noopener noreferrer";
+      link.addEventListener("click", () => {
+        if (service.key === "youtube") {
+          sendGaEvent("atmosphere_youtube_click", {
+            festival_slug: festival.id,
+            festival_name: festival.name,
+            content_id: "",
+            link_url: link.href
+          });
+        } else if (service.key === "instagram") {
+          sendGaEvent("atmosphere_instagram_click", {
+            festival_slug: festival.id,
+            festival_name: festival.name,
+            search_query: query,
+            link_url: link.href
+          });
+        }
+      });
 
       const icon = document.createElement("span");
       icon.className = "search-link-icon";
