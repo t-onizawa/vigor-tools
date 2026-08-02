@@ -351,11 +351,16 @@
       return;
     }
 
+    const backLinkAnchor = backLink.querySelector("a");
+    if (backLinkAnchor) {
+      backLinkAnchor.href = "../../";
+    }
+
     const mark = document.createElement("p");
     mark.className = "brand-mark";
 
     const link = document.createElement("a");
-    link.href = "../../index.html";
+    link.href = "../../";
     link.textContent = "MATSURI";
 
     mark.append(link);

@@ -301,7 +301,7 @@
 
     const card = document.createElement("a");
     card.className = hasPhoto ? "festival-item" : "festival-item festival-item--text";
-    card.href = `festivals/${festival.id}/index.html`;
+    card.href = `festivals/${festival.id}/`;
     card.dataset.area = festival.areaTag || "";
     card.dataset.highlightTime = features.highlightTime || "";
     card.dataset.hasDanceOnDashi = String(features.hasDanceOnDashi);
