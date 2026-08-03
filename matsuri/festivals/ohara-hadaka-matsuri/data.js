@@ -42,7 +42,8 @@ const FESTIVAL = {
       verified: true,
       confirmedDate: "2026-07-28",
       sources: [
-        "https://www.city.isumi.lg.jp/soshikikarasagasu/suisanshokoka/kankopromotionhan/2/2/786.html"
+        "https://www.city.isumi.lg.jp/soshikikarasagasu/suisanshokoka/kankopromotionhan/2/2/786.html",
+        "https://maruchiba.jp/event/detail_13144.html"
       ]
     }
   },

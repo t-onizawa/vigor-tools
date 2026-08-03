@@ -12,7 +12,7 @@ Version: 0.2
 | # | サイト | URL | 位置づけ |
 |---|---|---|---|
 | 1 | いすみ市公式ホームページ | https://www.city.isumi.lg.jp/soshikikarasagasu/suisanshokoka/kankopromotionhan/2/2/786.html | 自治体公式 |
-| 2 | 千葉県公式観光サイト ちば観光ナビ | https://maruchiba.jp/event/detail_13144.html | 2026-08-03時点で404のためdata.jsの出典から除外 |
+| 2 | 千葉県公式観光サイト ちば観光ナビ | https://maruchiba.jp/event/detail_13144.html | 都道府県公式観光サイト |
 
 ## 恒常情報
 

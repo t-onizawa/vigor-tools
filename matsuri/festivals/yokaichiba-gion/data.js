@@ -59,7 +59,7 @@ const FESTIVAL = {
       confirmation: {
         confirmedDate: "2026-08-03",
         sources: ["https://www.city.sosa.lg.jp/page/page000941.html"],
-        note: "匝瑳市公式サイトの2026年7月1日付開催告知と当年チラシで、8月4日・5日の開催と行事予定を直接確認。"
+        note: "匝瑳市公式ページに掲載されたチラシPDFで「令和8年 8/4火・5水」と、裏面で両日の神輿渡御予定を直接確認。"
       }
     }
   ]
