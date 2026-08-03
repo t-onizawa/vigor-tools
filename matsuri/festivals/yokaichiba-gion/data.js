@@ -50,16 +50,16 @@ const FESTIVAL = {
   yearlyInfo: [
     {
       year: 2026,
-      eventStatus: "scheduled_pending_official",
+      eventStatus: "confirmed",
       dates: ["2026-08-04", "2026-08-05"],
       access: {
         hasParking: true,
         parkingNote: "無料駐車場あり（大型バス用はなし、第三者情報）。"
       },
       confirmation: {
-        confirmedDate: "2026-07-28",
+        confirmedDate: "2026-08-03",
         sources: ["https://www.city.sosa.lg.jp/page/page000941.html"],
-        note: "毎年8月4日・5日固定という恒常パターンによる確認。匝瑳市公式サイトでも2026年日程を直接確認。"
+        note: "匝瑳市公式ページに掲載されたチラシPDFで「令和8年 8/4火・5水」と、裏面で両日の神輿渡御予定を直接確認。"
       }
     }
   ]

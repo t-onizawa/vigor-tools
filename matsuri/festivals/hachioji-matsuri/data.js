@@ -62,16 +62,19 @@ const FESTIVAL = {
   yearlyInfo: [
     {
       year: 2026,
-      eventStatus: "scheduled_pending_official",
+      eventStatus: "confirmed",
       dates: ["2026-08-07", "2026-08-08", "2026-08-09"],
       access: {
         hasParking: false,
         parkingNote: "祭り公式サイトで「車でのご来場はなるべくご遠慮いただきますようお願いいたします」と案内。専用の臨時駐車場は用意されていない。"
       },
       confirmation: {
-        confirmedDate: "2026-07-28",
-        sources: ["https://www.hachiojimatsuri.jp/"],
-        note: "市公式・祭り運営団体公式で2026年日程を直接確認。"
+        confirmedDate: "2026-08-03",
+        sources: [
+          "https://www.city.hachioji.tokyo.jp/kankobunka/001/001/p003251.html",
+          "https://www.hachiojimatsuri.jp/"
+        ],
+        note: "八王子市公式と祭り実行委員会公式で2026年8月7日〜9日の開催、行事内容・交通規制等の詳細公開を確認。"
       }
     }
   ]
