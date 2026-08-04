@@ -44,23 +44,11 @@ function showResult(savings, monthlyExpense, severance) {
 
   document.getElementById('months-number').textContent = months;
 
-  var state;
-  if (months >= 12) {
-    state = '十分な備えがあります';
-  } else if (months >= 6) {
-    state = '一定の余裕があります';
-  } else if (months >= 3) {
-    state = '慎重な計画が必要です';
-  } else {
-    state = '今はまだ、準備期間かもしれません';
-  }
-  document.getElementById('months-state').textContent = state;
-
-  var formulaText = '貯蓄額 ' + formatYen(savings) + '円';
+  var formulaText = '（貯蓄額 ' + formatYen(savings) + '円';
   if (severance > 0) {
     formulaText += ' + 退職金見込み ' + formatYen(severance) + '円';
   }
-  formulaText += ' ÷ 月の生活費 ' + formatYen(monthlyExpense) + '円 = 約' + months + 'ヶ月';
+  formulaText += '）÷ 月の生活費 ' + formatYen(monthlyExpense) + '円 = 約' + months + 'ヶ月';
   document.getElementById('breakdown-formula').textContent = formulaText;
 
   currentResult = months + 'ヶ月';

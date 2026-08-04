@@ -10,9 +10,9 @@ function addRow() {
   var row = document.createElement('div');
   row.className = 'sub-row';
   row.innerHTML =
-    '<input type="text" class="sub-name" placeholder="サービス名（任意）例：Netflix">' +
-    '<input type="number" class="sub-amount" inputmode="numeric" min="0" placeholder="金額">' +
-    '<select class="sub-cycle">' +
+    '<input type="text" class="sub-name" aria-label="サービス名 ' + rowCount + '" placeholder="サービス名（任意）例：Netflix">' +
+    '<input type="number" class="sub-amount" aria-label="金額 ' + rowCount + '" inputmode="numeric" min="0" placeholder="金額">' +
+    '<select class="sub-cycle" aria-label="支払周期 ' + rowCount + '">' +
     '<option value="monthly">月額</option>' +
     '<option value="annual">年額</option>' +
     '</select>' +

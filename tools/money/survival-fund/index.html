@@ -26,7 +26,7 @@
   <script src="/assets/analytics.js" defer></script>
 </head>
 <body>
-  <div class="container">
+  <main class="container">
 
     <nav class="breadcrumb">
       <a href="../../">VIGOR TOOLS</a>
@@ -73,17 +73,25 @@
       <div class="months-box">
         <p class="months-label">生活防衛資金は</p>
         <p class="months-value"><span id="months-number">0</span>ヶ月分</p>
-        <p class="months-state" id="months-state"></p>
       </div>
 
-      <div class="breakdown">
-        <p class="breakdown-heading">内訳</p>
-        <p class="breakdown-formula" id="breakdown-formula"></p>
-      </div>
+      <p class="result-note">収入がない期間を想定した場合に、入力した生活費を賄える月数の目安です。</p>
 
-      <p class="disclaimer">
-        ※この数字は概算です。税金・社会保険料の変化、失業保険の受給期間などは考慮していません。
-      </p>
+      <details>
+        <summary>計算式と前提を確認する</summary>
+        <p id="breakdown-formula"></p>
+        <p>貯蓄額と退職金見込みの合計を毎月の生活費で割り、小数点以下を切り捨てています。税金・社会保険料の変化や失業給付などは含みません。</p>
+      </details>
+
+      <section class="section">
+        <h2 class="section-title">結果を見たあとに確認すること</h2>
+        <ul class="checklist">
+          <li><label><input type="checkbox"> 退職後に変わる税金・社会保険料を別に見込んでいるか</label></li>
+          <li><label><input type="checkbox"> 失業給付など、今後受け取る可能性のある収入を確認したか</label></li>
+          <li><label><input type="checkbox"> 引っ越し・医療など、一時的な支出を別に確保できているか</label></li>
+          <li><label><input type="checkbox"> 入力した毎月の生活費が直近の実績と合っているか</label></li>
+        </ul>
+      </section>
 
       <div class="history-save" id="history-save-block">
         <button type="button" class="btn-save-history" id="save-history-btn">この結果を判断履歴に残す</button>
@@ -101,11 +109,6 @@
       <h2 class="related-heading">次はこちら</h2>
       <p class="related-sub">今の状況に合わせて、次に使えるツールです。</p>
       <div class="related-list">
-        <a class="related-item" href="../../work/independence/">
-          <span class="related-badge">診断ツール</span>
-          <span class="related-name">独立準備チェック</span>
-          <span class="related-status">→</span>
-        </a>
         <a class="related-item" href="../../work/resignation-check/">
           <span class="related-badge">チェックリスト</span>
           <span class="related-name">退職チェック</span>
@@ -116,17 +119,12 @@
           <span class="related-name">固定費チェック</span>
           <span class="related-status">→</span>
         </a>
-        <a class="related-item" href="../subscriptions/">
-          <span class="related-badge">計算</span>
-          <span class="related-name">サブスク年間総額計算</span>
-          <span class="related-status">→</span>
-        </a>
       </div>
     </section>
 
     <p class="bookmark-tip">このページをブックマークしておくと、次回もすぐ使えます。</p>
 
-  </div>
+  </main>
 
   <script src="/tools/shared/shared-history.js"></script>
   <script src="/tools/shared/shared-profile.js"></script>

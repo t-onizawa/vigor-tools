@@ -5,7 +5,7 @@ const progressText = document.querySelector('.progress-text');
 const barFill = document.querySelector('.bar-fill');
 const result = document.querySelector('.result');
 const resetBtn = document.querySelector('.reset-btn');
-const checkboxes = document.querySelectorAll('input[type="checkbox"]');
+const checkboxes = document.querySelectorAll('#cost-checklist input[type="checkbox"]');
 const TOTAL = checkboxes.length;
 
 function updateProgress() {

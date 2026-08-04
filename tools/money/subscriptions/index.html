@@ -26,7 +26,7 @@
   <script src="/assets/analytics.js" defer></script>
 </head>
 <body>
-  <div class="container">
+  <main class="container">
 
     <nav class="breadcrumb">
       <a href="../../">VIGOR TOOLS</a>
@@ -61,9 +61,23 @@
         </div>
       </div>
 
-      <p class="disclaimer">
-        ※月額換算は「年額 ÷ 12」の概算です。
-      </p>
+      <p class="result-note">月額合計は毎月の固定費の目安、年間総額は同じ契約を1年間続けた場合の支出額です。</p>
+
+      <details>
+        <summary>計算式と前提を確認する</summary>
+        <p>月額契約は「月額 × 12」で年間総額に、年額契約は「年額 ÷ 12」で月額に換算し、各契約を合計します。表示額は1円単位に四捨五入しています。</p>
+        <p>無料期間、途中解約、料金改定、為替や決済手数料は含みません。</p>
+      </details>
+
+      <section class="section">
+        <h2 class="section-title">結果を見たあとに確認すること</h2>
+        <ul class="checklist">
+          <li><label><input type="checkbox"> 無料期間中や、次回から有料になる契約を含めたか</label></li>
+          <li><label><input type="checkbox"> 年払い契約の更新月を確認したか</label></li>
+          <li><label><input type="checkbox"> 似た用途で重複しているサービスがないか</label></li>
+          <li><label><input type="checkbox"> 最近使っていないサービスの解約条件を確認したか</label></li>
+        </ul>
+      </section>
 
       <div class="history-save" id="history-save-block">
         <button type="button" class="btn-save-history" id="save-history-btn">この結果を判断履歴に残す</button>
@@ -105,7 +119,7 @@
 
     <p class="bookmark-tip">サブスクは増えがち。定期的に見直すのにブックマークしておくと便利です。</p>
 
-  </div>
+  </main>
 
   <script src="/tools/shared/shared-history.js"></script>
   <script src="/tools/shared/shared-profile.js"></script>

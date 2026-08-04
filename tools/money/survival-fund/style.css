@@ -96,38 +96,6 @@
   margin-bottom: 0.6rem;
 }
 
-.months-state {
-  font-size: 0.9rem;
-  color: var(--text-muted);
-}
-
-.breakdown {
-  padding: 1rem 1.25rem;
-  border: 1px solid var(--border);
-  border-radius: var(--radius);
-  margin-bottom: 1rem;
-}
-
-.breakdown-heading {
-  font-size: 0.7rem;
-  color: var(--text-muted);
-  letter-spacing: 0.06em;
-  margin-bottom: 0.5rem;
-}
-
-.breakdown-formula {
-  font-size: 0.82rem;
-  color: var(--text);
-  line-height: 1.6;
-}
-
-.disclaimer {
-  font-size: 0.74rem;
-  color: var(--text-light);
-  line-height: 1.7;
-  margin-bottom: 1.5rem;
-}
-
 /* ========================
    Save to history
    ======================== */

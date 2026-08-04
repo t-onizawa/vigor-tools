@@ -131,6 +131,37 @@ body {
 .result.incomplete { background: var(--surface); color: #555; }
 .result.halfway { background: #f5f0e8; color: #7a6030; }
 
+.result-note {
+  margin: -0.25rem 0 1.5rem;
+  font-size: 0.82rem;
+  line-height: 1.7;
+  color: var(--text-muted);
+}
+
+.result-section details,
+#fixed-cost-details {
+  margin-bottom: 1.5rem;
+  padding: 0.9rem 1rem;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background: var(--bg);
+  font-size: 0.8rem;
+  color: var(--text-muted);
+}
+
+.result-section details summary,
+#fixed-cost-details summary {
+  color: var(--text);
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.result-section details p,
+#fixed-cost-details p {
+  margin-top: 0.75rem;
+  line-height: 1.7;
+}
+
 /* Reset button */
 .reset-btn {
   display: block;
