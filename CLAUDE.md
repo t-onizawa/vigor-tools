@@ -4,14 +4,16 @@
 
 組織原則・役割・開発方式で迷ったら `CHARTER.md` を、
 プロダクト（VIGOR TOOLS）の企画・ブランド表現・収益化で迷ったら
-`VISION.md` を、誰が何を担当しているかは `Roles.md` を参照する。
+`VISION.md` を、誰が何を担当しているかは `Roles.md` を、
+note等で発信する文章の文体で迷ったら `NoteStyleGuide.md` を参照する。
 
 ```
-CHARTER.md   VIGOR LAB全体の組織原則・唯一のMission・役割の権限定義
-Roles.md      現在の役割の担当者（人事台帳）
-VISION.md     VIGOR TOOLSの Vision / Brand / Principles
-Backlog.md    次に何を検討するか（育てる候補）
-CLAUDE.md     実装者への実務ルール（このファイル）
+CHARTER.md          VIGOR LAB全体の組織原則・唯一のMission・役割の権限定義
+Roles.md             現在の役割の担当者（人事台帳）
+VISION.md            VIGOR TOOLSの Vision / Brand / Principles
+Backlog.md           次に何を検討するか（育てる候補）
+NoteStyleGuide.md    note記事の文体ガイド（VIGOR LAB全体の発信文章に共通適用）
+CLAUDE.md            実装者への実務ルール（このファイル）
 ```
 
 CLAUDE.md は「どう作るか」（ファイル構成・公開前チェックなど実務ルール）のみを扱う。
@@ -31,6 +33,7 @@ CLAUDE.md は「どう作るか」（ファイル構成・公開前チェック�
 /
 ├── CLAUDE.md                          VIGOR LAB全体の実務ルール（このファイル）
 ├── CHARTER.md / Roles.md / VISION.md / Backlog.md   組織原則・VIGOR TOOLS企画
+├── NoteStyleGuide.md                   note等の発信文章の文体ガイド（LAB全体共通）
 ├── sitemap.xml / robots.txt / assets/  VIGOR LAB全体の横断基盤
 ├── index.html / style.css / script.js  VIGOR TOOLSのルート
 ├── tools/                              VIGOR TOOLS（小ツール群）
