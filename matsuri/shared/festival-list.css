@@ -599,7 +599,20 @@ h1 {
   }
 
   .upcoming-soon-section {
-    max-width: 560px;
+    max-width: 760px;
+    margin-top: 26px;
+  }
+
+  .upcoming-soon-list {
+    display: flex;
+    align-items: flex-start;
+    gap: 24px;
+  }
+
+  .upcoming-soon-group {
+    flex: 1 1 340px;
+    max-width: 360px;
+    min-width: 0;
   }
 
   .festival-list {

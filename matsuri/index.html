@@ -19,7 +19,7 @@
     <link rel="icon" href="/favicon.ico" sizes="any">
     <link rel="icon" type="image/png" href="/favicon-48x48.png" sizes="48x48">
     <link rel="apple-touch-icon" href="/apple-touch-icon.png">
-    <link rel="stylesheet" href="shared/festival-list.css?v=13">
+    <link rel="stylesheet" href="shared/festival-list.css?v=14">
     <script src="/assets/analytics.js" defer></script>
   </head>
   <body>
@@ -31,6 +31,10 @@
           祭りの気配を、探しにいく。
         </p>
       </header>
+
+      <section id="upcoming-soon-section" class="upcoming-soon-section" aria-label="開催中・まもなく開催の祭り" hidden>
+        <div id="upcoming-soon-list" class="upcoming-soon-list"></div>
+      </section>
 
       <section class="filter-section" aria-label="絞り込み">
         <label class="filter-toggle">
@@ -50,10 +54,6 @@
           <option value="tochigi">栃木県</option>
           <option value="gunma">群馬県</option>
         </select>
-      </section>
-
-      <section id="upcoming-soon-section" class="upcoming-soon-section" aria-label="開催中・まもなく開催の祭り" hidden>
-        <div id="upcoming-soon-list" class="upcoming-soon-list"></div>
       </section>
 
       <p id="festival-count" class="count-text" aria-live="polite">読み込み中です</p>
