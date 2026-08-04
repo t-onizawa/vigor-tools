@@ -93,13 +93,6 @@
   color: var(--text-muted);
 }
 
-.disclaimer {
-  font-size: 0.74rem;
-  color: var(--text-light);
-  line-height: 1.7;
-  margin-bottom: 1.5rem;
-}
-
 .history-save,
 .history-saved {
   text-align: center;

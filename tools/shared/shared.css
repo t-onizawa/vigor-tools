@@ -138,8 +138,7 @@ body {
   color: var(--text-muted);
 }
 
-.result-section details,
-#fixed-cost-details {
+.result-section details {
   margin-bottom: 1.5rem;
   padding: 0.9rem 1rem;
   border: 1px solid var(--border);
@@ -149,15 +148,13 @@ body {
   color: var(--text-muted);
 }
 
-.result-section details summary,
-#fixed-cost-details summary {
+.result-section details summary {
   color: var(--text);
   font-weight: 600;
   cursor: pointer;
 }
 
-.result-section details p,
-#fixed-cost-details p {
+.result-section details p {
   margin-top: 0.75rem;
   line-height: 1.7;
 }

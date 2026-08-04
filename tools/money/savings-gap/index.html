@@ -60,6 +60,24 @@
         <p class="total-sub">（<span id="gap-amount-yen">0</span>円）</p>
       </div>
 
+      <p class="result-note">設定した目標額と現在の貯蓄額の差です。目標までに、あといくら準備するかを整理できます。</p>
+
+      <details>
+        <summary>計算式と前提を確認する</summary>
+        <p>「目標の貯蓄額 − 今の貯蓄額」で差額を計算しています。現在の貯蓄額が目標以上の場合は、目標を上回った余裕額を表示します。</p>
+        <p>利息、運用損益、今後の収入や支出の変化は含みません。</p>
+      </details>
+
+      <section class="section">
+        <h2 class="section-title">結果を見たあとに確認すること</h2>
+        <ul class="checklist">
+          <li><label><input type="checkbox"> 目標額に退職後の生活費を含めたか</label></li>
+          <li><label><input type="checkbox"> 近いうちに予定している大きな支出を含めたか</label></li>
+          <li><label><input type="checkbox"> すぐに使える預貯金だけで現在額を入力したか</label></li>
+          <li><label><input type="checkbox"> 差額を準備する期限を決めたか</label></li>
+        </ul>
+      </section>
+
       <div class="history-save" id="history-save-block">
         <button type="button" class="btn-save-history" id="save-history-btn">この結果を判断履歴に残す</button>
       </div>

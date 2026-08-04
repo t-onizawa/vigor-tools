@@ -59,7 +59,23 @@
         <p class="total-value"><span id="target-income">0</span>円</p>
       </div>
 
-      <p class="disclaimer">※税金・社会保険料の詳細な計算は含みません。目安としてご利用ください。</p>
+      <p class="result-note">増やしたい生活費に、入力した税金・経費分の余裕を加えた月間売上の目安です。</p>
+
+      <details>
+        <summary>計算式と前提を確認する</summary>
+        <p>「増やしたい生活費 ×（1 ＋ 税金・経費分の割合）」で月額目標を計算し、1円単位に四捨五入しています。</p>
+        <p>実際の税金、社会保険料、必要経費は収入や働き方によって異なります。</p>
+      </details>
+
+      <section class="section">
+        <h2 class="section-title">結果を見たあとに確認すること</h2>
+        <ul class="checklist">
+          <li><label><input type="checkbox"> 増やしたい金額は手取りベースで考えたか</label></li>
+          <li><label><input type="checkbox"> 副業に必要な経費を確認したか</label></li>
+          <li><label><input type="checkbox"> 税金を取り分けておく割合を確認したか</label></li>
+          <li><label><input type="checkbox"> 単価と件数に置き換えた場合の仕事量を確認したか</label></li>
+        </ul>
+      </section>
 
       <div class="history-save" id="history-save-block">
         <button type="button" class="btn-save-history" id="save-history-btn">この結果を判断履歴に残す</button>
