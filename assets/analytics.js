@@ -16,6 +16,22 @@
     window.dataLayer.push(arguments);
   };
 
+  var isInternal = false;
+  try {
+    const internal = new URLSearchParams(window.location.search).get("internal");
+    if (internal === "1") {
+      localStorage.setItem("vigor_internal_traffic", "1");
+    } else if (internal === "0") {
+      localStorage.removeItem("vigor_internal_traffic");
+    }
+
+    isInternal = localStorage.getItem("vigor_internal_traffic") === "1";
+  } catch (e) {}
+
   window.gtag("js", new Date());
-  window.gtag("config", GA_MEASUREMENT_ID);
+  if (isInternal) {
+    window.gtag("config", GA_MEASUREMENT_ID, { traffic_type: "internal" });
+  } else {
+    window.gtag("config", GA_MEASUREMENT_ID);
+  }
 })();
