@@ -25,7 +25,7 @@
   <script src="/assets/analytics.js" defer></script>
 </head>
 <body>
-  <div class="container">
+  <main class="container">
     <nav class="breadcrumb">
       <a href="../../">VIGOR TOOLS</a>
       <span class="sep">›</span>
@@ -54,6 +54,23 @@
         <p class="total-label">1年間の効果は</p>
         <p class="total-value"><span id="annual-effect">0</span>円</p>
       </div>
+
+      <p class="result-note">月に減らせそうな金額を12倍にした、1年間の削減効果の目安です。</p>
+
+      <details class="calc-detail">
+        <summary>計算式と前提を確認する</summary>
+        <p>「月に減らせそうな金額 × 12」で年間の効果を計算しています。削減を継続できるかどうかは含みません。</p>
+      </details>
+
+      <section class="section">
+        <h2 class="section-title">結果を見たあとに確認すること</h2>
+        <ul class="checklist">
+          <li><label><input type="checkbox"> この削減額を無理なく毎月続けられるか確認したか</label></li>
+          <li><label><input type="checkbox"> 固定費チェックで、他に見直せる項目がないか確認したか</label></li>
+          <li><label><input type="checkbox"> 一時的な削減ではなく、契約自体の見直しか確認したか</label></li>
+          <li><label><input type="checkbox"> 削減した分の使い道（貯蓄・投資等）を決めたか</label></li>
+        </ul>
+      </section>
 
       <div class="history-save" id="history-save-block">
         <button type="button" class="btn-save-history" id="save-history-btn">この結果を判断履歴に残す</button>
@@ -84,7 +101,7 @@
     </section>
 
     <p class="bookmark-tip">このページをブックマークしておくと、次回もすぐ使えます。</p>
-  </div>
+  </main>
 
   <script src="/tools/shared/shared-history.js"></script>
   <script src="script.js"></script>
