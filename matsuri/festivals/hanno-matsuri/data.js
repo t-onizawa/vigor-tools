@@ -18,7 +18,16 @@ const FESTIVAL = {
       note: "中心市街地で底抜け屋台と山車の巡行が行われます。"
     },
     highlightComment: "初日の底抜け屋台から、翌日の11か町の山車総覧・引き合わせへ展開する二段構成が特徴。",
-    atmosphereMedia: [], backgroundImage: null,
+    atmosphereMedia: [],
+    backgroundImage: {
+      type: "youtube",
+      contentId: "j2SjrnpPIWc",
+      sourceUrl: "https://www.youtube.com/watch?v=j2SjrnpPIWc",
+      publisher: "Japan Walk Boy",
+      publisherType: "individual",
+      checkedDate: "2026-08-05",
+      note: "複数の山車と夜の祭り風景を文字装飾なしで捉え、横長背景で主役が明確なため採用。"
+    },
     confirmation: { verified: true, confirmedDate: "2026-07-30", sources: ["https://www.city.hanno.lg.jp/soshikikarasagasu/kyoikubu/hakubutsukan/bunkazaitanto/bunkazai/452.html", "https://www.city.hanno.lg.jp/soshikikarasagasu/kyoikubu/hakubutsukan/bunkazaitanto/bunkazai/minzoku/index.html"] }
   },
   yearlyInfo: [{

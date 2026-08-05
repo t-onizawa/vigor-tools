@@ -76,3 +76,17 @@ v0.3  2026-07-29（atmosphereMedia候補調査・不採用記録）
     3節の長尺基準に該当すると判断し不採用とした。確認済みのURL・
     チャンネル名を今回再特定できなかったため、推測では記載しない。
 ```
+
+## backgroundImage再調査（2026-08-05）
+
+- 候補1: 「深谷まつり2026 山車・屋台巡行 - 埼玉県深谷市 -」
+  - URL: https://www.youtube.com/watch?v=BzM6Ssk1_Mg
+  - 投稿者: 北関東おまつりinfo（祭礼映像を継続公開する第三者。動画ページとチャンネルページを直接確認）
+  - サムネイル: https://i.ytimg.com/vi/BzM6Ssk1_Mg/maxresdefault.jpg
+  - 判定: 不採用。山車・屋台の実写で対象祭りとの一致は確認できるが、「深谷まつり 2026」の大きな文字が画面上部を支配するため、背景素材の必須条件「文字が支配的でない」を満たさない。
+- 候補2: 深谷市公式「深谷まつり」
+  - URL: https://www.youtube.com/watch?v=wHVE2REIosA
+  - 投稿者: FukayaCity（深谷市公式）
+  - サムネイル: https://i.ytimg.com/vi/wHVE2REIosA/hqdefault.jpg
+  - 判定: 不採用。実写の山車・屋台は写るが、上下の黒帯が大きく、中央の祭り名文字も強いため、一覧カードと詳細ヒーローの横長背景として安定しない。
+- 結論: `backgroundImage` は未設定を維持。別候補を将来再調査する余地あり。

@@ -33,3 +33,13 @@
   - 実映像: 祭礼中継であることを確認。
   - atmosphereMedia: 不採用。尺そのものではなく、生中継をそのまま収録した構成で、初見の入口として短時間に祭り固有の見どころを把握しにくい。
   - backgroundImage: 不採用。大きな番組文字、日時、キャラクター、局ロゴが画面を占める。
+
+## backgroundImage再調査（2026-08-05）
+
+- 候補「【飯能まつり】勇壮な山車と熱気あふれる祭り風景 4K 2025.11」
+  https://www.youtube.com/watch?v=j2SjrnpPIWc
+  - 投稿者: Japan Walk Boy（地域・街歩き映像を公開する第三者。動画ページとチャンネルページを直接確認）
+  - サムネイル: https://i.ytimg.com/vi/j2SjrnpPIWc/maxresdefault.jpg
+  - 対象一致: 飯能まつりの夜の山車と囃子方・見物客を写した実写と確認。
+  - 判定: 採用。複数の山車と祭りの夜景が横長画面で明瞭に判別でき、文字装飾がなく、一覧カードと詳細ヒーローの背景として成立する。
+- 結論: `constantInfo.backgroundImage` に反映。atmosphereMediaは今回の対象外のため変更なし。
