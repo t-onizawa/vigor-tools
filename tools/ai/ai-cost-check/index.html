@@ -25,7 +25,7 @@
   <script src="/assets/analytics.js" defer></script>
 </head>
 <body>
-  <div class="container">
+  <main class="container">
     <nav class="breadcrumb">
       <a href="../../">VIGOR TOOLS</a>
       <span class="sep">›</span>
@@ -69,7 +69,22 @@
         </div>
       </div>
 
-      <p class="disclaimer">この2つの数字を見比べてみてください。※節約時間・時給は入力に基づく概算です。</p>
+      <p class="result-note">月額料金と、時間削減による価値を並べたものです。どちらが得かは判定していません。</p>
+
+      <details class="calc-detail">
+        <summary>計算式と前提を確認する</summary>
+        <p>時間削減による価値は「月に節約できていると感じる時間 × その時間の価値」で計算しています。節約時間・時間単価は入力に基づく概算です。</p>
+      </details>
+
+      <section class="section">
+        <h2 class="section-title">結果を見たあとに確認すること</h2>
+        <ul class="checklist">
+          <li><label><input type="checkbox"> 節約できていると感じる時間は、実際の使用実感に近いか確認したか</label></li>
+          <li><label><input type="checkbox"> 入力した時間の価値（時給や外注相場）は妥当か確認したか</label></li>
+          <li><label><input type="checkbox"> AIに任せていない作業がまだ残っていないか振り返ったか</label></li>
+          <li><label><input type="checkbox"> 似た用途の他サービスと比較したか</label></li>
+        </ul>
+      </section>
 
       <div class="history-save" id="history-save-block">
         <button type="button" class="btn-save-history" id="save-history-btn">この結果を判断履歴に残す</button>
@@ -100,7 +115,7 @@
     </section>
 
     <p class="bookmark-tip">このページをブックマークしておくと、次回もすぐ使えます。</p>
-  </div>
+  </main>
 
   <script src="/tools/shared/shared-history.js"></script>
   <script src="script.js"></script>
