@@ -26,7 +26,7 @@ const FESTIVAL = {
       publisher: "かなめまどか",
       publisherType: "individual",
       checkedDate: "2026-08-05",
-      note: "神輿と担ぎ手を文字・ロゴなしの実写で捉え、横長背景で祭りの主役が明確なため採用。"
+      note: "画面右上に文字入りバナーがあるが、神輿と担ぎ手が画面の大部分を占め、文字が支配的ではないため採用。"
     },
     confirmation: { verified: true, confirmedDate: "2026-07-31", sources: ["https://www.city.tatebayashi.gunma.jp/s059/kanko/020/20210506113415.html"] }
   },
