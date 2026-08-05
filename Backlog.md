@@ -12,6 +12,9 @@ VIGOR LAB は「計画を守る」より「小さく出して、数字を見て�
 
 判断基準は `VISION.md` に準拠する。特に Tool Principles・新ツール提案時の評価（5軸）を参照。
 
+VIGOR LAB全体（TOOLS・MATSURI・note横断）の中長期ロードマップ・収益設計・
+Founderレビューは `Roadmap.md` を参照。本書は日々の意思決定ログを持つ。
+
 ---
 
 ## 25本フェーズの方針（2026-07-15確定）
