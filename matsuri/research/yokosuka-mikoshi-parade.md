@@ -13,6 +13,16 @@
 
 本バッチでは品質を満たす素材を確認できず、`backgroundImage: null`、`atmosphereMedia: []`。
 
+### backgroundImage再調査（2026-08-05）
+
+- 候補「第46回よこすかみこしパレード2025」
+  https://www.youtube.com/watch?v=_Krvfg3UV2I
+  - 投稿者: HiyoTubeTv（地域イベント映像を公開する第三者。動画ページとチャンネルページを直接確認）
+  - サムネイル: https://i.ytimg.com/vi/_Krvfg3UV2I/maxresdefault.jpg
+  - 対象一致: よこすかみこしパレードの神輿渡御を写した実写と確認。
+  - 判定: 不採用。複数場面を組み合わせたコラージュと大きな祭り名文字が主となり、単一の祭り体験を背景で伝える用途に適さない。
+- 結論: `backgroundImage: null` を維持。文字なしで合同パレードの規模が分かる別候補を将来再調査する余地あり。
+
 ## 出典
 
 - https://yokosuka-kanko.com/events/46th_mikoshi/
