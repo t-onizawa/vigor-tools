@@ -18,7 +18,16 @@ const FESTIVAL = {
       note: "本まつりと神輿一斉渡御の会場となる本町通りを基準地点とした。手筒花火大会は別日程・別会場であり本ページに含めない。"
     },
     highlightComment: "本町通りに5基の神輿が集まり、夜のまつり本部前から一斉渡御する。",
-    atmosphereMedia: [], backgroundImage: null,
+    atmosphereMedia: [],
+    backgroundImage: {
+      type: "youtube",
+      contentId: "wZ4GbVM6-Bo",
+      sourceUrl: "https://www.youtube.com/watch?v=wZ4GbVM6-Bo",
+      publisher: "かなめまどか",
+      publisherType: "individual",
+      checkedDate: "2026-08-05",
+      note: "神輿と担ぎ手を文字・ロゴなしの実写で捉え、横長背景で祭りの主役が明確なため採用。"
+    },
     confirmation: { verified: true, confirmedDate: "2026-07-31", sources: ["https://www.city.tatebayashi.gunma.jp/s059/kanko/020/20210506113415.html"] }
   },
   yearlyInfo: [{

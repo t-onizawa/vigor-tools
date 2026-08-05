@@ -15,6 +15,16 @@
 
 背景・代表動画とも品質確認未実施のため未採用。
 
+### backgroundImage調査（2026-08-05）
+
+- 候補「第55回館林まつり 2026年7月18日」
+  https://www.youtube.com/watch?v=wZ4GbVM6-Bo
+  - 投稿者: かなめまどか（地域の祭礼映像を公開する第三者。動画ページとチャンネルページを直接確認）
+  - サムネイル: https://i.ytimg.com/vi/wZ4GbVM6-Bo/maxresdefault.jpg
+  - 対象一致: 第55回館林まつりの神輿渡御を写した実写と確認。
+  - 判定: 採用。神輿と担ぎ手が画面中央で明瞭に判別でき、文字・ロゴによる装飾がなく、横長背景として祭りの主役が伝わる。
+- 結論: `constantInfo.backgroundImage` に反映。atmosphereMediaは今回の対象外のため変更なし。
+
 ## 出典
 
 - https://www.city.tatebayashi.gunma.jp/s059/kanko/020/20210506113415.html
