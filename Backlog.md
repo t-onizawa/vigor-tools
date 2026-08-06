@@ -371,6 +371,180 @@ Platformは「サイトの前提を変える」対象なので、より慎重に
   1本で先に検証してから、他のチェックリスト型ツールへの展開を判断する。
 ```
 
+```
+2026-08-04
+  「独立準備計算ツールシリーズ」10本（一括追加案、Founderからは
+  「本当は30本くらい増やしたい」との言及あり）を却下。
+  却下理由：
+  - 10本中9本が既存ツールと重複（詳細は下記）。新規性があるのは
+    「複数収入源の依存度計算」1本のみ。
+  - 2026年8月運用方針（本書上部、2026-08-04確定）の
+    「新しい大型プロジェクトは増やさない」「VIGOR TOOLSの再量産はしない」
+    と、tools側Phase1（計測待ち・新規ツール追加保留、2026-07-29確定）の
+    双方に反する。
+  - 50本→60〜80本という量的拡大は、Founder Review準備が目指した
+    「選抜・改善」の逆行にあたる。
+  重複マッピング：
+    独立後の最低売上ライン／会社員収入を置き換える売上計算
+      → work/target-daily-rate・money/independence-fixed-costs・
+        money/break-even-check と重複
+    独立まで何ヶ月／固定費削減による独立時期短縮
+      → money/savings-gap・money/savings-pace・money/cost-cut-impact
+        の組み合わせで代替可能
+    退職時期比較シミュレーター
+      → work/resignation-check・stay-or-leave・job-change-check・
+        before-quitting-checklist・resignation-script と重複
+        （退職系だけで既に5本、新たな重複クラスタとして認識）
+    独立後の生活可能月数計算 → money/survival-fund とほぼ同一計算
+    副収入の固定費カバー率／月1万円の副収入の販売件数
+      → money/fixed-cost-check・money/side-income-target の合成
+    副業の実質時給 → work/side-time-income とほぼ同一目的
+  新規候補として保留（実装はしない）：
+    「複数収入源の依存度計算」のみ。判定的な数値を出す設計は
+    Tool Principle 2（整理はする、決断はしない）に抵触しやすいため、
+    実装するとしても「数値提示のみ・判定なし」の設計が前提。
+  着手時期：Phase1（計測導入完了）→Phase3（データに基づく再評価）
+  以降。それまでBacklog記録のみで実装指示は出さない。
+```
+
+```
+2026-08-04（続報：方針転換）
+  新規10本の却下は維持しつつ、Founderから「計算結果から次の確認へ
+  進める体験を強化したい」という制作意欲を活かす代案が出た。
+  新規追加ではなく、既存の計算系10本を段階的にテンプレート化する方針
+  に転換。
+
+  型：「計算結果 → 確認チェック → 関連ツール」
+  追加要素：(1)結果の一文説明 (2)確認項目3〜5件 (3)関連ツール最大2本
+  (4)計算式・前提の<details>開閉表示 (5)単位表記統一 (6)既存Profile値の
+  再利用。条件変更時の比較機能は対象外（Phase3以降、実データを見てから
+  設計する）。
+
+  この改修は計測データに依存しないUX一貫性の底上げであり、Phase1
+  （計測待ち）中でも実施可能と判断。tools側Phase2「役割重複クラスタの
+  導線整理」の範囲内として扱う。8月運用方針の禁止事項（新しい大型
+  プロジェクト・サイト全体のUI刷新）には該当しない：既存の
+  .checklist／.related-tools／ネイティブ<details>を再利用する軽量改修
+  であるため。
+
+  段階：
+    Phase 1（パイロット）：survival-fund／fixed-cost-check／
+      subscriptionsの3本のみ実装。横展開はしない。
+    Phase 2（横展開）：型が安定した場合のみ、independence-fixed-costs／
+      savings-gap／savings-pace／target-daily-rate／side-income-target／
+      side-time-incomeの6本へ展開。
+    Phase 3（特別対応）：break-even-checkは判定ロジックを持たせない
+      設計に変更した経緯があるため、確認項目の文言が実質的な判定に
+      転ばないか単独レビューしてから最後に適用。
+
+  実装前調査で判明した現状（パイロット3本）：
+    survival-fund：related-tools 4件 → 2件へ絞り込みが必要
+    fixed-cost-check：related-tools 4件 → 2件へ絞り込みが必要。
+      また.checklistを本来の入力UIとして既に使用中のため、新設する
+      「確認項目」ブロックと視覚的に混同しないデザイン差別化が必要
+    subscriptions：related-tools 2件で既に適合、内容の妥当性のみ確認
+
+  パイロット3本の実装をCodex CLIへ指示済み（2026-08-04）。
+  横展開（Phase2以降）は品質確認後にあらためて判断する。
+```
+
+```
+2026-08-04（パイロット完了・レビュー済み）
+  コミット55702bf。survival-fund／fixed-cost-check／subscriptionsの
+  3本に型を実装。Claudeが差分を実地検証（報告のみに依拠せず）。
+
+  確認できた内容：
+  - related-tools を4→2件へ絞り込み（survival-fund・fixed-cost-check）、
+    選定理由も明記
+  - fixed-cost-checkの懸念点（新設「確認すること」チェックリストが
+    既存23項目集計と混同するリスク）は`#cost-checklist`でDOM/JS両方を
+    スコープ分離し解消済みとコードで確認（23項目のみ集計対象）
+  - survival-fundの旧4段階判定文言を完全撤去し中立的な説明へ変更。
+    指示（判定や断定を強めない）を踏み込んで実行
+  - 削除箇所に対応する死にCSSも残さず除去、スコープ外ファイルへの
+    混入なし（変更9ファイルのみ）
+
+  軽微な指摘（ブロッカーではない）：
+  - shared.cssの新規スタイルに`#fixed-cost-details`というID依存
+    セレクタが1箇所混在。Phase2（残り6本への横展開）着手時に
+    `.result-section details`のクラス指定へ統一し解消する。
+
+  判定：承認。追加修正なしでパイロット完了。横展開（Phase2）は
+  Founderの判断を待って着手する。
+```
+
+```
+2026-08-04（Phase2実施・レビューでバグ発見）
+  Founder承認を受けPhase2着手。コミット2528adaで残り6本
+  （independence-fixed-costs／savings-gap／savings-pace／
+  target-daily-rate／side-income-target／side-time-income）に型を
+  展開。Codexが実装・コミットまで対応し、Claudeが差分を実地検証した。
+
+  良かった点：6本ともトーン一貫（断定なし）、計算式説明は実装と
+  整合、related-toolsは元々2件で変更不要と正しく判断、変更範囲も
+  指示通り。
+
+  発見したバグ：このコミットでshared.cssの`#fixed-cost-details`
+  （前回指摘したID依存セレクタ）を`.result-section details`へ
+  一般化したが、fixed-cost-check（チェックリスト型ツールのため
+  `.result-section`でラップされていない）の`<details>`がどの
+  CSSルールにもマッチしなくなり、枠線・余白のスタイルが消失。
+  実機確認済み。
+  修正方針：`<details>`要素自体に共通クラス（例：calc-detail）を
+  付与し、DOM構造（`.result-section`配下か否か）に依存しない
+  セレクタへ統一する。Phase3のbreak-even-check適用時も同じ問題が
+  起きうるため、この方式に統一しておく。
+  対応：Codexへ修正指示済み。
+```
+
+```
+2026-08-05（回帰バグ修正完了・レビュー済み）
+  コミットbc53c73。shared.cssに`.calc-detail`クラスを追加し、
+  計算系9本（fixed-cost-check／survival-fund／subscriptions／
+  independence-fixed-costs／savings-gap／savings-pace／
+  side-income-target／side-time-income／target-daily-rate）の
+  `<details>`へ適用。fixed-cost-checkは既存`id="fixed-cost-details"`
+  を維持しつつクラス追加。break-even-checkは`<details>`が存在せず
+  対象外（Phase3で個別対応の前提と一致、未変更を確認）。
+
+  Claudeが差分を実地検証：shared.cssのセレクタ追加、9本全ての
+  クラス付与、break-even-check不変、変更ファイル範囲（10ファイル）
+  いずれも指示通りと確認。判定：承認、追加修正なし。
+
+  これでPhase2（既存10本のテンプレート化）は
+  fixed-cost-check／survival-fund／subscriptions／
+  independence-fixed-costs／savings-gap／savings-pace／
+  side-income-target／side-time-income／target-daily-rateの9本が
+  完了。残るbreak-even-check（Phase3・単独レビュー対象）のみ未着手。
+```
+
+```
+2026-08-05（Phase3完了・計算系10本すべて完了）
+  break-even-checkを単独レビューしたうえで型を適用。判定ロジックを
+  持たせない過去の設計判断（2026-07-15、汎用閾値を安全に定義できない
+  ため）は維持を確認し、テンプレート適用前にClaudeがレビュー・
+  修正方針を提示、Founder承認後にCodexが実装（コミット6a7cc5c）。
+
+  レビュー観点と結果：
+  - 判定ロジックは追加せず維持（既存方針を踏襲）
+  - 既存の断定寄りの一文「続ける価値があるか考えてみてください」を
+    削除し、result-note（事実説明）／calc-detail（計算式・前提）／
+    確認チェック4件に分割。「高い／安い／妥当」等の評価語は
+    使用していないことを差分で確認
+  - related-tools（既存2件）・見出し・page-desc・計算ロジックは
+    いずれも未変更を確認（script.jsの差分ゼロ）
+
+  これで計算系10本（survival-fund／fixed-cost-check／subscriptions／
+  independence-fixed-costs／savings-gap／savings-pace／
+  side-income-target／side-time-income／target-daily-rate／
+  break-even-check）すべてが「計算結果→確認チェック→関連ツール」の
+  型へのアップグレードを完了。新規ツール追加ゼロで実施。
+
+  次のアクション：横展開の完了報告として区切りとし、追加の改善は
+  Founder判断待ち。計測基盤（Phase1）の状況を踏まえ、次の優先順位は
+  改めて検討する。
+```
+
 ---
 
 ## 更新履歴
@@ -526,4 +700,131 @@ Platformは「サイトの前提を変える」対象なので、より慎重に
   確認済み。残りはSafari・スマホ等、他に使用する端末・ブラウザでの
   マーキングのみ。現在は約1週間のテスト期間中で、「有効」への切り替え
   はまだ行っていない。GA4設定・コードとも本エントリでの変更はなし。
+
+2026-08-05（50本棚卸しレビュー・改善計画確定）
+  50本を維持／改善／統合／削除候補に分類したPMレビューを実施
+  （Artifact化：https://claude.ai/code/artifact/59479d04-594c-4089-b771-287e4ca69397）。
+  維持43／改善候補5／統合検討2／削除候補1（番外：dcap-agile-sheet、
+  既知・統括判断待ち）。
+
+  訂正：レビュー初版でwork/before-quitting-checklistを
+  「related-tools 0件」としたが誤り。抽出スクリプトが
+  `<section class="related-tools" id="...">` のようにid属性が
+  付いたタグを拾えていなかったための誤検知（他49本への影響はなし、
+  この1本のみ）。実際は独立準備チェック・退職までに必要な貯金差額計算の
+  2件が既にリンク済みで問題なし。改善対象から除外し、維持へ戻す。
+
+  実装確認により、travel/checklistは当初想定より重い問題と判明：
+  related-tools内のdiv構造が壊れており（`.related-list`が実際の2件で
+  早期に閉じ、「準備中」プレースホルダー2件がラップ外に浮いた状態）、
+  かつその「準備中」項目のうち1件（旅行予算チェック）は既に
+  travel/budgetとして公開済みで重複、もう1件（雨の日旅行チェック）は
+  実装されたことのない幻の参照。単なる関連ツールの絞り込みではなく
+  バグ修正案件として扱う。
+
+  改善計画（優先順） Founder承認済み：
+    1. travel/checklist：壊れたdiv構造の修正、存在しない「準備中」
+       2件の削除、リンク先をtravel/budget・travel/stay-compare
+       （両者は既にchecklistへ相互リンク済み）へ差し替え
+    2. money/insurance-check：チェック項目「保険料が月収に対して
+       高すぎないか考えた」を中立表現へ調整、結果表示に「判定する
+       ものではない」旨を追加。判定ロジック自体（count-based進捗）は
+       不変
+    3. money/cost-cut-impact：計算系10本と同型のテンプレート適用
+       （related-toolsは既に2件で変更不要）
+    4. ai/ai-cost-check：同上のテンプレート適用（related-toolsは
+       既に2件で変更不要）
+    5. 独立・退職ジャーニー15本：新規要素なし、既存related-toolsの
+       リンク先入れ替え・文言微調整のみ（表示件数は現状維持）
+
+  統合（ai-cost-check↔break-even-check、rayban-meta↔gadget-check）は
+  今回のバッチで実行しない。既に相互リンク済みで実害小、URL統廃合は
+  8月方針の「大型プロジェクトは増やさない」領域に踏み込みうるため、
+  実行判断はPhase3（実データ取得後）に送る。
+
+  1〜5は全て計測データに依存しないバグ修正・UX一貫性改善のため、
+  Phase1（計測待ち）中でも実施可。Codexへは1から順に実装指示する。
+
+2026-08-05（改善1/5完了：travel/checklist）
+  コミット40b95d4。壊れたdiv構造を修正し、存在しない「準備中」
+  プレースホルダー2件を削除。リンク先をthinking/15min-do・
+  money/fixed-cost-checkからtravel/budget・travel/stay-compare
+  （両者は既にchecklistへ相互リンク済み）へ差し替え。
+  Claudeが差分を実地検証：div/section/mainのタグバランス正常、
+  related-item 2件・related-item--coming 0件を確認。31項目・
+  7セクションの本体、script.js、style.cssは未変更、変更範囲は
+  指示通り1ファイルのみ。判定：承認、追加修正なし。
+  次はmoney/insurance-check（判定色の強い文言調整）。
+```
+
+```
+2026-08-05（改善2/5完了：money/insurance-check）
+  コミットf942f8a。チェック項目「保険料が月収に対して高すぎないか
+  考えた」を「保険料が今の収入・支出に対して無理のない範囲か考えた」
+  へ調整。page-headerに「多い・少ない、妥当かどうかの判定はしません」
+  のresult-noteを追加（新規CSSは既存.result-noteを再利用、追加なし）。
+  Claudeが差分を実地検証：タグバランス正常、チェック項目9件維持、
+  script.js差分ゼロ（判定ロジックは元々なく、変更もなし）。
+  判定：承認、追加修正なし。
+  次はmoney/cost-cut-impact（計算系10本と同型のテンプレート適用）。
+```
+
+```
+2026-08-05（改善3/5完了：money/cost-cut-impact）
+  コミット62e3699。計算系10本と同型（result-note／calc-detail／確認
+  チェック4件）を適用。新規CSSなし、既存.calc-detail等を再利用。
+  Claudeが差分を実地検証：タグバランス正常、script.js差分ゼロ、
+  related-tools 2件維持。判定：承認、追加修正なし。
+  次はai/ai-cost-check（同型のテンプレート適用）。
+```
+
+```
+2026-08-05（改善4/5完了：ai/ai-cost-check）
+  コミットf0b3194。既存.disclaimerを他10本と同型（result-note／
+  calc-detail／確認チェック4件）へ置き換え。break-even-checkとの
+  重複は今回統合せず、型の適用のみに留めた（統合実行判断はPhase3）。
+  Claudeが差分を実地検証：タグバランス正常、script.js差分ゼロ、
+  related-tools 2件維持。判定：承認、追加修正なし。
+  次は独立・退職ジャーニー15本のrelated-tools導線見直し（改善5/5、
+  新規要素なし・リンク先入れ替えのみ）。
+```
+
+```
+2026-08-05（改善5/5：ジャーニー導線見直し・具体案をFounder承認）
+  15本のリンクグラフを実地調査した結果、手を入れる根拠があるのは
+  4ファイル・各1リンクの入れ替えのみと判断（他11本は既に妥当な
+  組み合わせ）。
+    work/resignation-check：15min-do → money/savings-gap
+    money/independence-fixed-costs：work/independence →
+      work/target-daily-rate
+    work/target-daily-rate：money/survival-fund →
+      money/independence-fixed-costs（上記と対になる相互リンク）
+    work/side-business-check：ai/task-sort → money/side-income-target
+  リンク件数は全ファイルで現状維持、新規要素の追加なし。Founder承認
+  済み、Codexへ1本の指示としてまとめて実装依頼する。
+```
+
+```
+2026-08-05（改善5/5完了・50本棚卸し改善計画すべて完了）
+  コミット3df7c17。4ファイル各1リンクを承認済み内容通りに差し替え。
+  Claudeが差分を実地検証：件数維持（resignation-check 4件・他3本
+  各2件）、badge表記もリンク先の実際の種別と一致。「次の一歩として
+  自然か」もレビューし、4件とも通過（退職チェック→貯金差額、固定費
+  見積もり↔目標日給の相互リンク、副業診断→副収入目標、いずれも
+  自然な流れ）。
+
+  発見（記録のみ・今回のスコープ外）：axe指摘（4ファイル合計31件）は
+  この4本が計算系10本ロールアウトの対象外だったため`<main>`
+  ランドマークが未適用のまま残っていたことに起因すると判明。今回の
+  リンク差し替えが原因でないことをコードで確認済み。他の未ロール
+  アウトツールにも同様の`<main>`欠落が残っている可能性があり、
+  横断的なaxe対応が必要なら別タスクとして扱う。
+
+  これで2026-08-05の50本棚卸しレビューに基づく改善計画（travel/
+  checklistのバグ修正／insurance-checkの文言調整／cost-cut-impact・
+  ai-cost-checkのテンプレート適用／ジャーニー4本の導線見直し）が
+  すべて完了。新規ツール追加ゼロ、既存資産の価値最大化のみで実施。
+  次のアクションはFounder判断待ち。計測基盤（Phase1）の状況を踏まえ、
+  統合検討2本（ai-cost-check↔break-even-check／rayban-meta↔
+  gadget-check）を含むPhase3の再評価はデータ取得後に行う。
 ```
