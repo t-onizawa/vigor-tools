@@ -62,16 +62,16 @@ const FESTIVAL = {
   yearlyInfo: [
     {
       year: 2026,
-      eventStatus: "scheduled_pending_official",
+      eventStatus: "confirmed",
       dates: ["2026-08-07", "2026-08-08", "2026-08-09"],
       access: {
         hasParking: false,
         parkingNote: "美和神社自体には参拝者用駐車場なし。祭り公式サイトに専用駐車場の案内は確認できなかった。"
       },
       confirmation: {
-        confirmedDate: "2026-07-28",
-        sources: ["http://www.kiryu-maturi.net/"],
-        note: "祭り運営団体公式サイトのトップページで「第63回桐生八木節まつり　2026年8月7日（金）〜9日（日）」と直接確認。鉾の曳き違いは2026年の公式スケジュールに含まれていない。"
+        confirmedDate: "2026-08-07",
+        sources: ["https://www.city.kiryu.lg.jp/kankou/event/1025571.html", "http://www.kiryu-maturi.net/"],
+        note: "桐生市公式と祭り運営団体公式で、2026年8月7日〜9日の開催と第63回の公式案内を確認。鉾の曳き違いは2026年の公式スケジュールに含まれていない。"
       }
     }
   ]

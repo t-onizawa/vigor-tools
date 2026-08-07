@@ -16,7 +16,7 @@ const FESTIVAL = {
     }], backgroundImage: null,
     confirmation: { verified: true, confirmedDate: "2026-07-31", sources: ["https://www.utsunomiya-cvb.org/event/detail_20002.html"] }
   },
-  yearlyInfo: [{ year: 2026, eventStatus: "confirmed", dates: ["2026-08-01", "2026-08-02"],
+  yearlyInfo: [{ year: 2026, eventStatus: "ended", dates: ["2026-08-01", "2026-08-02"],
     access: { hasParking: null, parkingNote: "2026年の専用駐車場詳細は未確認。大通り周辺で交通規制あり。" },
-    confirmation: { confirmedDate: "2026-07-31", sources: ["https://www.utsunomiya-cvb.org/event/detail_20002.html"], note: "宇都宮観光公式で2026年8月1日・2日、16時〜21時を確認。" } }]
+    confirmation: { confirmedDate: "2026-08-07", sources: ["https://www.utsunomiya-cvb.org/event/detail_20002.html"], note: "宇都宮観光公式で確認した2026年8月1日・2日の日程を終了。" } }]
 };

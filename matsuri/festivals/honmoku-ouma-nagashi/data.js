@@ -53,11 +53,11 @@ const FESTIVAL = {
   },
   yearlyInfo: [{
     year: 2026,
-    eventStatus: "confirmed",
+    eventStatus: "ended",
     dates: ["2026-07-31", "2026-08-01", "2026-08-02"],
     access: { hasParking: null, parkingNote: "祭り専用駐車場と2026年の交通規制は未確認。" },
     confirmation: {
-      confirmedDate: "2026-07-30",
+      confirmedDate: "2026-08-07",
       sources: ["https://honmoku.or.jp/", "https://www.townnews.co.jp/0113/2026/07/16/844752.html"],
       note: "2026年は7月31日〜8月2日。8月2日に送り式、町内巡幸、本牧漁港でのお馬流し神事を行う。お馬流しは神奈川県指定無形民俗文化財。年度日程は本牧神社宮司への取材を含む地元報道で確認した。"
     }

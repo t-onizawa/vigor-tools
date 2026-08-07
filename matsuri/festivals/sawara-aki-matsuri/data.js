@@ -41,16 +41,16 @@ const FESTIVAL = {
   yearlyInfo: [
     {
       year: 2026,
-      eventStatus: "unconfirmed",
+      eventStatus: "confirmed",
       dates: ["2026-10-09", "2026-10-10", "2026-10-11"],
       access: {
         hasParking: null,
         parkingNote: "2025年実績では利根川河川敷臨時駐車場1,000台（無料、大型バス可）。2026年分は未確認。"
       },
       confirmation: {
-        confirmedDate: "2026-07-28",
-        sources: ["https://www.city.katori.lg.jp/sightseeing/matsuri/introduction/aki.html"],
-        note: "香取市公式サイトには2025年（10月10日〜12日）の情報のみ掲載されており、2026年開催の公式発表は確認できていない。dates欄は「10月第2土曜日を中日とする金・土・日」という恒常パターンから機械的に算出した参考値であり、公式発表ではない。このためeventStatusはscheduled_pending_officialではなくunconfirmedとする。"
+        confirmedDate: "2026-08-07",
+        sources: ["https://www.city.katori.lg.jp/sightseeing/multilingual/en/en-matsuri.html"],
+        note: "香取市公式の2026年案内で、秋祭りを10月9日〜11日に開催予定と確認。"
       }
     }
   ]

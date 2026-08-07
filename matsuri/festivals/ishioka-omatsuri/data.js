@@ -62,7 +62,7 @@ const FESTIVAL = {
   yearlyInfo: [
     {
       year: 2026,
-      eventStatus: "scheduled_pending_official",
+      eventStatus: "confirmed",
       dates: ["2026-09-19", "2026-09-20", "2026-09-21"],
       yearTownInCharge: "森木町",
       access: {
@@ -70,9 +70,9 @@ const FESTIVAL = {
         parkingNote: "2026年の臨時駐車場情報は未確認"
       },
       confirmation: {
-        confirmedDate: "2026-07-27",
-        sources: ["https://ishiokamatsuri.com/news/reitaisai-2026/"],
-        note: "石岡市公式サイト・常陸國總社宮公式サイトでは2026年情報が未掲載（2025年情報のみ確認済み）。祭り公認サイトの告知のみを根拠としており、一次情報での裏取りが1件のみのため「開催予定・公式詳細待ち」とした。"
+        confirmedDate: "2026-08-07",
+        sources: ["https://www.ishioka-kankou.com/events/ishioka-matsuri/", "https://www.ishioka-kankou.com/topics/tokubetsu-kanran/"],
+        note: "石岡市観光協会公式で2026年9月19日〜21日の開催と特別観覧席の販売を確認。交通規制案内は準備中。"
       }
     }
   ]
