@@ -76,7 +76,7 @@ a {
 }
 
 .festival-header.has-hero + .primary-info + * {
-  margin-top: 48px;
+  margin-top: 12px;
 }
 
 .hero-background {
@@ -655,6 +655,10 @@ p {
 
   .festival-header.has-hero {
     margin-top: -48px;
+  }
+
+  .festival-header.has-hero + .primary-info + * {
+    margin-top: 48px;
   }
 
   .festival-header {
