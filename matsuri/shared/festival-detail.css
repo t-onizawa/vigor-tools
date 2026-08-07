@@ -71,7 +71,7 @@ a {
 
 .festival-header.has-hero + .primary-info {
   position: relative;
-  margin-top: -146px;
+  margin-top: -90px;
   z-index: 2;
 }
 
@@ -229,12 +229,12 @@ p {
 
 .primary-info {
   display: grid;
-  gap: 8px;
-  padding: 14px 16px;
+  gap: 6px;
+  padding: 12px 16px;
 }
 
 .date-list {
-  font-size: 1.3rem;
+  font-size: 1.1rem;
   font-weight: 700;
   line-height: 1.4;
 }
@@ -279,8 +279,8 @@ p {
   border-radius: 999px;
   background: #111111;
   color: #ffffff;
-  padding: 7px 12px;
-  font-size: 0.86rem;
+  padding: 5px 11px;
+  font-size: 0.8rem;
   font-weight: 700;
   line-height: 1.3;
 }
