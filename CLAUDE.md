@@ -7,6 +7,8 @@
 `VISION.md` を、誰が何を担当しているかは `Roles.md` を、
 note等で発信する文章の文体で迷ったら `NoteStyleGuide.md` を、
 LAB全体の中長期ロードマップ・収益設計で迷ったら `Roadmap.md` を参照する。
+**CLAUDE.mdはCodexが読まない。** Codexタスクへ共通ルールを反映するには
+`AGENTS.md`を更新する（詳細はAGENTS.md参照）。
 
 ```
 CHARTER.md          VIGOR LAB全体の組織原則・唯一のMission・役割の権限定義
@@ -15,7 +17,8 @@ VISION.md            VIGOR TOOLSの Vision / Brand / Principles
 Backlog.md           次に何を検討するか（育てる候補）
 Roadmap.md           LAB全体の中長期ロードマップ・収益設計・Founderレビュー
 NoteStyleGuide.md    note記事の文体ガイド（VIGOR LAB全体の発信文章に共通適用）
-CLAUDE.md            実装者への実務ルール（このファイル）
+CLAUDE.md            Claude Code向け実務ルール（このファイル）
+AGENTS.md            Codex向け実務ルール（Codexが自動で読む）
 ```
 
 CLAUDE.md は「どう作るか」（ファイル構成・公開前チェックなど実務ルール）のみを扱う。
