@@ -62,16 +62,16 @@ const FESTIVAL = {
   yearlyInfo: [
     {
       year: 2026,
-      eventStatus: "scheduled_pending_official",
+      eventStatus: "confirmed",
       dates: ["2026-08-07", "2026-08-08", "2026-08-09"],
       access: {
         hasParking: null,
         parkingNote: "祭り運営団体公式サイトには駐車場の記載がなく未確認。"
       },
       confirmation: {
-        confirmedDate: "2026-07-28",
-        sources: ["https://www.city.itako.lg.jp/kankou/kankou-event/kankou-mainevent/page001342.html"],
-        note: "毎年8月第一金曜日〜日曜日固定という恒常パターンによる確認。2026年単体の公式発表は確認できていない。"
+        confirmedDate: "2026-08-07",
+        sources: ["https://www.city.itako.lg.jp/kankou/kankou-event/kankou-mainevent/page001342.html", "https://www.omaturi.jp/information/"],
+        note: "潮来市公式と祭り運営団体公式で、2026年8月7日〜9日の開催および2026年向け案内を確認。"
       }
     }
   ]

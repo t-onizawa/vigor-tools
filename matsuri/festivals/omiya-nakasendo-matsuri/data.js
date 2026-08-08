@@ -41,14 +41,14 @@ const FESTIVAL = {
   },
   yearlyInfo: [{
     year: 2026,
-    eventStatus: "confirmed",
+    eventStatus: "ended",
     dates: ["2026-08-01", "2026-08-02"],
     access: {
       hasParking: false,
       parkingNote: "両日とも大宮駅東口周辺で交通規制あり。公式は車での来場を控えるよう案内し、駐輪場も設けない。"
     },
     confirmation: {
-      confirmedDate: "2026-07-30",
+      confirmedDate: "2026-08-07",
       sources: [
         "https://visitsaitamacity.jp/events/24",
         "https://www.city.saitama.lg.jp/006/014/008/003/015/003/p131231.html"

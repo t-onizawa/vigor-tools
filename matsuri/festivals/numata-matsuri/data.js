@@ -55,14 +55,14 @@ const FESTIVAL = {
   },
   yearlyInfo: [{
     year: 2026,
-    eventStatus: "confirmed",
+    eventStatus: "ended",
     dates: ["2026-08-03", "2026-08-04", "2026-08-05"],
     access: {
       hasParking: true,
       parkingNote: "市公式案内に無料臨時駐車場と交通規制情報あり。交通規制は8月3日〜5日を中心に実施。"
     },
     confirmation: {
-      confirmedDate: "2026-07-30",
+      confirmedDate: "2026-08-07",
       sources: [
         "https://www.city.numata.gunma.jp/kanko/numatamatsuri/",
         "https://www.city.numata.gunma.jp/kanko/numatamatsuri/1001798.html"
