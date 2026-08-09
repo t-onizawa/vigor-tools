@@ -54,12 +54,16 @@ const FESTIVAL = {
       dates: ["2026-08-04", "2026-08-05"],
       access: {
         hasParking: true,
-        parkingNote: "無料駐車場あり（大型バス用はなし、第三者情報）。"
+        parkingNote: "2026年公式チラシ裏面に臨時駐車場12か所を掲載。混雑が予想されるため、公共交通機関の利用を推奨。"
       },
       confirmation: {
-        confirmedDate: "2026-08-07",
-        sources: ["https://www.city.sosa.lg.jp/page/page000941.html"],
-        note: "匝瑳市公式ページに掲載されたチラシPDFで「令和8年 8/4火・5水」と、裏面で両日の神輿渡御予定を直接確認。"
+        confirmedDate: "2026-08-09",
+        sources: [
+          "https://www.city.sosa.lg.jp/page/page000941.html",
+          "https://www.city.sosa.lg.jp/data/doc/1783319652_doc_145_0.pdf",
+          "https://www.city.sosa.lg.jp/data/doc/1783319655_doc_145_0.pdf"
+        ],
+        note: "匝瑳市公式ページと2026年公式チラシで、祭礼日を8月4日・5日、両日の神輿渡御予定、臨時駐車場を直接確認。チラシに併記された8月2日の山車巡行は、祭礼日とは分けて本ページの日程対象外とした。"
       }
     }
   ]

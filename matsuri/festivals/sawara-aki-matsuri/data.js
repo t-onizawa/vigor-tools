@@ -44,13 +44,13 @@ const FESTIVAL = {
       eventStatus: "confirmed",
       dates: ["2026-10-09", "2026-10-10", "2026-10-11"],
       access: {
-        hasParking: null,
-        parkingNote: "2025年実績では利根川河川敷臨時駐車場1,000台（無料、大型バス可）。2026年分は未確認。"
+        hasParking: true,
+        parkingNote: "利根川河川敷駐車場（無料）。会場行きシャトルバスを9時30分から21時まで運行し、運賃は500円。"
       },
       confirmation: {
-        confirmedDate: "2026-08-07",
+        confirmedDate: "2026-08-09",
         sources: ["https://www.city.katori.lg.jp/sightseeing/multilingual/en/en-matsuri.html"],
-        note: "香取市公式の2026年案内で、秋祭りを10月9日〜11日に開催予定と確認。"
+        note: "香取市公式の2026年案内で、秋祭りを10月9日〜11日に開催予定と確認。無料の利根川河川敷駐車場と会場行きシャトルバスの案内も確認。"
       }
     }
   ]

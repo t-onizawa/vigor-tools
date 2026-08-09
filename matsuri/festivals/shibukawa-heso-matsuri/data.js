@@ -24,7 +24,7 @@ const FESTIVAL = {
   },
   yearlyInfo: [{
     year: 2026, eventStatus: "confirmed", dates: ["2026-09-05"],
-    access: { hasParking: null, parkingNote: "2026年の一般来場者用駐車場・交通規制は公式ページで未確認。" },
-    confirmation: { confirmedDate: "2026-08-04", sources: ["https://www.city.shibukawa.lg.jp/kankou-site/kankou/000382/000385/p011548.html"], note: "渋川市公式で第43回を2026年9月5日13時から21時まで開催すると確認。" }
+    access: { hasParking: true, parkingNote: "渋川市役所本庁舎・第二庁舎、中央公民館第1、渋川中学校職員、渋川南小学校職員の各駐車場。21時30分閉門。" },
+    confirmation: { confirmedDate: "2026-08-09", sources: ["https://www.city.shibukawa.lg.jp/kankou-site/kankou/000382/000385/p011548.html"], note: "渋川市公式で第43回を2026年9月5日13時から21時まで開催し、一般来場者用駐車場5か所を設けると確認。" }
   }]
 };
