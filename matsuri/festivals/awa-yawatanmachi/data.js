@@ -33,11 +33,11 @@ const FESTIVAL = {
     confirmation: { verified: true, confirmedDate: "2026-07-30", sources: ["https://www.city.tateyama.chiba.jp/syougaigaku/page003452.html"] }
   },
   yearlyInfo: [{
-    year: 2026, eventStatus: "unconfirmed", dates: ["2026-09-12", "2026-09-13"],
+    year: 2026, eventStatus: "confirmed", dates: ["2026-09-19", "2026-09-20"],
     access: { hasParking: null, parkingNote: "2026年の駐車場・交通規制は未確認。" },
     confirmation: {
-      confirmedDate: "2026-07-30", sources: ["https://www.city.tateyama.chiba.jp/syougaigaku/page003452.html"],
-      note: "館山市公式では2025年情報まで確認。2026年の日付は例年の開催パターンから算出した参考値で、公式発表ではない。"
+      confirmedDate: "2026-08-10", sources: ["https://www.city.tateyama.chiba.jp/files/300377332.pdf", "https://www.city.tateyama.chiba.jp/syougaigaku/page003452.html"],
+      note: "館山市の令和8年行事カレンダーで、やわたんまちは『敬老の日の前の土・日』と確認。2026年は9月19日・20日。"
     }
   }]
 };
