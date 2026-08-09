@@ -588,7 +588,7 @@
 
   injectBrandMark();
   setText("festival-name", festival.name);
-  setText("festival-prefecture", festival.prefecture);
+  setText("festival-prefecture", `${festival.prefecture}${festival.city || ""}`);
   renderExperienceTag(festival.id);
   renderEventStatusDateText();
   setText("festival-dates", formatDateList(currentYear.dates));

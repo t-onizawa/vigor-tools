@@ -381,7 +381,9 @@
 
     const prefecture = document.createElement("span");
     prefecture.className = "prefecture";
-    prefecture.textContent = festival.prefecture || "都道府県未確認";
+    prefecture.textContent = festival.prefecture
+      ? `${festival.prefecture}${festival.city || ""}`
+      : "都道府県未確認";
 
     const status = document.createElement("span");
     status.className = `status-badge status-${effectiveStatus || "unknown"}`;
@@ -547,7 +549,9 @@
 
     const prefecture = document.createElement("span");
     prefecture.className = "upcoming-mini-prefecture";
-    prefecture.textContent = festival.prefecture || "";
+    prefecture.textContent = festival.prefecture
+      ? `${festival.prefecture}${festival.city || ""}`
+      : "";
 
     const name = document.createElement("span");
     name.className = "upcoming-mini-name";
