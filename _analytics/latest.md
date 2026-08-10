@@ -11,3 +11,5 @@ TOOLS: Investigate
 MATSURI: Growing
 
 詳細、GA4参考値、期間差およびData Notesは週次レポートを参照。
+
+Roadmap進捗とNext Actionsを含む最新仕様への同期済み。
