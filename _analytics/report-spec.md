@@ -9,6 +9,224 @@
 - Founder（週次意思決定）
 - VIGOR TOOLS PM / VIGOR MATSURI PM（判断材料として共通利用）
 
+## 基本方針
+
+- 目的はGA4とGoogle Search Console（以下、Search Console）の
+  「計測・保存・変化の記録」とする
+- 戦略判断・実装判断・PM判断は行わず、判断が必要な事項は
+  PM Review Candidatesとして整理する
+- 実装、SEO修正、新規ツール追加、新機能追加、統合判断、Backlog更新、
+  Roadmap更新は行わない
+
+## 作業開始前
+
+以下を必ず確認する。
+
+- `git fetch`
+- `git status`
+- `origin/main`との差分
+- `gh pr list`
+- 他セッションの未コミット差分
+
+Analyticsレポート以外の変更が存在する場合は、それらを変更・commitしない。
+
+前回レポートが存在する場合は、必ず読んでから作成する。
+
+## 集計期間
+
+- Search Consoleで取得可能な最新の確定済み7日間を基準とする
+- GA4も必ず同じ期間へ揃える
+- 比較期間は直前の7日間とする
+- 期間が一致しない場合は、その理由をData Notesへ記載する
+
+## GA4取得項目
+
+### 全体
+
+- アクティブユーザー
+- 新規ユーザー
+- セッション
+- 表示回数
+- エンゲージメント率
+- 平均エンゲージメント時間
+- Organic Search
+- Direct
+- Referral
+
+### Google Organic
+
+- セッション
+- アクティブユーザー
+- 新規ユーザー
+- 上位ランディングページ
+- ページ別ユーザー
+- エンゲージメント時間
+
+### VIGOR TOOLS
+
+- Organic流入
+- 表示回数
+- 上位ページ
+- 初反応ページ
+
+取得方法と未取得時の扱いは、後述の「セクション: VIGOR TOOLS」に従う。
+
+### VIGOR MATSURI
+
+- Organic流入
+- 表示回数
+- 上位ページ
+
+内部アクセス除外が有効であれば、除外済みデータを利用する。
+
+## Search Console取得項目
+
+### Web検索
+
+- クリック
+- 表示回数
+- CTR
+- 平均順位
+- 上位クエリ
+- 上位ページ
+
+### 動画検索
+
+存在する場合、以下を取得する。
+
+- クリック
+- 表示回数
+- CTR
+- 平均順位
+- 上位クエリ
+- 上位ページ
+
+### その他
+
+存在する場合、画像検索、Discover、ニュースを取得する。
+
+MATSURIはWeb検索と動画検索を必ず合算したクリック数も算出する。
+
+## 前週比較
+
+主要指標について、今週、前週、差分、増減率をまとめる。
+絶対数が小さい場合は増減率だけを強調しない。
+
+## 抽出事項
+
+### New Signals
+
+- 初表示クエリ
+- 初クリックページ
+- 表示急増ページ
+- 動画検索で伸びたページ
+- TOOLSで初めて反応したページ
+
+### Watch
+
+- 急落
+- GA4とSearch Consoleの乖離
+- 不自然なアクセス
+- 計測異常
+
+## プロダクト評価
+
+TOOLSとMATSURIをそれぞれ以下から選択する。
+
+- Growing
+- Early signal
+- Stable
+- Flat
+- Investigate
+
+理由は事実ベースで3行以内とする。
+
+## 保存先と変更範囲
+
+- `_analytics/weekly/YYYY-MM-DD.md`を作成する
+- `_analytics/latest.md`を毎回上書きする
+- レポート生成時に変更してよいのは上記2ファイルのみとする
+
+## Markdown構成
+
+以下の順序を基本とし、後述する追加セクションの配置指示も反映する。
+
+```markdown
+# VIGOR LAB Weekly Analytics
+
+Report date
+
+Period
+
+Previous period
+
+Internal traffic filtering
+
+## Executive Summary
+
+## KPI
+
+### Overall
+
+### VIGOR TOOLS
+
+### VIGOR MATSURI
+
+## Search Console
+
+### Web
+
+### Video
+
+### Other
+
+## Week over Week
+
+## Top Pages
+
+## Top Queries
+
+## New Signals
+
+## Watch
+
+## Product Status
+
+### TOOLS
+
+### MATSURI
+
+## PM Review Candidates
+
+## Data Notes
+
+## Roadmap進捗
+
+## Next Actions
+```
+
+## commit
+
+- Analyticsレポートの2ファイルのみcommitする
+- コミットメッセージは
+  `chore: update weekly analytics report YYYY-MM-DD`とする
+- pushは行わない
+
+## 最終報告
+
+以下だけを報告する。
+
+- 集計期間
+- SC表示回数
+- Webクリック
+- 動画クリック
+- 合計クリック
+- TOOLSステータス
+- MATSURIステータス
+- 気になった変化3つ
+- 保存ファイル
+- commit hash
+
 ## セクション: VIGOR TOOLS（PR1で追加）
 
 ### 目的
