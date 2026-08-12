@@ -21,3 +21,8 @@
 
 - https://www.cm-boso.com/amamatsuri2026.html
 - https://www.pref.chiba.lg.jp/bunshin/chibabunkashisan/chibabunka-kouhu8.html
+
+### 2026-08-12 週次品質改善
+
+- `_-uYgkE7IhE`（南房総いいとこどり動画、2分29秒、2026年）を動画ページ・本編で確認。松明を持つ海女の入水や夜の会場を把握できる地域観光動画のため atmosphereMedia に採用。
+- サムネイル上部の大きな題字が背景利用を妨げるため backgroundImage は見送り。

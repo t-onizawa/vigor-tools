@@ -28,3 +28,8 @@
 - https://tokorozawa-cci.or.jp/matsuri/schedule/index.html
 - https://tokorozawa-cci.or.jp/matsuri/announce/
 - https://www.city.tokorozawa.saitama.jp/iitokoro/event/main/omaturi/maturibosyu.html
+
+### 2026-08-12 週次品質改善
+
+- 公式チャンネルの `0nPpJXub9oo`（17分17秒、山車）と `gLqMW2GGEaY`（11分、前日祭〜本祭）を動画ページ・本編で確認。
+- 前者はサムネイルのロゴ・題字が大きく、長尺かつ山車中心。後者はサムネイルがロゴ主体で、本編も雨天時の準備・式典場面の比率が高い。backgroundImage・atmosphereMedia とも今回は見送り。

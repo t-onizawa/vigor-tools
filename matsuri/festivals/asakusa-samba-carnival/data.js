@@ -18,8 +18,8 @@ const FESTIVAL = {
       note: "公式が案内する馬道通りから雷門通りまでのパレードコースのうち、雷門通りを観覧の基準地点とした。"
     },
     highlightComment: "馬道通りから雷門通りへ、サンバチームが演奏・ダンス・衣装の表現を競うパレードコンテスト。",
-    atmosphereMedia: [],
-    backgroundImage: null,
+    atmosphereMedia: [{ type: "youtube", url: "https://www.youtube.com/watch?v=9pDqeAAatzc", contentId: "9pDqeAAatzc", title: "Asakusa Japan 38th浅草サンバカーニバル", publisher: "Life Style Channel", publisherType: "tourism", purpose: "festival_atmosphere", publishedYear: 2019, checkedDate: "2026-08-12" }],
+    backgroundImage: { type: "youtube", contentId: "9pDqeAAatzc", sourceUrl: "https://www.youtube.com/watch?v=9pDqeAAatzc", publisher: "Life Style Channel", publisherType: "tourism", checkedDate: "2026-08-12", note: "サンバ衣装の踊り手が大きく写る実写。文字オーバーレイがなく、鮮やかな衣装と表情から祭りの主役を判別できる。" },
     confirmation: { verified: true, confirmedDate: "2026-08-11", sources: ["https://www.asakusa-samba.org/", "https://www.city.taito.lg.jp/event/kanko/asakusa-sanba.html", "https://t-navi.city.taito.lg.jp/event/1408"] }
   },
   yearlyInfo: [{

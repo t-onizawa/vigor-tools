@@ -27,3 +27,8 @@
 - https://www.shinjuku-eisa.com/about/
 - https://www.shinjuku-eisa.com/story/index.html
 - https://www.kanko-shinjuku.jp/event/history/article_5878.html
+
+### 2026-08-12 週次品質改善
+
+- `Nit1c0I46NY`（新宿区公式チャンネル、5分14秒、2015年）を動画ページ・チャンネル・本編で確認。エイサーの踊りと太鼓を複数場面で把握できるため atmosphereMedia に採用。
+- サムネイルは大きな円形ロゴと題字が画面を支配するため backgroundImage は見送り。

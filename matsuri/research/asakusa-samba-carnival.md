@@ -26,3 +26,8 @@
 - https://www.asakusa-samba.org/
 - https://www.city.taito.lg.jp/event/kanko/asakusa-sanba.html
 - https://t-navi.city.taito.lg.jp/event/1408
+
+### 2026-08-12 週次品質改善
+
+- `9pDqeAAatzc`（Life Style Channel、7分10秒、2019年）を動画ページ・チャンネル・本編で確認。浅草観光連盟サイトにも掲載され、パレードの全体像を把握できるため atmosphereMedia に採用。
+- サムネイルは踊り手を大きく捉えた文字なしの実写で、祭りの主役が明確なため backgroundImage にも採用。

@@ -18,8 +18,8 @@ const FESTIVAL = {
       note: "公式プログラムの流し踊り・組踊り会場が新越谷駅と南越谷駅の周辺に広がるため、両駅の駅前を観覧の基準地点とした。"
     },
     highlightComment: "駅周辺の流し踊りに舞台踊り・組踊り・輪踊りが加わり、多彩な会場で連ごとの演舞を見比べられる。",
-    atmosphereMedia: [],
-    backgroundImage: null,
+    atmosphereMedia: [{ type: "youtube", url: "https://www.youtube.com/watch?v=fwGLCrqFqsg", contentId: "fwGLCrqFqsg", title: "第39回南越谷阿波踊り", publisher: "【公式】南越谷阿波踊り", publisherType: "official", purpose: "festival_atmosphere", publishedYear: 2025, checkedDate: "2026-08-12" }],
+    backgroundImage: { type: "youtube", contentId: "fwGLCrqFqsg", sourceUrl: "https://www.youtube.com/watch?v=fwGLCrqFqsg", publisher: "【公式】南越谷阿波踊り", publisherType: "official", checkedDate: "2026-08-12", note: "流し踊りの踊り手と沿道の観客が写る現地実写。文字オーバーレイがなく阿波踊りの主役を判別できる。" },
     confirmation: { verified: true, confirmedDate: "2026-08-07", sources: ["https://www.minamikoshigaya-awaodori.jp/", "https://www.minamikoshigaya-awaodori.jp/aboutus/mk_awaodori.html", "https://www.minamikoshigaya-awaodori.jp/odori/"] }
   },
   yearlyInfo: [{

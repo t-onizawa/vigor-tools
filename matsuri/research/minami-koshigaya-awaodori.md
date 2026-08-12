@@ -29,3 +29,8 @@
 - https://www.minamikoshigaya-awaodori.jp/info_program/
 - https://www.minamikoshigaya-awaodori.jp/ren_info/ren_info.php
 - https://www.city.koshigaya.saitama.jp/toiawase/sosiki2/kankyokezai/keizaisinkou/manholecard.html
+
+### 2026-08-12 週次品質改善
+
+- 公式サイト埋め込みの `fwGLCrqFqsg`（【公式】南越谷阿波踊り、4分7秒、2025年）を動画ページ・本編で確認。流し踊りと観客を複数場面で把握できるため atmosphereMedia に採用。
+- サムネイルも踊り手と沿道を捉えた文字なしの実写で、祭りの主役が明確なため backgroundImage に採用。

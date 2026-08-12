@@ -25,3 +25,8 @@
 
 - https://www.city.kitamoto.lg.jp/kanko/event/aki/18464.html
 - https://www.city.kitamoto.lg.jp/kanko/gourmet_shopping/2/1423533254557.html
+
+### 2026-08-12 週次品質改善
+
+- `euOCKKKtxek`（埼玉県公式チャンネル、1分、2022年）を動画ページ・本編で確認。
+- サムネイルは夜の通りに点灯したねぷたが並ぶ実写で、小さな番組ロゴはあるが主役を妨げないため backgroundImage に採用。動画は1分と短く全体像の把握には不足するため atmosphereMedia は見送り。

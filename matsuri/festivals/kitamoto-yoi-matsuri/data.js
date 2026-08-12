@@ -19,7 +19,7 @@ const FESTIVAL = {
     },
     highlightComment: "夕方から伝統のお囃子が響き、扇形の範頼ねぷたや大小のねぷた、山車が西中央通りを進む。",
     atmosphereMedia: [],
-    backgroundImage: null,
+    backgroundImage: { type: "youtube", contentId: "euOCKKKtxek", sourceUrl: "https://www.youtube.com/watch?v=euOCKKKtxek", publisher: "埼玉県公式チャンネル(サイタマどうが)", publisherType: "government", checkedDate: "2026-08-12", note: "夜の通りに点灯した大小のねぷたが並ぶ実写。右上に小さな番組ロゴはあるが、画面を支配せず主役を判別できる。" },
     confirmation: { verified: true, confirmedDate: "2026-08-11", sources: ["https://www.city.kitamoto.lg.jp/kanko/event/aki/18464.html", "https://www.city.kitamoto.lg.jp/kanko/gourmet_shopping/2/1423533254557.html"] }
   },
   yearlyInfo: [{

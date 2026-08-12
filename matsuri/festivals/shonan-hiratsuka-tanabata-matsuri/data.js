@@ -18,7 +18,7 @@ const FESTIVAL = {
       note: "公式が大型七夕飾りと七夕おどり千人パレードの会場として示す湘南スターモールを基準地点とした。"
     },
     highlightComment: "湘南スターモールと紅谷パールロードに約100本の大型七夕飾りが並び、電飾された飾りは夜にも表情を変える。",
-    atmosphereMedia: [],
+    atmosphereMedia: [{ type: "youtube", url: "https://www.youtube.com/watch?v=C2h2Cyqm0cY", contentId: "C2h2Cyqm0cY", title: "【4K】湘南ひらつか七夕まつり『七夕飾り』2026", publisher: "Uncle in Yokohama", publisherType: "individual", purpose: "festival_atmosphere", publishedYear: 2026, checkedDate: "2026-08-12" }],
     backgroundImage: null,
     confirmation: { verified: true, confirmedDate: "2026-08-06", sources: ["https://tanabata-hiratsuka.com/", "https://www.city.hiratsuka.kanagawa.jp/kanko/page-c_01132.html"] }
   },

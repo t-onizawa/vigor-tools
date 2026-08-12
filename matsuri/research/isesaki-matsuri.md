@@ -23,3 +23,8 @@
 
 - https://www.city.isesaki.lg.jp/soshiki/keizai/bunka/kankou/gyoji/1427.html
 - https://www.city.isesaki.lg.jp/material/files/group/17/0326_28_nagekomi_bunkakankou.pdf
+
+### 2026-08-12 週次品質改善
+
+- `cGFNZ-uSVfk`（群馬県伊勢崎市【動画で見るいせさき】、1分55秒、2023年）を動画ページ・本編で確認。山車・民踊・みこしを短時間で見渡せる市公式動画のため atmosphereMedia に採用。
+- サムネイルは大きな題字が画面を支配するため backgroundImage は見送り。

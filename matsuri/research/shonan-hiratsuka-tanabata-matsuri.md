@@ -22,3 +22,8 @@
 - https://tanabata-hiratsuka.com/
 - https://www.city.hiratsuka.kanagawa.jp/kanko/page-c_01099.html
 - https://www.city.hiratsuka.kanagawa.jp/kanko/page-c_01132.html
+
+### 2026-08-12 週次品質改善
+
+- `C2h2Cyqm0cY`（Uncle in Yokohama、5分53秒、2026年）を動画ページ・チャンネル・本編で確認。主要2商店街の大型七夕飾りを連続して把握でき、チャンネルも現地映像を継続投稿しているため atmosphereMedia に採用。
+- サムネイル下部の大きな場所名テロップが背景利用を妨げるため backgroundImage は見送り。

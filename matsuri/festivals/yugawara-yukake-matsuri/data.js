@@ -18,7 +18,7 @@ const FESTIVAL = {
       note: "神輿パレードの中継地で、集中的に湯が降り注ぐ公式のお湯かぶりエリアを基準地点とした。"
     },
     highlightComment: "沿道の1,000個の樽と約5,000個の湯桶から、温泉の湯約60tを練り歩く神輿へ浴びせる。",
-    atmosphereMedia: [],
+    atmosphereMedia: [{ type: "youtube", url: "https://www.youtube.com/watch?v=SVOVCNYy9j0", contentId: "SVOVCNYy9j0", title: "湯河原湯かけまつり", publisher: "湯河原温泉観光", publisherType: "tourism", purpose: "festival_atmosphere", publishedYear: 2023, checkedDate: "2026-08-12" }],
     backgroundImage: null,
     confirmation: { verified: true, confirmedDate: "2026-08-05", sources: ["https://www.yugawara.or.jp/event/972/"] }
   },

@@ -18,7 +18,7 @@ const FESTIVAL = {
       note: "千葉県公式が2026年事業会場として示す野島崎公園・野島漁港のうち、野島崎公園を基準地点とした。"
     },
     highlightComment: "白装束の海女たち約100人が松明を手に夜の海へ泳ぎ出し、海上の火とフィナーレの花火が白浜を照らす。",
-    atmosphereMedia: [],
+    atmosphereMedia: [{ type: "youtube", url: "https://www.youtube.com/watch?v=_-uYgkE7IhE", contentId: "_-uYgkE7IhE", title: "白浜海女まつり2026【南房総市】（ドローン撮影４K)", publisher: "南房総いいとこどり動画", publisherType: "tourism", purpose: "festival_atmosphere", publishedYear: 2026, checkedDate: "2026-08-12" }],
     backgroundImage: null,
     confirmation: { verified: true, confirmedDate: "2026-08-05", sources: ["https://www.cm-boso.com/amamatsuri2026.html", "https://www.pref.chiba.lg.jp/bunshin/chibabunkashisan/chibabunka-kouhu8.html"] }
   },

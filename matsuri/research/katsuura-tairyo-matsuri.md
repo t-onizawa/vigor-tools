@@ -26,3 +26,9 @@
 - https://www.city.katsuura.lg.jp/site/city-promotion/3881.html
 - https://maruchiba.jp/event/detail_13173.html
 - https://www.pref.chiba.lg.jp/kc-isumi/isumi/event.html
+
+### 2026-08-12 週次品質改善
+
+- `Kznyp0TV0dU`（jeepevo2004、14分16秒、2025年）を動画ページ・チャンネル・本編で確認。チャンネルは祭り・地域映像を継続投稿している。
+- サムネイルは川津区の神輿と担ぎ手が明瞭な文字なしの実写で backgroundImage に採用。本編は一地区中心の長尺記録のため atmosphereMedia は見送り。
+- `UWrxivTvrfw` は1時間10分かつサムネイルがコラージュ・大文字入りのため両用途で見送り。

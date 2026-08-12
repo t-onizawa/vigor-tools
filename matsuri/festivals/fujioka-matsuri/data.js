@@ -19,7 +19,7 @@ const FESTIVAL = {
     },
     highlightComment: "子供みこし・宮神輿・大人神輿に続き、祇園山車が中心市街地を進む二日間の祭り。",
     atmosphereMedia: [],
-    backgroundImage: null,
+    backgroundImage: { type: "youtube", contentId: "4JsAXD-tpnk", sourceUrl: "https://www.youtube.com/watch?v=4JsAXD-tpnk", publisher: "Ohayashi Listener", publisherType: "individual", checkedDate: "2026-08-12", note: "提灯を灯した祇園山車と囃子方が鮮明に写る現地実写。文字オーバーレイがなく主役を判別できる。" },
     confirmation: { verified: true, confirmedDate: "2026-08-07", sources: ["https://www.city.fujioka.gunma.jp/soshiki/keizaibu/shokokanko/2/1/1953.html", "https://www.city.fujioka.gunma.jp/soshiki/kikakubu/hisho/1/reiwa8/11161.html"] }
   },
   yearlyInfo: [{

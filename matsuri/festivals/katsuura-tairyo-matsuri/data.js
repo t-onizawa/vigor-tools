@@ -19,7 +19,7 @@ const FESTIVAL = {
     },
     highlightComment: "神輿の一斉担ぎ、彫刻屋台・山車とお囃子の競演に続き、最終日は神輿を船から船へ渡す。",
     atmosphereMedia: [],
-    backgroundImage: null,
+    backgroundImage: { type: "youtube", contentId: "Kznyp0TV0dU", sourceUrl: "https://www.youtube.com/watch?v=Kznyp0TV0dU", publisher: "jeepevo2004", publisherType: "individual", checkedDate: "2026-08-12", note: "川津区の神輿と担ぎ手が大きく写る現地実写。文字オーバーレイがなく、祭りの主役を判別できる。" },
     confirmation: { verified: true, confirmedDate: "2026-08-11", sources: ["https://www.city.katsuura.lg.jp/site/city-promotion/3881.html", "https://maruchiba.jp/event/detail_13173.html", "https://www.pref.chiba.lg.jp/kc-isumi/isumi/event.html"] }
   },
   yearlyInfo: [{

@@ -18,7 +18,7 @@ const FESTIVAL = {
       note: "新宿駅東西の複数の演舞会場のうち、東口側を観覧の基準地点とした。会場と時間は公式プログラムで要確認。"
     },
     highlightComment: "大太鼓・締太鼓・パーランクーと三線が響き、各団体の手踊りが新宿駅東西の演舞会場を彩る。",
-    atmosphereMedia: [],
+    atmosphereMedia: [{ type: "youtube", url: "https://www.youtube.com/watch?v=Nit1c0I46NY", contentId: "Nit1c0I46NY", title: "２０１５新宿エイサーまつり", publisher: "新宿区公式チャンネル", publisherType: "government", purpose: "festival_atmosphere", publishedYear: 2015, checkedDate: "2026-08-12" }],
     backgroundImage: null,
     confirmation: { verified: true, confirmedDate: "2026-08-12", sources: ["https://www.shinjuku-eisa.com/?page=schedule", "https://www.shinjuku-eisa.com/about/", "https://www.kanko-shinjuku.jp/event/history/article_5878.html"] }
   },

@@ -25,3 +25,8 @@
 
 - https://www.city.fujioka.gunma.jp/soshiki/keizaibu/shokokanko/2/1/1953.html
 - https://www.city.fujioka.gunma.jp/soshiki/kikakubu/hisho/1/reiwa8/11161.html
+
+### 2026-08-12 週次品質改善
+
+- `4JsAXD-tpnk`（Ohayashi Listener、15分15秒、2025年）を動画ページ・チャンネル・本編で確認。チャンネルは山車と囃子の記録を継続投稿している。
+- サムネイルは提灯を灯した祇園山車と囃子方が明瞭な文字なしの実写で backgroundImage に採用。本編は山車・囃子中心の長尺記録のため atmosphereMedia は見送り。
