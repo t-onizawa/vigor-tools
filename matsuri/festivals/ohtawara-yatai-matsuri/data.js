@@ -19,7 +19,15 @@ const FESTIVAL = {
     },
     highlightComment: "9町の彫刻屋台が中心市街地を巡り、金燈籠交差点では笛と太鼓の囃子を競う『ぶっつけ』が響き合う。",
     atmosphereMedia: [],
-    backgroundImage: null,
+    backgroundImage: {
+      type: "youtube",
+      contentId: "GYntbicSnmo",
+      sourceUrl: "https://www.youtube.com/watch?v=GYntbicSnmo",
+      publisher: "バナナ仙人のSEISYSTEM",
+      publisherType: "individual",
+      checkedDate: "2026-08-12",
+      note: "2026年の彫刻屋台と曳き手が市街地を進む様子を鮮明に捉えた文字オーバーレイなしの実写。動画は約29分の通し記録のため、背景素材としてのみ採用した。"
+    },
     confirmation: { verified: true, confirmedDate: "2026-08-10", sources: ["https://www.city.ohtawara.tochigi.jp/docs/2018112200063/", "https://ohtawara.jp/yatai/", "https://ohtawara.jp/yatai/yatai.html"] }
   },
   yearlyInfo: [{

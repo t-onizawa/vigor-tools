@@ -19,7 +19,15 @@ const FESTIVAL = {
     },
     highlightComment: "河童や妖怪の仮装行列に続き、夕方は世代を越えた参加者が河童音頭の大輪踊りを囲む。",
     atmosphereMedia: [],
-    backgroundImage: null,
+    backgroundImage: {
+      type: "youtube",
+      contentId: "EtIe6SWw8ag",
+      sourceUrl: "https://www.youtube.com/watch?v=EtIe6SWw8ag",
+      publisher: "dutch1173",
+      publisherType: "individual",
+      checkedDate: "2026-08-12",
+      note: "太鼓演奏と踊り手・観客が鮮明に写る実写。右下に小さな年次・祭り名表記はあるが、現地風景を覆わず主役が判別できるため背景素材としてのみ採用した。"
+    },
     confirmation: { verified: true, confirmedDate: "2026-08-10", sources: ["https://www.abikokappa.website/", "https://www.city.abiko.chiba.jp/event/event_moyooshi/abikokappamatsuri.html", "https://www.city.abiko.chiba.jp/event/shizennonaka/kouenryokuchi/park/citypark/teganuma.html"] }
   },
   yearlyInfo: [{

@@ -21,6 +21,16 @@
 
 実行委員会公式サイトの屋台写真は内容確認に使用したが、権利と横長背景としての品質を全条件で確認できる再利用可能素材は採用しなかった。`atmosphereMedia: []`、`backgroundImage: null` とした。
 
+### 2026-08-12 週次品質改善
+
+YouTube動画ページ・投稿チャンネル・サムネイルを直接確認した。
+
+- `GYntbicSnmo`「2026 大田原屋台まつり①」（バナナ仙人のSEISYSTEM、約29分、2026年）: backgroundImageに採用。2026年の彫刻屋台と曳き手が市街地を進む文字オーバーレイなしの実写で、屋台を明確に判別できる。動画ページでは登録者3,960人の投稿チャンネルと撮影者表記を直接確認した。約29分の通し記録で入口用途には長いためatmosphereMediaには採用しない。
+- `BfHNHHC2t0Q`「【大田原屋台まつり】宵祭り」（aosio.channel、14分41秒、2026年）: サムネイルを大きな説明文字とタイトルが覆うためbackgroundImage不採用。10分を大きく超える通し記録のためatmosphereMedia不採用。
+- `tYcq3m5cmhs`「屋台まつり開幕『ぶっつけ』 華やかに 大田原」（下野新聞チャンネル、1分14秒、2026年）: 夜の屋台は鮮明だが、下部のニュース見出し帯が大きいためbackgroundImage不採用。ぶっつけ一場面の短報で祭り全体を伝えないためatmosphereMedia不採用。
+
+反映後は `backgroundImage` のみ追加し、`atmosphereMedia: []` を維持する。
+
 ## 出典
 
 - https://www.city.ohtawara.tochigi.jp/docs/2013082765147/
