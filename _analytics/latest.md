@@ -1,15 +1,13 @@
 # VIGOR LAB Weekly Analytics
 
-最新レポート: [2026-08-10](weekly/2026-08-10.md)
+最新レポート: [2026-08-13](weekly/2026-08-13.md)
 
-集計期間: 2026-08-01〜2026-08-07（Search Console）  
-SC表示回数: 906（Web 545 + 動画 361）  
-Webクリック: 10  
-動画クリック: 17  
-合計クリック: 27  
-TOOLS: Investigate  
-MATSURI: Growing
+集計期間: 2026-08-04〜2026-08-10（Search Console）
+SC表示回数: 436（Web 311 + 動画 125）
+Webクリック: 4
+動画クリック: 5
+合計クリック: 9
+TOOLS: Early signal
+MATSURI: Investigate
 
-詳細、GA4参考値、期間差およびData Notesは週次レポートを参照。
-
-Roadmap進捗とNext Actionsを含む最新仕様への同期済み。
+詳細、GA4参考値、期間差、Roadmap進捗、Next ActionsおよびData Notesは週次レポートを参照。
