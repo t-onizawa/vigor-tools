@@ -518,7 +518,7 @@
 
     try {
       const iframe = document.createElement("iframe");
-      iframe.src = `https://www.google.com/maps?q=${encodeURIComponent(mapReference.query)}&output=embed`;
+      iframe.src = `https://www.google.com/maps?q=${encodeURIComponent(mapReference.query)}&output=embed&z=11`;
       iframe.title = mapReference.label;
       iframe.loading = "lazy";
 
