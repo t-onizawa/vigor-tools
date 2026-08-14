@@ -596,7 +596,7 @@
 
     list.replaceChildren(...visibleItems.map(renderFestivalCard));
     count.textContent = (items.length === visibleItems.length)
-      ? `関東7都県・${items.length}件を掲載中`
+      ? `${items.length}件を掲載中`
       : `${items.length}件中${visibleItems.length}件を表示`;
 
     return visibleItems.length;
