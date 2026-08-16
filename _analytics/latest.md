@@ -1,12 +1,12 @@
 # VIGOR LAB Weekly Analytics
 
-最新レポート: [2026-08-13](weekly/2026-08-13.md)
+最新レポート: [2026-08-16](weekly/2026-08-16.md)
 
-集計期間: 2026-08-04〜2026-08-10（Search Console）
-SC表示回数: 436（Web 311 + 動画 125）
-Webクリック: 4
-動画クリック: 5
-合計クリック: 9
+集計期間: 2026-08-08〜2026-08-14（Search Console）
+SC表示回数: 143（Web 139 + 動画 4）
+Webクリック: 3
+動画クリック: 0
+合計クリック: 3
 TOOLS: Early signal
 MATSURI: Investigate
 
