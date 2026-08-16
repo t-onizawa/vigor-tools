@@ -14,7 +14,26 @@ const FESTIVAL = {
     access: { nearestStation: "JR・IGR盛岡駅から盛岡市中央通会場まで徒歩約15分" },
     mapReference: { label: "盛岡市中央通会場", pointType: "viewing_point", query: "盛岡市中央通 岩手県庁", lat: null, lng: null, mapUrl: "https://www.google.com/maps/search/?api=1&query=盛岡市中央通+岩手県庁", note: "公式が案内する県庁前約1kmのパレード会場を基準地点とした。" },
     highlightComment: "太鼓・笛・踊り手が盛岡市中央通を進む夜のパレード。最終日は太鼓大パレードから観客も参加できる大輪踊りへ続く。",
-    atmosphereMedia: [], backgroundImage: null,
+    atmosphereMedia: [{
+      type: "youtube",
+      url: "https://www.youtube.com/watch?v=Tcsb3-s3KCI",
+      contentId: "Tcsb3-s3KCI",
+      title: "【岩手】盛岡さんさ踊り2026 ／「2026ミスさんさ・さんさ太鼓連」が夏空の盛岡に舞う",
+      publisher: "SORAiro",
+      publisherType: "individual",
+      purpose: "festival_atmosphere",
+      publishedYear: 2026,
+      checkedDate: "2026-08-16"
+    }],
+    backgroundImage: {
+      type: "youtube",
+      contentId: "tr6hJrjMhdc",
+      sourceUrl: "https://www.youtube.com/watch?v=tr6hJrjMhdc",
+      publisher: "M.Saito",
+      publisherType: "individual",
+      checkedDate: "2026-08-16",
+      note: "黄色い衣装の踊り手と後続の踊り手が鮮明に写る現地実写。文字オーバーレイがなく、さんさ踊りの主役を判別できる。"
+    },
     confirmation: { verified: true, confirmedDate: "2026-08-14", sources: ["https://www.sansaodori.jp/", "https://www.sansaodori.jp/info/"] }
   },
   yearlyInfo: [{

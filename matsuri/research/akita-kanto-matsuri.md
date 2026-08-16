@@ -15,7 +15,15 @@
 
 ## 素材
 
-素材探索は行わず `backgroundImage: null`、`atmosphereMedia: []`。
+追加時は素材探索を行わず `backgroundImage: null`、`atmosphereMedia: []` とした。
+
+### 2026-08-16 品質改善調査
+
+- 採用: https://www.youtube.com/watch?v=FmxUBFubRMI
+  - AAB秋田朝日放送（チャンネル登録者数2.84万人）を動画ページで直接確認。
+  - 2026年8月4日公開、3分25秒。夜の竿燈、囃子、差し手の妙技と観客を短時間で確認できる地元放送局の現地映像のため、`atmosphereMedia`に採用。
+  - サムネイルは右上にニュース見出しが大きく入り、背景素材の「文字が支配的でない」基準を満たさないため、`backgroundImage`には不採用。
+- 背景候補として `vHK7SYUkXCI`、`MbdPFjvF4U0`、`O9Y2tqcPzzs` のサムネイルも実画像で確認したが、いずれも大きなタイトル文字・ロゴがあるため不採用。
 
 ## 一次情報
 

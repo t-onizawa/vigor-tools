@@ -14,7 +14,17 @@ const FESTIVAL = {
     access: { nearestStation: "JR・青い森鉄道 青森駅から運行コースまで徒歩圏" },
     mapReference: { label: "青森ねぶた祭 運行コース", pointType: "viewing_point", query: "青森ねぶた祭 運行コース 青森市", lat: null, lng: null, mapUrl: "https://www.google.com/maps/search/?api=1&query=青森ねぶた祭+運行コース+青森市", note: "公式運行コース周辺を観覧の基準地点とした。日ごとの運行情報は公式マップを確認。" },
     highlightComment: "夜の市街地を大型ねぶたが進み、最終日は昼の運行に続いて受賞ねぶたの海上運行と花火で締めくくる。",
-    atmosphereMedia: [], backgroundImage: null,
+    atmosphereMedia: [{
+      type: "youtube",
+      url: "https://www.youtube.com/watch?v=c00ePgQPoPY",
+      contentId: "c00ePgQPoPY",
+      title: "2026.8.2 青森ねぶた祭 ダイジェスト Aomori Nebuta Festival ～青森市役所ねぶた～【青森市公式】",
+      publisher: "青森市公式チャンネル",
+      publisherType: "government",
+      purpose: "festival_atmosphere",
+      publishedYear: 2026,
+      checkedDate: "2026-08-16"
+    }], backgroundImage: null,
     confirmation: { verified: true, confirmedDate: "2026-08-14", sources: ["https://www.nebuta.jp/", "https://www.nebuta.jp/info/schedule/schedule.html"] }
   },
   yearlyInfo: [{

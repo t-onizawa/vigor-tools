@@ -15,7 +15,17 @@
 
 ## 素材
 
-素材探索は行わず `backgroundImage: null`、`atmosphereMedia: []`。
+追加時は素材探索を行わず `backgroundImage: null`、`atmosphereMedia: []` とした。
+
+### 2026-08-16 品質改善調査
+
+- `atmosphereMedia`採用: https://www.youtube.com/watch?v=Tcsb3-s3KCI
+  - SORAiro（チャンネル登録者数2,230人）を動画ページで直接確認。
+  - 2026年8月4日のパレードと大輪踊りを収めた7分14秒の現地映像。太鼓・笛・踊り手が進む様子と大輪踊りを異なる場面で確認でき、祭り全体の入口用途に合うため採用。
+  - サムネイルは祭り名などの大きな文字が重なるため背景には不採用。
+- `backgroundImage`採用: https://www.youtube.com/watch?v=tr6hJrjMhdc
+  - M.Saito（チャンネル登録者数7,960人）を動画ページで直接確認。4分20秒の2026年パレード映像。
+  - サムネイルは黄色い衣装の踊り手と後続の踊り手を鮮明に捉えた現地実写で、文字オーバーレイがなく主役を判別できるため採用。動画は説明文がなく発信元の位置づけを十分確認できないため、`atmosphereMedia`には追加しない。
 
 ## 一次情報
 

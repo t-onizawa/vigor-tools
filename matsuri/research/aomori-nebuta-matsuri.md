@@ -15,7 +15,15 @@
 
 ## 素材
 
-素材探索は行わず `backgroundImage: null`、`atmosphereMedia: []`。
+追加時は素材探索を行わず `backgroundImage: null`、`atmosphereMedia: []` とした。
+
+### 2026-08-16 品質改善調査
+
+- 採用: https://www.youtube.com/watch?v=c00ePgQPoPY
+  - 青森市公式チャンネル（チャンネル登録者数1.45万人）を動画ページで直接確認。
+  - 2026年8月2日の青森市役所ねぶたを収めた2分23秒の公式ダイジェスト。大型ねぶたと運行の雰囲気が入口用途に合うため、`atmosphereMedia`に採用。
+  - サムネイルには祭り名と日付の大きな文字が重なるため、`backgroundImage`には不採用。
+- 背景候補として `kVxob7EgmsM`、`IcOEq3tAAsw`、`Ekm6q_rK5kc` のサムネイルも実画像で確認したが、いずれも大きな説明文字・番組タイトルがあるため不採用。
 
 ## 一次情報
 

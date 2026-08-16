@@ -14,7 +14,17 @@ const FESTIVAL = {
     access: { nearestStation: "JR秋田駅から竿燈大通りまで徒歩約15分" },
     mapReference: { label: "竿燈大通り", pointType: "viewing_point", query: "竿燈大通り 秋田市", lat: null, lng: null, mapUrl: "https://www.google.com/maps/search/?api=1&query=竿燈大通り+秋田市", note: "夜本番の公式会場である竿燈大通りを基準地点とした。" },
     highlightComment: "提灯を稲穂に見立てた大若を、差し手が手のひら・額・肩・腰で支える妙技。夜は灯りをともした竿燈が大通りに並ぶ。",
-    atmosphereMedia: [], backgroundImage: null,
+    atmosphereMedia: [{
+      type: "youtube",
+      url: "https://www.youtube.com/watch?v=FmxUBFubRMI",
+      contentId: "FmxUBFubRMI",
+      title: "秋田竿燈まつり 夜空を彩る２７３本の光の稲穂 厄除けや五穀豊穣願い迫力ある技披露 (2026/08/04 19:14)",
+      publisher: "AAB秋田朝日放送",
+      publisherType: "local_media",
+      purpose: "festival_atmosphere",
+      publishedYear: 2026,
+      checkedDate: "2026-08-16"
+    }], backgroundImage: null,
     confirmation: { verified: true, confirmedDate: "2026-08-14", sources: ["https://www.kantou.gr.jp/", "https://www.akita-yulala.jp/festival/335"] }
   },
   yearlyInfo: [{
