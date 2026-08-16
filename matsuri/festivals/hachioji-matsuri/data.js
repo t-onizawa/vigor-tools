@@ -62,7 +62,7 @@ const FESTIVAL = {
   yearlyInfo: [
     {
       year: 2026,
-      eventStatus: "confirmed",
+      eventStatus: "ended",
       dates: ["2026-08-07", "2026-08-08", "2026-08-09"],
       access: {
         hasParking: false,
