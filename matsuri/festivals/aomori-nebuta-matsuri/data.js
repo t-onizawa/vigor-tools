@@ -24,7 +24,16 @@ const FESTIVAL = {
       purpose: "festival_atmosphere",
       publishedYear: 2026,
       checkedDate: "2026-08-16"
-    }], backgroundImage: null,
+    }],
+    backgroundImage: {
+      type: "youtube",
+      contentId: "J_Jid3090DE",
+      sourceUrl: "https://www.youtube.com/watch?v=J_Jid3090DE",
+      publisher: "青森県",
+      publisherType: "government",
+      checkedDate: "2026-08-18",
+      note: "青森県の映像素材ライブラリーで公開されている『青森ねぶた祭2』のサムネイルを背景素材として採用。文字装飾がなく、ねぶたと運行の実写が主役として判別できる。"
+    },
     confirmation: { verified: true, confirmedDate: "2026-08-14", sources: ["https://www.nebuta.jp/", "https://www.nebuta.jp/info/schedule/schedule.html"] }
   },
   yearlyInfo: [{
