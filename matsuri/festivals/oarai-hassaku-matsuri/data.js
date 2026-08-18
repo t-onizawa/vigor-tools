@@ -49,16 +49,16 @@ const FESTIVAL = {
   },
   yearlyInfo: [{
     year: 2026,
-    eventStatus: "scheduled_pending_official",
+    eventStatus: "confirmed",
     dates: ["2026-08-23", "2026-08-25"],
     access: {
       hasParking: null,
       parkingNote: "2026年八朔祭向けの駐車場・交通規制詳細は一次情報で確認できず。"
     },
     confirmation: {
-      confirmedDate: "2026-07-30",
-      sources: ["https://www.oarai-info.jp/news/postid_9910/"],
-      note: "2026年は商店街イベントが8月23日、神事が8月25日。商店街イベントの詳細プログラムは公開待ち。"
+      confirmedDate: "2026-08-17",
+      sources: ["https://www.oarai-info.jp/season/postid_2678/"],
+      note: "大洗観光協会公式の令和8年度開催告知で、商店街イベントが8月23日、神事が8月25日と確認。商店街イベントの内容と主催者情報も公開済み。"
     }
   }]
 };

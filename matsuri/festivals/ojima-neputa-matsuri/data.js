@@ -23,7 +23,7 @@ const FESTIVAL = {
     confirmation: { verified: true, confirmedDate: "2026-08-04", sources: ["https://www.city.ota.gunma.jp/site/kankou/1037648.html", "https://www.city.ota.gunma.jp/site/kankou/1061974.html"] }
   },
   yearlyInfo: [{
-    year: 2026, eventStatus: "confirmed", dates: ["2026-08-14", "2026-08-15"],
+    year: 2026, eventStatus: "ended", dates: ["2026-08-14", "2026-08-15"],
     access: { hasParking: null, parkingNote: "無料シャトルバスの運行予定は確認済み。2026年の駐車場詳細は公式案内を確認してください。" },
     confirmation: { confirmedDate: "2026-08-04", sources: ["https://www.city.ota.gunma.jp/site/kankou/1061974.html"], note: "太田市公式の2026年度ページで8月14日・15日の開催を確認。" }
   }]

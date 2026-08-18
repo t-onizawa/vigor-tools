@@ -23,7 +23,7 @@ const FESTIVAL = {
     confirmation: { verified: true, confirmedDate: "2026-08-04", sources: ["https://www.nagatoro.gr.jp/funadama2026/"] }
   },
   yearlyInfo: [{
-    year: 2026, eventStatus: "confirmed", dates: ["2026-08-15"],
+    year: 2026, eventStatus: "ended", dates: ["2026-08-15"],
     access: { hasParking: true, parkingNote: "旧長瀞第二小学校校庭を15時から臨時駐車場として開放予定。天候・満車時は利用できず、公共交通を推奨。" },
     confirmation: { confirmedDate: "2026-08-04", sources: ["https://www.nagatoro.gr.jp/funadama2026/"], note: "長瀞町観光協会公式で2026年8月15日の万灯船・祭典・灯籠流し・花火大会を確認。" }
   }]
