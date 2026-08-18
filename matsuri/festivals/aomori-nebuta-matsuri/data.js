@@ -32,7 +32,7 @@ const FESTIVAL = {
       publisher: "青森県",
       publisherType: "government",
       checkedDate: "2026-08-18",
-      note: "青森県の映像素材ライブラリーで公開されている『青森ねぶた祭2』のサムネイルを背景素材として採用。文字装飾がなく、ねぶたと運行の実写が主役として判別できる。"
+      note: "青森県の映像素材ライブラリーで公開されている『青森ねぶた祭2』のサムネイルを背景素材として採用。画面下部に実行委員会名を示す小さめのバナーがあるが、ねぶた本体が画面の大部分を占め文字が支配的ではないため採用。実写である点も確認済み。"
     },
     confirmation: { verified: true, confirmedDate: "2026-08-14", sources: ["https://www.nebuta.jp/", "https://www.nebuta.jp/info/schedule/schedule.html"] }
   },
