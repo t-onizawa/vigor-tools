@@ -541,6 +541,17 @@ backgroundImage未設定55件・atmosphereMedia未設定57件という残数を
 guide.mdの3条件・投稿者直接確認・note実態一致）は一切緩めておらず、
 速さは調査件数の増加のみで確保する方針を維持した。
 
+**対象選定に「片方だけ欠けている」祭りの優先順位を追加（2026-08-18、
+Founderが直接プロンプトへ反映）：** 既存の対象選定ロジックは「両方
+なし」（backgroundImage null かつ atmosphereMedia 空配列）30件のみを
+対象にしており、片方だけ欠けている祭り（backgroundImageのみ欠けて
+いる25件、atmosphereMediaのみ欠けている27件、計52件）が対象外だった。
+1日10件ペースだと両方なし30件は数日でなくなり、その後「対象選定」が
+空振りする懸念があったため、PMが4番目の優先順位を提案：「両方なしが
+見つからない場合、backgroundImageのみ欠けている祭り→atmosphereMedia
+のみ欠けている祭りの順に対象とする」（backgroundImage優先方針を
+踏襲）。FounderがCodex CLI側で直接プロンプトへ追記済み。
+
 ---
 
 ## 平日新規祭り追加・手動実行（2026-08-04）
