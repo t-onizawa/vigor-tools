@@ -104,6 +104,36 @@ VIGOR TOOLS 50本 + VIGOR MATSURI 78件 到達（2026-08-04）
 - 判定ロジックや文章を報酬目的で変更しない
 - 「アフィリエイトリンクを含みます」と淡々と明記する
 
+### Distribution実験（note→moving-cost、2026-08-18開始）
+
+「作ったものを知らない人にどう届けるか」を検証する最初の実験。新しい
+集客施策を増やすのではなく、既存の週1note枠を初めてDistribution実験
+として使う位置付け（詳細な設計判断の経緯は2026-08-18のFounderレビュー
+記録を参照）。
+
+```
+公開日：2026-08-18
+記事：引越し費用シミュレーター（tools/life/moving-cost/）紹介note
+下書き：_notes-draft/2026-08-18-moving-cost.md
+導線URL：https://vigorlab.net/tools/life/moving-cost/
+  ?utm_source=note&utm_medium=article&utm_campaign=moving-cost
+観測期間：2026-08-18〜2026-08-25（7日間）
+
+主KPI（GA4でutm_campaign=moving-costのセッション数のみを見る）
+  0件　　　→ 失敗。note PV・導線クリック状況を見て次の仮説を立てる
+  1件以上　→ 最初の送客成功
+  3件以上　→ 良いシグナル
+
+参考指標（判定には使わない、観測のみ）
+  note記事のPV・スキ数
+  サイト全体の週次アクティブユーザー数
+  （MATSURI季節変動・Organic Search影響を受けるため主KPIから除外）
+```
+
+TOOLSとMATSURIは集客特性が異なる（MATSURIは検索意図が明確な季節商材、
+TOOLSは文脈説明を要するnote向き）ため、今回はTOOLS側のみを対象とし、
+MATSURIの集客実験は変数を混ぜないため別サイクルで扱う。
+
 ### 8月に追う指標
 
 - Search Console：対象ページの表示回数、クリック数、平均掲載順位
