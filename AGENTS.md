@@ -26,6 +26,17 @@ tools/とmatsuri/は別プロダクト。root直下・共通アセット（`asse
   これらは統括担当（人間）の作業。
 - 追記後は、sitemap.xmlがXMLとして正しくパースできることを確認する。
 
+## 内部管理用ファイルを追加するときの注意（2026-08-19追記）
+
+`_config.yml`が存在せずJekyllのデフォルト設定のままだったため、
+`Backlog.md`等の内部管理用MarkdownがGitHub Pages経由で実際に公開
+されていた事故があった（対応済み）。新しい内部管理用ファイル
+（Markdown等）を追加する場合は必ず次のいずれかを満たす。
+
+- `_`始まりの非公開ディレクトリへ置く（例：`_notes-draft/`）
+- それができない場合は、同じ変更内で`_config.yml`の`exclude`に追記する
+- どちらにも該当しない内部管理用ファイルは追加しない
+
 ## 共有ファイルを扱うときの注意
 
 `Backlog.md`・`matsuri/Backlog.md`・`CLAUDE.md`・`Roadmap.md`等は
