@@ -1,0 +1,27 @@
+exclude:
+  - Backlog.md
+  - Roadmap.md
+  - CLAUDE.md
+  - CHARTER.md
+  - VISION.md
+  - Roles.md
+  - NoteStyleGuide.md
+  - AGENTS.md
+  - restructure-design.md
+  - note-drafts/
+  - tools/CLAUDE.md
+  - tools/dcap-agile-sheet/README.md
+  - tools/thinking/dcap/CLAUDE.md
+  - tools/thinking/dcap/README.md
+  - tools/thinking/dcap/aidlc-docs/
+  - tools/buy/rayban-meta/README.md
+  - matsuri/CLAUDE.md
+  - matsuri/CONCEPT.md
+  - matsuri/Backlog.md
+  - matsuri/README.md
+  - matsuri/schema-design.md
+  - matsuri/template-design.md
+  - matsuri/list-design.md
+  - matsuri/atmosphere-media-guide.md
+  - matsuri/research/
+  - matsuri/note-drafts/
