@@ -134,6 +134,39 @@ TOOLSとMATSURIは集客特性が異なる（MATSURIは検索意図が明確な�
 TOOLSは文脈説明を要するnote向き）ため、今回はTOOLS側のみを対象とし、
 MATSURIの集客実験は変数を混ぜないため別サイクルで扱う。
 
+### Distribution実験2（note→car-camping-check、キュー済み）
+
+moving-cost実験（上記）完走・結果レビュー後に開始する。新規Toolは
+作らない。既存の「ハイエースで車中泊を始めて2年。足してきた装備。」
+記事へ、既存の`tools/travel/car-camping-check/`への導線を1つだけ
+追加する（新規の続編記事は書かない。新記事自体の集客力という変数を
+増やさないため）。
+
+検証したいのは「すでに読まれている記事に、内容と直接一致する既存
+Toolへの導線を置いたら、読者をVIGORへ送客できるか」の1点。
+
+```
+開始条件：moving-cost実験（2026-08-25終了予定）の結果レビュー後
+記事：ハイエースで車中泊を始めて2年。足してきた装備。（既存記事へ導線追加のみ）
+導線URL：https://vigorlab.net/tools/travel/car-camping-check/
+  ?utm_source=note&utm_medium=article&utm_campaign=car-camping-check
+観測期間：開始日から7日間
+
+主KPI（GA4でutm_campaign=car-camping-checkのセッション数のみを見る）
+  0件　　　→ 送客確認できず
+  1件以上　→ 送客成功
+  3件以上　→ 良いシグナル
+
+参考指標（判定には使わない、観測のみ）
+  記事側のビュー・スキ数の変化
+```
+
+moving-cost・car-camping-checkの2実験が完走した時点で、「note→Tool
+というDistribution経路そのものが成立するか」「反応のあるテーマとの
+一致が送客に影響するか」を確認する。「需要観測→Tool化」を正式な
+新規ツール作成ルールにするかどうかは、この2実験の結果を見てから
+判断する（現時点では未採用）。
+
 ### 8月に追う指標
 
 - Search Console：対象ページの表示回数、クリック数、平均掲載順位
