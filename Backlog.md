@@ -928,3 +928,39 @@ Platformは「サイトの前提を変える」対象なので、より慎重に
   統合検討2本（ai-cost-check↔break-even-check／rayban-meta↔
   gadget-check）を含むPhase3の再評価はデータ取得後に行う。
 ```
+
+```
+2026-08-19（car-camping-check：Distribution実験2送客前の項目整理・完了）
+  コミット2c7d892。「ハイエースで車中泊を始めて2年。足してきた装備。」
+  note記事からのDistribution実験2（本書上部「Distribution実験2」参照、
+  moving-cost実験完走後に開始予定）に向け、送客先である
+  tools/travel/car-camping-check/のチェック項目を送客前に軽く整理。
+
+  PMレビュー（6観点）を経てFounder承認、Codex CLIへ実装指示。
+  変更内容：
+  - 削除（3件）：換気方法を確認した／車のドアロック・防犯対策を
+    確認した／緊急連絡先・保険証を持った。行動確認・安全確認寄りの
+    項目を外し、「持ち物」チェックへ焦点を絞った。換気は車中泊特有の
+    安全上重要な観点だが、他に代替ツールがない中での意図的なスコープ
+    外化としてFounderが明示的に判断
+  - カテゴリ改名：「防犯・安全」→「生活用品」
+  - 追加（枕／季節の暑さ寒さ対策／飲み物・水／タオル洗面用品／
+    ゴミ袋／ティッシュウェットティッシュ）、表現調整（段差解消グッズ・
+    充電ケーブルの具体化等）
+  - 11項目→13項目・3カテゴリ（目標レンジ10〜15内）
+  - meta description／og:description／twitter:descriptionの
+    「防犯」表記もカテゴリ改名に合わせて「生活用品」へ更新
+
+  script.js・style.cssは無変更（TOTALはcheckboxes.lengthから動的
+  算出のため件数変更に伴うロジック修正は不要）。related-toolsは
+  未変更。Claudeが差分を実地検証：タグバランス正常（div 7/7・
+  section 4/4・ul 3/3・li 13/13）、チェックボックス13件、変更範囲は
+  index.html 1ファイルのみ。判定：承認、追加修正なし。
+
+  Codex CLI実行環境の制約メモ：sandbox実行時は`.git`への書き込み
+  （git add/commit）が権限エラーで失敗するため、ファイル編集は
+  Codexが行い、差分検証とコミットはClaude側で実施した。
+
+  Distribution実験2自体（note側の導線追加）はこのタスクの対象外。
+  moving-cost実験（2026-08-25終了予定）の結果レビュー後、別途開始する。
+```
