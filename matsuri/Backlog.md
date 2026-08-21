@@ -3,7 +3,7 @@
 ```
 Status: Living backlog（固定ロードマップではない）
 Created: 2026-07-27
-Updated: 2026-08-18（品質改善タスクを平日毎日・調査20件へ増強）
+Updated: 2026-08-21（新規追加タスクのGit・公開権限を明示的に再許可）
 ```
 
 これは計画表ではない。優先度は仮説であり、公開後の反応で入れ替わる前提の
@@ -551,6 +551,65 @@ Founderが直接プロンプトへ反映）：** 既存の対象選定ロジッ�
 見つからない場合、backgroundImageのみ欠けている祭り→atmosphereMedia
 のみ欠けている祭りの順に対象とする」（backgroundImage優先方針を
 踏襲）。FounderがCodex CLI側で直接プロンプトへ追記済み。
+
+### 新規追加タスクのGit・公開権限を明示的に再許可（2026-08-21）
+
+新規追加タスクの実行時、Codex CLIが「origin/mainへの直接pushを明示的に
+許可する文言がプロンプトにない」として、pushを保留するようになった。
+GitHub側を確認したところ、mainブランチにbranch protectionは設定されて
+おらず、承認待ちのPRも存在しなかった（`gh api repos/.../branches/main/
+protection`は404、`gh pr list --state all`にopenなし）。GitHub側の
+ブロックではなく、Codex CLI側が直接pushの実行前に明示的な許可を
+求めていたと判断した。
+
+Founderが用意した以下の許可ブロックをプロンプト冒頭（`## 全国展開方針`
+の前）に追加することを承認した。
+
+```
+## Git・公開権限（過去指示の明示的な更新）
+
+このScheduled Taskの各定期実行について、品質基準と全検証を満たした変更を
+origin/mainへ直接pushし、本番公開することをFounderが明示的に許可する。
+
+過去に指定した以下の運用は、このScheduled Taskに限り撤回する。
+
+- mainへ直接pushしない
+- PR経由で公開する
+- push前にFounderの個別承認を待つ
+
+このタスクではPRを作成しない。
+各実行時の追加承認は不要とし、通常フローの一部として自動pushする。
+
+ただし、次の安全条件をすべて満たす場合に限る。
+
+1. 独立した専用Git worktreeを使用している
+2. 変更が許可範囲内に限定されている
+3. 指定された静的・ブラウザ検証がすべて成功している
+4. `git fetch origin` 後、最新の `origin/main` を取り込んでいる
+5. 競合が発生していない
+6. pushがfast-forwardとして成立する
+7. force pushを使用しない
+
+条件を満たした場合：
+
+commit
+→ `git fetch origin`
+→ 最新`origin/main`との分岐確認
+→ 必要なら専用ブランチへ最新mainを取り込み
+→ 再検証
+→ `git push origin HEAD:main`
+→ GitHub Pages build/deploy確認
+→ 本番確認
+
+競合、non-fast-forward、検証失敗がある場合はpushせず停止して報告する。
+```
+
+**PM判断：** 既存方針（PRなし・直接push・個別承認不要）を新しく緩める
+ものではなく、明文化による追認。むしろ「fetch後の最新origin/main取り込み
+→再検証→push」という手順が明示されたことで、これまでPMが手動で行って
+いた安全策（fetch→競合確認→push）がタスク側の標準フローに組み込まれ、
+安全性が上がった。force push禁止・fast-forward必須の条件も維持されて
+いるため、承認した。
 
 ---
 
@@ -2198,4 +2257,16 @@ backgroundImageとatmosphereMediaを別判定し、青梅大祭の動画1件の�
     富山1、石川1、福井1、山梨1、長野0、岐阜0、静岡0、愛知0。
     初期カバレッジ目標には未到達。連続0件回数は0、地方完了判定なし、
     次回対象も中部とする。
+
+2026-08-21（新規追加タスクのGit・公開権限を明示的に再許可）
+    新規追加タスクの実行時、Codex CLIが「origin/mainへの直接pushを
+    明示的に許可する文言がない」としてpushを保留するようになった。
+    GitHub側のbranch protection・承認待ちPRの有無を確認したところ
+    どちらも存在せず、GitHub側のブロックではなくCodex CLI側が明示的な
+    許可を求めていたと判断した。Founderが用意した許可ブロック（直接
+    push許可・PR不使用・fetch後の最新main取り込みと再検証を条件とする
+    安全条件7点・force push禁止）をプロンプト冒頭へ追加することを
+    承認した。既存方針を緩めるものではなく、PMが手動で行っていた
+    fetch→競合確認→pushという安全策がタスク側の標準フローに明文化
+    された形で、安全性はむしろ向上した。
 ```
