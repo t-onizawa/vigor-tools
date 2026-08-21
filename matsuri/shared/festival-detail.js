@@ -186,6 +186,10 @@
       }
     }
 
+    if (runs.length > 4) {
+      return `${formatDate(dates[0])}〜${formatDate(dates[dates.length - 1])}（全${dates.length}回）`;
+    }
+
     return runs
       .map((run) =>
         run.length >= 2 ? `${formatDate(run[0])}〜${formatDate(run[run.length - 1])}` : formatDate(run[0])
