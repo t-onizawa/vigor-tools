@@ -344,15 +344,29 @@ h1 {
   display: none;
 }
 
+.item-media-icon-group {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  width: 100%;
+}
+
 .item-media-icon-plate {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 34%;
+  flex: 0 0 auto;
+  width: 24%;
   aspect-ratio: 1;
-  max-width: 128px;
+  max-width: 96px;
   border-radius: 50%;
   background: color-mix(in srgb, var(--accent) 9%, var(--surface));
+}
+
+.item-media-icon-plate:only-child {
+  width: 34%;
+  max-width: 128px;
 }
 
 .item-media-icon-plate svg {

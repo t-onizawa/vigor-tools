@@ -479,9 +479,11 @@ const FESTIVAL_SLUGS = ["ishioka-omatsuri", "sawara-natsu-matsuri", "sawara-aki-
     return media;
   }
 
-  function pickDummyIconLabel(features) {
-    const found = cardFeatureItems.find(([, key]) => features[key] === true);
-    return found ? found[0] : null;
+  function pickDummyIconLabels(features) {
+    const found = cardFeatureItems
+      .filter(([, key]) => features[key] === true)
+      .map(([label]) => label);
+    return found.length > 0 ? found.slice(0, 2) : ["見どころ"];
   }
 
   function pickUpcomingIconLabel(features) {
@@ -494,13 +496,16 @@ const FESTIVAL_SLUGS = ["ishioka-omatsuri", "sawara-natsu-matsuri", "sawara-aki-
     media.className = "item-media item-media--icon";
     media.setAttribute("aria-hidden", "true");
 
-    const label = pickDummyIconLabel(features);
-    if (label) {
+    const group = document.createElement("div");
+    group.className = "item-media-icon-group";
+    media.append(group);
+
+    pickDummyIconLabels(features).forEach((label) => {
       const plate = document.createElement("span");
       plate.className = "item-media-icon-plate";
-      media.append(plate);
+      group.append(plate);
       attachDummyIcon(plate, label);
-    }
+    });
 
     return media;
   }
