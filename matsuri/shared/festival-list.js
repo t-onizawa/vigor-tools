@@ -235,30 +235,39 @@ const FESTIVAL_SLUGS = ["ishioka-omatsuri", "sawara-natsu-matsuri", "sawara-aki-
       return `${yearlyInfo.year}年 日程未確認`;
     }
 
-    const isFullyConsecutive = dates.every((date, i) => {
-      if (i === 0) return true;
-      return (
-        new Date(`${date}T00:00:00+09:00`) - new Date(`${dates[i - 1]}T00:00:00+09:00`) === 86400000
-      );
-    });
-
-    if (!isFullyConsecutive) {
-      return dates
-        .map((date) => {
-          const d = new Date(`${date}T00:00:00+09:00`);
-          return `${yearlyInfo.year}年${d.getMonth() + 1}月${d.getDate()}日(${weekday(d)})`;
-        })
-        .join(" / ");
-    }
-
-    const start = new Date(`${dates[0]}T00:00:00+09:00`);
-    const end = new Date(`${dates[dates.length - 1]}T00:00:00+09:00`);
+    const fmt = (dateText) => {
+      const d = new Date(`${dateText}T00:00:00+09:00`);
+      return `${yearlyInfo.year}年${d.getMonth() + 1}月${d.getDate()}日(${weekday(d)})`;
+    };
+    const fmtShort = (dateText) => {
+      const d = new Date(`${dateText}T00:00:00+09:00`);
+      return `${d.getDate()}日(${weekday(d)})`;
+    };
 
     if (dates.length === 1) {
-      return `${yearlyInfo.year}年${start.getMonth() + 1}月${start.getDate()}日(${weekday(start)})`;
+      return fmt(dates[0]);
     }
 
-    return `${yearlyInfo.year}年${start.getMonth() + 1}月${start.getDate()}日(${weekday(start)})〜${end.getDate()}日(${weekday(end)})`;
+    const runs = [];
+    let runStart = 0;
+    for (let i = 1; i <= dates.length; i++) {
+      const isLast = i === dates.length;
+      const isConsecutive =
+        !isLast &&
+        new Date(`${dates[i]}T00:00:00+09:00`) - new Date(`${dates[i - 1]}T00:00:00+09:00`) === 86400000;
+      if (!isConsecutive) {
+        runs.push(dates.slice(runStart, i));
+        runStart = i;
+      }
+    }
+
+    if (runs.length > 4) {
+      return `${fmt(dates[0])}〜${fmt(dates[dates.length - 1])}（全${dates.length}回）`;
+    }
+
+    return runs
+      .map((run) => (run.length >= 2 ? `${fmt(run[0])}〜${fmtShort(run[run.length - 1])}` : fmt(run[0])))
+      .join(" / ");
   }
 
   function availabilityState(value) {
