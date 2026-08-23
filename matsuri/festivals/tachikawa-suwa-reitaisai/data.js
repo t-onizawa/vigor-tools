@@ -22,7 +22,7 @@ const FESTIVAL = {
     confirmation: { verified: true, confirmedDate: "2026-07-31", sources: ["https://www.suwajinja.or.jp/", "https://ohayashi.org/suwamatsuri/"] }
   },
   yearlyInfo: [{
-    year: 2026, eventStatus: "confirmed", dates: ["2026-08-21", "2026-08-22", "2026-08-23"],
+    year: 2026, eventStatus: "ended", dates: ["2026-08-21", "2026-08-22", "2026-08-23"],
     access: { hasParking: null, parkingNote: "2026年の祭礼用駐車場・交通規制は公式詳細を確認してください。" },
     confirmation: { confirmedDate: "2026-07-31", sources: ["https://www.suwajinja.or.jp/", "https://nishikicho-parade.com/"], note: "2026年8月21日宵宮、22日・23日開催。錦町パレードは23日13時〜16時。" }
   }]

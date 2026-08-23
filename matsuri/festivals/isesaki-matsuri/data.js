@@ -23,8 +23,8 @@ const FESTIVAL = {
     confirmation: { verified: true, confirmedDate: "2026-08-06", sources: ["https://www.city.isesaki.lg.jp/soshiki/keizai/bunka/kankou/gyoji/1427.html"] }
   },
   yearlyInfo: [{
-    year: 2026, eventStatus: "scheduled_pending_official", dates: ["2026-09-26", "2026-09-27"],
-    access: { hasParking: null, parkingNote: "2026年の駐車場・交通規制は公式詳細待ち。" },
-    confirmation: { confirmedDate: "2026-08-06", sources: ["https://www.city.isesaki.lg.jp/material/files/group/17/0326_28_nagekomi_bunkakankou.pdf"], note: "伊勢崎市が2026年9月26日・27日、本町通りほかでの開催を発表。詳細は決定次第案内すると明記されているため、開催予定・公式詳細待ちとした。" }
+    year: 2026, eventStatus: "confirmed", dates: ["2026-09-26", "2026-09-27"],
+    access: { hasParking: null, parkingNote: "2026年の交通規制図は公式ページで公開済み。祭り専用駐車場の有無は確認できないため未確認。" },
+    confirmation: { confirmedDate: "2026-08-24", sources: ["https://www.city.isesaki.lg.jp/soshiki/keizai/bunka/kankou/gyoji/1427.html"], note: "伊勢崎市公式で2026年9月26日・27日の開催時間、会場、両日の行事内容、チラシ、交通規制図を確認。" }
   }]
 };

@@ -23,7 +23,7 @@ const FESTIVAL = {
     confirmation: { verified: true, confirmedDate: "2026-08-07", sources: ["https://www.minamikoshigaya-awaodori.jp/", "https://www.minamikoshigaya-awaodori.jp/aboutus/mk_awaodori.html", "https://www.minamikoshigaya-awaodori.jp/odori/"] }
   },
   yearlyInfo: [{
-    year: 2026, eventStatus: "confirmed", dates: ["2026-08-21", "2026-08-22", "2026-08-23"],
+    year: 2026, eventStatus: "ended", dates: ["2026-08-21", "2026-08-22", "2026-08-23"],
     access: { hasParking: false, parkingNote: "公式は開催当日の駐車場を用意していないため、公共交通機関の利用を案内している。" },
     confirmation: { confirmedDate: "2026-08-07", sources: ["https://www.minamikoshigaya-awaodori.jp/", "https://www.minamikoshigaya-awaodori.jp/info_program/", "https://www.minamikoshigaya-awaodori.jp/ren_info/ren_info.php"], note: "第40回は2026年8月21日に前夜祭、22日・23日に本祭を開催。公式サイトで2026年度の参加95連と会場別プログラムを確認した。" }
   }]

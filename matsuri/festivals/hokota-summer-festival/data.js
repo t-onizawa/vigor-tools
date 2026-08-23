@@ -58,19 +58,19 @@ const FESTIVAL = {
   },
   yearlyInfo: [{
     year: 2026,
-    eventStatus: "scheduled_pending_official",
+    eventStatus: "confirmed",
     dates: ["2026-08-28", "2026-08-29", "2026-08-30"],
     access: {
       hasParking: null,
-      parkingNote: "2026年の駐車場・交通規制の詳細は公式特設サイトで公開待ち。"
+      parkingNote: "2026年の交通規制図は公式特設サイトで公開済み。祭り専用駐車場の有無は確認できないため未確認。"
     },
     confirmation: {
-      confirmedDate: "2026-07-30",
+      confirmedDate: "2026-08-24",
       sources: [
         "https://hokota-tpa.org/20260715-7105/",
         "https://hokota-tpa.org/hokota-summerfest/"
       ],
-      note: "開催日は公式発表済み。中央スケジュールと交通規制の詳細は公開待ちだが、最終日の公式イベントページで音合わせと宮入りを確認。"
+      note: "鉾田市観光物産協会公式で2026年8月28日〜30日の開催、3日間のスケジュール、神輿巡行路、交通規制を確認。"
     }
   }]
 };

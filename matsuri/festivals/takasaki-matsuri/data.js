@@ -40,7 +40,7 @@ const FESTIVAL = {
     confirmation: { verified: true, confirmedDate: "2026-07-31", sources: ["https://www.takasaki-matsuri.jp/gaiyou/", "https://www.city.takasaki.gunma.jp/site/sightseeing/2157.html"] }
   },
   yearlyInfo: [{
-    year: 2026, eventStatus: "confirmed", dates: ["2026-08-22", "2026-08-23"],
+    year: 2026, eventStatus: "ended", dates: ["2026-08-22", "2026-08-23"],
     access: { hasParking: null, parkingNote: "駅前通りなどで両日交通規制。公式交通規制図を確認してください。" },
     confirmation: { confirmedDate: "2026-07-31", sources: ["https://www.takasaki-matsuri.jp/gaiyou/", "https://www.city.takasaki.gunma.jp/site/sightseeing/2157.html"], note: "第52回は2026年8月22日・23日。高崎山車まつりは24台出場予定。" }
   }]

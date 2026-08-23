@@ -41,7 +41,7 @@ const FESTIVAL = {
     confirmation: {
       verified: true,
       confirmedDate: "2026-07-28",
-      sources: ["https://www.city.kasukabe.lg.jp/sumiyosa_miryoku/kanko/kasukabedemiru_asobu/16564.html"]
+      sources: ["https://visit-kasukabe.jp/events.html"]
     }
   },
   yearlyInfo: [
@@ -55,7 +55,7 @@ const FESTIVAL = {
       },
       confirmation: {
         confirmedDate: "2026-07-28",
-        sources: ["https://www.city.kasukabe.lg.jp/sumiyosa_miryoku/kanko/kasukabedemiru_asobu/16564.html"],
+        sources: ["https://visit-kasukabe.jp/events.html"],
         note: "神輿パレードは18:00〜21:00、山車パレードは7/12 17:40〜。"
       }
     }

@@ -9,5 +9,5 @@ const FESTIVAL = {
     atmosphereMedia: [], backgroundImage: null,
     confirmation: { verified: true, confirmedDate: "2026-08-18", sources: ["https://www.town.ugo.lg.jp/sightseeing/detail.html?category_id=41&id=2432", "https://www.maff.go.jp/tohoku/nouson/kokuei/nisiouu/syoukai_gyouzi03.html"] }
   },
-  yearlyInfo: [{ year: 2026, eventStatus: "confirmed", dates: ["2026-08-16", "2026-08-17", "2026-08-18"], access: { hasParking: null, parkingNote: "2026年の交通規制情報は公開されているが、祭り専用駐車場の有無を一律に表現できないため未確認。" }, confirmation: { confirmedDate: "2026-08-18", sources: ["https://www.town.ugo.lg.jp/sightseeing/detail.html?category_id=41&id=2432", "https://ugokanko.com/nishimonaibonodori2026/"], note: "羽後町公式が令和8年案内と毎年8月16日〜18日、19時30分開始を掲載。8月18日の確認時点で最終日だが終了時刻前のためconfirmed。" } }]
+  yearlyInfo: [{ year: 2026, eventStatus: "ended", dates: ["2026-08-16", "2026-08-17", "2026-08-18"], access: { hasParking: null, parkingNote: "2026年の交通規制情報は公開されているが、祭り専用駐車場の有無を一律に表現できないため未確認。" }, confirmation: { confirmedDate: "2026-08-24", sources: ["https://www.town.ugo.lg.jp/sightseeing/detail.html?category_id=41&id=2432", "https://ugokanko.com/nishimonaibonodori2026/"], note: "羽後町公式で2026年8月16日〜18日の開催を確認。全日程終了済みのためended。" } }]
 };

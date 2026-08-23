@@ -25,6 +25,6 @@ const FESTIVAL = {
   yearlyInfo: [{
     year: 2026, eventStatus: "confirmed", dates: ["2026-10-11"],
     access: { hasParking: false, parkingNote: "会場に駐車場はないため、公式は車での来場を控えるよう案内している。" },
-    confirmation: { confirmedDate: "2026-08-07", sources: ["https://tokorozawa-cci.or.jp/matsuri/about/outline.html", "https://www.city.tokorozawa.saitama.jp/iitokoro/event/main/omaturi/maturibosyu.html", "https://tokorozawa-cci.or.jp/matsuri/announce/"], note: "令和8年10月11日に所沢市中央地区で開催。公式実施概要で山車10基、神輿、民踊流しなどの催物と10時から21時までの交通規制を確認した。" }
+    confirmation: { confirmedDate: "2026-08-24", sources: ["https://tokorozawa-cci.or.jp/matsuri/about/outline.html", "https://www.city.tokorozawa.saitama.jp/iitokoro/event/main/omaturi/tokorozawamatsuritowaR7.html", "https://tokorozawa-cci.or.jp/matsuri/announce/"], note: "令和8年10月11日に所沢市中央地区で開催。公式実施概要で山車10基、神輿、民踊流しなどの催物と10時から21時までの交通規制を確認した。" }
   }]
 };

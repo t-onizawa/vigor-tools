@@ -22,11 +22,11 @@ const FESTIVAL = {
     confirmation: { verified: true, confirmedDate: "2026-07-31", sources: ["https://yokosuka-kanko.com/events/46th_mikoshi/"] }
   },
   yearlyInfo: [{
-    year: 2026, eventStatus: "scheduled_pending_official", dates: [],
+    year: 2026, eventStatus: "scheduled_pending_official", dates: ["2026-10-25"],
     access: { hasParking: false, parkingNote: "直近回は会場駐車場なし。2026年の交通規制・コース詳細は公式発表待ち。" },
     confirmation: {
-      confirmedDate: "2026-07-31", sources: ["https://yokosuka-kanko.com/wp-content/uploads/2026/06/%E4%BB%A4%E5%92%8C8%E5%B9%B4%E5%BA%A6%E5%AE%9A%E6%99%82%E7%B7%8F%E4%BC%9A%E8%B3%87%E6%96%99.pdf"],
-      note: "観光協会の2026年度事業資料で第47回を2026年10月に開催予定と確認。具体日は未発表。"
+      confirmedDate: "2026-08-24", sources: ["https://yokosuka-kanko.com/events/47th_mikoshi/"],
+      note: "横須賀市観光協会公式で第47回を2026年10月25日に開催予定と確認。イベント詳細は公開待ち。"
     }
   }]
 };

@@ -42,7 +42,7 @@ const FESTIVAL = {
       verified: true,
       confirmedDate: "2026-07-28",
       sources: [
-        "https://www.chikuseikanko.jp/index.php?code=11",
+        "https://www.chikuseikanko.jp/sightseeing/events-festivals/page000011.html",
         "https://www.chikunavi.info/event2026072326.html"
       ]
     }
@@ -58,7 +58,7 @@ const FESTIVAL = {
       },
       confirmation: {
         confirmedDate: "2026-07-28",
-        sources: ["https://www.chikuseikanko.jp/index.php?code=11", "https://www.ibarakiguide.jp/event.php?mode=detail&code=711"],
+        sources: ["https://www.chikuseikanko.jp/sightseeing/events-festivals/page000011.html", "https://www.ibarakiguide.jp/event.php?mode=detail&code=711"],
         note: "観光協会公式・県公式観光サイトで2026年日程を確認。7/25わっしょいカーニバル17:00〜22:00、7/26早朝6:00〜10:00に明治神輿川渡御。"
       }
     }
