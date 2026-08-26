@@ -180,23 +180,33 @@ car-camping-checkで機能を確認できたが、「需要観測→Tool化」�
 正式な新規ツール作成ルールにするかどうかは未採用のまま、次の
 実験3（下記）でこの2変数を切り分けてから判断する。
 
-### Distribution実験3（note→rayban-meta、次の1実験・確定）
+### Distribution実験3（note→gadget-check、実施中）
 
 実験1・2は「テーマ一致」と「記事の実績」が同時に動いており、
 どちらが効いたか特定できない。実験3では、Founderが以前に公開
 済みで、かつ低トラクション（2026-08-13〜08-19の観測でビュー数
-3件、大きな反応はなかった）だったMeta Ray-Ban記事に着目する。
-新規執筆はせず、この既存記事に既存Tool
-`tools/buy/rayban-meta/`への導線を1つ追加（未設置の場合のみ）し、
+3件、大きな反応はなかった）だったMeta Ray-Ban記事に着目し、
 「記事の実績が薄い状態でも、テーマ一致だけで送客が起きるか」を
 単独で検証する。
 
+設計変更の経緯：当初はこの記事へ`tools/buy/rayban-meta/`への導線を
+新規追加する設計だったが、実際に確認したところ記事本文には既に
+ガジェット購入チェックへのリンクが存在し、Ray-Ban Meta用CTAを
+追加すると1記事2導線になることが判明した。加えてRay-Ban Meta購入前
+チェックは「ガジェット購入チェックに一般化済み」で「置いておく」
+分類の旧版であり、両方リンクするとCTAが競合しクリック解釈が
+曖昧になるうえ、良い結果が出ても投資判断に繋がりにくい。そのため
+Ray-Ban Meta用CTAは追加せず、記事に既存のガジェット購入チェック
+（「育てる」分類の現役Tool）へのリンクにUTMパラメータのみを追加する
+形へ変更した（CTA1本のまま、新しい文章も不要）。
+
 ```
 対象記事：Meta Ray-Ban紹介note（既存・低トラクション、新規執筆なし）
-導線URL：https://vigorlab.net/tools/buy/rayban-meta/
-  ?utm_source=note&utm_medium=article&utm_campaign=rayban-meta
-観測期間：導線設置日から7日間
-主KPI（GA4でutm_campaign=rayban-metaのセッション数のみを見る）
+導線URL：https://vigorlab.net/tools/buy/gadget-check/
+  ?utm_source=note&utm_medium=article&utm_campaign=gadget-check
+開始日：2026-08-26（既存リンクをUTM付きURLへ差し替え完了）
+観測期間：2026-08-26〜2026-09-02（7日間）
+主KPI（GA4でutm_campaign=gadget-checkのセッション数のみを見る）
   0件　　　→ 送客確認できず（「記事の実績」が主要因だった可能性が
              高まる）
   1件以上　→ 送客成功（「テーマ一致」単独でも機能する可能性）
@@ -206,8 +216,8 @@ car-camping-checkで機能を確認できたが、「需要観測→Tool化」�
 ```
 
 対象記事は`_notes-draft/`配下に下書きファイルがなく、note.com上で
-直接公開・編集された記事のため、導線の追加はFounderがnote.com側で
-直接行う。3実験が完走した時点で、「テーマ一致」と「記事の実績」の
+直接公開・編集された記事のため、導線の変更はFounderがnote.com側で
+直接行った。3実験が完走した時点で、「テーマ一致」と「記事の実績」の
 どちらが送客に効くかを整理し、「需要観測→Tool化」ルール化の是非を
 判断する。
 
