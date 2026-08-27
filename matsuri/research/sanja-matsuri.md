@@ -40,4 +40,5 @@
 
 ### backgroundImage
 
-採用動画のサムネイルは本社神輿を明瞭に捉えるが、下部の大きな祭り名がカード背景を占めるため不採用。`backgroundImage: null` を維持した。
+- 採用: 採用動画と同じ `https://www.youtube.com/watch?v=JmGPsdiM3Z0`
+- 2026-08-27時点で `backgroundImage` に転用。台東区公式の映像で神輿が主役として判別しやすく、背景素材としても成立するため。
