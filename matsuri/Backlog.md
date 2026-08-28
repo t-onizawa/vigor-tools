@@ -41,7 +41,7 @@
 ```
 Status: Living backlog（固定ロードマップではない）
 Created: 2026-07-27
-Updated: 2026-08-21（一覧ページの郡上おどり日付表示も修正）
+Updated: 2026-08-28（SEO改善実験：5ページのtitle/description変更を実施）
 ```
 
 これは計画表ではない。優先度は仮説であり、公開後の反応で入れ替わる前提の
@@ -383,6 +383,62 @@ SEO実験とは切り離し、**技術的な品質改善として先に一括修
 全143ページの`<h1 id="festival-name"></h1>`を`<h1 id="festival-name">
 {祭り名}</h1>`へ機械的に書き換える一括修正をPMが実施した（詳細は
 下記コミット参照）。
+
+### SEO改善実験・実施記録（2026-08-28）
+
+Search Console実データ（直近28日、`/matsuri/festivals/`のページ別export
+115行＋実験候補5件のクエリ詳細）を根拠に、5ページのtitle・meta
+description・og:title/description・twitter:title/descriptionを変更した。
+
+```
+対象5件（インプレッション上位＋CTR改善余地で選定）：
+- chichibu-ryusei-matsuri（161回表示、意図＝2026年）
+- ishioka-omatsuri（82回表示、意図＝いつ・いつから、次点で場所）
+- tachikawa-suwa-reitaisai（57回表示・0クリック、意図＝立川／諏訪神社／
+  祭り・例大祭の表記ゆれ）
+- numata-matsuri（56回表示、意図＝2026・スケジュール・具体祭事）
+- hokota-summer-festival（52回表示・0クリック・9.92位、意図＝
+  「鉾田夏祭り2026」。titleに2026が入っていなかったことが0クリックの
+  最有力原因と判断した最重要候補）
+
+対照群5件（変更しない）：
+oarai-hassaku-matsuri・yokaichiba-gion・mito-koumon-matsuri・
+honmoku-ouma-nagashi・hachioji-matsuri
+```
+
+**変更内容の共通方針：** 全ページ同一テンプレートに寄せず、各ページの
+実クエリ意図を優先した（例：tachikawaは表記ゆれ対応で「祭り」「例大祭」
+両方をdescriptionに含める、chichibuは`scheduled_pending_official`のため
+「開催予定」と正直に書き断定しない）。共通ルールとしてog:site_nameを
+「MATSURI」に統一（一部ページで旧表記「祭を探す」が残っていた）、
+tachikawa-suwa-reitaisaiはtwitter:title/descriptionが欠落していたため
+新規追加した。
+
+**評価方法の修正（Founder指摘を反映、2026-08-28）：** 当初は変更前後の
+単純なクリック数比較を提案していたが、対象5件の開催時期が実験開始時点
+（8/28）でばらばら（鉾田＝開催初日、立川・沼田＝終了済み、石岡・秩父＝
+これから）であるため、単純比較では季節要因（検索需要そのものの増減）が
+強く混ざるとFounderから指摘を受けた。**厳密なA/B実験ではなく「SEO改善の
+初回検証」と位置づけ直し、評価はCTR・平均掲載順位・主要クエリ単位のCTR
+変化を重視する。** 特にhokota-summer-festivalの「鉾田夏祭り2026」クエリ
+（現状9.92位・CTR 0%）のCTR改善を重点観測する。対照群5件は開催時期の
+違いを踏まえて参考値として扱う（厳密な対照にはならないことを認識した
+上で使う）。
+
+**副次的な発見：**
+- numata-matsuriの検索意図に「花火」があったが、data.js・research記録の
+  どちらにも花火の記載がない。実在するなら見落としの可能性があるため、
+  今回のtitle/descriptionには含めず、一次情報の再確認を別枠で依頼する
+  こととした
+- itako-gion・kururi-natsumatsuriが`/`版と`/index.html`版で別URLとして
+  Search Consoleに表示されていた。canonicalタグ・sitemap.xmlはどちらも
+  正しく`/`版のみを指しており、コード側の不具合ではなく過去のクロール
+  履歴の残存と判断。実害が小さいため（表示回数5件程度）監視のみとした
+
+**次のアクション：** Founderが変更後の5ページをSearch ConsoleのURL検査
+からインデックス登録をリクエストする。インデックス登録リクエスト後
+3週間を目安に、対象5件・対照群5件のCTR・平均掲載順位・
+「鉾田夏祭り2026」等の主要クエリのCTR推移を再確認する。
 
 ### Phase 2 第1バッチ対象（2026-08-05選定）
 
