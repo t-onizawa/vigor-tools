@@ -37,7 +37,15 @@ const FESTIVAL = {
       publishedYear: 2026,
       checkedDate: "2026-07-30"
     }],
-    backgroundImage: null,
+    backgroundImage: {
+      type: "youtube",
+      contentId: "JmGPsdiM3Z0",
+      sourceUrl: "https://www.youtube.com/watch?v=JmGPsdiM3Z0",
+      publisher: "台東区公式チャンネル",
+      publisherType: "government",
+      checkedDate: "2026-08-27",
+      note: "令和8年の三社祭本体を示す公式動画のサムネイルを背景素材に転用。神輿が主役として判別しやすい。"
+    },
     confirmation: {
       verified: true,
       confirmedDate: "2026-07-30",
