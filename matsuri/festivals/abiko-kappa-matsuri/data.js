@@ -31,7 +31,7 @@ const FESTIVAL = {
     confirmation: { verified: true, confirmedDate: "2026-08-10", sources: ["https://www.abikokappa.website/", "https://www.city.abiko.chiba.jp/event/event_moyooshi/abikokappamatsuri.html", "https://www.city.abiko.chiba.jp/event/shizennonaka/kouenryokuchi/park/citypark/teganuma.html"] }
   },
   yearlyInfo: [{
-    year: 2026, eventStatus: "confirmed", dates: ["2026-08-29"],
+    year: 2026, eventStatus: "ended", dates: ["2026-08-29"],
     access: { hasParking: null, parkingNote: "2026年の祭り専用駐車場・交通規制は公式案内で確認できていない。" },
     confirmation: { confirmedDate: "2026-08-10", sources: ["https://www.abikokappa.website/", "https://www.city.abiko.chiba.jp/event/event_moyooshi/abikokappamatsuri.html"], note: "第19回は2026年8月29日10時から21時まで手賀沼公園・アビスタで開催。公式サイトで河童音頭大輪踊りと妖怪仮装行列の2026年実施案内を確認した。" }
   }]

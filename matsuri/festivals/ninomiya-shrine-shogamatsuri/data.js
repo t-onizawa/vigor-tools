@@ -51,16 +51,16 @@ const FESTIVAL = {
   yearlyInfo: [
     {
       year: 2026,
-      eventStatus: "scheduled_pending_official",
+      eventStatus: "confirmed",
       dates: ["2026-09-08", "2026-09-09"],
       access: {
         hasParking: null,
         parkingNote: "駐車場情報は今回確認できなかった。"
       },
       confirmation: {
-        confirmedDate: "2026-07-28",
-        sources: ["https://www.akirunokanko.com/?p=2123"],
-        note: "二宮神社の例祭日（9月9日）固定という神社自体の恒常的な性質による確認。2026年単体の公式告知は確認できていない。"
+        confirmedDate: "2026-08-31",
+        sources: ["https://www.city.akiruno.tokyo.jp/kanko/0000003280.html"],
+        note: "あきる野市公式の令和8年度郷土芸能連合会加盟団体祭礼出演予定で、9月8日・9日の二宮神社例大祭（しょうが祭）を確認。"
       }
     }
   ]

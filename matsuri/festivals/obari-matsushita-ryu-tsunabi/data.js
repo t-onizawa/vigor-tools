@@ -23,7 +23,7 @@ const FESTIVAL = {
     confirmation: { verified: true, confirmedDate: "2026-08-13", sources: ["https://www.city.tsukubamirai.lg.jp/edu-board/page006827.html", "https://mirai-kankou.com/events/102"] }
   },
   yearlyInfo: [{
-    year: 2026, eventStatus: "confirmed", dates: ["2026-08-24"],
+    year: 2026, eventStatus: "ended", dates: ["2026-08-24"],
     access: { hasParking: null, parkingNote: "市公式がみらい平駅から無料シャトルバスを案内している。会場駐車場の2026年詳細は公式案内で確認できていない。" },
     confirmation: { confirmedDate: "2026-08-13", sources: ["https://www.city.tsukubamirai.lg.jp/edu-board/page006827.html", "https://www.ibarakiguide.jp/event.php?code=1131&mode=detail"], note: "2026年8月24日19時頃から小張愛宕神社で開催。市公式は同時期の高岡流綱火も案内するが、本ページは小張松下流のみを対象とする。" }
   }]

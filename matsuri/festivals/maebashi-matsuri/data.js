@@ -26,11 +26,11 @@ const FESTIVAL = {
     confirmation: { verified: true, confirmedDate: "2026-07-30", sources: ["https://www.city.maebashi.gunma.jp/soshiki/sangyokeizai/kankoseisaku/gyomu/1/30004.html", "https://maebashi-festival.jp/"] }
   },
   yearlyInfo: [{
-    year: 2026, eventStatus: "unconfirmed", dates: ["2026-10-10", "2026-10-11"],
+    year: 2026, eventStatus: "confirmed", dates: ["2026-10-10", "2026-10-11"],
     access: { hasParking: null, parkingNote: "2026年の駐車場・交通規制は未確認。" },
     confirmation: {
-      confirmedDate: "2026-07-30", sources: ["https://www.city.maebashi.gunma.jp/soshiki/sangyokeizai/kankoseisaku/gyomu/1/2190.html"],
-      note: "前橋市公式は第78回の日程を実施委員会後に決定すると案内。datesは例年パターンから算出した参考値で、公式発表ではない。"
+      confirmedDate: "2026-08-31", sources: ["https://www.city.maebashi.gunma.jp/kurashi_tetsuzuki/7/5/1/42831.html"],
+      note: "前橋市公式の指定催し公示で、2026年10月10日・11日の開催を確認。"
     }
   }]
 };

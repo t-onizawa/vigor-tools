@@ -50,16 +50,16 @@ const FESTIVAL = {
   yearlyInfo: [
     {
       year: 2026,
-      eventStatus: "unconfirmed",
+      eventStatus: "confirmed",
       dates: ["2026-10-09", "2026-10-10", "2026-10-11"],
       access: {
         hasParking: true,
         parkingNote: "麻賀多神社に無料駐車場あり。祭り当日の専用確保は未確認。"
       },
       confirmation: {
-        confirmedDate: "2026-07-28",
-        sources: ["https://www.city.sakura.lg.jp/soshiki/sakuranomiryoku/event_kanko/16470.html"],
-        note: "佐倉市公式サイト・祭り運営団体公式サイトいずれにも2026年個別の日程発表がなく、恒常パターン「10月第2金土日」からの計算値（10/9〜11）を参考として記載する。これは公式発表ではない。一部の第三者サイトは「10/10〜12」という曜日計算が誤った日程を提示しているため採用しない。"
+        confirmedDate: "2026-08-31",
+        sources: ["https://sakuraomikisyo.org/"],
+        note: "佐倉御神酒所保存会公式で、2026年10月9日〜11日の開催予定と、ポスター・交通規制図の更新を確認。"
       }
     }
   ]

@@ -30,6 +30,6 @@ const FESTIVAL = {
   yearlyInfo: [{
     year: 2026, eventStatus: "ended", dates: ["2026-08-03", "2026-08-04", "2026-08-05", "2026-08-06"],
     access: { hasParking: null, parkingNote: "祭り専用駐車場の有無は確認できていない。公式会場案内・交通規制を確認し公共交通を利用。" },
-    confirmation: { confirmedDate: "2026-08-14", sources: ["https://akita-fun.jp/events/406", "https://www.kantou.gr.jp/"], note: "秋田県公式観光サイトで2026年8月3日〜6日の開催日時・会場・実行委員会を確認。全日程終了済みのためended。" }
+    confirmation: { confirmedDate: "2026-08-31", sources: ["https://akita-fun.jp/spots/31", "https://www.kantou.gr.jp/"], note: "秋田県公式観光サイトで2026年8月3日〜6日の開催日時・会場・実行委員会を確認。全日程終了済みのためended。" }
   }]
 };

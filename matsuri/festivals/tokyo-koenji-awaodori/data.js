@@ -23,7 +23,7 @@ const FESTIVAL = {
     confirmation: { verified: true, confirmedDate: "2026-08-06", sources: ["https://www.koenji-awaodori.com/about/about01.html", "https://www.koenji-awaodori.com/access/"] }
   },
   yearlyInfo: [{
-    year: 2026, eventStatus: "confirmed", dates: ["2026-08-29", "2026-08-30"],
+    year: 2026, eventStatus: "ended", dates: ["2026-08-29", "2026-08-30"],
     access: { hasParking: null, parkingNote: "2026年の祭り専用駐車場は一次情報で未確認。公式は鉄道でのアクセスを案内している。" },
     confirmation: { confirmedDate: "2026-08-06", sources: ["https://www.koenji-awaodori.com/about/about01.html", "https://www.koenji-awaodori.com/access/"], note: "第67回を2026年8月29日・30日の17時から20時まで、8演舞場で開催すると公式発表済み。" }
   }]

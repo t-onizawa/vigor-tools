@@ -23,7 +23,7 @@ const FESTIVAL = {
     backgroundImage: null,
     confirmation: { verified: true, confirmedDate: "2026-07-31", sources: ["https://www.city.kanuma.tochigi.jp/0299/info-0000001969-0.html"] }
   },
-  yearlyInfo: [{ year: 2026, eventStatus: "scheduled_pending_official", dates: ["2026-09-20"],
-    access: { hasParking: null, parkingNote: "2026年の駐車場・交通案内は未確認。" },
-    confirmation: { confirmedDate: "2026-07-31", sources: ["https://www.city.kanuma.tochigi.jp/manage/contents/upload/698eb4677077f.pdf"], note: "鹿沼市の令和8年度講座案内では9月20日予定。詳細開催案内は未確認。" } }]
+  yearlyInfo: [{ year: 2026, eventStatus: "confirmed", dates: ["2026-09-20"],
+    access: { hasParking: true, parkingNote: "鹿沼市観光協会公式は駐車場200台と案内。" },
+    confirmation: { confirmedDate: "2026-08-31", sources: ["https://kanuma-kanko.jp/purpose/%E7%94%9F%E5%AD%90%E7%A5%9E%E7%A4%BE%E3%81%AE%E6%B3%A3%E3%81%8D%E7%9B%B8%E6%92%B2/"], note: "鹿沼市観光協会公式で、2026年9月20日の開催、受付期間、取組時間を確認。" } }]
 };

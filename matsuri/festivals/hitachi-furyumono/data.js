@@ -46,7 +46,7 @@ const FESTIVAL = {
       confirmedDate: "2026-07-28",
       sources: [
         "https://www.kankou-hitachi.jp/furyubutsu/page000013.html",
-        "https://kaminezinzya.org/taisai/"
+        "https://kaminezinzya.org/saireiyurai/"
       ]
     }
   },
@@ -61,7 +61,7 @@ const FESTIVAL = {
       },
       confirmation: {
         confirmedDate: "2026-07-28",
-        sources: ["https://kaminezinzya.org/taisai/"],
+        sources: ["https://kaminezinzya.org/saireiyurai/"],
         note: "2026年は7年に1度の特別公開年（神峰神社大祭礼）。4台の山車が一堂に会するのは5/3〜5宮田地区、4台同時公開は3・4日17:00〜、5日13:10〜。4月の日立さくらまつり（山車1基公開）も同年内に別途開催済み。"
       }
     }

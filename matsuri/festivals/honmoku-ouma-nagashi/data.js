@@ -48,7 +48,7 @@ const FESTIVAL = {
     confirmation: {
       verified: true,
       confirmedDate: "2026-07-30",
-      sources: ["https://honmoku.or.jp/", "https://www.city.yokohama.lg.jp/kurashi/kyodo-manabi/bunkazai/bunya12000.files/0046_20250825.pdf"]
+      sources: ["https://honmoku.or.jp/", "https://www.city.yokohama.lg.jp/kurashi/kyodo-manabi/bunkazai/bunya12000.files/0045_20250701.pdf"]
     }
   },
   yearlyInfo: [{

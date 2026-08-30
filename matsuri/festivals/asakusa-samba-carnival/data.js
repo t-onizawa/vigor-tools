@@ -23,7 +23,7 @@ const FESTIVAL = {
     confirmation: { verified: true, confirmedDate: "2026-08-11", sources: ["https://www.asakusa-samba.org/", "https://www.city.taito.lg.jp/event/kanko/asakusa-sanba.html", "https://t-navi.city.taito.lg.jp/event/1408"] }
   },
   yearlyInfo: [{
-    year: 2026, eventStatus: "confirmed", dates: ["2026-08-29"],
+    year: 2026, eventStatus: "ended", dates: ["2026-08-29"],
     access: { hasParking: null, parkingNote: "公式は会場周辺の交通規制と公共交通機関の利用を案内しているが、祭り専用駐車場の有無は確認できていない。" },
     confirmation: { confirmedDate: "2026-08-11", sources: ["https://www.asakusa-samba.org/", "https://www.city.taito.lg.jp/event/kanko/asakusa-sanba.html", "https://t-navi.city.taito.lg.jp/event/1408"], note: "第41回は2026年8月29日12時から17時まで、馬道通りから雷門通りで開催予定。台東区公式ページで実行委員会を問い合わせ先として確認した。" }
   }]
