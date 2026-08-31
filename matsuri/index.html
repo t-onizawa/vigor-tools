@@ -47,6 +47,10 @@
         </label>
         <select id="area-filter" class="area-filter">
           <option value="">すべての都道府県</option>
+          <option value="region:kanto">関東（全県）</option>
+          <option value="region:tohoku">東北（全県）</option>
+          <option value="region:chubu">中部（全県）</option>
+          <option value="region:kinki">近畿（全県）</option>
           <optgroup label="関東">
             <option value="ibaraki">茨城県</option>
             <option value="chiba">千葉県</option>
@@ -87,6 +91,37 @@
         </select>
       </section>
 
+      <section class="filter-section" aria-label="特徴・開催月で絞り込み">
+        <label class="area-filter-label" for="feature-filter">
+          <span class="sr-only">特徴で絞り込み</span>
+        </label>
+        <select id="feature-filter" class="area-filter">
+          <option value="">すべての特徴</option>
+          <option value="hasDashi">山車</option>
+          <option value="hasMikoshi">神輿</option>
+          <option value="hasDanceOnDashi">踊り</option>
+          <option value="hasParade">曳き回し</option>
+        </select>
+        <label class="area-filter-label" for="month-filter">
+          <span class="sr-only">開催月で絞り込み</span>
+        </label>
+        <select id="month-filter" class="area-filter">
+          <option value="">すべての月</option>
+          <option value="1">1月</option>
+          <option value="2">2月</option>
+          <option value="3">3月</option>
+          <option value="4">4月</option>
+          <option value="5">5月</option>
+          <option value="6">6月</option>
+          <option value="7">7月</option>
+          <option value="8">8月</option>
+          <option value="9">9月</option>
+          <option value="10">10月</option>
+          <option value="11">11月</option>
+          <option value="12">12月</option>
+        </select>
+      </section>
+
       <p id="festival-count" class="count-text" aria-live="polite">読み込み中です</p>
       <div id="festival-list" class="festival-list" aria-live="polite"></div>
 
@@ -96,6 +131,6 @@
     </main>
 
     <script src="shared/experience-tags.js?v=1"></script>
-    <script src="shared/festival-list.js?v=23"></script>
+    <script src="shared/festival-list.js?v=24"></script>
   </body>
 </html>

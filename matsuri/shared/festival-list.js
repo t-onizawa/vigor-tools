@@ -2,6 +2,13 @@
 const FESTIVAL_SLUGS = ["ishioka-omatsuri", "sawara-natsu-matsuri", "sawara-aki-matsuri", "chichibu-yomatsuri", "chichibu-ryusei-matsuri", "itako-gion", "hitachi-furyumono", "ryugasaki-tsukumai", "shimodate-gion", "tsuchiura-gion", "makabe-gion", "yuki-natsumatsuri", "hokota-summer-festival", "oarai-hassaku-matsuri", "mito-koumon-matsuri", "kashima-jingu-saitousai", "kisarazu-gion", "kururi-natsumatsuri", "sakura-aki-matsuri", "ohara-hadaka-matsuri", "yokaichiba-gion", "narita-gion", "matsudo-jinja-reitaisai", "awa-yawatanmachi", "fukaya-matsuri", "fukiage-natsumatsuri", "kasukabe-natsumatsuri", "kawagoe-matsuri", "kumagaya-uchiwa-matsuri", "omiya-nakasendo-matsuri", "hanno-matsuri", "honjo-matsuri", "fuchu-kurayami-matsuri", "hachioji-matsuri", "ome-taisai", "hamura-haru-matsuri", "ninomiya-shrine-shogamatsuri", "fukagawa-hachiman-matsuri", "sanja-matsuri", "nikko-toshogu-shunki-reitaisai", "honmoku-ouma-nagashi", "kawasaki-sannosai", "kanda-matsuri", "kamakura-matsuri-yabusame", "manazuru-kibune-matsuri", "oiso-sagicho", "hamaori-sai", "yokosuka-mikoshi-parade", "sagami-odako-matsuri", "enoshima-tennosai", "odawara-hojo-godai-matsuri", "kanuma-imamiya-matsuri", "nasukarasuyama-yamaage-matsuri", "tochigi-aki-matsuri", "oyama-gion-matsuri", "mashiko-gion-matsuri", "moka-natsu-matsuri", "mamada-jagamaita", "ikiko-jinja-nakizumo", "kinugawa-ryuo-matsuri", "nikko-yayoi-matsuri", "utsunomiya-miya-matsuri", "kiryu-yagibushi-matsuri", "numata-matsuri", "maebashi-matsuri", "annaka-matsuri", "shimonita-aki-matsuri", "nakanojo-torioi-matsuri", "tatebayashi-matsuri", "kuki-chochin-matsuri", "funabashi-daijingu-reitaisai", "ikegami-honmonji-oeshiki", "tachikawa-suwa-reitaisai", "jindaiji-daruma-ichi", "takasaki-matsuri", "ojima-neputa-matsuri", "shibukawa-heso-matsuri", "nagatoro-funadama-matsuri", "minamiboso-shirahama-ama-matsuri", "yugawara-yukake-matsuri", "tokyo-koenji-awaodori", "shonan-hiratsuka-tanabata-matsuri", "isesaki-matsuri", "tokorozawa-matsuri", "minami-koshigaya-awaodori", "fujioka-matsuri", "abiko-kappa-matsuri", "ohtawara-yoichi-matsuri", "ohtawara-yatai-matsuri", "kitamoto-yoi-matsuri", "katsuura-tairyo-matsuri", "asakusa-samba-carnival", "shinjuku-eisa-matsuri", "omama-gion-matsuri", "sakado-yosakoi", "obari-matsushita-ryu-tsunabi", "hanazono-no-sasara", "hadano-tabako-matsuri", "aomori-nebuta-matsuri", "akita-kanto-matsuri", "morioka-sansa-odori", "sendai-tanabata-matsuri", "yamagata-hanagasa-matsuri", "fukushima-waraji-matsuri", "hirosaki-neputa-matsuri", "goshogawara-tachineputa", "nishimonai-bon-odori", "morioka-funekko-nagashi", "shiogama-minato-matsuri", "shinjo-matsuri", "soma-nomaoi", "tsuchizaki-minato-hikiyama", "chagu-chagu-umakko", "sendai-aoba-matsuri", "yonezawa-uesugi-matsuri", "aizutajima-gion-matsuri", "nagaoka-matsuri", "owara-kaze-no-bon", "seihakusai-dekayama", "mikuni-matsuri", "yoshida-himatsuri", "matsumoto-bonbon", "gujo-odori", "hamamatsu-matsuri", "owari-tsushima-tenno-matsuri", "murakami-taisai", "takaoka-mikurumayama-matsuri", "ishizaki-hoto-matsuri", "katsuyama-sagicho-matsuri", "shingenko-matsuri", "nagano-binzuru", "furukawa-matsuri", "inuyama-matsuri", "kamezaki-shiohi-matsuri", "shizuoka-matsuri", "mishima-taisai", "tonami-yotaka-matsuri", "abare-matsuri", "tsuruga-matsuri", "nozawa-onsen-dosojin-matsuri", "takayama-sanno-matsuri", "niigata-matsuri", "kawaguchiko-kojosai", "kuwana-ishidori-matsuri", "nagahama-hikiyama-matsuri", "gion-matsuri", "kishiwada-danjiri-matsuri", "nada-kenka-matsuri", "kasuga-wakamiya-onmatsuri", "nachi-ougi-matsuri", "otsu-matsuri", "tenjin-matsuri", "jidai-matsuri"];
   const UPCOMING_STATUSES = new Set(["confirmed", "scheduled_pending_official"]);
 
+  const REGION_PREFECTURES = {
+    kanto: ["ibaraki", "tochigi", "gunma", "saitama", "chiba", "tokyo", "kanagawa"],
+    tohoku: ["aomori", "iwate", "akita", "miyagi", "yamagata", "fukushima"],
+    chubu: ["niigata", "toyama", "ishikawa", "fukui", "yamanashi", "nagano", "gifu", "shizuoka", "aichi"],
+    kinki: ["mie", "shiga", "kyoto", "osaka", "hyogo", "nara", "wakayama"]
+  };
+
   const eventStatusLabels = {
     confirmed: "開催確認済み",
     scheduled_pending_official: "開催予定・公式詳細待ち",
@@ -446,6 +453,8 @@ const FESTIVAL_SLUGS = ["ishioka-omatsuri", "sawara-natsu-matsuri", "sawara-aki-
 
     card.append(body);
     card.addEventListener("click", () => {
+      const featureFilterEl = document.getElementById("feature-filter");
+      const monthFilterEl = document.getElementById("month-filter");
       sendGaEvent("festival_card_click", {
         festival_slug: festival.id,
         festival_name: festival.name,
@@ -455,7 +464,9 @@ const FESTIVAL_SLUGS = ["ishioka-omatsuri", "sawara-natsu-matsuri", "sawara-aki-
         has_atmosphere_media: atmosphereMedia.length > 0,
         experience_tag: experienceTag || "none",
         link_url: card.href,
-        section
+        section,
+        feature_filter: featureFilterEl ? (featureFilterEl.value || "all") : "n/a",
+        month_filter: monthFilterEl ? (monthFilterEl.value || "all") : "n/a"
       });
     });
 
@@ -600,12 +611,24 @@ const FESTIVAL_SLUGS = ["ishioka-omatsuri", "sawara-natsu-matsuri", "sawara-aki-
     const count = document.getElementById("festival-count");
     const toggle = document.getElementById("upcoming-only-toggle");
     const areaFilter = document.getElementById("area-filter");
+    const featureFilter = document.getElementById("feature-filter");
+    const monthFilter = document.getElementById("month-filter");
 
     const visibleItems = items.filter((item) => {
       const passesUpcoming =
         !toggle.checked || UPCOMING_STATUSES.has(getEffectiveEventStatus(item.yearlyInfo));
-      const passesArea = !areaFilter.value || item.festival.areaTag === areaFilter.value;
-      return passesUpcoming && passesArea;
+      const passesArea = !areaFilter.value || (
+        areaFilter.value.startsWith("region:")
+          ? (REGION_PREFECTURES[areaFilter.value.slice(7)] || []).includes(item.festival.areaTag)
+          : item.festival.areaTag === areaFilter.value
+      );
+      const features = (item.festival.constantInfo && item.festival.constantInfo.features) || {};
+      const passesFeature = !featureFilter.value || features[featureFilter.value] === true;
+      const passesMonth = !monthFilter.value || (
+        Array.isArray(item.yearlyInfo.dates) &&
+        item.yearlyInfo.dates.some((d) => Number(d.slice(5, 7)) === Number(monthFilter.value))
+      );
+      return passesUpcoming && passesArea && passesFeature && passesMonth;
     });
 
     list.replaceChildren(...visibleItems.map(renderFestivalCard));
@@ -654,8 +677,8 @@ const FESTIVAL_SLUGS = ["ishioka-omatsuri", "sawara-natsu-matsuri", "sawara-aki-
     section.hidden = false;
   }
 
-  function syncAreaFilterState(areaFilter) {
-    areaFilter.classList.toggle("is-filtering", areaFilter.value !== "");
+  function syncFilterState(filterEl) {
+    filterEl.classList.toggle("is-filtering", filterEl.value !== "");
   }
 
   async function init() {
@@ -663,6 +686,8 @@ const FESTIVAL_SLUGS = ["ishioka-omatsuri", "sawara-natsu-matsuri", "sawara-aki-
     const items = sortFestivalItems(loaded.filter(Boolean).map(normalizeFestival).filter(Boolean));
     const toggle = document.getElementById("upcoming-only-toggle");
     const areaFilter = document.getElementById("area-filter");
+    const featureFilter = document.getElementById("feature-filter");
+    const monthFilter = document.getElementById("month-filter");
 
     toggle.addEventListener("change", () => {
       const visibleFestivalCount = render(items);
@@ -672,14 +697,32 @@ const FESTIVAL_SLUGS = ["ishioka-omatsuri", "sawara-natsu-matsuri", "sawara-aki-
       });
     });
     areaFilter.addEventListener("change", () => {
-      syncAreaFilterState(areaFilter);
+      syncFilterState(areaFilter);
       const visibleFestivalCount = render(items);
       sendGaEvent("prefecture_filter_change", {
         selected_prefecture: areaFilter.value || "all",
         visible_festival_count: visibleFestivalCount
       });
     });
-    syncAreaFilterState(areaFilter);
+    featureFilter.addEventListener("change", () => {
+      syncFilterState(featureFilter);
+      const visibleFestivalCount = render(items);
+      sendGaEvent("feature_filter_change", {
+        selected_feature: featureFilter.value || "all",
+        visible_festival_count: visibleFestivalCount
+      });
+    });
+    monthFilter.addEventListener("change", () => {
+      syncFilterState(monthFilter);
+      const visibleFestivalCount = render(items);
+      sendGaEvent("month_filter_change", {
+        selected_month: monthFilter.value || "all",
+        visible_festival_count: visibleFestivalCount
+      });
+    });
+    syncFilterState(areaFilter);
+    syncFilterState(featureFilter);
+    syncFilterState(monthFilter);
     render(items);
     renderUpcomingSoonSection(items);
   }
