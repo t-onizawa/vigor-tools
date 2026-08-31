@@ -18,7 +18,17 @@ const FESTIVAL = {
       note: "公式が祭り会場として案内する新町五差路周辺を基準地点とした。"
     },
     highlightComment: "おなかに顔を描いてステップする『はら踊り』が新町五差路周辺を行進し、当日は飛び入りでも参加できる。",
-    atmosphereMedia: [],
+    atmosphereMedia: [{
+      type: "youtube",
+      url: "https://www.youtube.com/watch?v=g-tPCzqwcMA",
+      contentId: "g-tPCzqwcMA",
+      title: "第42回日本のまんなか渋川へそ祭り",
+      publisher: "渋川市公式チャンネル",
+      publisherType: "government",
+      purpose: "festival_atmosphere",
+      publishedYear: 2025,
+      checkedDate: "2026-08-31"
+    }],
     backgroundImage: null,
     confirmation: { verified: true, confirmedDate: "2026-08-04", sources: ["https://www.city.shibukawa.lg.jp/kankou-site/kankou/000382/000385/p011548.html"] }
   },
