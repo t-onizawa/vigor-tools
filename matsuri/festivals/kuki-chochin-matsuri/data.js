@@ -18,7 +18,7 @@ const FESTIVAL = {
       note: "提燈山車が集合する久喜駅西口ロータリーを基準地点とした。"
     },
     highlightComment: "昼の人形山車が夕方に組み替えられ、夜は約500個の提燈を灯す提燈山車へ姿を変える。",
-    atmosphereMedia: [], backgroundImage: null,
+    atmosphereMedia: [{ type: "youtube", url: "https://www.youtube.com/watch?v=pYawH48dVi0", contentId: "pYawH48dVi0", title: "関東一の提燈山車！久喜提燈祭り「天王様」", publisher: "久喜市公式動画チャンネル", publisherType: "government", purpose: "festival_atmosphere", publishedYear: 2023, checkedDate: "2026-09-01" }], backgroundImage: null,
     confirmation: { verified: true, confirmedDate: "2026-07-31", sources: ["https://www.city.kuki.lg.jp/miryoku/summer_fes/1002873.html"] }
   },
   yearlyInfo: [{

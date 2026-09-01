@@ -20,3 +20,7 @@
 - https://www.waraji.co.jp/
 - https://www.waraji.co.jp/topics/1157/
 - https://www.city.fukushima.fukushima.jp/kanko-bunka-sports/kanko/4/14040.html
+
+## backgroundImage・atmosphereMedia調査（2026-09-01）
+
+福島市公式「第56回福島わらじまつり」（https://www.youtube.com/watch?v=cnkKizU3uKY、3分22秒、2025年）を直接確認。複数場面を収録するため動画に採用。サムネイルは大きな装飾文字のため画像不採用。

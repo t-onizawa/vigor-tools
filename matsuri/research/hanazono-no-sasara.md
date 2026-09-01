@@ -21,3 +21,7 @@
 
 - https://www.ibarakiguide.jp/event.php?code=1275&mode=detail
 - https://www.kitaibarakishi-kankokyokai.gr.jp/page/page000708.html
+
+## backgroundImage・atmosphereMedia調査（2026-09-01）
+
+茨城新聞「ささら舞を奉納」（https://www.youtube.com/watch?v=HvocjlXeT1Y、1分42秒、2013年）を直接確認。祭りの中心である三匹獅子舞を収録するため動画に採用。獅子舞が明瞭で小さな媒体ロゴのみのため画像にも採用。

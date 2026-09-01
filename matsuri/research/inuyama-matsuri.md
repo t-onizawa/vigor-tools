@@ -8,3 +8,7 @@
 - 既存との差異: 城下町と桜を背景に、全車山が個別のからくりを奉納する。
 - 素材: 探索せず不採用。
 - 一次情報: https://inuyama.gr.jp/event/detail/1/ / https://inuyama.gr.jp/news/detail/287/
+
+## backgroundImage・atmosphereMedia調査（2026-09-01）
+
+犬山市公式「第389回犬山祭」（https://www.youtube.com/watch?v=45RDdMwTSfA、19分54秒）を直接確認。長尺記録で動画不採用、大きな祭り名・日付のため画像不採用。

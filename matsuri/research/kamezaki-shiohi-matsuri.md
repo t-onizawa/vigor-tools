@@ -8,3 +8,7 @@
 - 既存との差異: 海浜へ山車を曳き下ろす潮と一体の山車行事。
 - 素材: 探索せず不採用。
 - 一次情報: https://www.city.handa.lg.jp/bunka/kanko/1002868/1005521/1002873.html
+
+## backgroundImage・atmosphereMedia調査（2026-09-01）
+
+保存会公式「亀崎潮干祭2/5」（https://www.youtube.com/watch?v=FWhcy6ClJ5I、5分45秒）を直接確認。章立て解説で全体性不足のため動画不採用、説明文字のため画像不採用。

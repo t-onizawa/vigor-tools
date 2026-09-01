@@ -20,3 +20,7 @@
 - https://www.hirosaki-kanko.or.jp/edit.html?id=cat02_summer_neputa
 - https://aomori-tourism.com/spot/detail_26.html
 - https://www.pref.aomori.lg.jp/soshiki/kotsu/ch-renkei/ch-renkei_event.html
+
+## backgroundImage・atmosphereMedia調査（2026-09-01）
+
+弘前市公式「弘前ねぷたまつり2024」（https://www.youtube.com/watch?v=gxqF53CW9AA、3分9秒）を直接確認。複数のねぷたと運行を収録するため動画に採用。中央の大きな題字のため画像不採用。

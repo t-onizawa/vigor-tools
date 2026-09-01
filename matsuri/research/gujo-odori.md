@@ -15,3 +15,7 @@
 
 - https://www.gujohachiman.com/kanko/odori_schedule.html
 - https://www.kankou-gifu.jp/event/detail_1157.html
+
+## backgroundImage・atmosphereMedia調査（2026-09-01）
+
+観光系チャンネル「郡上おどり『三百』」（https://www.youtube.com/watch?v=YAO1iUMIaAE、5分20秒）を直接確認。特定曲・一会場のみで動画不採用、全面タイトル画像のため画像不採用。

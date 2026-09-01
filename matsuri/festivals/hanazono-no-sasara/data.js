@@ -18,8 +18,16 @@ const FESTIVAL = {
       note: "例祭とささら演舞が行われる花園神社を基準地点とした。午後の演舞は御仮屋で行われる。"
     },
     highlightComment: "角の異なる親獅子・寄獅子・牝獅子を子どもたちが演じ、笛と太鼓に合わせて古い型の三匹獅子舞を奉納する。",
-    atmosphereMedia: [],
-    backgroundImage: null,
+    atmosphereMedia: [{
+      type: "youtube", url: "https://www.youtube.com/watch?v=HvocjlXeT1Y", contentId: "HvocjlXeT1Y",
+      title: "ささら舞を奉納 北茨城・花園神社", publisher: "茨城新聞動画ニュース",
+      publisherType: "local_media", purpose: "festival_atmosphere", publishedYear: 2013, checkedDate: "2026-09-01"
+    }],
+    backgroundImage: {
+      type: "youtube", contentId: "HvocjlXeT1Y", sourceUrl: "https://www.youtube.com/watch?v=HvocjlXeT1Y",
+      publisher: "茨城新聞動画ニュース", publisherType: "local_media", checkedDate: "2026-09-01",
+      note: "三匹獅子舞が明瞭に写る現地実写。大きな装飾文字はなく、左上の小さな媒体ロゴのみ。"
+    },
     confirmation: { verified: true, confirmedDate: "2026-08-13", sources: ["https://www.ibarakiguide.jp/event.php?code=1275&mode=detail", "https://www.kitaibarakishi-kankokyokai.gr.jp/page/page000708.html"] }
   },
   yearlyInfo: [{

@@ -15,3 +15,7 @@
 
 - https://www.city.nanao.lg.jp/koryu-s/event/8gatsu/issaki.html
 - https://www.city.nanao.lg.jp/koho/shise/koho/machinokao/r8/08/080801.html
+
+## backgroundImage・atmosphereMedia調査（2026-09-01）
+
+候補（https://www.youtube.com/watch?v=HCOUEqbhWrY）を開いたが投稿者・タイトル・内容を取得できず、推測せず両素材とも見送り。

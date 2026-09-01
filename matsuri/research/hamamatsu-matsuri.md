@@ -15,3 +15,7 @@
 
 - https://hamamatsu-daisuki.net/matsuri/
 - https://hamamatsu-daisuki.net/wp-content/uploads/2026/04/5%E6%9C%88%E3%82%A4%E3%83%99%E3%83%B3%E3%83%88%E6%83%85%E5%A0%B1.pdf
+
+## backgroundImage・atmosphereMedia調査（2026-09-01）
+
+観光公式「浜松まつりプロモーション動画」（https://www.youtube.com/watch?v=P6xRNP8HD5M、2分40秒、2022年）を直接確認。凧揚げ等をまとめた動画として採用。大きな説明文字と黒帯のため画像不採用。

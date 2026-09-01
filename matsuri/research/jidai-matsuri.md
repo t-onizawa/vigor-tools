@@ -18,3 +18,6 @@
 - https://ja.kyoto.travel/event/major/jidai/understand.php
 - https://www.kyokanko.or.jp/news/20260706
 
+## backgroundImage・atmosphereMedia調査（2026-09-01）
+
+京都市公式観光ページ掲載「京都 時代祭 ー京都御苑編ー」（https://www.youtube.com/watch?v=ru06zDcyVL8、4分30秒、2023年）を直接確認。多様な行列場面の地域専門動画として採用。大きな題字のため画像不採用。

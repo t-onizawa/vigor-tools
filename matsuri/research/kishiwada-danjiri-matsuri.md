@@ -16,3 +16,6 @@
 - https://www.city.kishiwada.lg.jp/site/danjiri/
 - https://www.city.kishiwada.lg.jp/page/77-shiteimoyooshi.html
 
+## backgroundImage・atmosphereMedia調査（2026-09-01）
+
+岸和田市公式「令和6年度 春木地区だんじり祭」（https://www.youtube.com/watch?v=sI9JLjCcYCM、3分54秒）を直接確認。一場面のみで動画不採用。だんじりが明瞭で大きな装飾文字がなく隅の小さな地区名のみのため画像に採用。

@@ -16,3 +16,6 @@
 - https://ja.kyoto.travel/event/single.php?event_id=6603
 - https://ja.kyoto.travel/event/single.php?event_id=6778
 
+## backgroundImage・atmosphereMedia調査（2026-09-01）
+
+京都市公式「祇園祭 山鉾行事」（https://www.youtube.com/watch?v=0JmFraeZ-Gk、6分17秒、2024年公開）を直接確認。複数場面の自治体動画として動画に採用。大きな文字・帯のため画像不採用。

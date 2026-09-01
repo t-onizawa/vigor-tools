@@ -20,3 +20,7 @@
 - https://chaguuma.com/
 - https://chaguuma.com/news/%E4%BB%A4%E5%92%8C%EF%BC%98%E5%B9%B4%EF%BC%96%E6%9C%8813%E6%97%A5%EF%BC%88%E5%9C%9F%EF%BC%89%E3%83%81%E3%83%A3%E3%82%B0%E3%83%81%E3%83%A3%E3%82%B0%E9%A6%AC%E3%82%B3%E9%96%8B%E5%82%AC%EF%BC%81/
 - https://www.pref.iwate.jp/event/moyooshi/1099317.html
+
+## backgroundImage・atmosphereMedia調査（2026-09-01）
+
+自治体・観光協会の公式情報を確認したが、直接確認可能な採用候補を特定できず、両素材とも見送り。

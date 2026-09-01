@@ -20,3 +20,7 @@
 - https://www.town.minamiaizu.lg.jp/official/soshikikarasagasu/shokokankoka/minamiaizuchokankojoho/4/index.html
 - https://www.kanko-aizu.com/gion/
 - https://www.kanko-aizu.com/information/39328/
+
+## backgroundImage・atmosphereMedia調査（2026-09-01）
+
+公式情報を確認したが、動画ページ上で投稿者・内容を直接確定できる候補を特定できず、両素材とも見送り。

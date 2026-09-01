@@ -15,3 +15,7 @@
 
 - https://katsuyama-navi.jp/date/2026/02/12/
 - https://www.fuku-e.com/event/detail_5046.html
+
+## backgroundImage・atmosphereMedia調査（2026-09-01）
+
+勝山市公式「奇祭 勝山左義長まつり」（https://www.youtube.com/watch?v=RYTbAxbxc44、2分12秒）を直接確認。低解像度・字幕主体で現在の入口素材として品質不足のため両素材とも見送り。

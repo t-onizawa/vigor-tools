@@ -8,3 +8,7 @@
 - 既存との差異: 大太鼓を載せた櫓と付け太鼓が競り合う「起し太鼓」が中心的体験。
 - 素材: 探索せず不採用。
 - 一次情報: https://www.hida-kankou.jp/features/204 / https://www.hida-kankou.jp/event/408
+
+## backgroundImage・atmosphereMedia調査（2026-09-01）
+
+飛騨市公式「届ける 飛騨市 古川祭編」（https://www.youtube.com/watch?v=r_cMYT31MrU、27分13秒）を直接確認。長尺記録で動画不採用、大きな題字のため画像不採用。

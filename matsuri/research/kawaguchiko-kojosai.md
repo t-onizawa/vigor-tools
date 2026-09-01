@@ -8,3 +8,7 @@
 - 差異: 富士山と河口湖の湖面を背景にする湖上花火の体験。
 - 素材: 探索せず不採用。
 - 一次情報: https://fujisan.ne.jp/feature/804/ / https://kawaguchiko.net/event/kawaguchiko-kojosai/
+
+## backgroundImage・atmosphereMedia調査（2026-09-01）
+
+自治体・観光協会の公式情報を確認したが、直接確認可能な採用候補を特定できず、両素材とも見送り。

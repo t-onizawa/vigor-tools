@@ -18,3 +18,7 @@
 - https://www.city.annaka.lg.jp/page/21641.html
 - https://www.city.annaka.lg.jp/page/2058.html
 - https://www.city.annaka.lg.jp/site/mayor/22874.html
+
+## backgroundImage・atmosphereMedia調査（2026-09-01）
+
+青年会議所の記録動画案内は確認したがwatch URLを直接特定できず、両素材とも見送り。

@@ -18,3 +18,6 @@
 - https://www.kasugataisha.or.jp/calendar/winter12/
 - https://narashikanko.or.jp/event/detail_10230.html
 
+## backgroundImage・atmosphereMedia調査（2026-09-01）
+
+奈良県公式「古都を彩る舞」（https://www.youtube.com/watch?v=3MwqPdbqD1w、16分9秒）を直接確認。長尺解説構成で動画不採用、祭礼場面でなく題字・字幕中心のため画像不採用。

@@ -31,3 +31,7 @@
 ## 出典
 
 - https://www.city.kuki.lg.jp/miryoku/summer_fes/1002873.html
+
+## backgroundImage・atmosphereMedia調査（2026-09-01）
+
+久喜市公式「久喜提燈祭り『天王様』」（https://www.youtube.com/watch?v=pYawH48dVi0、3分、2023年）を直接確認。昼夜の山車を短く紹介する動画として採用。左右の大きな装飾文字のため画像不採用。

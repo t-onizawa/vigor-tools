@@ -23,3 +23,7 @@
 
 - https://www.city.hadano.kanagawa.jp/kanko/event/2/2704.html
 - https://www.city.hadano.kanagawa.jp/kanko/event/842.html
+
+## backgroundImage・atmosphereMedia調査（2026-09-01）
+
+自治体動画導線の花火映像（https://www.youtube.com/watch?v=hNLfNUkH4RM、4分45秒）を直接確認。花火のみで全体性がなく動画不採用、祭りの主役を判別しにくく画像不採用。
