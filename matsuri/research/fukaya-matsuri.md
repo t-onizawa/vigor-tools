@@ -90,3 +90,7 @@ v0.3  2026-07-29（atmosphereMedia候補調査・不採用記録）
   - サムネイル: https://i.ytimg.com/vi/wHVE2REIosA/hqdefault.jpg
   - 判定: 不採用。実写の山車・屋台は写るが、上下の黒帯が大きく、中央の祭り名文字も強いため、一覧カードと詳細ヒーローの横長背景として安定しない。
 - 結論: `backgroundImage` は未設定を維持。別候補を将来再調査する余地あり。
+
+## backgroundImage・atmosphereMedia調査（2026-09-01 夜）
+
+自治体・神社・観光協会・公式運営等の一次情報ページと公式動画候補を調査したが、今回の調査時間内に動画ページ上で投稿者・内容を直接確認でき、既存基準をすべて満たす素材候補を特定できなかった。推測で採用せず、backgroundImage・atmosphereMediaとも未設定を維持する。

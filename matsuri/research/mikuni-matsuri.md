@@ -20,3 +20,7 @@
 - https://mikunimatsuri.com/%E4%B8%89%E5%9B%BD%E7%A5%AD%E3%81%A8%E3%81%AF/
 - https://mikunimatsuri.com/%E6%97%A5%E7%A8%8B%E3%81%AB%E3%81%A4%E3%81%84%E3%81%A6/
 - https://www.fuku-e.com/event/detail_5285.html
+
+## backgroundImage・atmosphereMedia調査（2026-09-01 夜）
+
+自治体・神社・観光協会・公式運営等の一次情報ページと公式動画候補を調査したが、今回の調査時間内に動画ページ上で投稿者・内容を直接確認でき、既存基準をすべて満たす素材候補を特定できなかった。推測で採用せず、backgroundImage・atmosphereMediaとも未設定を維持する。

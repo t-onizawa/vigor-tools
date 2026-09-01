@@ -21,3 +21,7 @@
 ## 一次情報
 
 - https://www.city.goshogawara.lg.jp/tourism/view/tachineputa.html
+
+## backgroundImage・atmosphereMedia調査（2026-09-01 夜）
+
+公式サイト掲載の五所川原商工会議所青年部「令和5年度公式ライブ配信」（https://www.youtube.com/watch?v=DiZiCPE0TAs）を動画ページで直接確認。1時間38分の通しライブで入口用途に合わないため atmosphereMedia は不採用。実サムネイルは祭り名・日付・配信名の大きな文字が画面を覆うため backgroundImage も不採用。

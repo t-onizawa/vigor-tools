@@ -16,3 +16,7 @@
 
 - backgroundImage: 不採用。告知文字や権利・同一祭礼確認の懸念がない候補を確定できなかった。
 - atmosphereMedia: 保留。第三者候補（YouTube contentId `xg2cTg7BLTA`）は見つかったが、動画ページ・投稿者・尺・実映像の必須確認を完了できず採用しない。
+
+## backgroundImage・atmosphereMedia調査（2026-09-01 夜）
+
+自治体・神社・観光協会・公式運営等の一次情報ページと公式動画候補を調査したが、今回の調査時間内に動画ページ上で投稿者・内容を直接確認でき、既存基準をすべて満たす素材候補を特定できなかった。推測で採用せず、backgroundImage・atmosphereMediaとも未設定を維持する。
