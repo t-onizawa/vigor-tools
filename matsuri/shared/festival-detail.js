@@ -819,6 +819,11 @@
       jsonLd.url = url;
     }
 
+    const backgroundImage = festival.constantInfo.backgroundImage;
+    if (backgroundImage?.type === "youtube" && backgroundImage.contentId) {
+      jsonLd.image = `https://i.ytimg.com/vi/${backgroundImage.contentId}/hqdefault.jpg`;
+    }
+
     return jsonLd;
   }
 
