@@ -575,6 +575,79 @@
     section.hidden = false;
   }
 
+  async function loadRelatedFestival(slug) {
+    try {
+      const response = await fetch(`../${slug}/data.js`);
+      if (!response.ok) return null;
+      const source = await response.text();
+      const factory = new Function(`${source}\nreturn FESTIVAL;`);
+      const relatedFestival = factory();
+      return {
+        festival: relatedFestival,
+        yearlyInfo: relatedFestival.yearlyInfo[0]
+      };
+    } catch (err) {
+      console.warn(`[festival-detail] 関連祭りの読み込みに失敗: ${slug}`, err);
+      return null;
+    }
+  }
+
+  function getEventMonth(yearlyInfo) {
+    const dates = yearlyInfo && Array.isArray(yearlyInfo.dates) ? yearlyInfo.dates : [];
+    const match = dates[0] && dates[0].match(/^\d{4}-(\d{2})-/);
+    return match ? Number(match[1]) : null;
+  }
+
+  function selectRelatedFestivals(items, currentFestival, currentYearlyInfo) {
+    const candidates = items.filter((item) => {
+      return item && item.festival.id !== currentFestival.id;
+    });
+    const sameArea = candidates.filter((item) => {
+      return item.festival.areaTag === currentFestival.areaTag;
+    });
+    if (sameArea.length > 0) {
+      return sameArea.slice(0, 3);
+    }
+
+    const currentMonth = getEventMonth(currentYearlyInfo);
+    if (!currentMonth) return [];
+    return candidates
+      .filter((item) => getEventMonth(item.yearlyInfo) === currentMonth)
+      .slice(0, 3);
+  }
+
+  async function renderRelatedFestivals(currentFestival, currentYearlyInfo) {
+    const section = byId("related-festivals-section");
+    const list = byId("related-festivals-list");
+    if (!section || !list || typeof FESTIVAL_SLUGS === "undefined") return;
+
+    const loaded = await Promise.all(FESTIVAL_SLUGS.map(loadRelatedFestival));
+    const relatedItems = selectRelatedFestivals(loaded, currentFestival, currentYearlyInfo);
+    if (relatedItems.length === 0) return;
+
+    relatedItems.forEach((item) => {
+      const link = document.createElement("a");
+      link.className = "feature-badge is-yes";
+      link.href = `../${item.festival.id}/`;
+
+      const text = document.createElement("span");
+      text.className = "feature-badge-text";
+
+      const prefectureAndDate = document.createElement("strong");
+      const dates = Array.isArray(item.yearlyInfo.dates) ? item.yearlyInfo.dates : [];
+      const dateText = dates.length > 0 ? formatDateList(dates) : "日程未確認";
+      prefectureAndDate.textContent = `${item.festival.prefecture}｜${dateText}`;
+
+      const name = document.createElement("span");
+      name.textContent = item.festival.name;
+
+      text.append(prefectureAndDate, name);
+      link.append(text);
+      list.append(link);
+    });
+    section.hidden = false;
+  }
+
   function renderEventStatusDateText() {
     const text = eventStatusDateText[effectiveEventStatus] || eventStatusDateText.unconfirmed;
     const noteEl = byId("event-status-note");
@@ -629,6 +702,7 @@
   renderAtmosphereMedia(festival.constantInfo.atmosphereMedia);
   applyHeroHeader(festival.constantInfo.backgroundImage);
   renderMapReference(festival.constantInfo.mapReference);
+  renderRelatedFestivals(festival, currentYear);
 
   byId("constant-sources").append(
     createSourceBlock("恒常情報", festival.constantInfo.confirmation, "constant")
