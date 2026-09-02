@@ -19,3 +19,7 @@
 
 - https://www.city.nanao.lg.jp/koryu-s/event/event_syokai/seihakusai.html
 - https://www.city.nanao.lg.jp/koho/shise/koho/machinokao/r8/05/080505.html
+
+## backgroundImage・atmosphereMedia調査（2026-09-02）
+
+石川県公式ページ埋め込み「青柏祭」（https://www.youtube.com/watch?v=INpjrYRy51U、1分18秒、2014年）を動画ページで直接確認。巨大な曳山と運行を短時間で紹介する観光公式動画として atmosphereMedia に採用。サムネイル下部に大きな祭り名があるため backgroundImage は不採用。

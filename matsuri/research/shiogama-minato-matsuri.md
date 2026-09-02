@@ -19,3 +19,7 @@
 
 - https://www.city.shiogama.miyagi.jp/soshiki/17/56484.html
 - https://kankoubussan.shiogama.miyagi.jp/news/news/detail.php?id=323
+
+## backgroundImage・atmosphereMedia調査（2026-09-02）
+
+祭り公式・塩竈市公式の開催記録と動画候補を確認したが、海上渡御・陸上パレードを代表する動画について動画ページ上の投稿者・内容確認を完了できなかった。推測で採用せず両素材とも見送り。

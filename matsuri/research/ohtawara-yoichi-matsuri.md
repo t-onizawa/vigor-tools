@@ -37,3 +37,7 @@ YouTube動画ページ・投稿チャンネル・サムネイルを直接確認�
 - https://www.city.ohtawara.tochigi.jp/docs/2023071800018/
 - https://www.ohtawara.info/spot_detail.html?id=70
 - https://www.city.ohtawara.tochigi.jp/docs/2013082768698/
+
+## backgroundImage・atmosphereMedia調査（2026-09-02）
+
+自治体・神社・観光協会・公式運営等の一次情報ページと公式動画候補を調査したが、今回の調査時間内に動画ページ上で投稿者・内容を直接確認でき、既存基準をすべて満たす素材候補を特定できなかった。推測で採用せず、backgroundImage・atmosphereMediaとも未設定を維持する。

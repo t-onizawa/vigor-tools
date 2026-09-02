@@ -20,3 +20,7 @@
 - https://www.town.ugo.lg.jp/sightseeing/detail.html?category_id=41&id=2432
 - https://ugokanko.com/nishimonaibonodori2026/
 - https://www.maff.go.jp/tohoku/nouson/kokuei/nisiouu/syoukai_gyouzi03.html
+
+## backgroundImage・atmosphereMedia調査（2026-09-02）
+
+自治体・神社・観光協会・公式運営等の一次情報ページと公式動画候補を調査したが、今回の調査時間内に動画ページ上で投稿者・内容を直接確認でき、既存基準をすべて満たす素材候補を特定できなかった。推測で採用せず、backgroundImage・atmosphereMediaとも未設定を維持する。

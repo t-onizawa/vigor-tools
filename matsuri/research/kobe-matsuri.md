@@ -16,3 +16,6 @@
 - https://www.feel-kobe.jp/event/36165/
 - https://www.feel-kobe.jp/news/31336/
 
+## backgroundImage・atmosphereMedia調査（2026-09-02）
+
+公式サイト埋め込みの第53回神戸まつりCM（https://www.youtube.com/watch?v=oi4RjASLR1E、39秒、2026年）を直接確認。告知CMで祭り映像主体ではないため atmosphereMedia は不採用。人物と大きな開催日文字が中心のため backgroundImage も不採用。

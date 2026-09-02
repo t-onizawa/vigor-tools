@@ -17,3 +17,7 @@
 
 - https://www.town.shimonita.lg.jp/kanko/m03/m06/m01/03.html
 - https://www.town.shimonita.lg.jp/m04/m06/m01/index.html
+
+## backgroundImage・atmosphereMedia調査（2026-09-02）
+
+自治体・神社・観光協会・公式運営等の一次情報ページと公式動画候補を調査したが、今回の調査時間内に動画ページ上で投稿者・内容を直接確認でき、既存基準をすべて満たす素材候補を特定できなかった。推測で採用せず、backgroundImage・atmosphereMediaとも未設定を維持する。

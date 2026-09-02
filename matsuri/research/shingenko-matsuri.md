@@ -15,3 +15,7 @@
 
 - https://www.yamanashi-kankou.jp/shingen/
 - https://www.city.kofu.yamanashi.jp/welcome/saijiki/shingenko.html
+
+## backgroundImage・atmosphereMedia調査（2026-09-02）
+
+公式サイトの関連動画・ライブ配信導線を確認。第52回公式生配信は長尺の通し配信で入口用途に合わず、短いダイジェストは今回動画ページ上の必須確認を完了できなかったため、両素材とも見送り。
