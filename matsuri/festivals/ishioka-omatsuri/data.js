@@ -67,12 +67,12 @@ const FESTIVAL = {
       yearTownInCharge: "森木町",
       access: {
         hasParking: null,
-        parkingNote: "2026年の臨時駐車場情報は未確認"
+        parkingNote: "公式の交通案内では臨時駐車場の案内はなく、鉄道・バス・タクシーでの来場が案内されている。"
       },
       confirmation: {
-        confirmedDate: "2026-08-07",
-        sources: ["https://www.ishioka-kankou.com/events/ishioka-matsuri/", "https://www.ishioka-kankou.com/topics/tokubetsu-kanran/"],
-        note: "石岡市観光協会公式で2026年9月19日〜21日の開催と特別観覧席の販売を確認。交通規制案内は準備中。"
+        confirmedDate: "2026-09-03",
+        sources: ["https://www.ishioka-kankou.com/events/ishioka-matsuri/", "https://www.ishioka-kankou.com/topics/tokubetsu-kanran/", "https://www.ishioka-kankou.com/topics/ishioka-matsuri-koutsuu-2026/"],
+        note: "石岡市観光協会公式で2026年9月19日〜21日の開催、13:00〜21:00の交通規制、鉄道・バス・タクシー案内を確認。専用の臨時駐車場案内は無い。特別観覧席の販売情報も確認済み（前売4,400円・限定48席、公式オンラインストア）。"
       }
     }
   ]
