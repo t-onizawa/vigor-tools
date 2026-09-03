@@ -415,6 +415,13 @@ p {
   background: var(--surface);
 }
 
+.feature-badge-text .related-festival-date {
+  margin-top: 2px;
+  font-size: 0.76rem;
+  font-weight: 400;
+  color: var(--muted);
+}
+
 #atmosphere-media-link,
 #map-external-link {
   color: var(--accent);

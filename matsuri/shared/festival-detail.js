@@ -606,14 +606,24 @@
       return item.festival.areaTag === currentFestival.areaTag;
     });
     if (sameArea.length > 0) {
-      return sameArea.slice(0, 3);
+      return {
+        items: sameArea.slice(0, 3),
+        reason: { type: "area", label: `${currentFestival.prefecture}の祭り` }
+      };
     }
 
     const currentMonth = getEventMonth(currentYearlyInfo);
-    if (!currentMonth) return [];
-    return candidates
-      .filter((item) => getEventMonth(item.yearlyInfo) === currentMonth)
-      .slice(0, 3);
+    if (!currentMonth) return { items: [], reason: null };
+    const sameMonth = candidates.filter((item) => getEventMonth(item.yearlyInfo) === currentMonth);
+    return {
+      items: sameMonth.slice(0, 3),
+      reason: { type: "month", label: `${currentMonth}月開催の祭り` }
+    };
+  }
+
+  function formatStartDate(dates) {
+    if (!dates || dates.length === 0) return "日程未確認";
+    return dates.length > 1 ? `${formatDate(dates[0])}〜` : formatDate(dates[0]);
   }
 
   async function renderRelatedFestivals(currentFestival, currentYearlyInfo) {
@@ -622,7 +632,7 @@
     if (!section || !list || typeof FESTIVAL_SLUGS === "undefined") return;
 
     const loaded = await Promise.all(FESTIVAL_SLUGS.map(loadRelatedFestival));
-    const relatedItems = selectRelatedFestivals(loaded, currentFestival, currentYearlyInfo);
+    const { items: relatedItems, reason } = selectRelatedFestivals(loaded, currentFestival, currentYearlyInfo);
     if (relatedItems.length === 0) return;
 
     relatedItems.forEach((item) => {
@@ -633,15 +643,18 @@
       const text = document.createElement("span");
       text.className = "feature-badge-text";
 
-      const prefectureAndDate = document.createElement("strong");
-      const dates = Array.isArray(item.yearlyInfo.dates) ? item.yearlyInfo.dates : [];
-      const dateText = dates.length > 0 ? formatDateList(dates) : "日程未確認";
-      prefectureAndDate.textContent = `${item.festival.prefecture}｜${dateText}`;
+      const reasonLabel = document.createElement("strong");
+      reasonLabel.textContent = reason.label;
 
       const name = document.createElement("span");
       name.textContent = item.festival.name;
 
-      text.append(prefectureAndDate, name);
+      const dateLabel = document.createElement("span");
+      dateLabel.className = "related-festival-date";
+      const dates = Array.isArray(item.yearlyInfo.dates) ? item.yearlyInfo.dates : [];
+      dateLabel.textContent = formatStartDate(dates);
+
+      text.append(reasonLabel, name, dateLabel);
       link.append(text);
       list.append(link);
     });
