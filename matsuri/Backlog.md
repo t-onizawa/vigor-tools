@@ -3,7 +3,7 @@
 ```
 Status: Living backlog（固定ロードマップではない）
 Created: 2026-07-27
-Updated: 2026-09-03（石岡のおまつり：SCデータに基づくクエリ対応コンテンツ強化）
+Updated: 2026-09-03（「当日の目安スケジュール」機能をCodex CLIで実装・PM検証済み）
 ```
 
 これは計画表ではない。優先度は仮説であり、公開後の反応で入れ替わる前提の
@@ -2805,4 +2805,46 @@ backgroundImageとatmosphereMediaを別判定し、青梅大祭の動画1件の�
     constantInfo.highlightCommentに追記（commit 40a476e）。
     2〜3週間で順位50位台から大きく改善する保証はない旨は事前に
     Founderへ伝えた上で着手。効果測定は次回SCデータ確認時に行う。
-```
+
+2026-09-03（「当日の目安スケジュール」機能をCodex CLIで実装、
+    commit afd0a6c）
+    上記のSC分析で見つかった「いつから／何時から／時間」系クエリへの
+    対応として、モーダルを使わないリスト形式の新セクションを新設した。
+    Founderに「見どころが長くなるならリスト型かモーダルか」と相談され、
+    PMとしてモーダルを明確に不採用と判断（クリックしないと見えない
+    実装は、SEOのために書いた情報自体をクロール・閲覧されにくくする
+    ため）。実装プロンプトを作成しCodex CLIへ委譲した。
+    ```
+    - スキーマ：yearlyInfo[年].schedule（任意・配列、date/dayLabel/
+      items[{time,label}]）を新設。時刻は年度で変わりうるため
+      constantInfoではなくyearlyInfo側に置く（駐車場ルールと同じ理由）。
+      schema-design.mdに仕様を追記
+    - 表示：新関数renderSchedule()が「当日の目安スケジュール」リストを
+      レンダリング。データが無い祭りではsection.remove()で完全非表示
+      （highlightComment等と同じ設計）
+    - JSON-LD：buildEventJsonLd()にsubEvent配列を追加。各行事の時刻を
+      JST付きISO 8601（例：2026-09-19T09:00:00+09:00）に正規化する
+      normalizeTimeToIso()を新設
+    - 全161件のfestival index.htmlに空のプレースホルダー
+      <section id="schedule-section" hidden>を一括追加（挿入位置は
+      primary-infoの直後で統一）。他祭りのdata.js本体は変更せず
+    - 石岡のおまつりのyearlyInfo[2026].scheduleに3日分16行の実データを
+      投入（実行委員会公式ishiokamatsuri.com/news/reitaisai-2026/が
+      出典）。confirmation.noteの重複していた時刻の羅列は削除し、
+      新セクションへの参照文に簡略化した
+    ```
+    PMによる独立検証（Codexの完了報告を鵜呑みにせず実施）：
+    ```
+    - grep集計で161ファイル全件にプレースホルダーが1つずつ存在
+      （漏れ・重複なし）を確認
+    - festival-detail.js・全data.jsでnode --check通過を確認
+    - 石岡のおまつりを実機確認：モバイル390px・デスクトップ1280px
+      両方で横スクロールなし、3日16行が時刻順に表示
+    - schedule未設定の三社祭で、セクションがDOMに一切残らないことを確認
+    - JSON-LDをJSON.parseし、subEvent16件・JST付きISO 8601形式を確認
+    - コンソールエラー・警告なしを確認
+    ```
+    **既知の残課題（未対応）：** 新規祭り追加のScheduled Taskの
+    プロンプト・テンプレートには、今回のschedule-sectionプレースホルダー
+    が未反映。今回はスコープ外として意図的に対象外にした。次に新しい
+    祭りを追加する前までに、当該タスクのプロンプト更新が必要。
