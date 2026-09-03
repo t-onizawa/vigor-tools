@@ -3,7 +3,7 @@
 ```
 Status: Living backlog（固定ロードマップではない）
 Created: 2026-07-27
-Updated: 2026-09-02（可視性向上バッチ・meta情報強化キャンペーン完了）
+Updated: 2026-09-03（詳細ページUI修正：ヒーロー余白・関連する祭りの配色）
 ```
 
 これは計画表ではない。優先度は仮説であり、公開後の反応で入れ替わる前提の
@@ -2744,4 +2744,26 @@ backgroundImageとatmosphereMediaを別判定し、青梅大祭の動画1件の�
     ended。近畿は三重3、滋賀2、京都3、大阪2、兵庫3、奈良3、和歌山2。
     日野祭は2026年日程の一次情報を確認できず見送り。連続0件は0、初期
     カバレッジ未完了、次回対象も近畿とする。素材は採用していない。
+
+2026-09-03（詳細ページUI修正：ヒーロー余白・関連する祭りの配色、commit d4d8a6d）
+    Founderからの「関連する祭りの見せ方／画像がない祭りのファースト
+    ビューの余白感」というレビュー依頼を受け、秩父吉田の龍勢祭り
+    （backgroundImage: null）で検証したところ2件の実バグを確認した。
+    (1) `applyHeroHeader()`がbackgroundImageの有無に関わらず
+    `.has-hero`クラス（下パディング176px等、写真前提の重いスタイル）を
+    無条件付与しており、画像なしページのヘッダー高さが393.78pxと
+    無駄に間延びしていた。youtube画像がある場合のみhas-heroを付与する
+    early returnを追加し、224.78pxまで縮小することを確認した（写真あり
+    ページ・鉾田の夏祭りでは引き続きhas-hero: trueのまま正しく動作する
+    ことも確認済み）。
+    (2) 関連する祭りのリンクカードが`feature-badge.is-yes`（山車あり等
+    true/false状態を表す緑色）を見た目流用しており、ナビゲーションリンク
+    としては配色の意味がずれていた。専用の`related-festival-link`
+    クラスを新設し、ニュートラルな配色＋hover/focus時のみアクセント色を
+    出す方式に変更した。
+    対象：shared/festival-detail.js（applyHeroHeader、related-festival
+    リンク生成）、shared/festival-detail.css（related-festival-link
+    ルール追加）。モバイル・デスクトップ双方、画像あり／なし両パターンで
+    目視確認済み。`.hero-background--fallback`はこの修正でJS側の呼び出し
+    経路が無くなり未使用CSSとなったが、削除は別タスクとし今回は据え置いた。
 ```
