@@ -20,3 +20,8 @@
 - https://fujiyoshida.net/feature/himatsuri/index
 - https://fujiyoshida.net/en/see-and-do/154
 - https://online.bunka.go.jp/heritages/detail/137064
+
+### 2026-09-03 毎日品質改善
+
+- 富士吉田市公式「［広報ふじよしだ］元気だ！ふじよしだ 2025年10月号　吉田の火祭り」（https://www.youtube.com/watch?v=G-3zPlyRAmU、1分55秒）を動画ページで直接確認。大松明と祭りの概要を短時間で把握できる自治体公式動画として atmosphereMedia に採用。サムネイルは大きな番組題字があるため背景には不採用。
+- 山梨県公式観光サイトが掲載するフジヤマNAVI「吉田の火祭り」（https://www.youtube.com/watch?v=YgFvbGiESfA、6分08秒、2012年）のサムネイルを直接確認。大松明と参加者を文字なしの横長実写で明確に示すため backgroundImage に採用。古い映像のため atmosphereMedia には採用せず、背景用途だけに限定した。

@@ -27,3 +27,7 @@
 
 - https://yokosuka-kanko.com/events/46th_mikoshi/
 - https://yokosuka-kanko.com/wp-content/uploads/2026/06/%E4%BB%A4%E5%92%8C8%E5%B9%B4%E5%BA%A6%E5%AE%9A%E6%99%82%E7%B7%8F%E4%BC%9A%E8%B3%87%E6%96%99.pdf
+
+### 2026-09-03 毎日品質改善
+
+公式・自治体・神社・観光協会等の一次情報と動画候補を再調査した。検索要約だけでは採否を確定せず、今回の確認範囲では投稿者・内容・画像を直接確認したうえで既存基準をすべて満たす新規素材を確定できなかったため、backgroundImage・atmosphereMediaとも未設定を維持する。

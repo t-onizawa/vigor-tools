@@ -10,3 +10,7 @@
 - 既存との差異: 猿沢池を巡る管絃船と鎮魂の神事。
 - 素材: 採用なし。
 - 一次情報: https://narashikanko.or.jp/event/detail_10201.html / https://narashikanko.or.jp/feature/unemematsuri
+
+### 2026-09-03 毎日品質改善
+
+公式・自治体・神社・観光協会等の一次情報と動画候補を再調査した。検索要約だけでは採否を確定せず、今回の確認範囲では投稿者・内容・画像を直接確認したうえで既存基準をすべて満たす新規素材を確定できなかったため、backgroundImage・atmosphereMediaとも未設定を維持する。

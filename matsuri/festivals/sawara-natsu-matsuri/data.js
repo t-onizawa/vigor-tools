@@ -28,7 +28,7 @@ const FESTIVAL = {
       note: "山車の曳き回し・のの字廻しは本宿地区一帯で行われます。忠敬橋周辺は代表的な観覧スポットの一つです。"
     },
     highlightComment: "山車を豪快に回転させる「のの字廻し」の曲曳きが最大の見どころ。小江戸の町並みを進む姿も見応えがある。",
-    atmosphereMedia: [],
+    atmosphereMedia: [{ type: "youtube", url: "https://www.youtube.com/watch?v=w5blXOurDeM", contentId: "w5blXOurDeM", title: "公式【佐原の大祭 夏祭り編】若衆の心意気　江戸優りのスゴ技＜千葉＞", publisher: "おかえり 日本の祭り", publisherType: "official", purpose: "festival_atmosphere", publishedYear: 2022, checkedDate: "2026-09-03" }],
     confirmation: {
       verified: true,
       confirmedDate: "2026-07-27",

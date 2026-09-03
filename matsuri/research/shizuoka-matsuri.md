@@ -8,3 +8,7 @@
 - 既存との差異: 駿府の大御所時代を再現する市民参加型の時代行列。
 - 素材: 探索せず不採用。
 - 一次情報: https://www.city.shizuoka.lg.jp/s9635/s013738.html / https://www.visit-shizuoka.com/business/survey_report/event
+
+### 2026-09-03 毎日品質改善
+
+公式・自治体・神社・観光協会等の一次情報と動画候補を再調査した。検索要約だけでは採否を確定せず、今回の確認範囲では投稿者・内容・画像を直接確認したうえで既存基準をすべて満たす新規素材を確定できなかったため、backgroundImage・atmosphereMediaとも未設定を維持する。

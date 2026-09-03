@@ -10,3 +10,7 @@
 - 既存との差異: 大松明と十一面悔過を中心とする仏教法会。
 - 素材: 採用なし。
 - 一次情報: https://www.todaiji.or.jp/annual/event/shunie/ / https://www.todaiji.or.jp/annual/event/shunie/otaimatsu/
+
+### 2026-09-03 毎日品質改善
+
+公式・自治体・神社・観光協会等の一次情報と動画候補を再調査した。検索要約だけでは採否を確定せず、今回の確認範囲では投稿者・内容・画像を直接確認したうえで既存基準をすべて満たす新規素材を確定できなかったため、backgroundImage・atmosphereMediaとも未設定を維持する。

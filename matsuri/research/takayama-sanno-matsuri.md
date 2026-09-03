@@ -8,3 +8,7 @@
 - 差異: 春と秋で別祭礼となる高山祭のうち、日枝神社氏子区域の春祭だけを明確に扱う。
 - 素材: 探索せず不採用。
 - 一次情報: https://www.hidatakayama.or.jp/spot/detail_2009.html / https://www.hidatakayama.or.jp/faq/index.html / https://www.hidatakayama.or.jp/pdf/
+
+### 2026-09-03 毎日品質改善
+
+公式・自治体・神社・観光協会等の一次情報と動画候補を再調査した。検索要約だけでは採否を確定せず、今回の確認範囲では投稿者・内容・画像を直接確認したうえで既存基準をすべて満たす新規素材を確定できなかったため、backgroundImage・atmosphereMediaとも未設定を維持する。
