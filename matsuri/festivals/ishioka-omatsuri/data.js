@@ -27,7 +27,7 @@ const FESTIVAL = {
       mapUrl: "https://www.google.com/maps/search/?api=1&query=常陸國總社宮+石岡市総社2丁目8-1",
       note: "総社宮は祭礼の中心となる神社です。祭りの巡行・観覧は石岡駅周辺の市街地に広がり、総社宮からは徒歩約20分離れています。"
     },
-    highlightComment: "屋根付きの「幌獅子」に囃子連が乗り演奏する形式は全国的にも珍しく、山車前の舞台ではおかめ・ひょっとこ踊りが披露される。",
+    highlightComment: "屋根付きの「幌獅子」に囃子連が乗り演奏する形式は全国的にも珍しく、山車前の舞台ではおかめ・ひょっとこ踊りが披露される。幌獅子や山車の巡行は主に2日目午後に集中し、公式の位置情報配信システムで山車・獅子の現在地を確認しながら観覧できる。",
     atmosphereMedia: [
       {
         type: "youtube",
@@ -55,7 +55,8 @@ const FESTIVAL = {
       confirmedDate: "2026-07-27",
       sources: [
         "https://ishiokamatsuri.com/about/",
-        "https://social.ja-kyosai.or.jp/prefecture/festival/ibaraki/"
+        "https://social.ja-kyosai.or.jp/prefecture/festival/ibaraki/",
+        "https://doconeel.com/ishioka/"
       ]
     }
   },
@@ -71,8 +72,8 @@ const FESTIVAL = {
       },
       confirmation: {
         confirmedDate: "2026-09-03",
-        sources: ["https://www.ishioka-kankou.com/events/ishioka-matsuri/", "https://www.ishioka-kankou.com/topics/tokubetsu-kanran/", "https://www.ishioka-kankou.com/topics/ishioka-matsuri-koutsuu-2026/"],
-        note: "石岡市観光協会公式で2026年9月19日〜21日の開催、13:00〜21:00の交通規制、鉄道・バス・タクシー案内を確認。専用の臨時駐車場案内は無い。特別観覧席の販売情報も確認済み（前売4,400円・限定48席、公式オンラインストア）。"
+        sources: ["https://www.ishioka-kankou.com/events/ishioka-matsuri/", "https://www.ishioka-kankou.com/topics/tokubetsu-kanran/", "https://www.ishioka-kankou.com/topics/ishioka-matsuri-koutsuu-2026/", "https://ishiokamatsuri.com/news/reitaisai-2026/"],
+        note: "石岡市観光協会公式で2026年9月19日〜21日の開催、13:00〜21:00の交通規制、鉄道・バス・タクシー案内を確認。専用の臨時駐車場案内は無い。特別観覧席の販売情報も確認済み（前売4,400円・限定48席、公式オンラインストア）。石岡のおまつり公式（実行委員会）の2026年タイムスケジュールも確認：初日9/19は9:00御綱祭・13:00神幸祭で開始、2日目9/20は11:00奉納相撲、15:00幌獅子大行列、16:45山車大行列、3日目9/21は13:10仮殿発輿祭・16:40還幸祭と年番引継ぎ式で終了。全体の開催時間は9:00〜21:00。"
       }
     }
   ]
