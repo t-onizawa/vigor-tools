@@ -2844,7 +2844,19 @@ backgroundImageとatmosphereMediaを別判定し、青梅大祭の動画1件の�
     - JSON-LDをJSON.parseし、subEvent16件・JST付きISO 8601形式を確認
     - コンソールエラー・警告なしを確認
     ```
-    **既知の残課題（未対応）：** 新規祭り追加のScheduled Taskの
-    プロンプト・テンプレートには、今回のschedule-sectionプレースホルダー
-    が未反映。今回はスコープ外として意図的に対象外にした。次に新しい
-    祭りを追加する前までに、当該タスクのプロンプト更新が必要。
+    **既知の残課題→対応済み（2026-09-03）：** 新規祭り追加のScheduled
+    Taskプロンプトへ、以下2点をFounder経由で反映済み。(1)「## ページ
+    作成時の必須要素」にschedule-section用の静的プレースホルダー
+    （related-festivals-sectionと同じ扱い、primary-infoの直後・
+    atmosphere-media-sectionの直前に配置）を追加。(2) scheduleフィールド
+    自体はbackgroundImage・atmosphereMediaと同じ「調査中に一次情報で
+    自然に見つかった場合のみ追加、探索を目的に時間を使わない」運用方針を
+    明記。週次品質改善タスク（backgroundImage/atmosphereMedia素材補完に
+    役割を絞る設計、2026-08-12確定）にはscheduleを混ぜず対象外のまま
+    とした（担当フィールド分離の原則を維持するため）。
+
+    **sitemap.xml lastmod更新（統括担当、commit 0433ae6）：** matsuri側
+    からの依頼（石岡のおまつりの`<lastmod>`が2026-07-29のまま7 commit分
+    更新されていなかった件）を統括担当PMが検証の上で反映。diff・XML構文
+    確認済み、対象は該当1エントリのみで他エントリへの影響なし。matsuri
+    側でも反映後の値（2026-09-03）を直接確認済み。
