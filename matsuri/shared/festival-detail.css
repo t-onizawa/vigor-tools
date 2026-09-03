@@ -403,6 +403,18 @@ p {
   color: #ffffff;
 }
 
+.related-festival-link {
+  text-decoration: none;
+  color: inherit;
+  transition: border-color 0.15s ease, background 0.15s ease;
+}
+
+.related-festival-link:hover,
+.related-festival-link:focus-visible {
+  border-color: var(--accent);
+  background: var(--surface);
+}
+
 #atmosphere-media-link,
 #map-external-link {
   color: var(--accent);

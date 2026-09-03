@@ -408,15 +408,15 @@
     }
 
     const media = backgroundImage;
+    if (!media || media.type !== "youtube") {
+      return;
+    }
+
     header.classList.add("has-hero");
 
     const background = document.createElement("div");
-    if (media && media.type === "youtube") {
-      background.className = "hero-background";
-      background.style.backgroundImage = `url(https://i.ytimg.com/vi/${media.contentId}/hqdefault.jpg)`;
-    } else {
-      background.className = "hero-background hero-background--fallback";
-    }
+    background.className = "hero-background";
+    background.style.backgroundImage = `url(https://i.ytimg.com/vi/${media.contentId}/hqdefault.jpg)`;
     header.prepend(background);
   }
 
@@ -627,7 +627,7 @@
 
     relatedItems.forEach((item) => {
       const link = document.createElement("a");
-      link.className = "feature-badge is-yes";
+      link.className = "feature-badge related-festival-link";
       link.href = `../${item.festival.id}/`;
 
       const text = document.createElement("span");
