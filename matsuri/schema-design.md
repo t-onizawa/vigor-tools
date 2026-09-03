@@ -1,7 +1,7 @@
 # VIGOR MATSURI — 祭りデータ スキーマ設計（情報設計担当）
 
 ```
-Version: 0.16（試作検証用）
+Version: 0.17（試作検証用）
 Created: 2026-07-27
 Updated: 2026-09-03
 Scope: 石岡のおまつり1件のプロトタイプ検証のみ。8件展開時の見直しを前提とする。
@@ -75,6 +75,12 @@ Scope: 石岡のおまつり1件のプロトタイプ検証のみ。8件展開�
    変化しにくい情報だけを残す。過去年度に駐車場が存在したことを
    根拠に当年の `hasParking` を `true` にはしない
    （未確認なら必ず `null`）。
+
+   詳細ページのFAQは新しいデータフィールドを持たず、既存の
+   `yearlyInfo[年].dates`、`eventStatus`、`access.hasParking`、
+   `access.parkingNote`と、`constantInfo.access.nearestStation`から
+   `festival-detail.js`が機械的に生成する。可視テキストとFAQPage
+   JSON-LDは同じ生成結果を使い、内容を二重管理しない。
 
 6. **外部メディア（`atmosphereMedia`）は恒常情報に置き、任意項目とする**
 
@@ -719,4 +725,9 @@ v0.16  2026-09-03
     `yearlyInfo[年].schedule`を追加。日付・任意の日名称・時刻付き行事を
     持ち、未設定の祭りではUIセクションを表示しない。石岡のおまつりの
     2026年タイムスケジュールを最初の実例とした。
+
+v0.17  2026-09-03
+    既存の日程・開催状態・駐車場・最寄り駅から、可視FAQとFAQPage
+    JSON-LDを同一の生成結果で出力する方針を追記。Event JSON-LDには、
+    恒常情報と年度情報の確認日のうち新しい方をdateModifiedとして出力する。
 ```

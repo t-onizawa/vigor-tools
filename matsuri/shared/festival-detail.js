@@ -620,6 +620,84 @@
     section.hidden = false;
   }
 
+  function buildDateFaqAnswer(yearlyInfo) {
+    const year = yearlyInfo.year;
+    const dates = Array.isArray(yearlyInfo.dates) ? yearlyInfo.dates : [];
+    const dateText = dates.length > 0 ? formatDateList(dates) : null;
+
+    if (yearlyInfo.eventStatus === "off_year") {
+      return `${year}年は陰祭り（本祭なし）です。`;
+    }
+    if (!dateText) {
+      return `${year}年の日程はまだ発表されていません。`;
+    }
+    if (yearlyInfo.eventStatus === "ended") {
+      return `${dateText}に開催されました。`;
+    }
+    if (yearlyInfo.eventStatus === "cancelled") {
+      return `${dateText}に開催予定でしたが、中止となりました。`;
+    }
+    if (yearlyInfo.eventStatus === "postponed") {
+      return `${dateText}に開催予定でしたが、延期となりました。新しい日程は公式情報をご確認ください。`;
+    }
+    if (yearlyInfo.eventStatus === "confirmed") {
+      return `${dateText}に開催されます。`;
+    }
+    return `${dateText}に開催予定です。公式の詳細発表をお待ちください。`;
+  }
+
+  function buildParkingFaqAnswer(yearlyInfo) {
+    const year = yearlyInfo.year;
+    const access = yearlyInfo.access || {};
+    let answer;
+    if (access.hasParking === true) {
+      answer = `${year}年は駐車場があります。`;
+    } else if (access.hasParking === false) {
+      answer = `${year}年は駐車場はありません。`;
+    } else {
+      answer = `${year}年の駐車場情報は未確認です。`;
+    }
+    return access.parkingNote ? `${answer}${access.parkingNote}` : answer;
+  }
+
+  function buildFaqItems(currentFestival, yearlyInfo) {
+    const station = currentFestival.constantInfo.access.nearestStation;
+    return [
+      {
+        question: `${currentFestival.name}は${yearlyInfo.year}年いつ開催されますか？`,
+        answer: buildDateFaqAnswer(yearlyInfo)
+      },
+      {
+        question: `${currentFestival.name}に駐車場はありますか？`,
+        answer: buildParkingFaqAnswer(yearlyInfo)
+      },
+      {
+        question: `${currentFestival.name}の最寄り駅はどこですか？`,
+        answer: station
+          ? `最寄り駅・アクセス拠点は${station}です。`
+          : "最寄り駅・アクセス拠点は未確認です。"
+      }
+    ];
+  }
+
+  function renderFaq(currentFestival, yearlyInfo) {
+    const section = byId("faq-section");
+    if (!section) return;
+    const container = byId("faq-list");
+    if (!container) return;
+
+    buildFaqItems(currentFestival, yearlyInfo).forEach((item) => {
+      const block = document.createElement("div");
+      block.className = "faq-item";
+      const question = document.createElement("h3");
+      question.textContent = item.question;
+      const answer = document.createElement("p");
+      answer.textContent = item.answer;
+      block.append(question, answer);
+      container.append(block);
+    });
+  }
+
   async function loadRelatedFestival(slug) {
     try {
       const response = await fetch(`../${slug}/data.js`);
@@ -762,6 +840,7 @@
   applyHeroHeader(festival.constantInfo.backgroundImage);
   renderMapReference(festival.constantInfo.mapReference);
   renderRelatedFestivals(festival, currentYear);
+  renderFaq(festival, currentYear);
 
   byId("constant-sources").append(
     createSourceBlock("恒常情報", festival.constantInfo.confirmation, "constant")
@@ -935,6 +1014,15 @@
     return `${String(hour).padStart(2, "0")}:${match[2]}:00`;
   }
 
+  function getLatestConfirmedDate(currentFestival, yearlyInfo) {
+    const dates = [
+      currentFestival.constantInfo.confirmation?.confirmedDate,
+      yearlyInfo.confirmation?.confirmedDate
+    ].filter((date) => typeof date === "string" && /^\d{4}-\d{2}-\d{2}$/.test(date));
+    dates.sort();
+    return dates[dates.length - 1] || null;
+  }
+
   function buildEventJsonLd(festival, yearlyInfo) {
     const dates = Array.isArray(yearlyInfo.dates) ? yearlyInfo.dates : [];
     if (dates.length === 0) {
@@ -963,6 +1051,11 @@
     const backgroundImage = festival.constantInfo.backgroundImage;
     if (backgroundImage?.type === "youtube" && backgroundImage.contentId) {
       jsonLd.image = `https://i.ytimg.com/vi/${backgroundImage.contentId}/hqdefault.jpg`;
+    }
+
+    const dateModified = getLatestConfirmedDate(festival, yearlyInfo);
+    if (dateModified) {
+      jsonLd.dateModified = dateModified;
     }
 
     const schedule = yearlyInfo.schedule;
@@ -1002,6 +1095,32 @@
     }
   }
 
+  function injectFaqJsonLd(currentFestival, yearlyInfo) {
+    try {
+      const faqItems = buildFaqItems(currentFestival, yearlyInfo);
+      const jsonLd = {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        mainEntity: faqItems.map((item) => ({
+          "@type": "Question",
+          name: item.question,
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: item.answer
+          }
+        }))
+      };
+
+      const script = document.createElement("script");
+      script.type = "application/ld+json";
+      script.textContent = JSON.stringify(jsonLd);
+      document.head.appendChild(script);
+    } catch (err) {
+      console.warn("[festival-detail] FAQPage JSON-LDの生成に失敗", err);
+    }
+  }
+
   injectEventJsonLd(festival, currentYear);
+  injectFaqJsonLd(festival, currentYear);
   renderSearchLinks(festival);
 })();
