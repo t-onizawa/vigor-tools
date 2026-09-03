@@ -1,0 +1,12 @@
+# 住吉祭 調査記録
+
+- 確認日: 2026-09-04
+- 同一性・範囲: 神輿洗神事から頓宮祭までの住吉大社「住吉祭（夏祭）」を一連の祭礼として扱う。
+- 開催主体: 住吉大社。
+- 2026年日程: 7月20日・26日・30日・31日、8月1日。神社公式で確認。
+- eventStatus: ended。
+- features: 大神輿の渡御をmikoshi/parade。夏越祓神事の所作を一般的な踊りへ分類しない。
+- highlightComment: 祓い、茅の輪、約2トンの大神輿、紀州街道の渡御という公式説明を要約。
+- 既存との差異: 大阪市から堺市へ二都市を結ぶ大神輿渡御と祓いの祭。
+- 素材: 採用なし。
+- 一次情報: https://sumiyoshitaisha.net/news/detail.php?seq=149 / https://www.sumiyoshitaisha.net/events/special.html?sfns=mo
