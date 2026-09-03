@@ -2860,3 +2860,42 @@ backgroundImageとatmosphereMediaを別判定し、青梅大祭の動画1件の�
     更新されていなかった件）を統括担当PMが検証の上で反映。diff・XML構文
     確認済み、対象は該当1エントリのみで他エントリへの影響なし。matsuri
     側でも反映後の値（2026-09-03）を直接確認済み。
+
+2026-09-03（FAQ形式の可視テキスト・JSON-LD dateModifiedをCodex CLIで
+    実装、commit 4d6e23a）
+    Googleの一般的なFAQPage rich snippetは2023年以降ほぼ政府・医療系
+    サイトに限定され効果が薄いため、狙いはAIの引用しやすさ（疑問文→
+    回答形式が最も抜き出されやすい）と鮮度シグナルに絞った。新しい
+    取材・research作業を発生させないため、FAQの内容は**既存data.js
+    フィールドから機械生成**する設計とし、新規data.jsフィールドは
+    追加していない。
+    ```
+    - buildFaqItems()が日程（eventStatus別の文言）・駐車場
+      （hasParking true/false/null＋parkingNote）・最寄り駅の3問を
+      生成。可視FAQとFAQPage JSON-LDは同じ関数から生成し二重管理を回避
+    - buildEventJsonLd()にgetLatestConfirmedDate()を追加し、
+      constantInfo/yearlyInfo双方のconfirmedDateのうち新しい方を
+      dateModifiedとして採用
+    - 全161件のfestival index.htmlに<section id="faq-section">を
+      related-festivals-sectionの直後・sources-sectionの直前に追加
+      （FAQは必ず1件以上生成されるためhidden属性なし、他セクションと
+      異なり非表示分岐は不要と判断）
+    ```
+    PMによる独立検証：
+    ```
+    - grep集計で161ファイル全件にfaq-sectionプレースホルダーが1つずつ
+      存在（漏れ・重複なし）を確認
+    - festival-detail.jsでnode --check通過を確認
+    - 石岡のおまつり（confirmed）・神田祭（off_year）を実機確認。可視
+      FAQ本文とFAQPage JSON-LDの内容が完全一致することをスクリプトで
+      検証。dateModifiedが石岡2026-09-03・神田2026-07-30と正しく
+      出力されることを確認
+    - モバイル390px幅で横スクロールなし、faq-sectionの表示位置
+      （関連する祭りの直後・出典の直前）を確認
+    - コンソールエラー・警告なしを確認
+    - schema-design.mdに、FAQが新フィールドではなく既存フィールドからの
+      機械生成である旨のドキュメント追記があることを確認
+    ```
+    **既知の残課題：** 新規祭り追加のScheduled Taskプロンプトには
+    faq-sectionプレースホルダーが未反映（scheduleと同様、今回は
+    スコープ外）。次回のプロンプト更新でschedule分とまとめて反映する。
