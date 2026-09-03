@@ -66,6 +66,42 @@ const FESTIVAL = {
       eventStatus: "confirmed",
       dates: ["2026-09-19", "2026-09-20", "2026-09-21"],
       yearTownInCharge: "森木町",
+      schedule: [
+        {
+          date: "2026-09-19",
+          dayLabel: "神幸祭",
+          items: [
+            { time: "9:00", label: "御綱祭" },
+            { time: "13:00", label: "神幸祭（発輿祭）" },
+            { time: "14:00", label: "大神輿・供奉行列出社" },
+            { time: "16:00", label: "大神輿・供奉行列仮殿到着" },
+            { time: "16:30", label: "市中神賑行事" }
+          ]
+        },
+        {
+          date: "2026-09-20",
+          dayLabel: "奉祝祭",
+          items: [
+            { time: "10:00", label: "土俵祭" },
+            { time: "11:00", label: "奉納相撲開始" },
+            { time: "13:00", label: "明神神輿発輿祭と出御" },
+            { time: "13:00", label: "浦安の舞・染谷十二座神楽開始" },
+            { time: "15:00", label: "幌獅子大行列" },
+            { time: "16:45", label: "山車大行列" },
+            { time: "20:30", label: "年番町安全祈願祭・紅白餅撒き" }
+          ]
+        },
+        {
+          date: "2026-09-21",
+          dayLabel: "還幸祭",
+          items: [
+            { time: "13:10", label: "仮殿発輿祭" },
+            { time: "14:00", label: "大神輿・供奉行列仮殿出社（花火合図）" },
+            { time: "16:00", label: "大神輿・供奉行列總社宮帰社" },
+            { time: "16:40", label: "還幸祭・年番引継ぎ式" }
+          ]
+        }
+      ],
       access: {
         hasParking: null,
         parkingNote: "公式の交通案内では臨時駐車場の案内はなく、鉄道・バス・タクシーでの来場が案内されている。"
@@ -73,7 +109,7 @@ const FESTIVAL = {
       confirmation: {
         confirmedDate: "2026-09-03",
         sources: ["https://www.ishioka-kankou.com/events/ishioka-matsuri/", "https://www.ishioka-kankou.com/topics/tokubetsu-kanran/", "https://www.ishioka-kankou.com/topics/ishioka-matsuri-koutsuu-2026/", "https://ishiokamatsuri.com/news/reitaisai-2026/"],
-        note: "石岡市観光協会公式で2026年9月19日〜21日の開催、13:00〜21:00の交通規制、鉄道・バス・タクシー案内を確認。専用の臨時駐車場案内は無い。特別観覧席の販売情報も確認済み（前売4,400円・限定48席、公式オンラインストア）。石岡のおまつり公式（実行委員会）の2026年タイムスケジュールも確認：初日9/19は9:00御綱祭・13:00神幸祭で開始、2日目9/20は11:00奉納相撲、15:00幌獅子大行列、16:45山車大行列、3日目9/21は13:10仮殿発輿祭・16:40還幸祭と年番引継ぎ式で終了。全体の開催時間は9:00〜21:00。"
+        note: "石岡市観光協会公式で2026年9月19日〜21日の開催、13:00〜21:00の交通規制、鉄道・バス・タクシー案内を確認。専用の臨時駐車場案内は無い。特別観覧席の販売情報も確認済み（前売4,400円・限定48席、公式オンラインストア）。実行委員会公式（ishiokamatsuri.com/news/reitaisai-2026/）で2026年のタイムスケジュールを確認（詳細は下記「当日の目安スケジュール」参照）。"
       }
     }
   ]

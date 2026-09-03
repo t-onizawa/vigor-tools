@@ -575,6 +575,51 @@
     section.hidden = false;
   }
 
+  function renderSchedule(schedule) {
+    const section = byId("schedule-section");
+    if (!section) return;
+
+    if (!Array.isArray(schedule) || schedule.length === 0) {
+      section.remove();
+      return;
+    }
+
+    const container = byId("schedule-list-container");
+    if (!container) {
+      section.remove();
+      return;
+    }
+
+    schedule.forEach((day) => {
+      const dayBlock = document.createElement("div");
+      dayBlock.className = "schedule-day";
+
+      const heading = document.createElement("h3");
+      heading.textContent = day.dayLabel
+        ? `${formatDate(day.date)}　${day.dayLabel}`
+        : formatDate(day.date);
+      dayBlock.append(heading);
+
+      const list = document.createElement("ul");
+      list.className = "schedule-list";
+      (day.items || []).forEach((item) => {
+        const li = document.createElement("li");
+        const time = document.createElement("span");
+        time.className = "schedule-time";
+        time.textContent = item.time;
+        const label = document.createElement("span");
+        label.className = "schedule-label";
+        label.textContent = item.label;
+        li.append(time, label);
+        list.append(li);
+      });
+      dayBlock.append(list);
+      container.append(dayBlock);
+    });
+
+    section.hidden = false;
+  }
+
   async function loadRelatedFestival(slug) {
     try {
       const response = await fetch(`../${slug}/data.js`);
@@ -685,6 +730,7 @@
   setText("event-status", eventStatusLabels[effectiveEventStatus] || "未確認");
   byId("event-status").className = `status-badge status-${effectiveEventStatus || "unknown"}`;
   renderHayashiNote(features.hayashiNote);
+  renderSchedule(currentYear.schedule);
 
   const featureGrid = byId("feature-grid");
   featureItems.forEach(([label, value]) => {
@@ -881,6 +927,14 @@
     return baseDescription;
   }
 
+  function normalizeTimeToIso(time) {
+    const match = typeof time === "string" && time.match(/^(\d{1,2}):([0-5]\d)$/);
+    if (!match) return null;
+    const hour = Number(match[1]);
+    if (hour > 23) return null;
+    return `${String(hour).padStart(2, "0")}:${match[2]}:00`;
+  }
+
   function buildEventJsonLd(festival, yearlyInfo) {
     const dates = Array.isArray(yearlyInfo.dates) ? yearlyInfo.dates : [];
     if (dates.length === 0) {
@@ -909,6 +963,26 @@
     const backgroundImage = festival.constantInfo.backgroundImage;
     if (backgroundImage?.type === "youtube" && backgroundImage.contentId) {
       jsonLd.image = `https://i.ytimg.com/vi/${backgroundImage.contentId}/hqdefault.jpg`;
+    }
+
+    const schedule = yearlyInfo.schedule;
+    if (Array.isArray(schedule) && schedule.length > 0) {
+      const subEvents = [];
+      schedule.forEach((day) => {
+        (day.items || []).forEach((item) => {
+          const isoTime = normalizeTimeToIso(item.time);
+          if (!isoTime) return;
+          subEvents.push({
+            "@type": "Event",
+            name: item.label,
+            startDate: `${day.date}T${isoTime}+09:00`,
+            location: jsonLd.location
+          });
+        });
+      });
+      if (subEvents.length > 0) {
+        jsonLd.subEvent = subEvents;
+      }
     }
 
     return jsonLd;
