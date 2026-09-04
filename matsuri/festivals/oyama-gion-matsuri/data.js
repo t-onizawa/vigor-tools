@@ -40,8 +40,8 @@ const FESTIVAL = {
     confirmation: { verified: true, confirmedDate: "2026-07-31", sources: ["https://www.city.oyama.tochigi.jp/kankou-bunka/miryoku/event/summer/page003807.html"] }
   },
   yearlyInfo: [{
-    year: 2026, eventStatus: "unconfirmed", dates: ["2026-07-19"],
+    year: 2026, eventStatus: "unconfirmed", dates: [],
     access: { hasParking: null, parkingNote: "2026年の専用駐車場・交通規制詳細は未確認。" },
-    confirmation: { confirmedDate: "2026-07-31", sources: ["https://www.city.oyama.tochigi.jp/kankou-bunka/miryoku/event/summer/page003807.html"], note: "市公式の例年第3日曜日という開催パターンから算出した参考日。2026年の個別開催告知は未確認。" }
+    confirmation: { confirmedDate: "2026-07-31", sources: ["https://www.city.oyama.tochigi.jp/kankou-bunka/miryoku/event/summer/page003807.html"], note: "市公式の例年第3日曜日という開催パターンから算出した参考日（7/19）を一時掲載していたが、2026-09-04時点で公式サイトを再確認しても2026年個別の日程発表は無く、算出日程が過ぎた後も裏付けが取れなかったため、推測日付の掲載を取りやめ日程未発表の扱いに戻した。" }
   }]
 };

@@ -50,9 +50,25 @@ function checkNoteDateHints(festival, yearly) {
   const findings = [];
   const note = yearly?.confirmation?.note;
   if (!note) return findings;
-  const isoHints = (note.match(/\d{4}-\d{2}-\d{2}/g) || []);
+
+  // 「調査時点（2026-07-28）」「2026-09-04時点で」のような、イベント日ではなく
+  // 確認・再確認を行った日を指すISO日付は除外する（v0.1実データ検証で判明した
+  // 誤検知パターン：「時点」の前後6文字以内に現れるISO日付は確認日とみなす）
+  const isoWithContext = [...note.matchAll(/\d{4}-\d{2}-\d{2}/g)].map((m) => {
+    const start = Math.max(0, m.index - 6);
+    const end = m.index + m[0].length + 6;
+    return { date: m[0], context: note.slice(start, end) };
+  });
+
+  const knownConfirmedDates = new Set(
+    [festival.constantInfo?.confirmation?.confirmedDate, yearly.confirmation?.confirmedDate].filter(Boolean)
+  );
+
   const dates = Array.isArray(yearly.dates) ? yearly.dates : [];
-  const mismatched = isoHints.filter((d) => !dates.includes(d));
+  const mismatched = isoWithContext
+    .filter(({ date, context }) => !dates.includes(date) && !context.includes("時点") && !knownConfirmedDates.has(date))
+    .map(({ date }) => date);
+
   if (mismatched.length > 0) {
     findings.push({
       type: "note_date_hint_mismatch",
