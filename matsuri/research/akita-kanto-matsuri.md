@@ -30,3 +30,7 @@
 - https://www.kantou.gr.jp/
 - https://www.akita-yulala.jp/festival/335
 - https://akita-fun.jp/events/406
+
+### 2026-09-04 毎日品質改善
+
+公式・自治体・観光協会等の一次情報と背景候補を再調査した。検索結果だけでは採否を確定せず、有力候補は動画ページとサムネイルを直接確認したが、大きな文字、長尺・単一場面、低解像度、ページ範囲の不一致等により既存のbackgroundImage基準を満たす新規素材を確定できなかった。既存のatmosphereMediaは変更しない。
