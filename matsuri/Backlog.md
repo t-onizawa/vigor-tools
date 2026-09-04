@@ -3019,6 +3019,14 @@ backgroundImageとatmosphereMediaを別判定し、青梅大祭の動画1件の�
     改修後の再スキャンで全164件・hard issue 0件・heuristic候補1件
     （神田祭、レビュー済み）のクリーンな状態を確認した。
 
-    **未着手：** 3. 新規追加タスクへの品質ゲート組み込み（次のアクション、
-    Founder経由でのプロンプト更新が必要）。Monetization v0.1の設計は
-    Data Integrityのゲート化完了後に着手する方針（Founder承認済み）。
+    **3. 品質ゲート組み込み→対応済み（2026-09-04）：** 新規祭り追加タスクは
+    Codex自体のScheduled Task機能で管理されており、統括担当（root配下の
+    別セッション）を経由する必要はないと判明。Founderが直接Codexの
+    タスク管理画面へ「## 検証」項目として
+    `node matsuri/scripts/check-data-integrity.js を実行し、hard issue
+    が0件であることを確認する（1件でもあれば完了報告に記載し、
+    commit・push前に対処するか判断を仰ぐ）`を追記し適用済み。これで
+    「1. 全件チェック→2. 修正→3. 品質ゲート化」が完了した。
+
+    Monetization v0.1の設計はここから着手する（Founder承認済みの
+    順序）。ASPアカウント未取得の件は前提条件として継続保留。
