@@ -3,7 +3,7 @@
 ```
 Status: Living backlog（固定ロードマップではない）
 Created: 2026-07-27
-Updated: 2026-09-03（FAQ/dateModified実装・llms.txt試験設置・新規追加タスク更新まで完了）
+Updated: 2026-09-04（Founder Review決裁・Data Integrity v0.1完了、次は品質ゲート化）
 ```
 
 これは計画表ではない。優先度は仮説であり、公開後の反応で入れ替わる前提の
@@ -2956,3 +2956,69 @@ backgroundImageとatmosphereMediaを別判定し、青梅大祭の動画1件の�
     あわせて、なぜ自己登録権限が使われなかったのかの確認も依頼した。
     **未解決：** 統括担当の反映待ち。次回以降のバッチで自己登録が
     機能するかも要観察。
+
+2026-09-04（Founder Review：Data Integrity品質ゲート化→Monetization
+    v0.1の順で進める方針決定、VIGOR TOOLSは50本で固定・新規開発停止）
+    VIGOR LAB全体のFounder Reviewが実施され、以下が決裁された。
+    ```
+    VIGOR TOOLS：50本で固定・新規開発停止、Search Console等で反応の
+      あったものだけ改善
+    VIGOR MATSURI：継続投資・掲載追加も継続。ただしData Integrityを
+      品質ゲート化した上で収益化v0.1へ進む
+    VIGOR LAB全体：「検索される」までの検証フェーズから「行動される・
+      お金が発生するか」を検証するフェーズへ移行
+    ```
+    matsuriの実装順序はFounder指定：1. 全件チェック 2. 既存データの
+    不整合修正 3. 新規追加時の品質ゲート化 4. Monetization v0.1
+    5. GA4計測 6. 実データでの収益化判断。宿泊アフィリエイトのASP
+    アカウントは未取得であることをFounderに確認済み（Monetization
+    設計の前提条件として保留中）。
+
+2026-09-04（Data Integrity v0.1：チェッカー新設・全件クリーン化、
+    commit be903f7・d8e828e）
+    matsuri/scripts/check-data-integrity.js（読み取り専用、新しい管理
+    画面は作らない）を新設し、全164件を対象に以下を検証する設計とした。
+    ```
+    hard（機械的に確定できる構造矛盾）：
+    - eventStatusと開催日の整合（confirmed/endedなのにdatesが空、
+      endedなのに未来日を含む、confirmed/unconfirmed系なのに全日程が
+      過去等）
+    - true/false/null/"n/a"の4値ルール逸脱（features・hasParking）
+    - verified:trueまたはconfirmed系のeventStatusなのにsourcesが空
+    heuristic（低confidence、人間/AIレビュー前提）：
+    - off_year年でdatesが入っている（陰祭りでも小規模な例大祭日程が
+      残るケースがあるため機械では判定しない）
+    - confirmation.noteに登場する日付がyearlyInfo.datesと食い違う
+    ```
+    **設計変更：** 特徴フラグ（山車・神輿・踊り等）と本文の意味的整合性は
+    キーワード照合ヒューリスティックとして実装したが、164件の実データで
+    検証したところ169件中ほぼ全てが誤検知だった（「ではなく」等の否定
+    表現を拾えない、「舞楽」の「舞」の一文字一致で無関係語にマッチする
+    等）。この種の意味的判定は正規表現では解けないと判断し実装から削除。
+    Founder指示どおり「曖昧な判定は人間/AIレビューに回す」領域として、
+    v0.1の自動チェックからは除外した。
+
+    **全件スキャン結果と対応：**
+    ```
+    hard issue 3件
+    - おわら風の盆：confirmed・全日程が過去日。一次情報で日程が確定
+      済みだったため、confirmed→endedへ修正（確信度高、即修正）
+    - 羽村春祭り／小山祇園祭：unconfirmed・算出参考日が過去日。
+      2026年個別の公式告知は当初から未確認で、2026-09-04時点で一次
+      情報を再確認しても状況は変わらず。endedと断定するのは推測になる
+      ため、両方とも推測日付の掲載を取りやめdates:[]・日程未発表へ
+      戻した（ended誤断定を避けた）
+    heuristic候補6件（すべて個別に内容を確認）
+    - note_date_hint_mismatch 5件：全て「調査時点（YYYY-MM-DD）」の
+      ような確認日の言及を誤検知したもの。チェッカー側を改修し
+      （「時点」近傍・既存confirmedDateを除外）、誤検知5件を解消
+    - off_year_has_dates 1件（神田祭）：陰祭りの年でも毎年ある小規模な
+      例大祭の日付で、正しいデータと確認。誤検知ではなく設計通りの
+      「要確認フラグ」の動作例として残す
+    ```
+    改修後の再スキャンで全164件・hard issue 0件・heuristic候補1件
+    （神田祭、レビュー済み）のクリーンな状態を確認した。
+
+    **未着手：** 3. 新規追加タスクへの品質ゲート組み込み（次のアクション、
+    Founder経由でのプロンプト更新が必要）。Monetization v0.1の設計は
+    Data Integrityのゲート化完了後に着手する方針（Founder承認済み）。
