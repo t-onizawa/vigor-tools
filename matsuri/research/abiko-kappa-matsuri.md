@@ -35,3 +35,7 @@ YouTube動画ページ・投稿チャンネル・サムネイルを直接確認�
 - https://www.abikokappa.website/
 - https://www.city.abiko.chiba.jp/event/event_moyooshi/abikokappamatsuri.html
 - https://www.city.abiko.chiba.jp/event/shizennonaka/kouenryokuchi/park/citypark/teganuma.html
+
+### 2026-09-05 毎日品質改善
+
+- 公式・市公開元を再検索。既存背景とは別に、投稿者と内容を直接確認できる入口用途の動画候補を特定できず、動画は不採用のまま。

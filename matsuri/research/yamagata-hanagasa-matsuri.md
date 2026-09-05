@@ -23,3 +23,7 @@
 - https://www.hanagasa.jp/
 - https://www.hanagasa.jp/news/news_99.html
 - https://www.pref.yamagata.jp/020026/kensei/shoukai/yamagatamonogatari/matsuri/hanagasa.html
+
+### 2026-09-05 毎日品質改善
+
+- 山形県公式動画 `1wYo93MsTek` の動画ページと実サムネイルを直接確認。観光PR用の演出と大きな文字が中心で、実開催の背景・入口動画基準を満たさないため不採用。
