@@ -62,16 +62,16 @@ const FESTIVAL = {
   yearlyInfo: [
     {
       year: 2026,
-      eventStatus: "scheduled_pending_official",
+      eventStatus: "confirmed",
       dates: ["2026-10-10", "2026-10-11"],
       access: {
         hasParking: null,
         parkingNote: "今宮神社自体には普段約50台分の駐車場があるとされるが、祭り開催中の利用可否は未確認。"
       },
       confirmation: {
-        confirmedDate: "2026-07-28",
-        sources: ["https://www.buttsuke.com/"],
-        note: "祭り運営団体公式サイトで2026年日程を直接確認。"
+        confirmedDate: "2026-09-07",
+        sources: ["https://www.city.kanuma.tochigi.jp/0761/info-0000011425-0.html"],
+        note: "鹿沼市公式の開催決定発表で、2026年10月10日・11日の開催と全27台の彫刻屋台参加を確認。"
       }
     }
   ]

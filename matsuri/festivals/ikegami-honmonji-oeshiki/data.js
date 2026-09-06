@@ -30,8 +30,8 @@ const FESTIVAL = {
     confirmation: { verified: true, confirmedDate: "2026-07-31", sources: ["https://honmonji.jp/oeshiki/", "https://www.honmonji.jp/outline/gyoji.html"] }
   },
   yearlyInfo: [{
-    year: 2026, eventStatus: "scheduled_pending_official", dates: ["2026-10-11", "2026-10-12", "2026-10-13"],
+    year: 2026, eventStatus: "confirmed", dates: ["2026-10-11", "2026-10-12", "2026-10-13"],
     access: { hasParking: false, parkingNote: "池上本門寺・池上駅周辺で交通規制。公共交通機関を利用。" },
-    confirmation: { confirmedDate: "2026-07-31", sources: ["https://honmonji.jp/oeshiki/"], note: "毎年10月11日〜13日に法要、12日夜に万灯練供養。2026年の詳細時程は公式発表待ち。" }
+    confirmation: { confirmedDate: "2026-09-07", sources: ["https://honmonji.jp/news/schedule.html"], note: "池上本門寺公式の2026年9月更新で、第745遠忌報恩お会式を10月11日〜13日に行うことと各日の法要時刻を確認。" }
   }]
 };

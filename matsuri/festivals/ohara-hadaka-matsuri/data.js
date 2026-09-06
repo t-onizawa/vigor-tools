@@ -50,16 +50,16 @@ const FESTIVAL = {
   yearlyInfo: [
     {
       year: 2026,
-      eventStatus: "scheduled_pending_official",
+      eventStatus: "confirmed",
       dates: ["2026-09-23", "2026-09-24"],
       access: {
         hasParking: true,
         parkingNote: "大原海水浴場に270台分の無料駐車場あり（第三者情報）。大原町役場にも駐車場があるが台数に限りがあり、電車利用が推奨されている。"
       },
       confirmation: {
-        confirmedDate: "2026-07-28",
-        sources: ["https://www.city.isumi.lg.jp/soshikikarasagasu/suisanshokoka/kankopromotionhan/2/2/786.html"],
-        note: "毎年9月23日・24日固定という恒常パターンによる確認。"
+        confirmedDate: "2026-09-07",
+        sources: ["https://www.city.isumi.lg.jp/soshikikarasagasu/suisanshokoka/kankopromotionhan/3/7804.html"],
+        note: "いすみ市公式の2026年交通規制・神輿渡御案内で、9月23日・24日の開催を確認。"
       }
     }
   ]
