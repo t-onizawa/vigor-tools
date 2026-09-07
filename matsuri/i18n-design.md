@@ -86,9 +86,16 @@ matsuri/festivals/<slug>/data.js       … 既存。事実データ（無変更�
 matsuri/en/festivals/<slug>/translation.js  … 新設。英語の翻訳テキストのみ
 ```
 
-`translation.js`は以下のような、翻訳対象フィールドだけを持つ小さな
-オブジェクトにする（変数名はJPの`FESTIVAL`と衝突しないよう
-`FESTIVAL_TRANSLATION_EN`とする）：
+**v0.2修正（2026-09-07、実装前チェックでCodexが発見した設計矛盾を
+反映）：** 当初「翻訳対象は4フィールドのみ」としていたが、実際には
+英語ページの可視テキストには他にも日本語版`data.js`由来の文章（当日
+スケジュールの行事名、最寄り駅・駐車場注記、地図の名称・注記等）が
+多数表示されることが判明した。「事実データは複製しない」という原則と
+「英語ページに日本語を残さない」という原則が、これらのフィールドでは
+両立しないため、フィールドごとに以下の3パターンへ分類し直した。
+
+**(a) 翻訳する（`translation.js`に追加）**：文章として英語話者に
+提示する必要があり、かつ機械的な固定辞書では表現できないもの。
 
 ```js
 const FESTIVAL_TRANSLATION_EN = {
@@ -97,14 +104,60 @@ const FESTIVAL_TRANSLATION_EN = {
   officialName: "Hitachi Sōja-gū Grand Festival",
   highlightComment: "The roofed \"horo-jishi\" float, where musicians perform inside a covered structure, is rare nationwide...",
   hayashiNote: null,                    // JP側にnullならEN側もnull
-  metaDescriptionOverride: null         // 通常はhighlightComment等から自動生成。個別上書きが必要な場合のみ設定
+  access: {
+    nearestStation: "JR Joban Line, Ishioka Station (right by the west exit)",
+    parkingNote: "No official temporary parking is provided; visitors are encouraged to use train, bus, or taxi."
+  },
+  mapReference: {
+    label: "Hitachi Sōja-gū Shrine",
+    note: "The shrine is the ritual center of the festival; the parade route extends through the area around Ishioka Station, about a 20-minute walk from the shrine."
+  },
+  schedule: [
+    {
+      date: "2026-09-19",
+      dayLabel: "Shinkōsai (Day 1)",
+      items: [
+        { time: "9:00", label: "Omitsuna-sai (rope purification ritual)" }
+        // ... JP側data.jsのschedule配列と同じ日付・件数だけ用意する
+      ]
+    }
+  ]
 };
 ```
 
-**このファイルに絶対に含めないもの：** `dates`, `eventStatus`,
-`features`（true/false/null/"n/a"）, `access.hasParking`,
-`confirmation`, `schedule`, `backgroundImage`, `atmosphereMedia`。
-これらは全てJP側`data.js`から直接読み込む。
+`schedule`はJP側`data.js`に`schedule`フィールドが存在する場合のみ用意
+する（存在しない祭りでは省略、既存のJP側の「機能しない場合は省略」
+という設計と合わせる）。`access`・`mapReference`もJP側に該当データが
+無い場合は省略してよい（レンダリング側はJP値へフォールバックする）。
+
+**(b) 固定辞書で解決する（`UI_STRINGS`または専用の小さな辞書に追加、
+per-festival翻訳は不要）**：値の種類が少数に限定されるもの。
+
+- 体験タグ（`shared/experience-tags.js`）：現在使われている値は
+  「火の祭り」「水・海の祭り」「馬・流鏑馬」「踊り」「独自の行事」の
+  5種類のみ。祭りが増えても値の種類は増えにくいため、5値の翻訳辞書を
+  1つ用意すれば全174件超に対応できる
+
+**(c) 英語ページでは表示しない、または原文のまま表示する（翻訳しない）**：
+
+- `atmosphereMedia[].title`・`.publisher`：実在するYouTube動画の
+  実際のタイトル・投稿者名の引用であり、動画自体が日本語であるため、
+  タイトルだけ英訳すると動画の実内容と表示が食い違い誤解を招く。
+  **原文（日本語）のまま表示する。** 翻訳しない
+- `confirmation.note`（恒常情報・年度情報どちらも）：一次情報の調査
+  経緯を説明する内部監査的な文章であり、翻訳・追随のコストに対して
+  観光客への価値が低い。**英語ページでは表示せず、出典URLのリンクの
+  みを表示する**（注記文は日本語ページのみに残す）
+- 「関連する祭り」セクション：リンク先の英語ページがまだ存在しない
+  段階では、日本語名のページへ誘導することになり英語ページとして
+  機能しない。**英語ページでは当面非表示にする**（英語ページが複数
+  存在するようになった時点で、英語ページ同士の関連付けとして再検討
+  する）
+
+この分類により、「JP data.jsを唯一の事実源とする」という原則は
+「翻訳せず複製もしない・原文のまま安全に引用できるものは翻訳しない」
+という形で維持しつつ、「英語ページに未翻訳の日本語を残さない」という
+品質基準も両立できる。
 
 ### 4.2 レンダリング時の合成
 
