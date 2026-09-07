@@ -218,29 +218,52 @@ per-festival翻訳は不要）**：値の種類が少数に限定されるもの
 
 ### 5.2 UI文言辞書（新設：`shared/i18n-strings.js`）
 
-「開催日」「駐車場」「開催地・アクセス」「見どころ」「よくある質問」
-「当日の目安スケジュール」「宿泊」「関連する祭り」「出典・確認日」等、
-`festival-detail.js`内にハードコードされている日本語UI文言を、以下の
-ような辞書に切り出す：
+**v0.4修正（2026-09-07、v3実装前チェックでCodexが発見した読み込み設計
+の矛盾を反映）：** 当初`UI_STRINGS = { ja: {...}, en: {...} }`という
+「日英両方を1ファイルに集約する」構造を提案していたが、これは
+`festival-detail.js`が`i18n-strings.js`の読み込みに依存する設計になり、
+「`i18n-strings.js`のscriptタグは英語ページにしか追加しない（既存174件
+超のJPページには追加しない）」という制約と両立しなかった。`UI_STRINGS`
+未読み込み時のフォールバックを`{ ja: {}, en: {} }`（空オブジェクト）に
+していたため、i18n-strings.jsを読み込まない既存JPページ全件で
+ラベル・文言が失われ、**回帰確認の必須要件（既存JPページの表示を一切
+変えない）に違反する**ことが判明した。
+
+修正方針：**日本語の文言は`festival-detail.js`内の既存のハードコード
+値をそのまま残す（移動しない）。`i18n-strings.js`は英語の上書き値
+（`UI_STRINGS_EN`）のみを持つ、純粋に加算的な存在にする。**
 
 ```js
-const UI_STRINGS = {
-  ja: {
-    dates: "開催日", parking: "駐車場", access: "開催地・アクセス",
-    highlights: "見どころ", faq: "よくある質問",
-    schedule: "当日の目安スケジュール", lodging: "宿泊",
-    related: "関連する祭り", sources: "出典・確認日"
-    // ...
-  },
-  en: {
-    dates: "Dates", parking: "Parking", access: "Location & Access",
-    highlights: "Highlights", faq: "FAQ",
-    schedule: "Event Schedule", lodging: "Where to Stay",
-    related: "Related Festivals", sources: "Sources & Last Verified"
-    // ...
-  }
+// shared/i18n-strings.js（英語ページのみが読み込む）
+const UI_STRINGS_EN = {
+  eventStatusLabels: { confirmed: "Confirmed", /* ... */ },
+  labels: { dates: "Dates", parking: "Parking", access: "Location & Access", /* ... */ }
+  // ...
 };
 ```
+
+```js
+// festival-detail.js（全ページ共通、変更なし部分は現状のまま）
+const LOCALE = document.documentElement.lang === "en" ? "en" : "ja";
+const EN = LOCALE === "en" && typeof UI_STRINGS_EN !== "undefined" ? UI_STRINGS_EN : null;
+
+// 既存のJP文言オブジェクトはそのまま残し、EN側の値があれば上書きする
+const eventStatusLabels = Object.assign(
+  { confirmed: "開催確認済み", /* ...既存のJP値、変更しない... */ },
+  EN?.eventStatusLabels || {}
+);
+```
+
+この設計であれば：
+- `i18n-strings.js`を読み込まない既存174件超のJPページは、`EN`が常に
+  `null`になり、`Object.assign`は何も上書きせず**現状の日本語ハード
+  コード値がそのまま使われる**（i18n-strings.js未読み込みでも一切壊れ
+  ない、回帰確認の要件を満たす）
+- 英語ページ（`i18n-strings.js`を読み込む）だけが`UI_STRINGS_EN`の値で
+  上書きされる
+- `lodging-cta-config.js`が既に採用している「設定ファイル未読み込み時
+  は安全な既定動作にフォールバックする」という、このプロジェクトで
+  既に実証済みのパターンと設計思想を統一した
 
 ### 5.3 日付フォーマット
 
