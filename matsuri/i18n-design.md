@@ -94,6 +94,17 @@ matsuri/en/festivals/<slug>/translation.js  … 新設。英語の翻訳テキ�
 「英語ページに日本語を残さない」という原則が、これらのフィールドでは
 両立しないため、フィールドごとに以下の3パターンへ分類し直した。
 
+**v0.3修正（2026-09-07、v0.2でも未解決だった箇所をCodexが発見）：**
+`festival.prefecture`・`festival.city`（`data.js`のトップレベル
+フィールド。ヘッダーの都道府県市区町村表示、開催地の値、JSON-LDの
+address等で使用）が翻訳対象から漏れていた。`translation.js`に
+`location: { prefecture, city }`を追加し、(a)の翻訳対象に含める。
+2回連続で同種の見落とし（JP data.jsの他のフィールドを参照している
+箇所を洗い出しきれていない）が発生したため、実装時は「該当フィールドを
+列挙する」のではなく「`festival.name`・`festival.prefecture`・
+`festival.city`への参照を全てgrepし、表示用途のものは漏れなく解決済み
+変数に置き換える」という網羅的な指示に変更した（第12節Task 2参照）。
+
 **(a) 翻訳する（`translation.js`に追加）**：文章として英語話者に
 提示する必要があり、かつ機械的な固定辞書では表現できないもの。
 
@@ -107,6 +118,10 @@ const FESTIVAL_TRANSLATION_EN = {
   access: {
     nearestStation: "JR Joban Line, Ishioka Station (right by the west exit)",
     parkingNote: "No official temporary parking is provided; visitors are encouraged to use train, bus, or taxi."
+  },
+  location: {
+    prefecture: "Ibaraki Prefecture",
+    city: "Ishioka"
   },
   mapReference: {
     label: "Hitachi Sōja-gū Shrine",
