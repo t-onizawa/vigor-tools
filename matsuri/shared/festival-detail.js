@@ -698,6 +698,21 @@
     });
   }
 
+  function buildLodgingUrl(currentFestival) {
+    const config = typeof LODGING_CTA_CONFIG !== "undefined"
+      ? LODGING_CTA_CONFIG
+      : { mode: "plain", affiliateUrls: {} };
+
+    const affiliateUrl = config.affiliateUrls && config.affiliateUrls[currentFestival.id];
+    if (config.mode === "affiliate" && affiliateUrl) {
+      return { url: affiliateUrl, linkType: "affiliate" };
+    }
+
+    const query = encodeURIComponent(`${currentFestival.prefecture}${currentFestival.city}`);
+    const url = `https://kw.travel.rakuten.co.jp/keyword/Search.do?charset=utf-8&f_max=30&l-id=topC_search_keyword&f_query=${query}`;
+    return { url, linkType: "plain" };
+  }
+
   function renderLodgingCta(currentFestival) {
     const section = byId("lodging-section");
     if (!section) return;
@@ -705,15 +720,15 @@
     const link = byId("lodging-link");
     if (!link) return;
 
-    const query = encodeURIComponent(`${currentFestival.prefecture}${currentFestival.city}`);
-    const url = `https://kw.travel.rakuten.co.jp/keyword/Search.do?charset=utf-8&f_max=30&l-id=topC_search_keyword&f_query=${query}`;
+    const { url, linkType } = buildLodgingUrl(currentFestival);
 
     link.href = url;
     link.addEventListener("click", () => {
       sendGaEvent("lodging_cta_click", {
         festival_slug: currentFestival.id,
         festival_name: currentFestival.name,
-        link_url: url
+        link_url: url,
+        link_type: linkType
       });
     });
 
