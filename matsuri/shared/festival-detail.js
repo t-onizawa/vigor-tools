@@ -2,6 +2,30 @@
   const festival = FESTIVAL;
   const currentYear = festival.yearlyInfo[0];
   const features = festival.constantInfo.features;
+  const LOCALE = document.documentElement.lang === "en" ? "en" : "ja";
+  const EN = LOCALE === "en" && typeof UI_STRINGS_EN !== "undefined" ? UI_STRINGS_EN : null;
+  const translation = LOCALE === "en" && typeof FESTIVAL_TRANSLATION_EN !== "undefined"
+    ? FESTIVAL_TRANSLATION_EN
+    : null;
+  const festivalName = translation?.name || festival.name;
+  const festivalOfficialName = translation?.officialName || festival.officialName;
+  const festivalPrefecture = translation?.location?.prefecture || festival.prefecture;
+  const festivalCity = translation?.location?.city || festival.city;
+  const festivalHighlightComment = translation?.highlightComment || festival.constantInfo.highlightComment;
+  const festivalHayashiNote = translation && Object.prototype.hasOwnProperty.call(translation, "hayashiNote")
+    ? translation.hayashiNote
+    : features.hayashiNote;
+  const festivalNearestStation = translation?.access?.nearestStation || festival.constantInfo.access.nearestStation;
+  const festivalParkingNote = translation?.access?.parkingNote || currentYear.access.parkingNote;
+  const festivalMapReference = festival.constantInfo.mapReference
+    ? {
+        ...festival.constantInfo.mapReference,
+        label: translation?.mapReference?.label || festival.constantInfo.mapReference.label,
+        note: translation?.mapReference?.note || festival.constantInfo.mapReference.note
+      }
+    : null;
+  const festivalSchedule = translation?.schedule || currentYear.schedule;
+  const sharedBasePath = LOCALE === "en" ? "../../../shared" : "../../shared";
 
   const eventStatusLabels = {
     confirmed: "開催確認済み",
@@ -12,6 +36,7 @@
     postponed: "延期",
     ended: "終了"
   };
+  Object.assign(eventStatusLabels, EN?.eventStatusLabels || {});
 
   const eventStatusDateText = {
     confirmed: {
@@ -42,6 +67,7 @@
       note: "この開催は終了しました"
     }
   };
+  Object.assign(eventStatusDateText, EN?.eventStatusDateText || {});
 
   function isEventStatusPastDue(yearlyInfo) {
     const dates = yearlyInfo && Array.isArray(yearlyInfo.dates) ? yearlyInfo.dates : [];
@@ -74,22 +100,23 @@
     night: "夜",
     both: "昼・夜"
   };
+  Object.assign(highlightTimeLabels, EN?.highlightTimeLabels || {});
 
   const FEATURE_ICON_FILES = {
-    "山車": "dashi",
-    "神輿": "mikoshi",
-    "踊り": "odori",
-    "曳き回し": "hikimawashi",
-    "見どころ": "midokoro"
+    dashi: "dashi",
+    mikoshi: "mikoshi",
+    odori: "odori",
+    hikimawashi: "hikimawashi",
+    highlights: "midokoro"
   };
 
   const iconCache = new Map();
 
-  const featureItems = [
-    ["山車", features.hasDashi],
-    ["神輿", features.hasMikoshi],
-    ["踊り", features.hasDanceOnDashi],
-    ["曳き回し", features.hasParade]
+  const FEATURE_DEFS = [
+    { key: "dashi", ja: "山車", value: features.hasDashi },
+    { key: "mikoshi", ja: "神輿", value: features.hasMikoshi },
+    { key: "odori", ja: "踊り", value: features.hasDanceOnDashi },
+    { key: "hikimawashi", ja: "曳き回し", value: features.hasParade }
   ];
 
   function byId(id) {
@@ -112,7 +139,7 @@
 
   async function loadExperienceTags() {
     try {
-      const res = await fetch("../../shared/experience-tags.js");
+      const res = await fetch(`${sharedBasePath}/experience-tags.js`);
       if (!res.ok) return null;
       const src = await res.text();
       const factory = new Function(`${src}\nreturn EXPERIENCE_TAGS;`);
@@ -135,23 +162,23 @@
     }
     const chip = document.createElement("p");
     chip.className = "experience-tag-chip";
-    chip.textContent = label;
+    chip.textContent = EN?.experienceTags?.[label] || label;
     prefectureEl.insertAdjacentElement("afterend", chip);
   }
 
-  async function loadIconSvg(label) {
-    const file = FEATURE_ICON_FILES[label];
+  async function loadIconSvg(key) {
+    const file = FEATURE_ICON_FILES[key];
     if (!file) return null;
     if (iconCache.has(file)) return iconCache.get(file);
-    const promise = fetch(`../../shared/icons/${file}.svg`)
+    const promise = fetch(`${sharedBasePath}/icons/${file}.svg`)
       .then((res) => (res.ok ? res.text() : null))
       .catch(() => null);
     iconCache.set(file, promise);
     return promise;
   }
 
-  async function attachFeatureIcon(item, label) {
-    const svgText = await loadIconSvg(label);
+  async function attachFeatureIcon(item, key) {
+    const svgText = await loadIconSvg(key);
     if (!svgText) return;
     const wrap = document.createElement("span");
     wrap.className = "feature-icon";
@@ -162,12 +189,12 @@
 
   function formatDate(dateText) {
     const date = new Date(`${dateText}T00:00:00+09:00`);
-    return new Intl.DateTimeFormat("ja-JP", {
-      year: "numeric",
-      month: "numeric",
-      day: "numeric",
-      weekday: "short"
-    }).format(date);
+    return new Intl.DateTimeFormat(
+      LOCALE === "en" ? "en-US" : "ja-JP",
+      LOCALE === "en"
+        ? { year: "numeric", month: "short", day: "numeric", weekday: "short" }
+        : { year: "numeric", month: "numeric", day: "numeric", weekday: "short" }
+    ).format(date);
   }
 
   function formatDateList(dates) {
@@ -187,14 +214,19 @@
     }
 
     if (runs.length > 4) {
+      if (LOCALE === "en") {
+        return `${formatDate(dates[0])}${EN.labels.dateRangeSeparator}${formatDate(dates[dates.length - 1])} (${EN.labels.multipleDateCount(dates.length)})`;
+      }
       return `${formatDate(dates[0])}〜${formatDate(dates[dates.length - 1])}（全${dates.length}回）`;
     }
 
     return runs
-      .map((run) =>
-        run.length >= 2 ? `${formatDate(run[0])}〜${formatDate(run[run.length - 1])}` : formatDate(run[0])
-      )
-      .join(" / ");
+      .map((run) => {
+        if (run.length < 2) return formatDate(run[0]);
+        const separator = LOCALE === "en" ? EN.labels.dateRangeSeparator : "〜";
+        return `${formatDate(run[0])}${separator}${formatDate(run[run.length - 1])}`;
+      })
+      .join(LOCALE === "en" ? EN.labels.dateListSeparator : " / ");
   }
 
   function createFeatureBadge(label, value) {
@@ -265,15 +297,15 @@
 
   function availabilityState(value) {
     if (value === true) {
-      return { label: "あり", className: "is-yes" };
+      return { label: EN?.availability?.yes || "あり", className: "is-yes" };
     }
     if (value === false) {
-      return { label: "なし", className: "is-no" };
+      return { label: EN?.availability?.no || "なし", className: "is-no" };
     }
     if (value === "n/a") {
-      return { label: "該当なし", className: "is-na" };
+      return { label: EN?.availability?.na || "該当なし", className: "is-na" };
     }
-    return { label: "未確認", className: "is-unknown" };
+    return { label: EN?.availability?.unknown || "未確認", className: "is-unknown" };
   }
 
   function createSourceBlock(title, confirmation, category) {
@@ -285,7 +317,9 @@
 
     const metaEl = document.createElement("p");
     metaEl.className = "source-meta";
-    metaEl.textContent = `確認日：${confirmation.confirmedDate}`;
+    metaEl.textContent = EN?.labels?.confirmedDate
+      ? EN.labels.confirmedDate(confirmation.confirmedDate)
+      : `確認日：${confirmation.confirmedDate}`;
 
     const listEl = document.createElement("ul");
     listEl.className = "source-list";
@@ -302,7 +336,7 @@
         // 出典種別はデータに構造化フィールドがないため、推測せずunknownを送る。
         sendGaEvent("official_site_click", {
           festival_slug: festival.id,
-          festival_name: festival.name,
+          festival_name: festivalName,
           source_type: "unknown",
           source_label: category,
           link_url: link.href
@@ -314,7 +348,7 @@
 
     fragment.append(titleEl, metaEl, listEl);
 
-    if (confirmation.note) {
+    if (confirmation.note && LOCALE !== "en") {
       const noteEl = document.createElement("p");
       noteEl.className = "source-note";
       noteEl.textContent = confirmation.note;
@@ -339,10 +373,17 @@
     }
 
     try {
-      setText("atmosphere-media-notice", `過去開催時の様子（${media.publishedYear}年）`);
+      setText(
+        "atmosphere-media-notice",
+        EN?.labels?.pastAtmosphere
+          ? EN.labels.pastAtmosphere(media.publishedYear)
+          : `過去開催時の様子（${media.publishedYear}年）`
+      );
       setText(
         "atmosphere-media-meta",
-        `公開元：${media.publisher} ／ 確認日：${media.checkedDate}`
+        EN?.labels?.mediaMeta
+          ? EN.labels.mediaMeta(media.publisher, media.checkedDate)
+          : `公開元：${media.publisher} ／ 確認日：${media.checkedDate}`
       );
 
       const mediaLink = byId("atmosphere-media-link");
@@ -352,7 +393,7 @@
         mediaLink.addEventListener("click", () => {
           sendGaEvent("atmosphere_youtube_click", {
             festival_slug: festival.id,
-            festival_name: festival.name,
+            festival_name: festivalName,
             content_id: media.contentId,
             link_url: mediaLink.href
           });
@@ -387,14 +428,14 @@
 
     const backLinkAnchor = backLink.querySelector("a");
     if (backLinkAnchor) {
-      backLinkAnchor.href = "../../";
+      backLinkAnchor.href = LOCALE === "en" ? "../../../" : "../../";
     }
 
     const mark = document.createElement("p");
     mark.className = "brand-mark";
 
     const link = document.createElement("a");
-    link.href = "../../";
+    link.href = LOCALE === "en" ? "../../../" : "../../";
     link.textContent = "MATSURI";
 
     mark.append(link);
@@ -427,7 +468,10 @@
     const thumb = document.createElement("button");
     thumb.className = "media-gallery-thumb";
     thumb.type = "button";
-    thumb.setAttribute("aria-label", `動画を再生：${media.title}`);
+    thumb.setAttribute(
+      "aria-label",
+      EN?.labels?.playVideo ? EN.labels.playVideo(media.title) : `動画を再生：${media.title}`
+    );
 
     const image = document.createElement("img");
     image.src = `https://i.ytimg.com/vi/${media.contentId}/hqdefault.jpg`;
@@ -443,7 +487,7 @@
     thumb.addEventListener("click", () => {
       sendGaEvent("atmosphere_youtube_click", {
         festival_slug: festival.id,
-        festival_name: festival.name,
+        festival_name: festivalName,
         content_id: media.contentId,
         link_url: `https://www.youtube.com/watch?v=${media.contentId}`
       });
@@ -461,22 +505,26 @@
 
     const caption = document.createElement("p");
     caption.className = "media-gallery-caption";
-    caption.textContent = `過去開催時の様子（${media.publishedYear}年）`;
+    caption.textContent = EN?.labels?.pastAtmosphere
+      ? EN.labels.pastAtmosphere(media.publishedYear)
+      : `過去開催時の様子（${media.publishedYear}年）`;
 
     const meta = document.createElement("p");
     meta.className = "media-gallery-meta";
-    meta.textContent = `${media.publisher} ／ 確認日：${media.checkedDate}`;
+    meta.textContent = EN?.labels?.mediaMeta
+      ? EN.labels.mediaMeta(media.publisher, media.checkedDate)
+      : `${media.publisher} ／ 確認日：${media.checkedDate}`;
 
     const link = document.createElement("a");
     link.className = "media-gallery-link";
     link.href = media.url;
     link.target = "_blank";
     link.rel = "noopener noreferrer";
-    link.textContent = "YouTubeで見る →";
+    link.textContent = EN?.labels?.youtubeLink || "YouTubeで見る →";
     link.addEventListener("click", () => {
       sendGaEvent("atmosphere_youtube_click", {
         festival_slug: festival.id,
-        festival_name: festival.name,
+        festival_name: festivalName,
         content_id: media.contentId,
         link_url: link.href
       });
@@ -544,7 +592,10 @@
       return;
     }
 
-    setText("highlight-comment-heading", "この祭りの見どころ");
+    setText(
+      "highlight-comment-heading",
+      EN?.labels?.highlightCommentHeading || "この祭りの見どころ"
+    );
     setText("highlight-comment-text", comment);
     section.hidden = false;
   }
@@ -596,7 +647,7 @@
 
       const heading = document.createElement("h3");
       heading.textContent = day.dayLabel
-        ? `${formatDate(day.date)}　${day.dayLabel}`
+        ? `${formatDate(day.date)}${EN?.labels?.scheduleHeadingSeparator || "　"}${day.dayLabel}`
         : formatDate(day.date);
       dayBlock.append(heading);
 
@@ -626,23 +677,30 @@
     const dateText = dates.length > 0 ? formatDateList(dates) : null;
 
     if (yearlyInfo.eventStatus === "off_year") {
+      if (EN?.faq?.offYearAnswer) return EN.faq.offYearAnswer(year);
       return `${year}年は陰祭り（本祭なし）です。`;
     }
     if (!dateText) {
+      if (EN?.faq?.dateUnannouncedAnswer) return EN.faq.dateUnannouncedAnswer(year);
       return `${year}年の日程はまだ発表されていません。`;
     }
     if (yearlyInfo.eventStatus === "ended") {
+      if (EN?.faq?.endedAnswer) return EN.faq.endedAnswer(dateText);
       return `${dateText}に開催されました。`;
     }
     if (yearlyInfo.eventStatus === "cancelled") {
+      if (EN?.faq?.cancelledAnswer) return EN.faq.cancelledAnswer(dateText);
       return `${dateText}に開催予定でしたが、中止となりました。`;
     }
     if (yearlyInfo.eventStatus === "postponed") {
+      if (EN?.faq?.postponedAnswer) return EN.faq.postponedAnswer(dateText);
       return `${dateText}に開催予定でしたが、延期となりました。新しい日程は公式情報をご確認ください。`;
     }
     if (yearlyInfo.eventStatus === "confirmed") {
+      if (EN?.faq?.confirmedAnswer) return EN.faq.confirmedAnswer(dateText);
       return `${dateText}に開催されます。`;
     }
+    if (EN?.faq?.scheduledAnswer) return EN.faq.scheduledAnswer(dateText);
     return `${dateText}に開催予定です。公式の詳細発表をお待ちください。`;
   }
 
@@ -651,31 +709,47 @@
     const access = yearlyInfo.access || {};
     let answer;
     if (access.hasParking === true) {
-      answer = `${year}年は駐車場があります。`;
+      answer = EN?.faq?.parkingYesAnswer
+        ? EN.faq.parkingYesAnswer(year)
+        : `${year}年は駐車場があります。`;
     } else if (access.hasParking === false) {
-      answer = `${year}年は駐車場はありません。`;
+      answer = EN?.faq?.parkingNoAnswer
+        ? EN.faq.parkingNoAnswer(year)
+        : `${year}年は駐車場はありません。`;
     } else {
-      answer = `${year}年の駐車場情報は未確認です。`;
+      answer = EN?.faq?.parkingUnknownAnswer
+        ? EN.faq.parkingUnknownAnswer(year)
+        : `${year}年の駐車場情報は未確認です。`;
     }
-    return access.parkingNote ? `${answer}${access.parkingNote}` : answer;
+    const parkingNote = LOCALE === "en" ? festivalParkingNote : access.parkingNote;
+    if (!parkingNote) return answer;
+    return LOCALE === "en" ? `${answer} ${parkingNote}` : `${answer}${parkingNote}`;
   }
 
   function buildFaqItems(currentFestival, yearlyInfo) {
     const station = currentFestival.constantInfo.access.nearestStation;
     return [
       {
-        question: `${currentFestival.name}は${yearlyInfo.year}年いつ開催されますか？`,
+        question: EN?.faq?.dateQuestion
+          ? EN.faq.dateQuestion(festivalName, yearlyInfo.year)
+          : `${currentFestival.name}は${yearlyInfo.year}年いつ開催されますか？`,
         answer: buildDateFaqAnswer(yearlyInfo)
       },
       {
-        question: `${currentFestival.name}に駐車場はありますか？`,
+        question: EN?.faq?.parkingQuestion
+          ? EN.faq.parkingQuestion(festivalName)
+          : `${currentFestival.name}に駐車場はありますか？`,
         answer: buildParkingFaqAnswer(yearlyInfo)
       },
       {
-        question: `${currentFestival.name}の最寄り駅はどこですか？`,
+        question: EN?.faq?.stationQuestion
+          ? EN.faq.stationQuestion(festivalName)
+          : `${currentFestival.name}の最寄り駅はどこですか？`,
         answer: station
-          ? `最寄り駅・アクセス拠点は${station}です。`
-          : "最寄り駅・アクセス拠点は未確認です。"
+          ? (EN?.faq?.stationAnswer
+              ? EN.faq.stationAnswer(festivalNearestStation)
+              : `最寄り駅・アクセス拠点は${station}です。`)
+          : (EN?.labels?.nearestStationUnknown || "最寄り駅・アクセス拠点は未確認です。")
       }
     ];
   }
@@ -726,7 +800,7 @@
     link.addEventListener("click", () => {
       sendGaEvent("lodging_cta_click", {
         festival_slug: currentFestival.id,
-        festival_name: currentFestival.name,
+        festival_name: festivalName,
         link_url: url,
         link_type: linkType
       });
@@ -789,6 +863,7 @@
   async function renderRelatedFestivals(currentFestival, currentYearlyInfo) {
     const section = byId("related-festivals-section");
     const list = byId("related-festivals-list");
+    if (LOCALE === "en") return;
     if (!section || !list || typeof FESTIVAL_SLUGS === "undefined") return;
 
     const loaded = await Promise.all(FESTIVAL_SLUGS.map(loadRelatedFestival));
@@ -837,55 +912,70 @@
   }
 
   injectBrandMark();
-  setText("festival-name", festival.name);
-  setText("festival-prefecture", `${festival.prefecture}${festival.city || ""}`);
+  setText("festival-name", festivalName);
+  setText(
+    "festival-prefecture",
+    LOCALE === "en"
+      ? `${festivalCity}, ${festivalPrefecture}`
+      : `${festival.prefecture}${festival.city || ""}`
+  );
   renderExperienceTag(festival.id);
   renderEventStatusDateText();
   setText("festival-dates", formatDateList(currentYear.dates));
-  setText("event-status", eventStatusLabels[effectiveEventStatus] || "未確認");
+  setText(
+    "event-status",
+    eventStatusLabels[effectiveEventStatus] || EN?.availability?.unknown || "未確認"
+  );
   byId("event-status").className = `status-badge status-${effectiveEventStatus || "unknown"}`;
-  renderHayashiNote(features.hayashiNote);
-  renderSchedule(currentYear.schedule);
+  renderHayashiNote(festivalHayashiNote);
+  renderSchedule(festivalSchedule);
 
   const featureGrid = byId("feature-grid");
-  featureItems.forEach(([label, value]) => {
-    const badge = createFeatureBadge(label, value);
+  FEATURE_DEFS.forEach((def) => {
+    const label = EN?.featureLabels?.[def.key] || def.ja;
+    const badge = createFeatureBadge(label, def.value);
     featureGrid.append(badge);
-    attachFeatureIcon(badge, label);
+    attachFeatureIcon(badge, def.key);
   });
   const highlightBadge = createNeutralFeatureBadge(
-    "見どころ",
-    highlightTimeLabels[features.highlightTime] || "未確認"
+    EN?.featureLabels?.highlights || "見どころ",
+    highlightTimeLabels[features.highlightTime] || EN?.availability?.unknown || "未確認"
   );
   featureGrid.append(highlightBadge);
-  attachFeatureIcon(highlightBadge, "見どころ");
+  attachFeatureIcon(highlightBadge, "highlights");
 
   const accessList = byId("access-list");
   accessList.append(
-    createDetailItem("開催地", festival.city),
-    createDetailItem("最寄駅", festival.constantInfo.access.nearestStation),
+    createDetailItem(EN?.labels?.venue || "開催地", festivalCity),
+    createDetailItem(EN?.labels?.nearestStation || "最寄駅", festivalNearestStation),
     createDetailItem(
-      "駐車場",
+      EN?.labels?.parking || "駐車場",
       parkingLabel(currentYear.access.hasParking),
-      currentYear.access.parkingNote
+      festivalParkingNote
     )
   );
 
-  renderHighlightComment(festival.constantInfo.highlightComment);
+  renderHighlightComment(festivalHighlightComment);
   relocateHighlightComment();
   renderAtmosphereMedia(festival.constantInfo.atmosphereMedia);
   applyHeroHeader(festival.constantInfo.backgroundImage);
-  renderMapReference(festival.constantInfo.mapReference);
+  renderMapReference(festivalMapReference);
   renderRelatedFestivals(festival, currentYear);
   renderFaq(festival, currentYear);
   renderLodgingCta(festival);
 
   byId("constant-sources").append(
-    createSourceBlock("恒常情報", festival.constantInfo.confirmation, "constant")
+    createSourceBlock(
+      EN?.labels?.constantSourceTitle || "恒常情報",
+      festival.constantInfo.confirmation,
+      "constant"
+    )
   );
   byId("yearly-sources").append(
     createSourceBlock(
-      `${currentYear.year}年情報`,
+      EN?.labels?.yearlySourceTitle
+        ? EN.labels.yearlySourceTitle(currentYear.year)
+        : `${currentYear.year}年情報`,
       currentYear.confirmation,
       `yearly_${currentYear.year}`
     )
@@ -952,7 +1042,9 @@
 
     const heading = document.createElement("h2");
     heading.id = "search-links-heading";
-    heading.textContent = hasAtmosphereMedia ? "もっと雰囲気を感じる" : "雰囲気を感じる";
+    heading.textContent = hasAtmosphereMedia
+      ? (EN?.labels?.atmosphereHeadingWith || "もっと雰囲気を感じる")
+      : (EN?.labels?.atmosphereHeadingWithout || "雰囲気を感じる");
 
     const row = document.createElement("div");
     row.className = "search-link-row";
@@ -967,14 +1059,14 @@
         if (service.key === "youtube") {
           sendGaEvent("atmosphere_youtube_click", {
             festival_slug: festival.id,
-            festival_name: festival.name,
+            festival_name: festivalName,
             content_id: "",
             link_url: link.href
           });
         } else if (service.key === "instagram") {
           sendGaEvent("atmosphere_instagram_click", {
             festival_slug: festival.id,
-            festival_name: festival.name,
+            festival_name: festivalName,
             search_query: query,
             link_url: link.href
           });
@@ -996,7 +1088,7 @@
 
     const disclaimer = document.createElement("p");
     disclaimer.className = "search-link-disclaimer";
-    disclaimer.textContent = "外部サイトの検索結果が開きます";
+    disclaimer.textContent = EN?.labels?.externalSearchDisclaimer || "外部サイトの検索結果が開きます";
 
     section.append(heading, row, disclaimer);
 
@@ -1009,12 +1101,14 @@
 
   function buildEventLocation(festival) {
     const mapReference = festival.constantInfo.mapReference;
-    const address = `${festival.prefecture}${festival.city}`;
+    const address = LOCALE === "en"
+      ? `${festivalCity}, ${festivalPrefecture}`
+      : `${festival.prefecture}${festival.city}`;
 
     if (mapReference) {
       const location = {
         "@type": "Place",
-        name: mapReference.label,
+        name: festivalMapReference?.label || mapReference.label,
         address
       };
       if (typeof mapReference.lat === "number" && typeof mapReference.lng === "number") {
@@ -1029,16 +1123,26 @@
 
     return {
       "@type": "Place",
-      name: festival.city,
+      name: festivalCity,
       address
     };
   }
 
   function buildEventDescription(festival) {
-    const highlight = festival.constantInfo.highlightComment;
+    const highlight = festivalHighlightComment;
     const baseDescription = highlight ||
-      `${festival.prefecture}${festival.city}で開催される${festival.name}。${festival.constantInfo.schedulePattern}`;
+      (EN?.jsonLd?.fallbackDescription
+        ? EN.jsonLd.fallbackDescription(
+            festivalPrefecture,
+            festivalCity,
+            festivalName,
+            festival.constantInfo.schedulePattern
+          )
+        : `${festival.prefecture}${festival.city}で開催される${festival.name}。${festival.constantInfo.schedulePattern}`);
     if (currentYear.eventStatus === "off_year") {
+      if (EN?.jsonLd?.offYearDescription) {
+        return EN.jsonLd.offYearDescription(baseDescription, currentYear.year);
+      }
       return `${baseDescription} ${currentYear.year}年は陰祭年で、本祭りは隔年開催です。`;
     }
     return baseDescription;
@@ -1073,7 +1177,7 @@
     const jsonLd = {
       "@context": "https://schema.org",
       "@type": "Event",
-      name: festival.name,
+      name: festivalName,
       startDate: dates[0],
       endDate: dates[dates.length - 1],
       eventStatus: schemaEventStatus[yearlyInfo.eventStatus] || "https://schema.org/EventScheduled",
@@ -1081,6 +1185,10 @@
       location: buildEventLocation(festival),
       description: buildEventDescription(festival)
     };
+
+    if (LOCALE === "en") {
+      jsonLd.inLanguage = "en";
+    }
 
     if (url) {
       jsonLd.url = url;
@@ -1096,7 +1204,7 @@
       jsonLd.dateModified = dateModified;
     }
 
-    const schedule = yearlyInfo.schedule;
+    const schedule = LOCALE === "en" ? festivalSchedule : yearlyInfo.schedule;
     if (Array.isArray(schedule) && schedule.length > 0) {
       const subEvents = [];
       schedule.forEach((day) => {
@@ -1148,6 +1256,10 @@
           }
         }))
       };
+
+      if (LOCALE === "en") {
+        jsonLd.inLanguage = "en";
+      }
 
       const script = document.createElement("script");
       script.type = "application/ld+json";
