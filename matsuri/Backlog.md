@@ -3,7 +3,7 @@
 ```
 Status: Living backlog（固定ロードマップではない）
 Created: 2026-07-27
-Updated: 2026-09-07（i18n-design.md v0.2修正、英語版パイロット実装をCodexへ再委譲）
+Updated: 2026-09-07（i18n-design.md v0.3修正、英語版パイロット実装v3をCodexへ再委譲）
 ```
 
 これは計画表ではない。優先度は仮説であり、公開後の反応で入れ替わる前提の
@@ -3178,3 +3178,19 @@ backgroundImageとatmosphereMediaを別判定し、青梅大祭の動画1件の�
     Codexへ再委譲。**Codexが実装前に設計不備を検出し無断で実装せず
     停止したことをプロセスとして評価する。** 今後も同様の判断を歓迎する
     旨を新プロンプトに明記した。
+
+2026-09-07（v2でも2件目の設計漏れをCodexが検出、i18n-design.md v0.3へ
+    修正・v3プロンプトへ再委譲）
+    v2プロンプトでも実装前チェックでCodexが停止・報告。`data.js`
+    トップレベルの`festival.prefecture`・`festival.city`（ヘッダーの
+    都道府県市区町村表示、開催地欄、JSON-LDのaddress等で使用）が
+    翻訳対象から漏れていた。i18n-design.mdをv0.3へ更新し（commit
+    5dbf3d0）、`translation.js`に`location: {prefecture, city}`を追加。
+    2回連続で同種の見落とし（JP data.jsの他フィールド参照箇所の洗い出し
+    漏れ）が発生したため、v3プロンプトでは方針を変更：個別フィールドの
+    列挙に加えて「`festival.name`/`festival.prefecture`/`festival.city`
+    への参照を全てgrepし、表示用途のものは漏れなく解決済み変数へ
+    置き換える」という網羅的な指示を追加した。YouTube/Instagram検索
+    リンク生成（`buildSearchLinkServices`）が使う`festival.name`は
+    検索精度上あえて日本語のまま使う仕様であることも明記し、CJK残留
+    チェックの誤検知を防いだ。v3プロンプトをCodexへ再委譲。
