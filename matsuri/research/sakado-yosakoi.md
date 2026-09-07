@@ -29,3 +29,7 @@
 - https://www.city.sakado.lg.jp/site/shiseishikou50syuunenn/59114.html
 - https://www.sakadoyosakoi.com/images/store/Tent%20stalls.pdf
 - https://www.youtube.com/watch?v=ClmWk0cJDB0
+
+### 2026-09-05 毎日品質改善
+
+- 公式情報と既存動画候補を再確認。実サムネイルの文字・構図が背景用途に適さず、新たな採用素材なし。

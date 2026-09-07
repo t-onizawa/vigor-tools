@@ -10,3 +10,7 @@
 - 既存との差異: 大阪市から堺市へ二都市を結ぶ大神輿渡御と祓いの祭。
 - 素材: 採用なし。
 - 一次情報: https://sumiyoshitaisha.net/news/detail.php?seq=149 / https://www.sumiyoshitaisha.net/events/special.html?sfns=mo
+
+### 2026-09-05 毎日品質改善
+
+- 住吉大社公式情報と公開素材を再検索。大神輿渡御との同一性・投稿者・画質を直接確定できる採用候補がなく、採用なし。
