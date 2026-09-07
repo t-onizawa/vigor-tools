@@ -3,7 +3,7 @@
 ```
 Status: Living backlog（固定ロードマップではない）
 Created: 2026-07-27
-Updated: 2026-09-07（i18n-design.md v0.4修正・読み込み設計の根本修正、v4をCodexへ再委譲）
+Updated: 2026-09-07（英語版基盤＋石岡パイロット完成・PM独立検証済み）
 ```
 
 これは計画表ではない。優先度は仮説であり、公開後の反応で入れ替わる前提の
@@ -3223,3 +3223,36 @@ backgroundImageとatmosphereMediaを別判定し、青梅大祭の動画1件の�
     あることをgrepで機械確認する」という検証項目も追加した。**3回連続
     でCodexが実装前に設計不備を検出し、無断で実装せず正しく停止した。**
     v4プロンプトをCodexへ再委譲。
+
+2026-09-07（英語版基盤＋石岡パイロット完成、commit 2f3f451、PM独立
+    検証済み）
+    v4プロンプトが実装前チェックを通過し、実装・検証・本番公開まで
+    完了した。変更ファイル5件（en/festivals/ishioka-omatsuri/
+    index.html・translation.js、festivals/ishioka-omatsuri/index.html、
+    shared/festival-detail.js、shared/i18n-strings.js）。
+    PMによる独立検証（コードレビュー＋実機）で全て確認：
+    ```
+    - festival-detail.js冒頭でLOCALE・EN・翻訳解決変数
+      （festivalName等）を一度だけ解決する設計を確認。日本語の
+      ハードコード値は変更されておらず、Object.assign(jaDict,
+      EN?.xxx || {})の加算方式で実装されていた
+    - grepで i18n-strings.js を読み込むHTMLがen/festivals/
+      ishioka-omatsuri/index.html 1件のみであることを確認
+    - 英語版実機：可視テキストのCJK残留は動画publisher「茨城県石岡市」
+      1件のみ（設計通りの許容例外）。JSON-LD（Event・FAQPage）とも
+      inLanguage:"en"、subEvent16件・日程・特徴ラベル・体験タグ
+      （Dance）・宿泊リンクhref（実クリックなし）・関連祭り非表示・
+      出典note非表示、全て確認
+    - 日本語版（石岡）：hreflang3行・og:locale2行の追加のみ、
+      typeof UI_STRINGS_EN === "undefined"を確認（真に未読み込み）
+    - 日本語版の三社祭・神田祭（陰祭り分岐という最重要エッジケース
+      含む）を実機確認、変化なし
+    - 全ページでコンソールエラーなし
+    ```
+    Codexが自律的に補完した点も良好：「確認日：」ラベルの英訳
+    （`confirmedDate`関数）は指示書になかったが、既存の加算パターンに
+    従って安全に追加されていた。JP/EN間の相対パス階層差
+    （`sharedBasePath`）にも自ら対応していた。
+    **残課題（別タスク）：** sitemap.xmlへの英語版URL追加（統括担当へ
+    依頼予定）、英語版一覧ページ（サイト内の英語導線は現状hreflangの
+    みで未整備）。
