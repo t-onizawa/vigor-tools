@@ -3,7 +3,7 @@
 ```
 Status: Living backlog（固定ロードマップではない）
 Created: 2026-07-27
-Updated: 2026-09-07（festival-detail.css/jsにキャッシュバスティング導入、品質改善誤検知を解消）
+Updated: 2026-09-07（英語版一覧ページ新設、matsuri/en/index.html公開）
 ```
 
 これは計画表ではない。優先度は仮説であり、公開後の反応で入れ替わる前提の
@@ -3285,3 +3285,23 @@ backgroundImageとatmosphereMediaを別判定し、青梅大祭の動画1件の�
     次回の品質改善タスク実行時に自然に再候補化される見込み（対象選定
     ロジックが「未調査／4週間以上経過」ベースのため、来週には再度
     調査対象に入る）。
+
+2026-09-07（英語版一覧ページを新設、commit fdd2a52・PM直接実装）
+    i18n-design.md第12節Task 3（残課題だった英語版一覧ページ）に着手。
+    JP一覧ページのフィルターUI・動的カードレンダリングは移植せず、
+    設計書の方針通り「翻訳済みページへの静的リンク一覧のみの最小構成」
+    とした（現状は石岡のおまつり1件のみ）。共有JSロジックの変更を
+    伴わない小規模・低リスクな静的ページのため、Codexへ委譲せずPMが
+    直接実装した。
+    ```
+    matsuri/en/index.html新設：既存の.feature-badge/.related-festival-link
+    カードスタイル（関連する祭りセクションと同じ見た目）を再利用し、
+    新規CSSは追加していない
+    matsuri/index.html（JP一覧）：対応する英語版一覧との相互hreflang
+    （ja/en/x-default）とog:locale/og:locale:alternateを追加。JP版の
+    既存の絞り込み機能・件数表示（174件）への影響なしを実機確認済み
+    ```
+    実機確認（モバイル390px・デスクトップ1280px、双方向のリンク遷移、
+    コンソールエラーなし）を実施し本番反映。sitemap.xmlへの追加
+    （`https://vigorlab.net/matsuri/en/`）は次回統括担当への依頼に
+    まとめて含める。
