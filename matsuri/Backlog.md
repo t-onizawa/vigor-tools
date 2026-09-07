@@ -3,7 +3,7 @@
 ```
 Status: Living backlog（固定ロードマップではない）
 Created: 2026-07-27
-Updated: 2026-09-07（英語版一覧ページ新設、matsuri/en/index.html公開）
+Updated: 2026-09-07（英語版を宿泊CTA対象6件全てへ拡大）
 ```
 
 これは計画表ではない。優先度は仮説であり、公開後の反応で入れ替わる前提の
@@ -3305,3 +3305,36 @@ backgroundImageとatmosphereMediaを別判定し、青梅大祭の動画1件の�
     コンソールエラーなし）を実施し本番反映。sitemap.xmlへの追加
     （`https://vigorlab.net/matsuri/en/`）は次回統括担当への依頼に
     まとめて含める。
+
+2026-09-07（英語版を宿泊CTA対象6件全てへ拡大、commit 4bc4412・PM直接
+    実装）
+    石岡のおまつり以外の5件（青森ねぶた祭・おわら風の盆・秩父夜祭・
+    高山祭・郡上おどり）の英語版を追加した。i18n-design.mdで確立した
+    アーキテクチャ（JP data.jsを事実源、translation.jsで翻訳テキストの
+    み重ねる）が既に安定していたため、共有JS・CSSの変更は一切不要で、
+    新規ファイル10件（festival×5のindex.html・translation.js）と
+    JP側5ページへのhreflang追加・en/index.htmlへのカード追加のみで
+    完結した。
+    ```
+    各translation.jsの内容（name/officialName/highlightComment/
+    hayashiNote/location/access/mapReference）はPMが各festivalの
+    JP data.jsを直接読み、一次情報に基づいて翻訳した
+    ```
+    実機検証で確認したエッジケース：
+    ```
+    - 秩父夜祭（scheduled_pending_official）：ステータスバッジ・FAQ
+      回答とも未確定表現で正しく表示
+    - 郡上おどり（30日程・非連続）：「Jul 11 – Sep 5, 2026
+      (30 dates)」という多日程時の英語表記分岐（dateRangeSeparator・
+      multipleDateCount）が正しく機能。これはv4実装時にCodexが
+      指示書になくても自律的に実装していた箇所
+    - 青森ねぶた祭（動画あり）：CJK残留は動画公開元
+      「青森市公式チャンネル」のみ（既存の許容例外どおり）
+    - 5件とも日本語版の表示（hreflang追加以外）に変化がないことを
+      個別に確認
+    ```
+    en/index.htmlは2カラムグリッドで6件のカードを表示。石岡以外の
+    5件はまだアフィリエイトURL未設定のため宿泊CTAは通常検索URLに
+    フォールバックする（既存のlodging-cta-config.js設計どおり）。
+    **残課題：** sitemap.xmlへの5件追加は次回統括担当への一括依頼に
+    含める。
