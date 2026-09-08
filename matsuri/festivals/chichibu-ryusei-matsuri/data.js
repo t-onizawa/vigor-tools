@@ -22,8 +22,8 @@ const FESTIVAL = {
       label: "椋神社",
       pointType: "shrine",
       query: "椋神社 埼玉県秩父市下吉田",
-      lat: null,
-      lng: null,
+      lat: 36.0452223,
+      lng: 139.0329552,
       mapUrl: "https://www.google.com/maps/search/?api=1&query=椋神社+埼玉県秩父市下吉田",
       note: "龍勢は椋神社の例大祭に奉納されます。"
     },

@@ -13,7 +13,7 @@ const FESTIVAL = {
     },
     access: { nearestStation: "JR信越本線 安中駅" },
     mapReference: {
-      label: "安中市役所前通り", pointType: "viewing_point", query: "安中市役所 群馬県安中市", lat: null, lng: null,
+      label: "安中市役所前通り", pointType: "viewing_point", query: "安中市役所 群馬県安中市", lat: 36.3262683, lng: 138.8871540,
       mapUrl: "https://www.google.com/maps/search/?api=1&query=安中市役所+群馬県安中市",
       note: "近年の中心会場は安中市役所本庁舎と市役所前通り。山車の運行経路は年度案内を確認してください。"
     },

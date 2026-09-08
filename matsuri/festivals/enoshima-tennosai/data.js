@@ -13,7 +13,7 @@ const FESTIVAL = {
     },
     access: { nearestStation: "小田急江ノ島線 片瀬江ノ島駅" },
     mapReference: {
-      label: "江の島弁天橋周辺", pointType: "viewing_point", query: "江の島弁天橋", lat: null, lng: null,
+      label: "江の島弁天橋周辺", pointType: "viewing_point", query: "江の島弁天橋", lat: 35.3044597, lng: 139.4821935,
       mapUrl: "https://www.google.com/maps/search/?api=1&query=江の島弁天橋",
       note: "神輿の渡御経路に近い江の島弁天橋周辺を観覧基準地点とした。"
     },

@@ -13,7 +13,7 @@ const FESTIVAL = {
     },
     access: { nearestStation: "JR内房線 館山駅" },
     mapReference: {
-      label: "鶴谷八幡宮", pointType: "shrine", query: "鶴谷八幡宮 千葉県館山市", lat: null, lng: null,
+      label: "鶴谷八幡宮", pointType: "shrine", query: "鶴谷八幡宮 千葉県館山市", lat: 35.0052277, lng: 139.8665318,
       mapUrl: "https://www.google.com/maps/search/?api=1&query=鶴谷八幡宮+千葉県館山市",
       note: "館山市・南房総市の参加神社が鶴谷八幡宮へ集結します。"
     },

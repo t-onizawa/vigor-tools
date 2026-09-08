@@ -12,7 +12,7 @@ const FESTIVAL = {
       hayashiNote: "太鼓と笛のお囃子、『ドッコイショー』の掛け声の中で、差し手が竿燈を手のひら・額・肩・腰へ移す妙技を披露する。"
     },
     access: { nearestStation: "JR秋田駅から竿燈大通りまで徒歩約15分" },
-    mapReference: { label: "竿燈大通り", pointType: "viewing_point", query: "竿燈大通り 秋田市", lat: null, lng: null, mapUrl: "https://www.google.com/maps/search/?api=1&query=竿燈大通り+秋田市", note: "夜本番の公式会場である竿燈大通りを基準地点とした。" },
+    mapReference: { label: "竿燈大通り", pointType: "viewing_point", query: "竿燈大通り 秋田市", lat: 39.7178572, lng: 140.1158692, mapUrl: "https://www.google.com/maps/search/?api=1&query=竿燈大通り+秋田市", note: "夜本番の公式会場である竿燈大通りを基準地点とした。" },
     highlightComment: "提灯を稲穂に見立てた大若を、差し手が手のひら・額・肩・腰で支える妙技。夜は灯りをともした竿燈が大通りに並ぶ。",
     atmosphereMedia: [], backgroundImage: null,
     confirmation: { verified: true, confirmedDate: "2026-08-14", sources: ["https://www.kantou.gr.jp/", "https://www.akita-yulala.jp/festival/335"] }

@@ -22,8 +22,8 @@ const FESTIVAL = {
       label: "JR深谷駅",
       pointType: "viewing_point",
       query: "深谷駅 埼玉県深谷市",
-      lat: null,
-      lng: null,
+      lat: 36.1918042,
+      lng: 139.2812595,
       mapUrl: "https://www.google.com/maps/search/?api=1&query=深谷駅+埼玉県深谷市",
       note: "JR深谷駅北口ロータリー・市役所通り一帯が深谷まつりの会場です。"
     },

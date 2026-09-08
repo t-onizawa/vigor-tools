@@ -13,7 +13,7 @@ const FESTIVAL = {
     },
     access: { nearestStation: "東京メトロ銀座線・都営浅草線・東武線 浅草駅から徒歩圏" },
     mapReference: {
-      label: "雷門通り", pointType: "viewing_point", query: "雷門通り 東京都台東区浅草", lat: null, lng: null,
+      label: "雷門通り", pointType: "viewing_point", query: "雷門通り 東京都台東区浅草", lat: 35.7111969, lng: 139.7941835,
       mapUrl: "https://www.google.com/maps/search/?api=1&query=雷門通り+東京都台東区浅草",
       note: "公式が案内する馬道通りから雷門通りまでのパレードコースのうち、雷門通りを観覧の基準地点とした。"
     },

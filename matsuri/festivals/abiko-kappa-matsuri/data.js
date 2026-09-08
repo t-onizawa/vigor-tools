@@ -13,7 +13,7 @@ const FESTIVAL = {
     },
     access: { nearestStation: "JR常磐線・成田線 我孫子駅南口から徒歩約10分" },
     mapReference: {
-      label: "手賀沼公園", pointType: "main_venue", query: "手賀沼公園 千葉県我孫子市", lat: null, lng: null,
+      label: "手賀沼公園", pointType: "main_venue", query: "手賀沼公園 千葉県我孫子市", lat: 35.8654984, lng: 140.0142915,
       mapUrl: "https://www.google.com/maps/search/?api=1&query=手賀沼公園+千葉県我孫子市",
       note: "公式がアビスタとともに開催場所として案内する手賀沼公園を基準地点とした。"
     },
