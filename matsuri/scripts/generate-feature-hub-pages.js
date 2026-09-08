@@ -9,6 +9,7 @@ const {
 const FEATURE_HUBS = [
   { slug: "dashi", label: "山車", match: (features) => features.hasDashi === true },
   { slug: "mikoshi", label: "神輿", match: (features) => features.hasMikoshi === true },
+  { slug: "odori", label: "踊り", match: (features) => features.hasDanceOnDashi === true },
   { slug: "hikimawashi", label: "曳き回し", match: (features) => features.hasParade === true },
   { slug: "night", label: "夜", match: (features) => features.highlightTime === "night" || features.highlightTime === "both" },
   { slug: "day", label: "昼", match: (features) => features.highlightTime === "day" || features.highlightTime === "both" },
