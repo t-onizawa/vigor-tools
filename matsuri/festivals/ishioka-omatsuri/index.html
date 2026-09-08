@@ -108,5 +108,19 @@
 
     <script src="../../shared/festival-slugs.js"></script><script src="../../shared/lodging-cta-config.js"></script><script src="./data.js"></script>
     <script src="../../shared/festival-detail.js?v=1"></script>
+    <script>
+      (function () {
+        var container = document.getElementById("faq-list");
+        if (!container) return;
+        var block = document.createElement("div");
+        block.className = "faq-item";
+        var question = document.createElement("h3");
+        question.textContent = "石岡のおまつりは何時から始まりますか？";
+        var answer = document.createElement("p");
+        answer.textContent = "初日（9/19・神幸祭）は9:00の「御綱祭」から行事が始まります。山車・幌獅子などの巡行予定時刻は日ごとに異なるため、当日のスケジュールをご確認ください。";
+        block.append(question, answer);
+        container.append(block);
+      })();
+    </script>
   </body>
 </html>
