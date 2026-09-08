@@ -166,6 +166,19 @@
     prefectureEl.insertAdjacentElement("afterend", chip);
   }
 
+  async function loadPrefectureHubSlugs() {
+    try {
+      const res = await fetch(`${sharedBasePath}/prefecture-hub-slugs.js`);
+      if (!res.ok) return [];
+      const src = await res.text();
+      const factory = new Function(`${src}\nreturn PREFECTURE_HUB_SLUGS;`);
+      return factory();
+    } catch (err) {
+      console.warn("[festival-detail] prefecture-hub-slugs.jsの読み込みに失敗", err);
+      return [];
+    }
+  }
+
   async function loadIconSvg(key) {
     const file = FEATURE_ICON_FILES[key];
     if (!file) return null;
@@ -794,6 +807,26 @@
     anchor.insertAdjacentElement("afterend", p);
   }
 
+  async function renderPrefectureHubLink(currentFestival) {
+    if (LOCALE === "en") return;
+    const areaTag = currentFestival.areaTag;
+    if (!areaTag) return;
+    const hubSlugs = new Set(await loadPrefectureHubSlugs());
+    if (!hubSlugs.has(areaTag)) return;
+
+    const prefectureLabel = currentFestival.prefecture || "";
+    const anchor = document.querySelector(".month-hub-link") || byId("faq-section");
+    if (!anchor) return;
+
+    const p = document.createElement("p");
+    p.className = "prefecture-hub-link";
+    const a = document.createElement("a");
+    a.href = `../../prefectures/${areaTag}/`;
+    a.textContent = `${prefectureLabel}の祭りをもっと見る`;
+    p.append(a);
+    anchor.insertAdjacentElement("afterend", p);
+  }
+
   function buildLodgingUrl(currentFestival) {
     const config = typeof LODGING_CTA_CONFIG !== "undefined"
       ? LODGING_CTA_CONFIG
@@ -985,6 +1018,7 @@
   renderRelatedFestivals(festival, currentYear);
   renderFaq(festival, currentYear);
   renderMonthHubLink(festival, currentYear);
+  renderPrefectureHubLink(festival);
   renderLodgingCta(festival);
 
   byId("constant-sources").append(
