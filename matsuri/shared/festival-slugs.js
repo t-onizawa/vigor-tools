@@ -2,3 +2,5 @@ const FESTIVAL_SLUGS = ["ishioka-omatsuri", "sawara-natsu-matsuri", "sawara-aki-
 FESTIVAL_SLUGS.push("kurayoshi-utsuibuki-matsuri", "yasugi-tsukinowa-matsuri", "bitchu-takahashi-matsuyama-odori", "fukuyama-bara-matsuri", "yamaguchi-gion-matsuri");
 FESTIVAL_SLUGS.push("sapporo-snow-festival", "tokushima-awa-odori", "sanuki-takamatsu-matsuri", "niihama-taiko-matsuri", "kochi-yosakoi-matsuri", "hakata-gion-yamakasa", "karatsu-kunchi", "nagasaki-kunchi", "yatsushiro-myouken-sai", "hita-gion", "hyuga-hyottoko-natsu-matsuri", "ohara-matsuri", "naha-otsunahiki-matsuri");
 FESTIVAL_SLUGS.push("yosakoi-soran-matsuri", "marugame-oshiro-matsuri", "matsuyama-autumn-festival", "kokura-gion-daiko", "nagasaki-shoronagashi", "hinokuni-matsuri", "nanase-homura-matsuri", "saito-summer-matsuri", "okinawa-zento-eisa-matsuri");
+FESTIVAL_SLUGS.push("hakodate-port-festival", "naruto-awa-odori", "anan-summer-festival", "sakaide-ohashi-matsuri");
+FESTIVAL_SLUGS.push("uwajima-ushioni-matsuri");
