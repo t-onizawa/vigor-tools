@@ -5,7 +5,12 @@
     kanto: ["ibaraki", "tochigi", "gunma", "saitama", "chiba", "tokyo", "kanagawa"],
     tohoku: ["aomori", "iwate", "akita", "miyagi", "yamagata", "fukushima"],
     chubu: ["niigata", "toyama", "ishikawa", "fukui", "yamanashi", "nagano", "gifu", "shizuoka", "aichi"],
-    kinki: ["mie", "shiga", "kyoto", "osaka", "hyogo", "nara", "wakayama"]
+    kinki: ["mie", "shiga", "kyoto", "osaka", "hyogo", "nara", "wakayama"],
+    chugoku: ["tottori", "shimane", "okayama", "hiroshima", "yamaguchi"],
+    shikoku: ["tokushima", "kagawa", "ehime", "kochi"],
+    kyushu: ["fukuoka", "saga", "nagasaki", "kumamoto", "oita", "miyazaki", "kagoshima"],
+    hokkaido: ["hokkaido"],
+    okinawa: ["okinawa"]
   };
 
   const eventStatusLabels = {
