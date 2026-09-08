@@ -772,6 +772,28 @@
     });
   }
 
+  function renderMonthHubLink(currentFestival, yearlyInfo) {
+    if (LOCALE === "en") return;
+    const MONTH_HUB_SLUGS = { 7: "july", 8: "august", 9: "september" };
+    const MONTH_HUB_LABELS = { 7: "7月", 8: "8月", 9: "9月" };
+    const dates = Array.isArray(yearlyInfo.dates) ? yearlyInfo.dates : [];
+    if (dates.length === 0) return;
+    const month = Number(dates[0].slice(5, 7));
+    const slug = MONTH_HUB_SLUGS[month];
+    if (!slug) return;
+
+    const anchor = byId("faq-section");
+    if (!anchor) return;
+
+    const p = document.createElement("p");
+    p.className = "month-hub-link";
+    const a = document.createElement("a");
+    a.href = `../../months/${slug}/`;
+    a.textContent = `${MONTH_HUB_LABELS[month]}の祭りをもっと見る`;
+    p.append(a);
+    anchor.insertAdjacentElement("afterend", p);
+  }
+
   function buildLodgingUrl(currentFestival) {
     const config = typeof LODGING_CTA_CONFIG !== "undefined"
       ? LODGING_CTA_CONFIG
@@ -962,6 +984,7 @@
   renderMapReference(festivalMapReference);
   renderRelatedFestivals(festival, currentYear);
   renderFaq(festival, currentYear);
+  renderMonthHubLink(festival, currentYear);
   renderLodgingCta(festival);
 
   byId("constant-sources").append(
