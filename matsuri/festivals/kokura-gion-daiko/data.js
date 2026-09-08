@@ -1,0 +1,5 @@
+const FESTIVAL = {
+  id: "kokura-gion-daiko", name: "小倉祇園太鼓", officialName: "令和8年度 小倉祇園祭り", prefecture: "福岡県", city: "北九州市", areaTag: "fukuoka",
+  constantInfo: { schedulePattern: "毎年7月第3土曜日をはさむ3日間", features: { hasDashi: true, hasMikoshi: false, hasDanceOnDashi: false, hasParade: true, highlightTime: "evening", hayashiNote: "山車の前後に太鼓を載せ、太鼓の両面打ちと歩行打ち、ヂャンガラを組み合わせる。" }, access: { nearestStation: "JR小倉駅" }, mapReference: { label: "小倉城歴史の道", pointType: "viewing_point", query: "福岡県北九州市 小倉城歴史の道", lat: null, lng: null, mapUrl: "https://www.google.com/maps/search/?api=1&query=小倉城歴史の道", note: "子ども競演会・太鼓総見の公式会場を基準とする。" }, highlightComment: "山車の前後に据えた太鼓を両面から打ち、ヂャンガラとともに歩行打ちする独特の太鼓祇園。", atmosphereMedia: [], backgroundImage: null, confirmation: { verified: true, confirmedDate: "2026-09-08", sources: ["https://kokuragiondaiko.jp/"] } },
+  yearlyInfo: [{ year: 2026, eventStatus: "ended", dates: ["2026-07-17","2026-07-18","2026-07-19"], schedule: [], access: { hasParking: null, parkingNote: "2026年の祭り専用駐車場は未確認です。JR小倉駅からの来場が便利です。" }, confirmation: { confirmedDate: "2026-09-08", sources: ["https://kokuragiondaiko.jp/"], note: "保存振興会公式サイトで令和8年度行事の終了、開催パターンと各行事を確認。" } }]
+};

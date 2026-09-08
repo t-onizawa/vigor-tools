@@ -1,0 +1,5 @@
+const FESTIVAL = {
+  id: "marugame-oshiro-matsuri", name: "丸亀お城まつり", officialName: "第77回丸亀お城まつり", prefecture: "香川県", city: "丸亀市", areaTag: "kagawa",
+  constantInfo: { schedulePattern: "毎年5月3日・4日", features: { hasDashi: false, hasMikoshi: false, hasDanceOnDashi: false, hasParade: true, highlightTime: "day", hayashiNote: "丸亀城周辺でパレードやステージ、婆娑羅ダンスなどを展開する市民参加型の祭り。" }, access: { nearestStation: "JR丸亀駅" }, mapReference: { label: "丸亀城周辺", pointType: "main_venue", query: "香川県丸亀市 丸亀城", lat: null, lng: null, mapUrl: "https://www.google.com/maps/search/?api=1&query=丸亀城", note: "公式開催概要の会場を基準地点とする。" }, highlightComment: "丸亀城を背景に、パレードや婆娑羅ダンスなど多彩な催しが2日間にわたり行われる。", atmosphereMedia: [], backgroundImage: null, confirmation: { verified: true, confirmedDate: "2026-09-08", sources: ["https://oshiro-fes.com/"] } },
+  yearlyInfo: [{ year: 2026, eventStatus: "ended", dates: ["2026-05-03","2026-05-04"], schedule: [], access: { hasParking: true, parkingNote: "公式サイトで開催期間中の臨時駐車場案内を確認。場所・利用条件は公式交通案内を確認してください。" }, confirmation: { confirmedDate: "2026-09-08", sources: ["https://oshiro-fes.com/"], note: "公式開催概要で日程、丸亀城周辺の会場、主催・共催を確認。" } }]
+};
