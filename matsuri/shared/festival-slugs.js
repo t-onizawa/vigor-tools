@@ -4,3 +4,4 @@ FESTIVAL_SLUGS.push("sapporo-snow-festival", "tokushima-awa-odori", "sanuki-taka
 FESTIVAL_SLUGS.push("yosakoi-soran-matsuri", "marugame-oshiro-matsuri", "matsuyama-autumn-festival", "kokura-gion-daiko", "nagasaki-shoronagashi", "hinokuni-matsuri", "nanase-homura-matsuri", "saito-summer-matsuri", "okinawa-zento-eisa-matsuri");
 FESTIVAL_SLUGS.push("hakodate-port-festival", "naruto-awa-odori", "anan-summer-festival", "sakaide-ohashi-matsuri");
 FESTIVAL_SLUGS.push("uwajima-ushioni-matsuri");
+FESTIVAL_SLUGS.push("tosa-akaoka-ekin-matsuri", "tosajinja-shinane-matsuri");
