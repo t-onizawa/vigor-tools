@@ -2,7 +2,7 @@ const fs = require("fs");
 const path = require("path");
 
 const MATSURI_ROOT = path.resolve(__dirname, "..");
-const SITE_NAV_VERSION = "2";
+const SITE_NAV_VERSION = "3";
 
 function listFestivalPages(root) {
   if (!fs.existsSync(root)) return [];
@@ -15,6 +15,7 @@ function listFestivalPages(root) {
 const targets = [
   { file: path.join(MATSURI_ROOT, "index.html"), sharedPath: "shared" },
   { file: path.join(MATSURI_ROOT, "en", "index.html"), sharedPath: "../shared" },
+  { file: path.join(MATSURI_ROOT, "favorites", "index.html"), sharedPath: "../shared" },
   ...listFestivalPages(path.join(MATSURI_ROOT, "festivals"))
     .map((file) => ({ file, sharedPath: "../../shared" })),
   ...listFestivalPages(path.join(MATSURI_ROOT, "en", "festivals"))
@@ -31,8 +32,8 @@ function addTags(target) {
   let source = fs.readFileSync(target.file, "utf8");
 
   source = source
-    .replace(`${target.sharedPath}/site-nav.css?v=1`, `${target.sharedPath}/site-nav.css?v=${SITE_NAV_VERSION}`)
-    .replace(`${target.sharedPath}/site-nav.js?v=1`, `${target.sharedPath}/site-nav.js?v=${SITE_NAV_VERSION}`);
+    .replace(new RegExp(`${target.sharedPath}/site-nav\\.css\\?v=\\d+`, "g"), `${target.sharedPath}/site-nav.css?v=${SITE_NAV_VERSION}`)
+    .replace(new RegExp(`${target.sharedPath}/site-nav\\.js\\?v=\\d+`, "g"), `${target.sharedPath}/site-nav.js?v=${SITE_NAV_VERSION}`);
 
   if (!source.includes(cssTag)) {
     if (!source.includes("</head>")) throw new Error(`${target.file}: </head>がありません`);
@@ -58,8 +59,9 @@ function verify(target) {
   if (source.indexOf(scriptTag) > source.indexOf("</body>")) {
     throw new Error(`${target.file}: JSタグが</body>より後です`);
   }
-  if (source.includes(`${target.sharedPath}/site-nav.css?v=1`) || source.includes(`${target.sharedPath}/site-nav.js?v=1`)) {
-    throw new Error(`${target.file}: site-navの旧v1参照が残っています`);
+  const oldVersionPattern = new RegExp(`${target.sharedPath}/site-nav\\.(?:css|js)\\?v=(?!${SITE_NAV_VERSION}(?:["']))\\d+`);
+  if (oldVersionPattern.test(source)) {
+    throw new Error(`${target.file}: site-navの旧バージョン参照が残っています`);
   }
 }
 
@@ -68,4 +70,4 @@ targets.forEach(verify);
 
 const jpFestivalCount = targets.filter(({ file }) => file.includes(`${path.sep}festivals${path.sep}`) && !file.includes(`${path.sep}en${path.sep}`)).length;
 const enFestivalCount = targets.filter(({ file }) => file.includes(`${path.sep}en${path.sep}festivals${path.sep}`)).length;
-console.log(`site-nav追加・検証成功: 合計${targets.length}件（JP詳細${jpFestivalCount}、EN詳細${enFestivalCount}、一覧2）`);
+console.log(`site-nav追加・検証成功: 合計${targets.length}件（JP詳細${jpFestivalCount}、EN詳細${enFestivalCount}、一覧2、お気に入り1）`);

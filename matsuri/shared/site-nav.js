@@ -1,5 +1,6 @@
 (function () {
   const MATSURI_MARKER = "matsuri";
+  const FAVORITES_STORAGE_KEY = "matsuri-favorites";
 
   function getLocale() {
     return document.documentElement.lang === "en" ? "en" : "ja";
@@ -52,8 +53,113 @@
     }
   }
 
+  function getFavorites() {
+    try {
+      const raw = localStorage.getItem(FAVORITES_STORAGE_KEY);
+      const parsed = raw ? JSON.parse(raw) : [];
+      return Array.isArray(parsed) ? parsed : [];
+    } catch (err) {
+      return [];
+    }
+  }
+
+  function isFavorite(slug) {
+    return getFavorites().includes(slug);
+  }
+
+  function toggleFavorite(slug) {
+    const current = getFavorites();
+    const next = current.includes(slug)
+      ? current.filter((item) => item !== slug)
+      : [...current, slug];
+    try {
+      localStorage.setItem(FAVORITES_STORAGE_KEY, JSON.stringify(next));
+    } catch (err) {
+      return current.includes(slug);
+    }
+    return next.includes(slug);
+  }
+
+  function extractSlugFromHref(href) {
+    const match = href.match(/festivals\/([^/]+)\/?(?:index\.html)?(?:[?#].*)?$/);
+    return match ? match[1] : null;
+  }
+
+  function updateHeart(heart, slug) {
+    const active = isFavorite(slug);
+    heart.textContent = active ? "♥" : "♡";
+    heart.classList.toggle("is-active", active);
+    heart.setAttribute("aria-label", active ? "お気に入りから削除" : "お気に入りに追加");
+  }
+
+  function createFavoriteHeart(slug) {
+    const heart = document.createElement("button");
+    heart.type = "button";
+    heart.className = "favorite-heart";
+    heart.dataset.favoriteSlug = slug;
+    updateHeart(heart, slug);
+    heart.addEventListener("click", (event) => {
+      event.preventDefault();
+      event.stopPropagation();
+      const nowFavorite = toggleFavorite(slug);
+      updateHeart(heart, slug);
+      sendGaEvent("favorite_toggle", { festival_slug: slug, is_favorite: nowFavorite });
+      document.dispatchEvent(new CustomEvent("matsuri:favorites-changed", {
+        detail: { slug, isFavorite: nowFavorite }
+      }));
+    });
+    return heart;
+  }
+
+  function attachHeartToCard(card) {
+    const slug = extractSlugFromHref(card.getAttribute("href") || "");
+    if (!slug || card.querySelector(".favorite-heart")) return;
+    const heart = createFavoriteHeart(slug);
+    card.classList.add("favorite-heart-anchor");
+    card.append(heart);
+  }
+
+  function hydrateFavoriteHearts(root = document) {
+    if (root instanceof Element && root.matches('a.festival-item[href*="festivals/"]')) {
+      attachHeartToCard(root);
+    }
+    root.querySelectorAll?.('a.festival-item[href*="festivals/"]').forEach(attachHeartToCard);
+  }
+
+  function attachHeartToDetail() {
+    const header = document.querySelector(".festival-header");
+    if (!header || !document.getElementById("festival-name") || header.querySelector(".favorite-heart")) return;
+    if (typeof FESTIVAL === "undefined" || !FESTIVAL.id) return;
+    header.classList.add("favorite-heart-anchor");
+    header.append(createFavoriteHeart(FESTIVAL.id));
+  }
+
+  function setupFavoriteHearts() {
+    hydrateFavoriteHearts();
+    attachHeartToDetail();
+    const observer = new MutationObserver((mutations) => {
+      mutations.forEach((mutation) => {
+        mutation.addedNodes.forEach((node) => {
+          if (node instanceof Element) hydrateFavoriteHearts(node);
+        });
+      });
+    });
+    observer.observe(document.body, { childList: true, subtree: true });
+    document.addEventListener("matsuri:favorites-changed", (event) => {
+      const slug = event.detail && event.detail.slug;
+      if (!slug) return;
+      document.querySelectorAll(".favorite-heart").forEach((heart) => {
+        if (heart.dataset.favoriteSlug === slug) updateHeart(heart, slug);
+      });
+    });
+  }
+
   function getHomeUrl() {
     return relativeUrl(getLocale() === "en" ? ["en"] : []);
+  }
+
+  function getFavoritesUrl() {
+    return relativeUrl(["favorites"]);
   }
 
   function getLabHomeUrl() {
@@ -335,8 +441,7 @@
 
     const searchButton = createNavButton(labels.search, "⌕");
     items.append(searchButton);
-    // TODO: Phase 5でお気に入り一覧ページに差し替え
-    items.append(createNavLink(labels.favorites, "♡", homeUrl, false));
+    items.append(createNavLink(labels.favorites, "♡", getFavoritesUrl(), getMatsuriSegments()[0] === "favorites"));
 
     const menuWrap = document.createElement("div");
     menuWrap.className = "site-nav-menu-wrap";
@@ -371,6 +476,7 @@
     nav.append(inner);
     document.body.append(nav);
     buildSearchModal(searchButton);
+    setupFavoriteHearts();
 
     function closeMenu() {
       menu.hidden = true;

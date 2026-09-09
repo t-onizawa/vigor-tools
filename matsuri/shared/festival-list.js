@@ -95,6 +95,10 @@
     ["曳き回し", "hasParade"]
   ];
 
+  function getListBasePath() {
+    return document.getElementById("favorites-list") ? "../" : "";
+  }
+
   function sendGaEvent(name, params) {
     try {
       if (typeof window.gtag === "function") {
@@ -105,9 +109,10 @@
     }
   }
 
-  async function loadFestival(slug) {
+  async function loadFestival(slug, basePath = "festivals") {
     try {
-      const res = await fetch(`festivals/${slug}/data.js`);
+      const resolvedBasePath = typeof basePath === "string" ? basePath : "festivals";
+      const res = await fetch(`${resolvedBasePath}/${slug}/data.js`);
       if (!res.ok) {
         console.warn(`[festival-list] ${slug}: fetch失敗 (${res.status})`);
         return null;
@@ -346,7 +351,7 @@
     const file = FEATURE_ICON_FILES[label];
     if (!file) return null;
     if (iconCache.has(file)) return iconCache.get(file);
-    const promise = fetch(`shared/icons/${file}.svg`)
+    const promise = fetch(`${getListBasePath()}shared/icons/${file}.svg`)
       .then((res) => (res.ok ? res.text() : null))
       .catch(() => null);
     iconCache.set(file, promise);
@@ -432,7 +437,7 @@
 
     const card = document.createElement("a");
     card.className = hasPhoto ? "festival-item" : "festival-item festival-item--text";
-    card.href = `festivals/${festival.id}/`;
+    card.href = `${getListBasePath()}festivals/${festival.id}/`;
     card.dataset.area = festival.areaTag || "";
     card.dataset.highlightTime = features.highlightTime || "";
     card.dataset.hasDanceOnDashi = String(features.hasDanceOnDashi);
@@ -1027,12 +1032,16 @@
   }
 
   window.__festivalList = {
-    getPrimaryYearlyInfo
+    getPrimaryYearlyInfo,
+    loadFestival,
+    renderFestivalCard
   };
 
-  if (document.readyState === "loading") {
-    document.addEventListener("DOMContentLoaded", init);
-  } else {
-    init();
+  if (document.getElementById("festival-list")) {
+    if (document.readyState === "loading") {
+      document.addEventListener("DOMContentLoaded", init);
+    } else {
+      init();
+    }
   }
 })();

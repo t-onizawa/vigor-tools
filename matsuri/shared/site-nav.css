@@ -269,6 +269,60 @@
   background: #eef1f4;
 }
 
+.favorite-heart-anchor {
+  position: relative;
+}
+
+.favorite-heart {
+  position: absolute;
+  z-index: 5;
+  top: 10px;
+  right: 10px;
+  display: grid;
+  width: 40px;
+  height: 40px;
+  place-items: center;
+  border: 1px solid rgb(255 255 255 / 78%);
+  border-radius: 50%;
+  background: rgb(255 255 255 / 92%);
+  color: #1a2e42;
+  font: inherit;
+  font-size: 1.45rem;
+  line-height: 1;
+  box-shadow: 0 3px 12px rgb(17 17 17 / 16%);
+  cursor: pointer;
+}
+
+.favorite-heart:hover,
+.favorite-heart:focus-visible {
+  background: #fff;
+  outline: 2px solid rgb(38 65 94 / 28%);
+  outline-offset: 2px;
+}
+
+.favorite-heart.is-active {
+  color: #a12c36;
+}
+
+.festival-header > .favorite-heart {
+  top: 14px;
+  right: 14px;
+}
+
+.favorites-empty {
+  border: 1px solid #d9d9d9;
+  border-radius: 12px;
+  padding: 20px;
+  background: #fff;
+  color: #5f6368;
+  text-align: center;
+}
+
+.favorites-empty a {
+  color: #1a2e42;
+  font-weight: 700;
+}
+
 @media (min-width: 768px) {
   .has-site-nav {
     padding-top: 52px;
