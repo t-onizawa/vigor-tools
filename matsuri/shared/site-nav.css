@@ -1,0 +1,190 @@
+.has-site-nav {
+  padding-bottom: calc(72px + env(safe-area-inset-bottom));
+}
+
+.site-nav {
+  position: fixed;
+  z-index: 900;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  border-top: 1px solid #d9d9d9;
+  background: rgb(255 255 255 / 96%);
+  color: #111;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Hiragino Kaku Gothic ProN", "Yu Gothic", Meiryo, sans-serif;
+  box-shadow: 0 -4px 18px rgb(17 17 17 / 8%);
+  backdrop-filter: blur(12px);
+}
+
+.site-nav-inner {
+  width: min(100%, 960px);
+  margin: 0 auto;
+}
+
+.site-nav-logo {
+  display: none;
+}
+
+.site-nav-items {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+.site-nav-item {
+  position: relative;
+  display: flex;
+  min-width: 0;
+  min-height: 64px;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1px;
+  border: 0;
+  background: transparent;
+  color: #5f6368;
+  font: inherit;
+  text-align: center;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.site-nav-item:hover,
+.site-nav-item:focus-visible,
+.site-nav-item.is-active {
+  color: #1a2e42;
+}
+
+.site-nav-item.is-active::after {
+  position: absolute;
+  bottom: 4px;
+  width: 24px;
+  height: 2px;
+  border-radius: 999px;
+  background: #1a2e42;
+  content: "";
+}
+
+.site-nav-icon {
+  font-size: 1.35rem;
+  line-height: 1;
+}
+
+.site-nav-label {
+  overflow: hidden;
+  max-width: 100%;
+  font-size: 0.68rem;
+  font-weight: 700;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.site-nav-menu-wrap {
+  position: relative;
+}
+
+.site-nav-menu-button {
+  width: 100%;
+}
+
+.site-nav-menu {
+  position: absolute;
+  right: 8px;
+  bottom: calc(100% + 8px);
+  width: min(240px, calc(100vw - 24px));
+  overflow: hidden;
+  border: 1px solid #d9d9d9;
+  border-radius: 12px;
+  background: #fff;
+  box-shadow: 0 12px 30px rgb(17 17 17 / 18%);
+}
+
+.site-nav-menu[hidden] {
+  display: none;
+}
+
+.site-nav-menu a {
+  display: block;
+  padding: 12px 14px;
+  color: #111;
+  font-size: 0.85rem;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.site-nav-menu a + a {
+  border-top: 1px solid #ececec;
+}
+
+.site-nav-menu a:hover,
+.site-nav-menu a:focus-visible {
+  background: #eef1f4;
+}
+
+@media (min-width: 768px) {
+  .has-site-nav {
+    padding-top: 52px;
+    padding-bottom: 0;
+  }
+
+  .site-nav {
+    top: 0;
+    bottom: auto;
+    border-top: 0;
+    border-bottom: 1px solid #d9d9d9;
+    box-shadow: 0 3px 14px rgb(17 17 17 / 7%);
+  }
+
+  .site-nav-inner {
+    display: flex;
+    min-height: 52px;
+    align-items: stretch;
+    justify-content: space-between;
+    padding: 0 20px;
+  }
+
+  .site-nav-logo {
+    display: flex;
+    align-items: center;
+    color: #1a2e42;
+    font-family: "Hiragino Mincho ProN", "Yu Mincho", serif;
+    font-size: 1rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-decoration: none;
+  }
+
+  .site-nav-items {
+    display: flex;
+    align-items: stretch;
+  }
+
+  .site-nav-item {
+    position: relative;
+    min-width: 86px;
+    min-height: 52px;
+    flex-direction: row;
+    gap: 6px;
+    padding: 0 12px;
+  }
+
+  .site-nav-item.is-active::after {
+    right: 12px;
+    bottom: 0;
+    left: 12px;
+    width: auto;
+  }
+
+  .site-nav-icon {
+    font-size: 1.05rem;
+  }
+
+  .site-nav-label {
+    font-size: 0.76rem;
+  }
+
+  .site-nav-menu {
+    top: calc(100% + 8px);
+    right: 0;
+    bottom: auto;
+  }
+}
