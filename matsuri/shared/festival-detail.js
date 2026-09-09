@@ -569,7 +569,13 @@
     gallery.hidden = false;
   }
 
-  function renderMapReference(mapReference) {
+  function buildOsmEmbedUrl(lat, lng) {
+    const delta = 0.006;
+    const bbox = [lng - delta, lat - delta, lng + delta, lat + delta].join(",");
+    return `https://www.openstreetmap.org/export/embed.html?bbox=${encodeURIComponent(bbox)}&layer=mapnik&marker=${lat}%2C${lng}`;
+  }
+
+  function renderMapReference(mapReference, festivalName) {
     const section = byId("map-section");
 
     if (!section) {
@@ -582,12 +588,18 @@
     }
 
     try {
-      const iframe = document.createElement("iframe");
-      iframe.src = `https://www.google.com/maps?q=${encodeURIComponent(mapReference.query)}&output=embed&z=11`;
-      iframe.title = mapReference.label;
-      iframe.loading = "lazy";
-
-      byId("map-frame").append(iframe);
+      const mapFrame = byId("map-frame");
+      mapFrame.replaceChildren();
+      const hasCoordinates = typeof mapReference.lat === "number" && typeof mapReference.lng === "number";
+      mapFrame.hidden = !hasCoordinates;
+      if (hasCoordinates) {
+        const iframe = document.createElement("iframe");
+        iframe.className = "map-preview";
+        iframe.src = buildOsmEmbedUrl(mapReference.lat, mapReference.lng);
+        iframe.title = `${festivalName}の地図`;
+        iframe.loading = "lazy";
+        mapFrame.append(iframe);
+      }
       setText("map-note", mapReference.note);
       byId("map-external-link").href = mapReference.mapUrl;
       section.hidden = false;
@@ -1014,7 +1026,7 @@
   relocateHighlightComment();
   renderAtmosphereMedia(festival.constantInfo.atmosphereMedia);
   applyHeroHeader(festival.constantInfo.backgroundImage);
-  renderMapReference(festivalMapReference);
+  renderMapReference(festivalMapReference, festivalName);
   renderRelatedFestivals(festival, currentYear);
   renderFaq(festival, currentYear);
   renderMonthHubLink(festival, currentYear);
