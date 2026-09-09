@@ -972,11 +972,24 @@
     });
   }
 
+  function setupWeekendBannerLink() {
+    const bannerLink = document.getElementById("weekend-banner-link");
+    const picksSection = document.getElementById("weekend-picks-section");
+    if (!bannerLink || !picksSection) return;
+
+    bannerLink.addEventListener("click", (event) => {
+      if (picksSection.hidden) return;
+      event.preventDefault();
+      picksSection.scrollIntoView({ behavior: "smooth", block: "start" });
+    });
+  }
+
   function renderDiscoverySections(items) {
     renderWeekendSections(items);
     renderFeatureGrid(items);
     renderMonthGrid();
     renderAreaEntries();
+    setupWeekendBannerLink();
     setupRegionModal(items);
   }
 
