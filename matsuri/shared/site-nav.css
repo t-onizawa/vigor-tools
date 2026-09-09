@@ -301,7 +301,7 @@
 }
 
 .favorite-heart.is-active {
-  color: #a12c36;
+  color: var(--brand-red);
 }
 
 .festival-header > .favorite-heart {
