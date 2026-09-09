@@ -283,7 +283,7 @@ function renderMonthPage(month, items, experienceTags, cssVersion) {
     <link rel="apple-touch-icon" href="/matsuri/apple-touch-icon.png">
     <link rel="stylesheet" href="../../shared/festival-list.css?v=${cssVersion}">
     <link rel="stylesheet" href="../../shared/month-hub.css?v=1">
-    <link rel="stylesheet" href="../../shared/site-nav.css?v=1">
+    <link rel="stylesheet" href="../../shared/site-nav.css?v=2">
     <script src="/assets/analytics.js" defer></script>
     <script type="application/ld+json">${JSON.stringify(collectionJsonLd)}</script>
     <script type="application/ld+json">${JSON.stringify(breadcrumbJsonLd)}</script>
@@ -306,7 +306,7 @@ ${cards}
       <p class="disclaimer">掲載内容は各祭りの詳細ページに記載の出典・確認日に基づきます。最新の開催情報は公式サイトでご確認ください。</p>
       <p class="back-to-list"><a href="../../index.html">すべての祭りを都道府県・特徴で絞り込む →</a></p>
     </main>
-    <script src="../../shared/site-nav.js?v=1"></script>
+    <script src="../../shared/site-nav.js?v=2"></script>
   </body>
 </html>
 `;
@@ -366,7 +366,7 @@ function renderHubPage(config, items, experienceTags, cssVersion) {
     <link rel="apple-touch-icon" href="/matsuri/apple-touch-icon.png">
     <link rel="stylesheet" href="../../shared/festival-list.css?v=${cssVersion}">
     <link rel="stylesheet" href="../../shared/month-hub.css?v=1">
-    <link rel="stylesheet" href="../../shared/site-nav.css?v=1">
+    <link rel="stylesheet" href="../../shared/site-nav.css?v=2">
     <script src="/assets/analytics.js" defer></script>
     <script type="application/ld+json">${JSON.stringify(collectionJsonLd)}</script>
     <script type="application/ld+json">${JSON.stringify(breadcrumbJsonLd)}</script>
@@ -386,7 +386,7 @@ ${cards}
       <p class="disclaimer">掲載内容は各祭りの詳細ページに記載の出典・確認日に基づきます。最新の開催情報は公式サイトでご確認ください。</p>
       <p class="back-to-list"><a href="../../index.html">すべての祭りを見る →</a></p>
     </main>
-    <script src="../../shared/site-nav.js?v=1"></script>
+    <script src="../../shared/site-nav.js?v=2"></script>
   </body>
 </html>
 `;

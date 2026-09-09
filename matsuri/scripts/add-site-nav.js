@@ -2,6 +2,7 @@ const fs = require("fs");
 const path = require("path");
 
 const MATSURI_ROOT = path.resolve(__dirname, "..");
+const SITE_NAV_VERSION = "2";
 
 function listFestivalPages(root) {
   if (!fs.existsSync(root)) return [];
@@ -25,9 +26,13 @@ function occurrenceCount(source, text) {
 }
 
 function addTags(target) {
-  const cssTag = `<link rel="stylesheet" href="${target.sharedPath}/site-nav.css?v=1">`;
-  const scriptTag = `<script src="${target.sharedPath}/site-nav.js?v=1"></script>`;
+  const cssTag = `<link rel="stylesheet" href="${target.sharedPath}/site-nav.css?v=${SITE_NAV_VERSION}">`;
+  const scriptTag = `<script src="${target.sharedPath}/site-nav.js?v=${SITE_NAV_VERSION}"></script>`;
   let source = fs.readFileSync(target.file, "utf8");
+
+  source = source
+    .replace(`${target.sharedPath}/site-nav.css?v=1`, `${target.sharedPath}/site-nav.css?v=${SITE_NAV_VERSION}`)
+    .replace(`${target.sharedPath}/site-nav.js?v=1`, `${target.sharedPath}/site-nav.js?v=${SITE_NAV_VERSION}`);
 
   if (!source.includes(cssTag)) {
     if (!source.includes("</head>")) throw new Error(`${target.file}: </head>がありません`);
@@ -42,8 +47,8 @@ function addTags(target) {
 
 function verify(target) {
   const source = fs.readFileSync(target.file, "utf8");
-  const cssTag = `<link rel="stylesheet" href="${target.sharedPath}/site-nav.css?v=1">`;
-  const scriptTag = `<script src="${target.sharedPath}/site-nav.js?v=1"></script>`;
+  const cssTag = `<link rel="stylesheet" href="${target.sharedPath}/site-nav.css?v=${SITE_NAV_VERSION}">`;
+  const scriptTag = `<script src="${target.sharedPath}/site-nav.js?v=${SITE_NAV_VERSION}"></script>`;
   if (occurrenceCount(source, cssTag) !== 1 || occurrenceCount(source, scriptTag) !== 1) {
     throw new Error(`${target.file}: site-navタグが各1件ではありません`);
   }
@@ -52,6 +57,9 @@ function verify(target) {
   }
   if (source.indexOf(scriptTag) > source.indexOf("</body>")) {
     throw new Error(`${target.file}: JSタグが</body>より後です`);
+  }
+  if (source.includes(`${target.sharedPath}/site-nav.css?v=1`) || source.includes(`${target.sharedPath}/site-nav.js?v=1`)) {
+    throw new Error(`${target.file}: site-navの旧v1参照が残っています`);
   }
 }
 

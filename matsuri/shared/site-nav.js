@@ -23,6 +23,35 @@
     return `${up}${down ? `${down}/` : ""}index.html`;
   }
 
+  function relativeFile(targetSegments, fileName) {
+    const current = getMatsuriSegments();
+    let common = 0;
+    while (common < current.length && common < targetSegments.length && current[common] === targetSegments[common]) {
+      common += 1;
+    }
+    const up = "../".repeat(current.length - common);
+    const down = targetSegments.slice(common).join("/");
+    return `${up}${down ? `${down}/` : ""}${fileName}`;
+  }
+
+  function toHiragana(text) {
+    return text.replace(/[ァ-ヶ]/g, (ch) =>
+      String.fromCharCode(ch.charCodeAt(0) - 0x60)
+    );
+  }
+
+  function normalizeForSearch(text) {
+    return toHiragana(String(text || "").toLowerCase());
+  }
+
+  function sendGaEvent(name, params) {
+    try {
+      if (typeof window.gtag === "function") window.gtag("event", name, params);
+    } catch (err) {
+      // 計測失敗は検索UIに影響させない
+    }
+  }
+
   function getHomeUrl() {
     return relativeUrl(getLocale() === "en" ? ["en"] : []);
   }
@@ -67,6 +96,218 @@
     return link;
   }
 
+  function createNavButton(label, icon) {
+    const button = document.createElement("button");
+    button.className = "site-nav-item";
+    button.type = "button";
+    const iconElement = document.createElement("span");
+    iconElement.className = "site-nav-icon";
+    iconElement.setAttribute("aria-hidden", "true");
+    iconElement.textContent = icon;
+    const labelElement = document.createElement("span");
+    labelElement.className = "site-nav-label";
+    labelElement.textContent = label;
+    button.append(iconElement, labelElement);
+    return button;
+  }
+
+  let searchIndexPromise = null;
+
+  function loadSearchIndex() {
+    if (typeof SEARCH_INDEX !== "undefined") return Promise.resolve(SEARCH_INDEX);
+    if (searchIndexPromise) return searchIndexPromise;
+    searchIndexPromise = new Promise((resolve, reject) => {
+      const script = document.createElement("script");
+      script.src = relativeFile(["shared"], "search-index.js?v=1");
+      script.onload = () => {
+        if (typeof SEARCH_INDEX !== "undefined") resolve(SEARCH_INDEX);
+        else reject(new Error("検索インデックスを参照できません"));
+      };
+      script.onerror = () => reject(new Error("検索インデックスを読み込めません"));
+      document.head.append(script);
+    });
+    return searchIndexPromise;
+  }
+
+  function formatSearchDate(dateText) {
+    if (!dateText) return "日程未確認";
+    const parts = dateText.split("-").map(Number);
+    if (parts.length !== 3 || parts.some((value) => !Number.isFinite(value))) return "日程未確認";
+    return `${parts[0]}年${parts[1]}月${parts[2]}日`;
+  }
+
+  function buildSearchModal(searchButton) {
+    const overlay = document.createElement("div");
+    overlay.id = "search-modal-overlay";
+    overlay.className = "search-modal-overlay";
+    overlay.hidden = true;
+
+    const modal = document.createElement("div");
+    modal.id = "search-modal";
+    modal.className = "search-modal";
+    modal.setAttribute("role", "dialog");
+    modal.setAttribute("aria-modal", "true");
+    modal.setAttribute("aria-labelledby", "search-modal-title");
+
+    const header = document.createElement("div");
+    header.className = "search-modal-header";
+    const title = document.createElement("h2");
+    title.id = "search-modal-title";
+    title.textContent = "祭りを検索";
+    const closeButton = document.createElement("button");
+    closeButton.id = "search-modal-close";
+    closeButton.className = "search-modal-close";
+    closeButton.type = "button";
+    closeButton.setAttribute("aria-label", "閉じる");
+    closeButton.textContent = "×";
+    header.append(title, closeButton);
+
+    const input = document.createElement("input");
+    input.id = "search-modal-input";
+    input.className = "search-modal-input";
+    input.type = "text";
+    input.placeholder = "祭り名・都道府県・市区町村で検索";
+    input.autocomplete = "off";
+
+    const results = document.createElement("div");
+    results.id = "search-modal-results";
+    results.className = "search-modal-results";
+    const quicklinks = document.createElement("div");
+    quicklinks.id = "search-modal-quicklinks";
+    quicklinks.className = "search-modal-quicklinks";
+    modal.append(header, input, results, quicklinks);
+    overlay.append(modal);
+    document.body.append(overlay);
+
+    const quickLinkGroups = [
+      {
+        title: "見たいものから探す",
+        links: [
+          ["山車", ["features", "dashi"]],
+          ["神輿", ["features", "mikoshi"]],
+          ["踊り", ["features", "odori"]],
+          ["曳き回し", ["features", "hikimawashi"]],
+          ["夜が見どころ", ["features", "night"]]
+        ]
+      },
+      {
+        title: "開催時期から探す",
+        links: [
+          ["7月", ["months", "july"]],
+          ["8月", ["months", "august"]],
+          ["9月", ["months", "september"]]
+        ]
+      },
+      {
+        title: "エリアから探す",
+        links: [["都道府県・地方から探す", []]]
+      }
+    ];
+
+    function renderQuicklinks() {
+      const groups = quickLinkGroups.map((group) => {
+        const section = document.createElement("section");
+        section.className = "search-quicklink-group";
+        const heading = document.createElement("h3");
+        heading.textContent = group.title;
+        const links = document.createElement("div");
+        links.className = "search-quicklink-list";
+        group.links.forEach(([label, target]) => {
+          const link = document.createElement("a");
+          link.href = relativeUrl(target);
+          link.textContent = label;
+          links.append(link);
+        });
+        section.append(heading, links);
+        return section;
+      });
+      quicklinks.replaceChildren(...groups);
+      quicklinks.hidden = false;
+      results.replaceChildren();
+    }
+
+    function findMatches(rawQuery) {
+      const query = normalizeForSearch(rawQuery);
+      if (!query || typeof SEARCH_INDEX === "undefined") return [];
+      return SEARCH_INDEX.filter((item) => {
+        return [item.name, item.officialName, item.prefecture, item.city]
+          .some((value) => normalizeForSearch(value).includes(query));
+      }).slice(0, 8);
+    }
+
+    function renderResults(matches) {
+      quicklinks.hidden = true;
+      if (matches.length === 0) {
+        const empty = document.createElement("p");
+        empty.className = "search-modal-empty";
+        empty.textContent = "該当する祭りが見つかりませんでした";
+        results.replaceChildren(empty);
+        return;
+      }
+      const links = matches.map((item) => {
+        const link = document.createElement("a");
+        link.className = "search-result-item";
+        link.href = relativeUrl(["festivals", item.slug]);
+        const name = document.createElement("strong");
+        name.textContent = item.name;
+        const meta = document.createElement("span");
+        meta.textContent = `${item.prefecture}${item.city}・${formatSearchDate(item.firstDate)}`;
+        link.append(name, meta);
+        return link;
+      });
+      results.replaceChildren(...links);
+    }
+
+    let searchTimer = null;
+    input.addEventListener("input", () => {
+      const rawQuery = input.value;
+      const searchQuery = rawQuery.trim();
+      window.clearTimeout(searchTimer);
+      if (!searchQuery) {
+        renderQuicklinks();
+        return;
+      }
+      const matches = findMatches(searchQuery);
+      renderResults(matches);
+      searchTimer = window.setTimeout(() => {
+        sendGaEvent("site_search", { query: rawQuery, result_count: matches.length });
+      }, 800);
+    });
+
+    function closeSearchModal() {
+      window.clearTimeout(searchTimer);
+      input.value = "";
+      overlay.hidden = true;
+      renderQuicklinks();
+      searchButton.focus();
+    }
+
+    async function openSearchModal() {
+      overlay.hidden = false;
+      results.replaceChildren();
+      quicklinks.hidden = true;
+      try {
+        await loadSearchIndex();
+        renderQuicklinks();
+      } catch (err) {
+        const message = document.createElement("p");
+        message.className = "search-modal-empty";
+        message.textContent = "検索データを読み込めませんでした。時間をおいて再度お試しください。";
+        results.replaceChildren(message);
+      }
+      input.focus();
+    }
+
+    closeButton.addEventListener("click", closeSearchModal);
+    overlay.addEventListener("click", (event) => {
+      if (event.target === overlay) closeSearchModal();
+    });
+    document.addEventListener("keydown", (event) => {
+      if (event.key === "Escape" && !overlay.hidden) closeSearchModal();
+    });
+    searchButton.addEventListener("click", openSearchModal);
+  }
+
   function buildNav() {
     if (document.querySelector(".site-nav")) return;
     const locale = getLocale();
@@ -92,8 +333,8 @@
     items.className = "site-nav-items";
     items.append(createNavLink(labels.home, "⌂", homeUrl, isHomeContext()));
 
-    // TODO: Phase 4で検索モーダルに差し替え
-    items.append(createNavLink(labels.search, "⌕", homeUrl, false));
+    const searchButton = createNavButton(labels.search, "⌕");
+    items.append(searchButton);
     // TODO: Phase 5でお気に入り一覧ページに差し替え
     items.append(createNavLink(labels.favorites, "♡", homeUrl, false));
 
@@ -129,6 +370,7 @@
     inner.append(logo, items);
     nav.append(inner);
     document.body.append(nav);
+    buildSearchModal(searchButton);
 
     function closeMenu() {
       menu.hidden = true;
