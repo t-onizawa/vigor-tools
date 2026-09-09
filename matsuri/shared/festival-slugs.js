@@ -8,3 +8,4 @@ FESTIVAL_SLUGS.push("tosa-akaoka-ekin-matsuri", "tosajinja-shinane-matsuri");
 FESTIVAL_SLUGS.push("saga-international-balloon-fiesta", "oita-tanabata-matsuri", "naha-haarii", "sendai-otsunahiki", "sasebo-seaside-festival");
 FESTIVAL_SLUGS.push("hakozakigu-hojoya", "matsuri-nobeoka");
 FESTIVAL_SLUGS.push("nakashima-yamakasa-matsuri", "fujisaki-hachimangu-reitaisai", "kirishima-jingu-reitaisai");
+FESTIVAL_SLUGS.push("hachinohe-sansha-taisai", "hanamaki-matsuri", "omagari-hanabi", "sakata-matsuri");
