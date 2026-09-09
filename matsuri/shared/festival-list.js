@@ -1,6 +1,20 @@
 (function () {
   const UPCOMING_STATUSES = new Set(["confirmed", "scheduled_pending_official"]);
 
+  const FEATURE_GRID_ITEMS = [
+    { key: "hasDashi", label: "山車", icon: "dashi", hubUrl: "features/dashi/" },
+    { key: "hasMikoshi", label: "神輿", icon: "mikoshi", hubUrl: "features/mikoshi/" },
+    { key: "hasDanceOnDashi", label: "踊り", icon: "odori", hubUrl: "features/odori/" },
+    { key: "hasParade", label: "曳き回し", icon: "hikimawashi", hubUrl: "features/hikimawashi/" },
+    { key: "highlightTime:night", label: "夜が見どころ", icon: "midokoro", hubUrl: "features/night/" }
+  ];
+
+  const MONTH_HUB_URLS = {
+    7: "months/july/",
+    8: "months/august/",
+    9: "months/september/"
+  };
+
   const REGION_PREFECTURES = {
     kanto: ["ibaraki", "tochigi", "gunma", "saitama", "chiba", "tokyo", "kanagawa"],
     tohoku: ["aomori", "iwate", "akita", "miyagi", "yamagata", "fukushima"],
@@ -195,6 +209,25 @@
 
   function getTodayJstDateString() {
     return new Intl.DateTimeFormat("sv-SE", { timeZone: "Asia/Tokyo" }).format(new Date());
+  }
+
+  function getUpcomingWeekendRange() {
+    const todayStr = getTodayJstDateString();
+    const today = new Date(`${todayStr}T00:00:00+09:00`);
+    const dow = today.getDay();
+    const satTime = dow === 0
+      ? today.getTime() - 86400000
+      : today.getTime() + ((6 - dow + 7) % 7) * 86400000;
+    const sunTime = satTime + 86400000;
+    return { start: satTime, end: sunTime + 86400000 - 1, satTime, sunTime };
+  }
+
+  function getWeekendFestivals(items) {
+    const window = getUpcomingWeekendRange();
+    return items.filter((item) => {
+      return UPCOMING_STATUSES.has(getEffectiveEventStatus(item.yearlyInfo)) &&
+        matchingDatesInWindow(item.yearlyInfo, window).length > 0;
+    });
   }
 
   function getUpcomingWindow() {
@@ -681,6 +714,138 @@
     section.hidden = false;
   }
 
+  function formatWeekendDate(time) {
+    const date = new Date(time);
+    return `${date.getMonth() + 1}/${date.getDate()}`;
+  }
+
+  function renderWeekendSections(items) {
+    const bannerSection = document.getElementById("weekend-banner-section");
+    const picksSection = document.getElementById("weekend-picks-section");
+    const picksList = document.getElementById("weekend-picks-list");
+    if (!bannerSection || !picksSection || !picksList) return;
+
+    const weekendItems = getWeekendFestivals(items);
+    if (weekendItems.length === 0) {
+      bannerSection.hidden = true;
+      picksSection.hidden = true;
+      picksList.replaceChildren();
+      return;
+    }
+
+    const range = getUpcomingWeekendRange();
+    const dates = document.getElementById("weekend-banner-dates");
+    const count = document.getElementById("weekend-banner-count");
+    const thumb = document.getElementById("weekend-banner-thumb");
+    if (dates) dates.textContent = `${formatWeekendDate(range.satTime)}–${formatWeekendDate(range.sunTime)}`;
+    if (count) count.textContent = `全国で${weekendItems.length}件`;
+
+    const firstBackground = weekendItems[0].festival.constantInfo &&
+      weekendItems[0].festival.constantInfo.backgroundImage;
+    if (thumb) {
+      const hasThumb = Boolean(
+        firstBackground && firstBackground.type === "youtube" && firstBackground.contentId
+      );
+      thumb.hidden = !hasThumb;
+      thumb.style.backgroundImage = hasThumb
+        ? `url("https://i.ytimg.com/vi/${firstBackground.contentId}/hqdefault.jpg")`
+        : "";
+    }
+
+    picksList.replaceChildren(...weekendItems.slice(0, 4).map((item) => renderFestivalCard(item, "weekend_picks")));
+    bannerSection.hidden = false;
+    picksSection.hidden = false;
+  }
+
+  function featureGridMatches(item, key) {
+    const features = (item.festival.constantInfo && item.festival.constantInfo.features) || {};
+    if (key === "highlightTime:night") {
+      return features.highlightTime === "night" || features.highlightTime === "both";
+    }
+    return features[key] === true;
+  }
+
+  function renderFeatureGrid(items) {
+    const grid = document.getElementById("feature-grid");
+    if (!grid) return;
+
+    const links = FEATURE_GRID_ITEMS.map((entry) => {
+      const link = document.createElement("a");
+      link.className = "feature-grid-item";
+      link.href = entry.hubUrl;
+
+      const icon = document.createElement("span");
+      icon.className = `feature-grid-icon feature-grid-icon--${entry.icon}`;
+      icon.setAttribute("aria-hidden", "true");
+      loadIconSvg(entry.label === "夜が見どころ" ? "見どころ" : entry.label).then((svg) => {
+        if (svg) icon.innerHTML = svg;
+      });
+
+      const label = document.createElement("span");
+      label.className = "feature-grid-label";
+      label.textContent = entry.label;
+
+      const count = document.createElement("span");
+      count.className = "feature-grid-count";
+      count.textContent = `${items.filter((item) => featureGridMatches(item, entry.key)).length}件`;
+      link.append(icon, label, count);
+      return link;
+    });
+    grid.replaceChildren(...links);
+  }
+
+  function renderMonthGrid() {
+    const grid = document.getElementById("month-grid");
+    const monthFilter = document.getElementById("month-filter");
+    const festivalList = document.getElementById("festival-list");
+    if (!grid || !monthFilter || !festivalList) return;
+    const currentMonth = Number(getTodayJstDateString().slice(5, 7));
+
+    const controls = Array.from({ length: 12 }, (_, index) => index + 1).map((month) => {
+      const hubUrl = MONTH_HUB_URLS[month];
+      const control = document.createElement(hubUrl ? "a" : "button");
+      control.className = "month-grid-item";
+      control.textContent = `${month}月`;
+      if (month === currentMonth) {
+        control.classList.add("is-current");
+        control.setAttribute("aria-current", "date");
+      }
+      if (hubUrl) {
+        control.href = hubUrl;
+      } else {
+        control.type = "button";
+        control.addEventListener("click", () => {
+          monthFilter.value = String(month);
+          monthFilter.dispatchEvent(new Event("change", { bubbles: true }));
+          festivalList.scrollIntoView({ behavior: "smooth", block: "start" });
+        });
+      }
+      return control;
+    });
+    grid.replaceChildren(...controls);
+  }
+
+  function renderAreaEntries() {
+    const areaFilter = document.getElementById("area-filter");
+    const festivalList = document.getElementById("festival-list");
+    if (!areaFilter || !festivalList) return;
+    ["area-entry-prefecture", "area-entry-region"].forEach((id) => {
+      const button = document.getElementById(id);
+      if (!button) return;
+      button.addEventListener("click", () => {
+        festivalList.scrollIntoView({ behavior: "smooth", block: "start" });
+        areaFilter.focus({ preventScroll: true });
+      });
+    });
+  }
+
+  function renderDiscoverySections(items) {
+    renderWeekendSections(items);
+    renderFeatureGrid(items);
+    renderMonthGrid();
+    renderAreaEntries();
+  }
+
   function syncFilterState(filterEl) {
     filterEl.classList.toggle("is-filtering", filterEl.value !== "");
   }
@@ -729,6 +894,7 @@
     syncFilterState(monthFilter);
     render(items);
     renderUpcomingSoonSection(items);
+    renderDiscoverySections(items);
   }
 
   window.__festivalList = {

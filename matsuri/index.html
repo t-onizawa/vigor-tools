@@ -25,7 +25,7 @@
     <link rel="icon" href="/matsuri/favicon.ico" sizes="any">
     <link rel="icon" type="image/png" href="/matsuri/favicon-32x32.png" sizes="32x32">
     <link rel="apple-touch-icon" href="/matsuri/apple-touch-icon.png">
-<link rel="stylesheet" href="shared/festival-list.css?v=15">
+<link rel="stylesheet" href="shared/festival-list.css?v=16">
     <script src="/assets/analytics.js" defer></script>
   </head>
   <body>
@@ -37,6 +37,43 @@
           祭りの気配を、探しにいく。
         </p>
       </header>
+
+      <section id="weekend-banner-section" class="weekend-banner-section" aria-label="今週末開催の祭り" hidden>
+        <a id="weekend-banner-link" class="weekend-banner" href="#festival-list">
+          <div class="weekend-banner-ring" aria-hidden="true">
+            <span class="weekend-banner-ring-label">今週末</span>
+            <span id="weekend-banner-dates" class="weekend-banner-ring-dates"></span>
+          </div>
+          <div class="weekend-banner-body">
+            <p id="weekend-banner-count" class="weekend-banner-count">全国で読み込み中</p>
+            <p class="weekend-banner-cta">今週末の祭りを一覧で見る →</p>
+          </div>
+          <div id="weekend-banner-thumb" class="weekend-banner-thumb" aria-hidden="true"></div>
+        </a>
+      </section>
+
+      <section class="feature-grid-section" aria-label="見たいものから探す">
+        <h2>見たいものから探す</h2>
+        <div id="feature-grid" class="feature-grid"></div>
+      </section>
+
+      <section class="month-grid-section" aria-label="開催時期から探す">
+        <h2>開催時期から探す</h2>
+        <div id="month-grid" class="month-grid"></div>
+      </section>
+
+      <section class="area-entry-section" aria-label="エリアから探す">
+        <h2>エリアから探す</h2>
+        <div class="area-entry-buttons">
+          <button id="area-entry-prefecture" class="area-entry-button" type="button">都道府県から探す →</button>
+          <button id="area-entry-region" class="area-entry-button" type="button">地方から探す →</button>
+        </div>
+      </section>
+
+      <section id="weekend-picks-section" class="weekend-picks-section" aria-label="今週末のおすすめ祭り" hidden>
+        <h2>今週末のおすすめ祭り <a href="#festival-list">すべて見る →</a></h2>
+        <div id="weekend-picks-list" class="weekend-picks-list"></div>
+      </section>
 
       <section id="upcoming-soon-section" class="upcoming-soon-section" aria-label="開催中・まもなく開催の祭り" hidden>
         <div id="upcoming-soon-list" class="upcoming-soon-list"></div>
@@ -166,6 +203,6 @@
 
     <script src="shared/festival-slugs.js?v=8"></script>
     <script src="shared/experience-tags.js?v=1"></script>
-    <script src="shared/festival-list.js?v=24"></script>
+    <script src="shared/festival-list.js?v=25"></script>
   </body>
 </html>
