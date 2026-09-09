@@ -785,6 +785,94 @@ p {
   margin-top: 10px;
 }
 
+#schedule-heading::before,
+#access-heading::before,
+#map-heading::before,
+#atmosphere-media-section::before,
+.search-links-section h2::before,
+.search-links-accordion > summary::before,
+#lodging-heading::before,
+#hayashi-heading::before,
+#faq-heading::before,
+#sources-heading::before,
+.accordion-section[data-accordion-section="lodging"] > summary::before,
+.accordion-section[data-accordion-section="hayashi"] > summary::before,
+.accordion-section[data-accordion-section="faq"] > summary::before,
+.accordion-section[data-accordion-section="sources"] > summary::before,
+.alternate-links-section > summary::before {
+  content: "";
+  display: inline-block;
+  width: 1.1em;
+  height: 1.1em;
+  margin-right: 6px;
+  vertical-align: -0.2em;
+  background-color: currentColor;
+  -webkit-mask-size: contain;
+  mask-size: contain;
+  -webkit-mask-repeat: no-repeat;
+  mask-repeat: no-repeat;
+  -webkit-mask-position: center;
+  mask-position: center;
+}
+
+#schedule-heading::before {
+  -webkit-mask-image: url("icons/section-schedule.svg");
+  mask-image: url("icons/section-schedule.svg");
+}
+
+#atmosphere-media-section::before {
+  display: block;
+  margin: 0 0 8px;
+  color: var(--text);
+  -webkit-mask-image: url("icons/section-video.svg");
+  mask-image: url("icons/section-video.svg");
+}
+
+.search-links-section h2::before,
+.search-links-accordion > summary::before {
+  -webkit-mask-image: url("icons/section-sparkle.svg");
+  mask-image: url("icons/section-sparkle.svg");
+}
+
+#access-heading::before {
+  -webkit-mask-image: url("icons/section-pin.svg");
+  mask-image: url("icons/section-pin.svg");
+}
+
+#map-heading::before {
+  -webkit-mask-image: url("icons/section-map.svg");
+  mask-image: url("icons/section-map.svg");
+}
+
+#lodging-heading::before,
+.accordion-section[data-accordion-section="lodging"] > summary::before {
+  -webkit-mask-image: url("icons/section-lodging.svg");
+  mask-image: url("icons/section-lodging.svg");
+}
+
+#hayashi-heading::before,
+.accordion-section[data-accordion-section="hayashi"] > summary::before {
+  -webkit-mask-image: url("icons/section-hayashi.svg");
+  mask-image: url("icons/section-hayashi.svg");
+}
+
+#faq-heading::before,
+.accordion-section[data-accordion-section="faq"] > summary::before {
+  -webkit-mask-image: url("icons/section-faq.svg");
+  mask-image: url("icons/section-faq.svg");
+}
+
+#sources-heading::before,
+.accordion-section[data-accordion-section="sources"] > summary::before {
+  -webkit-mask-image: url("icons/section-sources.svg");
+  mask-image: url("icons/section-sources.svg");
+}
+
+.alternate-links-section > summary::before {
+  -webkit-mask-image: url("icons/section-hub.svg");
+  mask-image: url("icons/section-hub.svg");
+}
+
 @media (min-width: 640px) {
   .page-shell {
     padding: 48px 28px 72px;
