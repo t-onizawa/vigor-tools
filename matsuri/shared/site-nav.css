@@ -1,5 +1,25 @@
 .has-site-nav {
+  padding-top: 48px;
   padding-bottom: calc(72px + env(safe-area-inset-bottom));
+}
+
+.site-nav-topbar {
+  position: fixed;
+  z-index: 900;
+  top: 0;
+  right: 0;
+  left: 0;
+  display: flex;
+  height: 48px;
+  align-items: center;
+  padding: 0 16px;
+  border-bottom: 1px solid var(--line, #d9d9d9);
+  background: rgb(255 255 255 / 96%);
+  backdrop-filter: blur(12px);
+}
+
+.site-nav-topbar .site-nav-logo {
+  display: flex;
 }
 
 .site-nav {
@@ -23,6 +43,84 @@
 
 .site-nav-logo {
   display: none;
+  align-self: center;
+  align-items: center;
+  color: #1a2e42;
+  text-decoration: none;
+}
+
+.site-nav-logo-mark {
+  position: relative;
+  display: inline-flex;
+  width: 4px;
+  align-self: stretch;
+  align-items: center;
+  margin-right: 10px;
+}
+
+.site-nav-logo-mark::before {
+  display: block;
+  width: 4px;
+  height: 100%;
+  border-radius: 2px;
+  background: var(--brand-red);
+  content: "";
+}
+
+.site-nav-logo-mark::after {
+  position: absolute;
+  top: 33%;
+  left: 50%;
+  width: 10px;
+  height: 3px;
+  border-radius: 2px;
+  background: var(--brand-red);
+  content: "";
+  transform: translate(-50%, -50%);
+}
+
+.site-nav-logo-wordmark {
+  font-family: "Hiragino Mincho ProN", "Yu Mincho", serif;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+}
+
+.site-nav-logo-i {
+  position: relative;
+  display: inline-block;
+  width: 0.28em;
+  height: 1em;
+  vertical-align: baseline;
+}
+
+.site-nav-logo-i-stem {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  width: 0.15em;
+  height: 0.56em;
+  border-radius: 1px;
+  background: currentColor;
+  transform: translateX(-50%);
+}
+
+.site-nav-logo-i-dot {
+  position: absolute;
+  bottom: 0.63em;
+  left: 50%;
+  width: 0.19em;
+  height: 0.19em;
+  border-radius: 50%;
+  background: var(--brand-red);
+  transform: translateX(-50%);
+}
+
+.site-nav-logo-vigor {
+  margin-left: 3px;
+  color: var(--muted);
+  font-size: 0.56em;
+  font-weight: 500;
+  letter-spacing: 0.08em;
 }
 
 .site-nav-items {
@@ -337,6 +435,10 @@
     box-shadow: 0 3px 14px rgb(17 17 17 / 7%);
   }
 
+  .site-nav-topbar {
+    display: none;
+  }
+
   .site-nav-inner {
     display: flex;
     min-height: 52px;
@@ -347,13 +449,7 @@
 
   .site-nav-logo {
     display: flex;
-    align-items: center;
-    color: #1a2e42;
-    font-family: "Hiragino Mincho ProN", "Yu Mincho", serif;
     font-size: 1rem;
-    font-weight: 700;
-    letter-spacing: 0.08em;
-    text-decoration: none;
   }
 
   .site-nav-items {

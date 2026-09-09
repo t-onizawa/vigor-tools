@@ -433,7 +433,22 @@
     const logo = document.createElement("a");
     logo.className = "site-nav-logo";
     logo.href = homeUrl;
-    logo.textContent = "MATSURI";
+    logo.setAttribute("aria-label", "MATSURI");
+    const mark = document.createElement("span");
+    mark.className = "site-nav-logo-mark";
+    mark.setAttribute("aria-hidden", "true");
+    const wordmark = document.createElement("span");
+    wordmark.className = "site-nav-logo-wordmark";
+    wordmark.setAttribute("aria-hidden", "true");
+    wordmark.innerHTML =
+      'MATSUR<span class="site-nav-logo-i"><span class="site-nav-logo-i-stem"></span><span class="site-nav-logo-i-dot"></span></span>' +
+      '<span class="site-nav-logo-vigor">VIGOR</span>';
+    logo.append(mark, wordmark);
+
+    const topBar = document.createElement("div");
+    topBar.className = "site-nav-topbar";
+    topBar.append(logo.cloneNode(true));
+    document.body.prepend(topBar);
 
     const items = document.createElement("div");
     items.className = "site-nav-items";
