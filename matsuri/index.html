@@ -25,7 +25,7 @@
     <link rel="icon" href="/matsuri/favicon.ico" sizes="any">
     <link rel="icon" type="image/png" href="/matsuri/favicon-32x32.png" sizes="32x32">
     <link rel="apple-touch-icon" href="/matsuri/apple-touch-icon.png">
-<link rel="stylesheet" href="shared/festival-list.css?v=16">
+<link rel="stylesheet" href="shared/festival-list.css?v=17">
     <script src="/assets/analytics.js" defer></script>
   </head>
   <body>
@@ -50,6 +50,7 @@
           </div>
           <div id="weekend-banner-thumb" class="weekend-banner-thumb" aria-hidden="true"></div>
         </a>
+        <button id="weekend-banner-region-entry" class="weekend-banner-region-entry" type="button"></button>
       </section>
 
       <section class="feature-grid-section" aria-label="見たいものから探す">
@@ -201,8 +202,25 @@
       </p>
     </main>
 
+    <div id="region-modal-overlay" class="region-modal-overlay" hidden>
+      <div id="region-modal" class="region-modal" role="dialog" aria-modal="true" aria-labelledby="region-modal-title">
+        <div class="region-modal-header">
+          <h2 id="region-modal-title">表示する地域を選択</h2>
+          <button id="region-modal-close" class="region-modal-close" type="button" aria-label="閉じる">×</button>
+        </div>
+        <p id="region-modal-description" class="region-modal-description"></p>
+        <div id="region-modal-options" class="region-modal-options"></div>
+        <label class="region-modal-national-option">
+          <input type="radio" name="region-modal-choice" id="region-modal-national" value="national">
+          <span>全国で見る</span>
+          <span class="region-modal-national-note">すべての地域の祭りを表示します</span>
+        </label>
+        <button id="region-modal-confirm" class="region-modal-confirm" type="button">この地域で表示する</button>
+      </div>
+    </div>
+
     <script src="shared/festival-slugs.js?v=8"></script>
     <script src="shared/experience-tags.js?v=1"></script>
-    <script src="shared/festival-list.js?v=25"></script>
+    <script src="shared/festival-list.js?v=26"></script>
   </body>
 </html>

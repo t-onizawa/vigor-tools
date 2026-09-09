@@ -27,6 +27,21 @@
     okinawa: ["okinawa"]
   };
 
+  const REGION_LABELS = {
+    kanto: "関東",
+    tohoku: "東北",
+    chubu: "中部",
+    kinki: "近畿",
+    chugoku: "中国",
+    shikoku: "四国",
+    kyushu: "九州",
+    hokkaido: "北海道",
+    okinawa: "沖縄"
+  };
+  const REGION_STORAGE_KEY = "matsuri-region-pref";
+  let regionModalFirstVisit = false;
+  let currentFestivalItems = [];
+
   const eventStatusLabels = {
     confirmed: "開催確認済み",
     scheduled_pending_official: "開催予定・公式詳細待ち",
@@ -726,6 +741,19 @@
     if (!bannerSection || !picksSection || !picksList) return;
 
     const weekendItems = getWeekendFestivals(items);
+    const selectedRegion = getStoredRegion();
+    const selectedPrefectures = REGION_PREFECTURES[selectedRegion];
+    const regionalWeekendItems = selectedPrefectures
+      ? weekendItems.filter((item) => selectedPrefectures.includes(item.festival.areaTag))
+      : weekendItems;
+    const regionEntry = document.getElementById("weekend-banner-region-entry");
+
+    if (regionEntry) {
+      regionEntry.textContent = selectedPrefectures
+        ? `${REGION_LABELS[selectedRegion]}を変更`
+        : "地域を選ぶ";
+    }
+
     if (weekendItems.length === 0) {
       bannerSection.hidden = true;
       picksSection.hidden = true;
@@ -738,10 +766,15 @@
     const count = document.getElementById("weekend-banner-count");
     const thumb = document.getElementById("weekend-banner-thumb");
     if (dates) dates.textContent = `${formatWeekendDate(range.satTime)}–${formatWeekendDate(range.sunTime)}`;
-    if (count) count.textContent = `全国で${weekendItems.length}件`;
+    if (count) {
+      count.textContent = selectedPrefectures && regionalWeekendItems.length === 0
+        ? `${REGION_LABELS[selectedRegion]}では今週末開催の祭りはありません`
+        : `${selectedPrefectures ? REGION_LABELS[selectedRegion] : "全国"}で${regionalWeekendItems.length}件`;
+    }
 
-    const firstBackground = weekendItems[0].festival.constantInfo &&
-      weekendItems[0].festival.constantInfo.backgroundImage;
+    const firstRegionalItem = regionalWeekendItems[0];
+    const firstBackground = firstRegionalItem && firstRegionalItem.festival.constantInfo &&
+      firstRegionalItem.festival.constantInfo.backgroundImage;
     if (thumb) {
       const hasThumb = Boolean(
         firstBackground && firstBackground.type === "youtube" && firstBackground.contentId
@@ -755,6 +788,101 @@
     picksList.replaceChildren(...weekendItems.slice(0, 4).map((item) => renderFestivalCard(item, "weekend_picks")));
     bannerSection.hidden = false;
     picksSection.hidden = false;
+  }
+
+  function getStoredRegion() {
+    try {
+      const value = localStorage.getItem(REGION_STORAGE_KEY);
+      return value === "national" || Object.prototype.hasOwnProperty.call(REGION_PREFECTURES, value)
+        ? value
+        : null;
+    } catch (err) {
+      return null;
+    }
+  }
+
+  function storeRegion(value) {
+    try {
+      localStorage.setItem(REGION_STORAGE_KEY, value);
+    } catch (err) {
+      // 保存不可の場合も、その場の表示操作は止めない
+    }
+  }
+
+  function openRegionModal(isFirstVisit) {
+    const overlay = document.getElementById("region-modal-overlay");
+    const title = document.getElementById("region-modal-title");
+    const description = document.getElementById("region-modal-description");
+    if (!overlay || !title || !description) return;
+
+    regionModalFirstVisit = isFirstVisit;
+    title.textContent = isFirstVisit ? "あなたの地方は？" : "表示する地域を選択";
+    description.textContent = isFirstVisit
+      ? "今週末の祭りを、あなたの地域で表示します。"
+      : "今週末の祭りを表示する地域を変更できます。";
+
+    const storedRegion = getStoredRegion();
+    const selectedValue = storedRegion || "";
+    document.querySelectorAll('input[name="region-modal-choice"]').forEach((radio) => {
+      radio.checked = radio.value === selectedValue;
+    });
+    overlay.hidden = false;
+    const selected = document.querySelector('input[name="region-modal-choice"]:checked');
+    (selected || document.querySelector('input[name="region-modal-choice"]'))?.focus();
+  }
+
+  function closeRegionModal() {
+    const overlay = document.getElementById("region-modal-overlay");
+    if (overlay) overlay.hidden = true;
+  }
+
+  function dismissRegionModal() {
+    if (regionModalFirstVisit) {
+      storeRegion("national");
+      renderWeekendSections(currentFestivalItems);
+    }
+    closeRegionModal();
+  }
+
+  function setupRegionModal(items) {
+    currentFestivalItems = items;
+    const overlay = document.getElementById("region-modal-overlay");
+    const options = document.getElementById("region-modal-options");
+    const closeButton = document.getElementById("region-modal-close");
+    const confirmButton = document.getElementById("region-modal-confirm");
+    const regionEntry = document.getElementById("weekend-banner-region-entry");
+    if (!overlay || !options || !closeButton || !confirmButton || !regionEntry) return;
+
+    const regionOptions = Object.entries(REGION_LABELS).map(([value, label]) => {
+      const option = document.createElement("label");
+      option.className = "region-modal-option";
+      const radio = document.createElement("input");
+      radio.type = "radio";
+      radio.name = "region-modal-choice";
+      radio.value = value;
+      const text = document.createElement("span");
+      text.textContent = label;
+      option.append(radio, text);
+      return option;
+    });
+    options.replaceChildren(...regionOptions);
+
+    closeButton.addEventListener("click", dismissRegionModal);
+    overlay.addEventListener("click", (event) => {
+      if (event.target === overlay) dismissRegionModal();
+    });
+    confirmButton.addEventListener("click", () => {
+      const selected = document.querySelector('input[name="region-modal-choice"]:checked');
+      if (!selected) return;
+      storeRegion(selected.value);
+      renderWeekendSections(currentFestivalItems);
+      closeRegionModal();
+    });
+    regionEntry.addEventListener("click", () => openRegionModal(false));
+
+    if (getStoredRegion() === null) {
+      openRegionModal(true);
+    }
   }
 
   function featureGridMatches(item, key) {
@@ -844,6 +972,7 @@
     renderFeatureGrid(items);
     renderMonthGrid();
     renderAreaEntries();
+    setupRegionModal(items);
   }
 
   function syncFilterState(filterEl) {
