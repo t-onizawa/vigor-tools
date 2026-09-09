@@ -5,3 +5,5 @@ FESTIVAL_SLUGS.push("yosakoi-soran-matsuri", "marugame-oshiro-matsuri", "matsuya
 FESTIVAL_SLUGS.push("hakodate-port-festival", "naruto-awa-odori", "anan-summer-festival", "sakaide-ohashi-matsuri");
 FESTIVAL_SLUGS.push("uwajima-ushioni-matsuri");
 FESTIVAL_SLUGS.push("tosa-akaoka-ekin-matsuri", "tosajinja-shinane-matsuri");
+FESTIVAL_SLUGS.push("saga-international-balloon-fiesta", "oita-tanabata-matsuri", "naha-haarii", "sendai-otsunahiki", "sasebo-seaside-festival");
+FESTIVAL_SLUGS.push("hakozakigu-hojoya", "matsuri-nobeoka");
