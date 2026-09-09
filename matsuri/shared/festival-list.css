@@ -620,6 +620,7 @@ h1 {
 }
 
 .weekend-banner {
+  position: relative;
   display: grid;
   grid-template-columns: auto minmax(0, 1fr);
   align-items: center;
@@ -638,6 +639,8 @@ h1 {
 }
 
 .weekend-banner-ring {
+  position: relative;
+  z-index: 1;
   display: flex;
   width: 84px;
   height: 84px;
@@ -665,6 +668,8 @@ h1 {
 
 .weekend-banner-count,
 .weekend-banner-cta {
+  position: relative;
+  z-index: 1;
   margin: 0;
 }
 
@@ -680,14 +685,24 @@ h1 {
 }
 
 .weekend-banner-thumb {
-  display: none;
-  min-height: 132px;
-  align-self: stretch;
+  position: absolute;
+  z-index: 0;
+  inset: 0;
   background-position: center;
   background-size: cover;
+  opacity: 0.55;
+}
+
+.weekend-banner-thumb::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgb(16 24 32 / 85%) 0%, rgb(26 46 66 / 75%) 100%);
 }
 
 .weekend-banner-region-entry {
+  position: relative;
+  z-index: 1;
   display: block;
   margin: 8px 4px 0 auto;
   border: 0;
