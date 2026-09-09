@@ -807,8 +807,9 @@
     const slug = MONTH_HUB_SLUGS[month];
     if (!slug) return;
 
-    const anchor = byId("faq-section");
-    if (!anchor) return;
+    const container = byId("alternate-links-list");
+    const section = byId("alternate-links-section");
+    if (!container || !section) return;
 
     const p = document.createElement("p");
     p.className = "month-hub-link";
@@ -816,7 +817,8 @@
     a.href = `../../months/${slug}/`;
     a.textContent = `${MONTH_HUB_LABELS[month]}の祭りをもっと見る`;
     p.append(a);
-    anchor.insertAdjacentElement("afterend", p);
+    container.append(p);
+    section.hidden = false;
   }
 
   async function renderPrefectureHubLink(currentFestival) {
@@ -827,8 +829,9 @@
     if (!hubSlugs.has(areaTag)) return;
 
     const prefectureLabel = currentFestival.prefecture || "";
-    const anchor = document.querySelector(".month-hub-link") || byId("faq-section");
-    if (!anchor) return;
+    const container = byId("alternate-links-list");
+    const section = byId("alternate-links-section");
+    if (!container || !section) return;
 
     const p = document.createElement("p");
     p.className = "prefecture-hub-link";
@@ -836,7 +839,8 @@
     a.href = `../../prefectures/${areaTag}/`;
     a.textContent = `${prefectureLabel}の祭りをもっと見る`;
     p.append(a);
-    anchor.insertAdjacentElement("afterend", p);
+    container.append(p);
+    section.hidden = false;
   }
 
   function buildLodgingUrl(currentFestival) {
@@ -1095,8 +1099,7 @@
   }
 
   function renderSearchLinks(festival) {
-    const featuresHeading = byId("features-heading");
-    const anchor = featuresHeading ? featuresHeading.closest("section") : null;
+    const anchor = document.querySelector('[data-accordion-section="lodging"], [data-accordion-section="hayashi"]');
     const pageShell = document.querySelector(".page-shell");
     if (!pageShell) return;
 
@@ -1161,10 +1164,16 @@
 
     section.append(heading, row, disclaimer);
 
+    const details = document.createElement("details");
+    details.className = "accordion-section search-links-accordion";
+    const summary = document.createElement("summary");
+    summary.textContent = heading.textContent;
+    details.append(summary, section);
+
     if (anchor && anchor.parentElement) {
-      anchor.parentElement.insertBefore(section, anchor);
+      anchor.parentElement.insertBefore(details, anchor);
     } else {
-      pageShell.append(section);
+      pageShell.append(details);
     }
   }
 

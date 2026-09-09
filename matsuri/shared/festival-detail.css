@@ -734,6 +734,54 @@ p {
   font-size: 0.82rem;
 }
 
+.accordion-section {
+  overflow: hidden;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: var(--surface);
+}
+
+.accordion-section + .accordion-section {
+  margin-top: 12px;
+}
+
+.accordion-section > summary {
+  padding: 16px 18px;
+  color: var(--text);
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.accordion-section[open] > summary {
+  border-bottom: 1px solid var(--line);
+}
+
+.accordion-section > .info-section,
+.accordion-section > #alternate-links-list {
+  margin: 0;
+  border: 0;
+  border-radius: 0;
+  padding: 18px;
+  background: transparent;
+}
+
+.accordion-section > .info-section > h2 {
+  margin-top: 0;
+}
+
+.accordion-section:has(> .info-section[hidden]),
+.accordion-section:not(:has(> .info-section, > #alternate-links-list)) {
+  display: none;
+}
+
+.alternate-links-section p {
+  margin: 0;
+}
+
+.alternate-links-section p + p {
+  margin-top: 10px;
+}
+
 @media (min-width: 640px) {
   .page-shell {
     padding: 48px 28px 72px;
