@@ -910,9 +910,13 @@
       const icon = document.createElement("span");
       icon.className = `feature-grid-icon feature-grid-icon--${entry.icon}`;
       icon.setAttribute("aria-hidden", "true");
-      loadIconSvg(entry.label === "夜が見どころ" ? "見どころ" : entry.label).then((svg) => {
-        if (svg) icon.innerHTML = svg;
-      });
+      const image = document.createElement("img");
+      const imageName = entry.icon === "midokoro" ? "night" : entry.icon;
+      image.src = `${getListBasePath()}shared/icons/section-feature-${imageName}.png`;
+      image.alt = "";
+      image.width = 42;
+      image.height = 42;
+      icon.append(image);
 
       const label = document.createElement("span");
       label.className = "feature-grid-label";

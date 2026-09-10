@@ -882,13 +882,14 @@ h1 {
   height: 42px;
   place-items: center;
   border-radius: 50%;
-  background: var(--indigo-tint);
-  color: var(--accent);
+  overflow: hidden;
 }
 
-.feature-grid-icon svg {
-  width: 24px;
-  height: 24px;
+.feature-grid-icon img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
 }
 
 .feature-grid-label {
