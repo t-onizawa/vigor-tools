@@ -306,7 +306,15 @@
       },
       {
         title: "エリアから探す",
-        links: [["都道府県・地方から探す", []]]
+        links: [
+          ["関東", ["regions", "kanto"]],
+          ["東北", ["regions", "tohoku"]],
+          ["中部", ["regions", "chubu"]],
+          ["近畿", ["regions", "kinki"]],
+          ["中国", ["regions", "chugoku"]],
+          ["四国", ["regions", "shikoku"]],
+          ["九州", ["regions", "kyushu"]]
+        ]
       }
     ];
 
