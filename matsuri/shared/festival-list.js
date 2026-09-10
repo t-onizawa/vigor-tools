@@ -789,7 +789,11 @@
     if (count) {
       count.replaceChildren();
       if (selectedPrefectures && regionalWeekendItems.length === 0) {
-        count.textContent = `${REGION_LABELS[selectedRegion]}では今週末開催の祭りはありません`;
+        count.append(
+          document.createTextNode(`${REGION_LABELS[selectedRegion]}では`),
+          document.createElement("br"),
+          document.createTextNode("今週末開催の祭りはありません")
+        );
       } else {
         const regionLabel = document.createElement("span");
         regionLabel.className = "weekend-banner-count-region";
@@ -822,7 +826,14 @@
       thumbs.hidden = thumbItems.length === 0;
     }
 
-    picksList.replaceChildren(...weekendItems.slice(0, 4).map((item) => renderPickCard(item, "weekend_picks")));
+    const sortedWeekendItems = selectedPrefectures
+      ? [...weekendItems].sort((a, b) => {
+          const aInRegion = selectedPrefectures.includes(a.festival.areaTag) ? 0 : 1;
+          const bInRegion = selectedPrefectures.includes(b.festival.areaTag) ? 0 : 1;
+          return aInRegion - bInRegion;
+        })
+      : weekendItems;
+    picksList.replaceChildren(...sortedWeekendItems.slice(0, 4).map((item) => renderPickCard(item, "weekend_picks")));
     bannerSection.hidden = false;
     picksSection.hidden = false;
   }
