@@ -50,7 +50,7 @@ a {
 }
 
 .list-header {
-  padding: 20px 0 22px;
+  padding: 0 0 22px;
   border-bottom: 1px solid var(--line);
 }
 
@@ -111,7 +111,7 @@ h1 {
   max-width: 100%;
   margin-top: 22px;
   border: 1px solid var(--line);
-  border-radius: 999px;
+  border-radius: 4px;
   background: var(--surface);
   overflow: hidden;
 }
@@ -119,10 +119,6 @@ h1 {
 @media (max-width: 639px) {
   .filter-section {
     width: 100%;
-    border: 0;
-    border-top: 1px solid var(--line);
-    border-bottom: 1px solid var(--line);
-    border-radius: 0;
   }
 
   .filter-toggle,
