@@ -434,16 +434,13 @@
     logo.className = "site-nav-logo";
     logo.href = homeUrl;
     logo.setAttribute("aria-label", "MATSURI");
-    const mark = document.createElement("span");
-    mark.className = "site-nav-logo-mark";
-    mark.setAttribute("aria-hidden", "true");
     const wordmark = document.createElement("span");
     wordmark.className = "site-nav-logo-wordmark";
     wordmark.setAttribute("aria-hidden", "true");
     wordmark.innerHTML =
-      'MATSUR<span class="site-nav-logo-i"><span class="site-nav-logo-i-stem"></span><span class="site-nav-logo-i-dot"></span></span>' +
+      'M<span class="site-nav-logo-a">A</span>TSURI' +
       '<span class="site-nav-logo-vigor">VIGOR</span>';
-    logo.append(mark, wordmark);
+    logo.append(wordmark);
 
     const topBar = document.createElement("div");
     topBar.className = "site-nav-topbar";

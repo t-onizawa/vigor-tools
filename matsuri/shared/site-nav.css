@@ -49,71 +49,14 @@
   text-decoration: none;
 }
 
-.site-nav-logo-mark {
-  position: relative;
-  display: inline-flex;
-  width: 4px;
-  height: 1.3em;
-  align-self: center;
-  align-items: center;
-  margin-right: 10px;
-}
-
-.site-nav-logo-mark::before {
-  display: block;
-  width: 4px;
-  height: 100%;
-  border-radius: 2px;
-  background: var(--brand-red);
-  content: "";
-}
-
-.site-nav-logo-mark::after {
-  position: absolute;
-  top: 33%;
-  left: 50%;
-  width: 10px;
-  height: 3px;
-  border-radius: 2px;
-  background: var(--brand-red);
-  content: "";
-  transform: translate(-50%, -50%);
-}
-
 .site-nav-logo-wordmark {
   font-family: "Hiragino Mincho ProN", "Yu Mincho", serif;
   font-weight: 700;
   letter-spacing: 0.02em;
 }
 
-.site-nav-logo-i {
-  position: relative;
-  display: inline-block;
-  width: 0.28em;
-  height: 1em;
-  vertical-align: baseline;
-}
-
-.site-nav-logo-i-stem {
-  position: absolute;
-  bottom: 0;
-  left: 50%;
-  width: 0.15em;
-  height: 0.56em;
-  border-radius: 1px;
-  background: currentColor;
-  transform: translateX(-50%);
-}
-
-.site-nav-logo-i-dot {
-  position: absolute;
-  bottom: 0.63em;
-  left: 50%;
-  width: 0.19em;
-  height: 0.19em;
-  border-radius: 50%;
-  background: var(--brand-red);
-  transform: translateX(-50%);
+.site-nav-logo-a {
+  color: var(--brand-red);
 }
 
 .site-nav-logo-vigor {
