@@ -666,22 +666,25 @@ h1 {
   font-weight: 700;
 }
 
-.weekend-banner-count,
-.weekend-banner-cta {
+.weekend-banner-count {
   position: relative;
   z-index: 1;
   margin: 0;
-}
-
-.weekend-banner-count {
   font-size: 1.2rem;
   font-weight: 700;
 }
 
 .weekend-banner-cta {
-  margin-top: 5px;
-  color: var(--gold-tint);
-  font-size: 0.82rem;
+  position: relative;
+  z-index: 1;
+  display: inline-block;
+  margin: 10px 0 0;
+  border-radius: 999px;
+  padding: 7px 14px;
+  background: #ffffff;
+  color: var(--accent-strong);
+  font-size: 0.8rem;
+  font-weight: 700;
 }
 
 .weekend-banner-thumb {
@@ -700,17 +703,24 @@ h1 {
   background: linear-gradient(135deg, rgb(16 24 32 / 85%) 0%, rgb(26 46 66 / 75%) 100%);
 }
 
-.weekend-banner-region-entry {
+.weekend-banner-section {
   position: relative;
-  z-index: 1;
-  display: block;
-  margin: 8px 4px 0 auto;
+}
+
+.weekend-banner-region-entry {
+  position: absolute;
+  z-index: 2;
+  top: 12px;
+  right: 12px;
+  margin: 0;
   border: 0;
-  background: transparent;
-  color: var(--accent);
+  border-radius: 999px;
+  background: rgb(255 255 255 / 16%);
+  color: #ffffff;
   font: inherit;
-  font-size: 0.8rem;
+  font-size: 0.74rem;
   font-weight: 700;
+  padding: 5px 12px;
   cursor: pointer;
 }
 
@@ -1132,5 +1142,23 @@ h1 {
   .weekend-picks-list {
     grid-template-columns: repeat(4, minmax(0, 1fr));
     gap: 16px;
+  }
+
+  main.page-shell:has(.feature-grid-section) {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 24px;
+  }
+
+  .list-header,
+  .weekend-banner-section,
+  .area-entry-section,
+  .weekend-picks-section,
+  .upcoming-soon-section,
+  .filter-section,
+  #festival-count,
+  #festival-list,
+  .disclaimer {
+    grid-column: 1 / -1;
   }
 }
