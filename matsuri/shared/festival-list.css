@@ -626,9 +626,11 @@ h1 {
 
 .weekend-banner {
   position: relative;
-  display: flex;
-  align-items: flex-start;
-  gap: 16px;
+  display: grid;
+  grid-template-columns: auto 1fr;
+  grid-template-rows: minmax(76px, auto) auto;
+  column-gap: 16px;
+  row-gap: 6px;
   overflow: hidden;
   border-radius: 16px;
   padding: 16px;
@@ -638,7 +640,8 @@ h1 {
 
 .weekend-banner-ring-link {
   display: flex;
-  flex: 0 0 auto;
+  grid-column: 1;
+  grid-row: 1 / span 2;
   flex-direction: column;
   align-items: center;
   gap: 6px;
@@ -679,21 +682,18 @@ h1 {
 
 .weekend-banner-cta {
   margin: 0;
+  padding-left: 6px;
   color: var(--gold-tint);
   font-size: 0.76rem;
   font-weight: 700;
   text-align: center;
 }
 
-.weekend-banner-info {
-  display: flex;
-  min-width: 0;
-  flex: 1 1 auto;
-  flex-direction: column;
-  gap: 10px;
-}
-
 .weekend-banner-count {
+  grid-column: 2;
+  grid-row: 1;
+  align-self: center;
+  min-width: 0;
   margin: 0;
   font-size: 1rem;
   font-weight: 700;
@@ -704,6 +704,15 @@ h1 {
   font-size: 1.9rem;
   line-height: 1;
   font-variant-numeric: tabular-nums;
+}
+
+.weekend-banner-info-rest {
+  display: flex;
+  grid-column: 2;
+  grid-row: 2;
+  min-width: 0;
+  flex-direction: column;
+  gap: 10px;
 }
 
 .weekend-banner-thumbs {
@@ -1306,7 +1315,6 @@ h1 {
   }
 
   .weekend-banner {
-    align-items: center;
     padding: 22px 26px;
   }
 

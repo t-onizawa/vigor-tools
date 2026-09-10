@@ -822,7 +822,7 @@
         num.textContent = String(regionalWeekendItems.length);
         const suffix = document.createElement("span");
         suffix.className = "weekend-banner-count-suffix";
-        suffix.textContent = "件の祭りを開催";
+        suffix.textContent = "件の祭りが開催予定";
         count.append(regionLabel, num, suffix);
       }
     }
