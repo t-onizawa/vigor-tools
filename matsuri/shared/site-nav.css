@@ -111,6 +111,10 @@
   line-height: 1;
 }
 
+.site-nav-icon--search {
+  font-size: 2rem;
+}
+
 .site-nav-label {
   overflow: hidden;
   max-width: 100%;
@@ -443,6 +447,10 @@
     font-size: 1.05rem;
     line-height: 1;
     transform: translateY(-1px);
+  }
+
+  .site-nav-icon--search {
+    font-size: 1.5rem;
   }
 
   .site-nav-label {

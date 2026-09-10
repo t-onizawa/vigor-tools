@@ -452,6 +452,7 @@
     items.append(createNavLink(labels.home, "⌂", homeUrl, isHomeContext()));
 
     const searchButton = createNavButton(labels.search, "⌕");
+    searchButton.querySelector(".site-nav-icon").classList.add("site-nav-icon--search");
     items.append(searchButton);
     items.append(createNavLink(labels.favorites, "♡", getFavoritesUrl(), getMatsuriSegments()[0] === "favorites"));
 

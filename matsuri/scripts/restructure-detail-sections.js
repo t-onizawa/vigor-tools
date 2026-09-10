@@ -65,7 +65,7 @@ function transform(file) {
   const blocks = [];
   displayOrder.forEach((key) => { if (sections.has(key)) blocks.push(sections.get(key)); });
   accordionOrder.forEach((key) => { if (sections.has(key)) blocks.push(accordion(key, sections.get(key))); });
-  blocks.push(`      <details class="accordion-section alternate-links-section" id="alternate-links-section" hidden>\n        <summary>${english ? "Explore this festival by category" : "この祭りをほかの切り口で見る"}</summary>\n        <div id="alternate-links-list"></div>\n      </details>`);
+  blocks.push(`      <details class="accordion-section alternate-links-section" id="alternate-links-section" hidden>\n        <summary>${english ? "Explore this festival by category" : "こちらもチェック"}</summary>\n        <div id="alternate-links-list"></div>\n      </details>`);
   const updatedMain = `${prefix}\n\n${blocks.join("\n\n")}\n    ${suffix}`;
   const updated = source.replace(main, updatedMain);
 
