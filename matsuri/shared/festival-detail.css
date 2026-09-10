@@ -922,13 +922,10 @@ p {
 
 .accordion-section {
   overflow: hidden;
+  margin-top: 18px;
   border: 1px solid var(--line);
   border-radius: 8px;
   background: var(--surface);
-}
-
-.accordion-section + .accordion-section {
-  margin-top: 12px;
 }
 
 .accordion-section > summary {
@@ -1105,9 +1102,14 @@ p {
   }
 
   .primary-info,
+  .info-section,
+  .accordion-section {
+    margin-top: 22px;
+  }
+
+  .primary-info,
   .info-section {
     padding: 24px;
-    margin-top: 22px;
   }
 
   .media-section {
@@ -1157,15 +1159,5 @@ p {
   .accordion-section,
   .alternate-links-section {
     break-inside: avoid;
-  }
-
-  .accordion-section > summary {
-    cursor: default;
-    pointer-events: none;
-    border-bottom: 1px solid var(--line);
-  }
-
-  .accordion-section > summary::after {
-    display: none;
   }
 }

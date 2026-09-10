@@ -477,17 +477,10 @@
     }
   }
 
-  function setupAccordionResponsiveOpen() {
-    const sections = document.querySelectorAll("details.accordion-section");
-    if (sections.length === 0) return;
-    const query = window.matchMedia("(min-width: 1024px)");
-    const apply = () => {
-      sections.forEach((section) => {
-        section.open = query.matches;
-      });
-    };
-    apply();
-    query.addEventListener("change", apply);
+  function setupAccordionDefaultOpen() {
+    document.querySelectorAll("details.accordion-section").forEach((section) => {
+      section.open = section.dataset.accordionSection !== "sources";
+    });
   }
 
   function injectBrandMark() {
@@ -1477,5 +1470,5 @@
   injectEventJsonLd(festival, currentYear);
   injectFaqJsonLd(festival, currentYear);
   renderSearchLinks(festival);
-  setupAccordionResponsiveOpen();
+  setupAccordionDefaultOpen();
 })();
