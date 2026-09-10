@@ -38,6 +38,7 @@
     hokkaido: "北海道",
     okinawa: "沖縄"
   };
+  const REGION_HUB_SLUGS = new Set(["kanto", "tohoku", "chubu", "kinki", "chugoku", "shikoku", "kyushu"]);
   const REGION_STORAGE_KEY = "matsuri-region-pref";
   let regionModalFirstVisit = false;
   let currentFestivalItems = [];
@@ -779,6 +780,17 @@
       regionEntry.textContent = selectedPrefectures
         ? `${REGION_LABELS[selectedRegion]}を変更`
         : "地域を選ぶ";
+    }
+
+    const hubLink = document.getElementById("weekend-banner-hub-link");
+    if (hubLink) {
+      if (selectedPrefectures && REGION_HUB_SLUGS.has(selectedRegion)) {
+        hubLink.href = `regions/${selectedRegion}/`;
+        hubLink.textContent = `${REGION_LABELS[selectedRegion]}の祭りをもっと見る →`;
+        hubLink.hidden = false;
+      } else {
+        hubLink.hidden = true;
+      }
     }
 
     if (weekendItems.length === 0) {
