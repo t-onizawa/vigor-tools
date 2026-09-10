@@ -102,16 +102,6 @@
   };
   Object.assign(highlightTimeLabels, EN?.highlightTimeLabels || {});
 
-  const FEATURE_ICON_FILES = {
-    dashi: "dashi",
-    mikoshi: "mikoshi",
-    odori: "odori",
-    hikimawashi: "hikimawashi",
-    highlights: "midokoro"
-  };
-
-  const iconCache = new Map();
-
   const FEATURE_DEFS = [
     { key: "dashi", ja: "山車", value: features.hasDashi },
     { key: "mikoshi", ja: "神輿", value: features.hasMikoshi },
@@ -179,25 +169,63 @@
     }
   }
 
-  async function loadIconSvg(key) {
-    const file = FEATURE_ICON_FILES[key];
-    if (!file) return null;
-    if (iconCache.has(file)) return iconCache.get(file);
-    const promise = fetch(`${sharedBasePath}/icons/${file}.svg`)
-      .then((res) => (res.ok ? res.text() : null))
-      .catch(() => null);
-    iconCache.set(file, promise);
-    return promise;
+  async function loadRegionHubMap() {
+    try {
+      const res = await fetch(`${sharedBasePath}/region-hub-slugs.js`);
+      if (!res.ok) return {};
+      const src = await res.text();
+      const factory = new Function(`${src}\nreturn REGION_HUB_MAP;`);
+      return factory();
+    } catch (err) {
+      console.warn("[festival-detail] region-hub-slugs.jsの読み込みに失敗", err);
+      return {};
+    }
   }
 
-  async function attachFeatureIcon(item, key) {
-    const svgText = await loadIconSvg(key);
-    if (!svgText) return;
-    const wrap = document.createElement("span");
-    wrap.className = "feature-icon";
-    wrap.setAttribute("aria-hidden", "true");
-    wrap.innerHTML = svgText;
-    item.prepend(wrap);
+  async function renderBreadcrumb(currentFestival) {
+    const header = document.querySelector(".festival-header");
+    if (!header) return;
+
+    const homeHref = LOCALE === "en" ? "../../../" : "../../";
+    const [regionMap, prefectureHubSlugs] = await Promise.all([
+      loadRegionHubMap(),
+      loadPrefectureHubSlugs()
+    ]);
+    const hubSlugSet = new Set(prefectureHubSlugs);
+    const region = regionMap[currentFestival.areaTag];
+    const hasPrefectureHub = hubSlugSet.has(currentFestival.areaTag);
+
+    const nav = document.createElement("nav");
+    nav.className = "detail-breadcrumb";
+    nav.setAttribute("aria-label", "パンくずリスト");
+
+    const list = document.createElement("ol");
+    nav.append(list);
+
+    const addItem = (label, href) => {
+      const li = document.createElement("li");
+      if (href) {
+        const link = document.createElement("a");
+        link.href = href;
+        link.textContent = label;
+        li.append(link);
+      } else {
+        li.setAttribute("aria-current", "page");
+        li.textContent = label;
+      }
+      list.append(li);
+    };
+
+    addItem("ホーム", homeHref);
+    if (region) {
+      addItem(`${region.label}の祭り`, `../../regions/${region.slug}/`);
+    }
+    if (hasPrefectureHub) {
+      addItem(`${currentFestival.prefecture}の祭り`, `../../prefectures/${currentFestival.areaTag}/`);
+    }
+    addItem(festivalName);
+
+    header.insertBefore(nav, header.firstChild);
   }
 
   function formatDate(dateText) {
@@ -242,42 +270,59 @@
       .join(LOCALE === "en" ? EN.labels.dateListSeparator : " / ");
   }
 
-  function createFeatureBadge(label, value) {
+  function createColorFeatureBadge(label, value, key) {
+    if (value !== true) return null;
     const item = document.createElement("div");
-    const state = availabilityState(value);
-    item.className = "feature-badge";
-    item.classList.add(state.className);
+    item.className = "feature-badge-color";
 
-    const text = document.createElement("div");
-    text.className = "feature-badge-text";
+    const icon = document.createElement("span");
+    icon.className = "feature-badge-color-icon";
+    const img = document.createElement("img");
+    img.src = `${sharedBasePath}/icons/section-feature-${key}.png`;
+    img.alt = "";
+    icon.append(img);
 
-    const labelEl = document.createElement("strong");
+    const labelEl = document.createElement("span");
+    labelEl.className = "feature-badge-color-label";
     labelEl.textContent = label;
 
     const valueEl = document.createElement("span");
-    valueEl.textContent = state.label;
+    valueEl.className = "feature-badge-color-value";
+    valueEl.textContent = availabilityState(value).label;
 
-    text.append(labelEl, valueEl);
-    item.append(text);
+    item.append(icon, labelEl, valueEl);
     return item;
   }
 
-  function createNeutralFeatureBadge(label, value) {
-    const item = document.createElement("div");
-    item.className = "feature-badge is-neutral";
+  const HIGHLIGHT_TIME_PILLS = [
+    { keys: ["morning"], ja: "朝" },
+    { keys: ["daytime", "day"], ja: "昼" },
+    { keys: ["evening"], ja: "夕方" },
+    { keys: ["night"], ja: "夜" },
+    { keys: ["both"], ja: "両方" }
+  ];
 
-    const text = document.createElement("div");
-    text.className = "feature-badge-text";
+  function createHighlightTimeRow(value) {
+    const wrap = document.createElement("div");
+    wrap.className = "highlight-time-row";
 
-    const labelEl = document.createElement("strong");
-    labelEl.textContent = label;
+    const label = document.createElement("span");
+    label.className = "highlight-time-row-label";
+    label.textContent = EN?.featureLabels?.highlights || "見どころの時間帯";
+    wrap.append(label);
 
-    const valueEl = document.createElement("span");
-    valueEl.textContent = value;
+    const pills = document.createElement("div");
+    pills.className = "highlight-time-pills";
+    HIGHLIGHT_TIME_PILLS.forEach((def) => {
+      const pill = document.createElement("span");
+      pill.className = "highlight-time-pill";
+      pill.textContent = EN?.highlightTimeLabels?.[def.keys[0]] || def.ja;
+      if (def.keys.includes(value)) pill.classList.add("is-active");
+      pills.append(pill);
+    });
+    wrap.append(pills);
 
-    text.append(labelEl, valueEl);
-    item.append(text);
-    return item;
+    return wrap;
   }
 
   function createDetailItem(term, value, note) {
@@ -432,6 +477,19 @@
     }
   }
 
+  function setupAccordionResponsiveOpen() {
+    const sections = document.querySelectorAll("details.accordion-section");
+    if (sections.length === 0) return;
+    const query = window.matchMedia("(min-width: 1024px)");
+    const apply = () => {
+      sections.forEach((section) => {
+        section.open = query.matches;
+      });
+    };
+    apply();
+    query.addEventListener("change", apply);
+  }
+
   function injectBrandMark() {
     const header = document.querySelector(".festival-header");
     const backLink = header ? header.querySelector(".back-link") : null;
@@ -453,6 +511,41 @@
 
     mark.append(link);
     header.insertBefore(mark, backLink);
+  }
+
+  const HERO_TAG_MODIFIERS = {
+    dashi: "dashi",
+    mikoshi: "mikoshi",
+    odori: "odori",
+    hikimawashi: "hikimawashi"
+  };
+
+  function renderHeroFeatureTags(featureDefs, highlightTime) {
+    const header = document.querySelector(".festival-header");
+    if (!header) return;
+
+    const trueTags = featureDefs.filter((def) => def.value === true);
+    if (trueTags.length === 0 && !highlightTime) return;
+
+    const row = document.createElement("div");
+    row.className = "hero-feature-tags";
+
+    trueTags.forEach((def) => {
+      const tag = document.createElement("span");
+      const modifier = HERO_TAG_MODIFIERS[def.key];
+      tag.className = modifier ? `hero-feature-tag hero-feature-tag--${modifier}` : "hero-feature-tag";
+      tag.textContent = EN?.featureLabels?.[def.key] || def.ja;
+      row.append(tag);
+    });
+
+    if (highlightTime === "night" || highlightTime === "both") {
+      const tag = document.createElement("span");
+      tag.className = "hero-feature-tag hero-feature-tag--night";
+      tag.textContent = EN?.featureLabels?.nightHighlight || "夜が見どころ";
+      row.append(tag);
+    }
+
+    header.append(row);
   }
 
   function applyHeroHeader(backgroundImage) {
@@ -965,6 +1058,20 @@
       list.append(link);
     });
     section.hidden = false;
+
+    if (reason.type === "area" && currentFestival.areaTag) {
+      const hubSlugs = new Set(await loadPrefectureHubSlugs());
+      if (hubSlugs.has(currentFestival.areaTag)) {
+        const heading = byId("related-festivals-heading");
+        if (heading) {
+          const seeAll = document.createElement("a");
+          seeAll.className = "related-festivals-see-all";
+          seeAll.href = `../../prefectures/${currentFestival.areaTag}/`;
+          seeAll.textContent = "すべて見る →";
+          heading.append(seeAll);
+        }
+      }
+    }
   }
 
   function renderEventStatusDateText() {
@@ -983,6 +1090,7 @@
   }
 
   injectBrandMark();
+  renderBreadcrumb(festival);
   setText("festival-name", festivalName);
   setText(
     "festival-prefecture",
@@ -998,22 +1106,39 @@
     eventStatusLabels[effectiveEventStatus] || EN?.availability?.unknown || "未確認"
   );
   byId("event-status").className = `status-badge status-${effectiveEventStatus || "unknown"}`;
+  if (effectiveEventStatus === "confirmed") {
+    const checkmark = document.createElement("span");
+    checkmark.className = "status-badge-check";
+    checkmark.setAttribute("aria-hidden", "true");
+    checkmark.textContent = "✓";
+    byId("event-status").prepend(checkmark);
+  }
+
+  const primaryInfoLocation = document.createElement("p");
+  primaryInfoLocation.className = "primary-info-location";
+  const locationPin = document.createElement("span");
+  locationPin.className = "primary-info-location-icon";
+  locationPin.setAttribute("aria-hidden", "true");
+  const locationText = document.createElement("span");
+  locationText.textContent =
+    LOCALE === "en"
+      ? `${festivalCity}, ${festivalPrefecture}`
+      : `${festival.prefecture}${festival.city || ""}`;
+  primaryInfoLocation.append(locationPin, locationText);
+  byId("dates-heading").insertAdjacentElement("beforebegin", primaryInfoLocation);
   renderHayashiNote(festivalHayashiNote);
   renderSchedule(festivalSchedule);
 
   const featureGrid = byId("feature-grid");
+  featureGrid.classList.add("feature-grid-color");
   FEATURE_DEFS.forEach((def) => {
     const label = EN?.featureLabels?.[def.key] || def.ja;
-    const badge = createFeatureBadge(label, def.value);
-    featureGrid.append(badge);
-    attachFeatureIcon(badge, def.key);
+    const badge = createColorFeatureBadge(label, def.value, def.key);
+    if (badge) featureGrid.append(badge);
   });
-  const highlightBadge = createNeutralFeatureBadge(
-    EN?.featureLabels?.highlights || "見どころ",
-    highlightTimeLabels[features.highlightTime] || EN?.availability?.unknown || "未確認"
-  );
-  featureGrid.append(highlightBadge);
-  attachFeatureIcon(highlightBadge, "highlights");
+
+  const highlightTimeRow = createHighlightTimeRow(features.highlightTime);
+  featureGrid.insertAdjacentElement("afterend", highlightTimeRow);
 
   const accessList = byId("access-list");
   accessList.append(
@@ -1030,6 +1155,7 @@
   relocateHighlightComment();
   renderAtmosphereMedia(festival.constantInfo.atmosphereMedia);
   applyHeroHeader(festival.constantInfo.backgroundImage);
+  renderHeroFeatureTags(FEATURE_DEFS, features.highlightTime);
   renderMapReference(festivalMapReference, festivalName);
   renderRelatedFestivals(festival, currentYear);
   renderFaq(festival, currentYear);
@@ -1351,4 +1477,5 @@
   injectEventJsonLd(festival, currentYear);
   injectFaqJsonLd(festival, currentYear);
   renderSearchLinks(festival);
+  setupAccordionResponsiveOpen();
 })();

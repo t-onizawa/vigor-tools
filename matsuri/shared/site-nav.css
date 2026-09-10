@@ -347,8 +347,27 @@
 }
 
 .festival-header > .favorite-heart {
+  position: absolute !important;
   top: 14px;
   right: 14px;
+  z-index: 3 !important;
+  width: auto;
+  height: auto;
+  border: 0;
+  background: transparent;
+  box-shadow: none;
+  color: #ffffff;
+  font-size: 1.9rem;
+}
+
+.festival-header > .favorite-heart:hover,
+.festival-header > .favorite-heart:focus-visible {
+  background: transparent;
+  outline: 0;
+}
+
+.festival-header > .favorite-heart.is-active {
+  color: var(--brand-red);
 }
 
 .favorites-empty {
