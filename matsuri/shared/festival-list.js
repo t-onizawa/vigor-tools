@@ -827,11 +827,12 @@
       }
     }
 
+    const bannerBgItems = regionalWeekendItems
+      .map((item) => item.festival.constantInfo && item.festival.constantInfo.backgroundImage)
+      .filter((bg) => bg && bg.type === "youtube" && bg.contentId);
+
     if (thumbs) {
-      const thumbItems = regionalWeekendItems
-        .map((item) => item.festival.constantInfo && item.festival.constantInfo.backgroundImage)
-        .filter((bg) => bg && bg.type === "youtube" && bg.contentId)
-        .slice(0, 4);
+      const thumbItems = bannerBgItems.slice(0, 4);
       thumbs.replaceChildren(
         ...thumbItems.map((bg) => {
           const img = document.createElement("img");
@@ -843,6 +844,30 @@
         })
       );
       thumbs.hidden = thumbItems.length === 0;
+    }
+
+    const bannerBg = document.getElementById("weekend-banner-bg");
+    if (bannerBg) {
+      const bgPhotoItems = bannerBgItems.slice(0, 3);
+      if (bgPhotoItems.length > 0) {
+        bannerBg.replaceChildren(
+          ...bgPhotoItems.map((bg) => {
+            const img = document.createElement("img");
+            img.className = "weekend-banner-bg-photo";
+            img.src = `https://i.ytimg.com/vi/${bg.contentId}/hqdefault.jpg`;
+            img.alt = "";
+            img.loading = "lazy";
+            return img;
+          })
+        );
+      } else {
+        const fallback = document.createElement("img");
+        fallback.className = "weekend-banner-bg-fallback";
+        fallback.src = `${getListBasePath()}shared/illustrations/mikoshi.png`;
+        fallback.alt = "";
+        fallback.loading = "lazy";
+        bannerBg.replaceChildren(fallback);
+      }
     }
 
     const sortedWeekendItems = sortByRegionPriority(weekendItems, selectedPrefectures);

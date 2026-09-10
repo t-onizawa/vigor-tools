@@ -634,10 +634,42 @@ h1 {
   color: #fff;
 }
 
+.weekend-banner-bg {
+  display: flex;
+  grid-column: 1 / -1;
+  grid-row: 1 / -1;
+  z-index: 0;
+  align-items: stretch;
+  justify-content: flex-end;
+  overflow: hidden;
+  -webkit-mask-image: linear-gradient(to left, black 0%, black 25%, transparent 85%);
+  mask-image: linear-gradient(to left, black 0%, black 25%, transparent 85%);
+  pointer-events: none;
+}
+
+.weekend-banner-bg-photo {
+  width: 34%;
+  min-width: 80px;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.32;
+  filter: saturate(0.5) brightness(0.85);
+}
+
+.weekend-banner-bg-fallback {
+  align-self: center;
+  width: auto;
+  height: 85%;
+  margin-right: 8px;
+  opacity: 0.16;
+  filter: invert(1);
+}
+
 .weekend-banner-ring-link {
   display: flex;
   grid-column: 1;
   grid-row: 1 / span 2;
+  z-index: 1;
   flex-direction: column;
   align-items: center;
   gap: 6px;
@@ -688,6 +720,7 @@ h1 {
 .weekend-banner-count {
   grid-column: 2;
   grid-row: 1;
+  z-index: 1;
   align-self: center;
   min-width: 0;
   margin: 0;
@@ -706,6 +739,7 @@ h1 {
   display: flex;
   grid-column: 2;
   grid-row: 2;
+  z-index: 1;
   min-width: 0;
   flex-direction: column;
   gap: 10px;
