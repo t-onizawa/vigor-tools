@@ -861,12 +861,16 @@
           })
         );
       } else {
-        const fallback = document.createElement("img");
-        fallback.className = "weekend-banner-bg-fallback";
-        fallback.src = `${getListBasePath()}shared/illustrations/mikoshi.png`;
-        fallback.alt = "";
-        fallback.loading = "lazy";
-        bannerBg.replaceChildren(fallback);
+        bannerBg.replaceChildren(
+          ...["mikoshi", "dashi", "hyottoko"].map((name) => {
+            const fallback = document.createElement("img");
+            fallback.className = "weekend-banner-bg-fallback";
+            fallback.src = `${getListBasePath()}shared/illustrations/${name}.png`;
+            fallback.alt = "";
+            fallback.loading = "lazy";
+            return fallback;
+          })
+        );
       }
     }
 

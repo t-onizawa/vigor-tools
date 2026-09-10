@@ -661,9 +661,16 @@ h1 {
   align-self: center;
   width: auto;
   height: 135%;
-  margin-right: -12px;
   opacity: 0.16;
   filter: invert(1);
+}
+
+.weekend-banner-bg-fallback + .weekend-banner-bg-fallback {
+  margin-left: -10px;
+}
+
+.weekend-banner-bg-fallback:last-child {
+  margin-right: -12px;
 }
 
 .weekend-banner-ring-link {
