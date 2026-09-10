@@ -659,8 +659,8 @@ h1 {
 .weekend-banner-bg-fallback {
   align-self: center;
   width: auto;
-  height: 85%;
-  margin-right: 8px;
+  height: 135%;
+  margin-right: -12px;
   opacity: 0.16;
   filter: invert(1);
 }
