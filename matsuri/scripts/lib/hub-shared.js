@@ -21,6 +21,18 @@ const REGIONS = {
   kyushu: { label: "九州", prefectures: ["fukuoka", "saga", "nagasaki", "kumamoto", "oita", "miyazaki", "kagoshima"] },
   okinawa: { label: "沖縄", prefectures: ["okinawa"] }
 };
+const PREFECTURE_LABELS = {
+  hokkaido: "北海道",
+  aomori: "青森県", iwate: "岩手県", akita: "秋田県", miyagi: "宮城県", yamagata: "山形県", fukushima: "福島県",
+  ibaraki: "茨城県", tochigi: "栃木県", gunma: "群馬県", saitama: "埼玉県", chiba: "千葉県", tokyo: "東京都", kanagawa: "神奈川県",
+  niigata: "新潟県", toyama: "富山県", ishikawa: "石川県", fukui: "福井県", yamanashi: "山梨県", nagano: "長野県", gifu: "岐阜県", shizuoka: "静岡県", aichi: "愛知県",
+  mie: "三重県", shiga: "滋賀県", kyoto: "京都府", osaka: "大阪府", hyogo: "兵庫県", nara: "奈良県", wakayama: "和歌山県",
+  tottori: "鳥取県", shimane: "島根県", okayama: "岡山県", hiroshima: "広島県", yamaguchi: "山口県",
+  tokushima: "徳島県", kagawa: "香川県", ehime: "愛媛県", kochi: "高知県",
+  fukuoka: "福岡県", saga: "佐賀県", nagasaki: "長崎県", kumamoto: "熊本県", oita: "大分県", miyazaki: "宮崎県", kagoshima: "鹿児島県",
+  okinawa: "沖縄県"
+};
+const REGION_FILTER_SLUGS = ["kanto", "tohoku", "chubu", "kinki", "chugoku", "shikoku", "kyushu"];
 
 const EVENT_STATUS_LABELS = {
   confirmed: "開催確認済み",
@@ -205,7 +217,11 @@ function renderFestivalCard(item, experienceTags) {
     (experienceTag ? `<span class="experience-tag-chip">${escapeHtml(experienceTag)}</span>` : "");
   const video = media.length > 0 ? renderVideoBadge() : "";
   const highlight = constantInfo.highlightComment ? `          <p class="highlight-comment">${escapeHtml(constantInfo.highlightComment)}</p>\n` : "";
-  return `      <a class="festival-item${hasPhoto ? "" : " festival-item--text"}" href="../../festivals/${encodeURIComponent(festival.id)}/" data-area="${escapeHtml(festival.areaTag || "")}" data-highlight-time="${escapeHtml(features.highlightTime || "")}" data-has-dance-on-dashi="${escapeHtml(String(features.hasDanceOnDashi))}" data-event-status="${escapeHtml(status || "")}">
+  const featureKeys = CARD_FEATURE_ITEMS.filter(([, key]) => features[key] === true).map(([, key]) => key).join(",");
+  const months = Array.isArray(yearlyInfo.dates) && yearlyInfo.dates.length > 0
+    ? [...new Set(yearlyInfo.dates.map((d) => Number(d.slice(5, 7))))].join(",")
+    : "";
+  return `      <a class="festival-item${hasPhoto ? "" : " festival-item--text"}" href="../../festivals/${encodeURIComponent(festival.id)}/" data-area="${escapeHtml(festival.areaTag || "")}" data-feature-keys="${escapeHtml(featureKeys)}" data-months="${escapeHtml(months)}" data-highlight-time="${escapeHtml(features.highlightTime || "")}" data-has-dance-on-dashi="${escapeHtml(String(features.hasDanceOnDashi))}" data-event-status="${escapeHtml(status || "")}">
         ${visual}
         <div class="item-body">
           <div class="item-topline"><span class="prefecture">${escapeHtml(festival.prefecture ? `${festival.prefecture}${festival.city || ""}` : "都道府県未確認")}</span><span class="status-badge status-${escapeHtml(status || "unknown")}">${escapeHtml(EVENT_STATUS_LABELS[status] || "未確認")}</span></div>
@@ -215,6 +231,59 @@ function renderFestivalCard(item, experienceTags) {
           <div class="card-meta">${renderMetaItem("見どころ", HIGHLIGHT_TIME_LABELS[features.highlightTime] || "未確認", "meta-item--highlight-time")}${renderMetaItem("駐車場", parkingText(access.hasParking))}${video}</div>
 ${highlight}        </div>
       </a>`;
+}
+
+function renderAreaFilterOptions(mode, areaRegionSlug) {
+  if (mode === "region-scoped") {
+    const options = REGIONS[areaRegionSlug].prefectures
+      .map((tag) => `<option value="${tag}">${PREFECTURE_LABELS[tag]}</option>`)
+      .join("");
+    return `<option value="">すべての都道府県</option>${options}`;
+  }
+  const metaOptions = REGION_FILTER_SLUGS
+    .map((slug) => `<option value="region:${slug}">${REGIONS[slug].label}（全県）</option>`)
+    .join("");
+  const mainGroups = REGION_FILTER_SLUGS
+    .map((slug) => {
+      const options = REGIONS[slug].prefectures
+        .map((tag) => `<option value="${tag}">${PREFECTURE_LABELS[tag]}</option>`)
+        .join("");
+      return `<optgroup label="${REGIONS[slug].label}">${options}</optgroup>`;
+    })
+    .join("");
+  const otherOptions = [...REGIONS.hokkaido.prefectures, ...REGIONS.okinawa.prefectures]
+    .map((tag) => `<option value="${tag}">${PREFECTURE_LABELS[tag]}</option>`)
+    .join("");
+  const otherGroup = `<optgroup label="北海道・沖縄">${otherOptions}</optgroup>`;
+  return `<option value="">すべての都道府県</option>${metaOptions}${mainGroups}${otherGroup}`;
+}
+
+function renderFilterSection(filters) {
+  if (!filters) return "";
+  const parts = [];
+  if (filters.area) {
+    parts.push(
+      `<label class="area-filter-label" for="hub-area-filter"><span class="sr-only">都道府県で絞り込み</span></label>` +
+      `<select id="hub-area-filter" class="area-filter">${renderAreaFilterOptions(filters.area, filters.areaRegionSlug)}</select>`
+    );
+  }
+  if (filters.feature) {
+    parts.push(
+      `<label class="area-filter-label" for="hub-feature-filter"><span class="sr-only">特徴で絞り込み</span></label>` +
+      `<select id="hub-feature-filter" class="area-filter"><option value="">すべての特徴</option><option value="hasDashi">山車</option><option value="hasMikoshi">神輿</option><option value="hasDanceOnDashi">踊り</option><option value="hasParade">曳き回し</option></select>`
+    );
+  }
+  if (filters.month) {
+    const monthOptions = Array.from({ length: 12 }, (_, index) => index + 1)
+      .map((month) => `<option value="${month}">${month}月</option>`)
+      .join("");
+    parts.push(
+      `<label class="area-filter-label" for="hub-month-filter"><span class="sr-only">開催月で絞り込み</span></label>` +
+      `<select id="hub-month-filter" class="area-filter"><option value="">すべての月</option>${monthOptions}</select>`
+    );
+  }
+  if (parts.length === 0) return "";
+  return `<section class="filter-section filter-section--hub" aria-label="絞り込み">\n        ${parts.join("\n        ")}\n      </section>\n`;
 }
 
 function getFestivalListCssVersion() {
@@ -238,7 +307,7 @@ function getSiteNavJsVersion() {
   return match[1];
 }
 
-function renderMonthPage(month, items, experienceTags, cssVersion) {
+function renderMonthPage(month, items, experienceTags, cssVersion, filters) {
   const count = items.length;
   const canonical = `https://vigorlab.net/matsuri/months/${month.slug}/`;
   const name = `${month.label}の祭り一覧`;
@@ -312,13 +381,14 @@ function renderMonthPage(month, items, experienceTags, cssVersion) {
       <nav class="month-switch" aria-label="他の月を見る">
         ${monthSwitch}
       </nav>
-      <p class="count-text">${count}件を掲載中</p>
+      ${renderFilterSection(filters)}      <p class="count-text" id="hub-count-text">${count}件を掲載中</p>
       <div class="festival-list">
 ${cards}
       </div>
       <p class="disclaimer">掲載内容は各祭りの詳細ページに記載の出典・確認日に基づきます。最新の開催情報は公式サイトでご確認ください。</p>
       <p class="back-to-list"><a href="../../index.html">すべての祭りを都道府県・特徴で絞り込む →</a></p>
     </main>
+    <script src="../../shared/hub-filter.js?v=1"></script>
     <script src="../../shared/site-nav.js?v=${getSiteNavJsVersion()}"></script>
   </body>
 </html>
@@ -391,13 +461,14 @@ function renderHubPage(config, items, experienceTags, cssVersion) {
         <h1>${config.h1}</h1>
         <p class="header-description">${config.intro(count)}</p>
       </header>
-${auxiliaryLink}      <p class="count-text">${count}件を掲載中</p>
+${auxiliaryLink}      ${renderFilterSection(config.filters)}      <p class="count-text" id="hub-count-text">${count}件を掲載中</p>
       <div class="festival-list">
 ${cards}
       </div>
       <p class="disclaimer">掲載内容は各祭りの詳細ページに記載の出典・確認日に基づきます。最新の開催情報は公式サイトでご確認ください。</p>
       <p class="back-to-list"><a href="../../index.html">すべての祭りを見る →</a></p>
     </main>
+    <script src="../../shared/hub-filter.js?v=1"></script>
     <script src="../../shared/site-nav.js?v=${getSiteNavJsVersion()}"></script>
   </body>
 </html>
@@ -406,7 +477,7 @@ ${cards}
 
 function validatePage(html, expectedCount, label) {
   const cardCount = (html.match(/<a class="festival-item(?: |")/g) || []).length;
-  const countText = html.includes(`<p class="count-text">${expectedCount}件を掲載中</p>`);
+  const countText = html.includes(`<p class="count-text" id="hub-count-text">${expectedCount}件を掲載中</p>`);
   const jsonLdBlocks = [...html.matchAll(/<script type="application\/ld\+json">([^<]+)<\/script>/g)].map((match) => JSON.parse(match[1]));
   const collection = jsonLdBlocks.find((block) => block["@type"] === "CollectionPage");
   const numberOfItems = collection && collection.mainEntity && collection.mainEntity.numberOfItems;

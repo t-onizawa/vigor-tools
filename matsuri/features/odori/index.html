@@ -23,7 +23,7 @@
     <link rel="icon" href="/matsuri/favicon.ico" sizes="any">
     <link rel="icon" type="image/png" href="/matsuri/favicon-32x32.png" sizes="32x32">
     <link rel="apple-touch-icon" href="/matsuri/apple-touch-icon.png">
-    <link rel="stylesheet" href="../../shared/festival-list.css?v=26">
+    <link rel="stylesheet" href="../../shared/festival-list.css?v=27">
     <link rel="stylesheet" href="../../shared/month-hub.css?v=1">
     <link rel="stylesheet" href="../../shared/site-nav.css?v=10">
     <script src="/assets/analytics.js" defer></script>
@@ -37,9 +37,13 @@
         <h1>踊りが見どころの祭り一覧</h1>
         <p class="header-description">踊りが見どころの祭り5件を日程順にまとめました。</p>
       </header>
-      <p class="count-text">5件を掲載中</p>
+      <section class="filter-section filter-section--hub" aria-label="絞り込み">
+        <label class="area-filter-label" for="hub-area-filter"><span class="sr-only">都道府県で絞り込み</span></label><select id="hub-area-filter" class="area-filter"><option value="">すべての都道府県</option><option value="region:kanto">関東（全県）</option><option value="region:tohoku">東北（全県）</option><option value="region:chubu">中部（全県）</option><option value="region:kinki">近畿（全県）</option><option value="region:chugoku">中国（全県）</option><option value="region:shikoku">四国（全県）</option><option value="region:kyushu">九州（全県）</option><optgroup label="関東"><option value="ibaraki">茨城県</option><option value="tochigi">栃木県</option><option value="gunma">群馬県</option><option value="saitama">埼玉県</option><option value="chiba">千葉県</option><option value="tokyo">東京都</option><option value="kanagawa">神奈川県</option></optgroup><optgroup label="東北"><option value="aomori">青森県</option><option value="iwate">岩手県</option><option value="akita">秋田県</option><option value="miyagi">宮城県</option><option value="yamagata">山形県</option><option value="fukushima">福島県</option></optgroup><optgroup label="中部"><option value="niigata">新潟県</option><option value="toyama">富山県</option><option value="ishikawa">石川県</option><option value="fukui">福井県</option><option value="yamanashi">山梨県</option><option value="nagano">長野県</option><option value="gifu">岐阜県</option><option value="shizuoka">静岡県</option><option value="aichi">愛知県</option></optgroup><optgroup label="近畿"><option value="mie">三重県</option><option value="shiga">滋賀県</option><option value="kyoto">京都府</option><option value="osaka">大阪府</option><option value="hyogo">兵庫県</option><option value="nara">奈良県</option><option value="wakayama">和歌山県</option></optgroup><optgroup label="中国"><option value="tottori">鳥取県</option><option value="shimane">島根県</option><option value="okayama">岡山県</option><option value="hiroshima">広島県</option><option value="yamaguchi">山口県</option></optgroup><optgroup label="四国"><option value="tokushima">徳島県</option><option value="kagawa">香川県</option><option value="ehime">愛媛県</option><option value="kochi">高知県</option></optgroup><optgroup label="九州"><option value="fukuoka">福岡県</option><option value="saga">佐賀県</option><option value="nagasaki">長崎県</option><option value="kumamoto">熊本県</option><option value="oita">大分県</option><option value="miyazaki">宮崎県</option><option value="kagoshima">鹿児島県</option></optgroup><optgroup label="北海道・沖縄"><option value="hokkaido">北海道</option><option value="okinawa">沖縄県</option></optgroup></select>
+        <label class="area-filter-label" for="hub-month-filter"><span class="sr-only">開催月で絞り込み</span></label><select id="hub-month-filter" class="area-filter"><option value="">すべての月</option><option value="1">1月</option><option value="2">2月</option><option value="3">3月</option><option value="4">4月</option><option value="5">5月</option><option value="6">6月</option><option value="7">7月</option><option value="8">8月</option><option value="9">9月</option><option value="10">10月</option><option value="11">11月</option><option value="12">12月</option></select>
+      </section>
+      <p class="count-text" id="hub-count-text">5件を掲載中</p>
       <div class="festival-list">
-      <a class="festival-item" href="../../festivals/ishioka-omatsuri/" data-area="ibaraki" data-highlight-time="night" data-has-dance-on-dashi="true" data-event-status="confirmed">
+      <a class="festival-item" href="../../festivals/ishioka-omatsuri/" data-area="ibaraki" data-feature-keys="hasDashi,hasMikoshi,hasDanceOnDashi,hasParade" data-months="9" data-highlight-time="night" data-has-dance-on-dashi="true" data-event-status="confirmed">
         <div class="item-media"><img class="item-media-img" src="https://i.ytimg.com/vi/8q5JKyKTBFQ/hqdefault.jpg" alt="" loading="lazy" decoding="async"></div>
         <div class="item-body">
           <div class="item-topline"><span class="prefecture">茨城県石岡市</span><span class="status-badge status-confirmed">開催確認済み</span></div>
@@ -87,7 +91,7 @@
           <p class="highlight-comment">屋根付きの「幌獅子」に囃子連が乗り演奏する形式は全国的にも珍しく、山車前の舞台ではおかめ・ひょっとこ踊りが披露される。幌獅子や山車の巡行は主に2日目午後に集中し、公式の位置情報配信システムで山車・獅子の現在地に加え、駐車場・トイレの位置も確認しながら観覧できる。</p>
         </div>
       </a>
-      <a class="festival-item festival-item--text" href="../../festivals/kawagoe-matsuri/" data-area="saitama" data-highlight-time="both" data-has-dance-on-dashi="true" data-event-status="scheduled_pending_official">
+      <a class="festival-item festival-item--text" href="../../festivals/kawagoe-matsuri/" data-area="saitama" data-feature-keys="hasDashi,hasMikoshi,hasDanceOnDashi,hasParade" data-months="10" data-highlight-time="both" data-has-dance-on-dashi="true" data-event-status="scheduled_pending_official">
         <div class="item-media item-media--icon" aria-hidden="true"><div class="item-media-icon-group"><span class="item-media-icon-plate"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 65 400 400" fill="currentColor" aria-hidden="true">
   <circle cx="130" cy="360" r="40"/>
   <circle cx="270" cy="360" r="40"/>
@@ -148,7 +152,7 @@
           <p class="highlight-comment">向かい合う山車同士が囃子で競演する「曳っかわせ」は、夜になると最高潮の盛り上がりを見せる。</p>
         </div>
       </a>
-      <a class="festival-item" href="../../festivals/chichibu-yomatsuri/" data-area="saitama" data-highlight-time="night" data-has-dance-on-dashi="true" data-event-status="scheduled_pending_official">
+      <a class="festival-item" href="../../festivals/chichibu-yomatsuri/" data-area="saitama" data-feature-keys="hasDashi,hasMikoshi,hasDanceOnDashi,hasParade" data-months="12" data-highlight-time="night" data-has-dance-on-dashi="true" data-event-status="scheduled_pending_official">
         <div class="item-media"><img class="item-media-img" src="https://i.ytimg.com/vi/Hk3eNzg1Sls/hqdefault.jpg" alt="" loading="lazy" decoding="async"></div>
         <div class="item-body">
           <div class="item-topline"><span class="prefecture">埼玉県秩父市</span><span class="status-badge status-scheduled_pending_official">開催予定・公式詳細待ち</span></div>
@@ -196,7 +200,7 @@
           <p class="highlight-comment">最大20tの屋台が「団子坂」と呼ばれる急坂を曳き上げられる。</p>
         </div>
       </a>
-      <a class="festival-item festival-item--text" href="../../festivals/shimonita-aki-matsuri/" data-area="gunma" data-highlight-time="both" data-has-dance-on-dashi="true" data-event-status="unconfirmed">
+      <a class="festival-item festival-item--text" href="../../festivals/shimonita-aki-matsuri/" data-area="gunma" data-feature-keys="hasDashi,hasMikoshi,hasDanceOnDashi,hasParade" data-months="" data-highlight-time="both" data-has-dance-on-dashi="true" data-event-status="unconfirmed">
         <div class="item-media item-media--icon" aria-hidden="true"><div class="item-media-icon-group"><span class="item-media-icon-plate"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 65 400 400" fill="currentColor" aria-hidden="true">
   <circle cx="130" cy="360" r="40"/>
   <circle cx="270" cy="360" r="40"/>
@@ -257,7 +261,7 @@
           <p class="highlight-comment">七台の山車が寸前まで近づいてすれ違い、互いのお囃子を競り合う。</p>
         </div>
       </a>
-      <a class="festival-item festival-item--text" href="../../festivals/katsuyama-sagicho-matsuri/" data-area="fukui" data-highlight-time="both" data-has-dance-on-dashi="true" data-event-status="ended">
+      <a class="festival-item festival-item--text" href="../../festivals/katsuyama-sagicho-matsuri/" data-area="fukui" data-feature-keys="hasDanceOnDashi" data-months="2" data-highlight-time="both" data-has-dance-on-dashi="true" data-event-status="ended">
         <div class="item-media item-media--icon" aria-hidden="true"><div class="item-media-icon-group"><span class="item-media-icon-plate"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" fill="currentColor" aria-hidden="true">
   <path fill-rule="evenodd" clip-rule="evenodd" d="
     M60,200 A140,140 0 1,0 340,200 A140,140 0 1,0 60,200 Z
@@ -316,6 +320,7 @@
       <p class="disclaimer">掲載内容は各祭りの詳細ページに記載の出典・確認日に基づきます。最新の開催情報は公式サイトでご確認ください。</p>
       <p class="back-to-list"><a href="../../index.html">すべての祭りを見る →</a></p>
     </main>
+    <script src="../../shared/hub-filter.js?v=1"></script>
     <script src="../../shared/site-nav.js?v=7"></script>
   </body>
 </html>

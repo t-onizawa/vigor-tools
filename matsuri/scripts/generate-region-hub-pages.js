@@ -24,7 +24,8 @@ function main() {
       title: (count) => `${region.label}の祭り${count}件｜MATSURI`,
       description: (count) => `${region.label}で開催される祭り${count}件をまとめました。開催日程・アクセス・山車や神輿などの見どころを比較できます。`,
       jsonDescription: (count) => `${region.label}で開催される祭り${count}件をまとめました。`,
-      intro: (count) => `${region.label}で開催される祭り${count}件を日程順にまとめました。`
+      intro: (count) => `${region.label}で開催される祭り${count}件を日程順にまとめました。`,
+      filters: { area: "region-scoped", areaRegionSlug: slug, feature: true, month: true }
     }, selected, experienceTags, cssVersion);
     writePage(`regions/${slug}`, html, selected.length, region.label);
     console.log(`${slug}: ${selected.length}件`);

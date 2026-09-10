@@ -14,7 +14,7 @@ function main() {
         return Number(date.slice(5, 7)) === month.number;
       });
     }));
-    const html = renderMonthPage(month, monthItems, experienceTags, cssVersion);
+    const html = renderMonthPage(month, monthItems, experienceTags, cssVersion, { area: "full", feature: true });
     writePage(`months/${month.slug}`, html, monthItems.length, month.label);
     console.log(`${month.label}: ${monthItems.length}件`);
   }

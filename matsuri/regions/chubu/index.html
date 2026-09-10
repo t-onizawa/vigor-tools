@@ -23,7 +23,7 @@
     <link rel="icon" href="/matsuri/favicon.ico" sizes="any">
     <link rel="icon" type="image/png" href="/matsuri/favicon-32x32.png" sizes="32x32">
     <link rel="apple-touch-icon" href="/matsuri/apple-touch-icon.png">
-    <link rel="stylesheet" href="../../shared/festival-list.css?v=26">
+    <link rel="stylesheet" href="../../shared/festival-list.css?v=27">
     <link rel="stylesheet" href="../../shared/month-hub.css?v=1">
     <link rel="stylesheet" href="../../shared/site-nav.css?v=10">
     <script src="/assets/analytics.js" defer></script>
@@ -37,9 +37,14 @@
         <h1>中部の祭り一覧</h1>
         <p class="header-description">中部で開催される祭り27件を日程順にまとめました。</p>
       </header>
-      <p class="count-text">27件を掲載中</p>
+      <section class="filter-section filter-section--hub" aria-label="絞り込み">
+        <label class="area-filter-label" for="hub-area-filter"><span class="sr-only">都道府県で絞り込み</span></label><select id="hub-area-filter" class="area-filter"><option value="">すべての都道府県</option><option value="niigata">新潟県</option><option value="toyama">富山県</option><option value="ishikawa">石川県</option><option value="fukui">福井県</option><option value="yamanashi">山梨県</option><option value="nagano">長野県</option><option value="gifu">岐阜県</option><option value="shizuoka">静岡県</option><option value="aichi">愛知県</option></select>
+        <label class="area-filter-label" for="hub-feature-filter"><span class="sr-only">特徴で絞り込み</span></label><select id="hub-feature-filter" class="area-filter"><option value="">すべての特徴</option><option value="hasDashi">山車</option><option value="hasMikoshi">神輿</option><option value="hasDanceOnDashi">踊り</option><option value="hasParade">曳き回し</option></select>
+        <label class="area-filter-label" for="hub-month-filter"><span class="sr-only">開催月で絞り込み</span></label><select id="hub-month-filter" class="area-filter"><option value="">すべての月</option><option value="1">1月</option><option value="2">2月</option><option value="3">3月</option><option value="4">4月</option><option value="5">5月</option><option value="6">6月</option><option value="7">7月</option><option value="8">8月</option><option value="9">9月</option><option value="10">10月</option><option value="11">11月</option><option value="12">12月</option></select>
+      </section>
+      <p class="count-text" id="hub-count-text">27件を掲載中</p>
       <div class="festival-list">
-      <a class="festival-item festival-item--text" href="../../festivals/tsuruga-matsuri/" data-area="fukui" data-highlight-time="both" data-has-dance-on-dashi="false" data-event-status="ended">
+      <a class="festival-item festival-item--text" href="../../festivals/tsuruga-matsuri/" data-area="fukui" data-feature-keys="hasDashi,hasMikoshi,hasParade" data-months="9" data-highlight-time="both" data-has-dance-on-dashi="false" data-event-status="ended">
         <div class="item-media item-media--icon" aria-hidden="true"><div class="item-media-icon-group"><span class="item-media-icon-plate"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 65 400 400" fill="currentColor" aria-hidden="true">
   <circle cx="130" cy="360" r="40"/>
   <circle cx="270" cy="360" r="40"/>
@@ -100,7 +105,7 @@
           <p class="highlight-comment">神輿と御鳳輦が市内を巡る翌日に、武者人形を飾る山車が氣比神宮前へ集結し、市街地を巡行する。</p>
         </div>
       </a>
-      <a class="festival-item festival-item--text" href="../../festivals/owara-kaze-no-bon/" data-area="toyama" data-highlight-time="night" data-has-dance-on-dashi="n/a" data-event-status="ended">
+      <a class="festival-item festival-item--text" href="../../festivals/owara-kaze-no-bon/" data-area="toyama" data-feature-keys="hasParade" data-months="9" data-highlight-time="night" data-has-dance-on-dashi="n/a" data-event-status="ended">
         <div class="item-media item-media--icon" aria-hidden="true"><div class="item-media-icon-group"><span class="item-media-icon-plate"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 65 400 400" fill="currentColor" aria-hidden="true">
   <rect x="30" y="253" width="340" height="14"/>
 
@@ -165,7 +170,7 @@
           <p class="highlight-comment">灯りがともる坂の町で、編笠の踊り手が三味線と胡弓の哀調ある音色に合わせて町流しを繰り広げる。</p>
         </div>
       </a>
-      <a class="festival-item" href="../../festivals/yoshida-himatsuri/" data-area="yamanashi" data-highlight-time="both" data-has-dance-on-dashi="n/a" data-event-status="ended">
+      <a class="festival-item" href="../../festivals/yoshida-himatsuri/" data-area="yamanashi" data-feature-keys="hasMikoshi,hasParade" data-months="8" data-highlight-time="both" data-has-dance-on-dashi="n/a" data-event-status="ended">
         <div class="item-media"><img class="item-media-img" src="https://i.ytimg.com/vi/YgFvbGiESfA/hqdefault.jpg" alt="" loading="lazy" decoding="async"></div>
         <div class="item-body">
           <div class="item-topline"><span class="prefecture">山梨県富士吉田市</span><span class="status-badge status-ended">終了</span></div>
@@ -213,7 +218,7 @@
           <p class="highlight-comment">富士山の山じまいを告げる祭りで、神輿渡御の道に並ぶ高さ約3メートルの大松明へ一斉に火が入り、町が炎に包まれる。</p>
         </div>
       </a>
-      <a class="festival-item festival-item--text" href="../../festivals/mishima-taisai/" data-area="shizuoka" data-highlight-time="both" data-has-dance-on-dashi="false" data-event-status="ended">
+      <a class="festival-item festival-item--text" href="../../festivals/mishima-taisai/" data-area="shizuoka" data-feature-keys="hasDashi,hasMikoshi,hasParade" data-months="8" data-highlight-time="both" data-has-dance-on-dashi="false" data-event-status="ended">
         <div class="item-media item-media--icon" aria-hidden="true"><div class="item-media-icon-group"><span class="item-media-icon-plate"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 65 400 400" fill="currentColor" aria-hidden="true">
   <circle cx="130" cy="360" r="40"/>
   <circle cx="270" cy="360" r="40"/>
@@ -274,7 +279,7 @@
           <p class="highlight-comment">山車とシャギリ、頼朝公旗挙げ行列、大神輿渡御、踊りを3日間で日替わりに展開する。</p>
         </div>
       </a>
-      <a class="festival-item festival-item--text" href="../../festivals/niigata-matsuri/" data-area="niigata" data-highlight-time="both" data-has-dance-on-dashi="false" data-event-status="ended">
+      <a class="festival-item festival-item--text" href="../../festivals/niigata-matsuri/" data-area="niigata" data-feature-keys="hasMikoshi,hasParade" data-months="8" data-highlight-time="both" data-has-dance-on-dashi="false" data-event-status="ended">
         <div class="item-media item-media--icon" aria-hidden="true"><div class="item-media-icon-group"><span class="item-media-icon-plate"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" fill="currentColor" aria-hidden="true">
   <rect x="20" y="290" width="360" height="30"/>
   <rect x="110" y="220" width="180" height="110"/>
@@ -345,7 +350,7 @@
           <p class="highlight-comment">大民謡流しに始まり、住吉行列と水上みこし、市民みこしが街と川を巡り、信濃川の花火で締めくくる。</p>
         </div>
       </a>
-      <a class="festival-item festival-item--text" href="../../festivals/kawaguchiko-kojosai/" data-area="yamanashi" data-highlight-time="night" data-has-dance-on-dashi="false" data-event-status="ended">
+      <a class="festival-item festival-item--text" href="../../festivals/kawaguchiko-kojosai/" data-area="yamanashi" data-feature-keys="" data-months="8" data-highlight-time="night" data-has-dance-on-dashi="false" data-event-status="ended">
         <div class="item-media item-media--icon" aria-hidden="true"><div class="item-media-icon-group"><span class="item-media-icon-plate"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" fill="currentColor" aria-hidden="true">
   <path fill="none" stroke="currentColor" stroke-width="14" stroke-linecap="round"
     d="M150,80 A50,40 0 0,1 250,80"/>
@@ -410,7 +415,7 @@
           <p class="highlight-comment">富士山を望む河口湖上で、特大スターマインや孔雀花火、音楽連動花火が湖面を照らす。</p>
         </div>
       </a>
-      <a class="festival-item festival-item--text" href="../../festivals/nagaoka-matsuri/" data-area="niigata" data-highlight-time="both" data-has-dance-on-dashi="n/a" data-event-status="ended">
+      <a class="festival-item festival-item--text" href="../../festivals/nagaoka-matsuri/" data-area="niigata" data-feature-keys="hasMikoshi,hasParade" data-months="8" data-highlight-time="both" data-has-dance-on-dashi="n/a" data-event-status="ended">
         <div class="item-media item-media--icon" aria-hidden="true"><div class="item-media-icon-group"><span class="item-media-icon-plate"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" fill="currentColor" aria-hidden="true">
   <rect x="20" y="290" width="360" height="30"/>
   <rect x="110" y="220" width="180" height="110"/>
@@ -481,7 +486,7 @@
           <p class="highlight-comment">長岡空襲からの復興を願った長岡復興祭を起源に、慰霊と平和の祈りをつなぐ灯籠流し、民踊、神輿、花火が三日間にわたって続く。</p>
         </div>
       </a>
-      <a class="festival-item festival-item--text" href="../../festivals/matsumoto-bonbon/" data-area="nagano" data-highlight-time="night" data-has-dance-on-dashi="n/a" data-event-status="ended">
+      <a class="festival-item festival-item--text" href="../../festivals/matsumoto-bonbon/" data-area="nagano" data-feature-keys="hasParade" data-months="8" data-highlight-time="night" data-has-dance-on-dashi="n/a" data-event-status="ended">
         <div class="item-media item-media--icon" aria-hidden="true"><div class="item-media-icon-group"><span class="item-media-icon-plate"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 65 400 400" fill="currentColor" aria-hidden="true">
   <rect x="30" y="253" width="340" height="14"/>
 
@@ -546,7 +551,7 @@
           <p class="highlight-comment">城下町の中心市街地を歩行者天国にし、参加連がそろいの踊りで一斉に進む松本の夏の総踊り。</p>
         </div>
       </a>
-      <a class="festival-item festival-item--text" href="../../festivals/ishizaki-hoto-matsuri/" data-area="ishikawa" data-highlight-time="both" data-has-dance-on-dashi="n/a" data-event-status="ended">
+      <a class="festival-item festival-item--text" href="../../festivals/ishizaki-hoto-matsuri/" data-area="ishikawa" data-feature-keys="hasParade" data-months="8" data-highlight-time="both" data-has-dance-on-dashi="n/a" data-event-status="ended">
         <div class="item-media item-media--icon" aria-hidden="true"><div class="item-media-icon-group"><span class="item-media-icon-plate"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 65 400 400" fill="currentColor" aria-hidden="true">
   <rect x="30" y="253" width="340" height="14"/>
 
@@ -611,7 +616,7 @@
           <p class="highlight-comment">漁師町の狭い通りを高さ約15メートル、重さ約2トンの大奉燈6基が進み、堂前広場で激しく乱舞する。</p>
         </div>
       </a>
-      <a class="festival-item festival-item--text" href="../../festivals/nagano-binzuru/" data-area="nagano" data-highlight-time="both" data-has-dance-on-dashi="n/a" data-event-status="ended">
+      <a class="festival-item festival-item--text" href="../../festivals/nagano-binzuru/" data-area="nagano" data-feature-keys="hasParade" data-months="8" data-highlight-time="both" data-has-dance-on-dashi="n/a" data-event-status="ended">
         <div class="item-media item-media--icon" aria-hidden="true"><div class="item-media-icon-group"><span class="item-media-icon-plate"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 65 400 400" fill="currentColor" aria-hidden="true">
   <rect x="30" y="253" width="340" height="14"/>
 
@@ -676,7 +681,7 @@
           <p class="highlight-comment">善光寺表参道と昭和通りを舞台に、多数の参加連が「市民総和楽・総参加」のびんずる踊りで街を埋める。</p>
         </div>
       </a>
-      <a class="festival-item festival-item--text" href="../../festivals/owari-tsushima-tenno-matsuri/" data-area="aichi" data-highlight-time="both" data-has-dance-on-dashi="n/a" data-event-status="ended">
+      <a class="festival-item festival-item--text" href="../../festivals/owari-tsushima-tenno-matsuri/" data-area="aichi" data-feature-keys="hasParade" data-months="7" data-highlight-time="both" data-has-dance-on-dashi="n/a" data-event-status="ended">
         <div class="item-media item-media--icon" aria-hidden="true"><div class="item-media-icon-group"><span class="item-media-icon-plate"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 65 400 400" fill="currentColor" aria-hidden="true">
   <rect x="30" y="253" width="340" height="14"/>
 
@@ -741,7 +746,7 @@
           <p class="highlight-comment">宵祭は無数の提灯を半球状に掲げた巻藁船が水面を進み、朝祭は能人形を飾った車楽舟へ姿を変える。</p>
         </div>
       </a>
-      <a class="festival-item festival-item--text" href="../../festivals/gujo-odori/" data-area="gifu" data-highlight-time="night" data-has-dance-on-dashi="n/a" data-event-status="ended">
+      <a class="festival-item festival-item--text" href="../../festivals/gujo-odori/" data-area="gifu" data-feature-keys="hasParade" data-months="7,8,9" data-highlight-time="night" data-has-dance-on-dashi="n/a" data-event-status="ended">
         <div class="item-media item-media--icon" aria-hidden="true"><div class="item-media-icon-group"><span class="item-media-icon-plate"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 65 400 400" fill="currentColor" aria-hidden="true">
   <rect x="30" y="253" width="340" height="14"/>
 
@@ -806,7 +811,7 @@
           <p class="highlight-comment">城下町の各所を一夜一会場で巡り、盆の4夜は翌朝まで踊り続ける。見るだけでなく誰でも輪へ入れる長期の盆踊り。</p>
         </div>
       </a>
-      <a class="festival-item festival-item--text" href="../../festivals/murakami-taisai/" data-area="niigata" data-highlight-time="both" data-has-dance-on-dashi="false" data-event-status="ended">
+      <a class="festival-item festival-item--text" href="../../festivals/murakami-taisai/" data-area="niigata" data-feature-keys="hasDashi,hasMikoshi,hasParade" data-months="7" data-highlight-time="both" data-has-dance-on-dashi="false" data-event-status="ended">
         <div class="item-media item-media--icon" aria-hidden="true"><div class="item-media-icon-group"><span class="item-media-icon-plate"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 65 400 400" fill="currentColor" aria-hidden="true">
   <circle cx="130" cy="360" r="40"/>
   <circle cx="270" cy="360" r="40"/>
@@ -867,7 +872,7 @@
           <p class="highlight-comment">夜明け前から19台のシャギリ屋台が羽黒神社へ集まり、三基の神輿を中心とする長いお旅神事が城下町を巡る。</p>
         </div>
       </a>
-      <a class="festival-item" href="../../festivals/abare-matsuri/" data-area="ishikawa" data-highlight-time="night" data-has-dance-on-dashi="false" data-event-status="ended">
+      <a class="festival-item" href="../../festivals/abare-matsuri/" data-area="ishikawa" data-feature-keys="hasMikoshi,hasParade" data-months="7" data-highlight-time="night" data-has-dance-on-dashi="false" data-event-status="ended">
         <div class="item-media"><img class="item-media-img" src="https://i.ytimg.com/vi/Mm0t5EVlm5A/hqdefault.jpg" alt="" loading="lazy" decoding="async"></div>
         <div class="item-body">
           <div class="item-topline"><span class="prefecture">石川県能登町</span><span class="status-badge status-ended">終了</span></div>
@@ -915,7 +920,7 @@
           <p class="highlight-comment">約40基の奉燈が大松明の火の粉へ進み、翌日は神輿を海・川・火へ投じて激しく暴れさせる。</p>
         </div>
       </a>
-      <a class="festival-item festival-item--text" href="../../festivals/tonami-yotaka-matsuri/" data-area="toyama" data-highlight-time="night" data-has-dance-on-dashi="false" data-event-status="ended">
+      <a class="festival-item festival-item--text" href="../../festivals/tonami-yotaka-matsuri/" data-area="toyama" data-feature-keys="hasDashi,hasParade" data-months="6" data-highlight-time="night" data-has-dance-on-dashi="false" data-event-status="ended">
         <div class="item-media item-media--icon" aria-hidden="true"><div class="item-media-icon-group"><span class="item-media-icon-plate"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 65 400 400" fill="currentColor" aria-hidden="true">
   <circle cx="130" cy="360" r="40"/>
   <circle cx="270" cy="360" r="40"/>
@@ -987,7 +992,7 @@
           <p class="highlight-comment">高さ6メートル超の鮮やかな大行燈が夜の市街地を進み、最終夜は行燈同士が正面からぶつかる「突合せ」で最高潮を迎える。</p>
         </div>
       </a>
-      <a class="festival-item festival-item--text" href="../../festivals/mikuni-matsuri/" data-area="fukui" data-highlight-time="both" data-has-dance-on-dashi="false" data-event-status="ended">
+      <a class="festival-item festival-item--text" href="../../festivals/mikuni-matsuri/" data-area="fukui" data-feature-keys="hasDashi,hasMikoshi,hasParade" data-months="5" data-highlight-time="both" data-has-dance-on-dashi="false" data-event-status="ended">
         <div class="item-media item-media--icon" aria-hidden="true"><div class="item-media-icon-group"><span class="item-media-icon-plate"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 65 400 400" fill="currentColor" aria-hidden="true">
   <circle cx="130" cy="360" r="40"/>
   <circle cx="270" cy="360" r="40"/>
@@ -1048,7 +1053,7 @@
           <p class="highlight-comment">毎年作り替える武者人形を載せた高さ約6.5メートルの山車6基が、子どもたちの祭囃子とともに湊町を巡行する。</p>
         </div>
       </a>
-      <a class="festival-item festival-item--text" href="../../festivals/seihakusai-dekayama/" data-area="ishikawa" data-highlight-time="both" data-has-dance-on-dashi="false" data-event-status="ended">
+      <a class="festival-item festival-item--text" href="../../festivals/seihakusai-dekayama/" data-area="ishikawa" data-feature-keys="hasDashi,hasParade" data-months="5" data-highlight-time="both" data-has-dance-on-dashi="false" data-event-status="ended">
         <div class="item-media item-media--icon" aria-hidden="true"><div class="item-media-icon-group"><span class="item-media-icon-plate"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 65 400 400" fill="currentColor" aria-hidden="true">
   <circle cx="130" cy="360" r="40"/>
   <circle cx="270" cy="360" r="40"/>
@@ -1120,7 +1125,7 @@
           <p class="highlight-comment">高さ約12メートル、重さ約20トンの巨大な曳山が車輪をきしませて進み、狭い辻で豪快に方向転換する。</p>
         </div>
       </a>
-      <a class="festival-item festival-item--text" href="../../festivals/hamamatsu-matsuri/" data-area="shizuoka" data-highlight-time="both" data-has-dance-on-dashi="false" data-event-status="ended">
+      <a class="festival-item festival-item--text" href="../../festivals/hamamatsu-matsuri/" data-area="shizuoka" data-feature-keys="hasDashi,hasParade" data-months="5" data-highlight-time="both" data-has-dance-on-dashi="false" data-event-status="ended">
         <div class="item-media item-media--icon" aria-hidden="true"><div class="item-media-icon-group"><span class="item-media-icon-plate"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 65 400 400" fill="currentColor" aria-hidden="true">
   <circle cx="130" cy="360" r="40"/>
   <circle cx="270" cy="360" r="40"/>
@@ -1192,7 +1197,7 @@
           <p class="highlight-comment">昼は遠州灘を望む会場で大凧同士が糸を切り合い、夜は精緻な御殿屋台が提灯の光の中を進む。</p>
         </div>
       </a>
-      <a class="festival-item festival-item--text" href="../../festivals/kamezaki-shiohi-matsuri/" data-area="aichi" data-highlight-time="day" data-has-dance-on-dashi="false" data-event-status="ended">
+      <a class="festival-item festival-item--text" href="../../festivals/kamezaki-shiohi-matsuri/" data-area="aichi" data-feature-keys="hasDashi,hasParade" data-months="5" data-highlight-time="day" data-has-dance-on-dashi="false" data-event-status="ended">
         <div class="item-media item-media--icon" aria-hidden="true"><div class="item-media-icon-group"><span class="item-media-icon-plate"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 65 400 400" fill="currentColor" aria-hidden="true">
   <circle cx="130" cy="360" r="40"/>
   <circle cx="270" cy="360" r="40"/>
@@ -1264,7 +1269,7 @@
           <p class="highlight-comment">5輌の山車を神前神社前の海浜へ曳き下ろす、潮の満ち引きと結び付いた山車行事。</p>
         </div>
       </a>
-      <a class="festival-item festival-item--text" href="../../festivals/takaoka-mikurumayama-matsuri/" data-area="toyama" data-highlight-time="both" data-has-dance-on-dashi="false" data-event-status="ended">
+      <a class="festival-item festival-item--text" href="../../festivals/takaoka-mikurumayama-matsuri/" data-area="toyama" data-feature-keys="hasDashi,hasParade" data-months="4,5" data-highlight-time="both" data-has-dance-on-dashi="false" data-event-status="ended">
         <div class="item-media item-media--icon" aria-hidden="true"><div class="item-media-icon-group"><span class="item-media-icon-plate"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 65 400 400" fill="currentColor" aria-hidden="true">
   <circle cx="130" cy="360" r="40"/>
   <circle cx="270" cy="360" r="40"/>
@@ -1336,7 +1341,7 @@
           <p class="highlight-comment">高岡の金工・漆工の粋を凝縮した7基の御車山が城下町を進み、勢揃式では豪華な装飾が一堂に会する。</p>
         </div>
       </a>
-      <a class="festival-item festival-item--text" href="../../festivals/furukawa-matsuri/" data-area="gifu" data-highlight-time="both" data-has-dance-on-dashi="false" data-event-status="ended">
+      <a class="festival-item festival-item--text" href="../../festivals/furukawa-matsuri/" data-area="gifu" data-feature-keys="hasDashi,hasMikoshi,hasParade" data-months="4" data-highlight-time="both" data-has-dance-on-dashi="false" data-event-status="ended">
         <div class="item-media item-media--icon" aria-hidden="true"><div class="item-media-icon-group"><span class="item-media-icon-plate"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 65 400 400" fill="currentColor" aria-hidden="true">
   <circle cx="130" cy="360" r="40"/>
   <circle cx="270" cy="360" r="40"/>
@@ -1397,7 +1402,7 @@
           <p class="highlight-comment">19日夜は大太鼓を載せた櫓と付け太鼓が町を進み、20日は屋台の曳き揃え、からくり、子ども歌舞伎が続く。</p>
         </div>
       </a>
-      <a class="festival-item festival-item--text" href="../../festivals/takayama-sanno-matsuri/" data-area="gifu" data-highlight-time="both" data-has-dance-on-dashi="false" data-event-status="ended">
+      <a class="festival-item festival-item--text" href="../../festivals/takayama-sanno-matsuri/" data-area="gifu" data-feature-keys="hasDashi,hasParade" data-months="4" data-highlight-time="both" data-has-dance-on-dashi="false" data-event-status="ended">
         <div class="item-media item-media--icon" aria-hidden="true"><div class="item-media-icon-group"><span class="item-media-icon-plate"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 65 400 400" fill="currentColor" aria-hidden="true">
   <circle cx="130" cy="360" r="40"/>
   <circle cx="270" cy="360" r="40"/>
@@ -1469,7 +1474,7 @@
           <p class="highlight-comment">精緻な祭屋台が城下町に曳き揃えられ、からくりを奉納。14日夜は提灯をともした屋台が順道を巡る。</p>
         </div>
       </a>
-      <a class="festival-item festival-item--text" href="../../festivals/inuyama-matsuri/" data-area="aichi" data-highlight-time="both" data-has-dance-on-dashi="false" data-event-status="ended">
+      <a class="festival-item festival-item--text" href="../../festivals/inuyama-matsuri/" data-area="aichi" data-feature-keys="hasDashi,hasParade" data-months="4" data-highlight-time="both" data-has-dance-on-dashi="false" data-event-status="ended">
         <div class="item-media item-media--icon" aria-hidden="true"><div class="item-media-icon-group"><span class="item-media-icon-plate"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 65 400 400" fill="currentColor" aria-hidden="true">
   <circle cx="130" cy="360" r="40"/>
   <circle cx="270" cy="360" r="40"/>
@@ -1541,7 +1546,7 @@
           <p class="highlight-comment">13輌の三層車山が城下町へ曳き出され、異なるからくりを奉納。夜は車山に提灯がともる。</p>
         </div>
       </a>
-      <a class="festival-item festival-item--text" href="../../festivals/shingenko-matsuri/" data-area="yamanashi" data-highlight-time="both" data-has-dance-on-dashi="n/a" data-event-status="ended">
+      <a class="festival-item festival-item--text" href="../../festivals/shingenko-matsuri/" data-area="yamanashi" data-feature-keys="hasMikoshi,hasParade" data-months="4" data-highlight-time="both" data-has-dance-on-dashi="n/a" data-event-status="ended">
         <div class="item-media item-media--icon" aria-hidden="true"><div class="item-media-icon-group"><span class="item-media-icon-plate"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" fill="currentColor" aria-hidden="true">
   <rect x="20" y="290" width="360" height="30"/>
   <rect x="110" y="220" width="180" height="110"/>
@@ -1612,7 +1617,7 @@
           <p class="highlight-comment">1,000人を超える甲冑姿の参加者が風林火山の軍団を組み、かがり火の甲府中心部に戦国絵巻を再現する。</p>
         </div>
       </a>
-      <a class="festival-item festival-item--text" href="../../festivals/shizuoka-matsuri/" data-area="shizuoka" data-highlight-time="both" data-has-dance-on-dashi="false" data-event-status="ended">
+      <a class="festival-item festival-item--text" href="../../festivals/shizuoka-matsuri/" data-area="shizuoka" data-feature-keys="hasParade" data-months="4" data-highlight-time="both" data-has-dance-on-dashi="false" data-event-status="ended">
         <div class="item-media item-media--icon" aria-hidden="true"><div class="item-media-icon-group"><span class="item-media-icon-plate"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 65 400 400" fill="currentColor" aria-hidden="true">
   <rect x="30" y="253" width="340" height="14"/>
 
@@ -1677,7 +1682,7 @@
           <p class="highlight-comment">徳川家康の花見の故事を、大御所と家臣らが市街地を進む豪華な時代行列として再現する。</p>
         </div>
       </a>
-      <a class="festival-item festival-item--text" href="../../festivals/katsuyama-sagicho-matsuri/" data-area="fukui" data-highlight-time="both" data-has-dance-on-dashi="true" data-event-status="ended">
+      <a class="festival-item festival-item--text" href="../../festivals/katsuyama-sagicho-matsuri/" data-area="fukui" data-feature-keys="hasDanceOnDashi" data-months="2" data-highlight-time="both" data-has-dance-on-dashi="true" data-event-status="ended">
         <div class="item-media item-media--icon" aria-hidden="true"><div class="item-media-icon-group"><span class="item-media-icon-plate"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" fill="currentColor" aria-hidden="true">
   <path fill-rule="evenodd" clip-rule="evenodd" d="
     M60,200 A140,140 0 1,0 340,200 A140,140 0 1,0 60,200 Z
@@ -1732,7 +1737,7 @@
           <p class="highlight-comment">市街地12基の櫓で赤い長襦袢の踊り手が軽快に浮かれ、最終夜は雪景色の弁天河原でどんど焼きが一斉に燃え上がる。</p>
         </div>
       </a>
-      <a class="festival-item festival-item--text" href="../../festivals/nozawa-onsen-dosojin-matsuri/" data-area="nagano" data-highlight-time="night" data-has-dance-on-dashi="false" data-event-status="ended">
+      <a class="festival-item festival-item--text" href="../../festivals/nozawa-onsen-dosojin-matsuri/" data-area="nagano" data-feature-keys="" data-months="1" data-highlight-time="night" data-has-dance-on-dashi="false" data-event-status="ended">
         <div class="item-media item-media--icon" aria-hidden="true"><div class="item-media-icon-group"><span class="item-media-icon-plate"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" fill="currentColor" aria-hidden="true">
   <path fill="none" stroke="currentColor" stroke-width="14" stroke-linecap="round"
     d="M150,80 A50,40 0 0,1 250,80"/>
@@ -1801,6 +1806,7 @@
       <p class="disclaimer">掲載内容は各祭りの詳細ページに記載の出典・確認日に基づきます。最新の開催情報は公式サイトでご確認ください。</p>
       <p class="back-to-list"><a href="../../index.html">すべての祭りを見る →</a></p>
     </main>
+    <script src="../../shared/hub-filter.js?v=1"></script>
     <script src="../../shared/site-nav.js?v=7"></script>
   </body>
 </html>

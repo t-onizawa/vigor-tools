@@ -41,7 +41,8 @@ function main() {
       description: (count) => `${prefecture}で開催される祭り${count}件をまとめました。開催日程・アクセス・山車や神輿などの見どころを比較できます。`,
       jsonDescription: (count) => `${prefecture}で開催される祭り${count}件をまとめました。`,
       intro: (count) => `${prefecture}で開催される祭り${count}件を日程順にまとめました。`,
-      auxiliaryLink: regionLink
+      auxiliaryLink: regionLink,
+      filters: { feature: true, month: true }
     }, selected, experienceTags, cssVersion);
     writePage(`prefectures/${areaTag}`, html, selected.length, prefecture);
     generatedSlugs.push(areaTag);

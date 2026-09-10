@@ -37,7 +37,8 @@ function main() {
       title: (count) => titleFor(hub, count),
       description: (count) => `${hub.label}が見どころの祭り${count}件をまとめました。開催日程・アクセス・山車や神輿などの特徴を比較できます。`,
       jsonDescription: (count) => `${hub.label}が見どころの祭り${count}件をまとめました。`,
-      intro: (count) => `${hub.label}が見どころの祭り${count}件を日程順にまとめました。`
+      intro: (count) => `${hub.label}が見どころの祭り${count}件を日程順にまとめました。`,
+      filters: { area: "full", month: true }
     }, selected, experienceTags, cssVersion);
     writePage(`features/${hub.slug}`, html, selected.length, hub.label);
     console.log(`${hub.slug}: ${selected.length}件`);
