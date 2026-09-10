@@ -444,7 +444,7 @@
     logo.setAttribute("aria-label", "MATSURI");
     const wordmark = document.createElement("img");
     wordmark.className = "site-nav-logo-wordmark";
-    wordmark.src = relativeFile([], "shared/brand/matsuri-logo.png");
+    wordmark.src = `${relativeFile([], "shared/brand/matsuri-logo.png")}?v=2`;
     wordmark.alt = "";
     logo.append(wordmark);
 

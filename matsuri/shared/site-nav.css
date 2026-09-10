@@ -51,8 +51,8 @@
 
 .site-nav-logo-wordmark {
   display: block;
-  height: 34px;
-  width: auto;
+  width: 90px;
+  height: auto;
 }
 
 .site-nav-items {
@@ -413,7 +413,7 @@
   }
 
   .site-nav-logo-wordmark {
-    height: 30px;
+    width: 100px;
   }
 
   .site-nav-items {
