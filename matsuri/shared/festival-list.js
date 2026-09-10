@@ -713,9 +713,16 @@
     if (!section || !list) return;
 
     const upcomingItems = getUpcomingSoonItems(items);
+    const selectedPrefectures = REGION_PREFECTURES[getStoredRegion()];
 
-    const ongoingItems = upcomingItems.filter((item) => isOngoingToday(item.yearlyInfo));
-    const upcomingOnlyItems = upcomingItems.filter((item) => !isOngoingToday(item.yearlyInfo));
+    const ongoingItems = sortByRegionPriority(
+      upcomingItems.filter((item) => isOngoingToday(item.yearlyInfo)),
+      selectedPrefectures
+    );
+    const upcomingOnlyItems = sortByRegionPriority(
+      upcomingItems.filter((item) => !isOngoingToday(item.yearlyInfo)),
+      selectedPrefectures
+    );
 
     if (ongoingItems.length === 0 && upcomingOnlyItems.length === 0) {
       section.hidden = true;
@@ -826,16 +833,19 @@
       thumbs.hidden = thumbItems.length === 0;
     }
 
-    const sortedWeekendItems = selectedPrefectures
-      ? [...weekendItems].sort((a, b) => {
-          const aInRegion = selectedPrefectures.includes(a.festival.areaTag) ? 0 : 1;
-          const bInRegion = selectedPrefectures.includes(b.festival.areaTag) ? 0 : 1;
-          return aInRegion - bInRegion;
-        })
-      : weekendItems;
+    const sortedWeekendItems = sortByRegionPriority(weekendItems, selectedPrefectures);
     picksList.replaceChildren(...sortedWeekendItems.slice(0, 4).map((item) => renderPickCard(item, "weekend_picks")));
     bannerSection.hidden = false;
     picksSection.hidden = false;
+  }
+
+  function sortByRegionPriority(items, selectedPrefectures) {
+    if (!selectedPrefectures) return items;
+    return [...items].sort((a, b) => {
+      const aInRegion = selectedPrefectures.includes(a.festival.areaTag) ? 0 : 1;
+      const bInRegion = selectedPrefectures.includes(b.festival.areaTag) ? 0 : 1;
+      return aInRegion - bInRegion;
+    });
   }
 
   function getStoredRegion() {
