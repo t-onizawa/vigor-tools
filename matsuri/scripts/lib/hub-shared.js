@@ -182,7 +182,7 @@ function parkingText(value) {
 
 function renderFeatureChip(label, value, iconName) {
   const state = availabilityState(value);
-  return `<span class="card-feature-chip ${state.className}" title="${escapeHtml(label)}: ${state.label}"><span class="card-feature-icon" aria-hidden="true">${ICONS[iconName]}</span><span class="card-feature-label">${escapeHtml(label)}</span></span>`;
+  return `<span class="card-feature-chip ${state.className}" data-feature="${iconName}" title="${escapeHtml(label)}: ${state.label}"><span class="card-feature-icon" aria-hidden="true">${ICONS[iconName]}</span><span class="card-feature-label">${escapeHtml(label)}</span></span>`;
 }
 
 function renderDummyMedia(features) {
@@ -221,14 +221,15 @@ function renderFestivalCard(item, experienceTags) {
   const months = Array.isArray(yearlyInfo.dates) && yearlyInfo.dates.length > 0
     ? [...new Set(yearlyInfo.dates.map((d) => Number(d.slice(5, 7))))].join(",")
     : "";
+  const statusBadge = `<span class="status-badge status-${escapeHtml(status || "unknown")}">${escapeHtml(EVENT_STATUS_LABELS[status] || "未確認")}</span>`;
   return `      <a class="festival-item${hasPhoto ? "" : " festival-item--text"}" href="../../festivals/${encodeURIComponent(festival.id)}/" data-area="${escapeHtml(festival.areaTag || "")}" data-feature-keys="${escapeHtml(featureKeys)}" data-months="${escapeHtml(months)}" data-highlight-time="${escapeHtml(features.highlightTime || "")}" data-has-dance-on-dashi="${escapeHtml(String(features.hasDanceOnDashi))}" data-event-status="${escapeHtml(status || "")}">
         ${visual}
         <div class="item-body">
-          <div class="item-topline"><span class="prefecture">${escapeHtml(festival.prefecture ? `${festival.prefecture}${festival.city || ""}` : "都道府県未確認")}</span><span class="status-badge status-${escapeHtml(status || "unknown")}">${escapeHtml(EVENT_STATUS_LABELS[status] || "未確認")}</span></div>
+          <div class="item-topline"><span class="prefecture">${escapeHtml(festival.prefecture ? `${festival.prefecture}${festival.city || ""}` : "都道府県未確認")}</span></div>
           <h2 class="item-name">${escapeHtml(festival.name || "名称未確認")}</h2>
           <p class="item-date">${escapeHtml(formatDateRange(yearlyInfo))}</p>
           <div class="card-feature-chips">${chips}</div>
-          <div class="card-meta">${renderMetaItem("見どころ", HIGHLIGHT_TIME_LABELS[features.highlightTime] || "未確認", "meta-item--highlight-time")}${renderMetaItem("駐車場", parkingText(access.hasParking))}${video}</div>
+          <div class="card-meta">${renderMetaItem("見どころ", HIGHLIGHT_TIME_LABELS[features.highlightTime] || "未確認", "meta-item--highlight-time")}${renderMetaItem("駐車場", parkingText(access.hasParking))}${video}${statusBadge}</div>
 ${highlight}        </div>
       </a>`;
 }
