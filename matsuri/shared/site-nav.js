@@ -409,7 +409,7 @@
         message.textContent = "検索データを読み込めませんでした。時間をおいて再度お試しください。";
         results.replaceChildren(message);
       }
-      input.focus();
+      closeButton.focus();
     }
 
     closeButton.addEventListener("click", closeSearchModal);
