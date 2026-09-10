@@ -1069,6 +1069,29 @@ h1 {
   flex-shrink: 0;
 }
 
+.region-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 12px;
+}
+
+.region-links a {
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  padding: 7px 14px;
+  background: var(--surface);
+  color: var(--text);
+  font-size: 0.82rem;
+  font-weight: 700;
+}
+
+.region-links a:hover,
+.region-links a:focus-visible {
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
 .weekend-picks-list,
 .upcoming-soon-cards {
   display: flex;
