@@ -1019,7 +1019,9 @@
         control.addEventListener("click", () => {
           monthFilter.value = String(month);
           monthFilter.dispatchEvent(new Event("change", { bubbles: true }));
-          festivalList.scrollIntoView({ behavior: "smooth", block: "start" });
+          const rect = festivalList.getBoundingClientRect();
+          const targetY = window.scrollY + rect.top - 80;
+          window.scrollTo({ top: Math.max(targetY, 0), behavior: "smooth" });
         });
       }
       return control;
