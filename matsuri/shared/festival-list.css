@@ -941,9 +941,51 @@ h1 {
 }
 
 .area-entry-button {
+  display: flex;
+  align-items: center;
+  gap: 12px;
   min-width: 0;
-  padding: 11px 8px;
-  font-size: 0.82rem;
+  padding: 14px 16px;
+  font-size: 0.88rem;
+  text-align: left;
+}
+
+.area-entry-icon {
+  display: grid;
+  place-items: center;
+  width: 34px;
+  height: 34px;
+  flex-shrink: 0;
+  border-radius: 50%;
+  background: var(--indigo-tint);
+  color: var(--accent);
+}
+
+.area-entry-icon::before {
+  content: "";
+  display: block;
+  width: 18px;
+  height: 18px;
+  background-color: currentColor;
+  -webkit-mask-image: url("icons/section-pin.svg");
+  mask-image: url("icons/section-pin.svg");
+  -webkit-mask-size: contain;
+  mask-size: contain;
+  -webkit-mask-repeat: no-repeat;
+  mask-repeat: no-repeat;
+  -webkit-mask-position: center;
+  mask-position: center;
+}
+
+.area-entry-icon--region::before {
+  -webkit-mask-image: url("icons/area-region.svg");
+  mask-image: url("icons/area-region.svg");
+}
+
+.area-entry-chevron {
+  margin-left: auto;
+  color: var(--muted);
+  flex-shrink: 0;
 }
 
 .weekend-picks-section h2 {

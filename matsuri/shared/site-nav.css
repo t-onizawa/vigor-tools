@@ -53,7 +53,8 @@
   position: relative;
   display: inline-flex;
   width: 4px;
-  align-self: stretch;
+  height: 1.3em;
+  align-self: center;
   align-items: center;
   margin-right: 10px;
 }
