@@ -25,31 +25,25 @@
     <link rel="icon" href="/matsuri/favicon.ico" sizes="any">
     <link rel="icon" type="image/png" href="/matsuri/favicon-32x32.png" sizes="32x32">
     <link rel="apple-touch-icon" href="/matsuri/apple-touch-icon.png">
-<link rel="stylesheet" href="shared/festival-list.css?v=23">
+<link rel="stylesheet" href="shared/festival-list.css?v=24">
     <script src="/assets/analytics.js" defer></script>
     <link rel="stylesheet" href="shared/site-nav.css?v=7">
 </head>
   <body>
     <main class="page-shell">
-      <header class="list-header">
-        <p class="brand-row"><a href="../index.html">VIGOR LAB</a></p>
-        <h1>MATSURI</h1>
-        <p class="header-description">
-          祭りの気配を、探しにいく。
-        </p>
-      </header>
+      <h1 class="sr-only">MATSURI | 行きたい祭りを探す、山車・神輿まつりガイド</h1>
 
       <section id="weekend-banner-section" class="weekend-banner-section" aria-label="今週末開催の祭り" hidden>
         <a id="weekend-banner-link" class="weekend-banner" href="#weekend-picks-section">
-          <div class="weekend-banner-ring" aria-hidden="true">
-            <span class="weekend-banner-ring-label">今週末</span>
-            <span id="weekend-banner-dates" class="weekend-banner-ring-dates"></span>
-          </div>
-          <div class="weekend-banner-body">
+          <div class="weekend-banner-main">
+            <div class="weekend-banner-ring" aria-hidden="true">
+              <span class="weekend-banner-ring-label">今週末</span>
+              <span id="weekend-banner-dates" class="weekend-banner-ring-dates"></span>
+            </div>
             <p id="weekend-banner-count" class="weekend-banner-count">全国で読み込み中</p>
-            <p class="weekend-banner-cta">今週末の祭りを一覧で見る →</p>
           </div>
-          <div id="weekend-banner-thumb" class="weekend-banner-thumb" aria-hidden="true"></div>
+          <div id="weekend-banner-thumbs" class="weekend-banner-thumbs" aria-hidden="true"></div>
+          <p class="weekend-banner-cta">今週末の祭りを見る →</p>
         </a>
         <button id="weekend-banner-region-entry" class="weekend-banner-region-entry" type="button"></button>
       </section>
@@ -92,7 +86,7 @@
       <section class="filter-section" aria-label="絞り込み">
         <label class="filter-toggle">
           <input id="upcoming-only-toggle" type="checkbox">
-          <span>これから開催される祭り</span>
+          <span>これから開催</span>
         </label>
         <label class="area-filter-label" for="area-filter">
           <span class="sr-only">都道府県で絞り込み</span>
@@ -170,9 +164,6 @@
             <option value="okinawa">沖縄県</option>
           </optgroup>
         </select>
-      </section>
-
-      <section class="filter-section" aria-label="特徴・開催月で絞り込み">
         <label class="area-filter-label" for="feature-filter">
           <span class="sr-only">特徴で絞り込み</span>
         </label>
@@ -230,7 +221,7 @@
 
     <script src="shared/festival-slugs.js?v=8"></script>
     <script src="shared/experience-tags.js?v=1"></script>
-    <script src="shared/festival-list.js?v=29"></script>
+    <script src="shared/festival-list.js?v=30"></script>
     <script src="shared/site-nav.js?v=6"></script>
 </body>
 </html>

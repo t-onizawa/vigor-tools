@@ -1,1 +1,1 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" fill="currentColor" aria-hidden="true"><path d="M120,60 L280,60 L320,180 L260,340 L140,340 L80,180 Z"/></svg>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" fill="none" stroke="currentColor" stroke-width="24" stroke-linejoin="round" aria-hidden="true"><rect x="60" y="60" width="280" height="280" rx="18"/><line x1="200" y1="60" x2="200" y2="340"/><line x1="60" y1="200" x2="340" y2="200"/></svg>

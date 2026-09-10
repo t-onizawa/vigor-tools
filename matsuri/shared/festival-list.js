@@ -79,13 +79,6 @@
     "見どころ": "midokoro"
   };
 
-  const UPCOMING_ICON_PRIORITY = [
-    ["神輿", "hasMikoshi"],
-    ["山車", "hasDashi"],
-    ["踊り", "hasDanceOnDashi"],
-    ["曳き回し", "hasParade"]
-  ];
-
   const iconCache = new Map();
 
   const cardFeatureItems = [
@@ -530,6 +523,86 @@
     return card;
   }
 
+  const PICK_CHIP_MODIFIERS = {
+    "山車": "dashi",
+    "神輿": "mikoshi",
+    "踊り": "odori",
+    "曳き回し": "hikimawashi",
+    "見どころ": "midokoro"
+  };
+
+  function createPickChip(label) {
+    const chip = document.createElement("span");
+    const modifier = PICK_CHIP_MODIFIERS[label];
+    chip.className = modifier ? `pick-chip pick-chip--${modifier}` : "pick-chip";
+    chip.textContent = label;
+    return chip;
+  }
+
+  function renderPickCard(item, section = "weekend_picks") {
+    const { festival, yearlyInfo } = item;
+    const constantInfo = festival.constantInfo || {};
+    const features = constantInfo.features || {};
+    const atmosphereMedia = Array.isArray(constantInfo.atmosphereMedia)
+      ? constantInfo.atmosphereMedia
+      : [];
+    const hasPhoto = Boolean(
+      constantInfo.backgroundImage && constantInfo.backgroundImage.type === "youtube"
+    );
+    const effectiveStatus = getEffectiveEventStatus(yearlyInfo);
+
+    const card = document.createElement("a");
+    card.className = "festival-item pick-card";
+    card.href = `${getListBasePath()}festivals/${festival.id}/`;
+    card.dataset.eventStatus = effectiveStatus || "";
+
+    card.append(hasPhoto ? createItemMedia(constantInfo.backgroundImage) : createDummyMedia(features));
+
+    const body = document.createElement("div");
+    body.className = "pick-card-body";
+
+    const date = document.createElement("p");
+    date.className = "pick-card-date";
+    date.textContent = formatDateRange(yearlyInfo);
+
+    const name = document.createElement("h3");
+    name.className = "pick-card-name";
+    name.textContent = festival.name || "名称未確認";
+
+    const prefecture = document.createElement("p");
+    prefecture.className = "pick-card-prefecture";
+    prefecture.textContent = festival.prefecture
+      ? `${festival.prefecture}${festival.city || ""}`
+      : "";
+
+    const chips = document.createElement("div");
+    chips.className = "pick-card-chips";
+    cardFeatureItems.forEach(([label, key]) => {
+      if (features[key] === true) chips.append(createPickChip(label));
+    });
+    if (features.highlightTime && highlightTimeLabels[features.highlightTime]) {
+      chips.append(createPickChip("見どころ"));
+    }
+
+    body.append(date, name, prefecture, chips);
+    card.append(body);
+
+    card.addEventListener("click", () => {
+      sendGaEvent("festival_card_click", {
+        festival_slug: festival.id,
+        festival_name: festival.name,
+        prefecture: festival.prefecture,
+        event_status: effectiveStatus,
+        has_background_image: hasPhoto,
+        has_atmosphere_media: atmosphereMedia.length > 0,
+        link_url: card.href,
+        section
+      });
+    });
+
+    return card;
+  }
+
   function createVideoBadge() {
     const badge = document.createElement("span");
     badge.className = "meta-item meta-item--video";
@@ -563,11 +636,6 @@
     return found.length > 0 ? found.slice(0, 2) : ["見どころ"];
   }
 
-  function pickUpcomingIconLabel(features) {
-    const found = UPCOMING_ICON_PRIORITY.find(([, key]) => features[key] === true);
-    return found ? found[0] : "見どころ";
-  }
-
   function createDummyMedia(features) {
     const media = document.createElement("div");
     media.className = "item-media item-media--icon";
@@ -587,80 +655,15 @@
     return media;
   }
 
-  async function attachDummyIcon(container, label) {
-    const svgText = await loadIconSvg(label);
-    if (svgText) {
-      container.innerHTML = svgText;
-    }
-  }
-
-  function renderUpcomingSoonCard(item) {
-    const { festival, yearlyInfo } = item;
-    const constantInfo = festival.constantInfo || {};
-    const features = constantInfo.features || {};
-    const atmosphereMedia = Array.isArray(constantInfo.atmosphereMedia)
-      ? constantInfo.atmosphereMedia
-      : [];
-    const hasPhoto = Boolean(
-      constantInfo.backgroundImage && constantInfo.backgroundImage.type === "youtube"
-    );
-    const experienceTag =
-      typeof EXPERIENCE_TAGS !== "undefined" ? EXPERIENCE_TAGS[festival.id] : undefined;
-
-    const card = document.createElement("a");
-    card.className = "upcoming-mini-card";
-    card.href = `festivals/${festival.id}/`;
-
-    const media = document.createElement("div");
-    media.className = "upcoming-mini-media";
-
-    if (hasPhoto) {
-      const img = document.createElement("img");
-      img.className = "upcoming-mini-thumb";
-      img.src = `https://i.ytimg.com/vi/${constantInfo.backgroundImage.contentId}/hqdefault.jpg`;
-      img.alt = "";
-      img.loading = "lazy";
-      media.append(img);
-    } else {
-      media.classList.add("upcoming-mini-media--icon");
-      attachDummyIcon(media, pickUpcomingIconLabel(features));
-    }
-
-    const body = document.createElement("div");
-    body.className = "upcoming-mini-body";
-
-    const prefecture = document.createElement("span");
-    prefecture.className = "upcoming-mini-prefecture";
-    prefecture.textContent = festival.prefecture
-      ? `${festival.prefecture}${festival.city || ""}`
-      : "";
-
-    const name = document.createElement("span");
-    name.className = "upcoming-mini-name";
-    name.textContent = festival.name || "";
-
-    const date = document.createElement("span");
-    date.className = "upcoming-mini-date";
-    date.textContent = formatDateRange(yearlyInfo);
-
-    body.append(prefecture, name, date);
-    card.append(media, body);
-
-    card.addEventListener("click", () => {
-      sendGaEvent("festival_card_click", {
-        festival_slug: festival.id,
-        festival_name: festival.name,
-        prefecture: festival.prefecture,
-        event_status: getEffectiveEventStatus(yearlyInfo),
-        has_background_image: hasPhoto,
-        has_atmosphere_media: atmosphereMedia.length > 0,
-        experience_tag: experienceTag || "none",
-        link_url: card.href,
-        section: "upcoming_soon"
-      });
-    });
-
-    return card;
+  function attachDummyIcon(container, label) {
+    const file = FEATURE_ICON_FILES[label];
+    if (!file) return;
+    const imageName = file === "midokoro" ? "night" : file;
+    const img = document.createElement("img");
+    img.className = "dummy-icon-img";
+    img.src = `${getListBasePath()}shared/icons/section-feature-${imageName}.png`;
+    img.alt = "";
+    container.replaceChildren(img);
   }
 
   function render(items) {
@@ -726,7 +729,11 @@
         heading.className = "upcoming-soon-group-heading";
         heading.textContent = headingText;
 
-        group.append(heading, ...groupItems.map(renderUpcomingSoonCard));
+        const cards = document.createElement("div");
+        cards.className = "upcoming-soon-cards";
+        cards.append(...groupItems.map((item) => renderPickCard(item, "upcoming_soon")));
+
+        group.append(heading, cards);
         return group;
       });
 
@@ -769,28 +776,45 @@
     const range = getUpcomingWeekendRange();
     const dates = document.getElementById("weekend-banner-dates");
     const count = document.getElementById("weekend-banner-count");
-    const thumb = document.getElementById("weekend-banner-thumb");
+    const thumbs = document.getElementById("weekend-banner-thumbs");
     if (dates) dates.textContent = `${formatWeekendDate(range.satTime)}–${formatWeekendDate(range.sunTime)}`;
     if (count) {
-      count.textContent = selectedPrefectures && regionalWeekendItems.length === 0
-        ? `${REGION_LABELS[selectedRegion]}では今週末開催の祭りはありません`
-        : `${selectedPrefectures ? REGION_LABELS[selectedRegion] : "全国"}で${regionalWeekendItems.length}件`;
+      count.replaceChildren();
+      if (selectedPrefectures && regionalWeekendItems.length === 0) {
+        count.textContent = `${REGION_LABELS[selectedRegion]}では今週末開催の祭りはありません`;
+      } else {
+        const regionLabel = document.createElement("span");
+        regionLabel.className = "weekend-banner-count-region";
+        regionLabel.textContent = `${selectedPrefectures ? REGION_LABELS[selectedRegion] : "全国"}で`;
+        const num = document.createElement("span");
+        num.className = "weekend-banner-count-num";
+        num.textContent = String(regionalWeekendItems.length);
+        const suffix = document.createElement("span");
+        suffix.className = "weekend-banner-count-suffix";
+        suffix.textContent = "件の祭りを開催";
+        count.append(regionLabel, num, suffix);
+      }
     }
 
-    const firstRegionalItem = regionalWeekendItems[0];
-    const firstBackground = firstRegionalItem && firstRegionalItem.festival.constantInfo &&
-      firstRegionalItem.festival.constantInfo.backgroundImage;
-    if (thumb) {
-      const hasThumb = Boolean(
-        firstBackground && firstBackground.type === "youtube" && firstBackground.contentId
+    if (thumbs) {
+      const thumbItems = regionalWeekendItems
+        .map((item) => item.festival.constantInfo && item.festival.constantInfo.backgroundImage)
+        .filter((bg) => bg && bg.type === "youtube" && bg.contentId)
+        .slice(0, 4);
+      thumbs.replaceChildren(
+        ...thumbItems.map((bg) => {
+          const img = document.createElement("img");
+          img.className = "weekend-banner-thumb-img";
+          img.src = `https://i.ytimg.com/vi/${bg.contentId}/hqdefault.jpg`;
+          img.alt = "";
+          img.loading = "lazy";
+          return img;
+        })
       );
-      thumb.hidden = !hasThumb;
-      thumb.style.backgroundImage = hasThumb
-        ? `url("https://i.ytimg.com/vi/${firstBackground.contentId}/hqdefault.jpg")`
-        : "";
+      thumbs.hidden = thumbItems.length === 0;
     }
 
-    picksList.replaceChildren(...weekendItems.slice(0, 4).map((item) => renderFestivalCard(item, "weekend_picks")));
+    picksList.replaceChildren(...weekendItems.slice(0, 4).map((item) => renderPickCard(item, "weekend_picks")));
     bannerSection.hidden = false;
     picksSection.hidden = false;
   }
