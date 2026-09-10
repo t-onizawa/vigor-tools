@@ -862,7 +862,7 @@
         );
       } else {
         bannerBg.replaceChildren(
-          ...["mikoshi", "dashi", "hyottoko"].map((name) => {
+          ...["mikoshi", "dashi"].map((name) => {
             const fallback = document.createElement("img");
             fallback.className = "weekend-banner-bg-fallback";
             fallback.src = `${getListBasePath()}shared/illustrations/${name}.png`;
