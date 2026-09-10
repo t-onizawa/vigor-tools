@@ -709,7 +709,7 @@ h1 {
 .weekend-banner-cta {
   position: absolute;
   z-index: 1;
-  right: 16px;
+  left: 16px;
   bottom: 12px;
   margin: 0;
   color: var(--gold-tint);
@@ -720,7 +720,7 @@ h1 {
 .weekend-banner-hub-link {
   position: absolute;
   z-index: 1;
-  left: 16px;
+  right: 16px;
   bottom: 12px;
   color: rgb(255 255 255 / 78%);
   font-size: 0.74rem;
@@ -1316,12 +1316,12 @@ h1 {
   }
 
   .weekend-banner-cta {
-    right: 26px;
+    left: 26px;
     bottom: 16px;
   }
 
   .weekend-banner-hub-link {
-    left: 26px;
+    right: 26px;
     bottom: 16px;
   }
 
