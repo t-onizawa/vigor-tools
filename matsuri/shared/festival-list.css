@@ -639,7 +639,7 @@ h1 {
   inset: 0;
   z-index: 0;
   display: flex;
-  align-items: stretch;
+  align-items: center;
   justify-content: flex-end;
   overflow: hidden;
   -webkit-mask-image: linear-gradient(to left, black 0%, black 25%, transparent 85%);
@@ -650,7 +650,8 @@ h1 {
 .weekend-banner-bg-photo {
   width: 34%;
   min-width: 80px;
-  height: 100%;
+  height: 134%;
+  flex: none;
   object-fit: cover;
   opacity: 0.32;
   filter: saturate(0.5) brightness(0.85);
