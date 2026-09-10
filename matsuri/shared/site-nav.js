@@ -442,12 +442,10 @@
     logo.className = "site-nav-logo";
     logo.href = homeUrl;
     logo.setAttribute("aria-label", "MATSURI");
-    const wordmark = document.createElement("span");
+    const wordmark = document.createElement("img");
     wordmark.className = "site-nav-logo-wordmark";
-    wordmark.setAttribute("aria-hidden", "true");
-    wordmark.innerHTML =
-      'M<span class="site-nav-logo-a">A</span>TSURI' +
-      '<span class="site-nav-logo-vigor">VIGOR</span>';
+    wordmark.src = relativeFile([], "shared/brand/matsuri-logo.png");
+    wordmark.alt = "";
     logo.append(wordmark);
 
     const topBar = document.createElement("div");

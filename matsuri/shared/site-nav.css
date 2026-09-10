@@ -50,21 +50,9 @@
 }
 
 .site-nav-logo-wordmark {
-  font-family: "Hiragino Mincho ProN", "Yu Mincho", serif;
-  font-weight: 700;
-  letter-spacing: 0.02em;
-}
-
-.site-nav-logo-a {
-  color: var(--brand-red);
-}
-
-.site-nav-logo-vigor {
-  margin-left: 3px;
-  color: var(--muted);
-  font-size: 0.56em;
-  font-weight: 500;
-  letter-spacing: 0.08em;
+  display: block;
+  height: 34px;
+  width: auto;
 }
 
 .site-nav-items {
@@ -422,6 +410,10 @@
   .site-nav-logo {
     display: flex;
     font-size: 1rem;
+  }
+
+  .site-nav-logo-wordmark {
+    height: 30px;
   }
 
   .site-nav-items {
