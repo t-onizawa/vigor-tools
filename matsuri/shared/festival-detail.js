@@ -1233,6 +1233,7 @@
 
     const heading = document.createElement("h2");
     heading.id = "search-links-heading";
+    heading.className = "sr-only";
     heading.textContent = hasAtmosphereMedia
       ? (EN?.labels?.atmosphereHeadingWith || "もっと雰囲気を感じる")
       : (EN?.labels?.atmosphereHeadingWithout || "雰囲気を感じる");
