@@ -25,9 +25,9 @@
     <link rel="icon" href="/matsuri/favicon.ico" sizes="any">
     <link rel="icon" type="image/png" href="/matsuri/favicon-32x32.png" sizes="32x32">
     <link rel="apple-touch-icon" href="/matsuri/apple-touch-icon.png">
-<link rel="stylesheet" href="shared/festival-list.css?v=24">
+<link rel="stylesheet" href="shared/festival-list.css?v=25">
     <script src="/assets/analytics.js" defer></script>
-    <link rel="stylesheet" href="shared/site-nav.css?v=7">
+    <link rel="stylesheet" href="shared/site-nav.css?v=8">
 </head>
   <body>
     <main class="page-shell">
@@ -63,19 +63,19 @@
         <div class="area-entry-buttons">
           <button id="area-entry-prefecture" class="area-entry-button" type="button">
             <span class="area-entry-icon" aria-hidden="true"></span>
-            都道府県から探す
+            地方・都道府県から探す
             <span class="area-entry-chevron" aria-hidden="true">→</span>
           </button>
-          <button id="area-entry-region" class="area-entry-button" type="button">
-            <span class="area-entry-icon area-entry-icon--region" aria-hidden="true"></span>
-            地方から探す
-            <span class="area-entry-chevron" aria-hidden="true">→</span>
+          <button id="area-entry-map" class="area-entry-button" type="button" disabled aria-disabled="true">
+            <span class="area-entry-icon area-entry-icon--map" aria-hidden="true"></span>
+            地図から探す
+            <span class="area-entry-note">近日公開</span>
           </button>
         </div>
       </section>
 
       <section id="weekend-picks-section" class="weekend-picks-section" aria-label="今週末のおすすめ祭り" hidden>
-        <h2>今週末のおすすめ祭り <a href="#festival-list">すべて見る →</a></h2>
+        <h2>今週末のおすすめ祭り</h2>
         <div id="weekend-picks-list" class="weekend-picks-list"></div>
       </section>
 
@@ -221,7 +221,7 @@
 
     <script src="shared/festival-slugs.js?v=8"></script>
     <script src="shared/experience-tags.js?v=1"></script>
-    <script src="shared/festival-list.js?v=30"></script>
+    <script src="shared/festival-list.js?v=31"></script>
     <script src="shared/site-nav.js?v=6"></script>
 </body>
 </html>

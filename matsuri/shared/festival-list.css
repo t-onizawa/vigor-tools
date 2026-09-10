@@ -91,8 +91,8 @@ h1 {
   margin: 0;
   font-family: "Hiragino Mincho ProN", "Yu Mincho", serif;
   font-weight: 600;
-  font-size: clamp(1.9rem, 9vw, 3rem);
-  line-height: 1.15;
+  font-size: clamp(1.6rem, 7vw, 3rem);
+  line-height: 1.2;
   letter-spacing: 0.01em;
 }
 
@@ -112,7 +112,69 @@ h1 {
   margin-top: 22px;
   border: 1px solid var(--line);
   border-radius: 999px;
+  background: var(--surface);
   overflow: hidden;
+}
+
+@media (max-width: 639px) {
+  .filter-section {
+    width: 100%;
+    border: 0;
+    border-top: 1px solid var(--line);
+    border-bottom: 1px solid var(--line);
+    border-radius: 0;
+  }
+
+  .filter-toggle,
+  .filter-section .area-filter {
+    width: 50%;
+    flex: 0 0 50%;
+    border-left: 0;
+  }
+
+  #area-filter,
+  #month-filter {
+    border-left: 1px solid var(--line);
+  }
+
+  #feature-filter,
+  #month-filter {
+    border-top: 1px solid var(--line);
+  }
+
+  .card-feature-chip:not(.is-yes) {
+    display: none;
+  }
+
+  .card-feature-chip.is-yes {
+    border: 0;
+    padding: 2px 8px;
+    background: var(--badge);
+  }
+
+  .card-feature-chip.is-yes .card-feature-icon {
+    display: none;
+  }
+
+  .card-feature-chip.is-yes[data-feature="dashi"] {
+    background: #f8dcd9;
+    color: #8a2a20;
+  }
+
+  .card-feature-chip.is-yes[data-feature="mikoshi"] {
+    background: #f4e5c4;
+    color: #6b4a10;
+  }
+
+  .card-feature-chip.is-yes[data-feature="odori"] {
+    background: #dbe6f3;
+    color: #1f4569;
+  }
+
+  .card-feature-chip.is-yes[data-feature="hikimawashi"] {
+    background: #ecdfc7;
+    color: #5c3d12;
+  }
 }
 
 .filter-toggle {
@@ -530,7 +592,6 @@ h1 {
   font-size: 0.9rem;
 }
 
-.weekend-banner-section,
 .feature-grid-section,
 .month-grid-section,
 .area-entry-section,
@@ -802,7 +863,7 @@ h1 {
 
 .feature-grid {
   display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
+  grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 7px;
 }
 
@@ -928,9 +989,9 @@ h1 {
   mask-position: center;
 }
 
-.area-entry-icon--region::before {
-  -webkit-mask-image: url("icons/area-region.svg");
-  mask-image: url("icons/area-region.svg");
+.area-entry-icon--map::before {
+  -webkit-mask-image: url("icons/section-map.svg");
+  mask-image: url("icons/section-map.svg");
 }
 
 .area-entry-chevron {
@@ -939,18 +1000,24 @@ h1 {
   flex-shrink: 0;
 }
 
-.weekend-picks-section h2 {
-  display: flex;
-  align-items: baseline;
-  justify-content: space-between;
-  gap: 12px;
+.area-entry-button:disabled {
+  cursor: not-allowed;
+  opacity: 0.55;
 }
 
-.weekend-picks-section h2 a {
-  display: none;
-  color: var(--accent);
-  font-size: 0.78rem;
-  white-space: nowrap;
+.area-entry-button:disabled:hover {
+  border-color: var(--line);
+}
+
+.area-entry-note {
+  margin-left: auto;
+  border-radius: 999px;
+  background: var(--badge);
+  padding: 2px 9px;
+  color: var(--muted);
+  font-size: 0.7rem;
+  font-weight: 700;
+  flex-shrink: 0;
 }
 
 .weekend-picks-list,
@@ -965,7 +1032,7 @@ h1 {
 
 .pick-card {
   scroll-snap-align: start;
-  flex: 0 0 calc(50% - 5px);
+  flex: 0 0 62%;
 }
 
 .pick-card {
@@ -1102,10 +1169,6 @@ h1 {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
-  .weekend-picks-section h2 a {
-    display: inline;
-  }
-
   .feature-grid-item {
     padding: 16px 8px 12px;
   }
@@ -1225,7 +1288,7 @@ h1 {
   }
 
   .month-grid-section .month-grid {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-template-columns: repeat(6, minmax(0, 1fr));
   }
 
   .feature-grid-label {

@@ -107,7 +107,7 @@
 }
 
 .site-nav-icon {
-  font-size: 1.35rem;
+  font-size: 1.45rem;
   line-height: 1;
 }
 
@@ -418,11 +418,17 @@
   }
 
   .site-nav-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
     font-size: 1.05rem;
+    line-height: 1;
+    transform: translateY(-1px);
   }
 
   .site-nav-label {
     font-size: 0.76rem;
+    line-height: 1;
   }
 
   .site-nav-menu {

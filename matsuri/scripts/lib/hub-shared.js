@@ -224,6 +224,20 @@ function getFestivalListCssVersion() {
   return match[1];
 }
 
+function getSiteNavCssVersion() {
+  const indexHtml = fs.readFileSync(path.join(MATSURI_ROOT, "index.html"), "utf8");
+  const match = indexHtml.match(/shared\/site-nav\.css\?v=([^"']+)/);
+  if (!match) throw new Error("matsuri/index.htmlからsite-nav.cssの版数を取得できません");
+  return match[1];
+}
+
+function getSiteNavJsVersion() {
+  const indexHtml = fs.readFileSync(path.join(MATSURI_ROOT, "index.html"), "utf8");
+  const match = indexHtml.match(/shared\/site-nav\.js\?v=([^"']+)/);
+  if (!match) throw new Error("matsuri/index.htmlからsite-nav.jsの版数を取得できません");
+  return match[1];
+}
+
 function renderMonthPage(month, items, experienceTags, cssVersion) {
   const count = items.length;
   const canonical = `https://vigorlab.net/matsuri/months/${month.slug}/`;
@@ -283,7 +297,7 @@ function renderMonthPage(month, items, experienceTags, cssVersion) {
     <link rel="apple-touch-icon" href="/matsuri/apple-touch-icon.png">
     <link rel="stylesheet" href="../../shared/festival-list.css?v=${cssVersion}">
     <link rel="stylesheet" href="../../shared/month-hub.css?v=1">
-    <link rel="stylesheet" href="../../shared/site-nav.css?v=3">
+    <link rel="stylesheet" href="../../shared/site-nav.css?v=${getSiteNavCssVersion()}">
     <script src="/assets/analytics.js" defer></script>
     <script type="application/ld+json">${JSON.stringify(collectionJsonLd)}</script>
     <script type="application/ld+json">${JSON.stringify(breadcrumbJsonLd)}</script>
@@ -291,7 +305,6 @@ function renderMonthPage(month, items, experienceTags, cssVersion) {
   <body>
     <main class="page-shell">
       <header class="list-header">
-        <p class="brand-row"><a href="../../index.html">MATSURI</a></p>
         <nav class="breadcrumb" aria-label="パンくずリスト"><a href="../../index.html">MATSURI</a> &gt; <span>${month.label}の祭り</span></nav>
         <h1>${name}</h1>
         <p class="header-description">${month.label}に開催される祭り${count}件を日程順にまとめました。</p>
@@ -306,7 +319,7 @@ ${cards}
       <p class="disclaimer">掲載内容は各祭りの詳細ページに記載の出典・確認日に基づきます。最新の開催情報は公式サイトでご確認ください。</p>
       <p class="back-to-list"><a href="../../index.html">すべての祭りを都道府県・特徴で絞り込む →</a></p>
     </main>
-    <script src="../../shared/site-nav.js?v=3"></script>
+    <script src="../../shared/site-nav.js?v=${getSiteNavJsVersion()}"></script>
   </body>
 </html>
 `;
@@ -366,7 +379,7 @@ function renderHubPage(config, items, experienceTags, cssVersion) {
     <link rel="apple-touch-icon" href="/matsuri/apple-touch-icon.png">
     <link rel="stylesheet" href="../../shared/festival-list.css?v=${cssVersion}">
     <link rel="stylesheet" href="../../shared/month-hub.css?v=1">
-    <link rel="stylesheet" href="../../shared/site-nav.css?v=3">
+    <link rel="stylesheet" href="../../shared/site-nav.css?v=${getSiteNavCssVersion()}">
     <script src="/assets/analytics.js" defer></script>
     <script type="application/ld+json">${JSON.stringify(collectionJsonLd)}</script>
     <script type="application/ld+json">${JSON.stringify(breadcrumbJsonLd)}</script>
@@ -374,7 +387,6 @@ function renderHubPage(config, items, experienceTags, cssVersion) {
   <body>
     <main class="page-shell">
       <header class="list-header">
-        <p class="brand-row"><a href="../../index.html">MATSURI</a></p>
         <nav class="breadcrumb" aria-label="パンくずリスト"><a href="../../index.html">MATSURI</a> &gt; <span>${config.breadcrumbLabel}</span></nav>
         <h1>${config.h1}</h1>
         <p class="header-description">${config.intro(count)}</p>
@@ -386,7 +398,7 @@ ${cards}
       <p class="disclaimer">掲載内容は各祭りの詳細ページに記載の出典・確認日に基づきます。最新の開催情報は公式サイトでご確認ください。</p>
       <p class="back-to-list"><a href="../../index.html">すべての祭りを見る →</a></p>
     </main>
-    <script src="../../shared/site-nav.js?v=3"></script>
+    <script src="../../shared/site-nav.js?v=${getSiteNavJsVersion()}"></script>
   </body>
 </html>
 `;

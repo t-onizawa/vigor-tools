@@ -327,6 +327,10 @@
       .join(" / ");
   }
 
+  function formatDateRangeShort(yearlyInfo) {
+    return formatDateRange(yearlyInfo).replace(/\d{4}年/g, "").trim();
+  }
+
   function availabilityState(value) {
     if (value === true) {
       return { className: "is-yes", label: "あり" };
@@ -376,6 +380,8 @@
     const state = availabilityState(value);
     item.className = `card-feature-chip ${state.className}`;
     item.title = `${label}: ${state.label}`;
+    const modifier = PICK_CHIP_MODIFIERS[label];
+    if (modifier) item.dataset.feature = modifier;
 
     const labelEl = document.createElement("span");
     labelEl.className = "card-feature-label";
@@ -455,7 +461,7 @@
     status.className = `status-badge status-${effectiveStatus || "unknown"}`;
     status.textContent = eventStatusLabels[effectiveStatus] || "未確認";
 
-    topLine.append(prefecture, status);
+    topLine.append(prefecture);
 
     const title = document.createElement("h2");
     title.className = "item-name";
@@ -489,6 +495,8 @@
     if (atmosphereMedia.length > 0) {
       meta.append(createVideoBadge());
     }
+
+    meta.append(status);
 
     const body = document.createElement("div");
     body.className = "item-body";
@@ -531,11 +539,11 @@
     "見どころ": "midokoro"
   };
 
-  function createPickChip(label) {
+  function createPickChip(text, modifierKey = text) {
     const chip = document.createElement("span");
-    const modifier = PICK_CHIP_MODIFIERS[label];
+    const modifier = PICK_CHIP_MODIFIERS[modifierKey];
     chip.className = modifier ? `pick-chip pick-chip--${modifier}` : "pick-chip";
-    chip.textContent = label;
+    chip.textContent = text;
     return chip;
   }
 
@@ -563,7 +571,7 @@
 
     const date = document.createElement("p");
     date.className = "pick-card-date";
-    date.textContent = formatDateRange(yearlyInfo);
+    date.textContent = formatDateRangeShort(yearlyInfo);
 
     const name = document.createElement("h3");
     name.className = "pick-card-name";
@@ -581,7 +589,7 @@
       if (features[key] === true) chips.append(createPickChip(label));
     });
     if (features.highlightTime && highlightTimeLabels[features.highlightTime]) {
-      chips.append(createPickChip("見どころ"));
+      chips.append(createPickChip(`見どころ：${highlightTimeLabels[features.highlightTime]}`, "見どころ"));
     }
 
     body.append(date, name, prefecture, chips);
@@ -989,14 +997,13 @@
   function renderAreaEntries() {
     const areaFilter = document.getElementById("area-filter");
     const festivalList = document.getElementById("festival-list");
-    if (!areaFilter || !festivalList) return;
-    ["area-entry-prefecture", "area-entry-region"].forEach((id) => {
-      const button = document.getElementById(id);
-      if (!button) return;
-      button.addEventListener("click", () => {
-        festivalList.scrollIntoView({ behavior: "smooth", block: "start" });
-        areaFilter.focus({ preventScroll: true });
-      });
+    const button = document.getElementById("area-entry-prefecture");
+    if (!areaFilter || !festivalList || !button) return;
+    button.addEventListener("click", () => {
+      const rect = festivalList.getBoundingClientRect();
+      const targetY = window.scrollY + rect.top - 180;
+      window.scrollTo({ top: Math.max(targetY, 0), behavior: "smooth" });
+      areaFilter.focus({ preventScroll: true });
     });
   }
 
