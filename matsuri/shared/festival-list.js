@@ -1020,7 +1020,7 @@
           monthFilter.value = String(month);
           monthFilter.dispatchEvent(new Event("change", { bubbles: true }));
           const rect = festivalList.getBoundingClientRect();
-          const targetY = window.scrollY + rect.top - 80;
+          const targetY = window.scrollY + rect.top - 220;
           window.scrollTo({ top: Math.max(targetY, 0), behavior: "smooth" });
         });
       }
