@@ -635,10 +635,10 @@ h1 {
 }
 
 .weekend-banner-bg {
-  display: flex;
-  grid-column: 1 / -1;
-  grid-row: 1 / -1;
+  position: absolute;
+  inset: 0;
   z-index: 0;
+  display: flex;
   align-items: stretch;
   justify-content: flex-end;
   overflow: hidden;
