@@ -4075,3 +4075,45 @@ commit `2b5da25`／キャッシュ修正`7522f44`／`ab4f35b`）
     北海道の初期カバレッジ完了と判定し、「全国の初期掲載フェーズ完了」
     と記録する。連続0件は候補枯渇による0件ではないため0のまま。
     次回以降は全国から取りこぼし・新規公式情報・過去の保留候補を再確認する。
+
+2026-09-11（終了済み祭りの静的title/description未更新バグ発見・修正）
+    Search Console実データで「祭り名＋2026」クエリの表示回数はあるが
+    クリック0が多発している事象をFounderと確認する過程で発覚。
+    data.js側のeventStatusは正しく"ended"へ更新されているが、
+    festivals/{slug}/index.htmlのtitle・meta description・og/twitter系
+    タグは生成時点のまま固定されており、開催日を過ぎた後も
+    「◯月◯日開催」という未来形の文言のままになっていた
+    （正しくは「◯月◯日に開催されました」等の過去形）。原因は、
+    個別祭りページのtitle/descriptionを再生成する仕組みが存在せず
+    （scripts/配下に該当スクリプトなし）、既存の「週次データ整合性
+    チェック」はdata.jsのフィールド正確性のみを検査対象としており、
+    静的HTML側の表記が実データに追従しているかは検査範囲外だった
+    ため。
+
+    **対応：** eventStatus:"ended"かつtitleが旧テンプレート（"◯月◯日
+    開催 | MATSURI"）のまま停滞していた14件（abiko-kappa-matsuri・
+    asakusa-samba-carnival・hokota-summer-festival・minami-koshigaya-
+    awaodori・nagatoro-funadama-matsuri・ninomiya-shrine-shogamatsuri・
+    nishimonai-bon-odori・oarai-hassaku-matsuri・obari-matsushita-ryu-
+    tsunabi・ojima-neputa-matsuri・shibukawa-heso-matsuri・tachikawa-
+    suwa-reitaisai・takasaki-matsuri・tokyo-koenji-awaodori）について、
+    title・meta description・og:title・og:description・twitter:title・
+    twitter:descriptionを、既に正しく過去形化されていた他ページ
+    （numata-matsuri等）と同一の文型に揃えて一括修正した
+    （Pythonスクリプトで機械的に変換、変換後は全14件を目視確認）。
+
+    **未対応として残した2件：** fukagawa-hachiman-matsuri・
+    ryugasaki-tsukumaiは、上記14件とは異なる、さらに古い
+    テンプレート（og:site_nameが"MATSURI"ではなく"祭を探す"のまま、
+    タイトルに日付情報自体がない）を使っており、単純な文言置換では
+    対応できない。ブランド移行時に取り残された別種の負債として、
+    別タスクでの本文再構成が必要。
+
+    **再発防止の課題として記録：** この不整合は今後も「eventStatusが
+    endedへ切り替わるたび」に構造的に発生し続ける。個別祭りページの
+    title/description再生成スクリプトが存在しないため。既存の
+    「週次データ整合性チェック」の検査対象に「eventStatus=endedの
+    静的HTML側表記が過去形になっているか」を追加するか、専用の
+    再生成スクリプトを新設するかは未着手。次にこの種の不整合が
+    見つかった際は、都度手動修正ではなく、この仕組み自体の新設を
+    優先候補として検討する。
