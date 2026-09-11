@@ -786,7 +786,7 @@
     if (hubLink) {
       if (selectedPrefectures && REGION_HUB_SLUGS.has(selectedRegion)) {
         hubLink.href = `regions/${selectedRegion}/`;
-        hubLink.textContent = `${REGION_LABELS[selectedRegion]}の祭りをもっと見る →`;
+        hubLink.textContent = `${REGION_LABELS[selectedRegion]}の祭りを見る →`;
         hubLink.hidden = false;
       } else {
         hubLink.hidden = true;
