@@ -732,21 +732,14 @@ h1 {
   text-align: center;
 }
 
-.weekend-banner-row1 {
-  display: flex;
+.weekend-banner-count {
   grid-column: 2;
   grid-row: 1;
   z-index: 1;
-  align-items: flex-start;
-  justify-content: space-between;
-  gap: 10px;
-  min-width: 0;
-}
-
-.weekend-banner-count {
-  flex: 1 1 auto;
+  align-self: center;
   min-width: 0;
   margin: 0;
+  padding-right: 100px;
   font-size: 1rem;
   font-weight: 700;
 }
@@ -810,8 +803,11 @@ h1 {
 }
 
 .weekend-banner-region-entry {
-  flex: none;
-  margin: 2px 0 0;
+  position: absolute;
+  z-index: 2;
+  top: 12px;
+  right: 12px;
+  margin: 0;
   border: 0;
   border-radius: 999px;
   background: rgb(255 255 255 / 16%);
