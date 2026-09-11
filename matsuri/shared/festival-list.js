@@ -856,7 +856,6 @@
             img.className = "weekend-banner-bg-photo";
             img.src = `https://i.ytimg.com/vi/${bg.contentId}/hqdefault.jpg`;
             img.alt = "";
-            img.loading = "lazy";
             return img;
           })
         );
@@ -867,7 +866,6 @@
             fallback.className = "weekend-banner-bg-fallback";
             fallback.src = `${getListBasePath()}shared/illustrations/${name}.png`;
             fallback.alt = "";
-            fallback.loading = "lazy";
             return fallback;
           })
         );
