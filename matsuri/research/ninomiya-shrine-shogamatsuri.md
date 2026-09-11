@@ -69,3 +69,6 @@ highlightComment反映（2026-07-30）
     反映。根拠：あきる野観光協会公式・あきる野市公式。PM（Claude）
     によるresearch内既存記述のレビューを経て採用。
 ```
+
+### 2026-09-11 毎日品質改善
+- 既存背景元 https://www.youtube.com/watch?v=wCcPkaSs4aE を直接確認（1時間18分49秒）。長尺通し記録のため動画不採用。

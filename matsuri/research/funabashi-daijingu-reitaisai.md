@@ -29,3 +29,6 @@
 ## 出典
 
 - https://www.oohijinja.jp/history.html
+
+### 2026-09-11 毎日品質改善
+- 既存背景元 https://www.youtube.com/watch?v=5vtUBfGl0-s を直接確認（5分42秒）。相撲の一番のみで祭礼全体が伝わらず動画不採用。

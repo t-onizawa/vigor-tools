@@ -32,3 +32,6 @@
 - https://www.town.nakanojo.gunma.jp/soshiki/9/1285.html
 - https://www.town.nakanojo.gunma.jp/uploaded/attachment/5927.pdf
 - https://nakanojo-kanko.jp/events/%E9%B3%A5%E8%BF%BD%E3%81%84%E7%A5%AD%E3%83%BB%E9%B3%A5%E8%BF%BD%E3%81%84%E5%A4%AA%E9%BC%93%E3%82%AE%E3%83%A3%E3%83%A9%E3%83%AA%E3%83%BC/
+
+### 2026-09-11 毎日品質改善
+- 既存背景元 https://www.youtube.com/watch?v=q_o_Ggar77o を直接確認（13分31秒）。解説主体で入口用途に合わず動画不採用。

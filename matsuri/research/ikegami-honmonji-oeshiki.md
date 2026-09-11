@@ -31,3 +31,6 @@
 
 - https://honmonji.jp/oeshiki/
 - https://www.honmonji.jp/outline/gyoji.html
+
+### 2026-09-11 毎日品質改善
+- 既存背景元 https://www.youtube.com/watch?v=2JDJFhwWnYI を直接確認（6時間24分2秒）。ライブ通し記録のため動画不採用。

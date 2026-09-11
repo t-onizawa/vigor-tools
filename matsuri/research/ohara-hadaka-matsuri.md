@@ -68,3 +68,6 @@ backgroundImage調査（2026-07-29）
     （ZqexWGNN1HU）を直接ページで確認。サムネイルに文字オーバーレイ
     がなくbackgroundImageとして採用。
 ```
+
+### 2026-09-11 毎日品質改善
+- 既存背景元 https://www.youtube.com/watch?v=ZqexWGNN1HU を直接確認（8分49秒）。汐ふみ一場面に特化し祭り全体が伝わらず動画不採用。

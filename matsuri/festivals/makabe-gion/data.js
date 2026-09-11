@@ -28,7 +28,9 @@ const FESTIVAL = {
       note: "五所駒瀧神社は真壁祇園祭の中心となる神社です。1986年に国の記録作成等の措置を講ずべき無形民俗文化財に指定されました。"
     },
     highlightComment: "400年の伝統を持ち、国の記録作成等の措置を講ずべき無形民俗文化財に指定された山車の勇壮な曳き回しが見どころ。",
-    atmosphereMedia: [],
+    atmosphereMedia: [
+      { type: "youtube", url: "https://www.youtube.com/watch?v=4uw1cV9qqdk", contentId: "4uw1cV9qqdk", title: "【真壁祇園祭2024】真壁を支える町衆達の想い 山車参拝~山車引き廻し編", publisher: "film sakura", publisherType: "individual", purpose: "festival_atmosphere", publishedYear: 2024, checkedDate: "2026-09-11" }
+    ],
     backgroundImage: {
       type: "youtube",
       contentId: "4uw1cV9qqdk",
