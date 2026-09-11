@@ -861,12 +861,16 @@
           })
         );
       } else {
-        const fallback = document.createElement("img");
-        fallback.className = "weekend-banner-bg-fallback";
-        fallback.src = `${getListBasePath()}shared/illustrations/mikoshi.png`;
-        fallback.alt = "";
-        fallback.loading = "lazy";
-        bannerBg.replaceChildren(fallback);
+        bannerBg.replaceChildren(
+          ...["mikoshi", "dashi"].map((name) => {
+            const fallback = document.createElement("img");
+            fallback.className = "weekend-banner-bg-fallback";
+            fallback.src = `${getListBasePath()}shared/illustrations/${name}.png`;
+            fallback.alt = "";
+            fallback.loading = "lazy";
+            return fallback;
+          })
+        );
       }
     }
 
@@ -1054,19 +1058,6 @@
     grid.replaceChildren(...controls);
   }
 
-  function renderAreaEntries() {
-    const areaFilter = document.getElementById("area-filter");
-    const festivalList = document.getElementById("festival-list");
-    const button = document.getElementById("area-entry-prefecture");
-    if (!areaFilter || !festivalList || !button) return;
-    button.addEventListener("click", () => {
-      const rect = festivalList.getBoundingClientRect();
-      const targetY = window.scrollY + rect.top - 180;
-      window.scrollTo({ top: Math.max(targetY, 0), behavior: "smooth" });
-      areaFilter.focus({ preventScroll: true });
-    });
-  }
-
   function setupWeekendBannerLink() {
     const bannerLink = document.getElementById("weekend-banner-link");
     const picksSection = document.getElementById("weekend-picks-section");
@@ -1083,7 +1074,6 @@
     renderWeekendSections(items);
     renderFeatureGrid(items);
     renderMonthGrid();
-    renderAreaEntries();
     setupWeekendBannerLink();
     setupRegionModal(items);
   }
