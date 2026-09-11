@@ -1131,30 +1131,42 @@ p {
     width: min(100%, 1100px);
   }
 
+  .festival-header.has-hero {
+    padding-left: max(12px, calc((100vw - 1100px) / 2 + 28px));
+    padding-right: max(12px, calc((100vw - 1100px) / 2 + 28px));
+  }
+
   main.page-shell {
     display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-template-columns: minmax(0, 3fr) minmax(0, 2fr);
     column-gap: 20px;
-    row-gap: 22px;
   }
 
   .festival-header,
-  .hero-feature-tags,
   .primary-info,
   #related-festivals-section,
   .accordion-section {
     grid-column: 1 / -1;
   }
 
-  .primary-info,
-  .info-section,
-  .accordion-section {
-    margin-top: 0;
-  }
+  .festival-header { grid-row: 1; }
+  .primary-info { grid-row: 2; }
 
-  .festival-header.has-hero + .primary-info + * {
-    margin-top: 0;
-  }
+  #highlight-comment-section { grid-column: 1; grid-row: 3; }
+  section[aria-labelledby="access-heading"] { grid-column: 2; grid-row: 3; }
+
+  section[aria-labelledby="features-heading"] { grid-column: 1; grid-row: 4; }
+  #map-section { grid-column: 2; grid-row: 4; }
+
+  #schedule-section { grid-column: 1; grid-row: 5; }
+  #atmosphere-media-section { grid-column: 1; grid-row: 6; }
+
+  #related-festivals-section { grid-row: 7; }
+  .search-links-accordion { grid-row: 8; }
+  .accordion-section[data-accordion-section="hayashi"] { grid-row: 9; }
+  .accordion-section[data-accordion-section="faq"] { grid-row: 10; }
+  .accordion-section[data-accordion-section="sources"] { grid-row: 11; }
+  #alternate-links-section { grid-row: 12; }
 
   .detail-breadcrumb {
     display: block;

@@ -2,6 +2,24 @@
   const MATSURI_MARKER = "matsuri";
   const FAVORITES_STORAGE_KEY = "matsuri-favorites";
 
+  const FOOTER_REGIONS = [
+    { slug: "kanto", ja: "関東", en: "Kanto" },
+    { slug: "tohoku", ja: "東北", en: "Tohoku" },
+    { slug: "chubu", ja: "中部", en: "Chubu" },
+    { slug: "kinki", ja: "近畿", en: "Kinki" },
+    { slug: "chugoku", ja: "中国", en: "Chugoku" },
+    { slug: "shikoku", ja: "四国", en: "Shikoku" },
+    { slug: "kyushu", ja: "九州", en: "Kyushu" }
+  ];
+
+  const FOOTER_FEATURES = [
+    { slug: "dashi", ja: "山車", en: "Dashi floats" },
+    { slug: "mikoshi", ja: "神輿", en: "Mikoshi" },
+    { slug: "odori", ja: "踊り", en: "Dance" },
+    { slug: "hikimawashi", ja: "曳き回し", en: "Parade" },
+    { slug: "night", ja: "夜が見どころ", en: "Night highlights" }
+  ];
+
   function getLocale() {
     return document.documentElement.lang === "en" ? "en" : "ja";
   }
@@ -422,6 +440,109 @@
     searchButton.addEventListener("click", openSearchModal);
   }
 
+  function buildFooter(locale) {
+    if (document.querySelector(".site-footer")) return;
+
+    const isEn = locale === "en";
+    const text = isEn
+      ? {
+          tagline: "Find Japanese festivals by feature, date, and area.",
+          about: "About this site",
+          regions: "Browse by area",
+          features: "Browse by feature",
+          more: "More",
+          favorites: "Favorites",
+          lab: "VIGOR LAB Home",
+          language: "日本語版",
+          copyright: `© ${new Date().getFullYear()} VIGOR LAB`
+        }
+      : {
+          tagline: "山車・神輿・踊りなどの特徴や開催時期、エリアから祭りを探せます。",
+          about: "このサイトについて",
+          regions: "エリアから探す",
+          features: "見たいものから探す",
+          more: "その他",
+          favorites: "お気に入り",
+          lab: "VIGOR LABトップへ",
+          language: "English version",
+          copyright: `© ${new Date().getFullYear()} VIGOR LAB`
+        };
+
+    const footer = document.createElement("footer");
+    footer.className = "site-footer";
+
+    const inner = document.createElement("div");
+    inner.className = "site-footer-inner";
+
+    const brand = document.createElement("div");
+    brand.className = "site-footer-brand";
+    const brandLink = document.createElement("a");
+    brandLink.className = "site-footer-brand-link";
+    brandLink.href = getHomeUrl();
+    brandLink.textContent = "MATSURI";
+    const taglineEl = document.createElement("p");
+    taglineEl.className = "site-footer-tagline";
+    taglineEl.textContent = text.tagline;
+    const aboutLink = document.createElement("a");
+    aboutLink.className = "site-footer-about-link";
+    aboutLink.href = relativeFile([], "about.html");
+    aboutLink.textContent = text.about;
+    brand.append(brandLink, taglineEl, aboutLink);
+
+    const makeGroup = (heading, links) => {
+      const group = document.createElement("div");
+      group.className = "site-footer-group";
+      const h2 = document.createElement("h2");
+      h2.textContent = heading;
+      const list = document.createElement("div");
+      list.className = "site-footer-link-list";
+      list.append(...links);
+      group.append(h2, list);
+      return group;
+    };
+
+    const regionLinks = FOOTER_REGIONS.map((region) => {
+      const a = document.createElement("a");
+      a.href = relativeUrl(["regions", region.slug]);
+      a.textContent = isEn ? region.en : region.ja;
+      return a;
+    });
+
+    const featureLinks = FOOTER_FEATURES.map((feature) => {
+      const a = document.createElement("a");
+      a.href = relativeUrl(["features", feature.slug]);
+      a.textContent = isEn ? feature.en : feature.ja;
+      return a;
+    });
+
+    const favoritesLink = document.createElement("a");
+    favoritesLink.href = getFavoritesUrl();
+    favoritesLink.textContent = text.favorites;
+    const labLink = document.createElement("a");
+    labLink.href = getLabHomeUrl();
+    labLink.textContent = text.lab;
+    const languageLink = document.createElement("a");
+    languageLink.href = getLanguageUrl();
+    languageLink.textContent = text.language;
+
+    const groups = document.createElement("div");
+    groups.className = "site-footer-groups";
+    groups.append(
+      makeGroup(text.regions, regionLinks),
+      makeGroup(text.features, featureLinks),
+      makeGroup(text.more, [favoritesLink, labLink, languageLink])
+    );
+
+    inner.append(brand, groups);
+
+    const bottom = document.createElement("div");
+    bottom.className = "site-footer-bottom";
+    bottom.textContent = text.copyright;
+
+    footer.append(inner, bottom);
+    document.body.append(footer);
+  }
+
   function buildNav() {
     if (document.querySelector(".site-nav")) return;
     const locale = getLocale();
@@ -455,12 +576,16 @@
 
     const items = document.createElement("div");
     items.className = "site-nav-items";
-    items.append(createNavLink(labels.home, "⌂", homeUrl, isHomeContext()));
+    const homeLink = createNavLink(labels.home, "⌂", homeUrl, isHomeContext());
+    homeLink.querySelector(".site-nav-icon").classList.add("site-nav-icon--home");
+    items.append(homeLink);
 
     const searchButton = createNavButton(labels.search, "⌕");
     searchButton.querySelector(".site-nav-icon").classList.add("site-nav-icon--search");
     items.append(searchButton);
-    items.append(createNavLink(labels.favorites, "♡", getFavoritesUrl(), getMatsuriSegments()[0] === "favorites"));
+    const favoritesLink = createNavLink(labels.favorites, "♡", getFavoritesUrl(), getMatsuriSegments()[0] === "favorites");
+    favoritesLink.querySelector(".site-nav-icon").classList.add("site-nav-icon--favorites");
+    items.append(favoritesLink);
 
     const menuWrap = document.createElement("div");
     menuWrap.className = "site-nav-menu-wrap";
@@ -470,7 +595,7 @@
     menuButton.setAttribute("aria-expanded", "false");
     menuButton.setAttribute("aria-controls", "site-nav-menu");
     const menuIcon = document.createElement("span");
-    menuIcon.className = "site-nav-icon";
+    menuIcon.className = "site-nav-icon site-nav-icon--menu";
     menuIcon.setAttribute("aria-hidden", "true");
     menuIcon.textContent = "☰";
     const menuLabel = document.createElement("span");
@@ -493,6 +618,7 @@
     items.append(menuWrap);
     inner.append(logo, items);
     nav.append(inner);
+    buildFooter(locale);
     document.body.append(nav);
     buildSearchModal(searchButton);
     setupFavoriteHearts();
