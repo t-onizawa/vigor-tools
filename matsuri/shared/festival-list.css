@@ -737,7 +737,7 @@ h1 {
   grid-column: 2;
   grid-row: 1;
   z-index: 1;
-  align-items: center;
+  align-items: flex-start;
   justify-content: space-between;
   gap: 10px;
   min-width: 0;
@@ -811,7 +811,7 @@ h1 {
 
 .weekend-banner-region-entry {
   flex: none;
-  margin: 0;
+  margin: 2px 0 0;
   border: 0;
   border-radius: 999px;
   background: rgb(255 255 255 / 16%);
