@@ -44,7 +44,7 @@ a {
 }
 
 .page-shell {
-  width: min(100%, 960px);
+  width: min(100%, 1100px);
   margin: 0 auto;
   padding: 28px 12px 48px;
 }
@@ -210,6 +210,13 @@ h1 {
 
 .filter-toggle:has(input:checked) {
   color: var(--accent);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .feature-grid,
+  .month-grid {
+    transition: none;
+  }
 }
 
 .sr-only {
@@ -950,6 +957,13 @@ h1 {
   display: grid;
   grid-template-columns: repeat(6, minmax(0, 1fr));
   gap: 7px;
+  min-height: 208px;
+  opacity: 0;
+  transition: opacity 220ms ease;
+}
+
+.feature-grid.is-ready {
+  opacity: 1;
 }
 
 .feature-grid-item {
@@ -1011,6 +1025,13 @@ h1 {
   display: grid;
   grid-template-columns: repeat(6, minmax(0, 1fr));
   gap: 7px;
+  min-height: 85px;
+  opacity: 0;
+  transition: opacity 220ms ease;
+}
+
+.month-grid.is-ready {
+  opacity: 1;
 }
 
 .month-grid-item,
@@ -1272,6 +1293,7 @@ h1 {
   .feature-grid {
     grid-template-columns: repeat(5, minmax(0, 1fr));
     gap: 12px;
+    min-height: 117px;
   }
 
   .feature-grid-item:nth-child(4),
@@ -1294,6 +1316,7 @@ h1 {
 
   .month-grid {
     grid-template-columns: repeat(12, minmax(0, 1fr));
+    min-height: 39px;
   }
 
   .weekend-picks-list,
@@ -1387,10 +1410,15 @@ h1 {
 
   .month-grid-section .month-grid {
     grid-template-columns: repeat(6, minmax(0, 1fr));
+    min-height: 85px;
   }
 
   .feature-grid-label {
     white-space: nowrap;
+  }
+
+  .festival-list {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
   }
 
   .list-header,

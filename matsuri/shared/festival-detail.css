@@ -192,10 +192,6 @@ a {
   text-decoration: underline;
 }
 
-.festival-header.has-hero .brand-mark a {
-  color: rgba(255, 255, 255, 0.85);
-}
-
 .back-link a {
   text-decoration: none;
 }
@@ -1136,13 +1132,28 @@ p {
   }
 
   main.page-shell {
-    columns: 2;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
     column-gap: 20px;
+    row-gap: 22px;
   }
 
   .festival-header,
-  .hero-feature-tags {
-    column-span: all;
+  .hero-feature-tags,
+  .primary-info,
+  #related-festivals-section,
+  .accordion-section {
+    grid-column: 1 / -1;
+  }
+
+  .primary-info,
+  .info-section,
+  .accordion-section {
+    margin-top: 0;
+  }
+
+  .festival-header.has-hero + .primary-info + * {
+    margin-top: 0;
   }
 
   .detail-breadcrumb {
@@ -1152,12 +1163,5 @@ p {
   .back-link,
   .brand-mark {
     display: none;
-  }
-
-  .primary-info,
-  .info-section,
-  .accordion-section,
-  .alternate-links-section {
-    break-inside: avoid;
   }
 }

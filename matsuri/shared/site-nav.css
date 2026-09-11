@@ -37,7 +37,7 @@
 }
 
 .site-nav-inner {
-  width: min(100%, 960px);
+  width: min(100%, 1100px);
   margin: 0 auto;
 }
 
@@ -51,7 +51,7 @@
 
 .site-nav-logo-wordmark {
   display: block;
-  width: 90px;
+  width: 100px;
   height: auto;
 }
 
@@ -412,10 +412,6 @@
     font-size: 1rem;
   }
 
-  .site-nav-logo-wordmark {
-    width: 100px;
-  }
-
   .site-nav-items {
     display: flex;
     align-items: stretch;
@@ -444,7 +440,7 @@
     justify-content: center;
     font-size: 1.05rem;
     line-height: 1;
-    transform: translateY(-1px);
+    transform: translateY(2px);
   }
 
   .site-nav-icon--search {

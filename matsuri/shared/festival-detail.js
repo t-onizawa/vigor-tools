@@ -483,27 +483,13 @@
     });
   }
 
-  function injectBrandMark() {
+  function fixBackLinkHref() {
     const header = document.querySelector(".festival-header");
     const backLink = header ? header.querySelector(".back-link") : null;
-    if (!header || !backLink) {
-      return;
-    }
-
-    const backLinkAnchor = backLink.querySelector("a");
+    const backLinkAnchor = backLink ? backLink.querySelector("a") : null;
     if (backLinkAnchor) {
       backLinkAnchor.href = LOCALE === "en" ? "../../../" : "../../";
     }
-
-    const mark = document.createElement("p");
-    mark.className = "brand-mark";
-
-    const link = document.createElement("a");
-    link.href = LOCALE === "en" ? "../../../" : "../../";
-    link.textContent = "MATSURI";
-
-    mark.append(link);
-    header.insertBefore(mark, backLink);
   }
 
   const HERO_TAG_MODIFIERS = {
@@ -1082,7 +1068,7 @@
     noteEl.hidden = false;
   }
 
-  injectBrandMark();
+  fixBackLinkHref();
   renderBreadcrumb(festival);
   setText("festival-name", festivalName);
   setText(

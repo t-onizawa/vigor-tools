@@ -1023,6 +1023,7 @@
       return link;
     });
     grid.replaceChildren(...links);
+    grid.classList.add("is-ready");
   }
 
   function renderMonthGrid() {
@@ -1056,6 +1057,7 @@
       return control;
     });
     grid.replaceChildren(...controls);
+    grid.classList.add("is-ready");
   }
 
   function setupWeekendBannerLink() {
