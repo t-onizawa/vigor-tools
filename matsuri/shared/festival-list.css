@@ -1041,6 +1041,7 @@ h1 {
   display: grid;
   grid-template-columns: 1fr;
   gap: 8px;
+  margin-top: 12px;
 }
 
 .area-entry-button {
@@ -1083,12 +1084,6 @@ h1 {
 .area-entry-icon--map::before {
   -webkit-mask-image: url("icons/section-map.svg");
   mask-image: url("icons/section-map.svg");
-}
-
-.area-entry-chevron {
-  margin-left: auto;
-  color: var(--muted);
-  flex-shrink: 0;
 }
 
 .area-entry-button:disabled {
@@ -1282,10 +1277,6 @@ h1 {
   .feature-grid-item:nth-child(4),
   .feature-grid-item:nth-child(5) {
     grid-column: auto;
-  }
-
-  .area-entry-buttons {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
   .feature-grid-item {
