@@ -739,8 +739,7 @@ h1 {
   align-self: center;
   min-width: 0;
   margin: 0;
-  padding-right: 100px;
-  font-size: 1rem;
+  font-size: 15px;
   font-weight: 700;
 }
 
@@ -805,8 +804,8 @@ h1 {
 .weekend-banner-region-entry {
   position: absolute;
   z-index: 2;
-  top: 12px;
-  right: 12px;
+  top: 8px;
+  right: 8px;
   margin: 0;
   border: 0;
   border-radius: 999px;
@@ -1402,6 +1401,10 @@ h1 {
 
   .weekend-banner-thumbs {
     height: 96px;
+  }
+
+  .weekend-banner-count {
+    font-size: 1rem;
   }
 
   main.page-shell:has(.feature-grid-section) {
