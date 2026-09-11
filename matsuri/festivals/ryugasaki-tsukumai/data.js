@@ -29,7 +29,9 @@ const FESTIVAL = {
     },
     highlightComment: "カエルの面をつけた舞男が高さ約14mの柱に登り、綱の上で曲芸を行う「撞舞」は関東三奇祭の一つとされる。",
     searchQuery: "龍ケ崎 撞舞",
-    atmosphereMedia: [],
+    atmosphereMedia: [
+      { type: "youtube", url: "https://www.youtube.com/watch?v=hjTRYXQp9J8", contentId: "hjTRYXQp9J8", title: "龍ヶ崎で撞舞 高さ14メートルの妙技 観客魅了", publisher: "茨城新聞動画ニュース", publisherType: "local_media", purpose: "festival_atmosphere", publishedYear: 2013, checkedDate: "2026-09-11" }
+    ],
     backgroundImage: {
       type: "youtube",
       contentId: "hjTRYXQp9J8",

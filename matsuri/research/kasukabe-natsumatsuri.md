@@ -97,3 +97,6 @@ highlightComment反映（2026-07-30）
     根拠：春日部市公式サイト。PM（Claude）によるresearch内既存記述の
     レビューを経て採用。
 ```
+
+### 2026-09-11 毎日品質改善
+- 既存背景元 https://www.youtube.com/watch?v=63Y5SIWDeBg を直接確認（12分6秒）。単一の神輿場面中心で祭り全体が伝わらず動画不採用。

@@ -86,3 +86,6 @@ highlightComment反映（2026-07-30）
     hasDanceOnDashiへ反映しないFounder確定事項とは矛盾しない。
     PM（Claude）によるresearch内既存記述のレビューを経て採用。
 ```
+
+### 2026-09-11 毎日品質改善
+- データslugは sakura-aki-matsuri、既存調査ファイル名は本ファイル。既存背景元 https://www.youtube.com/watch?v=s1T92XbdNXc を直接確認（59分2秒）。長尺通し記録のため動画不採用。

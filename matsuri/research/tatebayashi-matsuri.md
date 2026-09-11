@@ -29,3 +29,6 @@
 
 - https://www.city.tatebayashi.gunma.jp/s059/kanko/020/20210506113415.html
 - https://www.city.tatebayashi.gunma.jp/s059/kanko/020/55thchirashi.pdf
+
+### 2026-09-11 毎日品質改善
+- 既存背景元 https://www.youtube.com/watch?v=wZ4GbVM6-Bo を直接確認（40分51秒）。長尺通し記録のため動画不採用。

@@ -63,3 +63,6 @@ backgroundImage調査（2026-07-29）
     ページで確認。サムネイルに文字オーバーレイがなくbackgroundImage
     として採用。
 ```
+
+### 2026-09-11 毎日品質改善
+- 既存背景元 https://www.youtube.com/watch?v=a8WPmQ420EI を直接確認（3分58秒）。古い単一山車の記録で祭り全体が伝わらず動画不採用。

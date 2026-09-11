@@ -60,3 +60,6 @@ backgroundImage調査（2026-07-29）
     ページで確認。サムネイルに文字オーバーレイがなくbackgroundImage
     として採用。
 ```
+
+### 2026-09-11 毎日品質改善
+- 既存背景元 https://www.youtube.com/watch?v=BmhVeZsy6u8 を直接確認（6分1秒）。駅前の「どっこい」場面に偏り祭り全体が伝わらず動画不採用。
