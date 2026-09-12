@@ -3,3 +3,6 @@
 - 自治体: https://www.city.hachinohe.aomori.jp/section/bus/oshirase_sanshataisai.html
 - 確認内容: 2026年7月31日〜8月4日、前夜祭・お通り・中日・お還り・後夜祭。
 - 判断: 八戸市公式で2026年日程と行事構成を確認できたため採用。素材・駐車場は未設定。
+
+### 2026-09-12 毎日品質改善
+- backgroundImageを優先し、同じ探索で見つかるatmosphereMediaもあわせて調査。画像・動画ページを採用基準どおり直接確認できる候補を確定できなかったため、推測で採用せず見送り。

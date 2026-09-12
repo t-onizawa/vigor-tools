@@ -12,3 +12,6 @@
 ## backgroundImage・atmosphereMedia調査（2026-09-01）
 
 犬山市公式「第389回犬山祭」（https://www.youtube.com/watch?v=45RDdMwTSfA、19分54秒）を直接確認。長尺記録で動画不採用、大きな祭り名・日付のため画像不採用。
+
+### 2026-09-12 毎日品質改善
+- backgroundImageを優先し、同じ探索で見つかるatmosphereMediaもあわせて調査。画像・動画ページを採用基準どおり直接確認できる候補を確定できなかったため、推測で採用せず見送り。
