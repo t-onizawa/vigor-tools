@@ -19,3 +19,6 @@
 ## backgroundImage・atmosphereMedia調査（2026-09-01）
 
 観光系チャンネル「郡上おどり『三百』」（https://www.youtube.com/watch?v=YAO1iUMIaAE、5分20秒）を直接確認。特定曲・一会場のみで動画不採用、全面タイトル画像のため画像不採用。
+
+### 2026-09-12 毎日品質改善
+- backgroundImageを優先し、同じ探索で見つかるatmosphereMediaもあわせて調査。画像・動画ページを採用基準どおり直接確認できる候補を確定できなかったため、推測で採用せず見送り。

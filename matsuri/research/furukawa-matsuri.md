@@ -12,3 +12,6 @@
 ## backgroundImage・atmosphereMedia調査（2026-09-01）
 
 飛騨市公式「届ける 飛騨市 古川祭編」（https://www.youtube.com/watch?v=r_cMYT31MrU、27分13秒）を直接確認。長尺記録で動画不採用、大きな題字のため画像不採用。
+
+### 2026-09-12 毎日品質改善
+- backgroundImageを優先し、同じ探索で見つかるatmosphereMediaもあわせて調査。画像・動画ページを採用基準どおり直接確認できる候補を確定できなかったため、推測で採用せず見送り。
