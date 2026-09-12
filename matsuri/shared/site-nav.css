@@ -457,7 +457,7 @@
 .site-footer-bottom {
   border-top: 1px solid var(--line, #d9d9d9);
   padding: 14px 20px;
-  color: var(--subtle, #8b8f94);
+  color: var(--muted, #5f6368);
   font-size: 0.72rem;
   text-align: center;
 }
