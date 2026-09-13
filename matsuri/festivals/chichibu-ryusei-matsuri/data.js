@@ -52,19 +52,18 @@ const FESTIVAL = {
   },
   yearlyInfo: [{
     year: 2026,
-    eventStatus: "scheduled_pending_official",
+    eventStatus: "confirmed",
     dates: ["2026-10-11"],
     access: {
       hasParking: null,
       parkingNote: "2026年祭礼向けの駐車場・交通案内は公式詳細の公開待ち。"
     },
     confirmation: {
-      confirmedDate: "2026-07-30",
+      confirmedDate: "2026-09-14",
       sources: [
-        "https://www.mukujinja.or.jp/",
-        "https://navi.city.chichibu.lg.jp/wp/wp-content/uploads/2014/09/16-2.pdf"
+        "https://navi.city.chichibu.lg.jp/p_festival/1195/"
       ],
-      note: "椋神社公式の例年10月第2日曜日という開催規則と、2025年公式プログラムの次回予告（令和8年10月11日）から日付を確認。2026年の詳細プログラムは未公表。"
+      note: "秩父市公式観光サイトで、2026年10月11日の開催、打ち上げ時刻、交通・駐車場案内を確認。"
     }
   }]
 };

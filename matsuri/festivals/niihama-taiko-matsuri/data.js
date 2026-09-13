@@ -41,7 +41,7 @@ const FESTIVAL = {
   "yearlyInfo": [
     {
       "year": 2026,
-      "eventStatus": "scheduled_pending_official",
+      "eventStatus": "confirmed",
       "dates": [
         "2026-10-15",
         "2026-10-16",
@@ -54,12 +54,11 @@ const FESTIVAL = {
         "parkingNote": "地区別の2026年駐車場情報は未確認です。公式の地区別案内を確認してください。"
       },
       "confirmation": {
-        "confirmedDate": "2026-09-08",
+        "confirmedDate": "2026-09-14",
         "sources": [
-          "https://niihama.info/assets/data/birdeye.pdf",
-          "https://niihama.info/assets/data/pamphlet-niihamakiko.pdf"
+          "https://www.city.niihama.lg.jp/soshiki/kankou/taikomatsuri.html"
         ],
-        "note": "新居浜市観光物産協会資料で10月15日〜18日の記載を確認。地区別の確定プログラムは未確認のため公式詳細発表待ち。"
+        "note": "新居浜市公式で、2026年ポスターと10月15日〜18日の開催日程を確認。"
       }
     }
   ]
