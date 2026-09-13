@@ -19,3 +19,6 @@
 ## backgroundImage・atmosphereMedia調査（2026-09-01）
 
 勝山市公式「奇祭 勝山左義長まつり」（https://www.youtube.com/watch?v=RYTbAxbxc44、2分12秒）を直接確認。低解像度・字幕主体で現在の入口素材として品質不足のため両素材とも見送り。
+
+### 2026-09-13 毎日品質改善
+- backgroundImageを優先し、同じ探索でatmosphereMedia候補も調査。画像・動画ページを採用基準どおり直接確認できる候補を確定できなかったため、推測で採用せず見送り。

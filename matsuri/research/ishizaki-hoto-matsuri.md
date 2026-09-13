@@ -19,3 +19,6 @@
 ## backgroundImage・atmosphereMedia調査（2026-09-01）
 
 候補（https://www.youtube.com/watch?v=HCOUEqbhWrY）を開いたが投稿者・タイトル・内容を取得できず、推測せず両素材とも見送り。
+
+### 2026-09-13 毎日品質改善
+- backgroundImageを優先し、同じ探索でatmosphereMedia候補も調査。画像・動画ページを採用基準どおり直接確認できる候補を確定できなかったため、推測で採用せず見送り。

@@ -12,3 +12,6 @@
 ## backgroundImage・atmosphereMedia調査（2026-09-01）
 
 保存会公式「亀崎潮干祭2/5」（https://www.youtube.com/watch?v=FWhcy6ClJ5I、5分45秒）を直接確認。章立て解説で全体性不足のため動画不採用、説明文字のため画像不採用。
+
+### 2026-09-13 毎日品質改善
+- backgroundImageを優先し、同じ探索でatmosphereMedia候補も調査。画像・動画ページを採用基準どおり直接確認できる候補を確定できなかったため、推測で採用せず見送り。

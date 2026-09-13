@@ -18,3 +18,6 @@
 
 - https://www.town.shiga-hino.lg.jp/0000003699.html
 - https://hino-kanko.jp/festival/hinomatsuri/
+
+### 2026-09-13 毎日品質改善
+- 日野観光協会の候補 https://www.youtube.com/watch?v=3CrSw4mEiEk（5分8秒）を動画ページで確認。サムネイルは大きな「日野祭」の文字入りでbackgroundImage基準外。動画本編の内容を採用基準どおり確認しきれなかったためatmosphereMediaも推測で採用せず見送り。

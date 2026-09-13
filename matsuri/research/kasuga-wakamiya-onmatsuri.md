@@ -21,3 +21,6 @@
 ## backgroundImage・atmosphereMedia調査（2026-09-01）
 
 奈良県公式「古都を彩る舞」（https://www.youtube.com/watch?v=3MwqPdbqD1w、16分9秒）を直接確認。長尺解説構成で動画不採用、祭礼場面でなく題字・字幕中心のため画像不採用。
+
+### 2026-09-13 毎日品質改善
+- backgroundImageを優先し、同じ探索でatmosphereMedia候補も調査。画像・動画ページを採用基準どおり直接確認できる候補を確定できなかったため、推測で採用せず見送り。

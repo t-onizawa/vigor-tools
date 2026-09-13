@@ -19,3 +19,6 @@
 ## backgroundImage・atmosphereMedia調査（2026-09-02）
 
 公式サイト埋め込みの第53回神戸まつりCM（https://www.youtube.com/watch?v=oi4RjASLR1E、39秒、2026年）を直接確認。告知CMで祭り映像主体ではないため atmosphereMedia は不採用。人物と大きな開催日文字が中心のため backgroundImage も不採用。
+
+### 2026-09-13 毎日品質改善
+- backgroundImageを優先し、同じ探索でatmosphereMedia候補も調査。画像・動画ページを採用基準どおり直接確認できる候補を確定できなかったため、推測で採用せず見送り。
