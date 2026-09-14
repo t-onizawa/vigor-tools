@@ -1010,25 +1010,20 @@
     ["hikimawashi", "hasParade"]
   ];
 
-  function buildRelatedFestivalThumb(item) {
+  function applyRelatedFestivalBackground(link, item) {
     const backgroundImage = item.festival.constantInfo && item.festival.constantInfo.backgroundImage;
-    const wrap = document.createElement("span");
-    wrap.setAttribute("aria-hidden", "true");
-
     if (backgroundImage && backgroundImage.contentId) {
-      wrap.className = "related-festival-thumb is-photo";
-      const img = document.createElement("img");
-      img.src = `https://i.ytimg.com/vi/${backgroundImage.contentId}/hqdefault.jpg`;
-      img.alt = "";
-      img.loading = "lazy";
-      wrap.append(img);
-      return wrap;
+      link.classList.add("has-bg-photo");
+      link.style.backgroundImage = `url("https://i.ytimg.com/vi/${backgroundImage.contentId}/hqdefault.jpg")`;
+      return null;
     }
 
     const features = item.festival.constantInfo && item.festival.constantInfo.features;
     const matched = features && RELATED_FESTIVAL_ICON_PRIORITY.find(([, key]) => features[key] === true);
     if (matched) {
+      const wrap = document.createElement("span");
       wrap.className = "related-festival-thumb is-icon";
+      wrap.setAttribute("aria-hidden", "true");
       const img = document.createElement("img");
       img.src = `${sharedBasePath}/icons/section-feature-${matched[0]}.png`;
       img.alt = "";
@@ -1055,7 +1050,7 @@
       link.className = "feature-badge related-festival-link";
       link.href = `../${item.festival.id}/`;
 
-      const thumb = buildRelatedFestivalThumb(item);
+      const thumb = applyRelatedFestivalBackground(link, item);
 
       const text = document.createElement("span");
       text.className = "feature-badge-text";
