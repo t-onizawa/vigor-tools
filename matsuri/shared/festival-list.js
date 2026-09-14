@@ -828,10 +828,14 @@
     }
 
     const bannerBgItems = regionalWeekendItems
-      .map((item) => ({
-        festival: item.festival,
-        bg: item.festival.constantInfo && item.festival.constantInfo.backgroundImage
-      }))
+      .map((item) => {
+        const constantInfo = item.festival.constantInfo || {};
+        const atmosphereMedia = Array.isArray(constantInfo.atmosphereMedia) ? constantInfo.atmosphereMedia : [];
+        return {
+          festival: item.festival,
+          bg: constantInfo.backgroundImage || atmosphereMedia[0]
+        };
+      })
       .filter((entry) => entry.bg && entry.bg.type === "youtube" && entry.bg.contentId);
 
     if (thumbs) {
