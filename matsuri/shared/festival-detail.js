@@ -1024,7 +1024,7 @@
       link.classList.add("has-bg-icon");
       link.style.setProperty(
         "--related-festival-icon-url",
-        `url("${sharedBasePath}/icons/section-feature-${matched[0]}.png")`
+        `url("https://vigorlab.net/matsuri/shared/icons/section-feature-${matched[0]}.png")`
       );
     }
   }
