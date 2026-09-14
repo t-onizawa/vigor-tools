@@ -858,16 +858,12 @@
       const bgPhotoItems = bannerBgItems.slice(0, 3);
       if (bgPhotoItems.length > 0) {
         bannerBg.replaceChildren(
-          ...bgPhotoItems.map(({ festival, bg }) => {
-            const link = document.createElement("a");
-            link.className = "weekend-banner-bg-photo-link";
-            link.href = `${getListBasePath()}festivals/${festival.id}/`;
+          ...bgPhotoItems.map(({ bg }) => {
             const img = document.createElement("img");
             img.className = "weekend-banner-bg-photo";
             img.src = `https://i.ytimg.com/vi/${bg.contentId}/hqdefault.jpg`;
-            img.alt = festival.name;
-            link.append(img);
-            return link;
+            img.alt = "";
+            return img;
           })
         );
       } else {
