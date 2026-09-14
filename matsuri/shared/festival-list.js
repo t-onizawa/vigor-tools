@@ -828,19 +828,26 @@
     }
 
     const bannerBgItems = regionalWeekendItems
-      .map((item) => item.festival.constantInfo && item.festival.constantInfo.backgroundImage)
-      .filter((bg) => bg && bg.type === "youtube" && bg.contentId);
+      .map((item) => ({
+        festival: item.festival,
+        bg: item.festival.constantInfo && item.festival.constantInfo.backgroundImage
+      }))
+      .filter((entry) => entry.bg && entry.bg.type === "youtube" && entry.bg.contentId);
 
     if (thumbs) {
       const thumbItems = bannerBgItems.slice(0, 4);
       thumbs.replaceChildren(
-        ...thumbItems.map((bg) => {
+        ...thumbItems.map(({ festival, bg }) => {
+          const link = document.createElement("a");
+          link.className = "weekend-banner-thumb-link";
+          link.href = `${getListBasePath()}festivals/${festival.id}/`;
           const img = document.createElement("img");
           img.className = "weekend-banner-thumb-img";
           img.src = `https://i.ytimg.com/vi/${bg.contentId}/hqdefault.jpg`;
-          img.alt = "";
+          img.alt = festival.name;
           img.loading = "lazy";
-          return img;
+          link.append(img);
+          return link;
         })
       );
       thumbs.hidden = thumbItems.length === 0;
@@ -851,12 +858,16 @@
       const bgPhotoItems = bannerBgItems.slice(0, 3);
       if (bgPhotoItems.length > 0) {
         bannerBg.replaceChildren(
-          ...bgPhotoItems.map((bg) => {
+          ...bgPhotoItems.map(({ festival, bg }) => {
+            const link = document.createElement("a");
+            link.className = "weekend-banner-bg-photo-link";
+            link.href = `${getListBasePath()}festivals/${festival.id}/`;
             const img = document.createElement("img");
             img.className = "weekend-banner-bg-photo";
             img.src = `https://i.ytimg.com/vi/${bg.contentId}/hqdefault.jpg`;
-            img.alt = "";
-            return img;
+            img.alt = festival.name;
+            link.append(img);
+            return link;
           })
         );
       } else {

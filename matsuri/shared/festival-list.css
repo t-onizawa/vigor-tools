@@ -659,6 +659,11 @@ h1 {
   pointer-events: none;
 }
 
+.weekend-banner-bg-photo-link {
+  display: contents;
+  pointer-events: auto;
+}
+
 .weekend-banner-bg-photo {
   width: 34%;
   min-width: 80px;
@@ -667,6 +672,17 @@ h1 {
   object-fit: cover;
   opacity: 0.32;
   filter: saturate(0.5) brightness(0.85);
+  transition: opacity 140ms ease;
+}
+
+.weekend-banner-bg-photo-link:hover .weekend-banner-bg-photo,
+.weekend-banner-bg-photo-link:focus-visible .weekend-banner-bg-photo {
+  opacity: 0.48;
+}
+
+.weekend-banner-bg-photo-link:focus-visible .weekend-banner-bg-photo {
+  outline: 2px solid var(--gold);
+  outline-offset: -2px;
 }
 
 .weekend-banner-bg-fallback {
@@ -777,11 +793,26 @@ h1 {
   display: none;
 }
 
+.weekend-banner-thumb-link {
+  display: contents;
+}
+
 .weekend-banner-thumb-img {
   flex: 1 1 0;
   min-width: 0;
   height: 100%;
   object-fit: cover;
+  transition: opacity 140ms ease;
+}
+
+.weekend-banner-thumb-link:hover .weekend-banner-thumb-img,
+.weekend-banner-thumb-link:focus-visible .weekend-banner-thumb-img {
+  opacity: 0.82;
+}
+
+.weekend-banner-thumb-link:focus-visible .weekend-banner-thumb-img {
+  outline: 2px solid var(--gold);
+  outline-offset: -2px;
 }
 
 .weekend-banner-hub-link {
