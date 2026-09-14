@@ -11,3 +11,4 @@ FESTIVAL_SLUGS.push("nakashima-yamakasa-matsuri", "fujisaki-hachimangu-reitaisai
 FESTIVAL_SLUGS.push("hachinohe-sansha-taisai", "hanamaki-matsuri", "omagari-hanabi", "sakata-matsuri");
 FESTIVAL_SLUGS.push("hino-matsuri");
 FESTIVAL_SLUGS.push("yugawara-yassa-matsuri");
+FESTIVAL_SLUGS.push("kumano-ohanabi-taikai");
