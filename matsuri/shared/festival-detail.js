@@ -1003,6 +1003,43 @@
     return dates.length > 1 ? `${formatDate(dates[0])}〜` : formatDate(dates[0]);
   }
 
+  const RELATED_FESTIVAL_ICON_PRIORITY = [
+    ["mikoshi", "hasMikoshi"],
+    ["dashi", "hasDashi"],
+    ["odori", "hasDanceOnDashi"],
+    ["hikimawashi", "hasParade"]
+  ];
+
+  function buildRelatedFestivalThumb(item) {
+    const backgroundImage = item.festival.constantInfo && item.festival.constantInfo.backgroundImage;
+    const wrap = document.createElement("span");
+    wrap.setAttribute("aria-hidden", "true");
+
+    if (backgroundImage && backgroundImage.contentId) {
+      wrap.className = "related-festival-thumb is-photo";
+      const img = document.createElement("img");
+      img.src = `https://i.ytimg.com/vi/${backgroundImage.contentId}/hqdefault.jpg`;
+      img.alt = "";
+      img.loading = "lazy";
+      wrap.append(img);
+      return wrap;
+    }
+
+    const features = item.festival.constantInfo && item.festival.constantInfo.features;
+    const matched = features && RELATED_FESTIVAL_ICON_PRIORITY.find(([, key]) => features[key] === true);
+    if (matched) {
+      wrap.className = "related-festival-thumb is-icon";
+      const img = document.createElement("img");
+      img.src = `${sharedBasePath}/icons/section-feature-${matched[0]}.png`;
+      img.alt = "";
+      img.loading = "lazy";
+      wrap.append(img);
+      return wrap;
+    }
+
+    return null;
+  }
+
   async function renderRelatedFestivals(currentFestival, currentYearlyInfo) {
     const section = byId("related-festivals-section");
     const list = byId("related-festivals-list");
@@ -1017,6 +1054,8 @@
       const link = document.createElement("a");
       link.className = "feature-badge related-festival-link";
       link.href = `../${item.festival.id}/`;
+
+      const thumb = buildRelatedFestivalThumb(item);
 
       const text = document.createElement("span");
       text.className = "feature-badge-text";
@@ -1033,6 +1072,7 @@
       dateLabel.textContent = formatStartDate(dates);
 
       text.append(reasonLabel, name, dateLabel);
+      if (thumb) link.append(thumb);
       link.append(text);
       list.append(link);
     });
