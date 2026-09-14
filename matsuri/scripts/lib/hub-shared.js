@@ -206,7 +206,7 @@ function renderFestivalCard(item, experienceTags) {
   const features = constantInfo.features || {};
   const access = yearlyInfo.access || {};
   const media = Array.isArray(constantInfo.atmosphereMedia) ? constantInfo.atmosphereMedia : [];
-  const background = constantInfo.backgroundImage;
+  const background = constantInfo.backgroundImage || media[0];
   const hasPhoto = Boolean(background && background.type === "youtube" && background.contentId);
   const status = getEffectiveEventStatus(yearlyInfo);
   const experienceTag = experienceTags[festival.id];

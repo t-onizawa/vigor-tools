@@ -428,9 +428,8 @@
       ? constantInfo.atmosphereMedia
       : [];
 
-    const hasPhoto = Boolean(
-      constantInfo.backgroundImage && constantInfo.backgroundImage.type === "youtube"
-    );
+    const cardImage = constantInfo.backgroundImage || atmosphereMedia[0];
+    const hasPhoto = Boolean(cardImage && cardImage.type === "youtube" && cardImage.contentId);
     const effectiveStatus = getEffectiveEventStatus(yearlyInfo);
     const experienceTag =
       typeof EXPERIENCE_TAGS !== "undefined" ? EXPERIENCE_TAGS[festival.id] : undefined;
@@ -444,7 +443,7 @@
     card.dataset.eventStatus = effectiveStatus || "";
 
     if (hasPhoto) {
-      card.append(createItemMedia(constantInfo.backgroundImage));
+      card.append(createItemMedia(cardImage));
     } else {
       card.append(createDummyMedia(features));
     }
@@ -555,9 +554,8 @@
     const atmosphereMedia = Array.isArray(constantInfo.atmosphereMedia)
       ? constantInfo.atmosphereMedia
       : [];
-    const hasPhoto = Boolean(
-      constantInfo.backgroundImage && constantInfo.backgroundImage.type === "youtube"
-    );
+    const cardImage = constantInfo.backgroundImage || atmosphereMedia[0];
+    const hasPhoto = Boolean(cardImage && cardImage.type === "youtube" && cardImage.contentId);
     const effectiveStatus = getEffectiveEventStatus(yearlyInfo);
 
     const card = document.createElement("a");
@@ -565,7 +563,7 @@
     card.href = `${getListBasePath()}festivals/${festival.id}/`;
     card.dataset.eventStatus = effectiveStatus || "";
 
-    card.append(hasPhoto ? createItemMedia(constantInfo.backgroundImage) : createDummyMedia(features));
+    card.append(hasPhoto ? createItemMedia(cardImage) : createDummyMedia(features));
 
     const body = document.createElement("div");
     body.className = "pick-card-body";
