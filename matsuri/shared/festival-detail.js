@@ -1015,24 +1015,18 @@
     if (backgroundImage && backgroundImage.contentId) {
       link.classList.add("has-bg-photo");
       link.style.backgroundImage = `url("https://i.ytimg.com/vi/${backgroundImage.contentId}/hqdefault.jpg")`;
-      return null;
+      return;
     }
 
     const features = item.festival.constantInfo && item.festival.constantInfo.features;
     const matched = features && RELATED_FESTIVAL_ICON_PRIORITY.find(([, key]) => features[key] === true);
     if (matched) {
-      const wrap = document.createElement("span");
-      wrap.className = "related-festival-thumb is-icon";
-      wrap.setAttribute("aria-hidden", "true");
-      const img = document.createElement("img");
-      img.src = `${sharedBasePath}/icons/section-feature-${matched[0]}.png`;
-      img.alt = "";
-      img.loading = "lazy";
-      wrap.append(img);
-      return wrap;
+      link.classList.add("has-bg-icon");
+      link.style.setProperty(
+        "--related-festival-icon-url",
+        `url("${sharedBasePath}/icons/section-feature-${matched[0]}.png")`
+      );
     }
-
-    return null;
   }
 
   async function renderRelatedFestivals(currentFestival, currentYearlyInfo) {
@@ -1050,7 +1044,7 @@
       link.className = "feature-badge related-festival-link";
       link.href = `../${item.festival.id}/`;
 
-      const thumb = applyRelatedFestivalBackground(link, item);
+      applyRelatedFestivalBackground(link, item);
 
       const text = document.createElement("span");
       text.className = "feature-badge-text";
@@ -1067,7 +1061,6 @@
       dateLabel.textContent = formatStartDate(dates);
 
       text.append(reasonLabel, name, dateLabel);
-      if (thumb) link.append(thumb);
       link.append(text);
       list.append(link);
     });
