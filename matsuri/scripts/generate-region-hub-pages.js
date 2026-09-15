@@ -21,9 +21,9 @@ function main() {
       h1: `${region.label}の祭り一覧`,
       breadcrumbLabel: `${region.label}の祭り`,
       canonical,
-      title: (count) => `${region.label}の祭り${count}件｜MATSURI`,
-      description: (count) => `${region.label}で開催される祭り${count}件をまとめました。開催日程・アクセス・山車や神輿などの見どころを比較できます。`,
-      jsonDescription: (count) => `${region.label}で開催される祭り${count}件をまとめました。`,
+      title: (count) => `${region.label}の祭り${count}件【2026年版】｜MATSURI`,
+      description: (count) => `${region.label}で2026年に開催される祭り${count}件をまとめました。開催日程・アクセス・山車や神輿などの見どころを比較できます。`,
+      jsonDescription: (count) => `${region.label}で2026年に開催される祭り${count}件をまとめました。`,
       intro: (count) => `${region.label}で開催される祭り${count}件を日程順にまとめました。`,
       filters: { area: "region-scoped", areaRegionSlug: slug, feature: true, month: true }
     }, selected, experienceTags, cssVersion);

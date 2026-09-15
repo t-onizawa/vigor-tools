@@ -17,8 +17,8 @@ const FEATURE_HUBS = [
 ];
 
 function titleFor(hub, count) {
-  if (["night", "day", "evening"].includes(hub.slug)) return `${hub.label}が見どころの祭り${count}件｜MATSURI`;
-  return `${hub.label}が見られる祭り${count}件｜MATSURI`;
+  if (["night", "day", "evening"].includes(hub.slug)) return `${hub.label}が見どころの祭り${count}件【2026年版】｜MATSURI`;
+  return `${hub.label}が見られる祭り${count}件【2026年版】｜MATSURI`;
 }
 
 function main() {
@@ -35,8 +35,8 @@ function main() {
       breadcrumbLabel: `${hub.label}が見どころの祭り`,
       canonical,
       title: (count) => titleFor(hub, count),
-      description: (count) => `${hub.label}が見どころの祭り${count}件をまとめました。開催日程・アクセス・山車や神輿などの特徴を比較できます。`,
-      jsonDescription: (count) => `${hub.label}が見どころの祭り${count}件をまとめました。`,
+      description: (count) => `2026年に${hub.label}が見どころの祭り${count}件をまとめました。開催日程・アクセス・山車や神輿などの特徴を比較できます。`,
+      jsonDescription: (count) => `2026年に${hub.label}が見どころの祭り${count}件をまとめました。`,
       intro: (count) => `${hub.label}が見どころの祭り${count}件を日程順にまとめました。`,
       filters: { area: "full", month: true }
     }, selected, experienceTags, cssVersion);

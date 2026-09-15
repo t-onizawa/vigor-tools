@@ -312,7 +312,7 @@ function renderMonthPage(month, items, experienceTags, cssVersion, filters) {
   const count = items.length;
   const canonical = `https://vigorlab.net/matsuri/months/${month.slug}/`;
   const name = `${month.label}の祭り一覧`;
-  const description = `${month.label}に開催される祭り${count}件をまとめました。開催地・アクセス・山車や神輿などの見どころを比較できます。`;
+  const description = `2026年${month.label}に開催される祭り${count}件をまとめました。開催地・アクセス・山車や神輿などの見どころを比較できます。`;
   const itemList = items.map(({ festival }, index) => ({
     "@type": "ListItem",
     position: index + 1,
@@ -323,7 +323,7 @@ function renderMonthPage(month, items, experienceTags, cssVersion, filters) {
     "@context": "https://schema.org",
     "@type": "CollectionPage",
     name,
-    description: `${month.label}に開催される祭り${count}件をまとめました。`,
+    description: `2026年${month.label}に開催される祭り${count}件をまとめました。`,
     url: canonical,
     mainEntity: { "@type": "ItemList", numberOfItems: count, itemListElement: itemList }
   };
@@ -345,17 +345,17 @@ function renderMonthPage(month, items, experienceTags, cssVersion, filters) {
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>${month.label}の祭り一覧｜${count}件掲載 | MATSURI</title>
+    <title>${month.label}の祭り一覧【2026年版】｜${count}件掲載 | MATSURI</title>
     <link rel="canonical" href="${canonical}">
     <meta name="description" content="${description}">
     <meta property="og:type" content="website">
     <meta property="og:site_name" content="MATSURI">
-    <meta property="og:title" content="${month.label}の祭り一覧｜${count}件掲載 | MATSURI">
+    <meta property="og:title" content="${month.label}の祭り一覧【2026年版】｜${count}件掲載 | MATSURI">
     <meta property="og:description" content="${description}">
     <meta property="og:url" content="${canonical}">
     <meta property="og:image" content="https://vigorlab.net/assets/brand/og-image.png">
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="${month.label}の祭り一覧｜${count}件掲載 | MATSURI">
+    <meta name="twitter:title" content="${month.label}の祭り一覧【2026年版】｜${count}件掲載 | MATSURI">
     <meta name="twitter:description" content="${description}">
     <meta name="twitter:image" content="https://vigorlab.net/assets/brand/og-image.png">
     <meta property="og:locale" content="ja_JP">

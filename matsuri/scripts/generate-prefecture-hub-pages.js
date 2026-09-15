@@ -37,9 +37,9 @@ function main() {
       h1: `${prefecture}の祭り一覧`,
       breadcrumbLabel: `${prefecture}の祭り`,
       canonical,
-      title: (count) => `${prefecture}の祭り${count}件｜MATSURI`,
-      description: (count) => `${prefecture}で開催される祭り${count}件をまとめました。開催日程・アクセス・山車や神輿などの見どころを比較できます。`,
-      jsonDescription: (count) => `${prefecture}で開催される祭り${count}件をまとめました。`,
+      title: (count) => `${prefecture}の祭り${count}件【2026年版】｜MATSURI`,
+      description: (count) => `${prefecture}で2026年に開催される祭り${count}件をまとめました。開催日程・アクセス・山車や神輿などの見どころを比較できます。`,
+      jsonDescription: (count) => `${prefecture}で2026年に開催される祭り${count}件をまとめました。`,
       intro: (count) => `${prefecture}で開催される祭り${count}件を日程順にまとめました。`,
       auxiliaryLink: regionLink,
       filters: { feature: true, month: true }
