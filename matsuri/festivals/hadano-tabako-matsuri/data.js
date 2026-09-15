@@ -13,7 +13,7 @@ const FESTIVAL = {
     },
     access: { nearestStation: "小田急小田原線 秦野駅北口から市内目抜き通り・市役所周辺へ徒歩圏" },
     mapReference: {
-      label: "秦野市役所", pointType: "main_venue", query: "秦野市役所 神奈川県秦野市桜町1-3-2", lat: null, lng: null,
+      label: "秦野市役所", pointType: "main_venue", query: "秦野市役所 神奈川県秦野市桜町1-3-2", lat: 35.3747319, lng: 139.2201844,
       mapUrl: "https://www.google.com/maps/search/?api=1&query=秦野市役所+神奈川県秦野市桜町1-3-2",
       note: "祭りは秦野駅北口から市役所周辺の市内目抜き通りなど複数会場で行われるため、市役所を基準地点とした。"
     },

@@ -5,7 +5,7 @@ const FESTIVAL = {
     schedulePattern: "毎年10月15日・16日（御船祭は16日）",
     features: { hasDashi: "n/a", hasMikoshi: true, hasDanceOnDashi: "n/a", hasParade: false, highlightTime: "daytime", hayashiNote: "例大祭で御神霊を移した神輿を朱塗りの神幸船へ載せ、9隻の早船が先導して熊野川の御船島を巡る。船渡御は曳き回しへ分類しない。" },
     access: { nearestStation: "JR新宮駅（熊野速玉大社へのアクセス拠点）" },
-    mapReference: { label: "熊野速玉大社", pointType: "main_venue", query: "熊野速玉大社 和歌山県新宮市新宮1", lat: null, lng: null, mapUrl: "https://www.google.com/maps/search/?api=1&query=熊野速玉大社+和歌山県新宮市新宮1", note: "例大祭の神事と神輿渡御の起点。御船祭は熊野川・川原と御船島周辺で行われる。" },
+    mapReference: { label: "熊野速玉大社", pointType: "main_venue", query: "熊野速玉大社 和歌山県新宮市新宮1", lat: 33.7322225, lng: 135.9835101, mapUrl: "https://www.google.com/maps/search/?api=1&query=熊野速玉大社+和歌山県新宮市新宮1", note: "例大祭の神事と神輿渡御の起点。御船祭は熊野川・川原と御船島周辺で行われる。" },
     highlightComment: "御神輿を載せた朱塗りの神幸船が御船島を三周し、その前を9隻の早船が競漕する、熊野川を舞台にした船祭り。",
     atmosphereMedia: [], backgroundImage: null,
     confirmation: { verified: true, confirmedDate: "2026-09-15", sources: ["https://www.shinguu.jp/event", "https://www.wakayama-kanko.or.jp/events/index_1_2_29.html"] }
