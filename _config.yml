@@ -23,5 +23,7 @@ exclude:
   - matsuri/template-design.md
   - matsuri/list-design.md
   - matsuri/atmosphere-media-guide.md
+  - matsuri/task-new-festival-addition.md
+  - matsuri/task-weekly-quality-improvement.md
   - matsuri/research/
   - matsuri/note-drafts/
