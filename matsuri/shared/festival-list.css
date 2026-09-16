@@ -154,40 +154,6 @@ h1 {
     width: 100%;
     flex-basis: 100%;
   }
-
-  .card-feature-chip:not(.is-yes) {
-    display: none;
-  }
-
-  .card-feature-chip.is-yes {
-    border: 0;
-    padding: 2px 8px;
-    background: var(--badge);
-  }
-
-  .card-feature-chip.is-yes .card-feature-icon {
-    display: none;
-  }
-
-  .card-feature-chip.is-yes[data-feature="dashi"] {
-    background: #f8dcd9;
-    color: #8a2a20;
-  }
-
-  .card-feature-chip.is-yes[data-feature="mikoshi"] {
-    background: #f4e5c4;
-    color: #6b4a10;
-  }
-
-  .card-feature-chip.is-yes[data-feature="odori"] {
-    background: #dbe6f3;
-    color: #1f4569;
-  }
-
-  .card-feature-chip.is-yes[data-feature="hikimawashi"] {
-    background: #ecdfc7;
-    color: #5c3d12;
-  }
 }
 
 .filter-toggle {
@@ -502,7 +468,7 @@ h1 {
 }
 
 .card-feature-label {
-  color: var(--text);
+  color: inherit;
 }
 
 .card-feature-icon {
@@ -541,6 +507,40 @@ h1 {
 
 .card-feature-chip.is-na .card-feature-icon {
   color: var(--unknown-text);
+}
+
+.card-feature-chip:not(.is-yes) {
+  display: none;
+}
+
+.card-feature-chip.is-yes {
+  border: 0;
+  padding: 2px 8px;
+  background: var(--badge);
+}
+
+.card-feature-chip.is-yes .card-feature-icon {
+  display: none;
+}
+
+.card-feature-chip.is-yes[data-feature="dashi"] {
+  background: #f8dcd9;
+  color: #8a2a20;
+}
+
+.card-feature-chip.is-yes[data-feature="mikoshi"] {
+  background: #f4e5c4;
+  color: #6b4a10;
+}
+
+.card-feature-chip.is-yes[data-feature="odori"] {
+  background: #dbe6f3;
+  color: #1f4569;
+}
+
+.card-feature-chip.is-yes[data-feature="hikimawashi"] {
+  background: #ecdfc7;
+  color: #5c3d12;
 }
 
 .card-meta {
