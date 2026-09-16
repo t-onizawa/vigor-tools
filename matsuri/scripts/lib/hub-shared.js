@@ -188,7 +188,12 @@ function renderFeatureChip(label, value, iconName) {
 function renderDummyMedia(features) {
   const found = CARD_FEATURE_ITEMS.filter(([, key]) => features[key] === true).slice(0, 2);
   const selected = found.length > 0 ? found : [["見どころ", null, "midokoro"]];
-  const plates = selected.map(([, , iconName]) => `<span class="item-media-icon-plate">${ICONS[iconName]}</span>`).join("");
+  const plates = selected
+    .map(([, , iconName]) => {
+      const imageName = iconName === "midokoro" ? "night" : iconName;
+      return `<span class="item-media-icon-plate"><img class="dummy-icon-img" src="../../shared/icons/section-feature-${imageName}.png" alt=""></span>`;
+    })
+    .join("");
   return `<div class="item-media item-media--icon" aria-hidden="true"><div class="item-media-icon-group">${plates}</div></div>`;
 }
 
