@@ -1,11 +1,12 @@
 const FESTIVAL = {
   id: "hokota-summer-festival",
-  name: "鉾田の夏祭り",
+  name: "鉾田の夏祭り（鉾田祭り）",
   officialName: "鉾神社夏季例大祭",
   prefecture: "茨城県",
   city: "鉾田市",
   areaTag: "ibaraki",
   constantInfo: {
+    searchQuery: "鉾田祭り",
     schedulePattern: "毎年8月最終金・土・日曜日",
     features: {
       hasDashi: true,
