@@ -455,7 +455,7 @@
           favorites: "Favorites",
           lab: "VIGOR LAB Home",
           language: "日本語版",
-          x: "Follow on X",
+          x: "X (Updates)",
           copyright: `© ${new Date().getFullYear()} VIGOR LAB`
         }
       : {
@@ -467,7 +467,7 @@
           favorites: "お気に入り",
           lab: "VIGOR LABトップへ",
           language: "English version",
-          x: "Xをフォロー",
+          x: "X（最新情報）",
           copyright: `© ${new Date().getFullYear()} VIGOR LAB`
         };
 
@@ -622,7 +622,7 @@
     xLink.href = X_ACCOUNT_URL;
     xLink.target = "_blank";
     xLink.rel = "noopener noreferrer";
-    xLink.textContent = locale === "en" ? "Follow on X" : "Xをフォロー";
+    xLink.textContent = locale === "en" ? "X (Updates)" : "X（最新情報）";
     const languageLink = document.createElement("a");
     languageLink.href = getLanguageUrl();
     languageLink.textContent = labels.language;
