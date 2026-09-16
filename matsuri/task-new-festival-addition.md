@@ -259,7 +259,10 @@ data.js側のスキーマ変更は行わない。
 - 調査中にbackgroundImageが見つかった場合、og:image・twitter:imageを
   `https://i.ytimg.com/vi/{contentId}/hqdefault.jpg` に設定する。
   見つからない場合は汎用画像
-  （`https://vigorlab.net/matsuri/shared/brand/og-image.png`）のままにする
+  （`https://vigorlab.net/matsuri/shared/brand/og-image.png?v=1`。末尾の
+  `?v=1`はキャッシュバスティング用のバージョン番号で、画像ファイル
+  自体を更新した場合のみ数字を上げる。既存ページのコピー時はそのまま
+  維持する）のままにする
 - 「関連する祭り」セクション用の静的プレースホルダーを追加する：
   ```html
   <section class="info-section" id="related-festivals-section"

@@ -358,11 +358,11 @@ function renderMonthPage(month, items, experienceTags, cssVersion, filters) {
     <meta property="og:title" content="${month.label}の祭り一覧【2026年版】｜${count}件掲載 | MATSURI">
     <meta property="og:description" content="${description}">
     <meta property="og:url" content="${canonical}">
-    <meta property="og:image" content="https://vigorlab.net/matsuri/shared/brand/og-image.png">
+    <meta property="og:image" content="https://vigorlab.net/matsuri/shared/brand/og-image.png?v=1">
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="${month.label}の祭り一覧【2026年版】｜${count}件掲載 | MATSURI">
     <meta name="twitter:description" content="${description}">
-    <meta name="twitter:image" content="https://vigorlab.net/matsuri/shared/brand/og-image.png">
+    <meta name="twitter:image" content="https://vigorlab.net/matsuri/shared/brand/og-image.png?v=1">
     <meta property="og:locale" content="ja_JP">
     <link rel="alternate" hreflang="ja" href="${canonical}">
     <link rel="alternate" hreflang="x-default" href="${canonical}">
@@ -441,11 +441,11 @@ function renderHubPage(config, items, experienceTags, cssVersion) {
     <meta property="og:title" content="${config.title(count)}">
     <meta property="og:description" content="${description}">
     <meta property="og:url" content="${config.canonical}">
-    <meta property="og:image" content="https://vigorlab.net/matsuri/shared/brand/og-image.png">
+    <meta property="og:image" content="https://vigorlab.net/matsuri/shared/brand/og-image.png?v=1">
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="${config.title(count)}">
     <meta name="twitter:description" content="${description}">
-    <meta name="twitter:image" content="https://vigorlab.net/matsuri/shared/brand/og-image.png">
+    <meta name="twitter:image" content="https://vigorlab.net/matsuri/shared/brand/og-image.png?v=1">
     <meta property="og:locale" content="ja_JP">
     <link rel="alternate" hreflang="ja" href="${config.canonical}">
     <link rel="alternate" hreflang="x-default" href="${config.canonical}">
