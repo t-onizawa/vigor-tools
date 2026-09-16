@@ -1,6 +1,7 @@
 (function () {
   const MATSURI_MARKER = "matsuri";
   const FAVORITES_STORAGE_KEY = "matsuri-favorites";
+  const X_ACCOUNT_URL = "https://x.com/vigormatsuri";
 
   const FOOTER_REGIONS = [
     { slug: "kanto", ja: "関東", en: "Kanto" },
@@ -454,6 +455,7 @@
           favorites: "Favorites",
           lab: "VIGOR LAB Home",
           language: "日本語版",
+          x: "Follow on X",
           copyright: `© ${new Date().getFullYear()} VIGOR LAB`
         }
       : {
@@ -465,6 +467,7 @@
           favorites: "お気に入り",
           lab: "VIGOR LABトップへ",
           language: "English version",
+          x: "Xをフォロー",
           copyright: `© ${new Date().getFullYear()} VIGOR LAB`
         };
 
@@ -524,13 +527,18 @@
     const languageLink = document.createElement("a");
     languageLink.href = getLanguageUrl();
     languageLink.textContent = text.language;
+    const xLink = document.createElement("a");
+    xLink.href = X_ACCOUNT_URL;
+    xLink.target = "_blank";
+    xLink.rel = "noopener noreferrer";
+    xLink.textContent = text.x;
 
     const groups = document.createElement("div");
     groups.className = "site-footer-groups";
     groups.append(
       makeGroup(text.regions, regionLinks),
       makeGroup(text.features, featureLinks),
-      makeGroup(text.more, [favoritesLink, labLink, languageLink])
+      makeGroup(text.more, [favoritesLink, labLink, xLink, languageLink])
     );
 
     inner.append(brand, groups);
@@ -610,10 +618,15 @@
     const labLink = document.createElement("a");
     labLink.href = getLabHomeUrl();
     labLink.textContent = labels.lab;
+    const xLink = document.createElement("a");
+    xLink.href = X_ACCOUNT_URL;
+    xLink.target = "_blank";
+    xLink.rel = "noopener noreferrer";
+    xLink.textContent = locale === "en" ? "Follow on X" : "Xをフォロー";
     const languageLink = document.createElement("a");
     languageLink.href = getLanguageUrl();
     languageLink.textContent = labels.language;
-    menu.append(labLink, languageLink);
+    menu.append(labLink, xLink, languageLink);
     menuWrap.append(menuButton, menu);
     items.append(menuWrap);
     inner.append(logo, items);
