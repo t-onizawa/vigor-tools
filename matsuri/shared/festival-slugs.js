@@ -13,3 +13,4 @@ FESTIVAL_SLUGS.push("hino-matsuri");
 FESTIVAL_SLUGS.push("yugawara-yassa-matsuri");
 FESTIVAL_SLUGS.push("kumano-ohanabi-taikai");
 FESTIVAL_SLUGS.push("kumano-hayatama-reitaisai-mifune-matsuri");
+FESTIVAL_SLUGS.push("kumano-jofuku-mantosai");
