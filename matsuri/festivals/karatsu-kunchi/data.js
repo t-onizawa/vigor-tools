@@ -37,7 +37,7 @@ const FESTIVAL = {
         "publisher": "まつりと 日本のまつり探検プロジェクト",
         "publisherType": "official",
         "purpose": "festival_atmosphere",
-        "publishedYear": 2023,
+        "publishedYear": 2022,
         "checkedDate": "2026-09-16"
       }
     ],
