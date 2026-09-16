@@ -523,10 +523,6 @@
     line-height: 1;
   }
 
-  .site-nav-icon--favorites {
-    transform: translateY(2px);
-  }
-
   .site-nav-icon--search {
     font-size: 1.5rem;
   }
