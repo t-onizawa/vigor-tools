@@ -627,7 +627,7 @@
 
     const img = document.createElement("img");
     img.className = "item-media-img";
-    img.src = `https://i.ytimg.com/vi/${backgroundImage.contentId}/hqdefault.jpg`;
+    img.src = `https://i.ytimg.com/vi/${backgroundImage.contentId}/${backgroundImage.thumbnailVariant || "hqdefault"}.jpg`;
     img.alt = "";
     img.loading = "lazy";
     img.decoding = "async";
@@ -845,7 +845,7 @@
           link.href = `${getListBasePath()}festivals/${festival.id}/`;
           const img = document.createElement("img");
           img.className = "weekend-banner-thumb-img";
-          img.src = `https://i.ytimg.com/vi/${bg.contentId}/hqdefault.jpg`;
+          img.src = `https://i.ytimg.com/vi/${bg.contentId}/${bg.thumbnailVariant || "hqdefault"}.jpg`;
           img.alt = festival.name;
           img.loading = "lazy";
           link.append(img);
@@ -863,7 +863,7 @@
           ...bgPhotoItems.map(({ bg }) => {
             const img = document.createElement("img");
             img.className = "weekend-banner-bg-photo";
-            img.src = `https://i.ytimg.com/vi/${bg.contentId}/hqdefault.jpg`;
+            img.src = `https://i.ytimg.com/vi/${bg.contentId}/${bg.thumbnailVariant || "hqdefault"}.jpg`;
             img.alt = "";
             return img;
           })

@@ -211,7 +211,7 @@ function renderFestivalCard(item, experienceTags) {
   const status = getEffectiveEventStatus(yearlyInfo);
   const experienceTag = experienceTags[festival.id];
   const visual = hasPhoto
-    ? `<div class="item-media"><img class="item-media-img" src="https://i.ytimg.com/vi/${encodeURIComponent(background.contentId)}/hqdefault.jpg" alt="" loading="lazy" decoding="async"></div>`
+    ? `<div class="item-media"><img class="item-media-img" src="https://i.ytimg.com/vi/${encodeURIComponent(background.contentId)}/${encodeURIComponent(background.thumbnailVariant || "hqdefault")}.jpg" alt="" loading="lazy" decoding="async"></div>`
     : renderDummyMedia(features);
   const chips = CARD_FEATURE_ITEMS.map(([label, key, icon]) => renderFeatureChip(label, features[key], icon)).join("") +
     (experienceTag ? `<span class="experience-tag-chip">${escapeHtml(experienceTag)}</span>` : "");

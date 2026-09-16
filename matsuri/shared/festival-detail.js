@@ -542,7 +542,7 @@
 
     const background = document.createElement("div");
     background.className = "hero-background";
-    background.style.backgroundImage = `url(https://i.ytimg.com/vi/${media.contentId}/hqdefault.jpg)`;
+    background.style.backgroundImage = `url(https://i.ytimg.com/vi/${media.contentId}/${media.thumbnailVariant || "hqdefault"}.jpg)`;
     header.prepend(background);
   }
 
@@ -559,7 +559,7 @@
     );
 
     const image = document.createElement("img");
-    image.src = `https://i.ytimg.com/vi/${media.contentId}/hqdefault.jpg`;
+    image.src = `https://i.ytimg.com/vi/${media.contentId}/${media.thumbnailVariant || "hqdefault"}.jpg`;
     image.alt = "";
     image.loading = "lazy";
 
@@ -1014,7 +1014,7 @@
     const backgroundImage = item.festival.constantInfo && item.festival.constantInfo.backgroundImage;
     if (backgroundImage && backgroundImage.contentId) {
       link.classList.add("has-bg-photo");
-      link.style.backgroundImage = `url("https://i.ytimg.com/vi/${backgroundImage.contentId}/hqdefault.jpg")`;
+      link.style.backgroundImage = `url("https://i.ytimg.com/vi/${backgroundImage.contentId}/${backgroundImage.thumbnailVariant || "hqdefault"}.jpg")`;
       return;
     }
 
@@ -1408,7 +1408,7 @@
 
     const backgroundImage = festival.constantInfo.backgroundImage;
     if (backgroundImage?.type === "youtube" && backgroundImage.contentId) {
-      jsonLd.image = `https://i.ytimg.com/vi/${backgroundImage.contentId}/hqdefault.jpg`;
+      jsonLd.image = `https://i.ytimg.com/vi/${backgroundImage.contentId}/${backgroundImage.thumbnailVariant || "hqdefault"}.jpg`;
     }
 
     const dateModified = getLatestConfirmedDate(festival, yearlyInfo);

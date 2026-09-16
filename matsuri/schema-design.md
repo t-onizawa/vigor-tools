@@ -286,6 +286,7 @@ Scope: 石岡のおまつり1件のプロトタイプ検証のみ。8件展開�
     "backgroundImage": {
       "type": "youtube",
       "contentId": "8q5JKyKTBFQ",
+      "thumbnailVariant": "2",
       "sourceUrl": "https://www.youtube.com/watch?v=8q5JKyKTBFQ",
       "publisher": "祭のきせき（MatsuriNoKiseki）",
       "publisherType": "individual",
@@ -296,6 +297,19 @@ Scope: 石岡のおまつり1件のプロトタイプ検証のみ。8件展開�
         み採用した。"
     }
     ```
+
+    - `thumbnailVariant`（任意、文字列）：YouTubeが動画から自動生成する
+      静止画は、投稿者が設定したデフォルトサムネイル
+      （`https://i.ytimg.com/vi/{contentId}/hqdefault.jpg`）以外にも、
+      動画から自動抽出された`0`〜`3`の4種類が存在する
+      （`https://i.ytimg.com/vi/{contentId}/{0|1|2|3}.jpg`）。デフォルト
+      サムネイルに文字・ロゴが乗っていて7節の採用基準を満たせない場合、
+      これらの自動抽出フレームの中に基準を満たすものがないか確認する
+      （2026-09-16追加、詳細は`atmosphere-media-guide.md` 7節）。
+      省略時は`hqdefault`として扱う（既存データとの後方互換）。
+      `atmosphereMedia`の各要素にも同じフィールドを任意で使える
+      （週末バナー・一覧カードでbackgroundImage代わりに表示される
+      ケースがあるため）。
 
     - `constantInfo`に`atmosphereMedia`と並ぶ形で新設する（配列では
       なく単一オブジェクト。背景に使う画像は1枚で足りるため、
