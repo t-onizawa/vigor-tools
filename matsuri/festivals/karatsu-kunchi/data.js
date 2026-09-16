@@ -35,7 +35,7 @@ const FESTIVAL = {
         "contentId": "06w2cffsvqY",
         "title": "祭りドキュメンタリー#27　佐賀県・唐津くんち",
         "publisher": "まつりと 日本のまつり探検プロジェクト",
-        "publisherType": "official",
+        "publisherType": "local_media",
         "purpose": "festival_atmosphere",
         "publishedYear": 2022,
         "checkedDate": "2026-09-16"
@@ -46,7 +46,7 @@ const FESTIVAL = {
       "contentId": "06w2cffsvqY",
       "sourceUrl": "https://www.youtube.com/watch?v=06w2cffsvqY",
       "publisher": "まつりと 日本のまつり探検プロジェクト",
-      "publisherType": "official",
+      "publisherType": "local_media",
       "checkedDate": "2026-09-16",
       "note": "14台の曳山と曳き子が画面の大部分を占め、小さな番組ロゴ以外の文字装飾がなく、祭りの主役を横長画面で判別できる。"
     },
