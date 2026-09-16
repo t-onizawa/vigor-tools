@@ -259,7 +259,7 @@ data.js側のスキーマ変更は行わない。
 - 調査中にbackgroundImageが見つかった場合、og:image・twitter:imageを
   `https://i.ytimg.com/vi/{contentId}/hqdefault.jpg` に設定する。
   見つからない場合は汎用画像
-  （`https://vigorlab.net/assets/brand/og-image.png`）のままにする
+  （`https://vigorlab.net/matsuri/shared/brand/og-image.png`）のままにする
 - 「関連する祭り」セクション用の静的プレースホルダーを追加する：
   ```html
   <section class="info-section" id="related-festivals-section"
@@ -514,4 +514,13 @@ PRは作成しない。
     選び方の優先順位）が新規追加時にも確実に適用されるよう、採用条件
     セクションに7節（backgroundImage）・1〜6節（atmosphereMedia）への
     明示参照を追加した。
+
+2026-09-16（汎用OGP画像のURLを修正）
+    汎用画像（backgroundImageが見つからない場合のog:image/twitter:image
+    フォールバック）が、root直下の共通アセット
+    （vigorlab.net/assets/brand/og-image.png）を指していたが、この画像は
+    実際にはVIGOR TOOLSのブランド画像だったため、MATSURIのページの
+    リンクカードがVIGOR TOOLSの内容で表示される不具合があった。matsuri
+    専用の汎用画像（matsuri/shared/brand/og-image.png）を新設し、参照先
+    をそちらに変更した。
 ```
