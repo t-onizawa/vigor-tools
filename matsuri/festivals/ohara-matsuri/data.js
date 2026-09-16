@@ -22,8 +22,8 @@ const FESTIVAL = {
       "label": "天文館・電車通り",
       "pointType": "viewing_point",
       "query": "鹿児島県鹿児島市 天文館通",
-      "lat": null,
-      "lng": null,
+      "lat": 31.5909658,
+      "lng": 130.5548378,
       "mapUrl": "https://www.google.com/maps/search/?api=1&query=鹿児島市+天文館通",
       "note": "高見馬場からいづろ、桟橋通りへ続く踊りゾーンの中心。"
     },

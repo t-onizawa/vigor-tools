@@ -22,13 +22,25 @@ const FESTIVAL = {
       "label": "八代神社",
       "pointType": "shrine",
       "query": "熊本県八代市妙見町 八代神社",
-      "lat": null,
-      "lng": null,
+      "lat": 32.4997706,
+      "lng": 130.641001,
       "mapUrl": "https://www.google.com/maps/search/?api=1&query=八代市+八代神社",
       "note": "妙見祭の祭礼の中心となる神社。"
     },
     "highlightComment": "神輿に供奉して、亀蛇や華麗な笠鉾など多彩な出し物が八代の町を練り歩く神幸行事。",
-    "atmosphereMedia": [],
+    "atmosphereMedia": [
+      {
+        "type": "youtube",
+        "url": "https://www.youtube.com/watch?v=RnEKtKRuDcU",
+        "contentId": "RnEKtKRuDcU",
+        "title": "【公式】令和4年八代妙見祭／神幸行列（お上り）＠塩屋八幡宮",
+        "publisher": "八代妙見祭オフィシャル",
+        "publisherType": "official",
+        "purpose": "festival_atmosphere",
+        "publishedYear": 2022,
+        "checkedDate": "2026-09-16"
+      }
+    ],
     "backgroundImage": null,
     "confirmation": {
       "verified": true,

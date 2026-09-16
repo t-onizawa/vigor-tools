@@ -13,7 +13,7 @@ const FESTIVAL = {
     },
     access: { nearestStation: "西武池袋線 飯能駅・JR八高線 東飯能駅" },
     mapReference: {
-      label: "飯能駅北口周辺", pointType: "viewing_point", query: "飯能駅 埼玉県飯能市", lat: null, lng: null,
+      label: "飯能駅北口周辺", pointType: "viewing_point", query: "飯能駅 埼玉県飯能市", lat: 35.8508472, lng: 139.3203652,
       mapUrl: "https://www.google.com/maps/search/?api=1&query=飯能駅+埼玉県飯能市",
       note: "中心市街地で底抜け屋台と山車の巡行が行われます。"
     },

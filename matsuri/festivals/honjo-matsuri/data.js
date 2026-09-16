@@ -13,7 +13,7 @@ const FESTIVAL = {
     },
     access: { nearestStation: "JR高崎線 本庄駅" },
     mapReference: {
-      label: "金鑚神社", pointType: "shrine", query: "金鑚神社 本庄市", lat: null, lng: null,
+      label: "金鑚神社", pointType: "shrine", query: "金鑚神社 本庄市", lat: 36.2431934, lng: 139.1769984,
       mapUrl: "https://www.google.com/maps/search/?api=1&query=金鑚神社+本庄市",
       note: "金鑚神社と中山道を中心とした本庄市街地で行われます。"
     },

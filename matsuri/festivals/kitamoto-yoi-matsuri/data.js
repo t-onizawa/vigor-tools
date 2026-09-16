@@ -13,7 +13,7 @@ const FESTIVAL = {
     },
     access: { nearestStation: "JR高崎線 北本駅西口すぐ" },
     mapReference: {
-      label: "北本駅西口", pointType: "viewing_point", query: "北本駅西口 埼玉県北本市", lat: null, lng: null,
+      label: "北本駅西口", pointType: "viewing_point", query: "北本駅西口 埼玉県北本市", lat: 36.0315901, lng: 139.5329513,
       mapUrl: "https://www.google.com/maps/search/?api=1&query=北本駅西口+埼玉県北本市",
       note: "公式が会場として案内する北本駅西口と西中央通りの起点を観覧の基準地点とした。"
     },
