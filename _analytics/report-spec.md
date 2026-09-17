@@ -227,7 +227,11 @@ Internal traffic filtering
 - Analyticsレポートの2ファイルのみcommitする
 - コミットメッセージは
   `chore: update weekly analytics report YYYY-MM-DD`とする
-- pushは行わない
+- commit後、`origin/main`へpushする（2026-09-17改訂：翌朝に別の
+  Scheduled Taskが実行されるため、commitしたら都度pushする運用へ
+  変更した）
+- push前に`git fetch`し、`origin/main`から分岐していないか確認する。
+  分岐していた場合は無理に解決せず、pushせず報告する
 
 ## 最終報告
 
