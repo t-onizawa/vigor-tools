@@ -375,9 +375,24 @@ APIの`searchanalytics.query`を実行、`sc-domain:vigorlab.net`の
 クリック・表示回数・CTR・平均順位を取得できることを確認（期間
 2026-09-07〜09-14でclicks=85, impressions=4962等）。
 
-**ステータス：GA4・Search Console両APIの疎通確認完了。次は
-report-spec.mdの取得項目を段階的にAPI移行する設計（対象範囲の分割・
-Codexへの実装指示作成）へ進む（まだ着手していない）。**
+**実装完了（2026-09-17、commit `db561c52`）：**
+`_analytics/scripts/fetch_analytics.py`を新規作成。report-spec.md
+既存の取得項目（全体/Google Organic/TOOLS/MATSURI/Web検索/動画検索）
+をGA4 Data API・Search Console APIから一括取得し、カテゴリごとに
+独立したエラー処理でJSON出力する。report-spec.mdへスクリプト優先・
+失敗時は従来手順（Exploration・ブラウザ操作）へのフォールバックを
+明記。取得項目・集計ロジック自体は変更していない。
+
+実データでの動作確認済み（全カテゴリ`error: null`）。ただし`codex
+exec`（CLI経由の呼び出し）のサンドボックスではGoogle APIへのDNS
+解決が失敗する現象を確認した。実際の「Task: LAB weekly analytics」
+チャット経由の実行（GA4 sessions PoC時）では正常に到達できているため、
+本番のScheduled Task実行には影響しないと考えられるが、次回の実行結果
+で最終確認する。
+
+**ステータス：実装完了・次回の週次実行結果待ち。** 次回実行時、
+Data Notesにスクリプト経由で取得できたか、フォールバックが発生した
+かを確認する。
 
 ### 8月に追う指標
 
