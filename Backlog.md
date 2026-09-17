@@ -341,6 +341,38 @@ Git（無料版は安全側に倒す。VIGOR実運用版の自動commit/pushと�
 いない。**次にやること（Founder着手待ち）：note記事化して無料公開する
 かどうかを判断し、着手する。**
 
+### 週次AnalyticsのGoogle API直接連携（2026-09-17調査開始）
+
+GSC Wizard（ChatGPT側プラグイン）はCodex Cloud実行環境から呼び出せない
+ことが確認済み（本セクション上部「GSC Wizard」関連の記録、および
+`_analytics/report-spec.md`のTOOLS取得手順に経緯を記載）。代替として、
+GA4 Data API / Search Console APIをGoogle Cloudサービスアカウント経由で
+直接呼び出す方式を調査した。
+
+**重要な前提の発見：** 週次Analyticsタスク（「LAB weekly analytics」）は
+Codex Cloudのサンドボックスではなく、**Founderのローカルマシン上で実行
+されるローカルタスクだった。** そのため、Codex Cloud環境のSecrets/
+Setup Script/Internet Access許可リストは不要で、通常のローカル開発
+環境と同じ方法（環境変数・ローカルファイル）で認証情報を扱える。
+
+**セットアップ内容（2026-09-17完了）：**
+- Google CloudプロジェクトIDは`text-201907`
+- サービスアカウント`vigor-lab-analytics-reader@text-201907.iam.gserviceaccount.com`
+  を作成し、GA4「VIGOR LAB」プロパティ（プロパティID `547504460`）へ
+  閲覧者権限、Search Console `sc-domain:vigorlab.net`へフル権限を付与
+- サービスアカウント鍵（JSON）は`~/.config/vigor-analytics/service-account.json`
+  に配置（リポジトリ外、Gitでは管理しない）
+- `GOOGLE_APPLICATION_CREDENTIALS`を`~/.zshrc`へ永続設定
+- `google-analytics-data`パッケージをインストール済み
+
+**PoC結果：** GA4 Data APIで直近7日間のsessionsを取得するテストに
+成功（sessions=329）。Claude側のセッション、Codexタスク自身の両方から
+同じ結果を確認済み。
+
+**ステータス：GA4 API疎通確認完了。次はSearch Console APIの同様の
+疎通確認、その後report-spec.mdの取得項目を段階的にAPI移行する設計へ
+進む（まだ着手していない）。**
+
 ### 8月に追う指標
 
 - Search Console：対象ページの表示回数、クリック数、平均掲載順位
