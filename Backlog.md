@@ -369,9 +369,15 @@ Setup Script/Internet Access許可リストは不要で、通常のローカル�
 成功（sessions=329）。Claude側のセッション、Codexタスク自身の両方から
 同じ結果を確認済み。
 
-**ステータス：GA4 API疎通確認完了。次はSearch Console APIの同様の
-疎通確認、その後report-spec.mdの取得項目を段階的にAPI移行する設計へ
-進む（まだ着手していない）。**
+**Search Console API PoC結果（2026-09-17）：** `google-api-python-client`
+を追加インストールし、同じサービスアカウントで`searchconsole` v1
+APIの`searchanalytics.query`を実行、`sc-domain:vigorlab.net`の
+クリック・表示回数・CTR・平均順位を取得できることを確認（期間
+2026-09-07〜09-14でclicks=85, impressions=4962等）。
+
+**ステータス：GA4・Search Console両APIの疎通確認完了。次は
+report-spec.mdの取得項目を段階的にAPI移行する設計（対象範囲の分割・
+Codexへの実装指示作成）へ進む（まだ着手していない）。**
 
 ### 8月に追う指標
 
