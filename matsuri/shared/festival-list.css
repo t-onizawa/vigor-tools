@@ -1174,12 +1174,13 @@ h1 {
 
 .region-expand {
   border: 1px solid var(--line);
-  border-radius: 14px;
+  border-radius: 999px;
   background: var(--surface);
 }
 
 .region-expand[open] {
   flex-basis: 100%;
+  border-radius: 14px;
 }
 
 .region-expand > summary {
