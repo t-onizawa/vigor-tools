@@ -146,6 +146,10 @@ function sortFestivalItems(items) {
   });
 }
 
+function sortFestivalItemsChronologically(items) {
+  return [...items].sort((a, b) => dateValue(a.yearlyInfo) - dateValue(b.yearlyInfo));
+}
+
 function weekday(date) {
   return new Intl.DateTimeFormat("ja-JP", { weekday: "short" }).format(date);
 }
@@ -529,6 +533,7 @@ module.exports = {
   MATSURI_ROOT,
   loadHubData,
   sortFestivalItems,
+  sortFestivalItemsChronologically,
   renderMonthPage,
   renderHubPage,
   writePage

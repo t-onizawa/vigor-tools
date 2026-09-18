@@ -1,7 +1,7 @@
 const {
   MONTHS,
   loadHubData,
-  sortFestivalItems,
+  sortFestivalItemsChronologically,
   renderMonthPage,
   writePage
 } = require("./lib/hub-shared");
@@ -9,7 +9,7 @@ const {
 function main() {
   const { items, experienceTags, cssVersion } = loadHubData();
   for (const month of MONTHS) {
-    const monthItems = sortFestivalItems(items.filter(({ yearlyInfo }) => {
+    const monthItems = sortFestivalItemsChronologically(items.filter(({ yearlyInfo }) => {
       return Array.isArray(yearlyInfo.dates) && yearlyInfo.dates.some((date) => {
         return Number(date.slice(5, 7)) === month.number;
       });
