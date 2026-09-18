@@ -1,11 +1,12 @@
 const FESTIVAL = {
   "id": "naha-otsunahiki-matsuri",
-  "name": "那覇大綱挽まつり",
+  "name": "那覇大綱挽まつり（那覇祭り）",
   "officialName": "第56回那覇大綱挽まつり",
   "prefecture": "沖縄県",
   "city": "那覇市",
   "areaTag": "okinawa",
   "constantInfo": {
+    "searchQuery": "那覇祭り",
     "schedulePattern": "毎年10月の3日間",
     "features": {
       "hasDashi": false,
