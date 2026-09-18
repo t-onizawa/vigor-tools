@@ -37,7 +37,30 @@ const FEATURE_EXPLAINERS = {
         </dl>
         <h3>掲載している祭りに見る神輿の違い</h3>
         <p>同じ神輿でも、地域や祭りによって担ぎ方・見せ方は大きく異なります。<a href="../../festivals/nada-kenka-matsuri/">灘のけんか祭り</a>では、御旅山で三基の神輿を激しくぶつけ合う神事が行われます。<a href="../../festivals/awa-yawatanmachi/">安房やわたんまち</a>では、10社の神輿と5社の山車・お船が一堂に会し、境内で神輿振りを競います。</p>
+        <p><a href="../dashi/">山車とは？種類や違いはこちら →</a></p>
         <p class="hub-explainer-source">出典：<a href="https://ja.wikipedia.org/wiki/%E7%A5%9E%E8%BC%BF" target="_blank" rel="noopener noreferrer">Wikipedia「神輿」</a>等の一般的な解説を参考にしています。個別の祭りにおける神輿の詳細は、各祭りの詳細ページに記載の一次情報をご確認ください。</p>
+        </div>
+      </details>
+`,
+  dashi: `      <details class="hub-explainer">
+        <summary>山車とは</summary>
+        <div class="hub-explainer-body">
+        <p>山車は、祭礼の際に引いたり担いだりする出し物の総称で、花や人形などで豪華に装飾されることが多いのが特徴です。神が降臨する臨時の依り代として機能してきたとされ、最古の記録は『古事記』垂仁天皇の条に見える「青葉山」、体系的な祭礼物としては『続日本後紀』天長10年（833年）の仁明天皇大嘗会で曳かれた「標山」が伝えられています。</p>
+        <h3>山車の呼び名（地域による違い）</h3>
+        <dl class="hub-glossary">
+          <dt>曳山・山鉾</dt>
+          <dd>「山」の要素を持つ呼び名。曳山（ひきやま）、山笠、山鉾など各地で呼び方が分かれる。</dd>
+          <dt>だんじり（地車）</dt>
+          <dd>近畿地方を中心とした呼び名。速度を保ったまま曲がる「やりまわし」が特徴とされる。</dd>
+          <dt>屋台・太鼓台</dt>
+          <dd>「台」の要素を持つ呼び名。地域や祭りによって構造・装飾が大きく異なる。</dd>
+        </dl>
+        <h3>神輿との違い</h3>
+        <p>神輿が「神様そのものが乗る神聖な輿」であるのに対し、山車は「神を迎え、もてなすための出し物」という性格を持ちます。地域の民間信仰が加わり、装飾が豪華になったり、部分的に巨大化したりと独自の進化を遂げてきました。</p>
+        <h3>掲載している祭りに見る山車の違い</h3>
+        <p>同じ山車でも、見せ方は地域によって大きく異なります。<a href="../../festivals/kishiwada-danjiri-matsuri/">岸和田だんじり祭</a>では、昼は重いだんじりが速度を落とさず街角を曲がる「やりまわし」が、夜は提灯を灯した静かな曳行へと表情を変えます。<a href="../../festivals/takayama-sanno-matsuri/">春の高山祭（山王祭）</a>では、精緻な祭屋台が城下町に曳き揃えられ、からくりが奉納されます。</p>
+        <p><a href="../mikoshi/">神輿とは？種類や違いはこちら →</a></p>
+        <p class="hub-explainer-source">出典：<a href="https://ja.wikipedia.org/wiki/%E5%B1%B1%E8%BB%8A" target="_blank" rel="noopener noreferrer">Wikipedia「山車」</a>等の一般的な解説を参考にしています。個別の祭りにおける山車の詳細は、各祭りの詳細ページに記載の一次情報をご確認ください。</p>
         </div>
       </details>
 `
