@@ -5,11 +5,20 @@ const MATSURI_ROOT = path.resolve(__dirname, "..", "..");
 const FESTIVALS_ROOT = path.join(MATSURI_ROOT, "festivals");
 const SHARED_ROOT = path.join(MATSURI_ROOT, "shared");
 const MONTHS = [
+  { number: 1, slug: "january", label: "1月" },
+  { number: 2, slug: "february", label: "2月" },
+  { number: 3, slug: "march", label: "3月" },
+  { number: 4, slug: "april", label: "4月" },
+  { number: 5, slug: "may", label: "5月" },
+  { number: 6, slug: "june", label: "6月" },
   { number: 7, slug: "july", label: "7月" },
   { number: 8, slug: "august", label: "8月" },
-  { number: 9, slug: "september", label: "9月" }
+  { number: 9, slug: "september", label: "9月" },
+  { number: 10, slug: "october", label: "10月" },
+  { number: 11, slug: "november", label: "11月" },
+  { number: 12, slug: "december", label: "12月" }
 ];
-const MINIMUM_HUB_COUNT = 5;
+const MINIMUM_HUB_COUNT = 3;
 const REGIONS = {
   hokkaido: { label: "北海道", prefectures: ["hokkaido"] },
   tohoku: { label: "東北", prefectures: ["aomori", "iwate", "akita", "miyagi", "yamagata", "fukushima"] },
