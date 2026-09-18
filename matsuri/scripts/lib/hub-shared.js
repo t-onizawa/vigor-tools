@@ -384,7 +384,7 @@ function renderMonthPage(month, items, experienceTags, cssVersion, filters) {
     <link rel="icon" type="image/png" href="/matsuri/favicon-32x32.png" sizes="32x32">
     <link rel="apple-touch-icon" href="/matsuri/apple-touch-icon.png">
     <link rel="stylesheet" href="../../shared/festival-list.css?v=${cssVersion}">
-    <link rel="stylesheet" href="../../shared/month-hub.css?v=1">
+    <link rel="stylesheet" href="../../shared/month-hub.css?v=2">
     <link rel="stylesheet" href="../../shared/site-nav.css?v=${getSiteNavCssVersion()}">
     <script src="/assets/analytics.js" defer></script>
     <script type="application/ld+json">${JSON.stringify(collectionJsonLd)}</script>
@@ -441,6 +441,7 @@ function renderHubPage(config, items, experienceTags, cssVersion) {
   const cards = items.map((item) => renderFestivalCard(item, experienceTags)).join("\n");
   const description = config.description(count);
   const auxiliaryLink = config.auxiliaryLink ? `      ${config.auxiliaryLink}\n` : "";
+  const explainer = config.explainerHtml ? `${config.explainerHtml}\n` : "";
   return `<!doctype html>
 <html lang="ja">
   <head>
@@ -467,7 +468,7 @@ function renderHubPage(config, items, experienceTags, cssVersion) {
     <link rel="icon" type="image/png" href="/matsuri/favicon-32x32.png" sizes="32x32">
     <link rel="apple-touch-icon" href="/matsuri/apple-touch-icon.png">
     <link rel="stylesheet" href="../../shared/festival-list.css?v=${cssVersion}">
-    <link rel="stylesheet" href="../../shared/month-hub.css?v=1">
+    <link rel="stylesheet" href="../../shared/month-hub.css?v=2">
     <link rel="stylesheet" href="../../shared/site-nav.css?v=${getSiteNavCssVersion()}">
     <script src="/assets/analytics.js" defer></script>
     <script type="application/ld+json">${JSON.stringify(collectionJsonLd)}</script>
@@ -480,7 +481,7 @@ function renderHubPage(config, items, experienceTags, cssVersion) {
         <h1>${config.h1}</h1>
         <p class="header-description">${config.intro(count)}</p>
       </header>
-${auxiliaryLink}      ${renderFilterSection(config.filters)}      <p class="count-text" id="hub-count-text">${count}件を掲載中</p>
+${explainer}${auxiliaryLink}      ${renderFilterSection(config.filters)}      <p class="count-text" id="hub-count-text">${count}件を掲載中</p>
       <div class="festival-list">
 ${cards}
       </div>
