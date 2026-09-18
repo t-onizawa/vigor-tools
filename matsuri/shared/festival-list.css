@@ -1148,14 +1148,15 @@ h1 {
   flex-shrink: 0;
 }
 
-.region-links {
+.region-list {
   display: flex;
   flex-wrap: wrap;
+  align-items: flex-start;
   gap: 8px;
   margin-top: 12px;
 }
 
-.region-links a {
+.region-links-single {
   border: 1px solid var(--line);
   border-radius: 999px;
   padding: 7px 14px;
@@ -1165,10 +1166,81 @@ h1 {
   font-weight: 700;
 }
 
-.region-links a:hover,
-.region-links a:focus-visible {
+.region-links-single:hover,
+.region-links-single:focus-visible {
   border-color: var(--accent);
   color: var(--accent);
+}
+
+.region-expand {
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  background: var(--surface);
+}
+
+.region-expand[open] {
+  flex-basis: 100%;
+}
+
+.region-expand > summary {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  margin: 0;
+  padding: 7px 14px;
+  border-radius: 999px;
+  color: var(--text);
+  font-size: 0.82rem;
+  font-weight: 700;
+  cursor: pointer;
+  list-style: none;
+}
+
+.region-expand > summary::-webkit-details-marker {
+  display: none;
+}
+
+.region-expand > summary::after {
+  content: "▾";
+  color: var(--muted);
+  transition: transform 0.15s ease;
+}
+
+.region-expand[open] > summary::after {
+  transform: rotate(180deg);
+}
+
+.region-expand:hover > summary,
+.region-expand > summary:focus-visible {
+  color: var(--accent);
+}
+
+.region-expand-body {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  padding: 0 12px 12px;
+}
+
+.region-expand-body a {
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  padding: 5px 11px;
+  background: var(--bg);
+  color: var(--text);
+  font-size: 0.78rem;
+  font-weight: 700;
+}
+
+.region-expand-body a:hover,
+.region-expand-body a:focus-visible {
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
+.region-expand-all {
+  border-color: var(--accent) !important;
+  color: var(--accent) !important;
 }
 
 .weekend-picks-list,

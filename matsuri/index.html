@@ -25,7 +25,7 @@
     <link rel="icon" href="/matsuri/favicon.ico" sizes="any">
     <link rel="icon" type="image/png" href="/matsuri/favicon-32x32.png" sizes="32x32">
     <link rel="apple-touch-icon" href="/matsuri/apple-touch-icon.png">
-<link rel="stylesheet" href="shared/festival-list.css?v=50">
+<link rel="stylesheet" href="shared/festival-list.css?v=51">
     <script src="/assets/analytics.js" defer></script>
     <link rel="stylesheet" href="shared/site-nav.css?v=17">
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebSite","name":"MATSURI","url":"https://vigorlab.net/matsuri/","description":"MATSURIは、今週末開催の祭りがひと目で分かる祭りガイド。山車・神輿・踊りなど現地で見られる特徴や開催時期、エリアから絞り込んで探せます。","inLanguage":"ja"}</script>
@@ -67,15 +67,97 @@
 
       <section class="area-entry-section" aria-label="エリアから探す">
         <h2>エリアから探す</h2>
-        <nav class="region-links" aria-label="地方から探す">
-          <a href="regions/kanto/">関東</a>
-          <a href="regions/tohoku/">東北</a>
-          <a href="regions/chubu/">中部</a>
-          <a href="regions/kinki/">近畿</a>
-          <a href="regions/chugoku/">中国</a>
-          <a href="regions/shikoku/">四国</a>
-          <a href="regions/kyushu/">九州</a>
-        </nav>
+        <div class="region-list" aria-label="地方から探す">
+          <details class="region-expand">
+            <summary>関東</summary>
+            <div class="region-expand-body">
+              <a href="prefectures/ibaraki/">茨城県</a>
+              <a href="prefectures/tochigi/">栃木県</a>
+              <a href="prefectures/gunma/">群馬県</a>
+              <a href="prefectures/saitama/">埼玉県</a>
+              <a href="prefectures/chiba/">千葉県</a>
+              <a href="prefectures/tokyo/">東京都</a>
+              <a href="prefectures/kanagawa/">神奈川県</a>
+              <a href="regions/kanto/" class="region-expand-all">関東地方すべての祭りを見る →</a>
+            </div>
+          </details>
+          <details class="region-expand">
+            <summary>東北</summary>
+            <div class="region-expand-body">
+              <a href="prefectures/aomori/">青森県</a>
+              <a href="prefectures/iwate/">岩手県</a>
+              <a href="prefectures/akita/">秋田県</a>
+              <a href="prefectures/miyagi/">宮城県</a>
+              <a href="prefectures/yamagata/">山形県</a>
+              <a href="prefectures/fukushima/">福島県</a>
+              <a href="regions/tohoku/" class="region-expand-all">東北地方すべての祭りを見る →</a>
+            </div>
+          </details>
+          <details class="region-expand">
+            <summary>中部</summary>
+            <div class="region-expand-body">
+              <a href="prefectures/niigata/">新潟県</a>
+              <a href="prefectures/toyama/">富山県</a>
+              <a href="prefectures/ishikawa/">石川県</a>
+              <a href="prefectures/fukui/">福井県</a>
+              <a href="prefectures/yamanashi/">山梨県</a>
+              <a href="prefectures/nagano/">長野県</a>
+              <a href="prefectures/gifu/">岐阜県</a>
+              <a href="prefectures/shizuoka/">静岡県</a>
+              <a href="prefectures/aichi/">愛知県</a>
+              <a href="regions/chubu/" class="region-expand-all">中部地方すべての祭りを見る →</a>
+            </div>
+          </details>
+          <details class="region-expand">
+            <summary>近畿</summary>
+            <div class="region-expand-body">
+              <a href="prefectures/mie/">三重県</a>
+              <a href="prefectures/shiga/">滋賀県</a>
+              <a href="prefectures/kyoto/">京都府</a>
+              <a href="prefectures/osaka/">大阪府</a>
+              <a href="prefectures/hyogo/">兵庫県</a>
+              <a href="prefectures/nara/">奈良県</a>
+              <a href="prefectures/wakayama/">和歌山県</a>
+              <a href="regions/kinki/" class="region-expand-all">近畿地方すべての祭りを見る →</a>
+            </div>
+          </details>
+          <details class="region-expand">
+            <summary>中国</summary>
+            <div class="region-expand-body">
+              <a href="prefectures/tottori/">鳥取県</a>
+              <a href="prefectures/shimane/">島根県</a>
+              <a href="prefectures/okayama/">岡山県</a>
+              <a href="prefectures/hiroshima/">広島県</a>
+              <a href="prefectures/yamaguchi/">山口県</a>
+              <a href="regions/chugoku/" class="region-expand-all">中国地方すべての祭りを見る →</a>
+            </div>
+          </details>
+          <details class="region-expand">
+            <summary>四国</summary>
+            <div class="region-expand-body">
+              <a href="prefectures/tokushima/">徳島県</a>
+              <a href="prefectures/kagawa/">香川県</a>
+              <a href="prefectures/ehime/">愛媛県</a>
+              <a href="prefectures/kochi/">高知県</a>
+              <a href="regions/shikoku/" class="region-expand-all">四国地方すべての祭りを見る →</a>
+            </div>
+          </details>
+          <details class="region-expand">
+            <summary>九州</summary>
+            <div class="region-expand-body">
+              <a href="prefectures/fukuoka/">福岡県</a>
+              <a href="prefectures/saga/">佐賀県</a>
+              <a href="prefectures/nagasaki/">長崎県</a>
+              <a href="prefectures/kumamoto/">熊本県</a>
+              <a href="prefectures/oita/">大分県</a>
+              <a href="prefectures/miyazaki/">宮崎県</a>
+              <a href="prefectures/kagoshima/">鹿児島県</a>
+              <a href="regions/kyushu/" class="region-expand-all">九州地方すべての祭りを見る →</a>
+            </div>
+          </details>
+          <a href="regions/okinawa/" class="region-links-single">沖縄</a>
+          <a href="regions/hokkaido/" class="region-links-single">北海道</a>
+        </div>
         <div class="area-entry-buttons">
           <button id="area-entry-map" class="area-entry-button" type="button" disabled aria-disabled="true">
             <span class="area-entry-icon area-entry-icon--map" aria-hidden="true"></span>
