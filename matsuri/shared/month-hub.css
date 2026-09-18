@@ -41,30 +41,63 @@
 }
 
 .hub-explainer {
+  overflow: hidden;
   margin-top: 22px;
-  padding: 18px 20px;
   border: 1px solid var(--line);
   border-radius: 8px;
   background: var(--surface);
 }
 
-.hub-explainer h2 {
-  margin: 0 0 10px;
-  font-size: 1.1rem;
+.hub-explainer > summary {
+  display: flex;
+  align-items: center;
+  padding: 16px 18px;
+  color: var(--text);
+  font-weight: 700;
+  cursor: pointer;
+  list-style: none;
 }
 
-.hub-explainer h3 {
+.hub-explainer > summary::-webkit-details-marker {
+  display: none;
+}
+
+.hub-explainer > summary::after {
+  content: "▾";
+  margin-left: auto;
+  padding-left: 12px;
+  color: var(--muted);
+  transition: transform 0.15s ease;
+}
+
+.hub-explainer[open] > summary::after {
+  transform: rotate(180deg);
+}
+
+.hub-explainer[open] > summary {
+  border-bottom: 1px solid var(--line);
+}
+
+.hub-explainer-body {
+  padding: 4px 18px 18px;
+}
+
+.hub-explainer-body h3 {
   margin: 18px 0 8px;
   font-size: 0.96rem;
 }
 
-.hub-explainer p {
+.hub-explainer-body h3:first-child {
+  margin-top: 0;
+}
+
+.hub-explainer-body p {
   margin: 0 0 10px;
   line-height: 1.7;
   font-size: 0.92rem;
 }
 
-.hub-explainer a {
+.hub-explainer-body a {
   color: var(--accent);
   text-decoration: underline;
   text-underline-offset: 0.18em;

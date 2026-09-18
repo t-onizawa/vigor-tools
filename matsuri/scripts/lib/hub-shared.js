@@ -384,7 +384,7 @@ function renderMonthPage(month, items, experienceTags, cssVersion, filters) {
     <link rel="icon" type="image/png" href="/matsuri/favicon-32x32.png" sizes="32x32">
     <link rel="apple-touch-icon" href="/matsuri/apple-touch-icon.png">
     <link rel="stylesheet" href="../../shared/festival-list.css?v=${cssVersion}">
-    <link rel="stylesheet" href="../../shared/month-hub.css?v=2">
+    <link rel="stylesheet" href="../../shared/month-hub.css?v=3">
     <link rel="stylesheet" href="../../shared/site-nav.css?v=${getSiteNavCssVersion()}">
     <script src="/assets/analytics.js" defer></script>
     <script type="application/ld+json">${JSON.stringify(collectionJsonLd)}</script>
@@ -468,7 +468,7 @@ function renderHubPage(config, items, experienceTags, cssVersion) {
     <link rel="icon" type="image/png" href="/matsuri/favicon-32x32.png" sizes="32x32">
     <link rel="apple-touch-icon" href="/matsuri/apple-touch-icon.png">
     <link rel="stylesheet" href="../../shared/festival-list.css?v=${cssVersion}">
-    <link rel="stylesheet" href="../../shared/month-hub.css?v=2">
+    <link rel="stylesheet" href="../../shared/month-hub.css?v=3">
     <link rel="stylesheet" href="../../shared/site-nav.css?v=${getSiteNavCssVersion()}">
     <script src="/assets/analytics.js" defer></script>
     <script type="application/ld+json">${JSON.stringify(collectionJsonLd)}</script>

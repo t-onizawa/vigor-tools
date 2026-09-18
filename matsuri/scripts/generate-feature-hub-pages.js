@@ -17,8 +17,9 @@ const FEATURE_HUBS = [
 ];
 
 const FEATURE_EXPLAINERS = {
-  mikoshi: `      <section class="hub-explainer" aria-labelledby="mikoshi-explainer-heading">
-        <h2 id="mikoshi-explainer-heading">神輿とは</h2>
+  mikoshi: `      <details class="hub-explainer">
+        <summary>神輿とは</summary>
+        <div class="hub-explainer-body">
         <p>神輿は、祭礼の期間だけ神様（御神体）が神社を出て氏子の町を巡る、いわば「移動する神社」です。文献上の初出は720年、隼人の乱に際して「豊前国司に仰せつけられ、初めて神輿を作らしむ」と伝えられ、749年には宇佐八幡神が金色の鳳凰を頂く鳳輦で奈良へ渡御した記録が、現在の神輿の原型とされています。</p>
         <h3>神輿の種類</h3>
         <dl class="hub-glossary">
@@ -37,7 +38,8 @@ const FEATURE_EXPLAINERS = {
         <h3>掲載している祭りに見る神輿の違い</h3>
         <p>同じ神輿でも、地域や祭りによって担ぎ方・見せ方は大きく異なります。<a href="../../festivals/nada-kenka-matsuri/">灘のけんか祭り</a>では、御旅山で三基の神輿を激しくぶつけ合う神事が行われます。<a href="../../festivals/awa-yawatanmachi/">安房やわたんまち</a>では、10社の神輿と5社の山車・お船が一堂に会し、境内で神輿振りを競います。</p>
         <p class="hub-explainer-source">出典：<a href="https://ja.wikipedia.org/wiki/%E7%A5%9E%E8%BC%BF" target="_blank" rel="noopener noreferrer">Wikipedia「神輿」</a>等の一般的な解説を参考にしています。個別の祭りにおける神輿の詳細は、各祭りの詳細ページに記載の一次情報をご確認ください。</p>
-      </section>
+        </div>
+      </details>
 `
 };
 
