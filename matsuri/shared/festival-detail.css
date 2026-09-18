@@ -947,6 +947,10 @@ p {
   outline: 0;
 }
 
+#lodging-link {
+  margin-top: 12px;
+}
+
 .search-link-icon {
   flex: none;
   width: 20px;
