@@ -15,3 +15,4 @@ FESTIVAL_SLUGS.push("kumano-ohanabi-taikai");
 FESTIVAL_SLUGS.push("kumano-hayatama-reitaisai-mifune-matsuri");
 FESTIVAL_SLUGS.push("kumano-jofuku-mantosai");
 FESTIVAL_SLUGS.push("kakunodate-hiburi-kamakura");
+FESTIVAL_SLUGS.push("kamihinokinai-kamifusen-age");
