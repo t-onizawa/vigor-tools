@@ -20,11 +20,11 @@ const FESTIVAL = {
     highlightComment: "高さ7mにもなる扇ねぷたを含む約10台が夜の商店街を進み、ねぷた太鼓とまつり囃子が大合奏する。",
     atmosphereMedia: [],
     backgroundImage: null,
-    confirmation: { verified: true, confirmedDate: "2026-08-04", sources: ["https://www.city.ota.gunma.jp/site/kankou/1037648.html", "https://www.city.ota.gunma.jp/site/kankou/1061974.html"] }
+    confirmation: { verified: true, confirmedDate: "2026-09-21", sources: ["https://www.city.ota.gunma.jp/site/kankou/1037648.html", "https://www.city.ota.gunma.jp/site/koho-ota/1062278.html"] }
   },
   yearlyInfo: [{
     year: 2026, eventStatus: "ended", dates: ["2026-08-14", "2026-08-15"],
     access: { hasParking: null, parkingNote: "無料シャトルバスの運行予定は確認済み。2026年の駐車場詳細は公式案内を確認してください。" },
-    confirmation: { confirmedDate: "2026-08-04", sources: ["https://www.city.ota.gunma.jp/site/kankou/1061974.html"], note: "太田市公式の2026年度ページで8月14日・15日の開催を確認。" }
+    confirmation: { confirmedDate: "2026-09-21", sources: ["https://www.city.ota.gunma.jp/site/koho-ota/1062278.html"], note: "太田市公式の2026年8月広報で8月14日・15日の開催を確認。" }
   }]
 };

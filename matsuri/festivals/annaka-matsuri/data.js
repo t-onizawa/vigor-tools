@@ -22,11 +22,11 @@ const FESTIVAL = {
     confirmation: { verified: true, confirmedDate: "2026-07-31", sources: ["https://www.city.annaka.lg.jp/page/21641.html", "https://www.city.annaka.lg.jp/page/2058.html"] }
   },
   yearlyInfo: [{
-    year: 2026, eventStatus: "unconfirmed", dates: [],
-    access: { hasParking: null, parkingNote: "2026年の会場・駐車場・交通規制は公式発表未確認。" },
+    year: 2026, eventStatus: "confirmed", dates: ["2026-10-11"],
+    access: { hasParking: null, parkingNote: "2026年の駐車場・交通規制詳細は公式案内を確認してください。" },
     confirmation: {
-      confirmedDate: "2026-07-31", sources: ["https://www.city.annaka.lg.jp/page/21641.html"],
-      note: "市公式で例年10月中旬・山車曳行は隔年と確認。2026年の具体日程と山車実施内容は未発表。"
+      confirmedDate: "2026-09-21", sources: ["https://www.city.annaka.lg.jp/site/mayor/30916.html"],
+      note: "安中市公式の定例記者発表で、2026年10月11日の開催、山車運行・神輿・花火等の内容を確認。"
     }
   }]
 };

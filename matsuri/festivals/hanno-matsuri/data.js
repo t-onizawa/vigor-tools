@@ -31,11 +31,11 @@ const FESTIVAL = {
     confirmation: { verified: true, confirmedDate: "2026-07-30", sources: ["https://www.city.hanno.lg.jp/soshikikarasagasu/kyoikubu/hakubutsukan/bunkazaitanto/bunkazai/452.html", "https://www.city.hanno.lg.jp/soshikikarasagasu/kyoikubu/hakubutsukan/bunkazaitanto/bunkazai/minzoku/index.html"] }
   },
   yearlyInfo: [{
-    year: 2026, eventStatus: "scheduled_pending_official", dates: ["2026-11-07", "2026-11-08"],
+    year: 2026, eventStatus: "confirmed", dates: ["2026-11-07", "2026-11-08"],
     access: { hasParking: null, parkingNote: "2026年の臨時駐車場・交通規制詳細は未発表。" },
     confirmation: {
-      confirmedDate: "2026-07-30", sources: ["https://www.city.hanno.lg.jp/soshikikarasagasu/kyoikubu/hakubutsukan/bunkazaitanto/bunkazai/452.html"],
-      note: "飯能市文化財公開予定で11月7日・8日を予定日として確認。詳細発表待ち。"
+      confirmedDate: "2026-09-21", sources: ["https://www.city.hanno.lg.jp/kanko_bunka_sports/kankojoho/oshirase/10535.html"],
+      note: "飯能市公式で、2026年11月7日・8日の開催日と開催時間を確認。"
     }
   }]
 };

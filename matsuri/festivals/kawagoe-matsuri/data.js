@@ -54,16 +54,16 @@ const FESTIVAL = {
   yearlyInfo: [
     {
       year: 2026,
-      eventStatus: "scheduled_pending_official",
+      eventStatus: "confirmed",
       dates: ["2026-10-17", "2026-10-18"],
       access: {
         hasParking: true,
         parkingNote: "氷川神社周辺に臨時駐車場（川越第一中学校・仙波小学校・富士見中学校・月越小学校等、8:30〜22:00、荒天時休止）が例年設置される。2026年度版の詳細は未確認。"
       },
       confirmation: {
-        confirmedDate: "2026-07-28",
-        sources: ["https://kawagoematsuri.jp/"],
-        note: "祭り運営団体公式サイトで2026年日程を直接確認。"
+        confirmedDate: "2026-09-21",
+        sources: ["https://www.city.kawagoe.saitama.jp/kanko/k-benri/1017233.html"],
+        note: "川越市公式の令和8年10月混雑予想で、2026年10月17日・18日の開催を確認。"
       }
     }
   ]

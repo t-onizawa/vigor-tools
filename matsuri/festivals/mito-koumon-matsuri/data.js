@@ -30,13 +30,13 @@ const FESTIVAL = {
       checkedDate: "2026-07-31"
     }],
     backgroundImage: null,
-    confirmation: { verified: true, confirmedDate: "2026-07-30", sources: ["https://mitokoumon.com/koumon/honsai.html", "https://www.city.mito.lg.jp/page/124507.html"] }
+    confirmation: { verified: true, confirmedDate: "2026-07-30", sources: ["https://mitokoumon.com/koumon/honsai.html"] }
   },
   yearlyInfo: [{
     year: 2026, eventStatus: "ended", dates: ["2026-08-01", "2026-08-02"],
     access: { hasParking: null, parkingNote: "本祭期間は国道50号などで交通規制。祭り専用駐車場は未確認。" },
     confirmation: {
-      confirmedDate: "2026-08-07", sources: ["https://mitokoumon.com/koumon/honsai.html", "https://www.city.mito.lg.jp/page/124507.html"],
+      confirmedDate: "2026-08-07", sources: ["https://mitokoumon.com/koumon/honsai.html"],
       note: "水戸黄門まつり実行委員会主催の本祭として、山車巡行、みこし渡御、カーニバル、提灯行列を同一プログラム内で確認。花火大会は別日程のため本ページの日付に含めない。"
     }
   }]
