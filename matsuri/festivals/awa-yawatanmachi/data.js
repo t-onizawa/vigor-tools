@@ -33,7 +33,7 @@ const FESTIVAL = {
     confirmation: { verified: true, confirmedDate: "2026-07-30", sources: ["https://www.city.tateyama.chiba.jp/syougaigaku/page003452.html"] }
   },
   yearlyInfo: [{
-    year: 2026, eventStatus: "confirmed", dates: ["2026-09-19", "2026-09-20"],
+    year: 2026, eventStatus: "ended", dates: ["2026-09-19", "2026-09-20"],
     access: { hasParking: null, parkingNote: "2026年の駐車場・交通規制は未確認。" },
     confirmation: {
       confirmedDate: "2026-08-10", sources: ["https://www.city.tateyama.chiba.jp/files/300377332.pdf", "https://www.city.tateyama.chiba.jp/syougaigaku/page003452.html"],

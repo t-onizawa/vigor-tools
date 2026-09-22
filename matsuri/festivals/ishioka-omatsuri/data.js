@@ -63,7 +63,7 @@ const FESTIVAL = {
   yearlyInfo: [
     {
       year: 2026,
-      eventStatus: "confirmed",
+      eventStatus: "ended",
       dates: ["2026-09-19", "2026-09-20", "2026-09-21"],
       yearTownInCharge: "森木町",
       schedule: [

@@ -23,7 +23,7 @@ const FESTIVAL = {
     confirmation: { verified: true, confirmedDate: "2026-08-11", sources: ["https://www.city.katsuura.lg.jp/site/city-promotion/3881.html", "https://maruchiba.jp/event/detail_13173.html", "https://www.pref.chiba.lg.jp/kc-isumi/isumi/event.html"] }
   },
   yearlyInfo: [{
-    year: 2026, eventStatus: "confirmed", dates: ["2026-09-18", "2026-09-19", "2026-09-20", "2026-09-21"],
+    year: 2026, eventStatus: "ended", dates: ["2026-09-18", "2026-09-19", "2026-09-20", "2026-09-21"],
     access: { hasParking: false, parkingNote: "千葉県公式観光サイトは乗用車・大型バスとも駐車場なしと案内している。" },
     confirmation: { confirmedDate: "2026-08-11", sources: ["https://maruchiba.jp/event/detail_13173.html", "https://www.pref.chiba.lg.jp/kc-isumi/isumi/event.html"], note: "2026年9月18日から21日まで、勝浦漁港・遠見岬神社・川津神社・勝浦中央商店街ほかで開催。舟渡しは当日の天候と海況による。" }
   }]

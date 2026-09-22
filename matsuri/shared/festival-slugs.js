@@ -16,3 +16,4 @@ FESTIVAL_SLUGS.push("kumano-hayatama-reitaisai-mifune-matsuri");
 FESTIVAL_SLUGS.push("kumano-jofuku-mantosai");
 FESTIVAL_SLUGS.push("kakunodate-hiburi-kamakura");
 FESTIVAL_SLUGS.push("kamihinokinai-kamifusen-age");
+FESTIVAL_SLUGS.push("nagoya-matsuri", "owari-tsushima-aki-matsuri", "koromo-matsuri", "nakahata-hachimansha-omanto-matsuri", "miya-matsuri");
