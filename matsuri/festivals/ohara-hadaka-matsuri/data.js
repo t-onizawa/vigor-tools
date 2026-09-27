@@ -57,9 +57,9 @@ const FESTIVAL = {
         parkingNote: "大原海水浴場に270台分の無料駐車場あり（第三者情報）。大原町役場にも駐車場があるが台数に限りがあり、電車利用が推奨されている。"
       },
       confirmation: {
-        confirmedDate: "2026-09-07",
-        sources: ["https://www.city.isumi.lg.jp/soshikikarasagasu/suisanshokoka/kankopromotionhan/3/7804.html"],
-        note: "いすみ市公式の2026年交通規制・神輿渡御案内で、9月23日・24日の開催を確認。"
+        confirmedDate: "2026-09-28",
+        sources: ["https://www.city.isumi.lg.jp/soshikikarasagasu/suisanshokoka/kankopromotionhan/event/5826.html"],
+        note: "いすみ市公式の令和8年度イベントページで、9月23日・24日の開催と神輿渡御日程を確認。"
       }
     }
   ]

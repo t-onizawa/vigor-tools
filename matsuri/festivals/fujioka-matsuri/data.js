@@ -20,11 +20,11 @@ const FESTIVAL = {
     highlightComment: "子供みこし・宮神輿・大人神輿に続き、祇園山車が中心市街地を進む二日間の祭り。",
     atmosphereMedia: [],
     backgroundImage: { type: "youtube", contentId: "4JsAXD-tpnk", sourceUrl: "https://www.youtube.com/watch?v=4JsAXD-tpnk", publisher: "Ohayashi Listener", publisherType: "individual", checkedDate: "2026-08-12", note: "提灯を灯した祇園山車と囃子方が鮮明に写る現地実写。文字オーバーレイがなく主役を判別できる。" },
-    confirmation: { verified: true, confirmedDate: "2026-08-07", sources: ["https://www.city.fujioka.gunma.jp/soshiki/keizaibu/shokokanko/2/1/1953.html", "https://www.city.fujioka.gunma.jp/soshiki/kikakubu/hisho/1/reiwa8/11161.html"] }
+    confirmation: { verified: true, confirmedDate: "2026-08-07", sources: ["https://www.city.fujioka.gunma.jp/soshiki/kikakubu/hisho/1/reiwa8/11161.html"] }
   },
   yearlyInfo: [{
     year: 2026, eventStatus: "confirmed", dates: ["2026-09-26", "2026-09-27"],
     access: { hasParking: true, parkingNote: "会場内に駐車場はないが、公式がドン・キホーテUNY藤岡店、ぐんまみらい信用組合藤岡支店、藤岡市総合学習センター、ふじまる南側駐車場を臨時駐車場として案内している。" },
-    confirmation: { confirmedDate: "2026-08-07", sources: ["https://www.city.fujioka.gunma.jp/soshiki/keizaibu/shokokanko/2/1/1953.html", "https://www.city.fujioka.gunma.jp/soshiki/kikakubu/hisho/1/reiwa8/11161.html"], note: "暑さ対策で当初の7月開催から9月26日・27日へ変更。藤岡市が2026年8月1日更新の公式ページで両日の神輿・踊り・市民パレード・祇園山車行進の時刻を発表済み。" }
+    confirmation: { confirmedDate: "2026-08-07", sources: ["https://www.city.fujioka.gunma.jp/soshiki/kikakubu/hisho/1/reiwa8/11161.html"], note: "暑さ対策で当初の7月開催から9月26日・27日へ変更。藤岡市が2026年8月1日更新の公式ページで両日の神輿・踊り・市民パレード・祇園山車行進の時刻を発表済み。" }
   }]
 };
