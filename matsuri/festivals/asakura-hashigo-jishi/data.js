@@ -1,0 +1,41 @@
+const FESTIVAL = {
+  "id": "asakura-hashigo-jishi",
+  "name": "朝倉の梯子獅子",
+  "officialName": "朝倉の梯子獅子",
+  "prefecture": "愛知県",
+  "city": "知多市",
+  "areaTag": "aichi",
+  "constantInfo": {
+    "schedulePattern": "例年10月上旬",
+    "features": {
+      "hasDashi": false,
+      "hasMikoshi": false,
+      "hasDanceOnDashi": false,
+      "hasParade": false,
+      "highlightTime": "both",
+      "hayashiNote": "牟山神社の神事として、高さ約9メートルのやぐらと梯子の上で二人一組の獅子が囃子に合わせて舞う。"
+    },
+    "access": {"nearestStation": "名鉄常滑線 朝倉駅（徒歩約4分）"},
+    "mapReference": {
+      "label": "牟山神社",
+      "pointType": "shrine",
+      "query": "牟山神社 愛知県知多市新知東屋敷2",
+      "lat": null,
+      "lng": null,
+      "mapUrl": "https://www.google.com/maps/search/?api=1&query=%E7%89%9F%E5%B1%B1%E7%A5%9E%E7%A4%BE%20%E6%84%9B%E7%9F%A5%E7%9C%8C%E7%9F%A5%E5%A4%9A%E5%B8%82%E6%96%B0%E7%9F%A5%E6%9D%B1%E5%B1%8B%E6%95%B72",
+      "note": "獅子舞奉納会場を基準とする。"
+    },
+    "highlightComment": "高さ約9メートルの梯子から獅子が身を乗り出して宙にぶら下がる「おおあおり」は、迫力ある最大の見せ場。",
+    "atmosphereMedia": [],
+    "backgroundImage": null,
+    "confirmation": {"verified": true, "confirmedDate": "2026-09-28", "sources": ["https://aichinow.pref.aichi.jp/events/detail/1079/"]}
+  },
+  "yearlyInfo": [{
+    "year": 2026,
+    "eventStatus": "confirmed",
+    "dates": ["2026-10-03", "2026-10-04"],
+    "schedule": [],
+    "access": {"hasParking": true, "parkingNote": "朝倉駅周辺の有料駐車場を利用する案内です。"},
+    "confirmation": {"confirmedDate": "2026-09-28", "sources": ["https://aichinow.pref.aichi.jp/events/detail/1079/"], "note": "愛知県公式観光サイトで2026年10月3日・4日、牟山神社での奉納・演舞時間を確認。"}
+  }]
+};

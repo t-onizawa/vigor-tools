@@ -1,0 +1,41 @@
+const FESTIVAL = {
+  "id": "arimatsu-dashi-matsuri",
+  "name": "有松山車まつり",
+  "officialName": "有松天満社・秋季大祭（有松山車まつり）",
+  "prefecture": "愛知県",
+  "city": "名古屋市緑区",
+  "areaTag": "aichi",
+  "constantInfo": {
+    "schedulePattern": "毎年10月第1日曜日",
+    "features": {
+      "hasDashi": true,
+      "hasMikoshi": false,
+      "hasDanceOnDashi": false,
+      "hasParade": true,
+      "highlightTime": "both",
+      "hayashiNote": "3輌の山車が有松東海道を曳行し、からくり人形を披露。夜は各山車に約200個の提灯が灯る。"
+    },
+    "access": {"nearestStation": "名鉄名古屋本線 有松駅（会場まで徒歩約10分）"},
+    "mapReference": {
+      "label": "有松駅",
+      "pointType": "station",
+      "query": "有松駅 愛知県名古屋市緑区有松",
+      "lat": null,
+      "lng": null,
+      "mapUrl": "https://www.google.com/maps/search/?api=1&query=%E6%9C%89%E6%9D%BE%E9%A7%85%20%E6%84%9B%E7%9F%A5%E7%9C%8C%E5%90%8D%E5%8F%A4%E5%B1%8B%E5%B8%82%E7%B7%91%E5%8C%BA%E6%9C%89%E6%9D%BE",
+      "note": "有松東海道のアクセス拠点を基準とする。"
+    },
+    "highlightComment": "3輌の山車とからくり人形が有松東海道を進み、夜には約200個ずつの提灯を灯した山車が街道を巡行する。",
+    "atmosphereMedia": [],
+    "backgroundImage": null,
+    "confirmation": {"verified": true, "confirmedDate": "2026-09-28", "sources": ["https://aichinow.pref.aichi.jp/events/detail/1720/"]}
+  },
+  "yearlyInfo": [{
+    "year": 2026,
+    "eventStatus": "confirmed",
+    "dates": ["2026-10-04"],
+    "schedule": [],
+    "access": {"hasParking": false, "parkingNote": "来場者用駐車場はありません。名鉄有松駅から徒歩で来場できます。"},
+    "confirmation": {"confirmedDate": "2026-09-28", "sources": ["https://aichinow.pref.aichi.jp/events/detail/1720/"], "note": "愛知県公式観光サイトで2026年10月4日、昼・夜の開催時間と有松東海道一円の範囲を確認。"}
+  }]
+};
