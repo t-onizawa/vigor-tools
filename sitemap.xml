@@ -2268,4 +2268,34 @@
     <changefreq>yearly</changefreq>
     <priority>0.7</priority>
   </url>
+  <url>
+    <loc>https://vigorlab.net/matsuri/festivals/owari-yokosuka-matsuri/</loc>
+    <lastmod>2026-09-27</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://vigorlab.net/matsuri/festivals/tanuki-bonote/</loc>
+    <lastmod>2026-09-27</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://vigorlab.net/matsuri/festivals/hada-matsuri/</loc>
+    <lastmod>2026-09-27</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://vigorlab.net/matsuri/festivals/tahara-matsuri/</loc>
+    <lastmod>2026-09-27</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://vigorlab.net/matsuri/festivals/bonote-keigo-matsuri/</loc>
+    <lastmod>2026-09-27</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.7</priority>
+  </url>
 </urlset>
