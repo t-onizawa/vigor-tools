@@ -260,7 +260,7 @@ def fetch_ga4_product(
         "topPages": [],
         "error": None,
     }
-    path_filter = string_filter("pagePath", path_regex, Filter.StringFilter.MatchType.FULL_REGEXP)
+    path_filter = string_filter("pagePath", path_regex, Filter.StringFilter.MatchType.PARTIAL_REGEXP)
     organic_filter = string_filter(
         "sessionDefaultChannelGroup",
         "Organic Search",
