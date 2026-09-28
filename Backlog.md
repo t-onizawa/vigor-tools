@@ -1250,3 +1250,48 @@ Platformは「サイトの前提を変える」対象なので、より慎重に
   Distribution実験2自体（note側の導線追加）はこのタスクの対象外。
   moving-cost実験（2026-08-25終了予定）の結果レビュー後、別途開始する。
 ```
+
+```
+2026-09-28（dcap-agile-sheet：sitemap復活登録の是非を巡る齟齬と恒久対応）
+  LAB .net PM（root/Analytics担当）から「TOOLSのOrganic流入ゼロ」調査の
+  一環として、tools/dcap-agile-sheet/がsitemap.xml未登録・サイト内無
+  リンクの「孤立ページ」である旨の共有を受けた（コミット6412e8b、
+  sitemap.xmlへ復活登録・IndexNow通知済み）。
+
+  Claudeが事実確認したところ、これは新規の不具合ではなく、
+  tools/CLAUDE.md（2026-07-29確定）に明記済みの意図的な設計だった：
+  dcap-agile-sheetはv0.1旧版、後継のtools/thinking/dcap/（v2）へ既に
+  移行済みで、サイト内リンクなし・sitemap未登録が正しい状態として
+  文書化されていた。しかも同日朝の同セッションによる棚卸し
+  （コミット2020a2c2）でも「意図的な未登録で問題なし」と結論していた
+  ものが、同日午後に見落とされ復活登録された形だった。
+
+  Claudeがtools/配下59ページ全件を機械的に検証：sitemap登録は59/59件
+  （dcap-agile-sheet含め漏れなし）、サイト内リンクからの被参照は
+  dcap-agile-sheet以外の58本すべてで確認、孤立しているのはこの1件
+  のみ。「TOOLS Organic流入ゼロ」の原因が広範な内部導線不備である
+  可能性は否定された（原因はこの1件の重複コンテンツとは別にある）。
+
+  2案を選択肢として提示：
+    A. sitemap復活登録（6412e8b）を単純に取り消す（現状復帰のみ）
+    B. dcap-agile-sheetをthinking/dcapへ恒久的に一本化する
+       （転送スタブ化。重複コンテンツの根本解消）
+  Founder判断：B。
+
+  実装（コミット8d54a2c1）：tools/dcap-agile-sheet/index.htmlを、
+  リポジトリ内の既存パターン（root直下dcap-agile-sheet/、
+  2026-08-18実装のnoindex+canonical+meta refresh+JS location.replace）
+  と同一の転送スタブへ置き換え、リダイレクト先をtools/thinking/dcap/
+  に設定。不要になったscript.js・style.css・README.mdを削除。
+  Codex CLIへの直接実行がauto mode classifierにより2度ブロックされた
+  （削除を伴う操作のため）。Founder承認を受け、Claudeが直接
+  Write/git rmで実装しコミットした。
+
+  Claudeが差分を実地検証：tools/thinking/dcap/は無変更、他ファイルから
+  script.js・style.css・READMEへの参照なし（死にリンクなし）を確認。
+
+  残タスク：sitemap.xmlのdcap-agile-sheetエントリ（6412e8bで追加）は
+  root直下ファイルのため統括担当の管轄。転送スタブ化により当該ページは
+  もはや独立インデックス対象ではないため、エントリ削除をLAB .net PM側
+  （統括担当）へ依頼する必要がある。tools側からは実施しない。
+```
