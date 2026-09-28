@@ -28,7 +28,19 @@ const FESTIVAL = {
       "note": "秋季大祭の奉納踊が行われる中心会場。"
     },
     "highlightComment": "踊町が、本踊や船に車輪を付けて大勢で曳く「曳物」など、町ごとに異なる奉納踊を披露する。",
-    "atmosphereMedia": [],
+    "atmosphereMedia": [
+      {
+        "type": "youtube",
+        "url": "https://www.youtube.com/watch?v=w96njP2YEwY",
+        "contentId": "w96njP2YEwY",
+        "title": "「長崎くんち2024」開幕　前日の奉納踊ダイジェスト",
+        "publisher": "KTNテレビ長崎",
+        "publisherType": "local_media",
+        "purpose": "festival_atmosphere",
+        "publishedYear": 2024,
+        "checkedDate": "2026-09-28"
+      }
+    ],
     "backgroundImage": null,
     "confirmation": {
       "verified": true,
