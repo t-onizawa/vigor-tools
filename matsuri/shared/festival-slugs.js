@@ -19,3 +19,4 @@ FESTIVAL_SLUGS.push("kamihinokinai-kamifusen-age");
 FESTIVAL_SLUGS.push("nagoya-matsuri", "owari-tsushima-aki-matsuri", "koromo-matsuri", "nakahata-hachimansha-omanto-matsuri", "miya-matsuri");
 FESTIVAL_SLUGS.push("owari-yokosuka-matsuri", "tanuki-bonote", "hada-matsuri", "tahara-matsuri", "bonote-keigo-matsuri");
 FESTIVAL_SLUGS.push("chiryu-akiba-matsuri", "oota-matsuri", "asakura-hashigo-jishi", "arimatsu-dashi-matsuri", "asuke-matsuri");
+FESTIVAL_SLUGS.push("yaotomi-jinja-reitaisai", "sanage-matsuri", "akasaka-daimyo-gyoretsu", "fujii-jinja-kodomo-sanbaso", "akasaka-amagoi-matsuri");
