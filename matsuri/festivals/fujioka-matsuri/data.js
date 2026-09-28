@@ -23,7 +23,7 @@ const FESTIVAL = {
     confirmation: { verified: true, confirmedDate: "2026-08-07", sources: ["https://www.city.fujioka.gunma.jp/soshiki/kikakubu/hisho/1/reiwa8/11161.html"] }
   },
   yearlyInfo: [{
-    year: 2026, eventStatus: "confirmed", dates: ["2026-09-26", "2026-09-27"],
+    year: 2026, eventStatus: "ended", dates: ["2026-09-26", "2026-09-27"],
     access: { hasParking: true, parkingNote: "会場内に駐車場はないが、公式がドン・キホーテUNY藤岡店、ぐんまみらい信用組合藤岡支店、藤岡市総合学習センター、ふじまる南側駐車場を臨時駐車場として案内している。" },
     confirmation: { confirmedDate: "2026-08-07", sources: ["https://www.city.fujioka.gunma.jp/soshiki/kikakubu/hisho/1/reiwa8/11161.html"], note: "暑さ対策で当初の7月開催から9月26日・27日へ変更。藤岡市が2026年8月1日更新の公式ページで両日の神輿・踊り・市民パレード・祇園山車行進の時刻を発表済み。" }
   }]

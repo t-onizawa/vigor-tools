@@ -23,7 +23,7 @@ const FESTIVAL = {
     confirmation: { verified: true, confirmedDate: "2026-08-06", sources: ["https://www.city.isesaki.lg.jp/soshiki/keizai/bunka/kankou/gyoji/1427.html"] }
   },
   yearlyInfo: [{
-    year: 2026, eventStatus: "confirmed", dates: ["2026-09-26", "2026-09-27"],
+    year: 2026, eventStatus: "ended", dates: ["2026-09-26", "2026-09-27"],
     access: { hasParking: null, parkingNote: "2026年の交通規制図は公式ページで公開済み。祭り専用駐車場の有無は確認できないため未確認。" },
     confirmation: { confirmedDate: "2026-08-24", sources: ["https://www.city.isesaki.lg.jp/soshiki/keizai/bunka/kankou/gyoji/1427.html"], note: "伊勢崎市公式で2026年9月26日・27日の開催時間、会場、両日の行事内容、チラシ、交通規制図を確認。" }
   }]
