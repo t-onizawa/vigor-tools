@@ -97,7 +97,7 @@ const SEARCH_INDEX = [
   },
   {
     "slug": "hokota-summer-festival",
-    "name": "鉾田の夏祭り",
+    "name": "鉾田の夏祭り（鉾田祭り）",
     "officialName": "鉾神社夏季例大祭",
     "prefecture": "茨城県",
     "city": "鉾田市",
@@ -525,7 +525,7 @@ const SEARCH_INDEX = [
     "officialName": "あんなか祭り",
     "prefecture": "群馬県",
     "city": "安中市",
-    "firstDate": null
+    "firstDate": "2026-10-11"
   },
   {
     "slug": "shimonita-aki-matsuri",
@@ -1225,7 +1225,7 @@ const SEARCH_INDEX = [
   },
   {
     "slug": "ueno-tenjin-matsuri",
-    "name": "上野天神祭",
+    "name": "上野天神祭（伊賀上野天神祭）",
     "officialName": "上野天神祭",
     "prefecture": "三重県",
     "city": "伊賀市",
@@ -1529,7 +1529,7 @@ const SEARCH_INDEX = [
   },
   {
     "slug": "naha-otsunahiki-matsuri",
-    "name": "那覇大綱挽まつり",
+    "name": "那覇大綱挽まつり（那覇祭り）",
     "officialName": "第56回那覇大綱挽まつり",
     "prefecture": "沖縄県",
     "city": "那覇市",
@@ -1553,7 +1553,7 @@ const SEARCH_INDEX = [
   },
   {
     "slug": "matsuyama-autumn-festival",
-    "name": "松山秋祭り",
+    "name": "松山秋祭り（松山市秋祭り）",
     "officialName": "松山秋祭り",
     "prefecture": "愛媛県",
     "city": "松山市",
@@ -1689,7 +1689,7 @@ const SEARCH_INDEX = [
   },
   {
     "slug": "sendai-otsunahiki",
-    "name": "川内大綱引",
+    "name": "川内大綱引（川内大綱引き）",
     "officialName": "2026 川内大綱引",
     "prefecture": "鹿児島県",
     "city": "薩摩川内市",
@@ -1774,5 +1774,221 @@ const SEARCH_INDEX = [
     "prefecture": "山形県",
     "city": "酒田市",
     "firstDate": "2026-05-19"
+  },
+  {
+    "slug": "hino-matsuri",
+    "name": "日野祭",
+    "officialName": "日野祭",
+    "prefecture": "滋賀県",
+    "city": "蒲生郡日野町",
+    "firstDate": "2026-05-02"
+  },
+  {
+    "slug": "yugawara-yassa-matsuri",
+    "name": "湯河原やっさまつり",
+    "officialName": "湯河原やっさまつり",
+    "prefecture": "神奈川県",
+    "city": "足柄下郡湯河原町",
+    "firstDate": "2026-08-02"
+  },
+  {
+    "slug": "kumano-ohanabi-taikai",
+    "name": "熊野大花火大会",
+    "officialName": "熊野大花火大会",
+    "prefecture": "三重県",
+    "city": "熊野市",
+    "firstDate": "2026-08-17"
+  },
+  {
+    "slug": "kumano-hayatama-reitaisai-mifune-matsuri",
+    "name": "熊野速玉大社例大祭・御船祭",
+    "officialName": "熊野速玉大社例大祭・御船祭",
+    "prefecture": "和歌山県",
+    "city": "新宮市",
+    "firstDate": "2026-10-15"
+  },
+  {
+    "slug": "kumano-jofuku-mantosai",
+    "name": "熊野徐福万燈祭",
+    "officialName": "熊野徐福万燈祭（第64回新宮花火大会）",
+    "prefecture": "和歌山県",
+    "city": "新宮市",
+    "firstDate": "2026-08-12"
+  },
+  {
+    "slug": "kakunodate-hiburi-kamakura",
+    "name": "角館の火振りかまくら",
+    "officialName": "角館の火振りかまくら",
+    "prefecture": "秋田県",
+    "city": "仙北市",
+    "firstDate": "2026-02-14"
+  },
+  {
+    "slug": "kamihinokinai-kamifusen-age",
+    "name": "上桧木内の紙風船上げ",
+    "officialName": "上桧木内の紙風船上げ2026",
+    "prefecture": "秋田県",
+    "city": "仙北市",
+    "firstDate": "2026-02-10"
+  },
+  {
+    "slug": "nagoya-matsuri",
+    "name": "名古屋まつり",
+    "officialName": "第72回名古屋まつり",
+    "prefecture": "愛知県",
+    "city": "名古屋市中区",
+    "firstDate": "2026-10-17"
+  },
+  {
+    "slug": "owari-tsushima-aki-matsuri",
+    "name": "尾張津島秋まつり",
+    "officialName": "尾張津島秋まつり",
+    "prefecture": "愛知県",
+    "city": "津島市",
+    "firstDate": "2026-10-03"
+  },
+  {
+    "slug": "koromo-matsuri",
+    "name": "挙母祭り",
+    "officialName": "挙母祭り",
+    "prefecture": "愛知県",
+    "city": "豊田市",
+    "firstDate": "2026-10-17"
+  },
+  {
+    "slug": "nakahata-hachimansha-omanto-matsuri",
+    "name": "中畑町八幡社 おまんと祭",
+    "officialName": "中畑町八幡社 おまんと祭",
+    "prefecture": "愛知県",
+    "city": "西尾市",
+    "firstDate": "2026-10-18"
+  },
+  {
+    "slug": "miya-matsuri",
+    "name": "三谷祭",
+    "officialName": "三谷祭",
+    "prefecture": "愛知県",
+    "city": "蒲郡市",
+    "firstDate": "2026-10-24"
+  },
+  {
+    "slug": "owari-yokosuka-matsuri",
+    "name": "尾張横須賀まつり",
+    "officialName": "尾張横須賀まつり",
+    "prefecture": "愛知県",
+    "city": "東海市",
+    "firstDate": "2026-09-26"
+  },
+  {
+    "slug": "tanuki-bonote",
+    "name": "田貫の棒の手",
+    "officialName": "田貫の棒の手",
+    "prefecture": "愛知県",
+    "city": "西尾市",
+    "firstDate": "2026-10-18"
+  },
+  {
+    "slug": "hada-matsuri",
+    "name": "羽田祭",
+    "officialName": "羽田八幡宮例大祭（羽田祭）",
+    "prefecture": "愛知県",
+    "city": "豊橋市",
+    "firstDate": "2026-10-03"
+  },
+  {
+    "slug": "tahara-matsuri",
+    "name": "田原まつり",
+    "officialName": "田原まつり",
+    "prefecture": "愛知県",
+    "city": "田原市",
+    "firstDate": "2026-10-11"
+  },
+  {
+    "slug": "bonote-keigo-matsuri",
+    "name": "棒の手警固祭り",
+    "officialName": "棒の手警固祭り",
+    "prefecture": "愛知県",
+    "city": "豊田市",
+    "firstDate": "2026-10-10"
+  },
+  {
+    "slug": "chiryu-akiba-matsuri",
+    "name": "秋葉まつり",
+    "officialName": "秋葉まつり",
+    "prefecture": "愛知県",
+    "city": "知立市",
+    "firstDate": "2026-09-20"
+  },
+  {
+    "slug": "oota-matsuri",
+    "name": "大田まつり",
+    "officialName": "大田まつり",
+    "prefecture": "愛知県",
+    "city": "東海市",
+    "firstDate": "2026-10-03"
+  },
+  {
+    "slug": "asakura-hashigo-jishi",
+    "name": "朝倉の梯子獅子",
+    "officialName": "朝倉の梯子獅子",
+    "prefecture": "愛知県",
+    "city": "知多市",
+    "firstDate": "2026-10-03"
+  },
+  {
+    "slug": "arimatsu-dashi-matsuri",
+    "name": "有松山車まつり",
+    "officialName": "有松天満社・秋季大祭（有松山車まつり）",
+    "prefecture": "愛知県",
+    "city": "名古屋市緑区",
+    "firstDate": "2026-10-04"
+  },
+  {
+    "slug": "asuke-matsuri",
+    "name": "足助祭り",
+    "officialName": "足助祭り（足助八幡宮例祭）",
+    "prefecture": "愛知県",
+    "city": "豊田市",
+    "firstDate": "2026-10-10"
+  },
+  {
+    "slug": "yaotomi-jinja-reitaisai",
+    "name": "八百富神社例大祭",
+    "officialName": "八百富神社例大祭",
+    "prefecture": "愛知県",
+    "city": "蒲郡市",
+    "firstDate": "2026-10-17"
+  },
+  {
+    "slug": "sanage-matsuri",
+    "name": "猿投祭り",
+    "officialName": "猿投祭り",
+    "prefecture": "愛知県",
+    "city": "豊田市",
+    "firstDate": "2026-10-10"
+  },
+  {
+    "slug": "akasaka-daimyo-gyoretsu",
+    "name": "大名行列",
+    "officialName": "大名行列",
+    "prefecture": "愛知県",
+    "city": "豊川市",
+    "firstDate": "2026-10-11"
+  },
+  {
+    "slug": "fujii-jinja-kodomo-sanbaso",
+    "name": "藤井神社祭礼「子供三番叟」",
+    "officialName": "藤井神社祭礼「子供三番叟」",
+    "prefecture": "愛知県",
+    "city": "大府市",
+    "firstDate": "2026-10-11"
+  },
+  {
+    "slug": "akasaka-amagoi-matsuri",
+    "name": "雨乞いまつり",
+    "officialName": "雨乞いまつり",
+    "prefecture": "愛知県",
+    "city": "豊川市",
+    "firstDate": "2026-08-22"
   }
 ];
