@@ -1,13 +1,17 @@
-// AEO静的化パイロット：対象2件の祭り詳細ページに、festival-detail.jsが本来
-// クライアント側で描画する一部のDOM（特徴バッジ・アクセス情報・所在地・
-// Event JSON-LD）をビルド時に直接HTMLへ書き込む。
+// AEO静的化：祭り詳細ページに、festival-detail.jsが本来クライアント側で
+// 描画する一部のDOM（特徴バッジ・アクセス情報・所在地・Event JSON-LD）を
+// ビルド時に直接HTMLへ書き込む。
 // festival-detail.js側は <body data-static-content> を検知して該当ブロックの
 // 再描画をスキップするため、二重描画は発生しない（詳細はfestival-detail.js参照）。
+//
+// 対象slugsを省略すると festivals/ 配下の全件が対象になる（既に静的化済みの
+// ページは自動的にスキップされる）。個別指定する場合は
+// `node generate-static-content.js slug-a slug-b` のように引数で渡す。
 const fs = require("fs");
 const path = require("path");
 
 const SITE_ORIGIN = "https://vigorlab.net";
-const PILOT_SLUGS = ["niihama-taiko-matsuri", "naha-otsunahiki-matsuri"];
+const FESTIVALS_DIR = path.join(__dirname, "..", "festivals");
 
 const HIGHLIGHT_TIME_PILLS = [
   { keys: ["morning"], ja: "朝" },
@@ -46,13 +50,14 @@ function escapeHtml(str) {
 }
 
 function readFestival(slug) {
-  const filePath = path.join(__dirname, "..", "festivals", slug, "data.js");
+  // data.jsはJSON互換とは限らない（例: `eventStatus: "confirmed"` のように
+  // キーがクォートされていないファイルが大半）ため、実際にJSとして実行して
+  // FESTIVAL変数を取り出す。festival-detail.js内の同種の読み込み処理
+  // （loadExperienceTags等の `new Function(...)` パターン）に合わせている。
+  const filePath = path.join(FESTIVALS_DIR, slug, "data.js");
   const src = fs.readFileSync(filePath, "utf8");
-  const match = src.match(/const FESTIVAL = ([\s\S]*);\s*$/);
-  if (!match) {
-    throw new Error(`FESTIVAL object not found in ${filePath}`);
-  }
-  return JSON.parse(match[1]);
+  const factory = new Function(`${src}\nreturn FESTIVAL;`);
+  return factory();
 }
 
 function availabilityLabel(value) {
@@ -270,6 +275,14 @@ function replaceOnce(html, target, replacement, label) {
 }
 
 function generateForSlug(slug) {
+  const filePath = path.join(FESTIVALS_DIR, slug, "index.html");
+  let html = fs.readFileSync(filePath, "utf8");
+
+  if (html.includes("data-static-content")) {
+    console.log(`[generate-static-content] スキップ（静的化済み）: festivals/${slug}/index.html`);
+    return;
+  }
+
   const festival = readFestival(slug);
   const currentYear = festival.yearlyInfo[0];
   const features = festival.constantInfo.features;
@@ -282,9 +295,6 @@ function generateForSlug(slug) {
   const primaryInfoLocationHtml = buildPrimaryInfoLocationHtml(festival);
   const accessListHtml = buildAccessListHtml(festival, currentYear);
   const jsonLd = buildEventJsonLd(festival, currentYear, canonicalUrl);
-
-  const filePath = path.join(__dirname, "..", "festivals", slug, "index.html");
-  let html = fs.readFileSync(filePath, "utf8");
 
   html = replaceOnce(
     html,
@@ -325,8 +335,38 @@ function generateForSlug(slug) {
   console.log(`[generate-static-content] 更新: festivals/${slug}/index.html`);
 }
 
+function listAllSlugs() {
+  return fs
+    .readdirSync(FESTIVALS_DIR)
+    .filter((name) => fs.existsSync(path.join(FESTIVALS_DIR, name, "data.js")))
+    .filter((name) => fs.existsSync(path.join(FESTIVALS_DIR, name, "index.html")));
+}
+
 function main() {
-  PILOT_SLUGS.forEach(generateForSlug);
+  const argSlugs = process.argv.slice(2);
+  const slugs = argSlugs.length > 0 ? argSlugs : listAllSlugs();
+  let updated = 0;
+  let skipped = 0;
+  let failed = 0;
+  slugs.forEach((slug) => {
+    try {
+      const before = fs.readFileSync(path.join(FESTIVALS_DIR, slug, "index.html"), "utf8");
+      generateForSlug(slug);
+      const after = fs.readFileSync(path.join(FESTIVALS_DIR, slug, "index.html"), "utf8");
+      if (before === after) {
+        skipped += 1;
+      } else {
+        updated += 1;
+      }
+    } catch (err) {
+      failed += 1;
+      console.error(`[generate-static-content] 失敗: ${slug} — ${err.message}`);
+    }
+  });
+  console.log(`[generate-static-content] 完了: 更新${updated}件 / スキップ${skipped}件 / 失敗${failed}件`);
+  if (failed > 0) {
+    process.exitCode = 1;
+  }
 }
 
 main();
