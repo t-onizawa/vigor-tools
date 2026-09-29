@@ -4,9 +4,15 @@
 // festival-detail.js側は <body data-static-content> を検知して該当ブロックの
 // 再描画をスキップするため、二重描画は発生しない（詳細はfestival-detail.js参照）。
 //
-// 対象slugsを省略すると festivals/ 配下の全件が対象になる（既に静的化済みの
-// ページは自動的にスキップされる）。個別指定する場合は
-// `node generate-static-content.js slug-a slug-b` のように引数で渡す。
+// data.js変更後は何度でも安全に再実行できる（既に静的化済みのページは、
+// 注入済みの内容をコメントマーカーで検出していったん元の空プレースホルダーに
+// 戻してから、最新のdata.jsの内容で再度書き込む。スキップはしない）。
+// これにより、週次品質改善タスク等が後からbackgroundImage・
+// mapReference.lat/lng等を更新した場合も、本スクリプトを再実行するだけで
+// Event JSON-LDの内容を追従させられる。
+//
+// 対象slugsを省略すると festivals/ 配下の全件が対象になる。個別指定する
+// 場合は `node generate-static-content.js slug-a slug-b` のように引数で渡す。
 const fs = require("fs");
 const path = require("path");
 
@@ -274,14 +280,112 @@ function replaceOnce(html, target, replacement, label) {
   return html.slice(0, index) + replacement + html.slice(index + target.length);
 }
 
+// 注入済みブロックはネストしたdiv/spanを含みうる（例：feature-gridの中に
+// feature-badge-colorのdivが複数入る）ため、タグの対応関係を実際に数えて
+// 閉じタグを特定する（非貪欲正規表現では最初の内側の閉じタグで止まって
+// しまい誤動作する）。openTagEndIndexは開始タグの `>` の直後を指す。
+function findMatchingClose(html, openTagEndIndex, tagName) {
+  const openRe = new RegExp(`<${tagName}\\b`, "g");
+  const closeRe = new RegExp(`</${tagName}>`, "g");
+  let depth = 1;
+  let pos = openTagEndIndex;
+  while (depth > 0) {
+    openRe.lastIndex = pos;
+    closeRe.lastIndex = pos;
+    const openMatch = openRe.exec(html);
+    const closeMatch = closeRe.exec(html);
+    if (!closeMatch) {
+      throw new Error(`閉じタグが見つかりません: </${tagName}>`);
+    }
+    if (openMatch && openMatch.index < closeMatch.index) {
+      depth += 1;
+      pos = openMatch.index + openMatch[0].length;
+    } else {
+      depth -= 1;
+      pos = closeMatch.index + closeMatch[0].length;
+    }
+  }
+  return pos;
+}
+
+// idAttrを持つ要素をhtml内から探し、開始位置と（対応する閉じタグを含む）
+// 終了位置を返す。無ければnull。新規ページ（プレースホルダーが空）・
+// 既に静的化済みのページ（中身が入っている）のどちらでも同じロジックで
+// 検出できる（クラス名やid自体は生成前後で変わらないため）。
+function findElementById(html, idAttr, tagName) {
+  const idMarker = ` id="${idAttr}"`;
+  const idIndex = html.indexOf(idMarker);
+  if (idIndex === -1) return null;
+  const openStart = html.lastIndexOf(`<${tagName}`, idIndex);
+  if (openStart === -1) {
+    throw new Error(`id="${idAttr}"を含む<${tagName}>の開始タグが見つかりません`);
+  }
+  const openTagEnd = html.indexOf(">", idIndex) + 1;
+  const end = findMatchingClose(html, openTagEnd, tagName);
+  return { start: openStart, end };
+}
+
+// 開始タグ文字列（例：`<p class="primary-info-location">`）で要素を探す。
+// idを持たない挿入要素（primary-info-location）用。
+function findElementByOpenTag(html, openTagString, tagName) {
+  const openStart = html.indexOf(openTagString);
+  if (openStart === -1) return null;
+  const openTagEnd = openStart + openTagString.length;
+  const end = findMatchingClose(html, openTagEnd, tagName);
+  return { start: openStart, end };
+}
+
+function removeIfFound(html, range) {
+  if (!range) return html;
+  return html.slice(0, range.start) + html.slice(range.end);
+}
+
+const PRISTINE = {
+  eventStatus: '<span class="status-badge" id="event-status"></span>',
+  featureGrid: '<div class="feature-grid" id="feature-grid"></div>',
+  accessList: '<div class="detail-list" id="access-list"></div>'
+};
+
+// 旧バージョンのスクリプトで既に静的化済みのページ、および本バージョンで
+// 生成したページの両方を、data-static-content属性の有無だけに頼らず、
+// 実際の要素の中身から検出して元の空プレースホルダーへ戻す。これにより
+// 「一度静的化したページはスキップする」のではなく「常に最新のdata.js
+// から安全に再生成する」ことができる。
+function revertStaticContent(html) {
+  const eventStatusRange = findElementById(html, "event-status", "span");
+  if (eventStatusRange) html = html.slice(0, eventStatusRange.start) + PRISTINE.eventStatus + html.slice(eventStatusRange.end);
+
+  const featureGridRange = findElementById(html, "feature-grid", "div");
+  if (featureGridRange) {
+    let end = featureGridRange.end;
+    const highlightPrefix = '<div class="highlight-time-row">';
+    if (html.startsWith(highlightPrefix, end)) {
+      end = findMatchingClose(html, end + highlightPrefix.length, "div");
+    }
+    html = html.slice(0, featureGridRange.start) + PRISTINE.featureGrid + html.slice(end);
+  }
+
+  const primaryInfoRange = findElementByOpenTag(html, '<p class="primary-info-location">', "p");
+  html = removeIfFound(html, primaryInfoRange);
+
+  const accessListRange = findElementById(html, "access-list", "div");
+  if (accessListRange) html = html.slice(0, accessListRange.start) + PRISTINE.accessList + html.slice(accessListRange.end);
+
+  const jsonLdStart = html.indexOf('<script type="application/ld+json"');
+  if (jsonLdStart !== -1) {
+    const jsonLdEnd = html.indexOf("</script>", jsonLdStart) + "</script>".length;
+    const trailingNewline = html[jsonLdEnd] === "\n" ? 1 : 0;
+    html = html.slice(0, jsonLdStart) + html.slice(jsonLdEnd + trailingNewline);
+  }
+
+  html = html.replace("<body data-static-content>", "<body>");
+  return html;
+}
+
 function generateForSlug(slug) {
   const filePath = path.join(FESTIVALS_DIR, slug, "index.html");
   let html = fs.readFileSync(filePath, "utf8");
-
-  if (html.includes("data-static-content")) {
-    console.log(`[generate-static-content] スキップ（静的化済み）: festivals/${slug}/index.html`);
-    return;
-  }
+  html = revertStaticContent(html);
 
   const festival = readFestival(slug);
   const currentYear = festival.yearlyInfo[0];
@@ -298,14 +402,14 @@ function generateForSlug(slug) {
 
   html = replaceOnce(
     html,
-    '<span class="status-badge" id="event-status"></span>',
+    PRISTINE.eventStatus,
     `<span class="${eventStatus.className}" id="event-status">${eventStatus.innerHtml}</span>`,
     "event-status"
   );
 
   html = replaceOnce(
     html,
-    '<div class="feature-grid" id="feature-grid"></div>',
+    PRISTINE.featureGrid,
     `<div class="feature-grid feature-grid-color" id="feature-grid">${featureGridHtml}</div>${highlightTimeRowHtml}`,
     "feature-grid"
   );
@@ -319,7 +423,7 @@ function generateForSlug(slug) {
 
   html = replaceOnce(
     html,
-    '<div class="detail-list" id="access-list"></div>',
+    PRISTINE.accessList,
     `<div class="detail-list" id="access-list">${accessListHtml}</div>`,
     "access-list"
   );
@@ -327,7 +431,7 @@ function generateForSlug(slug) {
   html = replaceOnce(html, "<body>", "<body data-static-content>", "body-attribute");
 
   if (jsonLd) {
-    const script = `<script type="application/ld+json">${JSON.stringify(jsonLd)}</script>`;
+    const script = `<script type="application/ld+json" data-generated="static-content">${JSON.stringify(jsonLd)}</script>`;
     html = replaceOnce(html, "</head>", `${script}\n</head>`, "event-jsonld");
   }
 
