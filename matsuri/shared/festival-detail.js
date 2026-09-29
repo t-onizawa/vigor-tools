@@ -1096,6 +1096,8 @@
     noteEl.hidden = false;
   }
 
+  const isPrerendered = document.body.hasAttribute("data-static-content");
+
   fixBackLinkHref();
   renderBreadcrumb(festival);
   setText("festival-name", festivalName);
@@ -1121,42 +1123,46 @@
     byId("event-status").prepend(checkmark);
   }
 
-  const primaryInfoLocation = document.createElement("p");
-  primaryInfoLocation.className = "primary-info-location";
-  const locationPin = document.createElement("span");
-  locationPin.className = "primary-info-location-icon";
-  locationPin.setAttribute("aria-hidden", "true");
-  const locationText = document.createElement("span");
-  locationText.textContent =
-    LOCALE === "en"
-      ? `${festivalCity}, ${festivalPrefecture}`
-      : `${festival.prefecture}${festival.city || ""}`;
-  primaryInfoLocation.append(locationPin, locationText);
-  byId("dates-heading").insertAdjacentElement("beforebegin", primaryInfoLocation);
+  if (!isPrerendered) {
+    const primaryInfoLocation = document.createElement("p");
+    primaryInfoLocation.className = "primary-info-location";
+    const locationPin = document.createElement("span");
+    locationPin.className = "primary-info-location-icon";
+    locationPin.setAttribute("aria-hidden", "true");
+    const locationText = document.createElement("span");
+    locationText.textContent =
+      LOCALE === "en"
+        ? `${festivalCity}, ${festivalPrefecture}`
+        : `${festival.prefecture}${festival.city || ""}`;
+    primaryInfoLocation.append(locationPin, locationText);
+    byId("dates-heading").insertAdjacentElement("beforebegin", primaryInfoLocation);
+  }
   renderHayashiNote(festivalHayashiNote);
   renderSchedule(festivalSchedule);
 
   const featureGrid = byId("feature-grid");
   featureGrid.classList.add("feature-grid-color");
-  FEATURE_DEFS.forEach((def) => {
-    const label = EN?.featureLabels?.[def.key] || def.ja;
-    const badge = createColorFeatureBadge(label, def.value, def.key);
-    if (badge) featureGrid.append(badge);
-  });
+  if (!isPrerendered) {
+    FEATURE_DEFS.forEach((def) => {
+      const label = EN?.featureLabels?.[def.key] || def.ja;
+      const badge = createColorFeatureBadge(label, def.value, def.key);
+      if (badge) featureGrid.append(badge);
+    });
 
-  const highlightTimeRow = createHighlightTimeRow(features.highlightTime);
-  featureGrid.insertAdjacentElement("afterend", highlightTimeRow);
+    const highlightTimeRow = createHighlightTimeRow(features.highlightTime);
+    featureGrid.insertAdjacentElement("afterend", highlightTimeRow);
 
-  const accessList = byId("access-list");
-  accessList.append(
-    createDetailItem(EN?.labels?.venue || "開催地", festivalCity),
-    createDetailItem(EN?.labels?.nearestStation || "最寄駅", festivalNearestStation),
-    createDetailItem(
-      EN?.labels?.parking || "駐車場",
-      parkingLabel(currentYear.access.hasParking),
-      festivalParkingNote
-    )
-  );
+    const accessList = byId("access-list");
+    accessList.append(
+      createDetailItem(EN?.labels?.venue || "開催地", festivalCity),
+      createDetailItem(EN?.labels?.nearestStation || "最寄駅", festivalNearestStation),
+      createDetailItem(
+        EN?.labels?.parking || "駐車場",
+        parkingLabel(currentYear.access.hasParking),
+        festivalParkingNote
+      )
+    );
+  }
 
   renderHighlightComment(festivalHighlightComment);
   relocateHighlightComment();
@@ -1482,7 +1488,9 @@
     }
   }
 
-  injectEventJsonLd(festival, currentYear);
+  if (!isPrerendered) {
+    injectEventJsonLd(festival, currentYear);
+  }
   injectFaqJsonLd(festival, currentYear);
   renderSearchLinks(festival);
   setupAccordionDefaultOpen();
