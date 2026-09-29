@@ -8,6 +8,7 @@ exclude:
   - NoteStyleGuide.md
   - AGENTS.md
   - restructure-design.md
+  - task-weekly-note-draft.md
   - note-drafts/
   - tools/CLAUDE.md
   - tools/dcap-agile-sheet/README.md
