@@ -2103,6 +2103,34 @@ D. 特別な投稿（節目・重要な発表等、不定期）
   経由の予約代行等が本格化する前に構造化データを機械可読にしておく
   ことの先行者優位が論点として整理されたため。年内の「宿泊アフィリエイト
   集中」トラックと並行して着手する対象に格上げする（保留解除）。
+
+  **本項目は完了（2026-09-29）：** Claude Codeが直接スクリプトを作成・
+  実行する方式（Codexのトークン枯渇を避けるため、[[feedback_use_codex_for_impl]]
+  参照）で実施。当初は2件（新居浜太鼓祭り・那覇大綱挽まつり）のパイロット
+  として着手したが、festival-detail.jsのレンダリングロジックが
+  eventStatus全パターン（cancelled/off_year/unconfirmed/
+  scheduled_pending_official/ended）・YouTube画像・緯度経度・駐車場・
+  スケジュール(subEvent)等の分岐を持つため、代表ケース8件で分岐を
+  網羅検証した上で全249件へ展開した。特徴バッジ・アクセス情報・所在地・
+  Event JSON-LDがビルド時にHTMLへ直接書き込まれ、JavaScriptを実行しない
+  クローラーにも内容が見える状態になっている。
+
+  あわせて、この作業中に別の2つのシステム的な不具合を発見・修正した。
+  (1) `features/`・`prefectures/`・`regions/`・`months/`配下のハブ
+  ページと`shared/search-index.js`（サイト内検索）が、日次の新規祭り
+  追加タスクの対象外で長期間反映漏れが蓄積していた（例：愛知県ハブ
+  ページが実データ23件に対し3件しか表示されていなかった）。(2) 静的化
+  スクリプト自体も当初「既に静的化済みならスキップ」という設計だった
+  ため、週次品質改善タスクが後からbackgroundImage・mapReference.lat/lng
+  を更新してもEvent JSON-LDが追従しない新しい抜け穴を生んでいた。
+  両方とも修正し、新規祭り追加タスク・週次品質改善タスクの両方に
+  再生成ステップを組み込んで再発防止した（詳細は
+  `task-new-festival-addition.md`・`task-weekly-quality-improvement.md`
+  の変更履歴を参照）。
+
+  この経験から、「data.jsを唯一の正とし、派生物は全てスクリプトで
+  生成する」「生成スクリプトは『スキップ』でなく『常に安全に再生成
+  できる』設計にする」という設計原則を確認した。
 - ホームページweekend-banner-sectionのCLS対策（2026-09-18追加）：
   Search Console実測でCLS「悪い」36%が判明し、祭り詳細ページの
   `.primary-info`/`#feature-grid`はmin-height追加で対策済み
