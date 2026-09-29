@@ -185,6 +185,7 @@ areaTagは上記ローマ字表記で統一する。
 
 調査
 → 実装
+→ 静的コンテンツ生成（下記参照）
 → 静的・ブラウザ検証
 → commit
 → mainへ反映
@@ -335,7 +336,33 @@ data.js側のスキーマ変更は行わない。
   `shared/festival-slugs.js` → `./data.js` → `shared/festival-detail.js`
   にする（既存ページと同じ順序）
 
-## 停止条件
+## 静的コンテンツ生成（2026-09-29追加）
+
+data.js・index.html作成後、静的・ブラウザ検証の前に、今回新規作成した
+slug分だけ以下を実行する。
+
+```
+node matsuri/scripts/generate-static-content.js {slug1} {slug2} ...
+```
+
+このスクリプトは、特徴バッジ・アクセス情報・所在地・Event JSON-LDを
+data.jsの内容からビルド時にindex.htmlへ直接書き込む（AEO対策。
+JavaScriptを実行しないクローラーにも内容が見える状態にするため）。
+中身の描画ロジック自体は変更しないため、実行後も既存の
+`shared/festival-detail.js`によるクライアント側描画と重複しない。
+
+新規ページのindex.htmlを既存ページのコピーから作成する場合は、
+`event-status`・`feature-grid`・`primary-info`内の所在地・`access-list`
+の各プレースホルダーが**空の状態**（「ページ作成時の必須要素」節の
+テンプレート通り）になっていることを確認してから実行する。既にこの
+スクリプトを実行済みの既存ページ（中身が埋まっている）をそのまま
+コピーすると、対象の置換先が見つからずスクリプトがエラーで停止する
+（安全側に倒れる設計のため、その場合はプレースホルダーを空に戻して
+再実行する）。
+
+このスクリプトは対象slug省略時は全件を走査するが、本タスクでは
+今回新規作成した分のslugのみを明示的に指定して実行する（未変更の
+既存248件を毎回無駄に走査しないため）。
 
 以下に該当する候補は採用しない。
 
@@ -515,6 +542,10 @@ sitemap.xmlへの追記を省略してはならない。
 - `node matsuri/scripts/check-data-integrity.js` を実行し、hard issue
   が0件であることを確認する（1件でもあれば、その内容を完了報告に
   記載し、commit・push前に対処するか判断を仰ぐ）
+- `generate-static-content.js`実行後、新規作成したindex.htmlに
+  `data-static-content`属性が付与されていること、開催日
+  （yearlyInfo[0].dates）が1件以上ある場合はEvent JSON-LDの
+  `<script type="application/ld+json">`が挿入されていること
 - slug/id/data.js/index.html/canonical一致
 - FESTIVAL_SLUGS重複なし
 - 新規祭りのslugがshared/festival-slugs.jsに追加されていること
@@ -691,4 +722,14 @@ https://vigorlab.net/matsuri/festivals/{1件目のslug}/?utm_source=x&utm_medium
     したページ分だけIndexNowへ通知するステップを追加した。通知失敗時
     はリトライせず完了報告に記載するのみとし、ページ公開自体の成否には
     影響させない設計とした。
+
+2026-09-29（静的コンテンツ生成ステップを追加）
+    祭り詳細ページ249件のAEO静的化（特徴バッジ・アクセス情報・所在地・
+    Event JSON-LDをビルド時にHTMLへ直接書き込む対応）を全件へ展開した
+    のに伴い、新規追加ページも同じ状態で公開されるよう、実装後・検証前
+    に`matsuri/scripts/generate-static-content.js`を新規slug指定で実行
+    するステップを追加した。既存ページのコピーからindex.htmlを作る際は
+    プレースホルダーを空の状態に戻してから実行する必要がある旨を明記
+    （既に静的化済みのページをそのままコピーすると置換対象が見つからず
+    スクリプトが安全側にエラー停止する）。
 ```
