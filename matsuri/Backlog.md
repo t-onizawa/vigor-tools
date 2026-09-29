@@ -2239,7 +2239,13 @@ AIの行く末・マネタイズ・年内の軌道化・競合超えを軸に10�
      2026-09-29。アカウント登録不要のためBing側の進捗を待たず着手）
    - Bing Webmaster Toolsへのサイト登録：完了（Founder、2026-09-29、
      `https://www.bing.com/webmasters/home?siteUrl=https://vigorlab.net/`）
-   - 残：sitemap.xmlのBingへの送信状況を確認
+   - sitemap.xmlのBingへの送信：確認済み。送信日2026-09-18・最終クロール
+     2026-09-27・状態「成功」・検出URL383件（Bing Webmaster Tools登録前
+     から自動検出されていた可能性がある。念のためFounderが手動でも
+     送信済み）
+
+   **本項目は完了。** 効果測定（ChatGPT経由の引用が増えるか等）は
+   即座には現れないため、既存の成長チェックポイント方式で継続観察する。
 
 ### B. マネタイズの多様化・深化
 
