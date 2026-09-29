@@ -186,6 +186,7 @@ areaTagは上記ローマ字表記で統一する。
 調査
 → 実装
 → 静的コンテンツ生成（下記参照）
+→ ハブページ再生成（下記参照）
 → 静的・ブラウザ検証
 → commit
 → mainへ反映
@@ -364,6 +365,39 @@ JavaScriptを実行しないクローラーにも内容が見える状態にす�
 今回新規作成した分のslugのみを明示的に指定して実行する（未変更の
 既存248件を毎回無駄に走査しないため）。
 
+## ハブページ再生成（2026-09-29追加）
+
+新規祭りを1件以上追加した場合、静的コンテンツ生成の直後に以下を
+すべて実行する。
+
+```
+node matsuri/scripts/generate-feature-hub-pages.js
+node matsuri/scripts/generate-prefecture-hub-pages.js
+node matsuri/scripts/generate-region-hub-pages.js
+node matsuri/scripts/generate-month-hub-pages.js
+```
+
+`features/`・`prefectures/`・`regions/`・`months/`配下のハブページは
+festivals/配下の全件を毎回読み直して丸ごと再生成する仕組みであり、
+新規祭り追加時にこれを実行しないと、該当する特徴・都道府県・地方・
+月のハブページに新規祭りが反映されないまま放置される（2026-09-29に
+発覚：愛知県ハブページが実データ23件に対し3件しか表示されていな
+かった。原因は日次タスクがこれらのスクリプトを一切実行していな
+かったこと）。
+
+4つのスクリプトはいずれも全件を対象に決定論的に再生成するため、
+新規追加分だけを狙って部分実行することはできない（ある祭りの追加が
+どのハブページの掲載件数・並び順に影響するか事前に絞り込めないため）。
+実行コストは軽いため、新規祭りを1件でも追加した回は必ず4つとも
+実行する。
+
+実行後、`git status`で`matsuri/features/`・`matsuri/prefectures/`・
+`matsuri/regions/`・`matsuri/months/`配下に変更がないか確認する
+（既存内容と差分が無ければそのスクリプトの実行による変更は0件で
+正常。差分があれば通常の変更ファイルとして検証・commitに含める）。
+
+## 停止条件
+
 以下に該当する候補は採用しない。
 
 - 新スキーマが必要
@@ -507,6 +541,16 @@ Backlog.mdの該当節（`## 新規祭り 候補ストック`）に、以下の�
 - `matsuri/shared/festival-slugs.js`
 - `matsuri/index.html`
 - `matsuri/Backlog.md`
+- `matsuri/features/**/index.html`（generate-feature-hub-pages.jsの
+  実行結果のみ。手動編集はしない）
+- `matsuri/prefectures/**/index.html`（generate-prefecture-hub-pages.js
+  の実行結果のみ。手動編集はしない）
+- `matsuri/regions/**/index.html`（generate-region-hub-pages.jsの
+  実行結果のみ。手動編集はしない）
+- `matsuri/months/**/index.html`（generate-month-hub-pages.jsの
+  実行結果のみ。手動編集はしない）
+- `matsuri/shared/prefecture-hub-slugs.js` / `matsuri/shared/region-hub-slugs.js`
+  （上記スクリプトの実行結果のみ。手動編集はしない）
 
 ## 変更禁止
 
@@ -546,6 +590,10 @@ sitemap.xmlへの追記を省略してはならない。
   `data-static-content`属性が付与されていること、開催日
   （yearlyInfo[0].dates）が1件以上ある場合はEvent JSON-LDの
   `<script type="application/ld+json">`が挿入されていること
+- ハブページ再生成4スクリプト実行後、新規祭りが該当する特徴
+  （山車/神輿/踊り/曳き回し等）・都道府県・地方・月のハブページに
+  実際に掲載されていること（新規祭りのslugで対象ハブページ内を
+  検索し、リンクが存在することを確認する）
 - slug/id/data.js/index.html/canonical一致
 - FESTIVAL_SLUGS重複なし
 - 新規祭りのslugがshared/festival-slugs.jsに追加されていること
@@ -732,4 +780,21 @@ https://vigorlab.net/matsuri/festivals/{1件目のslug}/?utm_source=x&utm_medium
     プレースホルダーを空の状態に戻してから実行する必要がある旨を明記
     （既に静的化済みのページをそのままコピーすると置換対象が見つからず
     スクリプトが安全側にエラー停止する）。
+
+2026-09-29（ハブページ再生成ステップを追加。表示漏れ不具合の修正）
+    本タスクが日次でfestivals/配下を更新する一方、features/・
+    prefectures/・regions/・months/配下のハブページは自動再生成の対象に
+    一度も含まれておらず、長期間にわたり追加分が反映されず表示漏れが
+    蓄積していたことが発覚した（例：愛知県ハブページが実データ23件の
+    ところ3件しか表示されていなかった。他に山車・神輿等の特徴ハブや
+    複数の地方・月別ハブにも同様の漏れがあった）。手動で4スクリプトを
+    実行して29ページ分を修正した上で、再発防止のため、新規祭りを1件
+    以上追加した場合は静的コンテンツ生成の直後に
+    generate-feature-hub-pages.js / generate-prefecture-hub-pages.js /
+    generate-region-hub-pages.js / generate-month-hub-pages.jsを必ず
+    実行するステップを追加した。あわせて、これらのスクリプトの出力先を
+    「変更可能」ファイル一覧に明記し、検証項目に新規祭りが該当ハブ
+    ページへ実際に掲載されていることの確認を追加した。
+    （このタスクファイルの前回編集時に「## 停止条件」の見出しを誤って
+    削除していたことも本改訂で復元した）
 ```
