@@ -161,6 +161,43 @@ backgroundImageのみ、atmosphereMediaのみ、mapReference.lat/lngのみ、
 
 判断に迷うものは変更せず、レビュー候補として報告する。
 
+## 静的コンテンツ・ハブページ・検索インデックス再生成（2026-09-29追加）
+
+backgroundImage・atmosphereMedia・mapReference.lat/lngのいずれかを
+1件以上反映した場合、テストの前に以下をすべて実行する。
+
+```
+node matsuri/scripts/generate-static-content.js {変更したslug1} {変更したslug2} ...
+node matsuri/scripts/generate-feature-hub-pages.js
+node matsuri/scripts/generate-prefecture-hub-pages.js
+node matsuri/scripts/generate-region-hub-pages.js
+node matsuri/scripts/generate-month-hub-pages.js
+node matsuri/scripts/generate-search-index.js
+```
+
+理由：
+- `generate-static-content.js`は祭り詳細ページのEvent JSON-LDに
+  backgroundImage（image）・mapReference.lat/lng（geo）を書き込んで
+  いる。本タスクがdata.jsを更新した後にこのスクリプトを再実行しない
+  と、Event JSON-LDが古い内容のまま取り残される。このスクリプトは
+  既に静的化済みのページも安全に再生成できる設計になっている
+  （既存の内容をいったん元に戻してから最新のdata.jsで作り直すため、
+  何度再実行しても副作用はない）。変更したslugのみを指定して実行する
+  （未変更分を毎回無駄に処理しないため）。
+- ハブページのカード表示は`atmosphereMedia`/`backgroundImage`を
+  サムネイルとして直接使用している（`hub-shared.js`参照）。本タスクが
+  これらを追加した祭りが掲載されている特徴・都道府県・地方・月の
+  各ハブページと検索インデックスを再生成しないと、新しいサムネイルが
+  反映されない。4つのハブ生成スクリプトはいずれも全件を対象に
+  決定論的に再生成するため部分実行はできず、実行コストも軽いので、
+  該当する変更が1件でもあれば必ず4つとも実行する。
+
+実行後、`git status`で該当ファイルに想定外の差分がないか確認する。
+
+（このステップは2026-09-29に、新規祭り追加タスク側で同種の再生成
+漏れが発覚したことを受けて追加した。詳細は
+`task-new-festival-addition.md`の変更履歴を参照）。
+
 ## 5. テスト
 
 変更後は既存運用で定められているテストを実施する。
@@ -206,6 +243,8 @@ backgroundImageのみ、atmosphereMediaのみ、mapReference.lat/lngのみ、
   祭り名・slug。追加がなければ「なし（0件）」と明記する
 - 反映後のbackgroundImage未設定・atmosphereMedia未設定・両方なし・
   mapReference.lat/lng未設定の件数（母数含む）
+- 静的コンテンツ・ハブページ・検索インデックス再生成：実行有無、
+  対象slug一覧（反映0件の回は「該当なし（対象0件）」と明記）
 - 整合性チェック領域で気づいた参考情報（修正はしていない）
 - 表示確認で見つけた既存不具合（対象ページ・再現条件・症状。なければ
   「なし」と明記）
@@ -255,4 +294,20 @@ PMレビュー対象とする（反映自体は止めない）。
     明記した。あわせて完了報告に1〜4番へ回した調査件数・結果を明記
     する項目を追加し、0番だけで20件に達した場合はその旨を明記させる
     ようにした。採用基準・品質基準は変更していない。
+
+2026-09-29（静的コンテンツ・ハブページ・検索インデックス再生成ステップを追加）
+    新規祭り追加タスク側で、festivals/配下の変更が派生ファイル
+    （ハブページ・検索インデックス）に反映されない不具合が発覚し修正
+    した際、本タスクにも同種のリスクがあることが判明した。具体的には、
+    (1) generate-static-content.jsが祭り詳細ページのEvent JSON-LDに
+    書き込むimage/geoフィールドがbackgroundImage・mapReference.lat/lng
+    の変更後も古いまま残る、(2) ハブページのカードサムネイルが
+    atmosphereMedia/backgroundImageを直接参照しているため、本タスクの
+    素材追加がハブページ・検索インデックスに反映されない、の2点。
+    (1)については同日にgenerate-static-content.js自体を「スキップ」
+    ではなく「常に安全に再生成できる」設計に変更済みのため、本タスクが
+    変更したslugに対して再実行するだけで追従できるようになった。
+    テストの前に該当スクリプト群を実行するステップと、完了報告への
+    実行有無・対象slug明記を追加した。品質基準・採用基準は変更して
+    いない。
 ```
