@@ -28,8 +28,28 @@ const FESTIVAL = {
       "note": "主要なかきくらべ会場の一つ。地区ごとに会場と日程が異なる。"
     },
     "highlightComment": "市内54台の太鼓台が各地区に登場し、複数の太鼓台を一斉に担ぎ上げる「かきくらべ」が行われる。",
-    "atmosphereMedia": [],
-    "backgroundImage": null,
+    "atmosphereMedia": [
+      {
+        "type": "youtube",
+        "url": "https://www.youtube.com/watch?v=79EkuLBIFgQ",
+        "contentId": "79EkuLBIFgQ",
+        "title": "2024新居浜太鼓祭りダイジェスト",
+        "publisher": "heart network (ハートネットワーク)",
+        "publisherType": "local_media",
+        "purpose": "festival_atmosphere",
+        "publishedYear": 2024,
+        "checkedDate": "2026-09-29"
+      }
+    ],
+    "backgroundImage": {
+      "type": "youtube",
+      "contentId": "79EkuLBIFgQ",
+      "sourceUrl": "https://www.youtube.com/watch?v=79EkuLBIFgQ",
+      "publisher": "heart network (ハートネットワーク)",
+      "publisherType": "local_media",
+      "checkedDate": "2026-09-29",
+      "note": "夜のかきくらべ会場で太鼓台と担ぎ手・観客が画面の中心に写り、文字装飾がなく祭りの主役を判別できる。"
+    },
     "confirmation": {
       "verified": true,
       "confirmedDate": "2026-09-08",
