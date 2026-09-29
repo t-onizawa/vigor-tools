@@ -1990,5 +1990,45 @@ const SEARCH_INDEX = [
     "prefecture": "愛知県",
     "city": "豊川市",
     "firstDate": "2026-08-22"
+  },
+  {
+    "slug": "kome-hyappyo-matsuri",
+    "name": "米百俵まつり",
+    "officialName": "米百俵まつり",
+    "prefecture": "新潟県",
+    "city": "長岡市",
+    "firstDate": "2026-10-03"
+  },
+  {
+    "slug": "tochio-kenshinko-sai",
+    "name": "栃尾謙信公祭",
+    "officialName": "栃尾謙信公祭（武者行列・祭典）",
+    "prefecture": "新潟県",
+    "city": "長岡市",
+    "firstDate": "2026-10-18"
+  },
+  {
+    "slug": "seitan-chi-matsuri",
+    "name": "生誕地まつり",
+    "officialName": "生誕地まつり",
+    "prefecture": "新潟県",
+    "city": "十日町市",
+    "firstDate": "2026-10-11"
+  },
+  {
+    "slug": "ojiyashi-ushi-no-tsunotsuki",
+    "name": "おぢや牛の角突き",
+    "officialName": "おぢや牛の角突き",
+    "prefecture": "新潟県",
+    "city": "小千谷市",
+    "firstDate": "2026-05-03"
+  },
+  {
+    "slug": "yamakoshi-ushi-no-tsunotsuki",
+    "name": "越後山古志「牛の角突き」大会",
+    "officialName": "越後山古志「牛の角突き」大会",
+    "prefecture": "新潟県",
+    "city": "長岡市",
+    "firstDate": "2026-04-29"
   }
 ];

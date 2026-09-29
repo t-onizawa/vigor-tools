@@ -20,3 +20,4 @@ FESTIVAL_SLUGS.push("nagoya-matsuri", "owari-tsushima-aki-matsuri", "koromo-mats
 FESTIVAL_SLUGS.push("owari-yokosuka-matsuri", "tanuki-bonote", "hada-matsuri", "tahara-matsuri", "bonote-keigo-matsuri");
 FESTIVAL_SLUGS.push("chiryu-akiba-matsuri", "oota-matsuri", "asakura-hashigo-jishi", "arimatsu-dashi-matsuri", "asuke-matsuri");
 FESTIVAL_SLUGS.push("yaotomi-jinja-reitaisai", "sanage-matsuri", "akasaka-daimyo-gyoretsu", "fujii-jinja-kodomo-sanbaso", "akasaka-amagoi-matsuri");
+FESTIVAL_SLUGS.push("kome-hyappyo-matsuri", "tochio-kenshinko-sai", "seitan-chi-matsuri", "ojiyashi-ushi-no-tsunotsuki", "yamakoshi-ushi-no-tsunotsuki");

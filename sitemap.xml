@@ -2358,4 +2358,24 @@
     <changefreq>yearly</changefreq>
     <priority>0.7</priority>
   </url>
+  <url>
+    <loc>https://vigorlab.net/matsuri/festivals/kome-hyappyo-matsuri/</loc>
+    <lastmod>2026-09-30</lastmod><changefreq>yearly</changefreq><priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://vigorlab.net/matsuri/festivals/tochio-kenshinko-sai/</loc>
+    <lastmod>2026-09-30</lastmod><changefreq>yearly</changefreq><priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://vigorlab.net/matsuri/festivals/seitan-chi-matsuri/</loc>
+    <lastmod>2026-09-30</lastmod><changefreq>yearly</changefreq><priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://vigorlab.net/matsuri/festivals/ojiyashi-ushi-no-tsunotsuki/</loc>
+    <lastmod>2026-09-30</lastmod><changefreq>yearly</changefreq><priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://vigorlab.net/matsuri/festivals/yamakoshi-ushi-no-tsunotsuki/</loc>
+    <lastmod>2026-09-30</lastmod><changefreq>yearly</changefreq><priority>0.7</priority>
+  </url>
 </urlset>
