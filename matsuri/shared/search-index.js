@@ -2030,5 +2030,29 @@ const SEARCH_INDEX = [
     "prefecture": "新潟県",
     "city": "長岡市",
     "firstDate": "2026-04-29"
+  },
+  {
+    "slug": "fukui-sakura-matsuri",
+    "name": "ふくい桜まつり",
+    "officialName": "ふくい桜まつり2026",
+    "prefecture": "福井県",
+    "city": "福井市",
+    "firstDate": "2026-03-21"
+  },
+  {
+    "slug": "asahi-matsuri-fukui",
+    "name": "あさひまつり",
+    "officialName": "第51回あさひまつり",
+    "prefecture": "福井県",
+    "city": "越前町",
+    "firstDate": "2026-07-25"
+  },
+  {
+    "slug": "sabae-matsuri",
+    "name": "さばえまつり",
+    "officialName": "さばえまつり 2026",
+    "prefecture": "福井県",
+    "city": "鯖江市",
+    "firstDate": "2026-09-26"
   }
 ];
