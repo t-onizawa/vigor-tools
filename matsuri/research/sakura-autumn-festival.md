@@ -89,3 +89,7 @@ highlightComment反映（2026-07-30）
 
 ### 2026-09-11 毎日品質改善
 - データslugは sakura-aki-matsuri、既存調査ファイル名は本ファイル。既存背景元 https://www.youtube.com/watch?v=s1T92XbdNXc を直接確認（59分2秒）。長尺通し記録のため動画不採用。
+
+### 2026-09-30 毎日品質改善
+
+- backgroundImageを優先し、同じ探索でatmosphereMedia候補も調査。検索候補の動画ページ・画像を直接確認して採用基準を満たす素材を確定できなかったため、推測で採用せず見送り。

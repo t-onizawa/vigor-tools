@@ -6,3 +6,6 @@
 
 - 根拠: https://www.city.katori.lg.jp/sightseeing/matsuri/introduction/aki.html
 
+### 2026-09-30 毎日品質改善
+
+- backgroundImageを優先し、同じ探索でatmosphereMedia候補も調査。検索候補の動画ページ・画像を直接確認して採用基準を満たす素材を確定できなかったため、推測で採用せず見送り。
