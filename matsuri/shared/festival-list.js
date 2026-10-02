@@ -205,8 +205,18 @@
   }
 
   function dateValue(yearlyInfo) {
-    const firstDate = yearlyInfo && Array.isArray(yearlyInfo.dates) ? yearlyInfo.dates[0] : null;
-    const time = firstDate ? new Date(`${firstDate}T00:00:00+09:00`).getTime() : NaN;
+    // 開催日が複数回（通期もの）の祭りは、配列先頭の日付が過去になっても
+    // ソート基準としては「次の開催日」を使う（そうしないと初回開催日が
+    // 過ぎた後も、シーズン終了まで常にリスト最上位に固定され続けてしまう）。
+    const dates = yearlyInfo && Array.isArray(yearlyInfo.dates) ? yearlyInfo.dates : [];
+    if (dates.length === 0) return Number.POSITIVE_INFINITY;
+    const now = Date.now();
+    const upcoming = dates.find((dateText) => {
+      const endOfDay = new Date(`${dateText}T23:59:59+09:00`).getTime();
+      return Number.isFinite(endOfDay) && endOfDay >= now;
+    });
+    const target = upcoming || dates[dates.length - 1];
+    const time = new Date(`${target}T00:00:00+09:00`).getTime();
     return Number.isFinite(time) ? time : Number.POSITIVE_INFINITY;
   }
 
