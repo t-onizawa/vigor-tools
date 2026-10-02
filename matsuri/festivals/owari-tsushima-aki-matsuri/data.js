@@ -28,8 +28,28 @@ const FESTIVAL = {
       "note": "祭りの中心会場を基準とする。"
     },
     "highlightComment": "からくり山車の奉納と、山車前方を持ち上げて回す「車切」、鉦太鼓を響かせる石採祭車の競演を一度に見られる。",
-    "atmosphereMedia": [],
-    "backgroundImage": null,
+    "atmosphereMedia": [
+      {
+        "type": "youtube",
+        "url": "https://www.youtube.com/watch?v=CfgnQQHFpy0",
+        "contentId": "CfgnQQHFpy0",
+        "title": "【津島市公式】「尾張津島秋まつり」プロモーションビデオ",
+        "publisher": "愛知県津島市（Tsushima City Aichi Pref.）",
+        "publisherType": "government",
+        "purpose": "festival_atmosphere",
+        "publishedYear": 2017,
+        "checkedDate": "2026-10-01"
+      }
+    ],
+    "backgroundImage": {
+      "type": "youtube",
+      "contentId": "CfgnQQHFpy0",
+      "sourceUrl": "https://www.youtube.com/watch?v=CfgnQQHFpy0",
+      "publisher": "愛知県津島市（Tsushima City Aichi Pref.）",
+      "publisherType": "government",
+      "checkedDate": "2026-10-01",
+      "note": "津島市公式動画の文字なし実写サムネイル。太鼓、祭り装束の参加者、境内の様子が明瞭で祭りの雰囲気を伝える。"
+    },
     "confirmation": {
       "verified": true,
       "confirmedDate": "2026-09-23",
