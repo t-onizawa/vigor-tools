@@ -2054,5 +2054,45 @@ const SEARCH_INDEX = [
     "prefecture": "福井県",
     "city": "鯖江市",
     "firstDate": "2026-09-26"
+  },
+  {
+    "slug": "fushiki-hikiyama-matsuri",
+    "name": "伏木曳山祭「けんか山」",
+    "officialName": "伏木曳山祭",
+    "prefecture": "富山県",
+    "city": "高岡市",
+    "firstDate": "2026-05-15"
+  },
+  {
+    "slug": "shinminato-hikiyama-matsuri",
+    "name": "新湊曳山祭",
+    "officialName": "新湊曳山祭",
+    "prefecture": "富山県",
+    "city": "射水市",
+    "firstDate": "2026-10-01"
+  },
+  {
+    "slug": "ebie-hikiyama-matsuri",
+    "name": "海老江曳山まつり",
+    "officialName": "海老江曳山まつり",
+    "prefecture": "富山県",
+    "city": "射水市",
+    "firstDate": "2026-09-23"
+  },
+  {
+    "slug": "daimon-hikiyama-matsuri",
+    "name": "大門曳山まつり",
+    "officialName": "大門曳山まつり",
+    "prefecture": "富山県",
+    "city": "射水市",
+    "firstDate": "2026-10-11"
+  },
+  {
+    "slug": "isurugi-hikiyama-matsuri",
+    "name": "石動曳山祭",
+    "officialName": "石動曳山祭",
+    "prefecture": "富山県",
+    "city": "小矢部市",
+    "firstDate": "2026-04-29"
   }
 ];
