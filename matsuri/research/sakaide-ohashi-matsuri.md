@@ -3,3 +3,7 @@
 - 一次情報: https://www.city.sakaide.lg.jp/soshiki/sangyoukankou/oohasimaturi.html
 - 確認内容: 2026年8月11日は海上花火大会のみ開催。総おどり・太鼓台競演は休止。
 - 判断: 2026年限定構成をyearlyInfoと説明へ明記して採用。素材は未設定。
+
+### 2026-10-02 毎日品質改善
+
+- backgroundImageを優先し、同じ探索でatmosphereMedia候補と座標候補も調査。検索候補を確認したが、投稿元・内容・画像品質または座標の根拠を採用基準どおり確定できなかったため、推測で採用せず見送り。
