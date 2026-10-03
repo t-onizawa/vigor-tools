@@ -2094,5 +2094,45 @@ const SEARCH_INDEX = [
     "prefecture": "富山県",
     "city": "小矢部市",
     "firstDate": "2026-04-29"
+  },
+  {
+    "slug": "kanazawa-hyakumangoku-matsuri",
+    "name": "金沢百万石まつり",
+    "officialName": "第75回 金沢百万石まつり",
+    "prefecture": "石川県",
+    "city": "金沢市",
+    "firstDate": "2026-06-05"
+  },
+  {
+    "slug": "koi-koi-matsuri",
+    "name": "こいこい祭",
+    "officialName": "こいこい祭",
+    "prefecture": "石川県",
+    "city": "加賀市",
+    "firstDate": "2026-09-19"
+  },
+  {
+    "slug": "jumangoku-matsuri",
+    "name": "十万石まつり",
+    "officialName": "十万石まつり",
+    "prefecture": "石川県",
+    "city": "加賀市大聖寺",
+    "firstDate": "2026-09-12"
+  },
+  {
+    "slug": "guzuyaki-matsuri",
+    "name": "ぐず焼まつり",
+    "officialName": "ぐず焼まつり",
+    "prefecture": "石川県",
+    "city": "加賀市動橋町",
+    "firstDate": "2026-08-29"
+  },
+  {
+    "slug": "horitsu-tanabata-kiriko-matsuri",
+    "name": "宝立七夕キリコまつり",
+    "officialName": "宝立七夕キリコまつり",
+    "prefecture": "石川県",
+    "city": "珠洲市宝立町",
+    "firstDate": "2026-08-01"
   }
 ];
