@@ -28,8 +28,28 @@ const FESTIVAL = {
       "note": "JR徳島駅に最も近い主要演舞場。"
     },
     "highlightComment": "連ごとの踊りと鳴り物が演舞場を進み、南内町演舞場では終盤の「総おどり」も披露される。",
-    "atmosphereMedia": [],
-    "backgroundImage": null,
+    "atmosphereMedia": [
+      {
+        "type": "youtube",
+        "url": "https://www.youtube.com/watch?v=_MXxziiKXiU",
+        "contentId": "_MXxziiKXiU",
+        "title": "徳島市夏の阿波おどり2023～5分Ver.～",
+        "publisher": "阿波ナビ",
+        "publisherType": "official",
+        "purpose": "festival_atmosphere",
+        "publishedYear": 2023,
+        "checkedDate": "2026-10-03"
+      }
+    ],
+    "backgroundImage": {
+      "type": "youtube",
+      "contentId": "_MXxziiKXiU",
+      "sourceUrl": "https://www.youtube.com/watch?v=_MXxziiKXiU",
+      "publisher": "阿波ナビ",
+      "publisherType": "official",
+      "checkedDate": "2026-10-03",
+      "note": "踊り手と鳴り物、沿道の観客を明瞭に捉えた現地実写。文字オーバーレイがなく、阿波おどりの主役と雰囲気を判別できる。"
+    },
     "confirmation": {
       "verified": true,
       "confirmedDate": "2026-09-08",
