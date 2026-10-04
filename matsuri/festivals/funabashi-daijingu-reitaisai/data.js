@@ -27,11 +27,11 @@ const FESTIVAL = {
       publisherType: "individual",
       checkedDate: "2026-08-01"
     },
-    confirmation: { verified: true, confirmedDate: "2026-07-31", sources: ["https://www.oohijinja.jp/history.html"] }
+    confirmation: { verified: true, confirmedDate: "2026-10-05", sources: ["https://www.city.funabashi.lg.jp/shisei/toukei/002/p018289.html"] }
   },
   yearlyInfo: [{
-    year: 2026, eventStatus: "scheduled_pending_official", dates: ["2026-10-20"],
+    year: 2026, eventStatus: "confirmed", dates: ["2026-10-20"],
     access: { hasParking: null, parkingNote: "2026年の祭礼用駐車場・交通規制は公式発表未確認。" },
-    confirmation: { confirmedDate: "2026-07-31", sources: ["https://www.oohijinja.jp/history.html"], note: "例大祭は毎年10月20日。2026年の詳細時程は公式発表待ち。" }
+    confirmation: { confirmedDate: "2026-10-05", sources: ["https://www.city.funabashi.lg.jp/shisei/toukei/002/p018289.html"], note: "船橋市公式の令和8年度まつり・行事一覧で、大神宮奉納相撲を10月20日開催と確認。詳細時程は公式発表待ち。" }
   }]
 };
