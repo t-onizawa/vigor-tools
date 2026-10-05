@@ -24,3 +24,4 @@ FESTIVAL_SLUGS.push("kome-hyappyo-matsuri", "tochio-kenshinko-sai", "seitan-chi-
 FESTIVAL_SLUGS.push("fukui-sakura-matsuri", "asahi-matsuri-fukui", "sabae-matsuri");
 FESTIVAL_SLUGS.push("fushiki-hikiyama-matsuri", "shinminato-hikiyama-matsuri", "ebie-hikiyama-matsuri", "daimon-hikiyama-matsuri", "isurugi-hikiyama-matsuri");
 FESTIVAL_SLUGS.push("kanazawa-hyakumangoku-matsuri", "koi-koi-matsuri", "jumangoku-matsuri", "guzuyaki-matsuri", "horitsu-tanabata-kiriko-matsuri");
+FESTIVAL_SLUGS.push("kakegawa-matsuri", "odora-matsuri", "yoshiwara-gion-matsuri", "fujinomiya-matsuri", "fujisan-omikubi-matsuri");

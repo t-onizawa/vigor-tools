@@ -2134,5 +2134,45 @@ const SEARCH_INDEX = [
     "prefecture": "石川県",
     "city": "珠洲市宝立町",
     "firstDate": "2026-08-01"
+  },
+  {
+    "slug": "kakegawa-matsuri",
+    "name": "掛川祭",
+    "officialName": "掛川祭",
+    "prefecture": "静岡県",
+    "city": "掛川市",
+    "firstDate": "2026-10-09"
+  },
+  {
+    "slug": "odora-matsuri",
+    "name": "踊夏祭",
+    "officialName": "第25回 踊夏祭",
+    "prefecture": "静岡県",
+    "city": "焼津市",
+    "firstDate": "2026-07-19"
+  },
+  {
+    "slug": "yoshiwara-gion-matsuri",
+    "name": "吉原祇園祭",
+    "officialName": "吉原祇園祭",
+    "prefecture": "静岡県",
+    "city": "富士市",
+    "firstDate": "2026-06-13"
+  },
+  {
+    "slug": "fujinomiya-matsuri",
+    "name": "富士宮まつり",
+    "officialName": "富士宮まつり",
+    "prefecture": "静岡県",
+    "city": "富士宮市",
+    "firstDate": "2026-11-03"
+  },
+  {
+    "slug": "fujisan-omikubi-matsuri",
+    "name": "富士山御神火まつり",
+    "officialName": "富士山御神火まつり",
+    "prefecture": "静岡県",
+    "city": "富士宮市",
+    "firstDate": "2026-08-01"
   }
 ];
