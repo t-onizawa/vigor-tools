@@ -10,3 +10,6 @@
 
 ### 2026-09-11 毎日品質改善
 - https://www.youtube.com/watch?v=7bth_iUreX0（公式ライブ配信）を直接確認。長尺の通し配信で入口用途に合わず動画不採用、サムネイルも背景基準を満たさず不採用。
+### 2026-10-06 毎日品質改善
+- 実行委員会公式の2026年ライブ配信（https://www.youtube.com/watch?v=7bth_iUreX0）を確認。
+- 長時間ライブ配信アーカイブのため代表素材基準に合わず、atmosphereMedia不採用。backgroundImage追加なし。
