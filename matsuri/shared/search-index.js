@@ -2174,5 +2174,45 @@ const SEARCH_INDEX = [
     "prefecture": "静岡県",
     "city": "富士宮市",
     "firstDate": "2026-08-01"
+  },
+  {
+    "slug": "miyazaki-jingu-taisai",
+    "name": "宮﨑神宮大祭",
+    "officialName": "宮﨑神宮大祭（神武さま）",
+    "prefecture": "宮崎県",
+    "city": "宮崎市",
+    "firstDate": "2026-10-31"
+  },
+  {
+    "slug": "kiyotake-kyodo-matsuri",
+    "name": "きよたけ郷土祭り",
+    "officialName": "第48回 きよたけ郷土祭り",
+    "prefecture": "宮崎県",
+    "city": "宮崎市清武町",
+    "firstDate": "2026-07-18"
+  },
+  {
+    "slug": "erekoccha-miyazaki",
+    "name": "まつりえれこっちゃみやざき",
+    "officialName": "まつりえれこっちゃみやざき2026",
+    "prefecture": "宮崎県",
+    "city": "宮崎市",
+    "firstDate": "2026-07-25"
+  },
+  {
+    "slug": "seki-gongen-natsumatsuri",
+    "name": "関の権現 早吸日女神社夏祭り",
+    "officialName": "関の権現 早吸日女（はやすひめ）神社夏祭り",
+    "prefecture": "大分県",
+    "city": "大分市佐賀関",
+    "firstDate": "2026-07-25"
+  },
+  {
+    "slug": "beppu-hi-no-umi-matsuri",
+    "name": "べっぷ火の海まつり",
+    "officialName": "令和8年度 べっぷ火の海まつり",
+    "prefecture": "大分県",
+    "city": "別府市",
+    "firstDate": "2026-07-25"
   }
 ];
