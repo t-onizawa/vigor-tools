@@ -62,6 +62,54 @@ commit
 
 競合、non-fast-forward、検証失敗がある場合はpushせず停止して報告する。
 
+## 派生ファイルのマージ競合時の対応（2026-10-06追加）
+
+上記「5. 競合が発生していない」には例外がある。最新origin/mainの
+取り込み時に発生する競合が、以下の「ビルド時に全件から機械的に
+再生成されるだけの派生ファイル」**のみ**に限られる場合は、停止せず
+自動的に解消してよい。
+
+対象ファイル（いずれもfestivals/配下の全件を読み直して丸ごと再生成
+する仕組みであり、内容に手動編集は一切含まれないため、競合の解消に
+判断は不要）：
+
+- `matsuri/features/**/index.html`
+- `matsuri/prefectures/**/index.html`
+- `matsuri/regions/**/index.html`
+- `matsuri/months/**/index.html`
+- `matsuri/shared/prefecture-hub-slugs.js`
+- `matsuri/shared/region-hub-slugs.js`
+- `matsuri/shared/search-index.js`
+
+**解消手順：**
+1. 競合しているファイルが上記一覧のみであることを確認する（1件でも
+   上記以外（`festivals/<slug>/data.js`・`festivals/<slug>/index.html`・
+   `research/*.md`・`Backlog.md`・`shared/festival-slugs.js`・
+   `matsuri/index.html`等）が含まれる場合は、この手順を使わず通常
+   どおり停止して報告する）
+2. 競合している対象ファイルについて、どちらの内容を採用するかは
+   問わない（`git checkout --theirs` 等でどちらかを機械的に採用して
+   コンフリクトマーカーを解消すればよい。最終的に再生成で上書き
+   されるため、採用した側の内容は結果に影響しない）
+3. マージを完了させた上で、以下を実行し、派生ファイルを現在の
+   `festivals/`配下の内容（自分がこの実行で追加した分を含む、
+   マージ後の最新状態）から再生成する：
+   ```
+   node matsuri/scripts/generate-feature-hub-pages.js
+   node matsuri/scripts/generate-prefecture-hub-pages.js
+   node matsuri/scripts/generate-region-hub-pages.js
+   node matsuri/scripts/generate-month-hub-pages.js
+   node matsuri/scripts/generate-search-index.js
+   ```
+4. 再生成後、通常どおり全検証をやり直してからpushする
+5. 完了報告に「派生ファイル競合を自動解消した」旨と対象ファイル数を
+   明記する
+
+この対応により、新規祭り追加タスクと週次品質改善タスクなど、複数の
+Scheduled Taskが同じ派生ファイルを別々に再生成した際に発生する
+機械的な競合で毎回停止することを防ぐ（2026-10-06、実際にこの原因で
+pushがブロックされた事例が発生し追加）。
+
 VIGOR MATSURIの平日新規祭り追加・自動公開を実行する。
 
 対象は現在のVIGOR MATSURI。変更範囲は matsuri/ のみ。
@@ -665,6 +713,8 @@ PRは作成しない。
 - 対象エリア内・都道府県別の掲載件数（初期カバレッジ目標3件との対比）
 - 直近5営業日の追加における都道府県の内訳（同一都道府県3営業日連続
   ルールの該当有無を明記）
+- 派生ファイル競合の自動解消（発生有無。発生した場合は対象ファイル数
+  と、上記対象一覧以外が含まれていなかったことの確認結果を明記）
 - 保留事項
 - matsuriスコープclean
 
@@ -844,4 +894,21 @@ https://vigorlab.net/matsuri/festivals/{1件目のslug}/?utm_source=x&utm_medium
     ＋今回追加した連続偏重上限ルールで運用する）。詳細はBacklog.mdの
     「流入拡大・マネタイズ施策のアイデア集」セクション、90日PDCA
     アップデート記録を参照。
+
+2026-10-06（派生ファイルのマージ競合を自動解消するルールを追加）
+    静岡県の祭り5件追加・ローカル検証完了後、最新origin/main取り込み
+    時に自動生成ハブページ11件で競合が発生し、安全条件「5. 競合が
+    発生していない」に従って規定どおりpushせず停止した。原因は、
+    ハブページ・検索インデックスが「festivals/配下全件から毎回丸ごと
+    再生成される」派生ファイルであるため、複数のScheduled Task
+    （新規祭り追加・週次品質改善等）が別々のタイミングで同じ派生
+    ファイルを再生成すると、内容に実質的な矛盾が無くても単純な行
+    単位の差分としては競合になりやすいこと（Claude側でも同日に手動
+    作業で同種の競合に遭遇し、どちら側を採用しても最終的に再生成で
+    上書きされるため判断不要、と確認済みだった）。「派生ファイルの
+    マージ競合時の対応」節を新設し、競合が上記の派生ファイルのみに
+    限られる場合は、採用元を問わず機械的に解消した上で再生成スクリプト
+    を再実行し、全検証をやり直してからpushする手順を明記した。対象
+    ファイル以外が競合に含まれる場合は、従来どおり停止して報告する
+    （安全条件自体は緩めていない）。
 ```

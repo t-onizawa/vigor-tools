@@ -24,6 +24,53 @@ cleanであることを確認する。確認できなければ変更せず停止
 更新されていた場合は最新origin/mainを安全に取り込んで全検証を再実行
 する。コンフリクトまたは検証失敗時はpushしない。
 
+## 派生ファイルのマージ競合時の対応（2026-10-06追加）
+
+上記「コンフリクト時はpushしない」には例外がある。最新origin/mainの
+取り込み時に発生する競合が、以下の「ビルド時に全件から機械的に
+再生成されるだけの派生ファイル」**のみ**に限られる場合は、停止せず
+自動的に解消してよい。
+
+対象ファイル（いずれもfestivals/配下の全件を読み直して丸ごと再生成
+する仕組みであり、内容に手動編集は一切含まれないため、競合の解消に
+判断は不要）：
+
+- `matsuri/features/**/index.html`
+- `matsuri/prefectures/**/index.html`
+- `matsuri/regions/**/index.html`
+- `matsuri/months/**/index.html`
+- `matsuri/shared/prefecture-hub-slugs.js`
+- `matsuri/shared/region-hub-slugs.js`
+- `matsuri/shared/search-index.js`
+
+**解消手順：**
+1. 競合しているファイルが上記一覧のみであることを確認する（1件でも
+   上記以外（`festivals/<slug>/data.js`・`festivals/<slug>/index.html`・
+   `research/*.md`・`Backlog.md`等）が含まれる場合は、この手順を使わず
+   通常どおり停止して報告する）
+2. 競合している対象ファイルについて、どちらの内容を採用するかは
+   問わない（`git checkout --theirs` 等でどちらかを機械的に採用して
+   コンフリクトマーカーを解消すればよい。最終的に再生成で上書き
+   されるため、採用した側の内容は結果に影響しない）
+3. マージを完了させた上で、以下を実行し、派生ファイルを現在の
+   `festivals/`配下の内容（自分がこの実行で変更した分を含む、
+   マージ後の最新状態）から再生成する：
+   ```
+   node matsuri/scripts/generate-feature-hub-pages.js
+   node matsuri/scripts/generate-prefecture-hub-pages.js
+   node matsuri/scripts/generate-region-hub-pages.js
+   node matsuri/scripts/generate-month-hub-pages.js
+   node matsuri/scripts/generate-search-index.js
+   ```
+4. 再生成後、通常どおり全検証をやり直してからpushする
+5. 完了報告に「派生ファイル競合を自動解消した」旨と対象ファイル数を
+   明記する
+
+この対応により、新規祭り追加タスクと本タスクなど、複数のScheduled
+Taskが同じ派生ファイルを別々に再生成した際に発生する機械的な競合で
+毎回停止することを防ぐ（詳細は`task-new-festival-addition.md`の
+変更履歴参照）。
+
 ---
 
 VIGOR MATSURIの週次品質改善を実施する。
@@ -245,6 +292,8 @@ node matsuri/scripts/generate-search-index.js
   mapReference.lat/lng未設定の件数（母数含む）
 - 静的コンテンツ・ハブページ・検索インデックス再生成：実行有無、
   対象slug一覧（反映0件の回は「該当なし（対象0件）」と明記）
+- 派生ファイル競合の自動解消（発生有無。発生した場合は対象ファイル数
+  と、上記対象一覧以外が含まれていなかったことの確認結果を明記）
 - 整合性チェック領域で気づいた参考情報（修正はしていない）
 - 表示確認で見つけた既存不具合（対象ページ・再現条件・症状。なければ
   「なし」と明記）
@@ -310,4 +359,13 @@ PMレビュー対象とする（反映自体は止めない）。
     テストの前に該当スクリプト群を実行するステップと、完了報告への
     実行有無・対象slug明記を追加した。品質基準・採用基準は変更して
     いない。
+
+2026-10-06（派生ファイルのマージ競合を自動解消するルールを追加）
+    新規祭り追加タスク側で、最新origin/main取り込み時に自動生成ハブ
+    ページで競合が発生しpushがブロックされる事例が発生した。本タスクも
+    同じ派生ファイル（ハブページ・検索インデックス）を再生成するため
+    同種のリスクがあり、同じ対応を追加した。詳細・対象ファイル一覧は
+    `task-new-festival-addition.md`の該当節・変更履歴を参照。安全条件
+    自体は緩めておらず、対象の派生ファイル以外が競合に含まれる場合は
+    従来どおり停止して報告する。
 ```
