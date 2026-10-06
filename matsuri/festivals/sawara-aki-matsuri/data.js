@@ -27,11 +27,12 @@ const FESTIVAL = {
       mapUrl: "https://www.google.com/maps/search/?api=1&query=諏訪神社+千葉県香取市佐原イ1020",
       note: "諏訪神社は秋祭りの祭礼の中心となる神社です。山車の曳き回しは新宿地区（小野川西側、佐原駅前一帯）に広がります。"
     },
-    highlightComment: null,
+    highlightComment: "新宿地区を14台の山車が曲曳き「のの字廻し」を披露しながら巡行する。中日には14台全てが勢揃いする「山車整列・揃い曳き」が見られる。",
+    notableDesignation: "国指定重要無形民俗文化財「佐原の山車行事」（2004年指定）、関東3大山車祭りの一つ",
     atmosphereMedia: [],
     confirmation: {
       verified: true,
-      confirmedDate: "2026-07-28",
+      confirmedDate: "2026-10-06",
       sources: [
         "https://www.city.katori.lg.jp/sightseeing/matsuri/introduction/aki.html",
         "https://www.city.katori.lg.jp/sightseeing/matsuri/introduction/index.html"

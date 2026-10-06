@@ -109,6 +109,8 @@ VIGOR MATSURIの週次品質改善を実施する。
 - atmosphereMedia不足
 - mapReference.lat/lng不足（mapReference自体は確定済みのもの）
 - note不足
+- `notableDesignation`設定済みかつ`highlightComment`未設定（2026-10-06
+  追加。詳細は下記「対象選定」-1番を参照）
 - その他、Backlog・Roadmapで品質改善対象となっている項目
 
 ## 3. 素材品質を改善する
@@ -117,6 +119,24 @@ backgroundImageを最優先とする。
 
 ### 対象選定
 
+-1. 【2026-10-06追加】`constantInfo.notableDesignation`が設定済み
+   （UNESCO無形文化遺産・国指定重要無形民俗文化財等、一次情報で確認
+   済みの公的格付けがある）にもかかわらず`constantInfo.highlightComment`
+   が`null`の祭りがあれば、他のどの選定基準よりも優先して対象に含め、
+   一次情報で見どころ文を補う。
+   理由：公的な格付けがある祭りは知名度・検索需要が見込め、週次
+   おすすめnoteタスクの優先選定基準にもなっている
+   （task-weekly-note-recommendation.md参照）ため、見どころ文が
+   欠けたまま放置する機会損失が大きい。実際に佐原の大祭 秋祭り
+   （国指定重要無形民俗文化財）がhighlightComment未設定のまま
+   放置されていた事例から追加した。
+   対象件数は少ない見込み（`notableDesignation`は一次情報で確認
+   できた場合のみ設定される任意フィールドのため、多くの祭りでは
+   `null`のまま）。該当が無い場合は通常どおり0番以降へ進む。この
+   枠のために新たに「どの祭りが有名か」を調査する専用タスクは
+   行わない（`notableDesignation`が既に設定されている祭りだけが
+   対象。[[feedback_bulk_change_via_script]]・運用負荷を増やさない
+   という既存方針の延長）。
 0. 【最優先・2026-09-16追加】今日の日付から起算して、開催まで
    概ね1〜2ヶ月以内（開催済みは対象外）の祭りのうち、backgroundImage・
    atmosphereMedia・mapReference.lat/lng（mapReference自体は確定済み
@@ -159,6 +179,12 @@ backgroundImageを最優先とする。
 1〜6節＝atmosphereMedia、8節＝mapReference.lat/lng）をそのまま適用し、
 基準を緩めない。検索結果の要約・スニペットだけで投稿者・内容を確定
 させず、必ず動画ページ・画像を直接開いて確認する。
+
+素材調査の過程で、UNESCO無形文化遺産・国指定重要無形民俗文化財等の
+公的指定を一次情報（指定機関または自治体公式サイト）上でたまたま
+目にした場合は、`constantInfo.notableDesignation`に記録する
+（schema-design.md 14番参照。2026-10-06追加）。この指定の有無だけを
+確認するための専用調査は行わない（運用負荷を増やさない）。
 
 atmosphereMediaもbackgroundImageと同様に新規探索の対象とする
 （週末バナー・一覧カードの表示にatmosphereMediaのサムネイルを直接
@@ -368,4 +394,17 @@ PMレビュー対象とする（反映自体は止めない）。
     `task-new-festival-addition.md`の該当節・変更履歴を参照。安全条件
     自体は緩めておらず、対象の派生ファイル以外が競合に含まれる場合は
     従来どおり停止して報告する。
+
+2026-10-06（notableDesignation設定済み祭りのhighlightComment補完を追加）
+    佐原の大祭 秋祭り（国指定重要無形民俗文化財「佐原の山車行事」）
+    がhighlightComment未設定のまま放置されていたとFounderが指摘。
+    新設フィールド`constantInfo.notableDesignation`（schema-design.md
+    14番、task-weekly-note-recommendation.mdの選定基準改善と同時
+    追加）が設定済みなのにhighlightCommentが欠けている祭りを、他の
+    どの選定基準よりも優先して補完する「-1番」を対象選定に新設した。
+    対象は`notableDesignation`が一次情報で既に確認済みの祭りに限られ
+    件数は少ない見込みのため、この枠のために新たに「どの祭りが有名か」
+    を調査する専用タスクは作らない。あわせて、素材調査中に公的指定を
+    偶然目にした場合は記録するよう明記した（指定の有無だけを確認する
+    専用調査は行わない）。品質基準・採用基準は変更していない。
 ```
