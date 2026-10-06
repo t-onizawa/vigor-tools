@@ -22,3 +22,6 @@
 
 ### 2026-09-13 毎日品質改善
 - backgroundImageを優先し、同じ探索でatmosphereMedia候補も調査。画像・動画ページを採用基準どおり直接確認できる候補を確定できなかったため、推測で採用せず見送り。
+
++### 2026-10-05 毎日品質改善
+- 七尾市公式案内（https://www.city.nanao.lg.jp/koryu-s/event/8gatsu/issaki.html）と動画「石崎奉燈祭 2026」（https://www.youtube.com/watch?v=KchOf9Sui5Q）を直接確認。動画投稿者の公式性・継続活動・尺を十分に確認できず、内容説明もないため不採用。公式写真の利用条件と座標も確定できず追加しない。

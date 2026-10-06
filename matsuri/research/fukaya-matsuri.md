@@ -97,3 +97,6 @@ v0.3  2026-07-29（atmosphereMedia候補調査・不採用記録）
 
 ### 2026-09-12 毎日品質改善
 - backgroundImageを優先し、同じ探索で見つかるatmosphereMediaもあわせて調査。画像・動画ページを採用基準どおり直接確認できる候補を確定できなかったため、推測で採用せず見送り。
+
++### 2026-10-05 毎日品質改善
+- 深谷市公式「深谷のまつり・イベント」（https://www.city.fukaya.saitama.jp/doraku/guide/guide05.html）と動画候補を直接確認。祭り全体を短時間で伝え、投稿者・内容・尺を同時に確認できる候補を確定できず、backgroundImage・atmosphereMediaとも見送り。位置情報は既に設定済み。
