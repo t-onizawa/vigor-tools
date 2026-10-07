@@ -27,6 +27,7 @@ const FESTIVAL = {
       mapUrl: "https://www.google.com/maps/search/?api=1&query=川越氷川神社+埼玉県川越市宮下町2-11-3",
       note: "川越氷川神社は神幸祭の出発・還御地点で、実際の巡行ルートにも含まれます。"
     },
+    notableDesignation: "ユネスコ無形文化遺産「山・鉾・屋台行事」構成行事、国指定重要無形民俗文化財「川越氷川祭の山車行事」",
     highlightComment: "向かい合う山車同士が囃子で競演する「曳っかわせ」は、夜になると最高潮の盛り上がりを見せる。",
     searchQuery: "川越まつり",
     atmosphereMedia: [
@@ -42,6 +43,15 @@ const FESTIVAL = {
         checkedDate: "2026-07-29"
       }
     ],
+    backgroundImage: {
+      type: "youtube",
+      contentId: "E-G46iewLS0",
+      sourceUrl: "https://www.youtube.com/watch?v=E-G46iewLS0",
+      publisher: "埼玉県（ちょこたび埼玉）",
+      publisherType: "government",
+      checkedDate: "2026-10-07",
+      note: "山車と観客で賑わう蔵造りの町並みを横長実写で捉えた埼玉県公式観光動画の標準サムネイル。左上の小さな祭り名表記は主役を隠さない。"
+    },
     confirmation: {
       verified: true,
       confirmedDate: "2026-07-28",

@@ -27,6 +27,7 @@ const FESTIVAL = {
       mapUrl: "https://www.google.com/maps/search/?api=1&query=椋神社+埼玉県秩父市下吉田",
       note: "龍勢は椋神社の例大祭に奉納されます。"
     },
+    notableDesignation: "国指定重要無形民俗文化財「秩父吉田の龍勢」",
     highlightComment: "27流派が伝承する手作りロケット「龍勢」が、轟音とともに上空300〜500mへ打ち上がる。",
     atmosphereMedia: [{
       type: "youtube",
@@ -39,7 +40,15 @@ const FESTIVAL = {
       publishedYear: 2011,
       checkedDate: "2026-07-30"
     }],
-    backgroundImage: null,
+    backgroundImage: {
+      type: "youtube",
+      contentId: "XwXlbg9G_5Q",
+      sourceUrl: "https://www.youtube.com/watch?v=XwXlbg9G_5Q",
+      publisher: "ChokotabiSaitama",
+      publisherType: "tourism",
+      checkedDate: "2026-10-07",
+      note: "龍勢の発射櫓と白煙を横長実写で捉えた埼玉県公式観光動画の標準サムネイル。左上の小さな祭り名表記は主役の判別を妨げない。"
+    },
     confirmation: {
       verified: true,
       confirmedDate: "2026-07-30",
