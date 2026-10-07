@@ -2214,5 +2214,45 @@ const SEARCH_INDEX = [
     "prefecture": "大分県",
     "city": "別府市",
     "firstDate": "2026-07-25"
+  },
+  {
+    "slug": "kagoshima-jingu-hatsuumatsuri",
+    "name": "鹿児島神宮 初午祭",
+    "officialName": "鹿児島神宮 初午祭",
+    "prefecture": "鹿児島県",
+    "city": "霧島市",
+    "firstDate": "2026-03-08"
+  },
+  {
+    "slug": "yagorodon-matsuri",
+    "name": "弥五郎どん祭り",
+    "officialName": "弥五郎どん祭り",
+    "prefecture": "鹿児島県",
+    "city": "曽於市",
+    "firstDate": "2026-11-03"
+  },
+  {
+    "slug": "akune-midokoi-matsuri",
+    "name": "阿久根みどこい祭り",
+    "officialName": "阿久根みどこい祭り",
+    "prefecture": "鹿児島県",
+    "city": "阿久根市",
+    "firstDate": "2026-10-10"
+  },
+  {
+    "slug": "kagoshima-ogionsaa",
+    "name": "おぎおんさぁ",
+    "officialName": "鹿児島祇園祭 おぎおんさぁ",
+    "prefecture": "鹿児島県",
+    "city": "鹿児島市",
+    "firstDate": "2026-07-03"
+  },
+  {
+    "slug": "kanoya-natsu-matsuri",
+    "name": "かのや夏祭り",
+    "officialName": "かのや夏祭り",
+    "prefecture": "鹿児島県",
+    "city": "鹿屋市",
+    "firstDate": "2026-07-31"
   }
 ];
