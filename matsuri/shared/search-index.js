@@ -2254,5 +2254,45 @@ const SEARCH_INDEX = [
     "prefecture": "鹿児島県",
     "city": "鹿屋市",
     "firstDate": "2026-07-31"
+  },
+  {
+    "slug": "ginowan-seinen-eisa-matsuri",
+    "name": "宜野湾市青年エイサー祭り",
+    "officialName": "第30回宜野湾市青年エイサー祭り",
+    "prefecture": "沖縄県",
+    "city": "宜野湾市",
+    "firstDate": "2026-10-03"
+  },
+  {
+    "slug": "uruma-eisa-matsuri",
+    "name": "うるま市エイサーまつり",
+    "officialName": "第21回うるま市エイサーまつり",
+    "prefecture": "沖縄県",
+    "city": "うるま市",
+    "firstDate": "2026-09-19"
+  },
+  {
+    "slug": "eisa-festival-in-chatan",
+    "name": "エイサーフェスティバルin北谷",
+    "officialName": "第45回エイサーフェスティバルin北谷",
+    "prefecture": "沖縄県",
+    "city": "北谷町",
+    "firstDate": "2026-08-09"
+  },
+  {
+    "slug": "nago-all-island-haarii",
+    "name": "名護市長杯争奪全島ハーリー大会",
+    "officialName": "第48回名護市長杯争奪全島ハーリー大会",
+    "prefecture": "沖縄県",
+    "city": "名護市",
+    "firstDate": "2026-08-02"
+  },
+  {
+    "slug": "miyakojima-natsu-matsuri",
+    "name": "宮古島夏まつり",
+    "officialName": "宮古島夏まつり2026",
+    "prefecture": "沖縄県",
+    "city": "宮古島市",
+    "firstDate": "2026-07-24"
   }
 ];
