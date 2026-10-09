@@ -2294,5 +2294,45 @@ const SEARCH_INDEX = [
     "prefecture": "沖縄県",
     "city": "宮古島市",
     "firstDate": "2026-07-24"
+  },
+  {
+    "slug": "otaru-ushio-matsuri",
+    "name": "おたる潮まつり",
+    "officialName": "第60回おたる潮まつり",
+    "prefecture": "北海道",
+    "city": "小樽市",
+    "firstDate": "2026-07-24"
+  },
+  {
+    "slug": "noboribetsu-jigoku-matsuri",
+    "name": "登別地獄まつり",
+    "officialName": "第63回登別地獄まつり",
+    "prefecture": "北海道",
+    "city": "登別市",
+    "firstDate": "2026-08-29"
+  },
+  {
+    "slug": "kushiro-port-matsuri",
+    "name": "くしろ港まつり",
+    "officialName": "第79回くしろ港まつり",
+    "prefecture": "北海道",
+    "city": "釧路市",
+    "firstDate": "2026-08-07"
+  },
+  {
+    "slug": "akkeshi-natsu-matsuri",
+    "name": "厚岸夏まつり",
+    "officialName": "第33回あっけし夏まつり（厚岸夏まつり）",
+    "prefecture": "北海道",
+    "city": "厚岸町",
+    "firstDate": "2026-07-04"
+  },
+  {
+    "slug": "iwanai-jinja-reitaisai",
+    "name": "岩内神社例大祭（いわない祭り）",
+    "officialName": "岩内神社例大祭",
+    "prefecture": "北海道",
+    "city": "岩内町",
+    "firstDate": "2026-07-07"
   }
 ];
