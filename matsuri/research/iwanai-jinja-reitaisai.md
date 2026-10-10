@@ -14,3 +14,7 @@
 
 - https://www.iwanai-jinja.com/news/how-technology-can-help-curb-attention-disorders
 - https://www.iwanai-jinja.com/%E4%BE%8B%E5%A4%A7%E7%A5%AD
+
+### 2026-10-10 毎日品質改善
+
+- 通常選定の未調査・両方なし対象。神社・自治体系の候補を調査したが、神輿の坂上がりを含む祭り全体が伝わる動画と背景候補を直接確定できず、画像・動画とも見送り。

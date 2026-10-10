@@ -14,3 +14,7 @@
 
 - https://otaru.gr.jp/tourist/60otaruusiomaturi7-24-26
 - https://otaru.gr.jp/event/ushiomaturi2026
+
+### 2026-10-10 毎日品質改善
+
+- 通常選定の未調査・両方なし対象。主催・自治体系の情報と候補素材を調査したが、三日間の行事全体を代表する入口向け動画と文字被りのない背景画像を確定できず見送り。

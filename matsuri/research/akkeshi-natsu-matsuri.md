@@ -14,3 +14,7 @@
 
 - https://www.akkeshi-town.jp/kanko/event/summer/
 - https://www.akkeshi-town.jp/oshirase/4243/
+
+### 2026-10-10 毎日品質改善
+
+- 通常選定の未調査・両方なし対象。自治体・観光系の情報と素材候補を調査したが、山車競演を動画ページ上で直接確認できる採用候補と背景向け実写を確定できず、画像・動画とも見送り。
