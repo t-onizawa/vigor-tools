@@ -31,3 +31,7 @@
 ### 2026-10-03 毎日品質改善
 
 - 開催が近づいている祭り枠で再確認した。backgroundImageとatmosphereMediaは既に設定済みで、追加変更は不要と判断した。
+
+### 2026-10-11 毎日品質改善
+
+- 開催直前枠で再確認。backgroundImageとatmosphereMediaは既に設定済みで、今回の欠損はmapReference.lat/lngのみ。会場範囲に複数地点が含まれ、labelが指す一点の座標を一意に直接確認できなかったため、推測で追加せず未設定を維持した。
