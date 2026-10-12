@@ -18,7 +18,8 @@ const FESTIVAL = {
       note: "大前神社から真岡市役所周辺、五行川河畔を巡ります。"
     },
     highlightComment: "20数基の神輿と山車・屋台が集まり、夜は花火の下で神輿が五行川を渡る。",
-    atmosphereMedia: [], backgroundImage: null,
+    atmosphereMedia: [],
+    backgroundImage: { type: "youtube", contentId: "xg2cTg7BLTA", sourceUrl: "https://www.youtube.com/watch?v=xg2cTg7BLTA", publisher: "田口祐也", publisherType: "individual", checkedDate: "2026-10-12", note: "夜の神輿と担ぎ手を正面から捉えた文字なしの現地実写。神輿が中央に大きく写り、祭りの主役を明瞭に判別できる。" },
     confirmation: { verified: true, confirmedDate: "2026-07-31", sources: ["https://www.city.moka.lg.jp/kakuka/shokokanko/event/8610.html"] }
   },
   yearlyInfo: [{
