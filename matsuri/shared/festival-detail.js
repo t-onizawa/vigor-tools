@@ -1207,7 +1207,9 @@
     youtube:
       '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><rect x="1" y="4" width="22" height="16" rx="4" fill="none" stroke="currentColor" stroke-width="1.6"/><polygon points="10,8.5 10,15.5 16,12"/></svg>',
     instagram:
-      '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="6"/><circle cx="12" cy="12" r="5"/><circle cx="17.3" cy="6.7" r="1.1" fill="currentColor" stroke="none"/></svg>'
+      '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="6"/><circle cx="12" cy="12" r="5"/><circle cx="17.3" cy="6.7" r="1.1" fill="currentColor" stroke="none"/></svg>',
+    image:
+      '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><rect x="2" y="3" width="20" height="18" rx="3"/><circle cx="8.5" cy="9.5" r="1.7" fill="currentColor" stroke="none"/><path d="M3 16.5l5.5-5.5c0.7-0.7 1.8-0.7 2.5 0L15 15l2-2c0.7-0.7 1.8-0.7 2.5 0L21 15"/></svg>'
   };
 
   function normalizeForHashtag(text) {
@@ -1233,6 +1235,11 @@
         key: "instagram",
         label: "Instagram",
         url: `https://www.instagram.com/explore/tags/${encodeURIComponent(hashtag)}/`
+      },
+      {
+        key: "image",
+        label: EN?.labels?.imageSearch || (LOCALE === "en" ? "Photos" : "画像"),
+        url: `https://www.google.com/search?q=${encodeURIComponent(query)}&tbm=isch`
       }
     ];
   }
@@ -1277,6 +1284,13 @@
           });
         } else if (service.key === "instagram") {
           sendGaEvent("atmosphere_instagram_click", {
+            festival_slug: festival.id,
+            festival_name: festivalName,
+            search_query: query,
+            link_url: link.href
+          });
+        } else if (service.key === "image") {
+          sendGaEvent("atmosphere_image_click", {
             festival_slug: festival.id,
             festival_name: festivalName,
             search_query: query,
