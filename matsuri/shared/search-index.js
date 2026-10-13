@@ -2374,5 +2374,45 @@ const SEARCH_INDEX = [
     "prefecture": "福岡県",
     "city": "田川市",
     "firstDate": "2026-10-31"
+  },
+  {
+    "slug": "nagasaki-takenge",
+    "name": "竹ン芸",
+    "officialName": "竹ン芸",
+    "prefecture": "長崎県",
+    "city": "長崎市",
+    "firstDate": "2026-10-14"
+  },
+  {
+    "slug": "yosakoi-sasebo-matsuri",
+    "name": "YOSAKOIさせぼ祭り",
+    "officialName": "YOSAKOIさせぼ祭り",
+    "prefecture": "長崎県",
+    "city": "佐世保市",
+    "firstDate": "2026-10-16"
+  },
+  {
+    "slug": "matsuura-suigun-matsuri",
+    "name": "松浦水軍まつり",
+    "officialName": "松浦水軍まつり",
+    "prefecture": "長崎県",
+    "city": "松浦市",
+    "firstDate": "2026-10-24"
+  },
+  {
+    "slug": "onigi-tanada-matsuri",
+    "name": "鬼木棚田まつり",
+    "officialName": "鬼木棚田まつり",
+    "prefecture": "長崎県",
+    "city": "波佐見町",
+    "firstDate": "2026-09-20"
+  },
+  {
+    "slug": "shimabara-otemon-ichi",
+    "name": "島原城大手門市",
+    "officialName": "島原城大手門市",
+    "prefecture": "長崎県",
+    "city": "島原市",
+    "firstDate": "2026-10-17"
   }
 ];
