@@ -32,7 +32,7 @@ const FESTIVAL = {
   },
   "yearlyInfo": [{
     "year": 2026,
-    "eventStatus": "confirmed",
+    "eventStatus": "ended",
     "dates": ["2026-10-10", "2026-10-11"],
     "schedule": [],
     "access": {"hasParking": null, "parkingNote": "2026年の来場者用駐車場の詳細は公式情報で確認できていません。"},

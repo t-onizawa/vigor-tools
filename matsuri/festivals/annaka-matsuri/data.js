@@ -22,7 +22,7 @@ const FESTIVAL = {
     confirmation: { verified: true, confirmedDate: "2026-07-31", sources: ["https://www.city.annaka.lg.jp/page/21641.html", "https://www.city.annaka.lg.jp/page/2058.html"] }
   },
   yearlyInfo: [{
-    year: 2026, eventStatus: "confirmed", dates: ["2026-10-11"],
+    year: 2026, eventStatus: "ended", dates: ["2026-10-11"],
     access: { hasParking: null, parkingNote: "2026年の駐車場・交通規制詳細は公式案内を確認してください。" },
     confirmation: {
       confirmedDate: "2026-09-21", sources: ["https://www.city.annaka.lg.jp/site/mayor/30916.html"],
