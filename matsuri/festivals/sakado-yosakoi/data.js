@@ -33,7 +33,7 @@ const FESTIVAL = {
     confirmation: { verified: true, confirmedDate: "2026-08-12", sources: ["https://www.sakadoyosakoi.com/", "https://www.sakadoyosakoi.com/aboutus.html", "https://www.sakadoyosakoi.com/outline.html", "https://www.city.sakado.lg.jp/site/shiseishikou50syuunenn/59114.html"] }
   },
   yearlyInfo: [{
-    year: 2026, eventStatus: "confirmed", dates: ["2026-10-11"],
+    year: 2026, eventStatus: "ended", dates: ["2026-10-11"],
     access: { hasParking: null, parkingNote: "来場者向けの祭り専用駐車場は公式案内で確認できていない。坂戸駅北口から徒歩圏のため公共交通機関での来場を基準とする。" },
     confirmation: { confirmedDate: "2026-08-12", sources: ["https://www.sakadoyosakoi.com/", "https://www.city.sakado.lg.jp/site/shiseishikou50syuunenn/59114.html", "https://www.sakadoyosakoi.com/images/store/Tent%20stalls.pdf"], note: "第26回は2026年10月11日11時から19時までの開催予定。坂戸市文化会館ふれあ大駐車場と周辺の県道・市道を会場とする。" }
   }]
