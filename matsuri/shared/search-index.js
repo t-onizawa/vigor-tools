@@ -2334,5 +2334,45 @@ const SEARCH_INDEX = [
     "prefecture": "北海道",
     "city": "岩内町",
     "firstDate": "2026-07-07"
+  },
+  {
+    "slug": "kawara-tsuruoka-yabusame",
+    "name": "鶴岡八幡神社例大祭「宮日祭・流鏑馬」",
+    "officialName": "鶴岡八幡神社例大祭「宮日祭・流鏑馬」",
+    "prefecture": "福岡県",
+    "city": "香春町",
+    "firstDate": "2026-10-03"
+  },
+  {
+    "slug": "umi-hachimangu-hojoya",
+    "name": "宇美八幡宮 放生会",
+    "officialName": "宇美八幡宮 秋季大祭「放生会」",
+    "prefecture": "福岡県",
+    "city": "宇美町",
+    "firstDate": "2026-10-15"
+  },
+  {
+    "slug": "wakamatsu-minato-matsuri",
+    "name": "若松みなと祭り",
+    "officialName": "若松みなと祭り",
+    "prefecture": "福岡県",
+    "city": "北九州市若松区",
+    "firstDate": "2026-10-18"
+  },
+  {
+    "slug": "kanada-inari-jinko-sai",
+    "name": "金田稲荷神社神幸祭",
+    "officialName": "金田稲荷神社神幸祭",
+    "prefecture": "福岡県",
+    "city": "福智町",
+    "firstDate": "2026-10-24"
+  },
+  {
+    "slug": "tagawa-coalmine-festival",
+    "name": "TAGAWAコールマイン・フェスティバル～炭坑節まつり～",
+    "officialName": "TAGAWAコールマイン・フェスティバル～炭坑節まつり～",
+    "prefecture": "福岡県",
+    "city": "田川市",
+    "firstDate": "2026-10-31"
   }
 ];

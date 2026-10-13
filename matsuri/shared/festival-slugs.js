@@ -29,3 +29,4 @@ FESTIVAL_SLUGS.push("miyazaki-jingu-taisai", "kiyotake-kyodo-matsuri", "erekocch
 FESTIVAL_SLUGS.push("kagoshima-jingu-hatsuumatsuri", "yagorodon-matsuri", "akune-midokoi-matsuri", "kagoshima-ogionsaa", "kanoya-natsu-matsuri");
 FESTIVAL_SLUGS.push("ginowan-seinen-eisa-matsuri", "uruma-eisa-matsuri", "eisa-festival-in-chatan", "nago-all-island-haarii", "miyakojima-natsu-matsuri");
 FESTIVAL_SLUGS.push("otaru-ushio-matsuri", "noboribetsu-jigoku-matsuri", "kushiro-port-matsuri", "akkeshi-natsu-matsuri", "iwanai-jinja-reitaisai");
+FESTIVAL_SLUGS.push("kawara-tsuruoka-yabusame", "umi-hachimangu-hojoya", "wakamatsu-minato-matsuri", "kanada-inari-jinko-sai", "tagawa-coalmine-festival");
