@@ -2414,5 +2414,45 @@ const SEARCH_INDEX = [
     "prefecture": "長崎県",
     "city": "島原市",
     "firstDate": "2026-10-17"
+  },
+  {
+    "slug": "yobuko-kunchi",
+    "name": "呼子くんち",
+    "officialName": "呼子くんち",
+    "prefecture": "佐賀県",
+    "city": "唐津市呼子町",
+    "firstDate": "2026-10-17"
+  },
+  {
+    "slug": "inasa-jinja-okunchi",
+    "name": "おくんち（稲佐神社）",
+    "officialName": "稲佐神社秋祭り",
+    "prefecture": "佐賀県",
+    "city": "白石町",
+    "firstDate": "2026-10-19"
+  },
+  {
+    "slug": "fukudomi-jinja-okunchi",
+    "name": "おくんち（福富神社）",
+    "officialName": "福富神社の秋まつり",
+    "prefecture": "佐賀県",
+    "city": "白石町",
+    "firstDate": "2026-10-19"
+  },
+  {
+    "slug": "yoshinogari-furusato-honoo-matsuri",
+    "name": "吉野ヶ里ふるさと炎まつり",
+    "officialName": "吉野ヶ里ふるさと炎まつり",
+    "prefecture": "佐賀県",
+    "city": "吉野ヶ里町",
+    "firstDate": "2026-10-24"
+  },
+  {
+    "slug": "inasa-jinja-ohitaki-matsuri",
+    "name": "稲佐神社のお火たき祭",
+    "officialName": "稲佐神社のお火たき祭",
+    "prefecture": "佐賀県",
+    "city": "白石町",
+    "firstDate": "2026-12-26"
   }
 ];
