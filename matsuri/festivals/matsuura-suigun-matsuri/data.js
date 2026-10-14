@@ -29,7 +29,7 @@ const FESTIVAL = {
     },
     "highlightComment": "松浦党を表す甲冑姿の武者行列と、地域で踊り継ぐ市民総踊りを楽しめる。",
     "atmosphereMedia": [],
-    "backgroundImage": null,
+    "backgroundImage": {"type":"youtube","contentId":"8pHHfTSWfuE","sourceUrl":"https://www.youtube.com/watch?v=8pHHfTSWfuE","publisher":"The Kappajizo","publisherType":"individual","checkedDate":"2026-10-14","note":"甲冑姿の武者が行列する現地実写。文字のないデフォルトサムネイルを優先度1で採用。"},
     "confirmation": {
       "verified": true,
       "confirmedDate": "2026-10-14",

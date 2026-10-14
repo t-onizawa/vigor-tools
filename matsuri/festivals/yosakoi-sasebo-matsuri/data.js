@@ -28,7 +28,7 @@ const FESTIVAL = {
       "note": "公式案内の会場を観覧の基準とする。"
     },
     "highlightComment": "鳴子を持つチームの演舞を、佐世保中央公園や市街地の複数会場で見比べられる。",
-    "atmosphereMedia": [],
+    "atmosphereMedia": [{"type":"youtube","url":"https://www.youtube.com/watch?v=tppvfmIAbWE","contentId":"tppvfmIAbWE","title":"「第27回YOSAKOIさせぼ祭り〜漲る。〜」各会場紹介（全12会場）［4K］","publisher":"YOSAKOIさせぼ祭り","publisherType":"official","purpose":"festival_atmosphere","publishedYear":2025,"checkedDate":"2026-10-14"}],
     "backgroundImage": null,
     "confirmation": {
       "verified": true,
