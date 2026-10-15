@@ -135,7 +135,9 @@
       return null;
     }
 
-    const currentYear = new Date().getFullYear();
+    const currentYear = Number(
+      new Intl.DateTimeFormat("en-US", { year: "numeric", timeZone: "Asia/Tokyo" }).format(new Date())
+    );
     const validEntries = festival.yearlyInfo.filter((entry) => {
       return entry && typeof entry.year === "number" && Number.isFinite(entry.year);
     });
@@ -303,7 +305,7 @@
   }
 
   function weekday(date) {
-    return new Intl.DateTimeFormat("ja-JP", { weekday: "short" }).format(date);
+    return new Intl.DateTimeFormat("ja-JP", { weekday: "short", timeZone: "Asia/Tokyo" }).format(date);
   }
 
   function formatDateRange(yearlyInfo) {
@@ -314,11 +316,13 @@
 
     const fmt = (dateText) => {
       const d = new Date(`${dateText}T00:00:00+09:00`);
-      return `${yearlyInfo.year}年${d.getMonth() + 1}月${d.getDate()}日(${weekday(d)})`;
+      const [, month, day] = dateText.split("-").map(Number);
+      return `${yearlyInfo.year}年${month}月${day}日(${weekday(d)})`;
     };
     const fmtShort = (dateText) => {
       const d = new Date(`${dateText}T00:00:00+09:00`);
-      return `${d.getDate()}日(${weekday(d)})`;
+      const day = Number(dateText.split("-")[2]);
+      return `${day}日(${weekday(d)})`;
     };
 
     if (dates.length === 1) {
@@ -775,8 +779,10 @@
   }
 
   function formatWeekendDate(time) {
-    const date = new Date(time);
-    return `${date.getMonth() + 1}/${date.getDate()}`;
+    const [, month, day] = new Intl.DateTimeFormat("sv-SE", { timeZone: "Asia/Tokyo" })
+      .format(new Date(time))
+      .split("-");
+    return `${Number(month)}/${Number(day)}`;
   }
 
   function renderWeekendSections(items) {

@@ -14,7 +14,9 @@ function evaluateConstant(filePath, constantName) {
 
 function getPrimaryYearlyInfo(festival) {
   if (!festival || !Array.isArray(festival.yearlyInfo) || festival.yearlyInfo.length === 0) return null;
-  const currentYear = new Date().getFullYear();
+  const currentYear = Number(
+    new Intl.DateTimeFormat("en-US", { year: "numeric", timeZone: "Asia/Tokyo" }).format(new Date())
+  );
   const entries = festival.yearlyInfo.filter((entry) => entry && Number.isFinite(entry.year));
   const current = entries.find((entry) => entry.year === currentYear);
   if (current) return current;

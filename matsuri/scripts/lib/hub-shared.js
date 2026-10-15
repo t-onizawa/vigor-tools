@@ -96,7 +96,9 @@ function escapeHtml(value) {
 
 function getPrimaryYearlyInfo(festival) {
   if (!festival || !Array.isArray(festival.yearlyInfo) || festival.yearlyInfo.length === 0) return null;
-  const currentYear = new Date().getFullYear();
+  const currentYear = Number(
+    new Intl.DateTimeFormat("en-US", { year: "numeric", timeZone: "Asia/Tokyo" }).format(new Date())
+  );
   const validEntries = festival.yearlyInfo.filter((entry) => entry && typeof entry.year === "number" && Number.isFinite(entry.year));
   if (validEntries.length === 0) return null;
   const currentEntry = validEntries.find((entry) => entry.year === currentYear);
@@ -161,7 +163,7 @@ function sortFestivalItemsChronologically(items) {
 }
 
 function weekday(date) {
-  return new Intl.DateTimeFormat("ja-JP", { weekday: "short" }).format(date);
+  return new Intl.DateTimeFormat("ja-JP", { weekday: "short", timeZone: "Asia/Tokyo" }).format(date);
 }
 
 function formatDateRange(yearlyInfo) {
@@ -169,11 +171,13 @@ function formatDateRange(yearlyInfo) {
   if (dates.length === 0) return `${yearlyInfo.year}年 日程未確認`;
   const fmt = (text) => {
     const date = new Date(`${text}T00:00:00+09:00`);
-    return `${yearlyInfo.year}年${date.getMonth() + 1}月${date.getDate()}日(${weekday(date)})`;
+    const [, month, day] = text.split("-").map(Number);
+    return `${yearlyInfo.year}年${month}月${day}日(${weekday(date)})`;
   };
   const fmtShort = (text) => {
     const date = new Date(`${text}T00:00:00+09:00`);
-    return `${date.getDate()}日(${weekday(date)})`;
+    const day = Number(text.split("-")[2]);
+    return `${day}日(${weekday(date)})`;
   };
   if (dates.length === 1) return fmt(dates[0]);
   const runs = [];

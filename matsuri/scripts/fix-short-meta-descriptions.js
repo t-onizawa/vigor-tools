@@ -41,8 +41,8 @@ function parkingLabel(value) {
 }
 
 function formatDate(dateText) {
-  const d = new Date(`${dateText}T00:00:00+09:00`);
-  return `${d.getFullYear()}年${d.getMonth() + 1}月${d.getDate()}日`;
+  const [year, month, day] = dateText.split("-").map(Number);
+  return `${year}年${month}月${day}日`;
 }
 
 function dateRangeText(dates) {

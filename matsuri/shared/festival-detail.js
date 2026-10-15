@@ -233,8 +233,8 @@
     return new Intl.DateTimeFormat(
       LOCALE === "en" ? "en-US" : "ja-JP",
       LOCALE === "en"
-        ? { year: "numeric", month: "short", day: "numeric", weekday: "short" }
-        : { year: "numeric", month: "numeric", day: "numeric", weekday: "short" }
+        ? { year: "numeric", month: "short", day: "numeric", weekday: "short", timeZone: "Asia/Tokyo" }
+        : { year: "numeric", month: "numeric", day: "numeric", weekday: "short", timeZone: "Asia/Tokyo" }
     ).format(date);
   }
 
