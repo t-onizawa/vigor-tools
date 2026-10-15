@@ -2454,5 +2454,45 @@ const SEARCH_INDEX = [
     "prefecture": "佐賀県",
     "city": "白石町",
     "firstDate": "2026-12-26"
+  },
+  {
+    "slug": "nagasu-kingyo-koi-no-sato-matsuri",
+    "name": "金魚と鯉の郷まつり",
+    "officialName": "金魚と鯉の郷まつり",
+    "prefecture": "熊本県",
+    "city": "長洲町",
+    "firstDate": "2026-10-17"
+  },
+  {
+    "slug": "ushibuka-haiya-matsuri",
+    "name": "牛深ハイヤ祭り",
+    "officialName": "牛深ハイヤ祭り",
+    "prefecture": "熊本県",
+    "city": "天草市牛深町",
+    "firstDate": "2026-04-17"
+  },
+  {
+    "slug": "yamato-hassaku-matsuri",
+    "name": "八朔祭（山都町）",
+    "officialName": "八朔祭",
+    "prefecture": "熊本県",
+    "city": "山都町浜町",
+    "firstDate": "2026-09-05"
+  },
+  {
+    "slug": "noshikora-matsuri",
+    "name": "のしこら祭",
+    "officialName": "のしこら祭",
+    "prefecture": "熊本県",
+    "city": "長洲町",
+    "firstDate": "2026-09-19"
+  },
+  {
+    "slug": "hinokuni-nagasu-kingyo-matsuri",
+    "name": "火の国長洲金魚まつり",
+    "officialName": "火の国長洲金魚まつり",
+    "prefecture": "熊本県",
+    "city": "長洲町",
+    "firstDate": "2026-05-03"
   }
 ];
