@@ -22,8 +22,8 @@ const FESTIVAL = {
       "label": "山根グラウンド",
       "pointType": "viewing_point",
       "query": "愛媛県新居浜市 山根グラウンド",
-      "lat": null,
-      "lng": null,
+      "lat": 33.9224939,
+      "lng": 133.3099683,
       "mapUrl": "https://www.google.com/maps/search/?api=1&query=新居浜市+山根グラウンド",
       "note": "主要なかきくらべ会場の一つ。地区ごとに会場と日程が異なる。"
     },

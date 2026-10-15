@@ -18,7 +18,7 @@ const FESTIVAL = {
       note: "公式が会場として案内する北本駅西口と西中央通りの起点を観覧の基準地点とした。"
     },
     highlightComment: "夕方から伝統のお囃子が響き、扇形の範頼ねぷたや大小のねぷた、山車が西中央通りを進む。",
-    atmosphereMedia: [],
+    atmosphereMedia: [{"type":"youtube","url":"https://www.youtube.com/watch?v=euOCKKKtxek","contentId":"euOCKKKtxek","title":"埼玉の祭 #34 北本まつり「宵まつり」","publisher":"埼玉県公式チャンネル(サイタマどうが)","publisherType":"government","purpose":"festival_atmosphere","publishedYear":2022,"checkedDate":"2026-10-15"}],
     backgroundImage: { type: "youtube", contentId: "euOCKKKtxek", sourceUrl: "https://www.youtube.com/watch?v=euOCKKKtxek", publisher: "埼玉県公式チャンネル(サイタマどうが)", publisherType: "government", checkedDate: "2026-08-12", note: "夜の通りに点灯した大小のねぷたが並ぶ実写。右上に小さな番組ロゴはあるが、画面を支配せず主役を判別できる。" },
     confirmation: { verified: true, confirmedDate: "2026-08-11", sources: ["https://www.city.kitamoto.lg.jp/kanko/event/aki/18464.html", "https://www.city.kitamoto.lg.jp/kanko/gourmet_shopping/2/1423533254557.html"] }
   },

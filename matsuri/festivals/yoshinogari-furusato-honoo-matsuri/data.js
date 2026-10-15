@@ -29,7 +29,7 @@ const FESTIVAL = {
     },
     "highlightComment": "歴史公園を進む松明行列や炎踊り、巨大な送り火が、火を主題にした夜の景色をつくる。",
     "atmosphereMedia": [],
-    "backgroundImage": null,
+    "backgroundImage": {"type":"youtube","contentId":"dhjHCixg_vA","sourceUrl":"https://www.youtube.com/watch?v=dhjHCixg_vA","publisher":"佐賀新聞[SagaShimbun]","publisherType":"local_media","checkedDate":"2026-10-15","note":"優先度1。点火セレモニーの卑弥呼役と周囲の参加者を捉えた文字装飾のない夜の実写。"},
     "confirmation": {
       "verified": true,
       "confirmedDate": "2026-10-15",

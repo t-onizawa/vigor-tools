@@ -22,8 +22,8 @@ const FESTIVAL = {
       label: "川越氷川神社",
       pointType: "shrine",
       query: "川越氷川神社 埼玉県川越市宮下町2-11-3",
-      lat: null,
-      lng: null,
+      lat: 35.9275498,
+      lng: 139.4885588,
       mapUrl: "https://www.google.com/maps/search/?api=1&query=川越氷川神社+埼玉県川越市宮下町2-11-3",
       note: "川越氷川神社は神幸祭の出発・還御地点で、実際の巡行ルートにも含まれます。"
     },
