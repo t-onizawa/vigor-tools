@@ -2494,5 +2494,45 @@ const SEARCH_INDEX = [
     "prefecture": "熊本県",
     "city": "長洲町",
     "firstDate": "2026-05-03"
+  },
+  {
+    "slug": "utano-aki-matsuri",
+    "name": "うたの秋祭り",
+    "officialName": "うたの秋祭り 神輿渡御祭",
+    "prefecture": "奈良県",
+    "city": "宇陀市菟田野",
+    "firstDate": "2026-10-18"
+  },
+  {
+    "slug": "narazuhiko-okina-mai",
+    "name": "奈良豆比古神社の翁舞",
+    "officialName": "翁舞",
+    "prefecture": "奈良県",
+    "city": "奈良市奈良阪町",
+    "firstDate": "2026-10-08"
+  },
+  {
+    "slug": "kamifukawa-daimokutate",
+    "name": "題目立（上深川）",
+    "officialName": "題目立",
+    "prefecture": "奈良県",
+    "city": "奈良市上深川町",
+    "firstDate": "2026-10-12"
+  },
+  {
+    "slug": "oomiwa-sake-matsuri",
+    "name": "醸造安全祈願祭（酒まつり）",
+    "officialName": "醸造安全祈願祭",
+    "prefecture": "奈良県",
+    "city": "桜井市三輪",
+    "firstDate": "2026-11-14"
+  },
+  {
+    "slug": "saidaiji-aki-ochamori",
+    "name": "西大寺 秋の大茶盛式",
+    "officialName": "秋の大茶盛式",
+    "prefecture": "奈良県",
+    "city": "奈良市西大寺芝町",
+    "firstDate": "2026-11-01"
   }
 ];
