@@ -17,7 +17,7 @@ const FESTIVAL = {
     },
     access: { nearestStation: "JR常磐線・京成松戸線 松戸駅（西口から徒歩約7分）" },
     mapReference: {
-      label: "松戸神社", pointType: "shrine", query: "松戸神社 千葉県松戸市", lat: null, lng: null,
+      label: "松戸神社", pointType: "shrine", query: "松戸神社 千葉県松戸市", lat: 35.7806206, lng: 139.8977664,
       mapUrl: "https://www.google.com/maps/search/?api=1&query=松戸神社+千葉県松戸市",
       note: "神幸祭は松戸神社を中心に松戸駅周辺を巡幸します。"
     },

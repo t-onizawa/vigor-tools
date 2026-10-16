@@ -29,7 +29,7 @@ const FESTIVAL = {
     },
     "highlightComment": "大きな金魚みこしを担いでタイムを競うレースと、町民総踊りが会場を盛り上げる。",
     "atmosphereMedia": [],
-    "backgroundImage": null,
+    "backgroundImage": {"type":"youtube","contentId":"TEhFQIYuK44","sourceUrl":"https://www.youtube.com/watch?v=TEhFQIYuK44","publisher":"ohjaga","publisherType":"individual","checkedDate":"2026-10-16","note":"優先度1。大きな金魚みこしを担ぐ参加者を捉えた文字装飾のない現地実写。"},
     "confirmation": {
       "verified": true,
       "confirmedDate": "2026-10-16",

@@ -30,3 +30,7 @@ highlightCommentは一次情報の青竹の曲芸を要約。
 
 - https://matsurito.jp/matsuri/takengei/index.html を直接確認。ページ上の映像候補は見つかったが、YouTube動画ページの投稿者・尺・背景画像確認まで完了していない。素材確認未完了として追加保留し、次回再調査する。
 
+### 2026-10-16 毎日品質改善
+
+- 通常選定。背景追加。https://matsurito.jp/matsuri/takengei/index.html と https://www.youtube.com/watch?v=KSnlO2V6UyI を直接確認。「祭りドキュメンタリー#17 長崎県・竹ン芸」、まつりと 日本のまつり探検プロジェクト（7,360人）、12分49秒、約3.1万回視聴。hqdefaultを直接開き、青竹上の白装束の演者が判別できる現地実写と確認。左上小ロゴは演者を隠さず優先度1で採用。publisherTypeはlocal_media。動画は本編の構成比率を確定できず保留。別途、全件整合性チェックのconfirmed_but_all_past例外により2026/10/14・15終了後のeventStatusをendedへ更新（日程や開催判断は変更しない）。
+

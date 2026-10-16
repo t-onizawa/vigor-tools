@@ -29,7 +29,7 @@ const FESTIVAL = {
     },
     "highlightComment": "親子鯨をかたどった山車が掛け声とともに町を巡り、港町の捕鯨文化を伝える。",
     "atmosphereMedia": [],
-    "backgroundImage": null,
+    "backgroundImage": {"type":"youtube","contentId":"FDPnfBScMfc","sourceUrl":"https://www.youtube.com/watch?v=FDPnfBScMfc","publisher":"佐賀新聞[SagaShimbun]","publisherType":"local_media","checkedDate":"2026-10-16","note":"優先度3。夜の親子鯨山車と曳き手の実写。左上の報道見出しは鯨を隠さない。自動フレームは120×90で見出しも残るため背景用途に不適。"},
     "confirmation": {
       "verified": true,
       "confirmedDate": "2026-10-15",

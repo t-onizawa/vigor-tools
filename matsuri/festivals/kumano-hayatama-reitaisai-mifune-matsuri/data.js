@@ -7,7 +7,7 @@ const FESTIVAL = {
     access: { nearestStation: "JR新宮駅（熊野速玉大社へのアクセス拠点）" },
     mapReference: { label: "熊野速玉大社", pointType: "main_venue", query: "熊野速玉大社 和歌山県新宮市新宮1", lat: 33.7322225, lng: 135.9835101, mapUrl: "https://www.google.com/maps/search/?api=1&query=熊野速玉大社+和歌山県新宮市新宮1", note: "例大祭の神事と神輿渡御の起点。御船祭は熊野川・川原と御船島周辺で行われる。" },
     highlightComment: "御神輿を載せた朱塗りの神幸船が御船島を三周し、その前を9隻の早船が競漕する、熊野川を舞台にした船祭り。",
-    atmosphereMedia: [], backgroundImage: null,
+    atmosphereMedia: [], backgroundImage: {"type":"youtube","contentId":"hQy5aYGaTc0","sourceUrl":"https://www.youtube.com/watch?v=hQy5aYGaTc0","publisher":"まつりと 日本のまつり探検プロジェクト","publisherType":"local_media","checkedDate":"2026-10-16","note":"優先度1。御船島を囲んで進む複数の早船を捉えた実写。左上の小ロゴは船の判別を妨げない。"},
     confirmation: { verified: true, confirmedDate: "2026-09-15", sources: ["https://www.shinguu.jp/event", "https://www.wakayama-kanko.or.jp/events/index_1_2_29.html"] }
   },
   yearlyInfo: [{ year: 2026, eventStatus: "confirmed", dates: ["2026-10-15", "2026-10-16"], schedule: [], access: { hasParking: null, parkingNote: "2026年の祭り専用駐車場情報は一次情報で確認できなかった。" }, confirmation: { confirmedDate: "2026-09-15", sources: ["https://www.wakayama-kanko.or.jp/events/index_1_2_29.html", "https://www.shinguu.jp/event"], note: "和歌山県公式観光サイトで2026年10月15日・16日（御船祭は16日）を確認。新宮市観光協会が熊野速玉大社例大祭の一つとして御船祭の範囲、会場、9隻の早船競漕を説明している。" } }]

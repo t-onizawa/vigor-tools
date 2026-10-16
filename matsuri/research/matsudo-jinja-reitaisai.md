@@ -60,3 +60,7 @@
 ### 2026-10-15 素材確認未完了（毎日品質改善・次回再調査）
 
 - https://www.city.matsudo.chiba.jp/miryoku/kankoumiryokubunka/matsuri/summer/matsudojinjya.html と https://www.youtube.com/watch?v=iJBUq822qIk を直接確認。まっちゃんねる（千葉県松戸市公式）（4,770人）、1,921回視聴、2015年10月18日の長編記録（説明上30分）。入口動画として長尺記録を不採用。デフォルトはタイトル中心で背景不採用。自動フレームの採否確認は未完了のため背景全候補不採用とはしない。
+
+### 2026-10-16 毎日品質改善
+
+- 座標追加。Googleマップで既存query「松戸神社 千葉県松戸市」を検索、松戸神社（松戸1457、公式matsudojinja.com）を一意に特定。place URL !3d35.7806206!4d139.8977664を採用。https://www.city.matsudo.chiba.jp/miryoku/kankoumiryokubunka/matsuri/summer/matsudojinjya.html から短編 https://www.youtube.com/watch?v=k-OlQRFu6AE を直接確認。「平成に甦った松戸の大まつり『神幸祭』（短編）」、まっちゃんねる（千葉県松戸市公式）（4,770人）、3分29秒、2,308回視聴、公開2016/03/30、説明は2015/10/18撮影。神具・巡行の実写を確認。hqdefaultと0は題字のみ、1〜3は120×90の神具・人物で背景解像度不足。動画は公開年2016を既存UIが開催年として表示すると撮影年2015と食い違うため追加保留。schema/UIは変更せずレビュー候補とする。

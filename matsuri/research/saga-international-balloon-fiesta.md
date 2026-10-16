@@ -14,3 +14,7 @@
 ### 2026-10-15 素材確認未完了（毎日品質改善・次回再調査）
 
 - https://www.sibf.jp/balloon/ と https://www.sibf.jp/news/2024/20241204a.html、https://www.youtube.com/watch?v=iT5Tt0QOYHM を直接確認。投稿者 - Official - Saga International Balloon Fiesta（7,740人）、8,603回視聴。公式ページは約13分の2024ダイジェストと案内。デフォルトは大きなSAGAロゴと人々で、気球が主役として判別できる背景ではない。自動フレーム・本編構成確認は未完了のため画像・動画とも採用保留。
+
+### 2026-10-16 素材調査（直接確認未完了・次回再調査）
+
+- 素材追加なし。https://www.sibf.jp/news/2024/20241204a.html と https://www.city.saga.lg.jp/city-promotion/promotion/18/index.html の検索結果を調査。公式2024候補は約13分で運営役員・ボランティア等も扱う。今回、候補の本編構成と背景全フレームの直接確認までは完了せず保留。前回確認済みのタイトル画像のみで気球の背景に採用しない。座標は地点未確定のまま推測で補完しない。

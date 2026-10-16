@@ -29,7 +29,7 @@ const FESTIVAL = {
     },
     "highlightComment": "狐面をつけた演者が、高い青竹の上で逆立ちや跳躍の曲芸を奉納する。",
     "atmosphereMedia": [],
-    "backgroundImage": null,
+    "backgroundImage": {"type":"youtube","contentId":"KSnlO2V6UyI","sourceUrl":"https://www.youtube.com/watch?v=KSnlO2V6UyI","publisher":"まつりと 日本のまつり探検プロジェクト","publisherType":"local_media","checkedDate":"2026-10-16","note":"優先度1。青竹の上で曲芸する白装束の演者を捉えた現地実写。左上の小ロゴは演者を隠さない。"},
     "confirmation": {
       "verified": true,
       "confirmedDate": "2026-10-14",
@@ -42,7 +42,7 @@ const FESTIVAL = {
   "yearlyInfo": [
     {
       "year": 2026,
-      "eventStatus": "confirmed",
+      "eventStatus": "ended",
       "dates": [
         "2026-10-14",
         "2026-10-15"
