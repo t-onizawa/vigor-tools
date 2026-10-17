@@ -27,7 +27,7 @@ const FESTIVAL = {
       "mapUrl": "https://www.google.com/maps/search/?api=1&query=%E5%A5%88%E8%89%AF%E8%B1%86%E6%AF%94%E5%8F%A4%E7%A5%9E%E7%A4%BE%20%E5%A5%88%E8%89%AF%E7%9C%8C%E5%A5%88%E8%89%AF%E5%B8%82%E5%A5%88%E8%89%AF%E9%98%AA%E7%94%BA2489",
       "note": "公式案内に対応する会場の基準地点。巡行全域を示すものではない。"
     },
-    "highlightComment": "拝殿に三人の翁が並び、笛や小鼓の音に合わせて古い形の舞が奉納される。",
+    "notableDesignation":"国指定重要無形民俗文化財「奈良豆比古神社の翁舞」","highlightComment": "拝殿に三人の翁が並び、笛や小鼓の音に合わせて古い形の舞が奉納される。",
     "atmosphereMedia": [],
     "backgroundImage": null,
     "confirmation": {

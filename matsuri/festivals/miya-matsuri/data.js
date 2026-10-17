@@ -22,8 +22,8 @@ const FESTIVAL = {
       "label": "八劔神社",
       "pointType": "shrine",
       "query": "八劔神社 愛知県蒲郡市三谷町七舗139",
-      "lat": null,
-      "lng": null,
+      "lat": 34.8165412,
+      "lng": 137.2480733,
       "mapUrl": "https://www.google.com/maps/search/?api=1&query=%E5%85%AB%E5%8A%94%E7%A5%9E%E7%A4%BE%20%E6%84%9B%E7%9F%A5%E7%9C%8C%E8%92%B2%E9%83%A1%E5%B8%82%E4%B8%89%E8%B0%B7%E7%94%BA%E4%B8%83%E8%88%97139",
       "note": "祭りの中心会場を基準とする。"
     },

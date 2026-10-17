@@ -22,8 +22,8 @@ const FESTIVAL = {
       "label": "中畑町八幡社",
       "pointType": "area",
       "query": "中畑町八幡社 愛知県西尾市中畑町宮前33",
-      "lat": null,
-      "lng": null,
+      "lat": 34.8722678,
+      "lng": 137.014661,
       "mapUrl": "https://www.google.com/maps/search/?api=1&query=%E4%B8%AD%E7%95%91%E7%94%BA%E5%85%AB%E5%B9%A1%E7%A4%BE%20%E6%84%9B%E7%9F%A5%E7%9C%8C%E8%A5%BF%E5%B0%BE%E5%B8%82%E4%B8%AD%E7%95%91%E7%94%BA%E5%AE%AE%E5%89%8D33",
       "note": "祭りの中心会場を基準とする。"
     },

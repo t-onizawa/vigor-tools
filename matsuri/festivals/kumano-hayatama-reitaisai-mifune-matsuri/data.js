@@ -10,5 +10,5 @@ const FESTIVAL = {
     atmosphereMedia: [], backgroundImage: {"type":"youtube","contentId":"hQy5aYGaTc0","sourceUrl":"https://www.youtube.com/watch?v=hQy5aYGaTc0","publisher":"まつりと 日本のまつり探検プロジェクト","publisherType":"local_media","checkedDate":"2026-10-16","note":"優先度1。御船島を囲んで進む複数の早船を捉えた実写。左上の小ロゴは船の判別を妨げない。"},
     confirmation: { verified: true, confirmedDate: "2026-09-15", sources: ["https://www.shinguu.jp/event", "https://www.wakayama-kanko.or.jp/events/index_1_2_29.html"] }
   },
-  yearlyInfo: [{ year: 2026, eventStatus: "confirmed", dates: ["2026-10-15", "2026-10-16"], schedule: [], access: { hasParking: null, parkingNote: "2026年の祭り専用駐車場情報は一次情報で確認できなかった。" }, confirmation: { confirmedDate: "2026-09-15", sources: ["https://www.wakayama-kanko.or.jp/events/index_1_2_29.html", "https://www.shinguu.jp/event"], note: "和歌山県公式観光サイトで2026年10月15日・16日（御船祭は16日）を確認。新宮市観光協会が熊野速玉大社例大祭の一つとして御船祭の範囲、会場、9隻の早船競漕を説明している。" } }]
+  yearlyInfo: [{ year: 2026, eventStatus: "ended", dates: ["2026-10-15", "2026-10-16"], schedule: [], access: { hasParking: null, parkingNote: "2026年の祭り専用駐車場情報は一次情報で確認できなかった。" }, confirmation: { confirmedDate: "2026-09-15", sources: ["https://www.wakayama-kanko.or.jp/events/index_1_2_29.html", "https://www.shinguu.jp/event"], note: "和歌山県公式観光サイトで2026年10月15日・16日（御船祭は16日）を確認。新宮市観光協会が熊野速玉大社例大祭の一つとして御船祭の範囲、会場、9隻の早船競漕を説明している。" } }]
 };

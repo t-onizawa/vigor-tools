@@ -27,3 +27,7 @@
 ### 2026-10-16 毎日品質改善
 
 - 背景追加。https://matsurito.jp/matsuri/kumanomifune/index.html と https://www.youtube.com/watch?v=hQy5aYGaTc0 を直接確認。「祭りドキュメンタリー#26 和歌山県・熊野速玉祭」、まつりと 日本のまつり探検プロジェクト（7,360人）、12分45秒、約3.5万回視聴。hqdefault画像を直接開き、御船島を囲んで進む複数の早船が判別できる現地実写と確認。小ロゴは船を隠さず優先度1で採用。publisherTypeはガイド4節によりlocal_media。動画は構成中の解説比率を確定できず保留（尺だけを理由に不採用とはしない）。
+
+### 2026-10-17 毎日品質改善
+
+- 全件整合性チェックの例外修正のみ（素材20件の調査枠には含めない）。2026-10-15・16が全て過去日でconfirmed_but_all_pastに該当するためeventStatusをconfirmedからendedへ機械的に更新。開催日・確認日・一次情報・素材は変更しない。

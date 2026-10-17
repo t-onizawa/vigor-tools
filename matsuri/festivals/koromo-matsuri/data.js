@@ -22,14 +22,14 @@ const FESTIVAL = {
       "label": "挙母神社",
       "pointType": "shrine",
       "query": "挙母神社 愛知県豊田市挙母町5-1",
-      "lat": null,
-      "lng": null,
+      "lat": 35.0852769,
+      "lng": 137.1620107,
       "mapUrl": "https://www.google.com/maps/search/?api=1&query=%E6%8C%99%E6%AF%8D%E7%A5%9E%E7%A4%BE%20%E6%84%9B%E7%9F%A5%E7%9C%8C%E8%B1%8A%E7%94%B0%E5%B8%82%E6%8C%99%E6%AF%8D%E7%94%BA5-1",
       "note": "祭りの中心会場を基準とする。"
     },
     "highlightComment": "八輌の山車が大量の紙吹雪の中で挙母神社へ曳き込まれ、夕方には一斉に曳き出される。",
     "atmosphereMedia": [],
-    "backgroundImage": null,
+    "backgroundImage": {"type":"youtube","contentId":"AJyR1hjGza0","sourceUrl":"https://www.youtube.com/watch?v=AJyR1hjGza0","publisher":"VISIT TOYOTA CITY [Tourism TOYOTA]","publisherType":"tourism","checkedDate":"2026-10-17","note":"優先度3。紙吹雪の中の山車と曳き手が明瞭な現地実写を中心としたサムネイル。下部の祭り名・右上ロゴは山車を隠さない。自動フレーム1〜3は120×90で背景用途には解像度不足。"},
     "confirmation": {
       "verified": true,
       "confirmedDate": "2026-09-23",

@@ -29,7 +29,7 @@ const FESTIVAL = {
     },
     "highlightComment": "二つの水分神社を結ぶ神輿の行列と、各地区が担ぐ大きな太鼓台を見られる祭り。",
     "atmosphereMedia": [],
-    "backgroundImage": null,
+    "backgroundImage": {"type":"youtube","contentId":"vtWRdLV__gs","sourceUrl":"https://www.youtube.com/watch?v=vtWRdLV__gs","publisher":"宇陀市役所公式","publisherType":"government","checkedDate":"2026-10-17","note":"優先度3。毛槍を掲げた時代装束の行列と後方の神輿を捉えた現地実写。字幕は下端にあり主役の判別を妨げない。自動フレームは低解像度か字幕が残るためデフォルトを使用。"},
     "confirmation": {
       "verified": true,
       "confirmedDate": "2026-10-17",

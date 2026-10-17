@@ -41,3 +41,7 @@ backgroundImage=null、atmosphereMedia=[]。直接確認した適合素材なし
 ## 実装・検証
 
 既存スキーマ・テンプレートを使用。research/は既存_config.ymlのexclude対象。静的・ブラウザ・公開確認の実測結果は同日Backlog実績と完了報告に記載する。
+
+### 2026-10-17 毎日品質改善
+
+- 西大寺公式 https://saidaiji.or.jp/news/851/ の取得はタイムアウト。代替一次情報 https://narashikanko.or.jp/event/detail_10207.html を直接確認し、秋の大茶盛式と春・新春の大茶盛式を区別して調査した。画像の無断転載禁止が明記されており、ページの写真は流用しない。対象一致のYouTube候補を確定できず画像・動画追加なし。2026年の日程や既存座標は変更しない。

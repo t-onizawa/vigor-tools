@@ -18,3 +18,7 @@
 ### 2026-10-16 素材調査（直接確認未完了・次回再調査）
 
 - 素材追加なし。https://www.sibf.jp/news/2024/20241204a.html と https://www.city.saga.lg.jp/city-promotion/promotion/18/index.html の検索結果を調査。公式2024候補は約13分で運営役員・ボランティア等も扱う。今回、候補の本編構成と背景全フレームの直接確認までは完了せず保留。前回確認済みのタイトル画像のみで気球の背景に採用しない。座標は地点未確定のまま推測で補完しない。
+
+### 2026-10-17 素材調査未完了（次回再調査）
+
+- https://www.city.saga.lg.jp/city-promotion/promotion/18/index.html の2023公式ダイジェスト埋込 https://www.youtube.com/watch?v=Q5EY8j0qU-M を直接確認。「//Digest Movie// 2023 Saga International Balloon Fiesta」、- Official - Saga International Balloon Fiesta（7,750人）、18分03秒、約1.1万回視聴。hqdefaultと0〜3を直接開いた。デフォルト/0は会場空撮と大ロゴで気球本体を主役として判別できず、1は人物コラージュ、2・3はインタビュー人物でいずれも背景不採用。長いダイジェストで、今回本編全体のインタビュー比率を確定していないため動画は採用保留。既存データを変更しない。
