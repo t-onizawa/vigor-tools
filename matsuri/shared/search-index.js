@@ -2534,5 +2534,45 @@ const SEARCH_INDEX = [
     "prefecture": "奈良県",
     "city": "奈良市西大寺芝町",
     "firstDate": "2026-11-01"
+  },
+  {
+    "slug": "nihonmatsu-chochin-matsuri",
+    "name": "二本松の提灯祭り",
+    "officialName": "二本松神社例大祭",
+    "prefecture": "福島県",
+    "city": "二本松市",
+    "firstDate": "2026-10-03"
+  },
+  {
+    "slug": "iizaka-kenka-matsuri",
+    "name": "飯坂けんか祭り",
+    "officialName": "飯坂八幡神社例大祭",
+    "prefecture": "福島県",
+    "city": "福島市飯坂町",
+    "firstDate": "2026-10-02"
+  },
+  {
+    "slug": "matsukawa-chochin-matsuri",
+    "name": "松川提灯祭り",
+    "officialName": "松川提灯祭り",
+    "prefecture": "福島県",
+    "city": "福島市松川町",
+    "firstDate": "2026-10-11"
+  },
+  {
+    "slug": "fukushima-dashi-matsuri",
+    "name": "ふくしま山車祭り",
+    "officialName": "ふくしま山車祭り",
+    "prefecture": "福島県",
+    "city": "福島市中心部",
+    "firstDate": "2026-06-06"
+  },
+  {
+    "slug": "shinobu-sanzan-akatsuki-mairi",
+    "name": "信夫三山暁まいり",
+    "officialName": "信夫三山暁まいり",
+    "prefecture": "福島県",
+    "city": "福島市",
+    "firstDate": "2026-02-21"
   }
 ];
