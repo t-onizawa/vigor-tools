@@ -1,15 +1,15 @@
 # VIGOR LAB Weekly Analytics
 
-Report date: 2026-10-04
-Period: 2026-09-23〜2026-09-29
-Previous period: 2026-09-16〜2026-09-22
-Internal traffic filtering: 除外フィルタは「テスト」。除外済みデータではない。
+Report date: 2026-10-18
+Period: 2026-10-10〜2026-10-16
+Previous period: 2026-10-03〜2026-10-09
+Internal traffic filtering: 今回は未確認。前回確認時は「除外・テスト」であり、除外済みと断定しない。
 
 ## Executive Summary
 
-- Search ConsoleはWeb 102クリック、動画0クリック、合計102クリック。前週73クリックから29増加した。
-- SC合計表示回数は4,866→5,794、平均順位は10.2→8.1へ改善した。
-- GA4はアクティブユーザー152、セッション165、表示回数211。検索指標が増加する一方、GA4主要量指標は小幅に減少した。
+- Webクリックは328→376（+48）、Web表示回数は14,942→25,746（+10,804）。
+- GA4 Organic Searchは590→669、セッションは625→730へ増加した。
+- Web CTRは2.20%→1.46%へ低下。10月10日の181クリックが週全体の48.1%を占める。
 
 ## KPI
 
@@ -17,40 +17,39 @@ Internal traffic filtering: 除外フィルタは「テスト」。除外済み�
 
 | 指標 | 今週 | 前週 | 差分 | 増減率 |
 |---|---:|---:|---:|---:|
-| SC表示回数（Web+動画） | 5,794 | 4,866 | +928 | +19.1% |
-| SCクリック（Web+動画） | 102 | 73 | +29 | +39.7% |
-| GA4 アクティブユーザー | 152 | 166 | -14 | -8.4% |
-| GA4 新規ユーザー | 149 | 163 | -14 | -8.6% |
-| GA4 セッション | 165 | 184 | -19 | -10.3% |
-| GA4 表示回数 | 211 | 263 | -52 | -19.8% |
-| GA4 エンゲージメント率 | 55.2% | 55.4% | -0.3pt | — |
-| GA4 平均エンゲージメント時間 | 85.9秒 | 73.0秒 | +12.9秒 | +17.6% |
-| GA4 Organic Search | 145 | 151 | -6 | -4.0% |
-| GA4 Direct | 16 | 21 | -5 | -23.8% |
-| GA4 Referral | 0 | 3 | -3 | -100.0% |
+| SC表示回数（Web+動画） | 25,746 | 14,942 | +10,804 | 72.3% |
+| SCクリック（Web+動画） | 376 | 328 | +48 | 14.6% |
+| GA4 アクティブユーザー | 670 | 577 | +93 | 16.1% |
+| GA4 新規ユーザー | 658 | 573 | +85 | 14.8% |
+| GA4 セッション | 730 | 625 | +105 | 16.8% |
+| GA4 表示回数 | 881 | 778 | +103 | 13.2% |
+| エンゲージメント率 | 55.3% | 53.1% | +2.2pt | — |
+| Organic Search | 669 | 590 | +79 | 13.4% |
+| Direct | 37 | 30 | +7 | 23.3% |
+| Referral | 18 | 3 | +15 | 500.0% |
+
+平均エンゲージメント時間は未取得。スクリプトの averageSessionDuration は平均セッション時間であり、代用しない。
 
 ### VIGOR TOOLS
 
-| 指標 | 今週 | 前週 | 差分 |
-|---|---:|---:|---:|
-| Organic流入 | 0 | 0 | 0 |
-| 表示回数 | 1 | 2 | -1 |
+| 指標 | 今週 | 前週 | 差分 | 増減率 |
+|---|---:|---:|---:|---:|
+| Organic流入 | 0 | 0 | 0 | — |
+| 表示回数 | 5 | 3 | +2 | 66.7% |
 
-- 上位ページ: `/tools/buy/rayban-meta/`（1表示）。
-- 初反応ページ: `/tools/buy/rayban-meta/`。
-
-絶対数が小さいため、減少率では評価しない。
+上位ページ：/tools/buy/rayban-meta/ 4表示、/tools/travel/car-camping-check/ 1表示。
+初反応候補：/tools/travel/car-camping-check/（今回の比較期間と前回保存レポートに掲載なし）。全履歴での初反応とは断定しない。
 
 ### VIGOR MATSURI
 
 | 指標 | 今週 | 前週 | 差分 | 増減率 |
 |---|---:|---:|---:|---:|
-| GA4 Organic流入 | 145 | 151 | -6 | -4.0% |
-| GA4 表示回数 | 210 | 257 | -47 | -18.3% |
-| SC Web+動画クリック | 102 | 73 | +29 | +39.7% |
-| SC Web+動画表示回数 | 5,794 | 4,866 | +928 | +19.1% |
+| Organic流入 | 669 | 590 | +79 | 13.4% |
+| 表示回数 | 872 | 774 | +98 | 12.7% |
+| Web+動画クリック（サイト全体参考） | 376 | 328 | +48 | 14.6% |
 
-GA4上位ページは藤岡まつり28表示、松山秋祭り21表示、龍勢祭り15表示だった。
+上位ページ：龍勢153表示、生誕地まつり94表示、灘のけんか祭り70表示、猿投52表示、安中34表示。
+MATSURI限定SC合算値は未取得。サイト全体値と同一と断定しない。
 
 ## Search Console
 
@@ -58,35 +57,27 @@ GA4上位ページは藤岡まつり28表示、松山秋祭り21表示、龍勢�
 
 | 指標 | 今週 | 前週 | 差分 | 増減率 |
 |---|---:|---:|---:|---:|
-| クリック | 102 | 73 | +29 | +39.7% |
-| 表示回数 | 5,794 | 4,866 | +928 | +19.1% |
-| CTR | 1.8% | 1.5% | +0.3pt | — |
-| 平均順位 | 8.1 | 10.2 | -2.1 | — |
-
-平均順位は数値が小さいほど上位。今週は約2.1改善した。
+| クリック | 376 | 328 | +48 | 14.6% |
+| 表示回数 | 25,746 | 14,942 | +10,804 | 72.3% |
+| CTR | 1.5% | 2.2% | -0.7pt | — |
+| 平均順位 | 8.5 | 8.5 | +0.0 | — |
 
 ### Video
 
-| 指標 | 今週 | 前週 | 差分 | 増減率 |
-|---|---:|---:|---:|---:|
-| クリック | 0 | 0 | 0 | — |
-| 表示回数 | 0 | 0 | 0 | — |
-| CTR | 0.0% | 0.0% | 0.0pt | — |
-| 平均順位 | 0 | 0 | 0 | — |
-
-動画検索データは今週・前週ともなかった。
+クリック0、表示回数0（前週も0）。CTR・平均順位はデータなしのため評価対象外。上位ページ・クエリなし。
 
 ### Other
 
-画像検索、Discover、ニュースは取得スクリプトの対象外のため未取得。
+画像検索：0クリック、84表示、CTR 0%、平均順位67.1。
+画像の主なページ：灘のけんか祭り56表示、龍勢11表示、MATSURIトップ7表示。
+ニュース検索：0クリック、0表示。
+Discover・Google News：クエリ次元が非対応のため詳細取得失敗。データなしとは断定しない。
 
 ## Week over Week
 
-- SC合計クリックは73→102、表示回数は4,866→5,794へ増加した。
-- Web CTRは1.5%→1.8%へ上昇し、平均順位は10.2→8.1へ改善した。
-- GA4 Organic Searchは151→145セッション、アクティブユーザーは166→152へ小幅に減少した。
-- GA4表示回数は263→211、セッションは184→165、新規ユーザーは163→149へ減少した。
-- GA4エンゲージメント率は55.4%→55.2%でほぼ横ばい、平均エンゲージメント時間は73.0秒→85.9秒へ増加した。
+Web表示回数+72.3%、クリック+14.6%。CTRは約0.74pt低下した。
+GA4アクティブユーザー577→670、新規ユーザー573→658、表示回数778→881。
+MATSURI Organic流入590→669、表示回数774→872。TOOLSは3→5表示で小規模。
 
 ## Top Pages
 
@@ -94,117 +85,118 @@ GA4上位ページは藤岡まつり28表示、松山秋祭り21表示、龍勢�
 
 | ページ | クリック | 表示回数 |
 |---|---:|---:|
-| `/matsuri/festivals/fujioka-matsuri/` | 24 | 916 |
-| `/matsuri/festivals/maebashi-matsuri/` | 11 | 182 |
-| `/matsuri/festivals/annaka-matsuri/` | 7 | 101 |
-| `/matsuri/festivals/chichibu-ryusei-matsuri/` | 7 | 735 |
-| `/matsuri/festivals/sakura-aki-matsuri/` | 7 | 345 |
-| `/matsuri/festivals/funabashi-daijingu-reitaisai/` | 5 | 30 |
-| `/matsuri/festivals/hada-matsuri/` | 5 | 74 |
-| `/matsuri/festivals/oota-matsuri/` | 5 | 90 |
-| `/matsuri/festivals/isesaki-matsuri/` | 3 | 322 |
-| `/matsuri/festivals/matsuyama-autumn-festival/` | 3 | 128 |
+| /matsuri/festivals/chichibu-ryusei-matsuri/ | 73 | 5143 |
+| /matsuri/festivals/seitan-chi-matsuri/ | 60 | 3938 |
+| /matsuri/festivals/nada-kenka-matsuri/ | 24 | 2796 |
+| /matsuri/festivals/sanage-matsuri/ | 24 | 867 |
+| /matsuri/festivals/nagoya-matsuri/ | 15 | 1308 |
+| /matsuri/festivals/annaka-matsuri/ | 12 | 686 |
+| /matsuri/festivals/fujii-jinja-kodomo-sanbaso/ | 10 | 117 |
+| /matsuri/festivals/umi-hachimangu-hojoya/ | 10 | 1704 |
+| /matsuri/festivals/wakamatsu-minato-matsuri/ | 10 | 123 |
+| /matsuri/festivals/bonote-keigo-matsuri/ | 8 | 477 |
 
-### GA4 Google Organic Landing Pages
+### Organic Search Landing Pages（全検索エンジン）
 
-| ページ | 表示回数 | ユーザー | 平均エンゲージメント時間 |
-|---|---:|---:|---:|
-| `/matsuri/festivals/fujioka-matsuri/` | 27 | 25 | 15.4秒 |
-| `/matsuri/festivals/matsuyama-autumn-festival/` | 22 | 17 | 139.4秒 |
-| `/matsuri/festivals/chichibu-ryusei-matsuri/` | 14 | 14 | 21.8秒 |
-| `/matsuri/festivals/maebashi-matsuri/` | 10 | 8 | 32.9秒 |
-| `/matsuri/festivals/otsu-matsuri/` | 10 | 7 | 233.8秒 |
-| `/matsuri/festivals/annaka-matsuri/` | 8 | 8 | 87.5秒 |
-| `/matsuri/festivals/oota-matsuri/` | 8 | 7 | 19.0秒 |
-| `/matsuri/festivals/sakura-aki-matsuri/` | 8 | 7 | 14.7秒 |
-| `/matsuri/festivals/ueno-tenjin-matsuri/` | 8 | 5 | 483.6秒 |
-| `/matsuri/festivals/koromo-matsuri/` | 5 | 5 | 7.2秒 |
+| ページ | 表示回数 | ユーザー |
+|---|---:|---:|
+| /matsuri/festivals/chichibu-ryusei-matsuri/ | 152 | 121 |
+| /matsuri/festivals/seitan-chi-matsuri/ | 92 | 76 |
+| /matsuri/festivals/nada-kenka-matsuri/ | 59 | 55 |
+| /matsuri/festivals/sanage-matsuri/ | 53 | 44 |
+| /matsuri/festivals/annaka-matsuri/ | 33 | 32 |
+| /matsuri/festivals/kakegawa-matsuri/ | 27 | 21 |
+| /matsuri/festivals/nagoya-matsuri/ | 22 | 20 |
+| /matsuri/festivals/fujii-jinja-kodomo-sanbaso/ | 21 | 16 |
+| /matsuri/festivals/umi-hachimangu-hojoya/ | 19 | 15 |
+| /matsuri/festivals/bonote-keigo-matsuri/ | 18 | 15 |
 
-Google Organic全体はセッション145、アクティブユーザー141、新規ユーザー140。
+Organic Search全体：セッション669、アクティブユーザー619、新規ユーザー611。
+Google単独の値、ページ別エンゲージメント時間は未取得（Data Notes参照）。
 
 ## Top Queries
 
-| 種別 | クエリ | クリック | 表示回数 |
-|---|---|---:|---:|
-| Web | 羽田まつり 2026 豊橋 | 2 | 15 |
-| Web | 羽田祭り 豊橋 | 2 | 12 |
-| Web | あんなか祭り2026 | 1 | 5 |
-| Web | 三谷祭 2026 | 1 | 7 |
-| Web | 佐倉 秋祭り2026 | 1 | 2 |
-| Web | 吉田龍勢祭り 2026 | 1 | 41 |
-| Web | 大田まつり 東海市 | 1 | 1 |
-| Web | 大田まつり2026 | 1 | 18 |
-| Web | 屋台 | 1 | 1 |
-| Web | 岩手 祭り一覧 | 1 | 3 |
+| Webクエリ | クリック | 表示回数 |
+|---|---:|---:|
+| 龍 勢 祭り 2026 プログラム | 27 | 765 |
+| 生誕地まつり 2026 | 22 | 1133 |
+| 生誕地まつり 十日町 2026 | 17 | 1021 |
+| 龍勢祭り 2026 | 16 | 2351 |
+| 津祭り 2026 時間 | 5 | 290 |
+| 十日町生誕地まつり 2026 | 4 | 111 |
+| 猿投神社 祭り | 4 | 73 |
+| 猿投祭り | 4 | 205 |
+| 龍勢祭り 2026 プログラム | 4 | 75 |
+| 中島山笠 2026 | 3 | 73 |
 
-匿名化により、表のクエリ合計は全体値と一致しない。
+匿名化と上位10件の制限により、クエリ合計は全体値に一致しない。
 
 ## New Signals
 
-- 藤岡まつりページが916表示・24クリックで今週の首位となった。
-- 羽田まつりページが74表示・5クリックとなり、関連2クエリが各2クリックで上位に現れた。
-- 大田まつりページが90表示・5クリック、船橋大神宮例祭ページが30表示・5クリックで上位に現れた。
-- TOOLSの `/tools/buy/rayban-meta/` が1表示となり、初反応ページとして記録した。
-- 動画検索で伸びたページはなかった。
+- 生誕地まつり：1,117→3,938表示、13→60クリック。
+- 龍勢：3,564→5,143表示、54→73クリック。
+- /tools/travel/car-camping-check/ が1表示で今回の取得結果に登場。
+- 初表示クエリ・初クリックページは上位10件比較では確定できない。
+- 動画検索の伸びは確認されなかった。
 
 ## Watch
 
-- SCクリック・表示回数・順位は改善した一方、GA4 Organic Search・ユーザー・セッション・表示回数は減少した。
-- SC Webクリック102に対してGA4 Organic Search 145セッションで、定義差を含む乖離が続いている。
-- Referralは3→0セッションとなったが、絶対数が小さい。
-- 内部トラフィック除外は「テスト」で、内部・検証アクセス混入の可能性がある。
+- Web CTRは2.20%→1.46%。表示回数増加にクリック増加が追いついていない。
+- 10月10日に181クリック・10,746表示が集中し、翌日以降のクリックは19〜50。
+- SC Webクリック376とGA4 Organic Search669は対象検索エンジン・集計定義が異なるため、そのまま異常判定しない。
+- 内部トラフィック除外の現在状態は未確認。
 
 ## Product Status
 
 ### TOOLS
 
-**Early signal**
+Early signal
 
-Organic流入は0だが、前週と異なる `/tools/buy/rayban-meta/` が1表示を記録した。
-絶対数は小さく、初期反応として継続観測する状態。
+表示回数3→5、rayban-metaが4表示、car-camping-checkが1表示。
+Organic流入は0で、絶対数は小さい。
 
 ### MATSURI
 
-**Stable**
+Growing
 
-SCクリック・表示回数・順位は改善し、GA4 Organic Searchは前週比-4.0%にとどまった。
-GA4表示回数は18.3%減少しており、指標間の方向差を継続観測する状態。
+Organic流入590→669、表示回数774→872と増加。
+サイト全体Webクリックも328→376へ増加した。
 
 ## PM Review Candidates
 
-- SC指標改善とGA4主要量指標減少の方向差をレビュー候補とする。
-- 藤岡・前橋・安中など群馬の秋祭りページへの流入集中を継続確認する。
-- TOOLSで反応したページが前週から入れ替わった動きを確認する。
-- Referralが次週も0のままか確認する。
+- 表示急増とCTR低下、10月10日への集中の継続性を確認する候補。
+- 生誕地まつり・龍勢への流入集中を確認する候補。
+- Google単独Organicと真のエンゲージメント時間の取得範囲をレビューする候補。
 
 ## Data Notes
 
-- 取得方法: `_analytics/scripts/fetch_analytics.py`。GA4・Search Consoleの全カテゴリで `error: null` を確認した。
-- Search Console APIの日別データで2026-09-29まで取得可能だったため、最新確定期間を2026-09-23〜09-29とした。GA4も同一期間で取得した。
-- 前週は2026-09-16〜09-22。全指標を同じスクリプト・同じ条件で取得した。
-- GA4の平均エンゲージメント時間はスクリプト出力の `averageSessionDuration` を秒単位で記録した。
-- 画像検索、Discover、ニュースは現行スクリプトの取得対象外。
-- Internal Trafficフィルタは前回確認時に「除外・テスト」で、有効状態ではない。
-- Roadmap進捗は直近4レポートのGA4表示回数・アクティブユーザーを合計。手動実行期間の重複を含む。
-- 開始時点でローカルmainはorigin/mainより5コミット遅れていたため、作業前にfast-forwardで同期した。同期後の作業ツリーはクリーン、オープンPRはなかった。
+- 指定スクリプトで両期間を取得し、全6カテゴリで error:null を確認した。
+- SC dataState:final の日別取得で最新日2026-10-16を確認。GA4も同じ7日間に揃えた。
+- ga4_google_organic は sessionDefaultChannelGroup=Organic Search のみのフィルタで、Google単独ではない。結果は全検索エンジンとして記録した。
+- averageSessionDuration は平均セッション時間であり、仕様の平均エンゲージメント時間は未取得。過去レポートの名称を踏襲しない。
+- プロダクト別パスフィルタはPARTIAL_REGEXP。過去のFULL_REGEXP時期とは集計範囲が異なる可能性があり、今回は両期間を現行スクリプトで再取得した。
+- 画像・ニュースは同スクリプトの関数を追加呼び出し。Discover・Google Newsの詳細は非対応次元エラーで未取得。
+- 内部アクセス除外状態は前回記録のみ参照し、現在有効とは断定しない。
+- 開始時mainはorigin/mainより1コミット遅れ、作業ツリーはクリーン、PRなし。fast-forward同期済み。
+- Roadmapは直近4保存レポート（9/20、9/27、10/4、今回）を合算。期間の空白・重複を含む参考的な合計で、暦月実績や月間ユニークユーザーではない。
 
 ## Roadmap進捗
 
 | 指標 | 今月換算値 | 目標（H2 2026末） | 達成率 |
 |---|---:|---:|---:|
-| 月間PV | 1,550（直近4レポート合計） | 1万〜3万 | 15.5% |
-| 月間UU | 688（直近4レポート合計） | 6千〜2万 | 11.5% |
+| 月間PV | 1,806（直近4レポート合計） | 1万〜3万 | 18.1% |
+| 月間UU | 1,197（直近4レポート合計） | 6千〜2万 | 20.0% |
 
 ## Next Actions
 
 ### TOOLS
 
-`/tools/buy/rayban-meta/` の初表示が継続するか、次週も同じ条件で観察することを推奨。
+5表示の小規模な反応が継続するか観察を推奨。
 
 ### MATSURI
 
-SC指標改善とGA4表示回数減少の方向差を、次週も継続確認することを推奨。
+生誕地まつり・龍勢の増加と、CTR低下の継続観察を推奨。
 
 ### LAB全体
 
-群馬の秋祭りページへの流入集中とReferral 0の継続有無を観察することを推奨。
+10月10日のアクセス集中と内部除外状態の確認をレビュー候補として推奨。
