@@ -318,9 +318,18 @@
       {
         title: "開催時期から探す",
         links: [
+          ["1月", ["months", "january"]],
+          ["2月", ["months", "february"]],
+          ["3月", ["months", "march"]],
+          ["4月", ["months", "april"]],
+          ["5月", ["months", "may"]],
+          ["6月", ["months", "june"]],
           ["7月", ["months", "july"]],
           ["8月", ["months", "august"]],
-          ["9月", ["months", "september"]]
+          ["9月", ["months", "september"]],
+          ["10月", ["months", "october"]],
+          ["11月", ["months", "november"]],
+          ["12月", ["months", "december"]]
         ]
       },
       {
