@@ -2574,5 +2574,45 @@ const SEARCH_INDEX = [
     "prefecture": "福島県",
     "city": "福島市",
     "firstDate": "2026-02-21"
+  },
+  {
+    "slug": "onikojuro-matsuri",
+    "name": "鬼小十郎まつり",
+    "officialName": "鬼小十郎まつり",
+    "prefecture": "宮城県",
+    "city": "白石市",
+    "firstDate": "2026-10-03"
+  },
+  {
+    "slug": "murata-hotei-matsuri",
+    "name": "蔵の町むらた 布袋まつり",
+    "officialName": "蔵の町むらた 布袋まつり",
+    "prefecture": "宮城県",
+    "city": "村田町",
+    "firstDate": "2026-10-11"
+  },
+  {
+    "slug": "yanaizu-kokuzouson-aki-matsuri",
+    "name": "柳津虚空蔵尊秋祭り",
+    "officialName": "柳津虚空蔵尊秋祭り",
+    "prefecture": "宮城県",
+    "city": "登米市津山町",
+    "firstDate": "2026-10-13"
+  },
+  {
+    "slug": "sendai-michinoku-yosakoi-matsuri",
+    "name": "仙台みちのくYOSAKOIまつり",
+    "officialName": "仙台みちのくYOSAKOIまつり",
+    "prefecture": "宮城県",
+    "city": "仙台市",
+    "firstDate": "2026-10-10"
+  },
+  {
+    "slug": "onagawa-aki-no-shukakusai",
+    "name": "おながわ秋の収獲祭",
+    "officialName": "おながわ秋の収獲祭",
+    "prefecture": "宮城県",
+    "city": "女川町",
+    "firstDate": "2026-10-11"
   }
 ];
