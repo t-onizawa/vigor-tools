@@ -39,7 +39,15 @@ const FESTIVAL = {
       publishedYear: 2025,
       checkedDate: "2026-07-30"
     }],
-    backgroundImage: null,
+    backgroundImage: {
+      "type": "youtube",
+      "contentId": "GdRw-F_UBM0",
+      "sourceUrl": "https://www.youtube.com/watch?v=GdRw-F_UBM0",
+      "publisher": "西田忠夫",
+      "publisherType": "individual",
+      "checkedDate": "2026-10-18",
+      "note": "優先度3。0は文字入りデフォルトと同じで、1〜3は低解像度の人物・遠景。馬上で弓を引く射手が明瞭で、上部題字は射手と馬を隠さない。"
+    },
     confirmation: {
       verified: true,
       confirmedDate: "2026-07-30",

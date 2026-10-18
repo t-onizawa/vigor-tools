@@ -37,3 +37,9 @@ backgroundImage=null、atmosphereMedia=[]。自然に見つかったリンクも
 ## 実装・検証
 
 既存テンプレートとスキーマを使用。research/は既存_config.ymlのexclude対象。静的・ブラウザ・公開検証の実測結果は同日のBacklog実績と完了報告に記録。
+
+### 2026-10-18 毎日品質改善
+
+一次情報の直接確認先：https://www.f-kankou.jp/event/41521
+
+通常枠（未調査の両方なし）。主催事務局の福島民報社 https://corp.minpo.jp/event/第18回ふくしま山車祭り/ を直接開き、26年ダイジェストリンク https://www.youtube.com/watch?v=wfLER8UxaME を確認。民報印刷48人、0:49、54回、限定公開。サムネイルは前景の人物が山車を遮り暗いため背景は見送り。動画はDVDダイジェストの全体構成を未確認のため保留（短尺だけを不採用理由にしない）。

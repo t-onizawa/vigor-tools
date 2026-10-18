@@ -37,7 +37,15 @@ const FESTIVAL = {
       publishedYear: 2012,
       checkedDate: "2026-07-30"
     }],
-    backgroundImage: null,
+    backgroundImage: {
+      "type": "youtube",
+      "contentId": "lEcivP5DoFM",
+      "sourceUrl": "https://www.youtube.com/watch?v=lEcivP5DoFM",
+      "publisher": "太田裕",
+      "publisherType": "individual",
+      "checkedDate": "2026-10-18",
+      "note": "優先度1。文字オーバーレイのない銀柳街渡御の実写。孔雀を頂く神輿と周囲の担ぎ手が判別できる。"
+    },
     confirmation: {
       verified: true,
       confirmedDate: "2026-07-30",

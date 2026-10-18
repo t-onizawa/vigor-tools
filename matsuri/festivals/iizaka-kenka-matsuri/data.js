@@ -29,7 +29,15 @@ const FESTIVAL = {
     },
     "highlightComment": "神輿の宮入りをめぐって担がれた屋台がぶつかり合い、提灯の明かりと太鼓の響きが境内を包む。",
     "atmosphereMedia": [],
-    "backgroundImage": null,
+    backgroundImage: {
+      "type": "youtube",
+      "contentId": "HBREsDm2M1Y",
+      "sourceUrl": "https://www.youtube.com/watch?v=HBREsDm2M1Y",
+      "publisher": "ぶらっとWebTV",
+      "publisherType": "individual",
+      "checkedDate": "2026-10-18",
+      "note": "優先度3。0〜3も比較したが文字入り・低解像度。提灯屋台と担ぎ手が判別でき、左下の題字は主役を隠さない。"
+    },
     "confirmation": {
       "verified": true,
       "confirmedDate": "2026-10-18",

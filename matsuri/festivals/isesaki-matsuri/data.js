@@ -19,7 +19,15 @@ const FESTIVAL = {
     },
     highlightComment: "本町通りで山車・屋台の巡行競演とみこしが続き、2日間を通じて民踊や郷土芸能も披露される。",
     atmosphereMedia: [{ type: "youtube", url: "https://www.youtube.com/watch?v=cGFNZ-uSVfk", contentId: "cGFNZ-uSVfk", title: "【伊勢崎市伝統】令和5年度いせさきまつり", publisher: "群馬県伊勢崎市【動画で見るいせさき】", publisherType: "government", purpose: "festival_atmosphere", publishedYear: 2023, checkedDate: "2026-08-12" }],
-    backgroundImage: null,
+    backgroundImage: {
+      "type": "youtube",
+      "contentId": "cGFNZ-uSVfk",
+      "sourceUrl": "https://www.youtube.com/watch?v=cGFNZ-uSVfk",
+      "publisher": "群馬県伊勢崎市【動画で見るいせさき】",
+      "publisherType": "government",
+      "checkedDate": "2026-10-18",
+      "note": "優先度3。0は文字入りデフォルトと同じで、1〜3は低解像度の人物中心の場面。中央の神輿と担ぎ手が判別でき、周囲の文字は神輿を隠さない。"
+    },
     confirmation: { verified: true, confirmedDate: "2026-08-06", sources: ["https://www.city.isesaki.lg.jp/soshiki/keizai/bunka/kankou/gyoji/1427.html"] }
   },
   yearlyInfo: [{

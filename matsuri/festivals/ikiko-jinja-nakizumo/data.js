@@ -20,7 +20,16 @@ const FESTIVAL = {
       publishedYear: 2025,
       checkedDate: "2026-08-01"
     }],
-    backgroundImage: null,
+    notableDesignation: "鹿沼市指定文化財（1990年3月31日）、国選択（1996年11月28日）",
+    backgroundImage: {
+      "type": "youtube",
+      "contentId": "mmSYVDfnCBU",
+      "sourceUrl": "https://www.youtube.com/watch?v=mmSYVDfnCBU",
+      "publisher": "下野新聞チャンネル",
+      "publisherType": "local_media",
+      "checkedDate": "2026-10-18",
+      "note": "優先度3。0〜3も文字入り・低解像度。力士役に抱き上げられた幼児が明瞭で、下部見出しは主役を隠さない。"
+    },
     confirmation: { verified: true, confirmedDate: "2026-07-31", sources: ["https://www.city.kanuma.tochigi.jp/0299/info-0000001969-0.html"] }
   },
   yearlyInfo: [{ year: 2026, eventStatus: "ended", dates: ["2026-09-20"],

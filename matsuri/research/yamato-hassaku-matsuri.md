@@ -42,3 +42,9 @@
 ## 検証
 
 新規ページの静的生成、全5種ハブ／検索再生成、整合性hard issue 0、ID・canonical・JSON-LD・一覧登録、指定2画面サイズ・フィルター・console errorを公開前に検証する。結果はBacklog実行ログと完了報告へ記載する。
+
+### 2026-10-18 毎日品質改善
+
+一次情報の直接確認先：https://kumamotoyamatotour.wixsite.com/mysite/hassakumatsuri2
+
+通常枠（未調査の両方なし）。観光協会の2023年引き回しリンク https://www.youtube.com/watch?v=eeSvgcW1Sds を直接確認。【公式】山都町山の都創造チャンネル829人、4:39:22、1万回。背景hqdefaultと0〜3は告知コラージュ中心、3も低解像度で大造り物が判別できず不採用。動画は4時間超のライブ記録のため不採用。

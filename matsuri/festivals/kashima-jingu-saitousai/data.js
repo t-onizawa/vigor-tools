@@ -29,7 +29,15 @@ const FESTIVAL = {
       publishedYear: 2026,
       checkedDate: "2026-07-31"
     }],
-    backgroundImage: null,
+    backgroundImage: {
+      "type": "youtube",
+      "contentId": "DKPsjTeZUQo",
+      "sourceUrl": "https://www.youtube.com/watch?v=DKPsjTeZUQo",
+      "publisher": "茨城新聞動画ニュース",
+      "publisherType": "local_media",
+      "checkedDate": "2026-10-18",
+      "note": "優先度3。0〜3は低解像度・字幕入り。色鮮やかな衣装と組み合わせた樫棒が明瞭で、下部字幕は樫棒を隠さない。"
+    },
     confirmation: { verified: true, confirmedDate: "2026-07-30", sources: ["https://kashimajingu.jp/news/%E7%A5%AD%E9%A0%AD%E7%A5%AD%E3%81%AE%E5%BE%A1%E6%A1%88%E5%86%85%E4%BB%A4%E5%92%8C6%E5%B9%B4/", "https://city.kashima.ibaraki.jp/site/bunkazai/50076.html"] }
   },
   yearlyInfo: [{

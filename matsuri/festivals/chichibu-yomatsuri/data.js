@@ -22,8 +22,8 @@ const FESTIVAL = {
       label: "秩父神社",
       pointType: "shrine",
       query: "秩父神社 埼玉県秩父市番場町1-3",
-      lat: null,
-      lng: null,
+      lat: 35.9976189,
+      lng: 139.0841388,
       mapUrl: "https://www.google.com/maps/search/?api=1&query=秩父神社+埼玉県秩父市番場町1-3",
       note: "秩父神社は例大祭の中心となる神社です。屋台の曳行・団子坂の曳き上げは秩父市街地一帯で行われます。"
     },

@@ -29,7 +29,15 @@ const FESTIVAL = {
       publishedYear: 2025,
       checkedDate: "2026-08-31"
     }],
-    backgroundImage: null,
+    backgroundImage: {
+      "type": "youtube",
+      "contentId": "g-tPCzqwcMA",
+      "sourceUrl": "https://www.youtube.com/watch?v=g-tPCzqwcMA",
+      "publisher": "渋川市公式チャンネル",
+      "publisherType": "government",
+      "checkedDate": "2026-10-18",
+      "note": "優先度3。0〜3は低解像度・字幕入り。腹に顔を描いた踊り手の腹部が判別でき、上部題字は腹部を隠さない。"
+    },
     confirmation: { verified: true, confirmedDate: "2026-08-04", sources: ["https://www.city.shibukawa.lg.jp/kankou-site/kankou/000382/000385/p011548.html"] }
   },
   yearlyInfo: [{

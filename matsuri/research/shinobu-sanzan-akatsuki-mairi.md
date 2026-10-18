@@ -38,3 +38,9 @@ backgroundImage=null、atmosphereMedia=[]。自然に見つかったリンクも
 ## 実装・検証
 
 既存テンプレートとスキーマを使用。research/は既存_config.ymlのexclude対象。静的・ブラウザ・公開検証の実測結果は同日のBacklog実績と完了報告に記録。
+
+### 2026-10-18 毎日品質改善
+
+一次情報の直接確認先：https://www.city.fukushima.fukushima.jp/kankounavi/contents/enjoy/1/5940.html
+
+通常枠（未調査の両方なし）。https://www.youtube.com/watch?v=UY4YEMjNSX8 を直接確認。福島市公式ユーチューブ［ふくしまチャンネル］7870人、1:47、1836回。市街地を練り歩き羽黒神社へ奉納する大わらじの説明と画像を確認。背景は優先度3で採用。動画はナレーション主体の割合・公開年の正確な表示を確認しきれず保留。

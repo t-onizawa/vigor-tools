@@ -39,3 +39,9 @@ backgroundImage=null、atmosphereMedia=[]。自然に見つかったリンクも
 ## 実装・検証
 
 既存テンプレートとスキーマを使用。research/は既存_config.ymlのexclude対象。静的・ブラウザ・公開検証の実測結果は同日のBacklog実績と完了報告に記録。
+
+### 2026-10-18 毎日品質改善
+
+一次情報の直接確認先：https://www.f-kankou.jp/event/38202
+
+通常枠（未調査の両方なし）。https://kuki-chochinmatsuri.com/html/matukawa.html の紹介リンクから https://www.youtube.com/watch?v=8Ccn1Y8u10Q を直接確認。kukimaturi501人、17:47、8385回。2016年10月9日の松川町と説明される。文字なしの提灯山車の背景を優先度1で採用。動画は長尺の運行記録のため追加しない。

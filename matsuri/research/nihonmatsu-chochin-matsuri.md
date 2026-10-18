@@ -39,3 +39,9 @@ backgroundImage=null、atmosphereMedia=[]。自然に見つかったリンクも
 ## 実装・検証
 
 既存テンプレートとスキーマを使用。research/は既存_config.ymlのexclude対象。静的・ブラウザ・公開検証の実測結果は同日のBacklog実績と完了報告に記録。
+
+### 2026-10-18 毎日品質改善
+
+一次情報の直接確認先：https://www.city.nihonmatsu.lg.jp/kankou/matsuri/cyochin/page000417.html
+
+通常枠（未調査の両方なし）。市公式と観光連盟 https://www.nihonmatsu-kanko.jp/?p=1473 を直接確認。動画探索で https://www.ntv.co.jp/matsuri/backnumber/11.html を直接開いた。提灯制作継承の番組内容であり、祭りの雰囲気紹介とは役割が違う。今回登録可能なYouTube動画ページの直接確認に至らず画像・動画追加なし。素材調査未完了として次回候補。

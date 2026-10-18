@@ -39,7 +39,15 @@ const FESTIVAL = {
       publishedYear: 2026,
       checkedDate: "2026-07-31"
     }],
-    backgroundImage: null,
+    backgroundImage: {
+      "type": "youtube",
+      "contentId": "cAXb_-rZ0FQ",
+      "sourceUrl": "https://www.youtube.com/watch?v=cAXb_-rZ0FQ",
+      "publisher": "Matsuri Japan",
+      "publisherType": "individual",
+      "checkedDate": "2026-10-18",
+      "note": "優先度3。0は文字入りデフォルトと同じで、1〜3は低解像度の遠景。上部の山車とお囃子が明瞭で、下部題字は山車上の演者を隠さない。"
+    },
     confirmation: {
       verified: true,
       confirmedDate: "2026-07-30",

@@ -29,7 +29,15 @@ const FESTIVAL = {
     },
     "highlightComment": "大わらじを担いで街なかから信夫山へ進み、羽黒神社へ奉納する冬の行事。山上への参拝も日中が案内されている。",
     "atmosphereMedia": [],
-    "backgroundImage": null,
+    backgroundImage: {
+      "type": "youtube",
+      "contentId": "UY4YEMjNSX8",
+      "sourceUrl": "https://www.youtube.com/watch?v=UY4YEMjNSX8",
+      "publisher": "福島市公式ユーチューブ［ふくしまチャンネル］",
+      "publisherType": "government",
+      "checkedDate": "2026-10-18",
+      "note": "優先度3。0〜3は製作場面・低解像度・字幕入り。デフォルトの大わらじは全体が判別でき、下部字幕は主役を隠さない。"
+    },
     "confirmation": {
       "verified": true,
       "confirmedDate": "2026-10-18",

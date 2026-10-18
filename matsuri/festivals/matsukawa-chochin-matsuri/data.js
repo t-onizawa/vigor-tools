@@ -29,7 +29,15 @@ const FESTIVAL = {
     },
     "highlightComment": "提灯で飾った山車が東西の町内を練り歩き、地区ごとに違う掛け声と子どもたちのお囃子を楽しめる。",
     "atmosphereMedia": [],
-    "backgroundImage": null,
+    backgroundImage: {
+      "type": "youtube",
+      "contentId": "8Ccn1Y8u10Q",
+      "sourceUrl": "https://www.youtube.com/watch?v=8Ccn1Y8u10Q",
+      "publisher": "kukimaturi",
+      "publisherType": "individual",
+      "checkedDate": "2026-10-18",
+      "note": "優先度1。文字オーバーレイのない夜の提灯山車の実写。複数の山車に灯る提灯が判別できる。"
+    },
     "confirmation": {
       "verified": true,
       "confirmedDate": "2026-10-18",

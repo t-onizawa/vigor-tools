@@ -40,3 +40,9 @@ backgroundImage=null、atmosphereMedia=[]。自然に見つかったリンクも
 ## 実装・検証
 
 既存テンプレートとスキーマを使用。research/は既存_config.ymlのexclude対象。静的・ブラウザ・公開検証の実測結果は同日のBacklog実績と完了報告に記録。
+
+### 2026-10-18 毎日品質改善
+
+一次情報の直接確認先：https://www.f-kankou.jp/event/38041
+
+通常枠（未調査の両方なし）。https://www.youtube.com/watch?v=HBREsDm2M1Y を直接確認。ぶらっとWebTV402人、1:36、3323回、2013年宮入り。背景は優先度3で採用。動画は宮入り一場面に限られるため追加しない。今回の背景採否は動画の尺・発信元の格付けとは独立に判断。
