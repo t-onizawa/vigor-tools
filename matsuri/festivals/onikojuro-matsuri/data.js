@@ -11,7 +11,7 @@ const FESTIVAL = {
       "hasDashi": null,
       "hasMikoshi": null,
       "hasDanceOnDashi": false,
-      "hasParade": true,
+      "hasParade": null,
       "highlightTime": "day",
       "hayashiNote": "道明寺の戦いの再現を中心に、榊流大町神楽、太鼓、居合披露などが行われる。"
     },

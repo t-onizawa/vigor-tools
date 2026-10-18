@@ -4985,6 +4985,7 @@ commit `2b5da25`／キャッシュ修正`7522f44`／`ab4f35b`）
 - 県公式の秋の行事案内を起点に主催者・自治体の一次情報と照合。名称・主体・ページ範囲・差異・出典URL・座標確認は各research/<slug>.mdに記録。
 - 全件2026年公式日程を確認済みで、確認日時点で終了したためended。2027年は推測しない。布袋の人形の舞はhasDanceOnDashi=null。山車は布袋のみ確認、行列・パレードは確認した範囲のみ。女川の食の行事へ山車・神輿等を付与しない。
 - 素材は全件未採用。時刻は直接確認できた公式案内のみ記録。
+- 表示分類を追加確認し、鬼小十郎・柳津虚空蔵尊・YOSAKOIの行列だけでは曳き回しと断定しないためhasParade=nullに修正。布袋の山車巡行のみtrueとした。
 - 保留：くりはら万葉祭～土と火のまつり～。https://kazenosawa.jp/ の2026年10月3日表記と同ページ時刻表の10月4日（土）表記が不一致。県公式 https://miyagi-kankou.or.jp/kakikomi/detail.php?id=14346 は10月3日。推測で実装しない。
 - 静的検証：新規data.js・shared JSのnode --check、git diff --check、slug/id/canonical・title/meta・H1・Event JSON-LD・必須プレースホルダー・script順、FESTIVAL_SLUGS重複なし、ハブ/検索登録、sitemap XMLパースを確認。既存322件のfestivalファイル変更なし。
 - check-data-integrity.js：327件、hard issue 0、既知heuristic 1（神田祭off_year_has_dates）。新規hard issueなし。

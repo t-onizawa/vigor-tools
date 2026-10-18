@@ -11,7 +11,7 @@ const FESTIVAL = {
       "hasDashi": null,
       "hasMikoshi": null,
       "hasDanceOnDashi": false,
-      "hasParade": true,
+      "hasParade": null,
       "highlightTime": "day",
       "hayashiNote": "正午から献膳行列が進み、続いて護摩祈祷が行われる。寺院の祈願行事として案内する。"
     },

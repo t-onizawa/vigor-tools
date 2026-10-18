@@ -11,7 +11,7 @@ const FESTIVAL = {
       "hasDashi": null,
       "hasMikoshi": null,
       "hasDanceOnDashi": false,
-      "hasParade": true,
+      "hasParade": null,
       "highlightTime": "both",
       "hayashiNote": "ステージ演舞と定禅寺通のパレードが中心。会場ごとに演舞時間や観覧方法が異なり、有料観覧席も設けられる。"
     },
