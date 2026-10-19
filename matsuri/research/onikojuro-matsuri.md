@@ -36,3 +36,9 @@ backgroundImage・atmosphereMediaは未採用。素材探索自体は行わず�
 
 ## 検証
 静的・ブラウザ・公開確認の実行結果は matsuri/Backlog.md の2026-10-19実行記録と完了報告へ記録。
+
+### 2026-10-19 毎日品質改善
+
+一次情報の直接確認先：https://onikojuro.jp/topics/1664/
+
+未調査枠。白石市公式 https://www.city.shiroishi.miyagi.jp/soshiki/17/17678.html の公式YouTube再生リストから https://www.youtube.com/watch?v=rEXbIns4m7o を直接確認。宮城県白石市役所1570人、57:45、3672回。2022年10月1日開催の記録と明記。城を背にした甲冑武者が写る文字なし背景を優先度1で採用。動画は57分の合戦通し記録のため追加しない。

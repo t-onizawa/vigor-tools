@@ -22,8 +22,8 @@ const FESTIVAL = {
       "label": "櫛田神社",
       "pointType": "shrine",
       "query": "福岡県福岡市博多区上川端町1-41 櫛田神社",
-      "lat": null,
-      "lng": null,
+      "lat": 33.5929546,
+      "lng": 130.4104589,
       "mapUrl": "https://www.google.com/maps/search/?api=1&query=福岡市+櫛田神社",
       "note": "山笠を奉納する祭礼の中心。"
     },

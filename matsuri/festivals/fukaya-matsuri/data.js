@@ -28,7 +28,7 @@ const FESTIVAL = {
       note: "JR深谷駅北口ロータリー・市役所通り一帯が深谷まつりの会場です。"
     },
     highlightComment: null,
-    atmosphereMedia: [],
+    atmosphereMedia: [], backgroundImage: {"type":"youtube","contentId":"BzM6Ssk1_Mg","sourceUrl":"https://www.youtube.com/watch?v=BzM6Ssk1_Mg","publisher":"北関東おまつりinfo","publisherType":"individual","checkedDate":"2026-10-19","note":"優先度3。デフォルトと同じ0、低解像度の1〜3も比較した。デフォルト左側の山車装飾と太鼓・演者が明瞭で、右上の題字は主役を隠さない。"},
     confirmation: {
       verified: true,
       confirmedDate: "2026-07-28",

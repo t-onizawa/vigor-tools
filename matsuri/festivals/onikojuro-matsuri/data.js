@@ -29,7 +29,7 @@ const FESTIVAL = {
     },
     "highlightComment": "白石城を舞台に道明寺の戦いを再現する合戦絵巻。応援のぼりの行進や神楽、居合披露とともに城下町の歴史にふれられる。",
     "atmosphereMedia": [],
-    "backgroundImage": null,
+    "backgroundImage": {"type":"youtube","contentId":"rEXbIns4m7o","sourceUrl":"https://www.youtube.com/watch?v=rEXbIns4m7o","publisher":"宮城県白石市役所","publisherType":"government","checkedDate":"2026-10-19","note":"優先度1。白石城を背に甲冑武者が動く合戦絵巻の実写。文字オーバーレイがなく、城と武者が判別できる。"},
     "confirmation": {
       "verified": true,
       "confirmedDate": "2026-10-19",
