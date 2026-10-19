@@ -29,7 +29,7 @@ const FESTIVAL = {
     year: 2026, eventStatus: "ended", dates: ["2026-10-10", "2026-10-11"],
     access: { hasParking: null, parkingNote: "2026年の駐車場・交通規制は未確認。" },
     confirmation: {
-      confirmedDate: "2026-08-31", sources: ["https://www.city.maebashi.gunma.jp/kurashi_tetsuzuki/7/5/1/42831.html"],
+      confirmedDate: "2026-08-31", sources: ["https://maebashi-festival.jp/"],
       note: "前橋市公式の指定催し公示で、2026年10月10日・11日の開催を確認。"
     }
   }]
