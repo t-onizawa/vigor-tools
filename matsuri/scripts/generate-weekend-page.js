@@ -127,10 +127,10 @@ function renderPage(model, experienceTags, cssVersion, updatedDate) {
   }
   const groups = {};
   for (const item of model.weekend) {
-    const area = Object.entries(REGIONS).find(([, r]) => r.prefectures.includes(item.festival.areaTag))?.[1]?.label || "その他";
+    const area = Object.entries(REGIONS).find(([, r]) => r.prefectures.includes(item.festival.areaTag))?.[0] || "other";
     (groups[area] ||= []).push(item);
   }
-  const weekendBlock = model.weekend.length ? `<section id="this-weekend-section" data-weekend-block><h2>今週末の開催確認済み</h2>${Object.entries(groups).map(([area, items]) => `<section data-weekend-block><h3>${escape(area)}</h3><div class="festival-list">${items.map((item) => card(item)).join("\n")}</div></section>`).join("\n")}</section>` : "";
+  const weekendBlock = model.weekend.length ? `<section id="this-weekend-section" data-weekend-block><h2>今週末の開催確認済み</h2>${[...Object.keys(REGIONS), "other"].filter((area) => groups[area]).map((area) => `<section data-weekend-block data-region="${area}"><h3>${escape(REGIONS[area]?.label || "その他")}</h3><div class="festival-list">${groups[area].map((item) => card(item)).join("\n")}</div></section>`).join("\n")}</section>` : "";
   const lead = model.weekend.length ? `今週末は全国で${model.weekend.length}件、開催を確認済みです。` : `今週末（${shortDate(model.range.start)}〜${shortDate(model.range.end)}）に開催が確認できた祭りはありません。`;
   const monthLinks = monthWindows(model.asOf).map(({ month }) => `<a href="../months/${MONTHS[month - 1].slug}/">${month}月の祭り</a>`).join(" ／ ");
   const regionLinks = ["kanto", "tohoku", "chubu", "kinki", "chugoku", "shikoku", "kyushu"].map((slug) => `<a href="../regions/${slug}/">${REGIONS[slug].label}</a>`).join(" ／ ");
@@ -164,7 +164,7 @@ ${section("seasonal-reference-section", "例年この時期（参考）", model.
   const itemList = { "@context": "https://schema.org", "@type": "ItemList", dateModified: updatedDate, numberOfItems: visible.length, itemListElement: visible.map((item) => `https://vigorlab.net/matsuri/festivals/${item.festival.id}/`) };
   const breadcrumbs = { "@context": "https://schema.org", "@type": "BreadcrumbList", itemListElement: [{ "@type": "ListItem", position: 1, name: "MATSURI", item: "https://vigorlab.net/matsuri/" }, { "@type": "ListItem", position: 2, name: "今週末の祭り", item: CANONICAL }] };
   html = html.replace('</head>', `<style>[hidden]{display:none!important}#seasonal-reference-section{font-size:.9em;color:var(--muted)}#weekend-stale-banner{padding:12px;border:1px solid var(--line)}.weekend-title-dates{display:block;margin-top:6px;font-size:.5em;font-weight:500;letter-spacing:.02em;color:var(--muted);white-space:nowrap}</style>\n<script type="application/ld+json">${JSON.stringify(breadcrumbs)}</script>\n<script type="application/ld+json">${JSON.stringify(itemList)}</script>\n</head>`)
-    .replace('</body>', '<script src="../shared/weekend-page.js?v=1"></script>\n</body>');
+    .replace('</body>', '<script src="../shared/weekend-page.js?v=2"></script>\n</body>');
   return html.replace(/[ \t]+$/gm, "");
 }
 function normalizeUpdated(html) {
