@@ -1,6 +1,7 @@
 # 今週末の祭り・段階2 実装／検証報告
 
-状態：実装済み・認証権限不足により未push。本番検証未完了。
+初回報告時点の状態：実装済み・認証権限不足により未push。本番検証未完了。
+その後Founderがworkflow権限を付与し、本番検証を再開。結果は末尾の追記を参照。
 
 ## 実装
 
@@ -71,3 +72,33 @@ SSH接続はHost key verification failedで失敗。ホスト検証を無効化�
 - `matsuri/scripts/check-weekend-stage2.js`
 - `matsuri/scripts/generate-weekend-page.js`
 - 本報告ファイル（非公開の_reports配下）
+
+## 権限付与後の本番検証（2026-10-19追記）
+
+- dcee3022と4bc50e41をmainへpush済み。
+- 失敗検証：run [39205238211](https://github.com/t-onizawa/vigor-tools/actions/runs/39205238211)。simulate_failure=true、05:34:25 UTCにfailure確定。生成・コミット・Pages処理はすべてskipped。
+- 実際の失敗メールをGmailで確認。受信先tetsuya.onizawa@gmail.com、送信元notifications@github.com、Date 2026-10-19 05:34:45 UTC（14:34:45 JST）、件名「[t-onizawa/vigor-tools] Run failed: Update weekend page - main (4bc50e4)」。本文のrun URLが39205238211で一致。INBOXラベルあり。通知設定を変更せず受信確認できた。
+- 初回通常検証：run [39205262435](https://github.com/t-onizawa/vigor-tools/actions/runs/39205262435)、05:35:38 UTCにsuccess。
+- SUMMARY：date=2026-10-19 changed=true weekend=10/24-10/25 confirmed_weekend=6 upcoming=9 warnings=0。
+- botが`bc6c7c080489334b50bf92cbbda4dbf440d20269`を作成し、mainへpush。祭りデータは変更していない。
+- 明示Pages要求はGITHUB_TOKENで成功。Pages run [39205279764](https://github.com/t-onizawa/vigor-tools/actions/runs/39205279764)は生成SHA bc6c7c08で成功。既存Jekyll/legacy方式を維持し、PATやサイト全体のデプロイ方式変更は不要だった。
+- 本番HTMLと生成HTMLはcmp成功。独立したキャッシュ回避URLでもHTTP 200、Age: 0、X-Cache: MISS、Last-Modified: 2026-10-19 05:35:27 GMTで一致。
+- SHA256：`bdfe94765096b4fcb4f5ce227aa3566a7f8b745489db42d8f16e0f121fe462ac`。
+- キャッシュ回避の追加コミット：`830efb14`、応答ヘッダー記録：`214b6cca`。internal=1を維持し、weekend_run=run ID-実行回数とshaパラメータ、Cache-Control: no-cacheを追加。照合URL・Age/X-Cache等をStep Summaryへ保存する。
+- 段階2チェックは維持。段階3ではFounder依頼に合わせて削除または差し替える。
+
+### 最終結果
+
+段階2の手動本番検証は完了。
+
+- キャッシュ回避版の通常run：[39205387045](https://github.com/t-onizawa/vigor-tools/actions/runs/39205387045)。開始2026-10-19 05:35:55 UTC、最終成功2026-10-19 05:37:11 UTC（14:37:11 JST）。
+- `gh run list --workflow weekend-page.yml --status success --limit 1`で同runがcompleted / successとして表示された。CLI既定出力の日時は開始日時であり、完了日時は`gh run view 39205387045 --json updatedAt,status,conclusion`でも照合した。
+- SUMMARYはchanged=false、--checkとSTAGE2チェック成功。mainは214b6ccaのまま、差分なし時にコミット・pushが増えないことを確認。
+- Pages run [39205404224](https://github.com/t-onizawa/vigor-tools/actions/runs/39205404224)は214b6ccaを対象にsuccess。Pages APIもstatus=built、commit=214b6cca、updated_at=05:37:08 UTC。
+- workflow内の一度のcurl・cmpによる照合が成功。run ID・実行回数・SHAを含むURLとno-cacheヘッダーを使用。
+- 独立した未使用URLでも本番HTMLを照合：HTTP 200 / Age: 0 / X-Cache: MISS / Last-Modified 05:37:07 GMT。SHA256は前述と同じ。今回の本番照合にキャッシュ起因の誤検知は見られなかった。
+- 再試行機構なし。Pages状態監視のみ。通常pushとAPI要求に伴う標準Pages runの一部はGitHub側でcancelledになったが、上記対象SHAの最終Pages runとweekend-page runはいずれもsuccess。
+- 追加変更ファイル：`.github/workflows/weekend-page.yml`（キャッシュ回避）、本報告書。bot生成分は`matsuri/this-weekend/index.html`。
+- noindex,follow、トップリンクなし、sitemap未登録を最終確認。check-weekend-stage2.jsは変更していない。
+
+残課題：cronと祭りデータpush起動は定義検証のみで、実発火は未観測。祭りデータを検証目的で変更していない。毎日の自動実行の継続性や将来の全地点のCDN挙動を保証するものではない。通知については今回の失敗runと一致する受信メールを実確認済みであり、追加のFounder確認は不要。段階3への移行のみ別途Founder承認が必要。
