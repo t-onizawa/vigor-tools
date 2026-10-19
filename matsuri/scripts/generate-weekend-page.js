@@ -30,7 +30,20 @@ function weekendRange(asOf) {
   return { start, end: addDays(start, 1) };
 }
 const shortDate = (s) => { const [, m, d] = s.split("-").map(Number); return `${m}/${d}`; };
-const fullDate = (s) => { const [y, m, d] = s.split("-").map(Number); return `${y}年${m}月${d}日`; };
+function formatCardDates(dates, asOf) {
+  const remaining = [...new Set(dates.filter((date) => date >= asOf))].sort();
+  const groups = [];
+  for (const date of remaining) {
+    const last = groups[groups.length - 1];
+    if (last && addDays(last[1], 1) === date) last[1] = date;
+    else groups.push([date, date]);
+  }
+  const format = (date) => {
+    const [year, month, day] = date.split("-").map(Number);
+    return `${year === Number(asOf.slice(0, 4)) ? "" : `${year}年`}${month}月${day}日`;
+  };
+  return groups.slice(0, 3).map(([start, end]) => start === end ? format(start) : `${format(start)}〜${format(end)}`).join("・") + (groups.length > 3 ? "ほか" : "");
+}
 function monthWindows(asOf) {
   const [y, m] = asOf.split("-").map(Number);
   return [0, 1, 2].map((i) => ({ year: y + Math.floor((m - 1 + i) / 12), month: (m - 1 + i) % 12 + 1 }));
@@ -74,11 +87,9 @@ function buildModel(festivals, asOf, options = {}) {
   const inWindow = (item, start, end) => item.dates.some((d) => d >= start && d <= end);
   const weekend = take(valid.filter((item) => inWindow(item, range.start, range.end)));
   const upcoming = take(valid.filter((item) => inWindow(item, asOf, addDays(asOf, 13))));
-  const nextWeekendDates = valid.flatMap((item) => item.dates).filter((d) => d > range.end && [0, 6].includes(parseDate(d).getUTCDay())).sort();
+  const nextWeekendDates = valid.filter((item) => !used.has(item.festival.id)).flatMap((item) => item.dates).filter((d) => d > range.end && [0, 6].includes(parseDate(d).getUTCDay())).sort();
   const nextRange = nextWeekendDates.length ? weekendRange(nextWeekendDates[0]) : null;
-  // 近日枠にも入る次の週末は再掲可。おすすめ枠には再掲しない。
-  const nextWeekend = nextRange ? valid.filter((item, index, all) => inWindow(item, nextRange.start, nextRange.end) && all.findIndex((other) => other.festival.id === item.festival.id && inWindow(other, nextRange.start, nextRange.end)) === index) : [];
-  nextWeekend.forEach((item) => used.add(item.festival.id));
+  const nextWeekend = nextRange ? take(valid.filter((item) => inWindow(item, nextRange.start, nextRange.end))) : [];
   const photo = (item) => Boolean(item.festival.constantInfo?.backgroundImage || item.festival.constantInfo?.atmosphereMedia?.length);
   const recommendations = take([...valid].sort((a, b) => nextDate(a).localeCompare(nextDate(b)) || Number(photo(b)) - Number(photo(a))), 6);
   const referenceMonths = monthWindows(asOf).filter(({ year, month }) => !valid.some((item) => item.dates.some((d) => Number(d.slice(0, 4)) === year && Number(d.slice(5, 7)) === month)));
@@ -104,7 +115,7 @@ function renderPage(model, experienceTags, cssVersion, updatedDate) {
     const match = rendered.match(/<div class="festival-list">\s*([\s\S]*?)\s*<\/div>\s*<p class="disclaimer">/);
     if (!match) throw new Error("既存カードテンプレートを取得できません");
     let html = match[1].replace('href="../../festivals/', 'href="../festivals/').replaceAll('../../shared/', '../shared/');
-    const dateText = reference ? `例年は${item.month}月ごろ・次回の日程は未発表` : item.dates.map(fullDate).join("・");
+    const dateText = reference ? `例年は${item.month}月ごろ・次回の日程は未発表` : formatCardDates(item.dates, model.asOf);
     html = html.replace(/<p class="item-date">[\s\S]*?<\/p>/, `<p class="item-date">${escape(dateText)}</p>`);
     html = html.replace(/<span class="status-badge[^>]*>[\s\S]*?<\/span>/, reference ? '<span class="source-meta">参考情報</span>' : '<span class="status-badge status-confirmed">開催確認済み</span>');
     html = html.replace(/data-event-status="[^"]*"/, `data-event-status="${reference ? "reference" : "confirmed"}"`);
@@ -125,7 +136,7 @@ function renderPage(model, experienceTags, cssVersion, updatedDate) {
   const regionLinks = ["kanto", "tohoku", "chubu", "kinki", "chugoku", "shikoku", "kyushu"].map((slug) => `<a href="../regions/${slug}/">${REGIONS[slug].label}</a>`).join(" ／ ");
   const featureLinks = [["dashi", "山車"], ["mikoshi", "神輿"], ["odori", "踊り"], ["hikimawashi", "曳き回し"], ["night", "夜が見どころ"]].map(([slug, label]) => `<a href="../features/${slug}/">${label}</a>`).join(" ／ ");
   const main = `<main class="page-shell" data-weekend-start="${model.range.start}" data-weekend-end="${model.range.end}">
-<header class="list-header"><nav class="breadcrumb" aria-label="パンくずリスト"><a href="../">MATSURI</a> &gt; <span>今週末の祭り</span></nav><h1>今週末の祭り（${shortDate(model.range.start)}(土)〜${shortDate(model.range.end)}(日)）</h1><p class="header-description">${lead}</p></header>
+<header class="list-header"><nav class="breadcrumb" aria-label="パンくずリスト"><a href="../">MATSURI</a> &gt; <span>今週末の祭り</span></nav><h1>今週末の祭り（${shortDate(model.range.start)}(土)〜${shortDate(model.range.end)}(日)）</h1><p id="weekend-lead" class="header-description">${lead}</p></header>
 <p id="weekend-stale-banner" role="status" hidden>この情報は更新待ちです。最新の祭りは月別・地域別からご覧ください。</p>
 ${weekendBlock}
 ${section("upcoming-section", "開催中・もうすぐ開催", model.upcoming)}
@@ -202,5 +213,5 @@ function main(args = process.argv.slice(2)) {
   if (args.includes("--summary")) console.log(`SUMMARY date=${asOf} changed=${!sandbox && !args.includes("--check") && result.changed} weekend=${shortDate(result.model.range.start)}-${shortDate(result.model.range.end)} confirmed_weekend=${result.model.weekend.length} upcoming=${result.model.upcoming.length} warnings=${result.model.warnings.length}`);
   return result;
 }
-module.exports = { ROBOTS_CONTENT, OUTPUT, todayJst, parseDate, addDays, weekendRange, confirmedEntry, buildModel, renderPage, generate, normalizeUpdated, releaseGate, atomicWrite, main };
+module.exports = { ROBOTS_CONTENT, OUTPUT, todayJst, parseDate, addDays, weekendRange, formatCardDates, confirmedEntry, buildModel, renderPage, generate, normalizeUpdated, releaseGate, atomicWrite, main };
 if (require.main === module) { try { main(); } catch (error) { console.error(error.message); process.exitCode = 1; } }

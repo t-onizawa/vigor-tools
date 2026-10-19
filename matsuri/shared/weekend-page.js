@@ -7,6 +7,8 @@
     if (section) section.hidden = true;
     const banner = document.getElementById("weekend-stale-banner");
     if (banner) banner.hidden = false;
+    const lead = document.getElementById("weekend-lead");
+    if (lead) lead.hidden = true;
   }
   main.querySelectorAll(".festival-item[data-end]").forEach((card) => {
     if (today > card.dataset.end) card.hidden = true;

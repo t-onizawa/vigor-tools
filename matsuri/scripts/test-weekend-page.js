@@ -18,6 +18,15 @@ test("日曜・月曜・JST境界", () => {
   assert.deepEqual(page.weekendRange("2026-10-26"), { start: "2026-10-31", end: "2026-11-01" });
   assert.equal(page.todayJst(new Date("2026-10-24T16:00:00Z")), "2026-10-25");
 });
+test("カード日付の過去日除去・連続まとめ・ほか・年またぎ", () => {
+  assert.equal(page.formatCardDates(["2026-10-18", "2026-10-19", "2026-10-20", "2026-10-22", "2026-10-24", "2026-10-26"], "2026-10-19"), "10月19日〜10月20日・10月22日・10月24日ほか");
+  assert.equal(page.formatCardDates(["2026-10-30", "2026-10-31", "2026-11-01", "2026-11-02", "2026-11-03"], "2026-10-19"), "10月30日〜11月3日");
+  assert.equal(page.formatCardDates(["2026-12-31", "2027-01-01"], "2026-12-30"), "12月31日〜2027年1月1日");
+  assert.equal(page.formatCardDates(["2027-01-02"], "2026-12-30"), "2027年1月2日");
+  const rendered = generate([festival("remaining", ["2026-10-18", "2026-10-24", "2026-11-01"])], "2026-10-19").html;
+  assert(rendered.includes('<p class="item-date">10月24日・11月1日</p>'));
+  assert(rendered.includes('data-end="2026-11-01"'));
+});
 test("年またぎ週末", () => {
   assert.deepEqual(page.weekendRange("2026-12-26"), { start: "2026-12-26", end: "2026-12-27" });
   assert.deepEqual(page.weekendRange("2026-12-31"), { start: "2027-01-02", end: "2027-01-03" });
@@ -63,13 +72,24 @@ test("14日窓・次週末・おすすめ上限・参考情報", () => {
   const model = page.buildModel(input, "2026-10-19");
   assert.equal(model.upcoming.length, 1);
   assert.equal(model.upcoming[0].festival.id, "boundary");
-  assert.equal(model.nextWeekend[0].festival.id, "boundary");
+  assert.equal(model.nextWeekend.length, 0);
+  assert.equal(model.nextRange, null);
+  assert(!generate(input, "2026-10-19").html.includes('id="next-weekend-section"'));
   assert.equal(model.recommendations.length, 6);
   assert(!model.recommendations.some((i) => ["weekend", "boundary"].includes(i.festival.id)));
   const ref = generate([festival("historical", ["2026-11-02"], { eventStatus: "ended" })], "2027-11-01");
   assert.equal(ref.model.references.length, 1);
   assert(ref.html.includes("例年は11月ごろ・次回の日程は未発表"));
   assert(!ref.html.includes('data-end="2026-11-02"'));
+});
+test("次の週末は掲載済みを除外して未掲載の最初の週末を選ぶ", () => {
+  const input = [festival("current", ["2026-10-24", "2026-11-07"]), festival("soon", ["2026-10-31", "2026-11-07"]), festival("unseen", ["2026-11-14"]), festival("later", ["2026-11-21"])];
+  const model = page.buildModel(input, "2026-10-19");
+  assert.deepEqual(model.nextRange, { start: "2026-11-14", end: "2026-11-15" });
+  assert.deepEqual(model.nextWeekend.map((item) => item.festival.id), ["unseen"]);
+  assert.deepEqual(model.recommendations.map((item) => item.festival.id), ["later"]);
+  const ids = [...model.weekend, ...model.upcoming, ...model.nextWeekend, ...model.recommendations].map((item) => item.festival.id);
+  assert.equal(new Set(ids).size, ids.length);
 });
 test("更新日据え置き・データ変更・atomic write", () => {
   const input = [festival("one", ["2026-11-10"])];
@@ -87,10 +107,11 @@ test("古い情報防止をDOMスタブで実行", () => {
   const old = { dataset: { end: "2026-10-25" }, hidden: false }, future = { dataset: { end: "2026-11-10" }, hidden: false };
   const weekend = { hidden: false, querySelectorAll: () => [old] };
   const upcoming = { hidden: false, querySelectorAll: () => [old, future] };
-  const banner = { hidden: true };
+  const banner = { hidden: true }, lead = { hidden: false };
   const main = { dataset: { weekendEnd: "2026-10-25" }, querySelectorAll: (selector) => selector === ".festival-item[data-end]" ? [old, future] : [weekend, upcoming] };
   class MockDate extends Date { constructor(...args) { super(...(args.length ? args : ["2026-10-25T16:00:00Z"])); } }
-  vm.runInNewContext(fs.readFileSync(path.join(MATSURI_ROOT, "shared/weekend-page.js"), "utf8"), { Date: MockDate, Intl, document: { querySelector: () => main, getElementById: (id) => id === "this-weekend-section" ? weekend : banner } });
+  vm.runInNewContext(fs.readFileSync(path.join(MATSURI_ROOT, "shared/weekend-page.js"), "utf8"), { Date: MockDate, Intl, document: { querySelector: () => main, getElementById: (id) => ({ "this-weekend-section": weekend, "weekend-stale-banner": banner, "weekend-lead": lead })[id] } });
+  assert.equal(lead.hidden, true);
   assert.equal(banner.hidden, false); assert.equal(weekend.hidden, true); assert.equal(old.hidden, true); assert.equal(future.hidden, false); assert.equal(upcoming.hidden, false);
 });
 test("robots・JSON-LD・release gate合成成功", () => {
@@ -109,7 +130,7 @@ test("TZ=UTC / Asia/Tokyoで出力一致", () => {
 });
 const real = loadHubData();
 const snapshots = {};
-for (const asOf of ["2026-11-21", "2026-12-05", "2026-10-24", "2026-10-25", "2026-10-26", "2026-12-26", "2026-12-31", "2027-01-02"]) {
+for (const asOf of ["2026-10-19", "2026-10-24", "2026-10-25", "2026-10-26", "2026-11-21", "2026-12-05", "2026-12-26", "2026-12-31", "2027-01-02"]) {
   const r = page.generate({ festivals: real.items.map((i) => i.festival), experienceTags: real.experienceTags, cssVersion: real.cssVersion, asOf });
   snapshots[asOf] = { weekend: r.model.weekend.length, upcoming: r.model.upcoming.length, nextWeekend: r.model.nextWeekend.length, recommendations: r.model.recommendations.length, references: r.model.references.length, excluded: r.model.excluded, warnings: r.model.warnings };
   if (asOf === "2027-01-02") assert([...r.model.weekend, ...r.model.upcoming, ...r.model.recommendations].every((i) => i.dates.some((d) => d >= asOf)));
