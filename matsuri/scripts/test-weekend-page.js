@@ -13,6 +13,19 @@ function festival(id, dates, extra = {}) {
   return { id, name: id, prefecture: "東京都", city: "テスト市", areaTag: "tokyo", constantInfo: { features: {}, access: {} }, yearlyInfo: [{ year: Number(dates[0]?.slice(0, 4) || 2026), eventStatus: "confirmed", dates, access: { hasParking: null }, confirmation: { confirmedDate: "2026-01-01" }, ...extra }] };
 }
 const generate = (festivals, asOf, existing = "") => page.generate({ festivals, asOf, existing, experienceTags: {}, cssVersion: "52" });
+test("見出しは本体と日付span・囲み括弧なし", () => {
+  for (const asOf of ["2026-10-19", "2027-12-29"]) {
+    const html = generate([], asOf).html;
+    const { start, end } = page.weekendRange(asOf);
+    const short = (date) => date.split("-").slice(1).map(Number).join("/");
+    const dates = `${short(start)}(土)〜${short(end)}(日)`;
+    assert(html.includes(`<h1>今週末の祭り <span class="weekend-title-dates">${dates}</span></h1>`));
+    assert(!/<h1>[^<]*（/.test(html));
+    assert(html.includes(".weekend-title-dates{display:block;"));
+    assert(html.includes('white-space:nowrap'));
+    assert(html.includes('<title>今週末の祭り｜開催確認済みの祭りを探す | MATSURI</title>'));
+  }
+});
 test("日曜・月曜・JST境界", () => {
   assert.deepEqual(page.weekendRange("2026-10-25"), { start: "2026-10-24", end: "2026-10-25" });
   assert.deepEqual(page.weekendRange("2026-10-26"), { start: "2026-10-31", end: "2026-11-01" });
