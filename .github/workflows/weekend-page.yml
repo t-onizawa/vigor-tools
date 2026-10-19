@@ -108,8 +108,15 @@ jobs:
           done
           test "$status" = built
           test "$(jq -r .commit "$RUNNER_TEMP/pages-status.json")" = "$EXPECTED_SHA"
-          curl --fail --silent --show-error --location 'https://vigorlab.net/matsuri/this-weekend/?internal=1' -o "$RUNNER_TEMP/weekend-production.html"
+          # 検証ごとにURLを変え、過去runのキャッシュを再利用しない。
+          # internal=1は本番検証アクセスの共通ルールとして維持する。
+          production_url="https://vigorlab.net/matsuri/this-weekend/?internal=1&weekend_run=${GITHUB_RUN_ID}-${GITHUB_RUN_ATTEMPT}&sha=${EXPECTED_SHA}"
+          curl --fail --silent --show-error --location \
+            -H 'Cache-Control: no-cache' \
+            --dump-header "$RUNNER_TEMP/weekend-production.headers" \
+            "$production_url" -o "$RUNNER_TEMP/weekend-production.html"
           cmp matsuri/this-weekend/index.html "$RUNNER_TEMP/weekend-production.html"
           echo "Pages build: $BUILD_URL" >> "$GITHUB_STEP_SUMMARY"
+          echo "本番照合URL: $production_url" >> "$GITHUB_STEP_SUMMARY"
           echo "本番HTML SHA256: $(sha256sum "$RUNNER_TEMP/weekend-production.html" | cut -d ' ' -f 1)" >> "$GITHUB_STEP_SUMMARY"
           echo "本番一致確認 UTC: $(date -u +%FT%TZ)" >> "$GITHUB_STEP_SUMMARY"
