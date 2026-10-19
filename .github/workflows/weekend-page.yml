@@ -118,5 +118,8 @@ jobs:
           cmp matsuri/this-weekend/index.html "$RUNNER_TEMP/weekend-production.html"
           echo "Pages build: $BUILD_URL" >> "$GITHUB_STEP_SUMMARY"
           echo "本番照合URL: $production_url" >> "$GITHUB_STEP_SUMMARY"
+          echo '```text' >> "$GITHUB_STEP_SUMMARY"
+          awk 'tolower($0) ~ /^(http\/|age:|x-cache:|last-modified:|cache-control:)/' "$RUNNER_TEMP/weekend-production.headers" >> "$GITHUB_STEP_SUMMARY"
+          echo '```' >> "$GITHUB_STEP_SUMMARY"
           echo "本番HTML SHA256: $(sha256sum "$RUNNER_TEMP/weekend-production.html" | cut -d ' ' -f 1)" >> "$GITHUB_STEP_SUMMARY"
           echo "本番一致確認 UTC: $(date -u +%FT%TZ)" >> "$GITHUB_STEP_SUMMARY"
