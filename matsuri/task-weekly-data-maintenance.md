@@ -29,6 +29,7 @@ VIGOR MATSURIの週次データ整合性チェックと、検証成功時の自�
 - slug、id、既存enum、pointTypeを確認する
 - canonical、JSON-LDを確認する
 - 「開催中／まもなく開催」の日付整合を確認する
+- 今週末ページの自動更新：gh run list --workflow weekend-page.yml --status success --limit 1 の最終成功日時が48時間以内か。超えていれば報告（原因調査はしない）
 - 全data.jsに node --check を実行する
 - git diff --check を実行する
 - プロジェクト既定の関連テストとbuildを実行する
