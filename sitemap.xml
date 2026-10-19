@@ -2670,4 +2670,8 @@
     <loc>https://vigorlab.net/matsuri/festivals/onagawa-aki-no-shukakusai/</loc>
     <lastmod>2026-10-19</lastmod><changefreq>yearly</changefreq><priority>0.7</priority>
   </url>
+  <url>
+    <loc>https://vigorlab.net/matsuri/this-weekend/</loc>
+    <lastmod>2026-10-19</lastmod><changefreq>weekly</changefreq><priority>0.6</priority>
+  </url>
 </urlset>

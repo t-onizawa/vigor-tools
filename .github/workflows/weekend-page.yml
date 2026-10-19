@@ -49,8 +49,7 @@ jobs:
           node matsuri/scripts/generate-weekend-page.js --summary | tee "$RUNNER_TEMP/weekend-generation.log"
           grep '^SUMMARY ' "$RUNNER_TEMP/weekend-generation.log" >> "$GITHUB_STEP_SUMMARY"
           node matsuri/scripts/generate-weekend-page.js --check
-          node matsuri/scripts/test-weekend-page.js
-          node matsuri/scripts/check-weekend-stage2.js
+          node matsuri/scripts/test-weekend-page.js --release-gate
       - name: Commit changed HTML and sync main
         id: sync
         shell: bash
@@ -69,7 +68,7 @@ jobs:
           # 外部のデータ更新を取り込んだ場合も最新mainに対して再検証する。
           # 不整合・競合・push拒否はそのまま失敗。再試行はしない。
           node matsuri/scripts/generate-weekend-page.js --check
-          node matsuri/scripts/check-weekend-stage2.js
+          node matsuri/scripts/test-weekend-page.js --release-gate
           if [ "$(git rev-parse HEAD)" != "$(git rev-parse origin/main)" ]; then
             git push origin HEAD:main
             echo 'pushed=true' >> "$GITHUB_OUTPUT"
