@@ -123,7 +123,8 @@ test("robots・JSON-LD・release gate合成成功", () => {
   assert.equal(json[1].dateModified, "2026-10-19");
   assert.deepEqual(page.releaseGate(html, "", "").map(([, ok]) => ok), [true, false, false]);
   const topHtml = fs.readFileSync(path.join(MATSURI_ROOT, "index.html"), "utf8");
-  assert(topHtml.includes('<p class="weekend-page-link"><a href="/matsuri/this-weekend/">今週末の祭りを見る →</a></p>'));
+  assert(/id="weekend-banner-link"[^>]*href="\/matsuri\/this-weekend\/"/.test(topHtml));
+  assert(!topHtml.includes('class="weekend-page-link"'));
   assert.deepEqual(page.releaseGate(html, topHtml, "").map(([, ok]) => ok), [true, true, false]);
   assert(page.releaseGate(html, topHtml, '<url><loc>https://vigorlab.net/matsuri/this-weekend/</loc></url>').every(([, ok]) => ok));
 });

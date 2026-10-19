@@ -800,6 +800,7 @@
     const regionEntry = document.getElementById("weekend-banner-region-entry");
 
     if (regionEntry) {
+      regionEntry.hidden = weekendItems.length === 0;
       regionEntry.textContent = selectedPrefectures
         ? `${REGION_LABELS[selectedRegion]}を変更`
         : "地域を選ぶ";
@@ -807,7 +808,7 @@
 
     const hubLink = document.getElementById("weekend-banner-hub-link");
     if (hubLink) {
-      if (selectedPrefectures && REGION_HUB_SLUGS.has(selectedRegion)) {
+      if (weekendItems.length > 0 && selectedPrefectures && REGION_HUB_SLUGS.has(selectedRegion)) {
         hubLink.href = `regions/${selectedRegion}/`;
         hubLink.textContent = `${REGION_LABELS[selectedRegion]}の祭りを見る →`;
         hubLink.hidden = false;
@@ -816,12 +817,8 @@
       }
     }
 
-    if (weekendItems.length === 0) {
-      bannerSection.hidden = true;
-      picksSection.hidden = true;
-      picksList.replaceChildren();
-      return;
-    }
+    const cta = bannerSection.querySelector(".weekend-banner-cta");
+    if (cta) cta.textContent = weekendItems.length === 0 ? "次に行ける祭りを見る →" : "今週末の祭り ↓";
 
     const range = getUpcomingWeekendRange();
     const dates = document.getElementById("weekend-banner-dates");
@@ -830,7 +827,9 @@
     if (dates) dates.textContent = `${formatWeekendDate(range.satTime)}–${formatWeekendDate(range.sunTime)}`;
     if (count) {
       count.replaceChildren();
-      if (selectedPrefectures && regionalWeekendItems.length === 0) {
+      if (weekendItems.length === 0) {
+        count.textContent = "今週末は開催確認済みの祭りがありません";
+      } else if (selectedPrefectures && regionalWeekendItems.length === 0) {
         count.append(
           document.createTextNode(`${REGION_LABELS[selectedRegion]}では`),
           document.createElement("br"),
@@ -909,7 +908,7 @@
     const sortedWeekendItems = sortByRegionPriority(weekendItems, selectedPrefectures);
     picksList.replaceChildren(...sortedWeekendItems.slice(0, 4).map((item) => renderPickCard(item, "weekend_picks")));
     bannerSection.hidden = false;
-    picksSection.hidden = false;
+    picksSection.hidden = weekendItems.length === 0;
   }
 
   function sortByRegionPriority(items, selectedPrefectures) {
