@@ -1,0 +1,115 @@
+name: Update weekend page
+
+on:
+  schedule:
+    - cron: '7 19 * * *' # 翌日04:07 JST
+  workflow_dispatch:
+    inputs:
+      simulate_failure:
+        description: '通知確認用に更新前に意図的に失敗する'
+        type: boolean
+        default: false
+  push:
+    branches: [main]
+    paths:
+      - 'matsuri/festivals/**'
+
+permissions:
+  contents: write
+  pages: write
+
+concurrency:
+  group: weekend-page-main
+  cancel-in-progress: false
+
+jobs:
+  update:
+    if: github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    env:
+      GH_TOKEN: ${{ github.token }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+          fetch-depth: 0
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Simulate failure
+        if: inputs.simulate_failure == true
+        run: |
+          echo '::error::simulate_failure=true による意図的な失敗'
+          exit 1
+      - name: Generate and check
+        shell: bash
+        run: |
+          set -euo pipefail
+          node matsuri/scripts/generate-weekend-page.js --summary | tee "$RUNNER_TEMP/weekend-generation.log"
+          grep '^SUMMARY ' "$RUNNER_TEMP/weekend-generation.log" >> "$GITHUB_STEP_SUMMARY"
+          node matsuri/scripts/generate-weekend-page.js --check
+          node matsuri/scripts/test-weekend-page.js
+          node matsuri/scripts/check-weekend-stage2.js
+      - name: Commit changed HTML and sync main
+        id: sync
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add matsuri/this-weekend/index.html
+          if git diff --cached --quiet; then
+            echo '差分なし：コミットしません。' >> "$GITHUB_STEP_SUMMARY"
+          else
+            git commit -m 'content: 今週末の祭りページを自動更新'
+          fi
+          git fetch origin main
+          git rebase origin/main
+          # 外部のデータ更新を取り込んだ場合も最新mainに対して再検証する。
+          # 不整合・競合・push拒否はそのまま失敗。再試行はしない。
+          node matsuri/scripts/generate-weekend-page.js --check
+          node matsuri/scripts/check-weekend-stage2.js
+          if [ "$(git rev-parse HEAD)" != "$(git rev-parse origin/main)" ]; then
+            git push origin HEAD:main
+            echo 'pushed=true' >> "$GITHUB_OUTPUT"
+          else
+            echo 'pushed=false' >> "$GITHUB_OUTPUT"
+          fi
+          echo "sha=$(git rev-parse HEAD)" >> "$GITHUB_OUTPUT"
+          echo "main SHA: $(git rev-parse HEAD)" >> "$GITHUB_STEP_SUMMARY"
+      - name: Request existing Pages build
+        id: pages
+        shell: bash
+        run: |
+          set -euo pipefail
+          # GITHUB_TOKENのpushだけではPagesは起動しないため明示的に要求する。
+          gh api --method POST "repos/$GITHUB_REPOSITORY/pages/builds" > "$RUNNER_TEMP/pages-build.json"
+          cat "$RUNNER_TEMP/pages-build.json"
+          echo "build_url=$(jq -r .url "$RUNNER_TEMP/pages-build.json")" >> "$GITHUB_OUTPUT"
+      - name: Wait for Pages and compare production HTML
+        shell: bash
+        env:
+          BUILD_URL: ${{ steps.pages.outputs.build_url }}
+          EXPECTED_SHA: ${{ steps.sync.outputs.sha }}
+        run: |
+          set -euo pipefail
+          # 状態の監視のみ。ビルドや更新処理を再試行しない。
+          for poll in {1..60}; do
+            gh api "$BUILD_URL" > "$RUNNER_TEMP/pages-status.json"
+            status=$(jq -r .status "$RUNNER_TEMP/pages-status.json")
+            commit=$(jq -r .commit "$RUNNER_TEMP/pages-status.json")
+            if [ "$commit" = "$EXPECTED_SHA" ] && [ "$status" = errored ]; then
+              cat "$RUNNER_TEMP/pages-status.json"
+              exit 1
+            fi
+            if [ "$commit" = "$EXPECTED_SHA" ] && [ "$status" = built ]; then break; fi
+            sleep 10
+          done
+          test "$status" = built
+          test "$(jq -r .commit "$RUNNER_TEMP/pages-status.json")" = "$EXPECTED_SHA"
+          curl --fail --silent --show-error --location 'https://vigorlab.net/matsuri/this-weekend/?internal=1' -o "$RUNNER_TEMP/weekend-production.html"
+          cmp matsuri/this-weekend/index.html "$RUNNER_TEMP/weekend-production.html"
+          echo "Pages build: $BUILD_URL" >> "$GITHUB_STEP_SUMMARY"
+          echo "本番HTML SHA256: $(sha256sum "$RUNNER_TEMP/weekend-production.html" | cut -d ' ' -f 1)" >> "$GITHUB_STEP_SUMMARY"
+          echo "本番一致確認 UTC: $(date -u +%FT%TZ)" >> "$GITHUB_STEP_SUMMARY"
