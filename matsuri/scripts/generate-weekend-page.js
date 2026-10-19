@@ -1,5 +1,5 @@
-// 段階1。公開可否はこの定数だけで切り替える。
-const ROBOTS_CONTENT = "noindex,follow";
+// 段階3。公開可否はこの定数だけで切り替える。
+const ROBOTS_CONTENT = "index,follow";
 const fs = require("fs");
 const path = require("path");
 const { MONTHS, REGIONS, MATSURI_ROOT, loadHubData, renderMonthPage } = require("./lib/hub-shared");

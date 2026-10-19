@@ -116,13 +116,16 @@ test("古い情報防止をDOMスタブで実行", () => {
 });
 test("robots・JSON-LD・release gate合成成功", () => {
   const html = generate([], "2026-10-19").html;
+  assert.equal(page.ROBOTS_CONTENT, "index,follow");
   assert(html.includes(`<meta name="robots" content="${page.ROBOTS_CONTENT}">`));
   const json = [...html.matchAll(/<script type="application\/ld\+json">(.*?)<\/script>/g)].map((m) => JSON.parse(m[1]));
   assert.deepEqual(json.map((j) => j["@type"]), ["BreadcrumbList", "ItemList"]);
   assert.equal(json[1].dateModified, "2026-10-19");
-  assert(page.releaseGate(html, "", "").every(([, ok]) => !ok));
-  const ready = html.replace('content="noindex,follow"', 'content="index,follow"');
-  assert(page.releaseGate(ready, '<a href="/matsuri/this-weekend/">週末</a>', '<url><loc>https://vigorlab.net/matsuri/this-weekend/</loc></url>', "index,follow").every(([, ok]) => ok));
+  assert.deepEqual(page.releaseGate(html, "", "").map(([, ok]) => ok), [true, false, false]);
+  const topHtml = fs.readFileSync(path.join(MATSURI_ROOT, "index.html"), "utf8");
+  assert(topHtml.includes('<p class="weekend-page-link"><a href="/matsuri/this-weekend/">今週末の祭りを見る →</a></p>'));
+  assert.deepEqual(page.releaseGate(html, topHtml, "").map(([, ok]) => ok), [true, true, false]);
+  assert(page.releaseGate(html, topHtml, '<url><loc>https://vigorlab.net/matsuri/this-weekend/</loc></url>').every(([, ok]) => ok));
 });
 test("TZ=UTC / Asia/Tokyoで出力一致", () => {
   const script = `const p=require(${JSON.stringify(path.join(__dirname, "generate-weekend-page.js"))});const {loadHubData}=require(${JSON.stringify(path.join(__dirname, "lib/hub-shared.js"))});const d=loadHubData();process.stdout.write(p.generate({festivals:d.items.map(i=>i.festival),experienceTags:d.experienceTags,cssVersion:d.cssVersion,asOf:'2026-12-31'}).html);`;
