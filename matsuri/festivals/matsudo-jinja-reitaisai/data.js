@@ -26,7 +26,7 @@ const FESTIVAL = {
     confirmation: { verified: true, confirmedDate: "2026-07-30", sources: ["https://www.matsudojinja.com/announcements/shen-xing-ji-yu-zhai-xing-noozhi-rase", "https://www.matsudo-kankou.jp/sightseeing/%E6%9D%BE%E6%88%B8%E7%A5%9E%E7%A4%BE%E7%A5%9E%E5%B9%B8%E7%A5%AD/"] }
   },
   yearlyInfo: [{
-    year: 2026, eventStatus: "confirmed", dates: ["2026-10-18"],
+    year: 2026, eventStatus: "ended", dates: ["2026-10-18"],
     access: { hasParking: null, parkingNote: "神幸祭専用駐車場・交通規制の詳細は未確認。" },
     confirmation: {
       confirmedDate: "2026-07-30",

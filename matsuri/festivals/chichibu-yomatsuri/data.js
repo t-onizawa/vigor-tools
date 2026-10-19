@@ -60,19 +60,19 @@ const FESTIVAL = {
   yearlyInfo: [
     {
       year: 2026,
-      eventStatus: "scheduled_pending_official",
+      eventStatus: "confirmed",
       dates: ["2026-12-02", "2026-12-03"],
       access: {
         hasParking: null,
-        parkingNote: "秩父神社公式サイトのアクセス案内には駐車場の記載がない。祭り当日は交通規制が敷かれるため、2026年の駐車場詳細は別途確認が必要。"
+        parkingNote: "2026年の臨時駐車場・交通案内図は秩父市公式で準備中（2026年10月19日時点）。祭り当日は交通規制が敷かれるため、公式の発表を確認してください。"
       },
       confirmation: {
-        confirmedDate: "2026-07-28",
+        confirmedDate: "2026-10-19",
         sources: [
-          "https://navi.city.chichibu.lg.jp/p_festival/1030/",
+          "https://navi.city.chichibu.lg.jp/info/2026/10/31171/",
           "https://www.chichibuji.gr.jp/event/yomatsuri/"
         ],
-        note: "毎年12月2日・3日固定という恒常的な開催パターンによる確認。2026年個別の公式発表は調査時点(2026-07-28)では未確認だが、100年以上続く固定日程の例大祭であるため開催予定として扱う。"
+        note: "秩父市公式の2026年10月13日更新で、宵宮12月2日（水）・本祭12月3日（木）を確認。臨時駐車場・交通案内図は準備中。"
       }
     }
   ]

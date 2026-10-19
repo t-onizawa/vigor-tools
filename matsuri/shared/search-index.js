@@ -533,7 +533,7 @@ const SEARCH_INDEX = [
     "officialName": "諏訪神社秋季例大祭",
     "prefecture": "群馬県",
     "city": "下仁田町",
-    "firstDate": null
+    "firstDate": "2026-10-10"
   },
   {
     "slug": "nakanojo-torioi-matsuri",

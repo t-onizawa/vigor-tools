@@ -22,11 +22,11 @@ const FESTIVAL = {
     confirmation: { verified: true, confirmedDate: "2026-07-31", sources: ["https://www.town.shimonita.lg.jp/kanko/m03/m06/m01/03.html"] }
   },
   yearlyInfo: [{
-    year: 2026, eventStatus: "unconfirmed", dates: [],
-    access: { hasParking: null, parkingNote: "2026年の駐車場・交通規制は公式発表未確認。" },
+    year: 2026, eventStatus: "ended", dates: ["2026-10-10", "2026-10-11"],
+    access: { hasParking: null, parkingNote: "町公式に駐車場の記載はなし。交通規制は10月10日15:00〜21:00（町内）、11日14:00〜16:00（石神通り）・15:00〜21:00（町内）。" },
     confirmation: {
-      confirmedDate: "2026-07-31", sources: ["https://www.town.shimonita.lg.jp/m04/m06/m01/index.html"],
-      note: "2025年は10月11・12日に開催。2026年の具体日程・巡行内容は未発表。下仁田ねぎ祭りとは別イベント。"
+      confirmedDate: "2026-10-19", sources: ["https://www.town.shimonita.lg.jp/kanko/m03/m06/m01/03.html"],
+      note: "下仁田町公式の2026年10月9日更新で、10月10日（土）・11日（日）の開催と両日の巡行時刻を確認。下仁田ねぎ祭りとは別イベント。"
     }
   }]
 };

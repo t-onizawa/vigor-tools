@@ -12,7 +12,7 @@ const fs = require("fs");
 const path = require("path");
 
 const FESTIVALS_DIR = path.join(__dirname, "..", "festivals");
-const TODAY = new Date().toISOString().slice(0, 10);
+const TODAY = new Intl.DateTimeFormat("sv-SE", { timeZone: "Asia/Tokyo" }).format(new Date());
 
 const VALID_FEATURE_VALUES = new Set([true, false, null, "n/a"]);
 const FEATURE_KEYS = ["hasDashi", "hasMikoshi", "hasDanceOnDashi", "hasParade"];

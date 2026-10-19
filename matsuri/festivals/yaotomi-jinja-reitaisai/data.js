@@ -32,7 +32,7 @@ const FESTIVAL = {
   },
   "yearlyInfo": [{
     "year": 2026,
-    "eventStatus": "confirmed",
+    "eventStatus": "ended",
     "dates": ["2026-10-17", "2026-10-18"],
     "schedule": [
       {"date": "2026-10-17", "time": "10:00", "label": "八百富神社例祭"},
