@@ -1,0 +1,3115 @@
+{
+ "checkedAt": "2026-10-20",
+ "sourceUrls": {
+  "https://www.hot-ishikawa.jp/feature/detail_557.html": {
+   "cls": "ok",
+   "status": 200
+  },
+  "https://www.hot-ishikawa.jp/notohaku/event/detail_12007.html": {
+   "cls": "ok",
+   "status": 200
+  },
+  "https://www.abikokappa.website/": {
+   "cls": "ok",
+   "status": 200
+  },
+  "https://www.city.abiko.chiba.jp/event/event_moyooshi/abikokappamatsuri.html": {
+   "cls": "ok",
+   "status": 200
+  },
+  "https://www.city.abiko.chiba.jp/event/shizennonaka/kouenryokuchi/park/citypark/teganuma.html": {
+   "cls": "ok",
+   "status": 200
+  },
+  "https://www.town.minamiaizu.lg.jp/official/soshikikarasagasu/shokokankoka/minamiaizuchokankojoho/4/index.html": {
+   "cls": "ok",
+   "status": 200
+  },
+  "https://www.kanko-aizu.com/gion/": {
+   "cls": "ok",
+   "status": 200
+  },
+  "https://www.kanko-aizu.com/information/39328/": {
+   "cls": "ok",
+   "status": 200
+  },
+  "https://aichinow.pref.aichi.jp/events/detail/1532/": {
+   "cls": "ok",
+   "status": 200
+  },
+  "https://aichinow.pref.aichi.jp/events/detail/2362/": {
+   "cls": "ok",
+   "status": 200
+  },
+  "https://www.kantou.gr.jp/": {
+   "cls": "ok",
+   "status": 200
+  },
+  "https://www.akita-yulala.jp/festival/335": {
+   "cls": "ok",
+   "status": 200
+  },
+  "https://akita-fun.jp/spots/31": {
+   "cls": "ok",
+   "status": 200
+  },
+  "https://www.akkeshi-town.jp/kanko/event/summer/": {
+   "cls": "ok",
+   "status": 200
+  },
+  "https://www.akkeshi-town.jp/oshirase/4243/": {
+   "cls": "ok",
+   "status": 200
+  },
+  "https://www.kagoshima-kankou.com/event/52271": {
+   "cls": "ok",
+   "status": 200
+  },
+  "https://www.awanavi.jp/archives/event/1863": {
+   "cls": "ok",
+   "status": 200
+  },
+  "https://www.city.anan.tokushima.jp/syoubou/docs/2025070700016/": {
+   "cls": "ok",
+   "status": 200
+  },
+  "https://www.city.annaka.lg.jp/page/21641.html": {
+   "cls": "ok",
+   "status": 200
+  },
+  "https://www.city.annaka.lg.jp/page/2058.html": {
+   "cls": "ok",
+   "status": 200
+  },
+  "https://www.city.annaka.lg.jp/site/mayor/30916.html": {
+   "cls": "ok",
+   "status": 200
+  },
+  "https://www.nebuta.jp/": {
+   "cls": "ok",
+   "status": 200
+  },
+  "https://www.nebuta.jp/info/schedule/schedule.html": {
+   "cls": "ok",
+   "status": 200
+  },
+  "https://www.nebuta.jp/info/reserved-seats/individual.html": {
+   "cls": "ok",
+   "status": 200
+  },
+  "https://aichinow.pref.aichi.jp/events/detail/1720/": {
+   "cls": "ok",
+   "status": 200
+  },
+  "https://www.fuku-e.com/event/detail_5233.html": {
+   "cls": "ok",
+   "status": 200
+  },
+  "https://aichinow.pref.aichi.jp/events/detail/1079/": {
+   "cls": "ok",
+   "status": 200
+  },
+  "https://www.asakusa-samba.org/": {
+   "cls": "ok",
+   "status": 200
+  },
+  "https://www.city.taito.lg.jp/event/kanko/asakusa-sanba.html": {
+   "cls": "ok",
+   "status": 200
+  },
+  "https://t-navi.city.taito.lg.jp/event/1408": {
+   "cls": "ok",
+   "status": 200
+  },
+  "https://aichinow.pref.aichi.jp/events/detail/1134/": {
+   "cls": "ok",
+   "status": 200
+  },
+  "https://www.city.tateyama.chiba.jp/syougaigaku/page003452.html": {
+   "cls": "ok",
+   "status": 200
+  },
+  "https://www.city.tateyama.chiba.jp/files/300377332.pdf": {
+   "cls": "ok",
+   "status": 200
+  },
+  "https://www.visit-oita.jp/events/detail/14003": {
+   "cls": "ok",
+   "status": 200
+  },
+  "https://beppu-event.jp/natsuyoi/": {
+   "cls": "ok",
+   "status": 200
+  },
+  "https://takahasikanko.or.jp/modules/takahashi/index.php?content_id=7": {
+   "cls": "ok",
+   "status": 200
+  },
+  "https://takahasikanko.or.jp/modules/takahashi/index.php?content_id=9": {
+   "cls": "ok",
+   "status": 200
+  },
+  "https://www.aichinow.pref.aichi.jp/events/detail/1776/": {
+   "cls": "ok",
+   "status": 200
+  },
+  "https://chaguuma.com/": {
+   "cls": "ok",
+   "status": 200
+  },
+  "https://www.city.morioka.iwate.jp/kanko_sports_bunka/kanko_miryoku/rekishi/umako/1007961.html": {
+   "cls": "ok",
+   "status": 200
+  },
+  "https://chaguuma.com/news/%E4%BB%A4%E5%92%8C%EF%BC%98%E5%B9%B4%EF%BC%96%E6%9C%8813%E6%97%A5%EF%BC%88%E5%9C%9F%EF%BC%89%E3%83%81%E3%83%A3%E3%82%B0%E3%83%81%E3%83%A3%E3%82%B0%E9%A6%AC%E3%82%B3%E9%96%8B%E5%82%AC%EF%BC%81/": {
+   "cls": "ok",
+   "status": 200
+  },
+  "https://www.pref.iwate.jp/event/moyooshi/1099317.html": {
+   "cls": "ok",
+   "status": 200
+  },
+  "https://www.mukujinja.or.jp/": {
+   "cls": "ok",
+   "status": 200
+  },
+  "https://ryusei.biz/": {
+   "cls": "ok",
+   "status": 200
+  },
+  "https://www.chichibuji.gr.jp/event/ryuusei/": {
+   "cls": "ok",
+   "status": 200
+  },
+  "https://navi.city.chichibu.lg.jp/p_festival/1195/": {
+   "cls": "ok",
+   "status": 200
+  },
+  "https://navi.city.chichibu.lg.jp/p_festival/1030/": {
+   "cls": "ok",
+   "status": 200
+  },
+  "https://www.chichibuji.gr.jp/event/yomatsuri/": {
+   "cls": "ok",
+   "status": 200
+  },
+  "https://www.chichibu-matsuri.jp/yomatsuri/": {
+   "cls": "ok",
+   "status": 200
+  },
+  "https://navi.city.chichibu.lg.jp/info/2026/10/31171/": {
+   "cls": "ok",
+   "status": 200
+  },
+  "https://aichinow.pref.aichi.jp/events/detail/1582/": {
+   "cls": "ok",
+   "status": 200
+  },
+  "https://www.info-toyama.com/events/20063": {
+   "cls": "ok",
+   "status": 200
+  },
+  "https://daisekigaharasai.pref.gifu.lg.jp/mainevent/": {
+   "cls": "ok",
+   "status": 200
+  },
+  "https://daisekigaharasai.pref.gifu.lg.jp/access/": {
+   "cls": "ok",
+   "status": 200
+  },
+  "https://www.kankou-shimane.com/events/75340": {
+   "cls": "ok",
+   "status": 200
+  },
+  "https://dekansho.jp/about-fes/": {
+   "cls": "ok",
+   "status": 200
+  },
+  "https://dekansho.jp/": {
+   "cls": "ok",
+   "status": 200
+  },
+  "https://dekansho.jp/news/%E7%9A%86%E6%A7%98%E3%81%82%E3%82%8A%E3%81%8C%E3%81%A8%E3%81%86%E3%81%94%E3%81%96%E3%81%84%E3%81%BE%E3%81%97%E3%81%9F/": {
+   "cls": "ok",
+   "status": 200
+  },
+  "https://www.info-toyama.com/events/20052": {
+   "cls": "ok",
+   "status": 200
+  },
+  "https://www.okinawastory.jp/event/600022638": {
+   "cls": "ok",
+   "status": 200
+  },
+  "https://www.fujisawa-kanko.jp/event/20260601.html": {
+   "cls": "broken",
+   "status": 404
+  },
+  "https://enoshimajinja.or.jp/": {
+   "cls": "uncertain",
+   "status": "ERR_TLS_CERT_ALTNAME_INVALID"
+  },
+  "https://www.miyazaki-city.tourism.or.jp/feature/miyazaki_festival": {
+   "cls": "ok",
+   "status": 200
+  },
+  "https://www.ookunitamajinja.or.jp/matsuri/5-kurayami.php": {
+   "cls": "ok",
+   "status": 200
+  },
+  "https://www.city.fuchu.tokyo.jp/kanko/event/kurayamimatsuri.html": {
+   "cls": "ok",
+   "status": 200
+  },
+  "https://aichinow.pref.aichi.jp/events/detail/3072/": {
+   "cls": "ok",
+   "status": 200
+  },
+  "https://www.city.fujinomiya.lg.jp/1025200000/event/p000045.html": {
+   "cls": "ok",
+   "status": 200
+  },
+  "https://www.city.fujioka.gunma.jp/soshiki/kikakubu/hisho/1/reiwa8/11161.html": {
+   "cls": "ok",
+   "status": 200
+  },
+  "https://fujisakigu.or.jp/": {
+   "cls": "ok",
+   "status": 200
+  },
+  "https://fujisakigu.or.jp/2026/08/19/%E4%BB%A4%E5%92%8C%EF%BC%98%E5%B9%B4%E8%97%A4%E5%B4%8E%E5%85%AB%E6%97%9B%E5%AE%AE%E4%BE%8B%E5%A4%A7%E7%A5%AD-2/": {
+   "cls": "ok",
+   "status": 200
+  },
+  "https://www.city.fujinomiya.lg.jp/1025200000/event/p000075.html": {
+   "cls": "ok",
+   "status": 200
+  },
+  "https://www.baynet.ne.jp/fukagawamatsuri/": {
+   "cls": "ok",
+   "status": 200
+  },
+  "http://www.tomiokahachimangu.or.jp/": {
+   "cls": "ok",
+   "status": 200
+  },
+  "https://www.city.fukaya.saitama.jp/doraku/guide/guide05.html": {
+   "cls": "ok",
+   "status": 200
+  },
+  "https://www.city.kounosu.saitama.jp/site/event/7744.html": {
+   "cls": "ok",
+   "status": 200
+  },
+  "https://konosu-kanko.jp/event/fukiage-natsumatsuri/": {
+   "cls": "ok",
+   "status": 200
+  },
+  "https://www.asobo-saga.jp/events/detail/effc72f5-5a8b-4add-bea1-e37eee1d587d": {
+   "cls": "ok",
+   "status": 200
+  },
+  "https://www.sashoren.ne.jp/siroishi/event/index.html": {
+   "cls": "ok",
+   "status": 200
+  },
+  "https://www.fuku-e.com/event/detail_4980.html": {
+   "cls": "ok",
+   "status": 200
+  },
+  "https://www.f-kankou.jp/event/41521": {
+   "cls": "ok",
+   "status": 200
+  },
+  "https://www.waraji.co.jp/": {
+   "cls": "ok",
+   "status": 200
+  },
+  "https://www.city.fukushima.fukushima.jp/kanko-bunka-sports/kanko/4/14040.html": {
+   "cls": "ok",
+   "status": 200
+  },
+  "https://www.waraji.co.jp/topics/1157/": {
+   "cls": "ok",
+   "status": 200
+  },
+  "https://fukuyama-matsuri.jp/bara/": {
+   "cls": "ok",
+   "status": 200
+  },
+  "https://fukuyama-matsuri.jp/publics/index/21/": {
+   "cls": "ok",
+   "status": 200
+  },
+  "https://www.oohijinja.jp/history.html": {
+   "cls": "uncertain",
+   "status": "ERR_TLS_CERT_ALTNAME_INVALID"
+  },
+  "https://www.hida-kankou.jp/features/204": {
+   "cls": "ok",
+   "status": 200
+  },
+  "https://www.hida-kankou.jp/event/408": {
+   "cls": "ok",
+   "status": 200
+  },
+  "https://www.hida-kankou.jp/storage/upload/%E3%80%90WEB%E3%80%91%E5%8F%A4%E5%B7%9D%E7%A5%AD%E3%83%91%E3%83%B3%E3%83%95%E3%83%AC%E3%83%83%E3%83%882026.pdf": {
+   "cls": "ok",
+   "status": 200
+  },
+  "https://www.info-toyama.com/events/20010": {
+   "cls": "ok",
+   "status": 200
+  },
+  "https://www.city.ginowan.lg.jp/soshiki/kyoiku/1/3/1_1/20718.html": {
+   "cls": "broken",
+   "status": 404
+  },
+  "https://www.okinawastory.jp/event/600022927": {
+   "cls": "ok",
+   "status": 200
+  },
+  "https://ja.kyoto.travel/event/single.php?event_id=6603": {
+   "cls": "ok",
+   "status": 200
+  },
+  "https://ja.kyoto.travel/event/single.php?event_id=6778": {
+   "cls": "ok",
+   "status": 200
+  },
+  "https://www.city.goshogawara.lg.jp/tourism/view/tachineputa.html": {
+   "cls": "ok",
+   "status": 200
+  },
+  "https://www.gujohachiman.com/kanko/odori_schedule.html": {
+   "cls": "ok",
+   "status": 200
+  },
+  "https://www.kankou-gifu.jp/event/detail_1157.html": {
+   "cls": "ok",
+   "status": 200
+  },
+  "https://www.hot-ishikawa.jp/event/detail_12022.html": {
+   "cls": "ok",
+   "status": 200
+  },
+  "https://www.city.hachinohe.aomori.jp/yokuarushitsumon/sonota/8544.html": {
+   "cls": "ok",
+   "status": 200
+  },
+  "https://www.city.hachinohe.aomori.jp/section/bus/oshirase_sanshataisai.html": {
+   "cls": "ok",
+   "status": 200
+  },
+  "https://www.city.hachioji.tokyo.jp/kankobunka/001/001/p003251.html": {
+   "cls": "ok",
+   "status": 200
+  },
+  "https://www.hachiojimatsuri.jp/": {
+   "cls": "ok",
+   "status": 200
+  },
+  "https://aichinow.pref.aichi.jp/night/search/detail/1727/event/": {
+   "cls": "ok",
+   "status": 200
+  },
+  "https://www.city.hadano.kanagawa.jp/kanko/event/2/2704.html": {
+   "cls": "ok",
+   "status": 200
+  },
+  "https://www.city.hadano.kanagawa.jp/kanko/event/842.html": {
+   "cls": "ok",
+   "status": 200
+  },
+  "https://www.crossroadfukuoka.jp/event/11429": {
+   "cls": "ok",
+   "status": 200
+  },
+  "https://www.hakodate-minatomatsuri.org/traffic/": {
+   "cls": "ok",
+   "status": 200
+  },
+  "https://www.hakobura.jp/events/355": {
+   "cls": "ok",
+   "status": 200
+  },
+  "https://hakozakigu.or.jp/omatsuri/": {
+   "cls": "ok",
+   "status": 200
+  },
+  "https://hakozakigu.or.jp/2026/08/21/1073/": {
+   "cls": "ok",
+   "status": 200
+  },
+  "https://hamamatsu-daisuki.net/matsuri/": {
+   "cls": "ok",
+   "status": 200
+  },
+  "https://hamamatsu-daisuki.net/wp-content/uploads/2026/04/5%E6%9C%88%E3%82%A4%E3%83%99%E3%83%B3%E3%83%88%E6%83%85%E5%A0%B1.pdf": {
+   "cls": "ok",
+   "status": 200
+  },
+  "https://www.chigasaki-kankou.org/event/hamaori/": {
+   "cls": "ok",
+   "status": 200
+  },
+  "https://samukawajinjya.jp/festival/": {
+   "cls": "ok",
+   "status": 200
+  },
+  "https://www.chigasaki-kankou.org/topics/1478/": {
+   "cls": "ok",
+   "status": 200
+  },
+  "https://www.city.hamura.tokyo.jp/0000008921.html": {
+   "cls": "ok",
+   "status": 200
+  },
+  "https://www.city.hanamaki.iwate.jp/kanko/oshirase/1021701.html": {
+   "cls": "ok",
+   "status": 200
+  },
+  "https://www.ibarakiguide.jp/event.php?code=1275&mode=detail": {
+   "cls": "ok",
+   "status": 200
+  },
+  "https://www.kitaibarakishi-kankokyokai.gr.jp/page/page000708.html": {
+   "cls": "ok",
+   "status": 200
+  },
+  "https://www.city.hanno.lg.jp/soshikikarasagasu/kyoikubu/hakubutsukan/bunkazaitanto/bunkazai/452.html": {
+   "cls": "ok",
+   "status": 200
+  },
+  "https://www.city.hanno.lg.jp/soshikikarasagasu/kyoikubu/hakubutsukan/bunkazaitanto/bunkazai/minzoku/index.html": {
+   "cls": "ok",
+   "status": 200
+  },
+  "https://www.city.hanno.lg.jp/kanko_bunka_sports/kankojoho/oshirase/10535.html": {
+   "cls": "ok",
+   "status": 200
+  },
+  "https://www.town.shiga-hino.lg.jp/0000003699.html": {
+   "cls": "ok",
+   "status": 200
+  },
+  "https://hino-kanko.jp/festival/hinomatsuri/": {
+   "cls": "ok",
+   "status": 200
+  },
+  "https://kumamoto-guide.jp/hinokunimatsuri/index.html": {
+   "cls": "ok",
+   "status": 200
+  },
+  "https://www.town.nagasu.lg.jp/soshiki/machizukuri/shoko/177820668614735/": {
+   "cls": "ok",
+   "status": 200
+  },
+  "https://www.town.nagasu.lg.jp/nagasutown/007_machizukuri/kikaku/kouhou/R8/2026-4/%E5%BA%83%E5%A0%B1%E3%81%AA%E3%81%8C%E3%81%992026%E5%B9%B4%EF%BC%94%E6%9C%88%E5%8F%B7-p16-28-%E3%81%8A%E3%81%97%E3%82%89%E3%81%9B.pdf": {
+   "cls": "ok",
+   "status": 200
+  },
+  "https://www.town.nagasu.lg.jp/soshiki/machizukuri/kingyotokoinosato/kankou0033906/": {
+   "cls": "ok",
+   "status": 200
+  },
+  "https://www.hirosaki-kanko.or.jp/edit.html?id=cat02_summer_neputa": {
+   "cls": "ok",
+   "status": 200
+  },
+  "https://aomori-tourism.com/spot/detail_26.html": {
+   "cls": "ok",
+   "status": 200
+  },
+  "https://www.pref.aomori.lg.jp/soshiki/kotsu/ch-renkei/ch-renkei_event.html": {
+   "cls": "ok",
+   "status": 200
+  },
+  "https://www.city.hita.oita.jp/site/hitanioideyo/2459.html": {
+   "cls": "ok",
+   "status": 200
+  },
+  "https://www.kankou-hitachi.jp/furyubutsu/page000013.html": {
+   "cls": "ok",
+   "status": 200
+  },
+  "https://kaminezinzya.org/saireiyurai/": {
+   "cls": "ok",
+   "status": 200
+  },
+  "https://www.hofutenmangu.com/1004": {
+   "cls": "ok",
+   "status": 200
+  },
+  "https://hokota-tpa.org/hokota-summerfest/": {
+   "cls": "ok",
+   "status": 200
+  },
+  "https://hokota-tpa.org/events/event/%E9%89%BE%E7%A5%9E%E7%A4%BE%E5%BE%A1%E4%BE%8B%E5%A4%A7%E7%A5%AD2026-%E6%9C%80%E7%B5%82%E6%97%A5%E3%80%90%E6%9C%AC%E7%A5%AD%E3%82%8A%E3%80%91/": {
+   "cls": "ok",
+   "status": 200
+  },
+  "https://hokota-tpa.org/20260715-7105/": {
+   "cls": "ok",
+   "status": 200
+  },
+  "https://www.honjo-kanko.jp/event/honjomatsuri/": {
+   "cls": "ok",
+   "status": 200
+  },
+  "https://www.honjo-kanko.jp/honjo-matsuri/highlight/": {
+   "cls": "ok",
+   "status": 200
+  },
+  "https://www.honjo-kanko.jp/topics/": {
+   "cls": "ok",
+   "status": 200
+  },
+  "https://honmoku.or.jp/": {
+   "cls": "ok",
+   "status": 200
+  },
+  "https://www.townnews.co.jp/0113/2026/07/16/844752.html": {
+   "cls": "ok",
+   "status": 200
+  },
+  "https://www.hot-ishikawa.jp/event/detail_21208.html": {
+   "cls": "ok",
+   "status": 200
+  },
+  "https://hyuga.or.jp/app/events/view/11": {
+   "cls": "ok",
+   "status": 200
+  },
+  "https://www.f-kankou.jp/event/38041": {
+   "cls": "ok",
+   "status": 200
+  },
+  "https://hachimanjinja.info/aki.html": {
+   "cls": "ok",
+   "status": 200
+  },
+  "https://hachimanjinja.info/page4.html": {
+   "cls": "ok",
+   "status": 200
+  },
+  "https://hachimanjinja.info/right.html": {
+   "cls": "ok",
+   "status": 200
+  },
+  "https://honmonji.jp/oeshiki/": {
+   "cls": "ok",
+   "status": 200
+  },
+  "https://www.honmonji.jp/outline/gyoji.html": {
+   "cls": "ok",
+   "status": 200
+  },
+  "https://honmonji.jp/news/schedule.html": {
+   "cls": "ok",
+   "status": 200
+  },
+  "https://www.city.kanuma.tochigi.jp/0299/info-0000001969-0.html": {
+   "cls": "ok",
+   "status": 200
+  },
+  "https://kanuma-kanko.jp/purpose/%E7%94%9F%E5%AD%90%E7%A5%9E%E7%A4%BE%E3%81%AE%E6%B3%A3%E3%81%8D%E7%9B%B8%E6%92%B2/": {
+   "cls": "ok",
+   "status": 200
+  },
+  "https://www.asobo-saga.jp/events/detail/33b5b433-c136-4d3e-86f7-b1461d1c17ce": {
+   "cls": "ok",
+   "status": 200
+  },
+  "https://www.asobo-saga.jp/events/detail/269c16a2-9d63-4e26-9a1b-42c7f2f8991e": {
+   "cls": "ok",
+   "status": 200
+  },
+  "https://inuyama.gr.jp/event/detail/1/": {
+   "cls": "ok",
+   "status": 200
+  },
+  "https://inuyama.gr.jp/news/detail/287/": {
+   "cls": "ok",
+   "status": 200
+  },
+  "https://www.city.isesaki.lg.jp/soshiki/keizai/bunka/kankou/gyoji/1427.html": {
+   "cls": "ok",
+   "status": 200
+  },
+  "https://ishiokamatsuri.com/about/": {
+   "cls": "ok",
+   "status": 200
+  },
+  "https://social.ja-kyosai.or.jp/prefecture/festival/ibaraki/": {
+   "cls": "ok",
+   "status": 200
+  },
+  "https://doconeel.com/ishioka/": {
+   "cls": "ok",
+   "status": 200
+  },
+  "https://www.ishioka-kankou.com/events/ishioka-matsuri/": {
+   "cls": "ok",
+   "status": 200
+  },
+  "https://www.ishioka-kankou.com/topics/tokubetsu-kanran/": {
+   "cls": "ok",
+   "status": 200
+  },
+  "https://www.ishioka-kankou.com/topics/ishioka-matsuri-koutsuu-2026/": {
+   "cls": "ok",
+   "status": 200
+  },
+  "https://ishiokamatsuri.com/news/reitaisai-2026/": {
+   "cls": "ok",
+   "status": 200
+  },
+  "https://www.city.nanao.lg.jp/koryu-s/event/8gatsu/issaki.html": {
+   "cls": "ok",
+   "status": 200
+  },
+  "https://www.city.nanao.lg.jp/koho/shise/koho/machinokao/r8/08/080801.html": {
+   "cls": "ok",
+   "status": 200
+  },
+  "https://www.info-toyama.com/events/20097": {
+   "cls": "ok",
+   "status": 200
+  },
+  "https://www.city.itako.lg.jp/kankou/kankou-event/kankou-mainevent/page001342.html": {
+   "cls": "ok",
+   "status": 200
+  },
+  "https://www.omaturi.jp/": {
+   "cls": "ok",
+   "status": 200
+  },
+  "https://www.omaturi.jp/information/": {
+   "cls": "ok",
+   "status": 200
+  },
+  "https://www.itsukushimajinja.jp/jp-sp/event.html": {
+   "cls": "ok",
+   "status": 200
+  },
+  "https://www.iwanai-jinja.com/news/how-technology-can-help-curb-attention-disorders": {
+   "cls": "ok",
+   "status": 200
+  },
+  "https://www.iwanai-jinja.com/%E4%BE%8B%E5%A4%A7%E7%A5%AD": {
+   "cls": "ok",
+   "status": 200
+  },
+  "https://ja.kyoto.travel/event/major/jidai/": {
+   "cls": "ok",
+   "status": 200
+  },
+  "https://ja.kyoto.travel/event/major/jidai/understand.php": {
+   "cls": "ok",
+   "status": 200
+  },
+  "https://ja.kyoto.travel/event/single.php?event_id=7049": {
+   "cls": "ok",
+   "status": 200
+  },
+  "https://www.kyokanko.or.jp/news/20260706": {
+   "cls": "ok",
+   "status": 200
+  },
+  "https://www.jindaiji.or.jp/index.php": {
+   "cls": "ok",
+   "status": 200
+  },
+  "https://www.hot-ishikawa.jp/event/detail_17087.html": {
+   "cls": "ok",
+   "status": 200
+  },
+  "https://www.kagoshima-kankou.com/event/20052": {
+   "cls": "ok",
+   "status": 200
+  },
+  "https://www.kagoshima-kankou.com/event/20243": {
+   "cls": "ok",
+   "status": 200
+  },
+  "https://www.city.kakegawa.shizuoka.jp/kanko/mobile/docs/7650.html": {
+   "cls": "ok",
+   "status": 200
+  },
+  "https://www.city.semboku.akita.jp/event/event.php?id=1290": {
+   "cls": "ok",
+   "status": 200
+  },
+  "https://tazawako-kakunodate.com/spots/6277/": {
+   "cls": "ok",
+   "status": 200
+  },
+  "https://www.trip-kamakura.com/subsite/detail.php?id=8": {
+   "cls": "ok",
+   "status": 200
+  },
+  "https://www.city.handa.lg.jp/bunka/kanko/1002868/1005521/1002873.html": {
+   "cls": "uncertain",
+   "status": "fetch failed"
+  },
+  "https://yamatoji.nara-kankou.or.jp/01shaji/01jinja/01north_area/yahashirajinja-nara_kamihukawa/event/u4a0d6q7f9/": {
+   "cls": "broken",
+   "status": 404
+  },
+  "https://www.city.semboku.akita.jp/event/event.php?id=1352": {
+   "cls": "ok",
+   "status": 200
+  },
+  "https://tazawako-kakunodate.com/about/nishiki/": {
+   "cls": "ok",
+   "status": 200
+  },
+  "https://www.crossroadfukuoka.jp/event/10650": {
+   "cls": "ok",
+   "status": 200
+  },
+  "https://www.hot-ishikawa.jp/event/detail_22421.html": {
+   "cls": "ok",
+   "status": 200
+  },
+  "https://kandamatsuri.com/": {
+   "cls": "ok",
+   "status": 200
+  },
+  "https://www.kandamyoujin.or.jp/event/detail/?id=69": {
+   "cls": "ok",
+   "status": 200
+  },
+  "https://www.kagoshima-kankou.com/event/51063": {
+   "cls": "ok",
+   "status": 200
+  },
+  "https://www.buttsuke.com/": {
+   "cls": "ok",
+   "status": 200
+  },
+  "https://www.city.kanuma.tochigi.jp/0299/info-0000001965-1.html": {
+   "cls": "ok",
+   "status": 200
+  },
+  "https://www.city.kanuma.tochigi.jp/0761/info-0000011425-0.html": {
+   "cls": "ok",
+   "status": 200
+  },
+  "https://www.karatsu-jinja.org/kunti": {
+   "cls": "ok",
+   "status": 200
+  },
+  "https://kashimajingu.jp/news/%E7%A5%AD%E9%A0%AD%E7%A5%AD%E3%81%AE%E5%BE%A1%E6%A1%88%E5%86%85%E4%BB%A4%E5%92%8C6%E5%B9%B4/": {
+   "cls": "ok",
+   "status": 200
+  },
+  "https://city.kashima.ibaraki.jp/site/bunkazai/50076.html": {
+   "cls": "ok",
+   "status": 200
+  },
+  "https://city.kashima.ibaraki.jp/site/bunkazai/82676.html": {
+   "cls": "ok",
+   "status": 200
+  },
+  "https://onmatsuri.kasugataisha.or.jp/": {
+   "cls": "ok",
+   "status": 200
+  },
+  "https://www.kasugataisha.or.jp/calendar/winter12/": {
+   "cls": "ok",
+   "status": 200
+  },
+  "https://narashikanko.or.jp/event/detail_10230.html": {
+   "cls": "ok",
+   "status": 200
+  },
+  "https://onmatsuri.kasugataisha.or.jp/gyouji/": {
+   "cls": "ok",
+   "status": 200
+  },
+  "https://visit-kasukabe.jp/events.html": {
+   "cls": "ok",
+   "status": 200
+  },
+  "https://www.city.katsuura.lg.jp/site/city-promotion/3881.html": {
+   "cls": "ok",
+   "status": 200
+  },
+  "https://maruchiba.jp/event/detail_13173.html": {
+   "cls": "ok",
+   "status": 200
+  },
+  "https://www.pref.chiba.lg.jp/kc-isumi/isumi/event.html": {
+   "cls": "ok",
+   "status": 200
+  },
+  "https://katsuyama-navi.jp/news/event": {
+   "cls": "ok",
+   "status": 200
+  },
+  "https://www.fuku-e.com/event/detail_5046.html": {
+   "cls": "ok",
+   "status": 200
+  },
+  "https://katsuyama-navi.jp/date/2026/02/12/": {
+   "cls": "ok",
+   "status": 200
+  },
+  "https://kawagoematsuri.jp/": {
+   "cls": "ok",
+   "status": 200
+  },
+  "https://kawagoematsuri.jp/about/about_history.html": {
+   "cls": "ok",
+   "status": 200
+  },
+  "https://www.city.kawagoe.saitama.jp/kanko/k-benri/1017233.html": {
+   "cls": "ok",
+   "status": 200
+  },
+  "https://fujisan.ne.jp/feature/804/": {
+   "cls": "ok",
+   "status": 200
+  },
+  "https://kawaguchiko.net/event/kawaguchiko-kojosai/": {
+   "cls": "ok",
+   "status": 200
+  },
+  "https://www.japan47go.travel/ja/detail/2a00b31d-faab-4e4a-a5eb-94de438d2ea5": {
+   "cls": "ok",
+   "status": 200
+  },
+  "https://www.crossroadfukuoka.jp/event/16424": {
+   "cls": "ok",
+   "status": 200
+  },
+  "https://www.takemikatsuchi.net/schedulelist/sannousai/": {
+   "cls": "ok",
+   "status": 200
+  },
+  "https://www.takemikatsuchi.net/%E5%B7%9D%E5%B4%8E%E5%B1%B1%E7%8E%8B%E7%A5%AD%EF%BC%886-14-6-21%EF%BC%89/": {
+   "cls": "ok",
+   "status": 200
+  },
+  "https://www.nikko-kankou.org/event/403": {
+   "cls": "ok",
+   "status": 200
+  },
+  "https://kirishimajingu.or.jp/ceremony/": {
+   "cls": "ok",
+   "status": 200
+  },
+  "https://kirishimajingu.or.jp/events/": {
+   "cls": "ok",
+   "status": 200
+  },
+  "http://www.kiryu-maturi.net/": {
+   "cls": "ok",
+   "status": 200
+  },
+  "http://www.kiryu-maturi.net/schedule.html": {
+   "cls": "ok",
+   "status": 200
+  },
+  "https://www.city.kiryu.lg.jp/kankou/event/1025571.html": {
+   "cls": "ok",
+   "status": 200
+  },
+  "https://maruchiba.jp/event/detail_11429.html": {
+   "cls": "ok",
+   "status": 200
+  },
+  "https://maruchiba.jp/spot/detail_10315.html": {
+   "cls": "ok",
+   "status": 200
+  },
+  "https://www.city.kishiwada.lg.jp/site/danjiri/": {
+   "cls": "ok",
+   "status": 200
+  },
+  "https://www.city.kishiwada.lg.jp/site/danjiri/kisei.html": {
+   "cls": "ok",
+   "status": 200
+  },
+  "https://www.wakayama-kanko.or.jp/events/detail_3698.html": {
+   "cls": "ok",
+   "status": 200
+  },
+  "https://www.city.kitamoto.lg.jp/kanko/event/aki/18464.html": {
+   "cls": "ok",
+   "status": 200
+  },
+  "https://www.city.kitamoto.lg.jp/kanko/gourmet_shopping/2/1423533254557.html": {
+   "cls": "ok",
+   "status": 200
+  },
+  "https://www.feel-kobe.jp/event/36165/": {
+   "cls": "ok",
+   "status": 200
+  },
+  "https://www.feel-kobe.jp/news/31336/": {
+   "cls": "ok",
+   "status": 200
+  },
+  "https://www.cciweb.or.jp/kochi/yosakoiweb/kochijho/2026/2026yosakoi_schedule/": {
+   "cls": "uncertain",
+   "status": "ERR_TLS_CERT_ALTNAME_INVALID"
+  },
+  "https://kochi-tabi.jp/information.html?id=296": {
+   "cls": "ok",
+   "status": 200
+  },
+  "https://www.hot-ishikawa.jp/event/detail_6862.html": {
+   "cls": "ok",
+   "status": 200
+  },
+  "https://www.wakayama-kanko.or.jp/events/detail_3739.html": {
+   "cls": "ok",
+   "status": 200
+  },
+  "https://kokuragiondaiko.jp/": {
+   "cls": "ok",
+   "status": 200
+  },
+  "https://niigata-kankou.or.jp/event/1959": {
+   "cls": "ok",
+   "status": 200
+  },
+  "https://aichinow.pref.aichi.jp/events/detail/1754/": {
+   "cls": "ok",
+   "status": 200
+  },
+  "https://www.city.kuki.lg.jp/miryoku/summer_fes/1002873.html": {
+   "cls": "ok",
+   "status": 200
+  },
+  "https://uchiwamatsuri.com/": {
+   "cls": "ok",
+   "status": 200
+  },
+  "https://www.city.kumagaya.lg.jp/kanko/matsuri/kumagayautiwamaturi/index.html": {
+   "cls": "ok",
+   "status": 200
+  },
+  "https://www.shinguu.jp/event": {
+   "cls": "ok",
+   "status": 200
+  },
+  "https://www.wakayama-kanko.or.jp/events/index_1_2_29.html": {
+   "cls": "ok",
+   "status": 200
+  },
+  "https://www.city.shingu.lg.jp/Info/2985": {
+   "cls": "ok",
+   "status": 200
+  },
+  "https://www.wakayama-kanko.or.jp/events/detail_3709.html": {
+   "cls": "ok",
+   "status": 200
+  },
+  "https://www.shinguu.jp/new-events/detail/322": {
+   "cls": "ok",
+   "status": 200
+  },
+  "https://www.kumano-kankou.info/kumano-fireworks/": {
+   "cls": "ok",
+   "status": 200
+  },
+  "https://www.kankomie.or.jp/event/5207.html": {
+   "cls": "ok",
+   "status": 200
+  },
+  "https://ja.kyoto.travel/event/single.php?event_id=4978": {
+   "cls": "ok",
+   "status": 200
+  },
+  "http://www.yukijinjya.jp/about/index.html?id=about05": {
+   "cls": "ok",
+   "status": 200
+  },
+  "https://www.kura-cci.or.jp/area/area_tenryo/": {
+   "cls": "ok",
+   "status": 200
+  },
+  "https://www.city.kurayoshi.lg.jp/matsuri/": {
+   "cls": "ok",
+   "status": 200
+  },
+  "https://www.city.kurayoshi.lg.jp/4571.htm": {
+   "cls": "ok",
+   "status": 200
+  },
+  "https://maruchiba.jp/event/detail_10865.html": {
+   "cls": "ok",
+   "status": 200
+  },
+  "https://www.city.kushiro.lg.jp/sangyou/umisora/1006541/1006564/1006566.html": {
+   "cls": "ok",
+   "status": 200
+  },
+  "https://kuwana-ishidori.com/festival.html": {
+   "cls": "ok",
+   "status": 200
+  },
+  "https://www.kuwana-ishidori.com/about.html": {
+   "cls": "ok",
+   "status": 200
+  },
+  "https://www.city.kuwana.lg.jp/hisyokoho/kosodatekyouiku/kidspage/isidorimaturi.html": {
+   "cls": "ok",
+   "status": 200
+  },
+  "https://www.city.maebashi.gunma.jp/soshiki/sangyokeizai/kankoseisaku/gyomu/1/30004.html": {
+   "cls": "ok",
+   "status": 200
+  },
+  "https://maebashi-festival.jp/": {
+   "cls": "ok",
+   "status": 200
+  },
+  "https://www.city.sakuragawa.lg.jp/kankou_bunka_sports/news/page010368.html": {
+   "cls": "ok",
+   "status": 200
+  },
+  "http://www.kankou-sakuragawa.jp/page/page000031.html": {
+   "cls": "ok",
+   "status": 200
+  },
+  "https://www.city.oyama.tochigi.jp/cal.php?category=0&day=5&lc=0&mode=detail&month=5&year=2026": {
+   "cls": "ok",
+   "status": 200
+  },
+  "https://www.town.manazuru.kanagawa.jp/soshiki/sangyoukankou/kanko/2258.html": {
+   "cls": "ok",
+   "status": 200
+  },
+  "https://www.town.manazuru.kanagawa.jp/soshiki/sangyoukankou/kanko/140.html": {
+   "cls": "ok",
+   "status": 200
+  },
+  "https://oshiro-fes.com/": {
+   "cls": "ok",
+   "status": 200
+  },
+  "https://www.tochigiji.or.jp/event/e17543/": {
+   "cls": "ok",
+   "status": 200
+  },
+  "https://kashimajinja.com/": {
+   "cls": "ok",
+   "status": 200
+  },
+  "https://www.matsudojinja.com/announcements/shen-xing-ji-yu-zhai-xing-noozhi-rase": {
+   "cls": "ok",
+   "status": 200
+  },
+  "https://www.matsudo-kankou.jp/sightseeing/%E6%9D%BE%E6%88%B8%E7%A5%9E%E7%A4%BE%E7%A5%9E%E5%B9%B8%E7%A5%AD/": {
+   "cls": "ok",
+   "status": 200
+  },
+  "https://www.kankou-matsue.jp/event_calendar/event_list/418/423": {
+   "cls": "ok",
+   "status": 200
+  },
+  "https://www.kankou-matsue.jp/event_calendar/event_list/434": {
+   "cls": "ok",
+   "status": 200
+  },
+  "https://www.f-kankou.jp/event/38202": {
+   "cls": "ok",
+   "status": 200
+  },
+  "https://www.matsukawa-kanko.jp/?p=247": {
+   "cls": "ok",
+   "status": 200
+  },
+  "https://www.matsukawa-kanko.jp/wp-content/uploads/2021/03/1616129732.pdf": {
+   "cls": "ok",
+   "status": 200
+  },
+  "https://matsubon.com/": {
+   "cls": "ok",
+   "status": 200
+  },
+  "https://visitmatsumoto.com/event/index_1_2_6.html": {
+   "cls": "ok",
+   "status": 200
+  },
+  "https://matsurinobeoka.com/": {
+   "cls": "ok",
+   "status": 200
+  },
+  "https://www.kanko-miyazaki.jp/event/1581": {
+   "cls": "ok",
+   "status": 200
+  },
+  "https://www.nagasaki-tabinet.com/event/60838": {
+   "cls": "ok",
+   "status": 200
+  },
+  "https://www.city-matsuura.jp/top/soshikikarasagasu/chiikikeizaikasseika/kankobussangakari/1/3610.html": {
+   "cls": "ok",
+   "status": 200
+  },
+  "https://matsuyama-sightseeing.com/event/2-2/": {
+   "cls": "ok",
+   "status": 200
+  },
+  "https://mikunimatsuri.com/%E4%B8%89%E5%9B%BD%E7%A5%AD%E3%81%A8%E3%81%AF/": {
+   "cls": "ok",
+   "status": 200
+  },
+  "https://mikunimatsuri.com/%E6%97%A5%E7%A8%8B%E3%81%AB%E3%81%A4%E3%81%84%E3%81%A6/": {
+   "cls": "ok",
+   "status": 200
+  },
+  "https://www.fuku-e.com/event/detail_5285.html": {
+   "cls": "ok",
+   "status": 200
+  },
+  "https://www.minamikoshigaya-awaodori.jp/": {
+   "cls": "ok",
+   "status": 200
+  },
+  "https://www.minamikoshigaya-awaodori.jp/aboutus/mk_awaodori.html": {
+   "cls": "ok",
+   "status": 200
+  },
+  "https://www.minamikoshigaya-awaodori.jp/odori/": {
+   "cls": "ok",
+   "status": 200
+  },
+  "https://www.minamikoshigaya-awaodori.jp/info_program/": {
+   "cls": "ok",
+   "status": 200
+  },
+  "https://www.minamikoshigaya-awaodori.jp/ren_info/ren_info.php": {
+   "cls": "ok",
+   "status": 200
+  },
+  "https://www.cm-boso.com/amamatsuri2026.html": {
+   "cls": "ok",
+   "status": 200
+  },
+  "https://www.pref.chiba.lg.jp/bunshin/chibabunkashisan/chibabunka-kouhu8.html": {
+   "cls": "ok",
+   "status": 200
+  },
+  "https://www.mishimataisha.or.jp/r8reisai": {
+   "cls": "ok",
+   "status": 200
+  },
+  "https://www.mishima-cci.com/maturi/": {
+   "cls": "ok",
+   "status": 200
+  },
+  "https://www.mishima-cci.com/maturi/view-point/": {
+   "cls": "ok",
+   "status": 200
+  },
+  "https://mitokoumon.com/koumon/honsai.html": {
+   "cls": "ok",
+   "status": 200
+  },
+  "https://aichinow.pref.aichi.jp/events/detail/155/": {
+   "cls": "ok",
+   "status": 200
+  },
+  "https://www.okinawastory.jp/event/600022601": {
+   "cls": "ok",
+   "status": 200
+  },
+  "https://www.city.miyakojima.lg.jp/kanko/event.html": {
+   "cls": "ok",
+   "status": 200
+  },
+  "https://www.city.moka.lg.jp/kakuka/shokokanko/event/8610.html": {
+   "cls": "ok",
+   "status": 200
+  },
+  "https://moriokafunekkonagashi.com/index.shtml": {
+   "cls": "ok",
+   "status": 200
+  },
+  "https://www.odette.or.jp/?p=823": {
+   "cls": "ok",
+   "status": 200
+  },
+  "https://www.sansaodori.jp/": {
+   "cls": "uncertain",
+   "status": "CERT_HAS_EXPIRED"
+  },
+  "https://www.sansaodori.jp/info/": {
+   "cls": "uncertain",
+   "status": "CERT_HAS_EXPIRED"
+  },
+  "https://www.sansaodori.jp/info/guidance_seat.php": {
+   "cls": "uncertain",
+   "status": "CERT_HAS_EXPIRED"
+  },
+  "https://murakamitaisai.jp/": {
+   "cls": "ok",
+   "status": 200
+  },
+  "https://www.city.murakami.lg.jp/site/kanko/murakami-taisai-midokoro.html": {
+   "cls": "ok",
+   "status": 200
+  },
+  "https://www.town.murata.miyagi.jp/kanko/event/hotei/index.html": {
+   "cls": "ok",
+   "status": 200
+  },
+  "https://www.town.murata.miyagi.jp/teijyu/osusume/access/index.html": {
+   "cls": "ok",
+   "status": 200
+  },
+  "https://kumanonachitaisha.or.jp/event/fan/": {
+   "cls": "ok",
+   "status": 200
+  },
+  "https://www.town.nachikatsuura.wakayama.jp/info/70": {
+   "cls": "ok",
+   "status": 200
+  },
+  "https://prtimes.jp/main/html/rd/p/000000026.000182609.html": {
+   "cls": "ok",
+   "status": 200
+  },
+  "https://www.himeji-kanko.jp/feature/17/": {
+   "cls": "ok",
+   "status": 200
+  },
+  "https://himeji-kanko.jp/fc/article.php?eid=00147": {
+   "cls": "ok",
+   "status": 200
+  },
+  "https://nagahama-hikiyama.or.jp/matsuri-event/": {
+   "cls": "ok",
+   "status": 200
+  },
+  "https://nagahama-hikiyama.or.jp/web/wp-content/uploads/2026/03/down2026brochure.pdf": {
+   "cls": "ok",
+   "status": 200
+  },
+  "https://nagano-binzuru.jp/": {
+   "cls": "ok",
+   "status": 200
+  },
+  "https://www.city.nagano.nagano.jp/n150800/event/p000011.html": {
+   "cls": "ok",
+   "status": 200
+  },
+  "https://www.city.nagaoka.niigata.jp/kankou/event/nagaokamatsuri.html": {
+   "cls": "ok",
+   "status": 200
+  },
+  "https://qa.city.nagaoka.niigata.jp/faq/show/1231?category_id=483&site_domain=default": {
+   "cls": "ok",
+   "status": 200
+  },
+  "https://nagaokamatsuri.com/faq/": {
+   "cls": "ok",
+   "status": 200
+  },
+  "https://nagasaki-kunchi.com/": {
+   "cls": "ok",
+   "status": 200
+  },
+  "https://www.nagasaki-tabinet.com/event/60489": {
+   "cls": "ok",
+   "status": 200
+  },
+  "https://www.at-nagasaki.jp/event/51798": {
+   "cls": "ok",
+   "status": 200
+  },
+  "https://www.nagasaki-tabinet.com/event/51413": {
+   "cls": "ok",
+   "status": 200
+  },
+  "https://www.nagasaki-tabinet.com/feature/festival/autumn": {
+   "cls": "ok",
+   "status": 200
+  },
+  "https://www.town.nagasu.lg.jp/soshiki/machizukuri/shoko/178721620226511/": {
+   "cls": "broken",
+   "status": 404
+  },
+  "https://www.nagatoro.gr.jp/funadama2026/": {
+   "cls": "ok",
+   "status": 200
+  },
+  "https://www.okinawastory.jp/event/600022655": {
+   "cls": "ok",
+   "status": 200
+  },
+  "https://www.city.nago.okinawa.jp/municipal/2018071300163/": {
+   "cls": "ok",
+   "status": 200
+  },
+  "https://www.city.nagoya.jp/houdou/pressr7/3002889/3003980.html": {
+   "cls": "ok",
+   "status": 200
+  },
+  "https://www.city.nagoya.jp/houdou/3003942/3003948/3005243.html": {
+   "cls": "ok",
+   "status": 200
+  },
+  "https://www.city.naha.okinawa.jp/mayor/kaiken/1011573/1011789.html": {
+   "cls": "ok",
+   "status": 200
+  },
+  "https://www.naha-navi.or.jp/magazine/2026/07/49306/": {
+   "cls": "ok",
+   "status": 200
+  },
+  "https://aichinow.pref.aichi.jp/events/detail/1107/": {
+   "cls": "ok",
+   "status": 200
+  },
+  "https://www.town.nakanojo.gunma.jp/soshiki/9/1285.html": {
+   "cls": "ok",
+   "status": 200
+  },
+  "https://nakanojo-kanko.jp/events/%E9%B3%A5%E8%BF%BD%E3%81%84%E7%A5%AD%E3%83%BB%E9%B3%A5%E8%BF%BD%E3%81%84%E5%A4%AA%E9%BC%93%E3%82%AE%E3%83%A3%E3%83%A9%E3%83%AA%E3%83%BC/": {
+   "cls": "ok",
+   "status": 200
+  },
+  "https://www.town.nakanojo.gunma.jp/uploaded/attachment/5927.pdf": {
+   "cls": "ok",
+   "status": 200
+  },
+  "https://www.asobo-saga.jp/events/": {
+   "cls": "ok",
+   "status": 200
+  },
+  "https://www.kankou-gifu.jp/event/detail_1092.html": {
+   "cls": "ok",
+   "status": 200
+  },
+  "https://nakatsugawa.town/wp-content/uploads/2026/08/4dbc34b9ac5c4a0ee28568a2fd09d82a.pdf": {
+   "cls": "ok",
+   "status": 200
+  },
+  "https://www.visit-oita.jp/events/detail/14035": {
+   "cls": "ok",
+   "status": 200
+  },
+  "https://narashikanko.or.jp/event/detail_10203.html": {
+   "cls": "ok",
+   "status": 200
+  },
+  "https://narashikanko.or.jp/spot/detail_10054.html": {
+   "cls": "ok",
+   "status": 200
+  },
+  "http://www.nrtk.jp/enjoy/shikisaisai/gion-festival.html": {
+   "cls": "ok",
+   "status": 200
+  },
+  "https://www.narutocci.or.jp/awaodori/awaodori.html": {
+   "cls": "ok",
+   "status": 200
+  },
+  "https://naruto-tourism.jp/jp/25132": {
+   "cls": "ok",
+   "status": 200
+  },
+  "https://www.city.nasukarasuyama.lg.jp/yamaage-matsuri/": {
+   "cls": "ok",
+   "status": 200
+  },
+  "https://www.city.nihonmatsu.lg.jp/kankou/matsuri/cyochin/page000417.html": {
+   "cls": "ok",
+   "status": 200
+  },
+  "https://www.nihonmatsu-kanko.jp/?p=1473": {
+   "cls": "ok",
+   "status": 200
+  },
+  "https://nihonmatsu-shrine.com/access.html": {
+   "cls": "ok",
+   "status": 200
+  },
+  "https://niigata-matsuri.com/": {
+   "cls": "ok",
+   "status": 200
+  },
+  "https://www.city.niigata.lg.jp/shisei/koho/kohoshi/shiho/backnumber/r08/shiho260517/3_01.html": {
+   "cls": "ok",
+   "status": 200
+  },
+  "https://www.city.niigata.lg.jp/shisei/mayor/komu/r8/0808.html": {
+   "cls": "ok",
+   "status": 200
+  },
+  "https://niihama.info/assets/data/pamphlet-niihamakiko.pdf": {
+   "cls": "ok",
+   "status": 200
+  },
+  "https://www.city.niihama.lg.jp/soshiki/kankou/taikomatsuri.html": {
+   "cls": "ok",
+   "status": 200
+  },
+  "https://toshogu.jp/pages/28/": {
+   "cls": "ok",
+   "status": 200
+  },
+  "https://www.nikko-kankou.org/public/event/27": {
+   "cls": "ok",
+   "status": 200
+  },
+  "https://www.tochigiji.or.jp/event/e15049": {
+   "cls": "ok",
+   "status": 200
+  },
+  "https://www.tochigiji.or.jp/wp-content/uploads/news/2025/12/505db12edc71cc07a1d03cc08067f9f2.pdf": {
+   "cls": "ok",
+   "status": 200
+  },
+  "https://www.akirunokanko.com/?p=2123": {
+   "cls": "ok",
+   "status": 200
+  },
+  "https://www.city.akiruno.tokyo.jp/kanko/0000004446.html": {
+   "cls": "ok",
+   "status": 200
+  },
+  "https://www.city.akiruno.tokyo.jp/kanko/0000003280.html": {
+   "cls": "ok",
+   "status": 200
+  },
+  "https://www.town.ugo.lg.jp/sightseeing/detail.html?category_id=41&id=2432": {
+   "cls": "ok",
+   "status": 200
+  },
+  "https://www.maff.go.jp/tohoku/nouson/kokuei/nisiouu/syoukai_gyouzi03.html": {
+   "cls": "ok",
+   "status": 200
+  },
+  "https://ugokanko.com/nishimonaibonodori2026/": {
+   "cls": "ok",
+   "status": 200
+  },
+  "https://noboribetsu-spa.jp/spot/spot1006/": {
+   "cls": "ok",
+   "status": 200
+  },
+  "https://noboribetsu-spa.jp/topics/%E7%AC%AC63%E5%9B%9E%E7%99%BB%E5%88%A5%E5%9C%B0%E7%8D%84%E3%81%BE%E3%81%A4%E3%82%8A%E9%96%8B%E5%82%AC%E3%81%AB%E3%81%A4%E3%81%84%E3%81%A6/": {
+   "cls": "ok",
+   "status": 200
+  },
+  "https://www.town.nagasu.lg.jp/soshiki/machizukuri/shoko/17902261583662624/": {
+   "cls": "ok",
+   "status": 200
+  },
+  "https://www.town.nagasu.lg.jp/soshiki/machizukuri/shoko/17792513083217/": {
+   "cls": "ok",
+   "status": 200
+  },
+  "https://nozawakanko.jp/spot/spot-0-231/": {
+   "cls": "ok",
+   "status": 200
+  },
+  "https://nozawakanko.jp/event/event-12132/": {
+   "cls": "ok",
+   "status": 200
+  },
+  "https://www.city.numata.gunma.jp/kanko/numatamatsuri/": {
+   "cls": "ok",
+   "status": 200
+  },
+  "https://www.city.numata.gunma.jp/kanko/numatamatsuri/1001798.html": {
+   "cls": "ok",
+   "status": 200
+  },
+  "https://www.oarai-info.jp/season/postid_2678/": {
+   "cls": "ok",
+   "status": 200
+  },
+  "https://www.oarai-isosakijinja.net/gyouji/": {
+   "cls": "ok",
+   "status": 200
+  },
+  "https://www.city.tsukubamirai.lg.jp/edu-board/page006827.html": {
+   "cls": "ok",
+   "status": 200
+  },
+  "https://mirai-kankou.com/events/102": {
+   "cls": "ok",
+   "status": 200
+  },
+  "https://www.ibarakiguide.jp/event.php?code=1131&mode=detail": {
+   "cls": "ok",
+   "status": 200
+  },
+  "https://www.odawara-kankou.com/topics/article/hojogodai.html": {
+   "cls": "ok",
+   "status": 200
+  },
+  "https://www.city.yaizu.lg.jp/event/info-00290.html": {
+   "cls": "ok",
+   "status": 200
+  },
+  "https://www.city.isumi.lg.jp/soshikikarasagasu/suisanshokoka/kankopromotionhan/2/2/786.html": {
+   "cls": "ok",
+   "status": 200
+  },
+  "https://maruchiba.jp/event/detail_13144.html": {
+   "cls": "ok",
+   "status": 200
+  },
+  "https://www.city.isumi.lg.jp/soshikikarasagasu/suisanshokoka/kankopromotionhan/event/5826.html": {
+   "cls": "broken",
+   "status": 404
+  },
+  "https://www.kagoshima-yokanavi.jp/event/10001": {
+   "cls": "ok",
+   "status": 200
+  },
+  "https://www.city.ohtawara.tochigi.jp/docs/2018112200063/": {
+   "cls": "ok",
+   "status": 200
+  },
+  "https://ohtawara.jp/yatai/": {
+   "cls": "ok",
+   "status": 200
+  },
+  "https://ohtawara.jp/yatai/yatai.html": {
+   "cls": "ok",
+   "status": 200
+  },
+  "https://www.city.ohtawara.tochigi.jp/docs/2013082765147/": {
+   "cls": "ok",
+   "status": 200
+  },
+  "https://ohtawara.jp/yatai/info.html": {
+   "cls": "ok",
+   "status": 200
+  },
+  "https://www.city.ohtawara.tochigi.jp/docs/2023061300023/": {
+   "cls": "ok",
+   "status": 200
+  },
+  "https://www.ohtawara.info/spot_detail.html?id=70": {
+   "cls": "ok",
+   "status": 200
+  },
+  "https://www.city.ohtawara.tochigi.jp/docs/2013082768698/": {
+   "cls": "ok",
+   "status": 200
+  },
+  "https://www.city.ohtawara.tochigi.jp/docs/2023071800018/": {
+   "cls": "ok",
+   "status": 200
+  },
+  "https://www.town.oiso.kanagawa.jp/isotabi/meguru/pagedate/14419.html": {
+   "cls": "ok",
+   "status": 200
+  },
+  "https://www.town.oiso.kanagawa.jp/bunka_sports/bunka/culture/18535.html": {
+   "cls": "ok",
+   "status": 200
+  },
+  "https://www.town.oiso.kanagawa.jp/material/files/group/1/R6_1_sagiryou.pdf": {
+   "cls": "ok",
+   "status": 200
+  },
+  "https://www.city.oita.oita.jp/o154/maturihoudou.html": {
+   "cls": "ok",
+   "status": 200
+  },
+  "https://www.city.ota.gunma.jp/site/kankou/1037648.html": {
+   "cls": "ok",
+   "status": 200
+  },
+  "https://www.city.ota.gunma.jp/site/koho-ota/1062278.html": {
+   "cls": "ok",
+   "status": 200
+  },
+  "https://niigata-kankou.or.jp/event/15158": {
+   "cls": "ok",
+   "status": 200
+  },
+  "https://www.kozaweb.jp/categoryPages/27": {
+   "cls": "ok",
+   "status": 200
+  },
+  "https://www.kozaweb.jp/events/show/24890": {
+   "cls": "ok",
+   "status": 200
+  },
+  "https://www.city.daisen.lg.jp/archive/contents-10406": {
+   "cls": "ok",
+   "status": 200
+  },
+  "https://www.city.midori.gunma.jp/sangyou/1001646/1001795/1009707.html": {
+   "cls": "ok",
+   "status": 200
+  },
+  "https://www.city.midori.gunma.jp/kosodate/1001647/1001800/1002428/1002505.html": {
+   "cls": "ok",
+   "status": 200
+  },
+  "https://www.city.midori.gunma.jp/sangyou/1001646/1001795/1005777.html": {
+   "cls": "ok",
+   "status": 200
+  },
+  "https://www.city.midori.gunma.jp/_res/projects/default_project/_page_/001/009/707/r8kaijouannaizu.jpg": {
+   "cls": "ok",
+   "status": 200
+  },
+  "http://ometaisai.g2.xrea.com/": {
+   "cls": "ok",
+   "status": 200
+  },
+  "http://ometaisai.g2.xrea.com/p6.htm": {
+   "cls": "ok",
+   "status": 200
+  },
+  "http://ometaisai.g2.xrea.com/p2.htm": {
+   "cls": "ok",
+   "status": 200
+  },
+  "https://visitsaitamacity.jp/events/24": {
+   "cls": "ok",
+   "status": 200
+  },
+  "https://musashiichinomiya-hikawa.or.jp/about/index.html": {
+   "cls": "ok",
+   "status": 200
+  },
+  "https://www.city.saitama.lg.jp/006/014/008/003/015/003/p131231.html": {
+   "cls": "ok",
+   "status": 200
+  },
+  "https://onagawa-matsuri.jp/autumn/": {
+   "cls": "ok",
+   "status": 200
+  },
+  "https://onagawa-matsuri.jp/autumn/map/": {
+   "cls": "ok",
+   "status": 200
+  },
+  "https://www.miyagi-kankou.or.jp/kakikomi/detail.php?id=2661": {
+   "cls": "ok",
+   "status": 200
+  },
+  "https://www.nagasaki-tabinet.com/event/51268": {
+   "cls": "ok",
+   "status": 200
+  },
+  "https://onikojuro.jp/topics/1664/": {
+   "cls": "ok",
+   "status": 200
+  },
+  "https://onikojuro.jp/topics/1708/": {
+   "cls": "ok",
+   "status": 200
+  },
+  "https://onikojuro.jp/access/": {
+   "cls": "ok",
+   "status": 200
+  },
+  "https://oomiwa.or.jp/omatsuri/nenkan/": {
+   "cls": "ok",
+   "status": 200
+  },
+  "https://oomiwa.or.jp/omatsuri/11gatsu/": {
+   "cls": "ok",
+   "status": 200
+  },
+  "https://oomiwa.or.jp/access/": {
+   "cls": "ok",
+   "status": 200
+  },
+  "https://www.pref.nara.lg.jp/ikasu-nara/seishu/oomiwa/index.html": {
+   "cls": "ok",
+   "status": 200
+  },
+  "https://aichinow.pref.aichi.jp/events/detail/2372/": {
+   "cls": "ok",
+   "status": 200
+  },
+  "https://otaru.gr.jp/tourist/60otaruusiomaturi7-24-26": {
+   "cls": "ok",
+   "status": 200
+  },
+  "https://otaru.gr.jp/event/ushiomaturi2026": {
+   "cls": "ok",
+   "status": 200
+  },
+  "https://www.otsu-matsuri.jp/home/news.php": {
+   "cls": "uncertain",
+   "status": "timeout"
+  },
+  "https://www.toyamashi-kankoukyoukai.jp/event/owara-kazenobon/": {
+   "cls": "ok",
+   "status": 200
+  },
+  "https://owara-gyoujiunei.com/about/index.html": {
+   "cls": "ok",
+   "status": 200
+  },
+  "https://owara-gyoujiunei.com/": {
+   "cls": "ok",
+   "status": 200
+  },
+  "https://aichinow.pref.aichi.jp/events/detail/75/": {
+   "cls": "ok",
+   "status": 200
+  },
+  "https://www.city.tsushima.lg.jp/shokai/matsurikyoudo/tennnoumaturi/index.html": {
+   "cls": "uncertain",
+   "status": "fetch failed"
+  },
+  "https://tsushima-kankou.com/tenno/": {
+   "cls": "ok",
+   "status": 200
+  },
+  "https://www.aichinow.pref.aichi.jp/events/detail/83/": {
+   "cls": "ok",
+   "status": 200
+  },
+  "https://www.city.oyama.tochigi.jp/kankou-bunka/miryoku/event/summer/page003807.html": {
+   "cls": "ok",
+   "status": 200
+  },
+  "https://kyoiku.pref.ibaraki.jp/bunkazai/ken-339/": {
+   "cls": "ok",
+   "status": 200
+  },
+  "https://ryugasaki-yasakajinjya.or.jp/events.html": {
+   "cls": "ok",
+   "status": 200
+  },
+  "https://www.fuku-e.com/event/detail_6928.html": {
+   "cls": "broken",
+   "status": 404
+  },
+  "https://www.sibf.jp/index.html": {
+   "cls": "ok",
+   "status": 200
+  },
+  "https://www.city.saga.lg.jp/kanko/event/4346.html": {
+   "cls": "ok",
+   "status": 200
+  },
+  "https://www.sibf.jp/balloon/": {
+   "cls": "ok",
+   "status": 200
+  },
+  "https://www.city.sagamihara.kanagawa.jp/shisei/1026709/mayor/1009760/1035149/1035150.html": {
+   "cls": "ok",
+   "status": 200
+  },
+  "https://saidaiji.or.jp/news/851/": {
+   "cls": "uncertain",
+   "status": "UNABLE_TO_VERIFY_LEAF_SIGNATURE"
+  },
+  "https://yamatoji.nara-kankou.or.jp/01shaji/02tera/01north_area/saidaiji/event/p6i7b9c735/": {
+   "cls": "ok",
+   "status": 200
+  },
+  "https://www.saidaiji.jp/20230205-2/": {
+   "cls": "ok",
+   "status": 200
+  },
+  "https://www.saidaiji.jp/%E4%BB%A4%E5%92%8C6%E5%B9%B4-%E5%A5%89%E4%BF%AE%E7%AC%AC%EF%BC%95%EF%BC%91%EF%BC%96%E4%BC%9A-%E8%A5%BF%E5%A4%A7%E5%AF%BA%E4%BC%9A%E9%99%BD%E3%81%AE%E3%81%94%E6%A1%88%E5%86%85/": {
+   "cls": "ok",
+   "status": 200
+  },
+  "https://www.kanko-miyazaki.jp/event/2266": {
+   "cls": "ok",
+   "status": 200
+  },
+  "https://www.sakadoyosakoi.com/": {
+   "cls": "ok",
+   "status": 200
+  },
+  "https://www.sakadoyosakoi.com/aboutus.html": {
+   "cls": "ok",
+   "status": 200
+  },
+  "https://www.sakadoyosakoi.com/outline.html": {
+   "cls": "ok",
+   "status": 200
+  },
+  "https://www.city.sakado.lg.jp/site/shiseishikou50syuunenn/59114.html": {
+   "cls": "ok",
+   "status": 200
+  },
+  "https://www.sakadoyosakoi.com/images/store/Tent%20stalls.pdf": {
+   "cls": "ok",
+   "status": 200
+  },
+  "https://www.city.sakaide.lg.jp/soshiki/sangyoukankou/oohasimaturi.html": {
+   "cls": "ok",
+   "status": 200
+  },
+  "https://www.city.sakata.lg.jp/mobile/qa/matsuri/FAQ051625900.html": {
+   "cls": "ok",
+   "status": 200
+  },
+  "https://www.city.sakata.lg.jp/event/fes_event/calendar/calendar202605.html": {
+   "cls": "ok",
+   "status": 200
+  },
+  "https://www.city.sakura.lg.jp/soshiki/sakuranomiryoku/event_kanko/16470.html": {
+   "cls": "ok",
+   "status": 200
+  },
+  "https://maruchiba.jp/event/detail_10869.html": {
+   "cls": "ok",
+   "status": 200
+  },
+  "https://sakuraomikisyo.org/": {
+   "cls": "ok",
+   "status": 200
+  },
+  "https://aichinow.pref.aichi.jp/events/detail/1721/": {
+   "cls": "ok",
+   "status": 200
+  },
+  "https://www.sanjasama.jp/": {
+   "cls": "ok",
+   "status": 200
+  },
+  "https://www.sanjasama.jp/detail260517miyatogyo.html": {
+   "cls": "ok",
+   "status": 200
+  },
+  "https://www.sanjasama.jp/detail260517miyadashi.html": {
+   "cls": "ok",
+   "status": 200
+  },
+  "https://www.sanjasama.jp/detail260517miyairi.html": {
+   "cls": "ok",
+   "status": 200
+  },
+  "https://www.city.takamatsu.kagawa.jp/smph/kanko/takamatsumatsuri/matsuri.html": {
+   "cls": "ok",
+   "status": 200
+  },
+  "https://www.snowfes.com/news/917.html": {
+   "cls": "ok",
+   "status": 200
+  },
+  "https://www.city.sasebo.lg.jp/keizai/kankou/saseboseasidefestival2026.html": {
+   "cls": "broken",
+   "status": 404
+  },
+  "https://www.city.katori.lg.jp/sightseeing/matsuri/introduction/aki.html": {
+   "cls": "ok",
+   "status": 200
+  },
+  "https://www.city.katori.lg.jp/sightseeing/matsuri/introduction/index.html": {
+   "cls": "ok",
+   "status": 200
+  },
+  "https://www.city.katori.lg.jp/sightseeing/multilingual/en/en-matsuri.html": {
+   "cls": "ok",
+   "status": 200
+  },
+  "https://www.city.katori.lg.jp/sightseeing/matsuri/introduction/natsu.html": {
+   "cls": "ok",
+   "status": 200
+  },
+  "https://www.city.katori.lg.jp/yotei/event/calendar/calendar.html": {
+   "cls": "ok",
+   "status": 200
+  },
+  "https://www.city.nanao.lg.jp/koryu-s/event/event_syokai/seihakusai.html": {
+   "cls": "ok",
+   "status": 200
+  },
+  "https://www.city.nanao.lg.jp/koho/shise/koho/machinokao/r8/05/080505.html": {
+   "cls": "ok",
+   "status": 200
+  },
+  "https://niigata-kankou.or.jp/event/3455": {
+   "cls": "ok",
+   "status": 200
+  },
+  "https://www.visit-oita.jp/events/detail/14043": {
+   "cls": "ok",
+   "status": 200
+  },
+  "https://www.city.oita.oita.jp/o157/natsuibe.html": {
+   "cls": "ok",
+   "status": 200
+  },
+  "https://seki-hamono.jp/": {
+   "cls": "ok",
+   "status": 200
+  },
+  "https://seki-hamono.jp/access/": {
+   "cls": "ok",
+   "status": 200
+  },
+  "https://www.kankou-gifu.jp/event/detail_989.html": {
+   "cls": "ok",
+   "status": 200
+  },
+  "https://www.aoba-matsuri.com/outline/": {
+   "cls": "ok",
+   "status": 200
+  },
+  "https://michinoku-yosakoi.net/overview/": {
+   "cls": "ok",
+   "status": 200
+  },
+  "https://michinoku-yosakoi.net/overview/stage/": {
+   "cls": "ok",
+   "status": 200
+  },
+  "https://michinoku-yosakoi.net/": {
+   "cls": "ok",
+   "status": 200
+  },
+  "https://www.kagoshima-kankou.com/event/51897": {
+   "cls": "ok",
+   "status": 200
+  },
+  "https://www.sendaitanabata.com/": {
+   "cls": "ok",
+   "status": 200
+  },
+  "https://www.sendaitanabata.com/about/outline/": {
+   "cls": "ok",
+   "status": 200
+  },
+  "https://www.sendaitanabata.com/cms/wp-content/uploads/2026/07/72467586080475da8793c384b5a6eff5-1.pdf": {
+   "cls": "ok",
+   "status": 200
+  },
+  "https://www.city.shibukawa.lg.jp/kankou-site/kankou/000382/000385/p011548.html": {
+   "cls": "ok",
+   "status": 200
+  },
+  "https://www.e-shigaraki.org/himatsuri2026.html": {
+   "cls": "ok",
+   "status": 200
+  },
+  "https://www.biwako-visitors.jp/event/detail/17616/": {
+   "cls": "ok",
+   "status": 200
+  },
+  "https://www.nagasaki-tabinet.com/event/102061": {
+   "cls": "ok",
+   "status": 200
+  },
+  "https://www.city.shimabara.lg.jp/page19898.html": {
+   "cls": "broken",
+   "status": 410
+  },
+  "https://www.chikuseikanko.jp/sightseeing/events-festivals/page000011.html": {
+   "cls": "ok",
+   "status": 200
+  },
+  "https://www.chikunavi.info/event2026072326.html": {
+   "cls": "ok",
+   "status": 200
+  },
+  "https://www.ibarakiguide.jp/event.php?mode=detail&code=711": {
+   "cls": "ok",
+   "status": 200
+  },
+  "https://www.town.shimonita.lg.jp/kanko/m03/m06/m01/03.html": {
+   "cls": "ok",
+   "status": 200
+  },
+  "https://www.yamanashi-kankou.jp/shingen/about.html": {
+   "cls": "ok",
+   "status": 200
+  },
+  "https://www.city.kofu.yamanashi.jp/welcome/saijiki/shingenko.html": {
+   "cls": "ok",
+   "status": 200
+  },
+  "https://kofu-tourism.com/feature/singen%20festival/1": {
+   "cls": "ok",
+   "status": 200
+  },
+  "https://shinjo-matsuri.jp/": {
+   "cls": "ok",
+   "status": 200
+  },
+  "https://shinjo-matsuri.jp/about": {
+   "cls": "ok",
+   "status": 200
+  },
+  "https://www.shinjuku-eisa.com/?page=schedule": {
+   "cls": "ok",
+   "status": 200
+  },
+  "https://www.shinjuku-eisa.com/about/": {
+   "cls": "ok",
+   "status": 200
+  },
+  "https://www.kanko-shinjuku.jp/event/history/article_5878.html": {
+   "cls": "ok",
+   "status": 200
+  },
+  "https://www.info-toyama.com/events/20059": {
+   "cls": "ok",
+   "status": 200
+  },
+  "https://www.city.fukushima.fukushima.jp/kankounavi/contents/enjoy/1/5940.html": {
+   "cls": "ok",
+   "status": 200
+  },
+  "https://www.f-kankou.jp/event/7006": {
+   "cls": "ok",
+   "status": 200
+  },
+  "https://www.city.shiogama.miyagi.jp/soshiki/17/56484.html": {
+   "cls": "ok",
+   "status": 200
+  },
+  "https://kankoubussan.shiogama.miyagi.jp/news/news/detail.php?id=323": {
+   "cls": "ok",
+   "status": 200
+  },
+  "https://www.city.shizuoka.lg.jp/s9635/s013738.html": {
+   "cls": "ok",
+   "status": 200
+  },
+  "https://www.visit-shizuoka.com/business/survey_report/event": {
+   "cls": "ok",
+   "status": 200
+  },
+  "https://tanabata-hiratsuka.com/": {
+   "cls": "uncertain",
+   "status": "UNABLE_TO_VERIFY_LEAF_SIGNATURE"
+  },
+  "https://www.city.hiratsuka.kanagawa.jp/kanko/page-c_01132.html": {
+   "cls": "ok",
+   "status": 200
+  },
+  "https://www.city.hiratsuka.kanagawa.jp/kanko/page-c_01099.html": {
+   "cls": "ok",
+   "status": 200
+  },
+  "https://soma-nomaoi.jp/": {
+   "cls": "ok",
+   "status": 200
+  },
+  "https://www.city.soma.fukushima.jp/kankosite/somanomaoi/2657.html": {
+   "cls": "ok",
+   "status": 200
+  },
+  "https://sumiyoshitaisha.net/news/detail.php?seq=149": {
+   "cls": "ok",
+   "status": 200
+  },
+  "https://www.sumiyoshitaisha.net/events/special.html?sfns=mo": {
+   "cls": "ok",
+   "status": 200
+  },
+  "https://www.suwajinja.or.jp/": {
+   "cls": "ok",
+   "status": 200
+  },
+  "https://ohayashi.org/suwamatsuri/": {
+   "cls": "ok",
+   "status": 200
+  },
+  "https://nishikicho-parade.com/": {
+   "cls": "ok",
+   "status": 200
+  },
+  "https://www.crossroadfukuoka.jp/event/11555": {
+   "cls": "ok",
+   "status": 200
+  },
+  "https://aichinow.pref.aichi.jp/night/search/detail/1592/event/": {
+   "cls": "ok",
+   "status": 200
+  },
+  "https://www.takaoka.or.jp/event/detail_3871.html": {
+   "cls": "ok",
+   "status": 200
+  },
+  "https://www.takaokasekinojinjya.com/mikurumayama": {
+   "cls": "ok",
+   "status": 200
+  },
+  "https://www.takaoka.or.jp/news/detail_114.html": {
+   "cls": "ok",
+   "status": 200
+  },
+  "https://www.takasaki-matsuri.jp/gaiyou/": {
+   "cls": "ok",
+   "status": 200
+  },
+  "https://www.city.takasaki.gunma.jp/site/sightseeing/2157.html": {
+   "cls": "ok",
+   "status": 200
+  },
+  "https://www.hidatakayama.or.jp/akinotakayamamatsuri/": {
+   "cls": "ok",
+   "status": 201
+  },
+  "https://www.kankou-gifu.jp/spot/detail_1074.html": {
+   "cls": "ok",
+   "status": 200
+  },
+  "https://www.takayama-yatai.jp/about/autumn-festival.html": {
+   "cls": "ok",
+   "status": 200
+  },
+  "https://www.hidatakayama.or.jp/spot/detail_2009.html": {
+   "cls": "ok",
+   "status": 200
+  },
+  "https://www.hidatakayama.or.jp/faq/index.html": {
+   "cls": "ok",
+   "status": 200
+  },
+  "https://www.hidatakayama.or.jp/pdf/": {
+   "cls": "ok",
+   "status": 200
+  },
+  "https://www.aichinow.pref.aichi.jp/events/detail/1108/": {
+   "cls": "ok",
+   "status": 200
+  },
+  "https://www.city.tatebayashi.gunma.jp/s059/kanko/020/20210506113415.html": {
+   "cls": "ok",
+   "status": 200
+  },
+  "https://www.city.tatebayashi.gunma.jp/s059/kanko/020/55thchirashi.pdf": {
+   "cls": "ok",
+   "status": 200
+  },
+  "https://osaka-info.jp/event/osakatenmangu-tenjinsai/": {
+   "cls": "ok",
+   "status": 200
+  },
+  "https://osaka-info.jp/experience/ja/osaka/spot/611": {
+   "cls": "ok",
+   "status": 200
+  },
+  "https://www.city.tochigi.lg.jp/site/tourism/26060.html": {
+   "cls": "ok",
+   "status": 200
+  },
+  "https://niigata-kankou.or.jp/event/3339": {
+   "cls": "ok",
+   "status": 200
+  },
+  "https://www.todaiji.or.jp/annual/event/shunie/": {
+   "cls": "ok",
+   "status": 200
+  },
+  "https://www.todaiji.or.jp/annual/event/shunie/otaimatsu/": {
+   "cls": "ok",
+   "status": 200
+  },
+  "https://tokorozawa-cci.or.jp/matsuri/about/index.html": {
+   "cls": "ok",
+   "status": 200
+  },
+  "https://tokorozawa-cci.or.jp/matsuri/about/outline.html": {
+   "cls": "ok",
+   "status": 200
+  },
+  "https://tokorozawa-cci.or.jp/matsuri/schedule/index.html": {
+   "cls": "ok",
+   "status": 200
+  },
+  "https://www.city.tokorozawa.saitama.jp/iitokoro/event/main/omaturi/tokorozawamatsuritowaR7.html": {
+   "cls": "ok",
+   "status": 200
+  },
+  "https://tokorozawa-cci.or.jp/matsuri/announce/": {
+   "cls": "ok",
+   "status": 200
+  },
+  "https://www.awaodorimirai.com/2025-%E9%96%8B%E5%82%AC%E3%82%B9%E3%82%B1%E3%82%B8%E3%83%A5%E3%83%BC%E3%83%AB": {
+   "cls": "ok",
+   "status": 200
+  },
+  "https://www.koenji-awaodori.com/about/about01.html": {
+   "cls": "ok",
+   "status": 200
+  },
+  "https://www.koenji-awaodori.com/access/": {
+   "cls": "ok",
+   "status": 200
+  },
+  "https://www.city.tonami.lg.jp/kanko/event/511p/": {
+   "cls": "ok",
+   "status": 200
+  },
+  "https://www.city.tonami.lg.jp/photop/89921p/": {
+   "cls": "ok",
+   "status": 200
+  },
+  "https://kounan-navi.com/event/20260718ekin/": {
+   "cls": "ok",
+   "status": 200
+  },
+  "https://www.ekingura.com/article/archives/5320": {
+   "cls": "ok",
+   "status": 200
+  },
+  "https://tosajinja.com/information/": {
+   "cls": "ok",
+   "status": 200
+  },
+  "https://tosajinja.com/gyouji/": {
+   "cls": "ok",
+   "status": 200
+  },
+  "https://tosajinja.com/information/%E4%BB%A4%E5%92%8C%EF%BC%98%E5%B9%B4%E3%80%80%E5%BF%97%E9%82%A3%E7%A5%A2%E7%A5%AD%EF%BC%888%E6%9C%8824%E6%97%A5%E3%83%BB25%E6%97%A5%EF%BC%89%E5%BE%A1%E6%A1%88%E5%86%85/": {
+   "cls": "ok",
+   "status": 200
+  },
+  "https://tottori-shanshan.jp/event": {
+   "cls": "ok",
+   "status": 200
+  },
+  "https://tottori-shanshan.jp/": {
+   "cls": "ok",
+   "status": 200
+  },
+  "https://toukasan.jp/?mode=pc": {
+   "cls": "ok",
+   "status": 200
+  },
+  "https://toukasan.jp/toukasan-grand-festival/history-of-the-festival/": {
+   "cls": "ok",
+   "status": 200
+  },
+  "https://tsukanko.jp/event/tribe_events-7338/": {
+   "cls": "ok",
+   "status": 200
+  },
+  "https://www.tuchiura-yasakajinja.com/": {
+   "cls": "ok",
+   "status": 200
+  },
+  "https://npo-kirara.org/event/6998.html": {
+   "cls": "ok",
+   "status": 200
+  },
+  "https://tutizaki-hikiyama.com/": {
+   "cls": "ok",
+   "status": 200
+  },
+  "https://www.city.akita.lg.jp/kurashi/kyodo-chiiki/1005328/1004620/1009756/1004622.html": {
+   "cls": "ok",
+   "status": 200
+  },
+  "https://tutizaki-hikiyama.com/schedule/": {
+   "cls": "ok",
+   "status": 200
+  },
+  "https://www.city.akita.lg.jp/shobo/oshirase/1042513.html": {
+   "cls": "ok",
+   "status": 200
+  },
+  "https://www.city.tsuruga.lg.jp/page/3565.html": {
+   "cls": "ok",
+   "status": 200
+  },
+  "https://www.city.tsuruga.lg.jp/site/bus/1288.html": {
+   "cls": "broken",
+   "status": 404
+  },
+  "https://www.kankomie.or.jp/event/5285": {
+   "cls": "ok",
+   "status": 200
+  },
+  "https://www.crossroadfukuoka.jp/event/13550": {
+   "cls": "ok",
+   "status": 200
+  },
+  "https://narashikanko.or.jp/event/detail_10201.html": {
+   "cls": "ok",
+   "status": 200
+  },
+  "https://narashikanko.or.jp/feature/unemematsuri": {
+   "cls": "ok",
+   "status": 200
+  },
+  "https://www.city.uruma.lg.jp/1007003000/event/p000037.html": {
+   "cls": "ok",
+   "status": 200
+  },
+  "https://www.okinawastory.jp/event/600022796": {
+   "cls": "ok",
+   "status": 200
+  },
+  "https://ushibuka-haiya.com/": {
+   "cls": "ok",
+   "status": 200
+  },
+  "https://ushibuka-haiya.com/access/": {
+   "cls": "ok",
+   "status": 200
+  },
+  "https://www.city.amakusa.kumamoto.jp/kiji00314231/index.html": {
+   "cls": "ok",
+   "status": 200
+  },
+  "https://www.city.amakusa.kumamoto.jp/kiji00314104/3_14104_up_myjiawek.pdf": {
+   "cls": "ok",
+   "status": 200
+  },
+  "https://www.uda-kankou.jp/event/3275": {
+   "cls": "ok",
+   "status": 200
+  },
+  "https://yamatoji.nara-kankou.or.jp/01shaji/01jinja/03east_area/udamikumarijinja-uda_utano/event/tb4d093u2a/": {
+   "cls": "ok",
+   "status": 200
+  },
+  "https://www.utsunomiya-cvb.org/event/detail_20002.html": {
+   "cls": "ok",
+   "status": 200
+  },
+  "https://www.city.uwajima.ehime.jp/soshiki/3/mirai-kiji2026-6-12.html": {
+   "cls": "ok",
+   "status": 200
+  },
+  "https://www.city.uwajima.ehime.jp/site/hurusato/mailmagazine85.html": {
+   "cls": "ok",
+   "status": 200
+  },
+  "https://www.crossroadfukuoka.jp/event/13288": {
+   "cls": "ok",
+   "status": 200
+  },
+  "https://www.kagoshima-kankou.com/event/20481": {
+   "cls": "ok",
+   "status": 200
+  },
+  "https://www.hanagasa.jp/": {
+   "cls": "ok",
+   "status": 200
+  },
+  "https://www.pref.yamagata.jp/020026/kensei/shoukai/yamagatamonogatari/matsuri/hanagasa.html": {
+   "cls": "ok",
+   "status": 200
+  },
+  "https://www.hanagasa.jp/news/news_99.html": {
+   "cls": "ok",
+   "status": 200
+  },
+  "https://www.yamaguchi-city.jp/calendar/summer.html": {
+   "cls": "ok",
+   "status": 200
+  },
+  "https://ycfc.yamaguchi-city.jp/location/tradition_06/festival_01/event03.html": {
+   "cls": "ok",
+   "status": 200
+  },
+  "https://y-chouchin.jp/event/": {
+   "cls": "ok",
+   "status": 200
+  },
+  "https://www.city.yamaguchi.lg.jp/soshiki/16/197230.html": {
+   "cls": "ok",
+   "status": 200
+  },
+  "https://niigata-kankou.or.jp/experience/1985": {
+   "cls": "ok",
+   "status": 200
+  },
+  "https://kumamotoyamatotour.wixsite.com/mysite/hassakumatsuri2": {
+   "cls": "ok",
+   "status": 200
+  },
+  "https://www.town.kumamoto-yamato.lg.jp/kiji00310714/index.html": {
+   "cls": "ok",
+   "status": 200
+  },
+  "https://www.town.kumamoto-yamato.lg.jp/kiji00310801/index.html": {
+   "cls": "ok",
+   "status": 200
+  },
+  "https://kokuzouson.com/akimaturi2026/": {
+   "cls": "ok",
+   "status": 200
+  },
+  "https://www.miyagi-kankou.or.jp/kakikomi/detail.php?id=15134": {
+   "cls": "ok",
+   "status": 200
+  },
+  "https://kokuzouson.com/contact/": {
+   "cls": "ok",
+   "status": 200
+  },
+  "https://aichinow.pref.aichi.jp/events/detail/3865/": {
+   "cls": "ok",
+   "status": 200
+  },
+  "https://yasugi-kankou.com/event/yasugi-tsukinowa-festival2026/": {
+   "cls": "ok",
+   "status": 200
+  },
+  "https://myouken.com/": {
+   "cls": "ok",
+   "status": 200
+  },
+  "https://myouken.com/八代妙見祭/八代妙見祭について/": {
+   "cls": "ok",
+   "status": 200
+  },
+  "https://www.asobo-saga.jp/events/detail/868dfccb-839b-4b50-b7b3-e1908e8ebb7d": {
+   "cls": "ok",
+   "status": 200
+  },
+  "https://www.city.karatsu.lg.jp/page/52392.html": {
+   "cls": "ok",
+   "status": 200
+  },
+  "https://maruchiba.jp/event/detail_12967.html": {
+   "cls": "ok",
+   "status": 200
+  },
+  "https://www.city.sosa.lg.jp/page/page000941.html": {
+   "cls": "ok",
+   "status": 200
+  },
+  "https://www.city.sosa.lg.jp/data/doc/1783319652_doc_145_0.pdf": {
+   "cls": "ok",
+   "status": 200
+  },
+  "https://www.city.sosa.lg.jp/data/doc/1783319655_doc_145_0.pdf": {
+   "cls": "ok",
+   "status": 200
+  },
+  "https://yokosuka-kanko.com/events/46th_mikoshi/": {
+   "cls": "ok",
+   "status": 200
+  },
+  "https://yokosuka-kanko.com/events/47th_mikoshi/": {
+   "cls": "ok",
+   "status": 200
+  },
+  "https://www.city.yonago.lg.jp/4071.htm": {
+   "cls": "ok",
+   "status": 200
+  },
+  "https://www.city.yonago.lg.jp/item/62261.htm": {
+   "cls": "ok",
+   "status": 200
+  },
+  "https://uesugi.yonezawa-matsuri.jp/": {
+   "cls": "ok",
+   "status": 200
+  },
+  "https://yonezawa.info/log/?l=449944": {
+   "cls": "ok",
+   "status": 200
+  },
+  "https://www.nagasaki-tabinet.com/event/51727": {
+   "cls": "ok",
+   "status": 200
+  },
+  "https://yosa.jp/": {
+   "cls": "ok",
+   "status": 200
+  },
+  "https://www.yosakoi-soran.jp/news/2026_kaisaikekka.html": {
+   "cls": "ok",
+   "status": 200
+  },
+  "https://fujiyoshida.net/feature/himatsuri/index": {
+   "cls": "ok",
+   "status": 200
+  },
+  "https://online.bunka.go.jp/heritages/detail/137064": {
+   "cls": "ok",
+   "status": 200
+  },
+  "https://www.city.fujiyoshida.yamanashi.jp/page/15160.html": {
+   "cls": "ok",
+   "status": 200
+  },
+  "https://www.asobo-saga.jp/events/detail/b56fde39-d3e6-4f4a-a7e4-538b15e13c1f": {
+   "cls": "ok",
+   "status": 200
+  },
+  "https://www.city.nakagawa.lg.jp/soshiki/35/stampr08.html": {
+   "cls": "ok",
+   "status": 200
+  },
+  "https://www.city.fuji.shizuoka.jp/1035170000/miryoku/p007461.html": {
+   "cls": "ok",
+   "status": 200
+  },
+  "https://www.yugawara.or.jp/event/920/": {
+   "cls": "ok",
+   "status": 200
+  },
+  "https://www.yugawara.or.jp/feature/5576/": {
+   "cls": "ok",
+   "status": 200
+  },
+  "https://www.yugawara.or.jp/event/972/": {
+   "cls": "ok",
+   "status": 200
+  },
+  "https://www.city.yuki.lg.jp/kankou/event/page000147.html": {
+   "cls": "ok",
+   "status": 200
+  },
+  "https://www.ibarakiken-jinjacho.or.jp/ibaraki/kensei/jinja/13001.html": {
+   "cls": "ok",
+   "status": 200
+  }
+ },
+ "media": {
+  "Mm0t5EVlm5A": {
+   "cls": "ok",
+   "status": 200
+  },
+  "EtIe6SWw8ag": {
+   "cls": "ok",
+   "status": 200
+  },
+  "c00ePgQPoPY": {
+   "cls": "ok",
+   "status": 200
+  },
+  "J_Jid3090DE": {
+   "cls": "ok",
+   "status": 200
+  },
+  "9pDqeAAatzc": {
+   "cls": "ok",
+   "status": 200
+  },
+  "QMwU8zZTEhk": {
+   "cls": "ok",
+   "status": 200
+  },
+  "XwXlbg9G_5Q": {
+   "cls": "ok",
+   "status": 200
+  },
+  "Hk3eNzg1Sls": {
+   "cls": "ok",
+   "status": 200
+  },
+  "SITx1J9Uz3I": {
+   "cls": "ok",
+   "status": 200
+  },
+  "G_LYJVQ816E": {
+   "cls": "ok",
+   "status": 200
+  },
+  "SjlFwoYpenw": {
+   "cls": "ok",
+   "status": 200
+  },
+  "4JsAXD-tpnk": {
+   "cls": "ok",
+   "status": 200
+  },
+  "rn2T2df7Tmw": {
+   "cls": "ok",
+   "status": 200
+  },
+  "UgDHWDI0zvA": {
+   "cls": "ok",
+   "status": 200
+  },
+  "BzM6Ssk1_Mg": {
+   "cls": "ok",
+   "status": 200
+  },
+  "hTEbjQgFq3s": {
+   "cls": "ok",
+   "status": 200
+  },
+  "cnkKizU3uKY": {
+   "cls": "ok",
+   "status": 200
+  },
+  "5vtUBfGl0-s": {
+   "cls": "ok",
+   "status": 200
+  },
+  "0JmFraeZ-Gk": {
+   "cls": "ok",
+   "status": 200
+  },
+  "tAFkkOPPABA": {
+   "cls": "ok",
+   "status": 200
+  },
+  "k0X5F9MFUBE": {
+   "cls": "ok",
+   "status": 200
+  },
+  "tc2NVsbHN1o": {
+   "cls": "ok",
+   "status": 200
+  },
+  "P6xRNP8HD5M": {
+   "cls": "ok",
+   "status": 200
+  },
+  "BqBYrfEvXII": {
+   "cls": "ok",
+   "status": 200
+  },
+  "tmj6Wzq8JJQ": {
+   "cls": "ok",
+   "status": 200
+  },
+  "UR38OymutQ0": {
+   "cls": "ok",
+   "status": 200
+  },
+  "HvocjlXeT1Y": {
+   "cls": "ok",
+   "status": 200
+  },
+  "j2SjrnpPIWc": {
+   "cls": "ok",
+   "status": 200
+  },
+  "gxqF53CW9AA": {
+   "cls": "ok",
+   "status": 200
+  },
+  "_ToTEq0-H-0": {
+   "cls": "ok",
+   "status": 200
+  },
+  "op5Dd2MC9g4": {
+   "cls": "ok",
+   "status": 200
+  },
+  "ucByqyVTvn4": {
+   "cls": "ok",
+   "status": 200
+  },
+  "haIcQjS6iu8": {
+   "cls": "ok",
+   "status": 200
+  },
+  "L5DaP7RcvsU": {
+   "cls": "ok",
+   "status": 200
+  },
+  "sh00QNdZql4": {
+   "cls": "ok",
+   "status": 200
+  },
+  "gS-j0f8mZ3o": {
+   "cls": "ok",
+   "status": 200
+  },
+  "HBREsDm2M1Y": {
+   "cls": "ok",
+   "status": 200
+  },
+  "2JDJFhwWnYI": {
+   "cls": "ok",
+   "status": 200
+  },
+  "mmSYVDfnCBU": {
+   "cls": "ok",
+   "status": 200
+  },
+  "cGFNZ-uSVfk": {
+   "cls": "ok",
+   "status": 200
+  },
+  "o9Otb5uYHCU": {
+   "cls": "ok",
+   "status": 200
+  },
+  "8q5JKyKTBFQ": {
+   "cls": "ok",
+   "status": 200
+  },
+  "DmYeAoFPNDA": {
+   "cls": "ok",
+   "status": 200
+  },
+  "ru06zDcyVL8": {
+   "cls": "ok",
+   "status": 200
+  },
+  "h9CoJaY8mKM": {
+   "cls": "ok",
+   "status": 200
+  },
+  "GdRw-F_UBM0": {
+   "cls": "ok",
+   "status": 200
+  },
+  "nwCW92wynm0": {
+   "cls": "ok",
+   "status": 200
+  },
+  "MThJ2cvI-Zk": {
+   "cls": "ok",
+   "status": 200
+  },
+  "kBN_9CLRXxk": {
+   "cls": "ok",
+   "status": 200
+  },
+  "RWGWYmcLMCU": {
+   "cls": "ok",
+   "status": 200
+  },
+  "06w2cffsvqY": {
+   "cls": "ok",
+   "status": 200
+  },
+  "DKPsjTeZUQo": {
+   "cls": "ok",
+   "status": 200
+  },
+  "63Y5SIWDeBg": {
+   "cls": "ok",
+   "status": 200
+  },
+  "Kznyp0TV0dU": {
+   "cls": "ok",
+   "status": 200
+  },
+  "E-G46iewLS0": {
+   "cls": "ok",
+   "status": 200
+  },
+  "lEcivP5DoFM": {
+   "cls": "ok",
+   "status": 200
+  },
+  "zqyU-lq8mlU": {
+   "cls": "ok",
+   "status": 200
+  },
+  "LgcZuf72uSo": {
+   "cls": "ok",
+   "status": 200
+  },
+  "0M_1-qEMKbM": {
+   "cls": "ok",
+   "status": 200
+  },
+  "sI9JLjCcYCM": {
+   "cls": "ok",
+   "status": 200
+  },
+  "euOCKKKtxek": {
+   "cls": "ok",
+   "status": 200
+  },
+  "9Ss3nPt1KjQ": {
+   "cls": "ok",
+   "status": 200
+  },
+  "AJyR1hjGza0": {
+   "cls": "ok",
+   "status": 200
+  },
+  "pYawH48dVi0": {
+   "cls": "ok",
+   "status": 200
+  },
+  "ADM2GvB0iyk": {
+   "cls": "ok",
+   "status": 200
+  },
+  "g385qj9O0WA": {
+   "cls": "ok",
+   "status": 200
+  },
+  "hQy5aYGaTc0": {
+   "cls": "ok",
+   "status": 200
+  },
+  "roAVAD8Rsmw": {
+   "cls": "ok",
+   "status": 200
+  },
+  "4uw1cV9qqdk": {
+   "cls": "ok",
+   "status": 200
+  },
+  "GP39EIGBdUc": {
+   "cls": "ok",
+   "status": 200
+  },
+  "1-zR3BV_uCM": {
+   "cls": "ok",
+   "status": 200
+  },
+  "8Ccn1Y8u10Q": {
+   "cls": "ok",
+   "status": 200
+  },
+  "8pHHfTSWfuE": {
+   "cls": "ok",
+   "status": 200
+  },
+  "fwGLCrqFqsg": {
+   "cls": "ok",
+   "status": 200
+  },
+  "_-uYgkE7IhE": {
+   "cls": "ok",
+   "status": 200
+  },
+  "KsrAxgLMUjM": {
+   "cls": "ok",
+   "status": 200
+  },
+  "whrU8Y9Yps8": {
+   "cls": "ok",
+   "status": 200
+  },
+  "xg2cTg7BLTA": {
+   "cls": "ok",
+   "status": 200
+  },
+  "Tcsb3-s3KCI": {
+   "cls": "ok",
+   "status": 200
+  },
+  "tr6hJrjMhdc": {
+   "cls": "ok",
+   "status": 200
+  },
+  "vaUu6KwjKmY": {
+   "cls": "ok",
+   "status": 200
+  },
+  "w96njP2YEwY": {
+   "cls": "ok",
+   "status": 200
+  },
+  "KSnlO2V6UyI": {
+   "cls": "ok",
+   "status": 200
+  },
+  "q_o_Ggar77o": {
+   "cls": "ok",
+   "status": 200
+  },
+  "yMNs75pm2D0": {
+   "cls": "ok",
+   "status": 200
+  },
+  "CpxpLU77OhI": {
+   "cls": "ok",
+   "status": 200
+  },
+  "M4SQBolG2KQ": {
+   "cls": "ok",
+   "status": 200
+  },
+  "79EkuLBIFgQ": {
+   "cls": "ok",
+   "status": 200
+  },
+  "_8ZXncgd8BU": {
+   "cls": "ok",
+   "status": 200
+  },
+  "wCcPkaSs4aE": {
+   "cls": "ok",
+   "status": 200
+  },
+  "TEhFQIYuK44": {
+   "cls": "ok",
+   "status": 200
+  },
+  "pClpcvHinxY": {
+   "cls": "ok",
+   "status": 200
+  },
+  "dzjzbzqOU8E": {
+   "cls": "ok",
+   "status": 200
+  },
+  "quCaBlDVBVA": {
+   "cls": "ok",
+   "status": 200
+  },
+  "ZqexWGNN1HU": {
+   "cls": "ok",
+   "status": 200
+  },
+  "GYntbicSnmo": {
+   "cls": "ok",
+   "status": 200
+  },
+  "pI-nGnDhqyM": {
+   "cls": "ok",
+   "status": 200
+  },
+  "wTLJF0jR5M0": {
+   "cls": "ok",
+   "status": 200
+  },
+  "cAXb_-rZ0FQ": {
+   "cls": "ok",
+   "status": 200
+  },
+  "rEXbIns4m7o": {
+   "cls": "ok",
+   "status": 200
+  },
+  "CfgnQQHFpy0": {
+   "cls": "ok",
+   "status": 200
+  },
+  "O3wbnJQxU0s": {
+   "cls": "ok",
+   "status": 200
+  },
+  "hjTRYXQp9J8": {
+   "cls": "ok",
+   "status": 200
+  },
+  "F8ZFzFwTH9I": {
+   "cls": "ok",
+   "status": 200
+  },
+  "ClmWk0cJDB0": {
+   "cls": "ok",
+   "status": 200
+  },
+  "s1T92XbdNXc": {
+   "cls": "ok",
+   "status": 200
+  },
+  "JmGPsdiM3Z0": {
+   "cls": "ok",
+   "status": 200
+  },
+  "w5blXOurDeM": {
+   "cls": "ok",
+   "status": 200
+  },
+  "INpjrYRy51U": {
+   "cls": "ok",
+   "status": 200
+  },
+  "IljdhxyiMIY": {
+   "cls": "ok",
+   "status": 200
+  },
+  "g-tPCzqwcMA": {
+   "cls": "ok",
+   "status": 200
+  },
+  "BmhVeZsy6u8": {
+   "cls": "ok",
+   "status": 200
+  },
+  "-39otyNlToM": {
+   "cls": "ok",
+   "status": 200
+  },
+  "Nit1c0I46NY": {
+   "cls": "ok",
+   "status": 200
+  },
+  "UY4YEMjNSX8": {
+   "cls": "ok",
+   "status": 200
+  },
+  "C2h2Cyqm0cY": {
+   "cls": "ok",
+   "status": 200
+  },
+  "rTzcVTaR4N4": {
+   "cls": "ok",
+   "status": 200
+  },
+  "7s0uJ43p4Ek": {
+   "cls": "ok",
+   "status": 200
+  },
+  "wZ4GbVM6-Bo": {
+   "cls": "ok",
+   "status": 200
+  },
+  "84UVOyXBI1o": {
+   "cls": "ok",
+   "status": 200
+  },
+  "_MXxziiKXiU": {
+   "cls": "ok",
+   "status": 200
+  },
+  "8rR6wxFR1lk": {
+   "cls": "ok",
+   "status": 200
+  },
+  "a8WPmQ420EI": {
+   "cls": "ok",
+   "status": 200
+  },
+  "vtWRdLV__gs": {
+   "cls": "ok",
+   "status": 200
+  },
+  "kAlToe4SJaQ": {
+   "cls": "ok",
+   "status": 200
+  },
+  "MCrwX722jYc": {
+   "cls": "ok",
+   "status": 200
+  },
+  "nW57c9O9W6Q": {
+   "cls": "ok",
+   "status": 200
+  },
+  "RnEKtKRuDcU": {
+   "cls": "ok",
+   "status": 200
+  },
+  "FDPnfBScMfc": {
+   "cls": "ok",
+   "status": 200
+  },
+  "phMt_hzgi_U": {
+   "cls": "ok",
+   "status": 200
+  },
+  "tppvfmIAbWE": {
+   "cls": "ok",
+   "status": 200
+  },
+  "vPLj_ROl4fE": {
+   "cls": "ok",
+   "status": 200
+  },
+  "G-3zPlyRAmU": {
+   "cls": "ok",
+   "status": 200
+  },
+  "YgFvbGiESfA": {
+   "cls": "ok",
+   "status": 200
+  },
+  "dhjHCixg_vA": {
+   "cls": "ok",
+   "status": 200
+  },
+  "SVOVCNYy9j0": {
+   "cls": "ok",
+   "status": 200
+  }
+ }
+}

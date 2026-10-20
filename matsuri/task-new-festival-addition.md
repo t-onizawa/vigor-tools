@@ -649,10 +649,14 @@ sitemap.xmlへの追記を省略してはならない。
 - `node matsuri/scripts/check-data-integrity.js` を実行し、hard issue
   が0件であることを確認する（1件でもあれば、その内容を完了報告に
   記載し、commit・push前に対処するか判断を仰ぐ）
-  `confirmed_but_all_past` のhard issueだけは停止せず、該当祭りの
-  `eventStatus`を`ended`へ直接修正して続行する
-  （週次品質改善タスクの2026-10-13例外と同じ扱い）。
-  他のhard issueは従来どおり停止・報告する。
+  `confirmed_but_all_past` のhard issueだけは停止せず、
+  `node matsuri/scripts/auto-end-festivals.js --regenerate` を実行して
+  該当祭りの`eventStatus`を`ended`へ機械的に直し（`data.js`の
+  `eventStatus`値のみ書き換え、静的コンテンツ・ハブ・検索インデックスも
+  再生成される）、その後 `check-data-integrity.js` を再実行して
+  hard issue 0件を確認し、続行する（2026-10-20：手作業での修正を廃止）。
+  `auto-end-festivals.js` がエラー終了した場合、または他のhard issueは
+  従来どおり停止・報告する。完了報告に修正件数・対象slugを記載する。
 - `generate-static-content.js`実行後、新規作成したindex.htmlに
   `data-static-content`属性が付与されていること、開催日
   （yearlyInfo[0].dates）が1件以上ある場合はEvent JSON-LDの
