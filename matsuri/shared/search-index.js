@@ -2614,5 +2614,37 @@ const SEARCH_INDEX = [
     "prefecture": "宮城県",
     "city": "女川町",
     "firstDate": "2026-10-11"
+  },
+  {
+    "slug": "seki-hamono-matsuri",
+    "name": "関市刃物まつり",
+    "officialName": "関市刃物まつり",
+    "prefecture": "岐阜県",
+    "city": "関市",
+    "firstDate": "2026-10-10"
+  },
+  {
+    "slug": "takayama-hachiman-matsuri",
+    "name": "秋の高山祭（八幡祭）",
+    "officialName": "秋の高山祭（八幡祭）",
+    "prefecture": "岐阜県",
+    "city": "高山市",
+    "firstDate": "2026-10-09"
+  },
+  {
+    "slug": "nakatsugawa-furusato-jiman-kashi-matsuri",
+    "name": "中津川ふるさとじまん祭・菓子まつり",
+    "officialName": "中津川ふるさとじまん祭・菓子まつり",
+    "prefecture": "岐阜県",
+    "city": "中津川市",
+    "firstDate": "2026-10-23"
+  },
+  {
+    "slug": "daisekigahara-sai",
+    "name": "大関ケ原祭",
+    "officialName": "大関ケ原祭2026",
+    "prefecture": "岐阜県",
+    "city": "関ケ原町",
+    "firstDate": "2026-10-17"
   }
 ];

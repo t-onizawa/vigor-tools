@@ -2674,4 +2674,20 @@
     <loc>https://vigorlab.net/matsuri/this-weekend/</loc>
     <lastmod>2026-10-19</lastmod><changefreq>weekly</changefreq><priority>0.6</priority>
   </url>
+  <url>
+    <loc>https://vigorlab.net/matsuri/festivals/seki-hamono-matsuri/</loc>
+    <lastmod>2026-10-20</lastmod><changefreq>yearly</changefreq><priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://vigorlab.net/matsuri/festivals/takayama-hachiman-matsuri/</loc>
+    <lastmod>2026-10-20</lastmod><changefreq>yearly</changefreq><priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://vigorlab.net/matsuri/festivals/nakatsugawa-furusato-jiman-kashi-matsuri/</loc>
+    <lastmod>2026-10-20</lastmod><changefreq>yearly</changefreq><priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://vigorlab.net/matsuri/festivals/daisekigahara-sai/</loc>
+    <lastmod>2026-10-20</lastmod><changefreq>yearly</changefreq><priority>0.7</priority>
+  </url>
 </urlset>
