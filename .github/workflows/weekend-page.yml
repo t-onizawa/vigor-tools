@@ -42,6 +42,19 @@ jobs:
         run: |
           echo '::error::simulate_failure=true による意図的な失敗'
           exit 1
+      - name: End finished festivals
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          node matsuri/scripts/auto-end-festivals.js --regenerate | tee "$RUNNER_TEMP/auto-end.log"
+          grep '^SUMMARY ' "$RUNNER_TEMP/auto-end.log" >> "$GITHUB_STEP_SUMMARY"
+          git add matsuri/festivals matsuri/features matsuri/prefectures matsuri/regions matsuri/months matsuri/shared/search-index.js
+          if ! git diff --cached --quiet; then
+            git commit -m 'data: 開催終了した祭りを自動でendedに更新'
+            echo 'ended_changed=true' >> "$GITHUB_OUTPUT"
+          fi
       - name: Generate and check
         shell: bash
         run: |
