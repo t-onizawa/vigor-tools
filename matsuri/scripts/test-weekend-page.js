@@ -6,13 +6,46 @@ const path = require("path");
 const vm = require("vm");
 const { execFileSync, spawnSync } = require("child_process");
 const page = require("./generate-weekend-page");
-const { loadHubData, MATSURI_ROOT } = require("./lib/hub-shared");
+const { loadHubData, MATSURI_ROOT, REGIONS } = require("./lib/hub-shared");
 const tests = [];
 function test(name, fn) { fn(); tests.push(name); console.log(`PASS ${name}`); }
 function festival(id, dates, extra = {}) {
   return { id, name: id, prefecture: "東京都", city: "テスト市", areaTag: "tokyo", constantInfo: { features: {}, access: {} }, yearlyInfo: [{ year: Number(dates[0]?.slice(0, 4) || 2026), eventStatus: "confirmed", dates, access: { hasParking: null }, confirmation: { confirmedDate: "2026-01-01" }, ...extra }] };
 }
 const generate = (festivals, asOf, existing = "") => page.generate({ festivals, asOf, existing, experienceTags: {}, cssVersion: "52" });
+test("地域属性とREGIONS定義順・その他は末尾", () => {
+  const regions = [...Object.keys(REGIONS), "other"];
+  const input = regions.slice().reverse().map((region) => ({ ...festival(region, ["2026-10-24"]), areaTag: REGIONS[region]?.prefectures[0] || "unknown" }));
+  const html = generate(input, "2026-10-19").html;
+  assert.deepEqual([...html.matchAll(/data-region="([^"]+)"/g)].map((m) => m[1]), regions);
+  assert(html.includes('data-region="other"><h3>その他</h3>'));
+});
+test("地域選択の並べ替え・対象なし・保存不可", () => {
+  const code = fs.readFileSync(path.join(MATSURI_ROOT, "shared/weekend-page.js"), "utf8");
+  for (const value of [null, "national", "kanto", "kyushu", "other", "blocked"]) {
+    const groups = ["tohoku", "kanto", "chubu"].map((region) => ({ region }));
+    const section = {
+      querySelector: (selector) => selector === ":scope > [data-region]" ? groups[0] : groups.find((group) => selector.includes(`"${group.region}"`)),
+      insertBefore: (selected, first) => { groups.splice(groups.indexOf(selected), 1); groups.splice(groups.indexOf(first), 0, selected); }
+    };
+    const main = { dataset: { weekendEnd: "9999-12-31" }, querySelectorAll: () => [] };
+    vm.runInNewContext(code, { Date, Intl, localStorage: { getItem: () => { if (value === "blocked") throw new Error("blocked"); return value; } }, document: { querySelector: () => main, getElementById: () => section } });
+    assert.deepEqual(groups.map((group) => group.region), value === "kanto" ? ["kanto", "tohoku", "chubu"] : ["tohoku", "kanto", "chubu"]);
+  }
+});
+test("見出しは本体と日付span・囲み括弧なし", () => {
+  for (const asOf of ["2026-10-19", "2027-12-29"]) {
+    const html = generate([], asOf).html;
+    const { start, end } = page.weekendRange(asOf);
+    const short = (date) => date.split("-").slice(1).map(Number).join("/");
+    const dates = `${short(start)}(土)〜${short(end)}(日)`;
+    assert(html.includes(`<h1>今週末の祭り <span class="weekend-title-dates">${dates}</span></h1>`));
+    assert(!/<h1>[^<]*（/.test(html));
+    assert(html.includes(".weekend-title-dates{display:block;"));
+    assert(html.includes('white-space:nowrap'));
+    assert(html.includes('<title>今週末の祭り｜開催確認済みの祭りを探す | MATSURI</title>'));
+  }
+});
 test("日曜・月曜・JST境界", () => {
   assert.deepEqual(page.weekendRange("2026-10-25"), { start: "2026-10-24", end: "2026-10-25" });
   assert.deepEqual(page.weekendRange("2026-10-26"), { start: "2026-10-31", end: "2026-11-01" });
@@ -123,7 +156,8 @@ test("robots・JSON-LD・release gate合成成功", () => {
   assert.equal(json[1].dateModified, "2026-10-19");
   assert.deepEqual(page.releaseGate(html, "", "").map(([, ok]) => ok), [true, false, false]);
   const topHtml = fs.readFileSync(path.join(MATSURI_ROOT, "index.html"), "utf8");
-  assert(topHtml.includes('<p class="weekend-page-link"><a href="/matsuri/this-weekend/">今週末の祭りを見る →</a></p>'));
+  assert(/id="weekend-banner-link"[^>]*href="\/matsuri\/this-weekend\/"/.test(topHtml));
+  assert(!topHtml.includes('class="weekend-page-link"'));
   assert.deepEqual(page.releaseGate(html, topHtml, "").map(([, ok]) => ok), [true, true, false]);
   assert(page.releaseGate(html, topHtml, '<url><loc>https://vigorlab.net/matsuri/this-weekend/</loc></url>').every(([, ok]) => ok));
 });

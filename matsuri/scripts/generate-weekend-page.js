@@ -127,17 +127,17 @@ function renderPage(model, experienceTags, cssVersion, updatedDate) {
   }
   const groups = {};
   for (const item of model.weekend) {
-    const area = Object.entries(REGIONS).find(([, r]) => r.prefectures.includes(item.festival.areaTag))?.[1]?.label || "その他";
+    const area = Object.entries(REGIONS).find(([, r]) => r.prefectures.includes(item.festival.areaTag))?.[0] || "other";
     (groups[area] ||= []).push(item);
   }
-  const weekendBlock = model.weekend.length ? `<section id="this-weekend-section" data-weekend-block><h2>今週末の開催確認済み</h2>${Object.entries(groups).map(([area, items]) => `<section data-weekend-block><h3>${escape(area)}</h3><div class="festival-list">${items.map((item) => card(item)).join("\n")}</div></section>`).join("\n")}</section>` : "";
+  const weekendBlock = model.weekend.length ? `<section id="this-weekend-section" data-weekend-block><h2>今週末の開催確認済み</h2>${[...Object.keys(REGIONS), "other"].filter((area) => groups[area]).map((area) => `<section data-weekend-block data-region="${area}"><h3>${escape(REGIONS[area]?.label || "その他")}</h3><div class="festival-list">${groups[area].map((item) => card(item)).join("\n")}</div></section>`).join("\n")}</section>` : "";
   const lead = model.weekend.length ? `今週末は全国で${model.weekend.length}件、開催を確認済みです。` : `今週末（${shortDate(model.range.start)}〜${shortDate(model.range.end)}）に開催が確認できた祭りはありません。`;
   const monthLinks = monthWindows(model.asOf).map(({ month }) => `<a href="../months/${MONTHS[month - 1].slug}/">${month}月の祭り</a>`).join(" ／ ");
   const regionLinks = ["kanto", "tohoku", "chubu", "kinki", "chugoku", "shikoku", "kyushu"].map((slug) => `<a href="../regions/${slug}/">${REGIONS[slug].label}</a>`).join(" ／ ");
   const featureLinks = [["dashi", "山車"], ["mikoshi", "神輿"], ["odori", "踊り"], ["hikimawashi", "曳き回し"], ["night", "夜が見どころ"]].map(([slug, label]) => `<a href="../features/${slug}/">${label}</a>`).join(" ／ ");
   const main = `<main class="page-shell" data-weekend-start="${model.range.start}" data-weekend-end="${model.range.end}">
 <!-- 自動生成: matsuri/scripts/generate-weekend-page.js（手動編集せず生成元を更新） -->
-<header class="list-header"><nav class="breadcrumb" aria-label="パンくずリスト"><a href="../">MATSURI</a> &gt; <span>今週末の祭り</span></nav><h1>今週末の祭り（${shortDate(model.range.start)}(土)〜${shortDate(model.range.end)}(日)）</h1><p id="weekend-lead" class="header-description">${lead}</p></header>
+<header class="list-header"><nav class="breadcrumb" aria-label="パンくずリスト"><a href="../">MATSURI</a> &gt; <span>今週末の祭り</span></nav><h1>今週末の祭り <span class="weekend-title-dates">${shortDate(model.range.start)}(土)〜${shortDate(model.range.end)}(日)</span></h1><p id="weekend-lead" class="header-description">${lead}</p></header>
 <p id="weekend-stale-banner" role="status" hidden>この情報は更新待ちです。最新の祭りは月別・地域別からご覧ください。</p>
 ${weekendBlock}
 ${section("upcoming-section", "開催中・もうすぐ開催", model.upcoming)}
@@ -163,8 +163,8 @@ ${section("seasonal-reference-section", "例年この時期（参考）", model.
   const visible = [...new Map([...model.weekend, ...model.upcoming, ...model.nextWeekend, ...model.recommendations, ...model.references].map((item) => [item.festival.id, item])).values()];
   const itemList = { "@context": "https://schema.org", "@type": "ItemList", dateModified: updatedDate, numberOfItems: visible.length, itemListElement: visible.map((item) => `https://vigorlab.net/matsuri/festivals/${item.festival.id}/`) };
   const breadcrumbs = { "@context": "https://schema.org", "@type": "BreadcrumbList", itemListElement: [{ "@type": "ListItem", position: 1, name: "MATSURI", item: "https://vigorlab.net/matsuri/" }, { "@type": "ListItem", position: 2, name: "今週末の祭り", item: CANONICAL }] };
-  html = html.replace('</head>', `<style>[hidden]{display:none!important}#seasonal-reference-section{font-size:.9em;color:var(--muted)}#weekend-stale-banner{padding:12px;border:1px solid var(--line)}</style>\n<script type="application/ld+json">${JSON.stringify(breadcrumbs)}</script>\n<script type="application/ld+json">${JSON.stringify(itemList)}</script>\n</head>`)
-    .replace('</body>', '<script src="../shared/weekend-page.js?v=1"></script>\n</body>');
+  html = html.replace('</head>', `<style>[hidden]{display:none!important}#seasonal-reference-section{font-size:.9em;color:var(--muted)}#weekend-stale-banner{padding:12px;border:1px solid var(--line)}.weekend-title-dates{display:block;margin-top:6px;font-size:.5em;font-weight:500;letter-spacing:.02em;color:var(--muted);white-space:nowrap}</style>\n<script type="application/ld+json">${JSON.stringify(breadcrumbs)}</script>\n<script type="application/ld+json">${JSON.stringify(itemList)}</script>\n</head>`)
+    .replace('</body>', '<script src="../shared/weekend-page.js?v=2"></script>\n</body>');
   return html.replace(/[ \t]+$/gm, "");
 }
 function normalizeUpdated(html) {

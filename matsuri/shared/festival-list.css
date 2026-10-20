@@ -1532,3 +1532,8 @@ h1 {
     grid-column: 1 / -1;
   }
 }
+.weekend-picks-more {
+  margin: 12px 0 0;
+  font-size: .875rem;
+  text-align: right;
+}

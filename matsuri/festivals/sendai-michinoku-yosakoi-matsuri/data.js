@@ -29,7 +29,7 @@ const FESTIVAL = {
     },
     "highlightComment": "鳴子を手にしたチームの演舞を公園や広場で見比べ、定禅寺通では踊りながら進むパレードを楽しめる。",
     "atmosphereMedia": [],
-    "backgroundImage": null,
+    "backgroundImage": {"type":"youtube","contentId":"IljdhxyiMIY","sourceUrl":"https://www.youtube.com/watch?v=IljdhxyiMIY","publisher":"仙台みちのくYOSAKOIまつり公式","publisherType":"official","checkedDate":"2026-10-19","note":"優先度1。決勝ステージの踊り手と大旗が判別できる実写。右下の小さな番組ロゴは主役を隠さない。"},
     "confirmation": {
       "verified": true,
       "confirmedDate": "2026-10-19",
