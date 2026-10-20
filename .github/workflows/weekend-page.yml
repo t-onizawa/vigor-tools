@@ -34,6 +34,11 @@ jobs:
         with:
           ref: main
           fetch-depth: 0
+      - name: Record start SHA
+        shell: bash
+        run: |
+          # IndexNow通知の差分起点。rebaseで取り込んだ外部コミットも本番反映済みなので範囲に含めてよい。
+          echo "START_SHA=$(git rev-parse HEAD)" >> "$GITHUB_ENV"
       - uses: actions/setup-node@v4
         with:
           node-version: '22'
@@ -112,3 +117,10 @@ jobs:
           EXPECTED_SHA: ${{ steps.sync.outputs.sha }}
         run: |
           bash .github/scripts/verify-weekend-pages.sh
+      - name: Notify IndexNow for changed pages
+        # 本番照合が通った後だけ実行する。IndexNowの失敗は公開に影響しないため全体を落とさない。
+        if: steps.sync.outputs.changed == 'true'
+        continue-on-error: true
+        shell: bash
+        run: |
+          node matsuri/scripts/indexnow-notify-changed.js --from "$START_SHA" --to HEAD | tee -a "$GITHUB_STEP_SUMMARY"
