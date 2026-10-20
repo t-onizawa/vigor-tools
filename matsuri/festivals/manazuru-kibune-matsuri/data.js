@@ -39,7 +39,7 @@ const FESTIVAL = {
       publishedYear: 2026,
       checkedDate: "2026-07-30"
     }],
-    backgroundImage: null,
+    backgroundImage: {"type":"youtube","contentId":"1-zR3BV_uCM","sourceUrl":"https://www.youtube.com/watch?v=1-zR3BV_uCM","publisher":"ANNnewsCH","publisherType":"local_media","checkedDate":"2026-10-20","note":"優先度1。飾り付けた小早船と海上渡御の現地実写。左上の透かしはごく薄く、船の判別を妨げない。"},
     confirmation: {
       verified: true,
       confirmedDate: "2026-07-30",

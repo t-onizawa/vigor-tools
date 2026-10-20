@@ -20,3 +20,7 @@
 
 根拠: https://www.city.katori.lg.jp/sightseeing/matsuri/introduction/index.html
 
+### 2026-10-20 毎日品質改善
+
+- 通常・背景のみ不足。香取市の一次情報と夏祭り動画探索。既存 https://www.youtube.com/watch?v=w5blXOurDeM を直接確認。おかえり 日本の祭り6760人、6:59、1.6万回、2022年夏祭りを説明。hqdefaultと0〜3を比較。デフォルトを試験適用したが390×844で左の大きな題字とH1が重なるため取り下げ。既存atmosphereMedia.publisherType=officialの妥当性は確認候補として残し、本タスクでは修正していない。
+

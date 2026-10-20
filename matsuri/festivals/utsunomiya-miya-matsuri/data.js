@@ -13,7 +13,7 @@ const FESTIVAL = {
       type: "youtube", url: "https://www.youtube.com/watch?v=kAlToe4SJaQ", contentId: "kAlToe4SJaQ",
       title: "ふるさと宮まつり開幕 50回の節目 県都に熱気 宇都宮", publisher: "下野新聞チャンネル", publisherType: "local_media",
       purpose: "festival_atmosphere", publishedYear: 2025, checkedDate: "2026-08-01"
-    }], backgroundImage: null,
+    }], backgroundImage: {"type":"youtube","contentId":"kAlToe4SJaQ","sourceUrl":"https://www.youtube.com/watch?v=kAlToe4SJaQ","publisher":"下野新聞チャンネル","publisherType":"local_media","checkedDate":"2026-10-20","note":"優先度3。提灯を付けた神輿と担ぎ手の夜の実写。下部ニュース字幕は神輿上部と提灯の判別を妨げない。0は同じ画像、1〜3は低解像度かつ字幕が多く背景用途に不向き。"},
     confirmation: { verified: true, confirmedDate: "2026-07-31", sources: ["https://www.utsunomiya-cvb.org/event/detail_20002.html"] }
   },
   yearlyInfo: [{ year: 2026, eventStatus: "ended", dates: ["2026-08-01", "2026-08-02"],

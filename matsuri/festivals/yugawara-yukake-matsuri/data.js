@@ -19,7 +19,7 @@ const FESTIVAL = {
     },
     highlightComment: "沿道の1,000個の樽と約5,000個の湯桶から、温泉の湯約60tを練り歩く神輿へ浴びせる。",
     atmosphereMedia: [{ type: "youtube", url: "https://www.youtube.com/watch?v=SVOVCNYy9j0", contentId: "SVOVCNYy9j0", title: "湯河原湯かけまつり", publisher: "湯河原温泉観光", publisherType: "tourism", purpose: "festival_atmosphere", publishedYear: 2023, checkedDate: "2026-08-12" }],
-    backgroundImage: null,
+    backgroundImage: {"type":"youtube","contentId":"SVOVCNYy9j0","sourceUrl":"https://www.youtube.com/watch?v=SVOVCNYy9j0","publisher":"湯河原温泉観光","publisherType":"tourism","checkedDate":"2026-10-20","note":"優先度3。神輿・担ぎ手・湯しぶきが判別できる実写。下部題字は画面上側の神輿を隠さない。0は同じ画像、1〜3は低解像度・説明文字・白飛びした湯しぶきで背景用途に不向き。"},
     confirmation: { verified: true, confirmedDate: "2026-08-05", sources: ["https://www.yugawara.or.jp/event/972/"] }
   },
   yearlyInfo: [{
