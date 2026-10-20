@@ -50,6 +50,7 @@ jobs:
           grep '^SUMMARY ' "$RUNNER_TEMP/weekend-generation.log" >> "$GITHUB_STEP_SUMMARY"
           node matsuri/scripts/generate-weekend-page.js --check
           node matsuri/scripts/test-weekend-page.js --release-gate
+          node .github/scripts/test-verify-weekend-pages.js
       - name: Commit changed HTML and sync main
         id: sync
         shell: bash
@@ -72,13 +73,17 @@ jobs:
           if [ "$(git rev-parse HEAD)" != "$(git rev-parse origin/main)" ]; then
             git push origin HEAD:main
             echo 'pushed=true' >> "$GITHUB_OUTPUT"
+            echo 'changed=true' >> "$GITHUB_OUTPUT"
           else
             echo 'pushed=false' >> "$GITHUB_OUTPUT"
+            echo 'changed=false' >> "$GITHUB_OUTPUT"
+            echo '差分なし、本番照合は不要' >> "$GITHUB_STEP_SUMMARY"
           fi
           echo "sha=$(git rev-parse HEAD)" >> "$GITHUB_OUTPUT"
           echo "main SHA: $(git rev-parse HEAD)" >> "$GITHUB_STEP_SUMMARY"
       - name: Request existing Pages build
         id: pages
+        if: steps.sync.outputs.changed == 'true'
         shell: bash
         run: |
           set -euo pipefail
@@ -87,38 +92,10 @@ jobs:
           cat "$RUNNER_TEMP/pages-build.json"
           echo "build_url=$(jq -r .url "$RUNNER_TEMP/pages-build.json")" >> "$GITHUB_OUTPUT"
       - name: Wait for Pages and compare production HTML
+        if: steps.sync.outputs.changed == 'true'
         shell: bash
         env:
           BUILD_URL: ${{ steps.pages.outputs.build_url }}
           EXPECTED_SHA: ${{ steps.sync.outputs.sha }}
         run: |
-          set -euo pipefail
-          # 状態の監視のみ。ビルドや更新処理を再試行しない。
-          for poll in {1..60}; do
-            gh api "$BUILD_URL" > "$RUNNER_TEMP/pages-status.json"
-            status=$(jq -r .status "$RUNNER_TEMP/pages-status.json")
-            commit=$(jq -r .commit "$RUNNER_TEMP/pages-status.json")
-            if [ "$commit" = "$EXPECTED_SHA" ] && [ "$status" = errored ]; then
-              cat "$RUNNER_TEMP/pages-status.json"
-              exit 1
-            fi
-            if [ "$commit" = "$EXPECTED_SHA" ] && [ "$status" = built ]; then break; fi
-            sleep 10
-          done
-          test "$status" = built
-          test "$(jq -r .commit "$RUNNER_TEMP/pages-status.json")" = "$EXPECTED_SHA"
-          # 検証ごとにURLを変え、過去runのキャッシュを再利用しない。
-          # internal=1は本番検証アクセスの共通ルールとして維持する。
-          production_url="https://vigorlab.net/matsuri/this-weekend/?internal=1&weekend_run=${GITHUB_RUN_ID}-${GITHUB_RUN_ATTEMPT}&sha=${EXPECTED_SHA}"
-          curl --fail --silent --show-error --location \
-            -H 'Cache-Control: no-cache' \
-            --dump-header "$RUNNER_TEMP/weekend-production.headers" \
-            "$production_url" -o "$RUNNER_TEMP/weekend-production.html"
-          cmp matsuri/this-weekend/index.html "$RUNNER_TEMP/weekend-production.html"
-          echo "Pages build: $BUILD_URL" >> "$GITHUB_STEP_SUMMARY"
-          echo "本番照合URL: $production_url" >> "$GITHUB_STEP_SUMMARY"
-          echo '```text' >> "$GITHUB_STEP_SUMMARY"
-          awk 'tolower($0) ~ /^(http\/|age:|x-cache:|last-modified:|cache-control:)/' "$RUNNER_TEMP/weekend-production.headers" >> "$GITHUB_STEP_SUMMARY"
-          echo '```' >> "$GITHUB_STEP_SUMMARY"
-          echo "本番HTML SHA256: $(sha256sum "$RUNNER_TEMP/weekend-production.html" | cut -d ' ' -f 1)" >> "$GITHUB_STEP_SUMMARY"
-          echo "本番一致確認 UTC: $(date -u +%FT%TZ)" >> "$GITHUB_STEP_SUMMARY"
+          bash .github/scripts/verify-weekend-pages.sh
