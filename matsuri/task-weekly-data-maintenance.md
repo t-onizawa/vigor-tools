@@ -129,6 +129,19 @@ VIGOR MATSURIの週次データ整合性チェックと、検証成功時の自�
 
 ---
 
+## IndexNow通知（2026-10-20追加）
+
+commit・push・Pages反映（本番200）まで完了し、公開ページ（`index.html`）を
+1件以上変更した場合のみ、次を実行する。
+
+```
+node matsuri/scripts/indexnow-notify-changed.js --from {作業開始時のorigin/mainのSHA} --to HEAD
+```
+
+- 変更のない回は実行しない（commitしない回は通知しない）
+- 本番が200のページだけが通知される。失敗しても作業は続行し、出力を
+  そのまま完了報告に貼る（リトライしない）
+
 ## 変更履歴
 
 ```

@@ -254,28 +254,21 @@ IndexNowへ通知する（Bingアカウント等へのログインは不要）�
 **2026-10-20以降は次のコマンドで実行する（個別のGETは行わない）。**
 
 ```
-node matsuri/scripts/finalize-additions.js notify {slug1} {slug2} ...
+node matsuri/scripts/indexnow-notify-changed.js --from {作業開始時のorigin/mainのSHA} --to HEAD
 ```
 
-- 本番が200のURLだけを、IndexNowへ1回のPOSTでまとめて通知する
+- 今回のcommit範囲で追加・変更された公開ページ（新規祭りページ、再生成
+  されたハブページ・トップ等）のうち、**本番が200のURLだけ**を
+  IndexNowへ1回のPOSTでまとめて通知する（新規URL・ハブの更新分が
+  漏れない）。`noindex`のページと`research/`・`_`始まりは自動で除外される
+- 事前に`--dry-run`を付けて対象一覧を確認してよい
 - 失敗しても公開には影響せず、リトライしない。出力（成功/失敗・
-  URL一覧）をそのまま完了報告に貼る
-- 以下の説明（キー・通知先・失敗時の扱い）はこのコマンドの仕様の記録
-
-- キー：`5e536e2b99a84a3bb1cb18c3697cc639`
-  （キーファイル：`https://vigorlab.net/5e536e2b99a84a3bb1cb18c3697cc639.txt`）
-- 通知先：
-  `https://api.indexnow.org/indexnow?url={公開URL}&key=5e536e2b99a84a3bb1cb18c3697cc639&keyLocation=https%3A%2F%2Fvigorlab.net%2F5e536e2b99a84a3bb1cb18c3697cc639.txt`
-  （`{公開URL}`は例：`https://vigorlab.net/matsuri/festivals/{slug}/`。
-  URLエンコードが必要な箇所はエンコードする）
-- 今回の実行で新規作成したページ分だけ通知する（複数件追加した場合は
-  件数分繰り返す）
-- レスポンスが200/202であれば成功。それ以外のステータスコードや
-  通信エラーの場合は、通知に失敗した旨とエラー内容を完了報告に記載
-  し、リトライはしない（次回以降の実行や自然クロールに委ねる）
-- このステップの失敗は、ページ公開自体の成否には影響しない
-  （既に公開済みのページに対する追加の通知であるため、失敗しても
-  ロールバック・再pushは不要）
+  送信件数・除外URL）をそのまま完了報告に貼る
+- 新規作成した祭りページが送信対象に含まれていることを出力で確認する
+  （含まれなければ本番がまだ200でない可能性があるため、Pages反映を
+  待って1回だけ再実行する）
+- 祭りslugだけを指定して通知したい場合は
+  `node matsuri/scripts/finalize-additions.js notify {slug...}` も使える
 
 ## 完了報告への追加
 
@@ -806,7 +799,7 @@ https://vigorlab.net/matsuri/festivals/{1件目のslug}/?utm_source=x&utm_medium
 2026-10-20（後処理のスクリプト化）
     新規祭り追加後の静的コンテンツ生成・ハブ/検索インデックス再生成・
     sitemap追記・反映確認を finalize-additions.js prepare に、IndexNow
-    通知を同 notify に、X投稿下書きを同 x-draft に移した（手順の抜け
+    通知を indexnow-notify-changed.js（コミット範囲の変更ページを本番200確認の上で一括通知）に、X投稿下書きを finalize-additions.js x-draft に移した（手順の抜け
     ・LLM利用量の削減が目的）。仕様・採用条件は変更していない。
 
 2026-09-15（新設）

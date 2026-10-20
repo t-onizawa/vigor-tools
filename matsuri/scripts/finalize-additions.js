@@ -13,11 +13,10 @@
 
 const fs = require("fs");
 const path = require("path");
-const https = require("https");
 const { execFileSync } = require("child_process");
+const { submitLive } = require("./lib/indexnow");
 
 const ORIGIN = "https://vigorlab.net";
-const KEY = "5e536e2b99a84a3bb1cb18c3697cc639";
 const MATSURI = path.join(__dirname, "..");
 const SITEMAP = path.join(MATSURI, "..", "sitemap.xml");
 const HUB_SCRIPTS = [
@@ -116,49 +115,16 @@ function prepare(slugs, opts) {
   return 0;
 }
 
-async function headStatus(url) {
-  try {
-    const res = await fetch(url, { redirect: "follow", headers: { "user-agent": "VigorMatsuriFinalize/1.0" } });
-    if (res.body) res.body.cancel().catch(() => {});
-    return res.status;
-  } catch (err) {
-    return 0;
-  }
-}
-
-function postIndexNow(urlList) {
-  return new Promise((resolve) => {
-    const body = JSON.stringify({ host: "vigorlab.net", key: KEY, keyLocation: `${ORIGIN}/${KEY}.txt`, urlList });
-    const req = https.request("https://api.indexnow.org/indexnow", {
-      method: "POST",
-      headers: { "Content-Type": "application/json; charset=utf-8", "Content-Length": Buffer.byteLength(body) }
-    }, (res) => {
-      res.resume();
-      res.on("end", () => resolve({ status: res.statusCode }));
-    });
-    req.on("error", (err) => resolve({ status: 0, error: err.message }));
-    req.setTimeout(15000, () => req.destroy(new Error("timeout")));
-    req.end(body);
-  });
-}
-
 async function notify(slugs, opts) {
   const candidates = [...slugs.map(festivalUrl), ...opts.urls];
   if (candidates.length === 0) {
     console.log("IndexNow通知: 該当なし");
     return 0;
   }
-  const live = [];
-  for (const url of candidates) {
-    const status = await headStatus(url);
-    if (status === 200) live.push(url);
-    else console.log(`[indexnow] 本番が200でないため通知しない: ${url} [${status || "接続失敗"}]`);
-  }
-  if (live.length === 0) return 0;
-  const res = await postIndexNow(live);
-  const ok = res.status === 200 || res.status === 202;
-  console.log(`IndexNow通知: ${ok ? "成功" : "失敗"} (HTTP ${res.status || res.error})`);
-  live.forEach((u) => console.log(`  ${u}`));
+  const result = await submitLive(candidates);
+  console.log(`IndexNow通知: ${result.ok ? "成功" : result.live.length === 0 ? "送信対象なし" : "失敗"}`);
+  result.live.forEach((u) => console.log(`  ${u}`));
+  result.skipped.forEach((u) => console.log(`  除外(本番200でない): ${u}`));
   return 0;
 }
 
