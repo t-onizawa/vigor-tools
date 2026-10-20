@@ -17,22 +17,38 @@ VIGOR MATSURIの週次データ整合性チェックと、検証成功時の自�
 - 現在のローカル作業ツリーや未コミット差分には触れない
 - matsuri外へ越境しない
 
+## 機械チェック（スクリプト実行・2026-10-20追加）
+
+調査・確認に入る前に、次の2つを実行する。LLMによる再確認は不要で、
+結果の「要確認」「NG」だけを後続の調査対象にする。
+
+1. `node matsuri/scripts/auto-end-festivals.js --regenerate`
+   - `confirmed`のまま全日程が過去日の祭りを`ended`へ直す（0件なら
+     何も変更されない）。修正件数・対象slugを完了報告に記載する
+2. `node matsuri/scripts/weekly-health-check.js --save`
+   - 実行内容：全data.jsの構文、`git diff --check`、
+     `check-data-integrity.js`、id/slug/FESTIVAL_SLUGS整合、
+     詳細ページのcanonical・JSON-LD、開催中／まもなく開催の日付整合、
+     出典URLのGET確認（前回との差分付き）、動画(oEmbed)の削除・非公開、
+     今週末ページ自動更新の最終成功日時（48時間超で要確認）
+   - 結果表をそのまま完了報告に貼る。`--save`により
+     `research/health-check-last.json`が更新されるので、変更があれば
+     他の変更と一緒にcommitする（次回の「前回から新規」判定に使う）
+   - 出典URLは404/410のみ「リンク切れ」、403/429/5xx/証明書エラー/
+     timeoutは「要確認」（確定ではない）。新規に異常になったURLだけ
+     ブラウザで確認し、公式サイト移転などが確定できたものだけ修正する
+   - 動画は「新規」の削除・非公開・埋込不可のみ対象にする
+   - `NG`が出た項目は原因を調べて直す。直せない場合は保留事項として報告
+
 ## 調査・確認
 
 - scheduled_pending_official / unconfirmed の祭りを優先して公式情報を
   再確認する
 - 開催日確定、変更、中止、延期を確認する
+- enum・pointTypeの妥当性は`check-data-integrity.js`の範囲外のものだけ目視する
 - yearlyInfo.dates と eventStatus の整合を確認する
 - confirmation.confirmedDate と sources を確認する
-- 公式リンク切れを確認する
-- atmosphereMedia の削除・非公開を確認する
-- slug、id、既存enum、pointTypeを確認する
-- canonical、JSON-LDを確認する
-- 「開催中／まもなく開催」の日付整合を確認する
-- 今週末ページの自動更新：gh run list --workflow weekend-page.yml --status success --limit 1 の最終成功日時が48時間以内か。超えていれば報告（原因調査はしない）
-- 全data.jsに node --check を実行する
-- git diff --check を実行する
-- プロジェクト既定の関連テストとbuildを実行する
+- プロジェクト既定の関連テストとbuildを実行する（機械チェックは上記スクリプトで実施済み）
 - 更新対象ページをブラウザで検証する
 
 ## 通常フロー
@@ -116,6 +132,13 @@ VIGOR MATSURIの週次データ整合性チェックと、検証成功時の自�
 ## 変更履歴
 
 ```
+2026-10-20（機械チェックをスクリプト化）
+    毎週LLMが行っていた機械的な確認（構文・整合性・canonical/JSON-LD・
+    出典URL・動画・今週末ワークフロー）と、confirmed_but_all_pastの
+    ended化を、auto-end-festivals.js / weekly-health-check.jsに移した。
+    LLMは「要確認」「NG」の判断と一次情報の再確認に集中する
+    （Codex利用量の削減が目的）。
+
 2026-09-16（新設）
     Codexプロンプトを毎回チャットで書き換える運用の負荷を下げるため、
     実運用プロンプトの全文を本ファイルへ移設。Codex側のプロンプトは

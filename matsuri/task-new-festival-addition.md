@@ -249,8 +249,18 @@ areaTagは上記ローマ字表記で統一する。
 ## IndexNow通知（2026-09-29追加）
 
 本番HTTP 200を確認できた場合、新規作成した祭りページのURLについて
-IndexNowへ通知する（Bingアカウント等へのログインは不要。公開URLへの
-HTTP GETリクエストのみ）。
+IndexNowへ通知する（Bingアカウント等へのログインは不要）。
+
+**2026-10-20以降は次のコマンドで実行する（個別のGETは行わない）。**
+
+```
+node matsuri/scripts/finalize-additions.js notify {slug1} {slug2} ...
+```
+
+- 本番が200のURLだけを、IndexNowへ1回のPOSTでまとめて通知する
+- 失敗しても公開には影響せず、リトライしない。出力（成功/失敗・
+  URL一覧）をそのまま完了報告に貼る
+- 以下の説明（キー・通知先・失敗時の扱い）はこのコマンドの仕様の記録
 
 - キー：`5e536e2b99a84a3bb1cb18c3697cc639`
   （キーファイル：`https://vigorlab.net/5e536e2b99a84a3bb1cb18c3697cc639.txt`）
@@ -384,6 +394,27 @@ data.js側のスキーマ変更は行わない。
 - `<script>`タグの読み込み順を
   `shared/festival-slugs.js` → `./data.js` → `shared/festival-detail.js`
   にする（既存ページと同じ順序）
+
+## 後処理の一括実行（2026-10-20追加）
+
+data.js・index.html・`shared/festival-slugs.js`への追加を終えたら、
+下記「静的コンテンツ生成」「ハブページ・検索インデックス再生成」
+「sitemap.xml追記」を手作業で個別に行わず、次の1コマンドで実行する。
+
+```
+node matsuri/scripts/finalize-additions.js prepare {slug1} {slug2} ...
+```
+
+- 静的コンテンツ生成 → ハブ4種・検索インデックス再生成 → sitemap.xml追記
+  （既に載っているURLは重複追記しない）→ 反映確認までを行う
+- 反映確認：canonical一致・`data-static-content`・日程がある場合のEvent
+  JSON-LD・`search-index.js`・`festival-slugs.js`・都道府県ハブへの掲載・
+  sitemap掲載
+- `OK`で終われば、個別の確認（後述の検証欄の該当項目）は済んでいる。
+  `NG`が出た場合は表示された項目を直して再実行する。直せなければ
+  停止して完了報告に記載する
+- 以下の個別手順の説明は、`prepare`が何をしているかの記録であり、
+  `prepare`が成功した回は別途実行しない
 
 ## 静的コンテンツ生成（2026-09-29追加）
 
@@ -649,6 +680,14 @@ sitemap.xmlへの追記を省略してはならない。
 - `node matsuri/scripts/check-data-integrity.js` を実行し、hard issue
   が0件であることを確認する（1件でもあれば、その内容を完了報告に
   記載し、commit・push前に対処するか判断を仰ぐ）
+  `confirmed_but_all_past` のhard issueだけは停止せず、
+  `node matsuri/scripts/auto-end-festivals.js --regenerate` を実行して
+  該当祭りの`eventStatus`を`ended`へ機械的に直し（`data.js`の
+  `eventStatus`値のみ書き換え、静的コンテンツ・ハブ・検索インデックスも
+  再生成される）、その後 `check-data-integrity.js` を再実行して
+  hard issue 0件を確認し、続行する（2026-10-20：手作業での修正を廃止）。
+  `auto-end-festivals.js` がエラー終了した場合、または他のhard issueは
+  従来どおり停止・報告する。完了報告に修正件数・対象slugを記載する。
 - `generate-static-content.js`実行後、新規作成したindex.htmlに
   `data-static-content`属性が付与されていること、開催日
   （yearlyInfo[0].dates）が1件以上ある場合はEvent JSON-LDの
@@ -723,6 +762,11 @@ PRは作成しない。
 **今回の実行で1件も追加できなかった場合は、この節自体を出力しない。**
 無理に文面を作らない。
 
+1件以上追加できた場合のみ、`node matsuri/scripts/finalize-additions.js
+x-draft {追加順のslug...}` の出力（2026-10-20：スクリプト化）を、
+完了報告の一番最後にそのまま貼る。手で書き直さない。出力される形式は
+以下のとおり。
+
 1件以上追加できた場合のみ、完了報告の一番最後に、以下の形式でX投稿
 用の下書きをそのまま追記する（Founderがコピペしてそのまま手動投稿
 する運用のため、完成した投稿文としてそのまま使える状態で出力する
@@ -759,6 +803,12 @@ https://vigorlab.net/matsuri/festivals/{1件目のslug}/?utm_source=x&utm_medium
 ## 変更履歴
 
 ```
+2026-10-20（後処理のスクリプト化）
+    新規祭り追加後の静的コンテンツ生成・ハブ/検索インデックス再生成・
+    sitemap追記・反映確認を finalize-additions.js prepare に、IndexNow
+    通知を同 notify に、X投稿下書きを同 x-draft に移した（手順の抜け
+    ・LLM利用量の削減が目的）。仕様・採用条件は変更していない。
+
 2026-09-15（新設）
     Codexプロンプトを毎回チャットで書き換える運用の負荷を下げるため、
     実運用プロンプトの全文を本ファイルへ移設。Codex側のプロンプトは
