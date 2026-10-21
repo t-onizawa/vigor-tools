@@ -2646,5 +2646,21 @@ const SEARCH_INDEX = [
     "prefecture": "岐阜県",
     "city": "関ケ原町",
     "firstDate": "2026-10-17"
+  },
+  {
+    "slug": "shonoki-matsuri",
+    "name": "正ノ木祭",
+    "officialName": "稲積神社例大祭（正ノ木祭）",
+    "prefecture": "山梨県",
+    "city": "甲府市",
+    "firstDate": "2026-05-02"
+  },
+  {
+    "slug": "minobusan-oeshiki",
+    "name": "身延山御会式",
+    "officialName": "身延山宗祖御会式",
+    "prefecture": "山梨県",
+    "city": "身延町",
+    "firstDate": "2026-10-11"
   }
 ];

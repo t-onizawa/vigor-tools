@@ -5006,3 +5006,20 @@ commit `2b5da25`／キャッシュ修正`7522f44`／`ab4f35b`）
 - ローカルブラウザ：新規4件＋終了更新2件を390×844/1440×900で確認。横スクロール・console errorなし。一覧331件、岐阜7件、開催前は中津川1件、開催中・まもなく開催の表示を確認。
 - 全国327→331件、岐阜3→7件、47都道府県すべて初期目標3件以上。連続0件0、地方完了再判定なし、次回も全国深掘り。直近5営業日は10/14長崎5、15佐賀5、16熊本5、19宮城5、20岐阜4。同県3営業日連続なし。
 - sitemapは今回新規4URLのみ追記。研究メモは既存exclude範囲内。公開前の記録であり、最終hash・Pages・本番・IndexNow・X下書きは完了報告へ記載。
+
+### 2026-10-22 毎日新規追加：全国深掘り（山梨県2件）
+
+- origin/main 2df4dfadから独立専用worktreeで実行。元のローカルmain（ahead/behind）・未コミット差分に触れない。候補ストックなし。掲載密度の低い山梨県3件を起点に、県観光案内から神社・寺院・観光協会の一次情報へ進んだ新規探索。
+- 採用：正ノ木祭（甲府市・稲積神社例大祭）、身延山御会式（身延町・久遠寺宗祖御会式）。正式名・主体・ページ範囲・既存331件との差・一次情報・Google Maps地点確認を各researchに記録。
+- 5件未満の理由：確認3市町（甲府・甲州・身延）、一次情報6系統（稲積神社、久遠寺、身延山観光協会、甲府市観光協会、大善寺、山梨県観光・文化財情報）と武田神社への追加確認を実施。以下3候補は品質上保留。県内候補枯渇とは判定しない。
+  - 天津司舞：https://kofu-tourism.com/event/index.php?p=57 。恒常パターンは確認できるが、2026年の実施日を直接確認できず、暦計算で補わない。
+  - 大善寺藤切会式大祭典：https://www.daizenji.org/sanpai.html / https://www.yamanashi-kankou.jp/koshu/event/fujikiri-fes.html 。当年日程・現在の藤の配布方式の照合未了。旧来の争奪描写を当年のhighlightへ転用しない。
+  - 武田神社例大祭：https://www.takedajinja.or.jp/ 。当年例大祭の詳細を直接確認できず（公式取得タイムアウトを含む）。既存信玄公祭りとページ範囲を混同しない。
+- 正ノ木祭の一次情報：https://www.inazumijinjya.com/event/detail/31 / https://inazumi-jinja.blogspot.com/2026/05/8r851.html / https://www.inazumijinjya.com/access 。公式ブログの令和8年5月1日記事で5月2～5日を確認。献木祭5月1日は除外。hasMikoshi=true、他3特徴はnull、見どころ昼。神輿渡御・植木市・露店を一次根拠にhighlightを作成。当年駐車場あり。
+- 身延山御会式の一次情報：https://www.kuonji.jp/event1011-13/ / https://minobu.info/news.html?d=2026-09-06%2014:27:21 / https://www.kuonji.jp/access/ 。公式2026年10月11～13日、12日の万灯練供養・奉納式を同一祭の構成行事として扱う。10月10日特別奉納演奏会や他寺の御会式は含めない。昼法要・夜奉納をhighlight根拠としhighlightTime=both、4特徴はnull。歩く万灯行列を曳き回しへ強制分類しない。公式時刻だけscheduleに記録、駐車場の当年運用はnull。
+- 2件とも2026年公式日程が全て過去日のためended。2027年は推測しない。素材は直接品質確認済みなしで未採用。
+- finalize-additions.js prepareで静的2件・ハブ全種・検索を生成、今回の2URLのみsitemapへ追記。XMLパース成功。新規dataとshared JSのnode --check、git diff --check、slug/id/canonical・title/meta/H1・Event JSON-LD・プレースホルダー・script順・該当ハブ/検索を確認。FESTIVAL_SLUGS重複なし、既存331件のfestivalファイル変更なし。
+- data integrity：333件hard issue 0、既知heuristic 1（神田祭off_year_has_dates）。終了自動更新対象0件・修正0件。
+- ローカルブラウザ：2件とも390×844・1440×900、横スクロールなし・console errorなし、FAQ・御会式scheduleを確認。一覧333件、山梨5件、開催前0件。開催中（時代祭・鞍馬の火祭）とまもなく開催（上野天神祭）の表示も確認。
+- 全国331→333件、山梨3→5件。他県件数は変更なし、47都道府県が目標3件以上。連続0件0、地方完了の再判定なし、次回も低密度県優先の全国深掘り。直近5営業日（10/16、19～22）の追加記録は熊本5、宮城5、岐阜4、21日追加記録なし、山梨2。同県3営業日連続に非該当。
+- sitemap追加先：https://vigorlab.net/matsuri/festivals/shonoki-matsuri/ / https://vigorlab.net/matsuri/festivals/minobusan-oeshiki/ 。研究メモは既存exclude matsuri/research/内。公開前の記録であり、最終hash・Pages・本番・IndexNow（差分URL一括POST）・X下書きは完了報告に記載。
