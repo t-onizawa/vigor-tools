@@ -673,7 +673,9 @@ sitemap.xmlへの追記を省略してはならない。
 - `node matsuri/scripts/check-data-integrity.js` を実行し、hard issue
   が0件であることを確認する（1件でもあれば、その内容を完了報告に
   記載し、commit・push前に対処するか判断を仰ぐ）
-  `confirmed_but_all_past` のhard issueだけは停止せず、
+  `confirmed_but_all_past` と、`scheduled_pending_official` のまま
+  全日程が過去日になった `unconfirmed_like_but_all_past`（2026-10-21追加）
+  のhard issueだけは停止せず、
   `node matsuri/scripts/auto-end-festivals.js --regenerate` を実行して
   該当祭りの`eventStatus`を`ended`へ機械的に直し（`data.js`の
   `eventStatus`値のみ書き換え、静的コンテンツ・ハブ・検索インデックスも

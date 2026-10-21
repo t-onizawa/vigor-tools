@@ -1,6 +1,8 @@
 #!/usr/bin/env node
-// confirmed のまま全日程が過去日になった祭り（check-data-integrity.js の confirmed_but_all_past）を
-// eventStatus "ended" へ機械的に直す。判断・調査は不要な修正のため、LLMを使わずに実行する。
+// 全日程が過去日になったのに confirmed / scheduled_pending_official のままの祭り
+// （check-data-integrity.js の confirmed_but_all_past / scheduled_pending_official 側の
+// unconfirmed_like_but_all_past）を eventStatus "ended" へ機械的に直す。
+// unconfirmed は日程自体が推定の可能性があるため対象外（人が判断する）。判断・調査は不要な修正のため、LLMを使わずに実行する。
 //
 // 実行: node matsuri/scripts/auto-end-festivals.js [--dry-run] [--as-of YYYY-MM-DD] [--regenerate]
 //   --dry-run      対象の一覧のみ表示し、ファイルは書き換えない
@@ -30,8 +32,10 @@ function evaluate(source) {
   return new Function(`${source}\nreturn FESTIVAL;`)();
 }
 
+const ENDABLE_STATUSES = ["confirmed", "scheduled_pending_official"];
+
 function isAllPast(entry, asOf) {
-  return entry.eventStatus === "confirmed"
+  return ENDABLE_STATUSES.includes(entry.eventStatus)
     && Array.isArray(entry.dates)
     && entry.dates.length > 0
     && entry.dates.every((d) => d < asOf);

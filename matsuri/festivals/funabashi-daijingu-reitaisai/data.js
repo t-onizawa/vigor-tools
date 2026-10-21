@@ -30,7 +30,7 @@ const FESTIVAL = {
     confirmation: { verified: true, confirmedDate: "2026-07-31", sources: ["https://www.oohijinja.jp/history.html"] }
   },
   yearlyInfo: [{
-    year: 2026, eventStatus: "scheduled_pending_official", dates: ["2026-10-20"],
+    year: 2026, eventStatus: "ended", dates: ["2026-10-20"],
     access: { hasParking: null, parkingNote: "2026年の祭礼用駐車場・交通規制は公式発表未確認。" },
     confirmation: { confirmedDate: "2026-07-31", sources: ["https://www.oohijinja.jp/history.html"], note: "例大祭は毎年10月20日。2026年の詳細時程は公式発表待ち。" }
   }]
