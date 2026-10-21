@@ -38,3 +38,9 @@ YouTube動画ページ・投稿チャンネル・サムネイルを直接確認�
 - https://ohtawara.jp/yatai/
 - https://ohtawara.jp/yatai/info.html
 - https://ohtawara.jp/yatai/yatai.html
+
+### 2026-10-21 品質改善タスク
+
+一次情報：https://www.city.ohtawara.tochigi.jp/docs/2018112200063/
+
+市文化財ページを直接確認し、市指定無形民俗文化財、2018年10月25日指定、保存団体が屋台まつり実行委員会と確認したためnotableDesignationへ正確に記録。https://www.youtube.com/watch?v=GYntbicSnmo は2026年屋台まつり①29:19、登録者3980人。既存背景維持、長尺記録を代表動画へ追加しない。金燈籠交差点の地点座標未確定。

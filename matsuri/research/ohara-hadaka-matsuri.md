@@ -71,3 +71,9 @@ backgroundImage調査（2026-07-29）
 
 ### 2026-09-11 毎日品質改善
 - 既存背景元 https://www.youtube.com/watch?v=ZqexWGNN1HU を直接確認（8分49秒）。汐ふみ一場面に特化し祭り全体が伝わらず動画不採用。
+
+### 2026-10-21 品質改善タスク
+
+一次情報：https://www.city.isumi.lg.jp/soshikikarasagasu/suisanshokoka/kankopromotionhan/2/2/786.html
+
+市公式で汐ふみ・大別れ式等の複数の行事からなる祭りと確認。https://www.youtube.com/watch?v=ZqexWGNN1HU を直接確認。2024年汐ふみ渡御8:49、登録者6510人。汐ふみ一場面のため全体代表は見送り。既存画像維持。地図では大原1595の鹿島神社名・住所を確認したが地点!3d/!4d未確認で座標登録せず。

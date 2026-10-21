@@ -66,3 +66,9 @@ backgroundImage調査（2026-07-29）
 
 ### 2026-09-11 毎日品質改善
 - 既存背景元 https://www.youtube.com/watch?v=a8WPmQ420EI を直接確認（3分58秒）。古い単一山車の記録で祭り全体が伝わらず動画不採用。
+
+### 2026-10-21 品質改善タスク
+
+一次情報：https://www.tuchiura-yasakajinja.com/
+
+八坂神社公式を直接確認。https://www.youtube.com/watch?v=w_1yPzL-HfI は2026年度中日本祇園1:18:39、登録者1130人。長尺記録で入口動画に不向きのため見送り。既存背景維持、真鍋の八坂神社地点座標未確認。

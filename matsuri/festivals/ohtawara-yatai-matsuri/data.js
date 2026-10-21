@@ -6,6 +6,7 @@ const FESTIVAL = {
   city: "大田原市",
   areaTag: "tochigi",
   constantInfo: {
+    notableDesignation: "大田原市指定無形民俗文化財「大田原神社の屋台行事（大田原屋台まつり）」（2018年指定）",
     schedulePattern: "例年4月（開催日は年度ごとに発表）",
     features: {
       hasDashi: true, hasMikoshi: "n/a", hasDanceOnDashi: false, hasParade: true, highlightTime: "both",

@@ -19,3 +19,9 @@
 ## backgroundImage・atmosphereMedia調査（2026-09-01）
 
 岸和田市公式「令和6年度 春木地区だんじり祭」（https://www.youtube.com/watch?v=sI9JLjCcYCM、3分54秒）を直接確認。一場面のみで動画不採用。だんじりが明瞭で大きな装飾文字がなく隅の小さな地区名のみのため画像に採用。
+
+### 2026-10-21 品質改善タスク
+
+一次情報：https://www.city.kishiwada.lg.jp/site/danjiri/
+
+市公式 https://www.city.kishiwada.lg.jp/site/danjiri/202409danjiri.html の春木・駅前・宮入り別動画を確認。既存背景元 https://www.youtube.com/watch?v=sI9JLjCcYCM は令和6年度春木地区3:54、登録者2780人。9月祭礼全体を代表する構成確認が不十分なため動画保留。既存画像維持。駅地点座標未確認。

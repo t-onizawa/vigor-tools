@@ -63,3 +63,9 @@ backgroundImage調査（2026-07-29）
 
 ### 2026-09-11 毎日品質改善
 - 既存背景元 https://www.youtube.com/watch?v=BmhVeZsy6u8 を直接確認（6分1秒）。駅前の「どっこい」場面に偏り祭り全体が伝わらず動画不採用。
+
+### 2026-10-21 品質改善タスク
+
+一次情報：https://www.chikuseikanko.jp/sightseeing/events-festivals/page000011.html
+
+観光協会ページはロボット確認表示のため本文取得不能。市公式 https://www.city.chikusei.lg.jp/chikusei_channel.php?code=52&mode=detail の祭り・宮出し紹介を確認。https://www.youtube.com/watch?v=BmhVeZsy6u8 は2025年駅前どっこい6:02、登録者4530人。駅前一場面のため代表動画は見送り、既存背景維持。羽黒神社地点座標未確認。
