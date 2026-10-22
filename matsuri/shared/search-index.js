@@ -2662,5 +2662,45 @@ const SEARCH_INDEX = [
     "prefecture": "山梨県",
     "city": "身延町",
     "firstDate": "2026-10-11"
+  },
+  {
+    "slug": "fukashi-jinja-tenjin-matsuri",
+    "name": "深志神社天神祭",
+    "officialName": "深志神社 天神祭",
+    "prefecture": "長野県",
+    "city": "松本市",
+    "firstDate": "2026-07-24"
+  },
+  {
+    "slug": "takato-daruma-ichi",
+    "name": "高遠だるま市",
+    "officialName": "高遠だるま市",
+    "prefecture": "長野県",
+    "city": "伊那市高遠町",
+    "firstDate": "2026-02-11"
+  },
+  {
+    "slug": "takato-toro-matsuri",
+    "name": "高遠燈籠祭",
+    "officialName": "高遠燈籠祭",
+    "prefecture": "長野県",
+    "city": "伊那市高遠町",
+    "firstDate": "2026-09-19"
+  },
+  {
+    "slug": "takato-joka-matsuri",
+    "name": "高遠城下まつり",
+    "officialName": "高遠城下まつり",
+    "prefecture": "長野県",
+    "city": "伊那市高遠町",
+    "firstDate": "2026-09-05"
+  },
+  {
+    "slug": "nanakuri-jinja-hadaka-matsuri",
+    "name": "七久里神社秋季祭典（裸まつり）",
+    "officialName": "七久里神社秋季祭典（宵祭り・裸まつり）",
+    "prefecture": "長野県",
+    "city": "飯田市山本",
+    "firstDate": "2026-10-03"
   }
 ];

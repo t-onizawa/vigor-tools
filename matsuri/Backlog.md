@@ -5023,3 +5023,19 @@ commit `2b5da25`／キャッシュ修正`7522f44`／`ab4f35b`）
 - ローカルブラウザ：2件とも390×844・1440×900、横スクロールなし・console errorなし、FAQ・御会式scheduleを確認。一覧333件、山梨5件、開催前0件。開催中（時代祭・鞍馬の火祭）とまもなく開催（上野天神祭）の表示も確認。
 - 全国331→333件、山梨3→5件。他県件数は変更なし、47都道府県が目標3件以上。連続0件0、地方完了の再判定なし、次回も低密度県優先の全国深掘り。直近5営業日（10/16、19～22）の追加記録は熊本5、宮城5、岐阜4、21日追加記録なし、山梨2。同県3営業日連続に非該当。
 - sitemap追加先：https://vigorlab.net/matsuri/festivals/shonoki-matsuri/ / https://vigorlab.net/matsuri/festivals/minobusan-oeshiki/ 。研究メモは既存exclude matsuri/research/内。公開前の記録であり、最終hash・Pages・本番・IndexNow（差分URL一括POST）・X下書きは完了報告に記載。
+
+### 2026-10-23 毎日新規追加：全国深掘り（長野県5件）
+
+- origin/main c4fa317dから新規専用worktreeで実行。元のmainおよび未追跡のレポート・GSC調査ファイルには一切触れない。候補ストックなし。掲載3件の長野県を優先した全国完了後の新規探索。長野県公式観光カレンダーから松本・伊那・飯田の神社、自治体、観光協会の一次情報へ進んだ。
+- 開始時hard issueはjidai-matsuri、kurama-hi-matsuriのconfirmed_but_all_pastの2件。指示書の例外どおりauto-end-festivals.js --regenerateでendedへ機械的更新し、hard issue 0を再確認。data.jsはeventStatus値のみ変更。一次情報の再調査や無関係な既存修正なし。
+- 採用：深志神社天神祭、高遠だるま市、高遠燈籠祭、高遠城下まつり、七久里神社秋季祭典（裸まつり）。全5件で2026年を明示した一次情報を確認し、すべて過去日のためended。翌年推測なし。精査した5候補はすべて採用、上限到達。見送り0件、採用基準確認済みの上限超過ストックなし。
+- 深志神社天神祭：https://www.fukashi-tenjin.or.jp/news/令和8年%E3%80%80天神祭のご案内/ / https://www.fukashi-tenjin.or.jp/butai/ / https://www.fukashi-tenjin.or.jp/access/ 。神社が行う7/24前夜祭・25本祭。別の八坂祭は除外。舞台は山車の地元名称で、山車・神輿・曳き回しtrue、山車上の踊りはnull。夜店・舞台・翌日神輿・囃子をhighlight根拠とした。通常境内駐車可ではなく当年祭典案内の駐車不可を優先。
+- 高遠だるま市：https://www.pref.nagano.lg.jp/tokyokanko/pressreleases/documents/2026arukumadayori2gatsugou.pdf / https://www.inadanikankou.jp/spot/page/id=2083 。県の2026年2月号P13を紙面確認。2/11・実行委員会主催の市、鉾持神社参道～JRバス高遠駅周辺。福だるま・人形飾りをhighlight根拠にし、4特徴はnull。
+- 高遠燈籠祭：https://inashi-kankoukyoukai.jp/events/takato_toromatsuri2026/ / https://db.go-nagano.net/topics_detail11/id=11811 / https://www.inacity.jp/shichoshitsu/kaiken/kaiken2026/kaiken080821.files/41_.pdf 。市の当年紙面でも鉾持神社・伊那市商工会・伊那市観光協会を確認。9/19～23は点灯期間、宵祭22・本祭23と区別。別企画の建福寺ライトアップ・落語会はscheduleに混ぜない。子供みこしtrue、他3特徴null、提灯・囃子・昼のみこしと夜の灯りをhighlight根拠とした。
+- 高遠城下まつり：https://db.go-nagano.net/topics_detail11/id=21786 / https://www.inacity.jp/shichoshitsu/kaiken/kaiken2026/kaiken080821.html / https://www.inacity.jp/shichoshitsu/kaiken/kaiken2026/kaiken080821.files/31_.pdf 。市の当年チラシ両面を確認し9/5、実行委員会主催、昼の踊りと同日夜の花火を一つの催しとして扱う。燈籠祭とは別。地上の踊りを山車上の踊りへ分類せず4特徴null。仲町の地図検索が複数候補のため座標は推測せずnull。駐車場は総合支所・弁財天河原、会場仲町駐車場を観客用と誤認しない。
+- 七久里神社：https://msnav.com/109253/ / https://db.go-nagano.net/topics_detail11/id=11722 / https://www.city.iida.lg.jp/site/mayor/20260928.html 。10/3の宵祭り・裸まつりに限定し別日の祭典は含めない。市長訪問18:30を祭り開始時刻へ転用せず当年観光協会案内の19時を採用。4特徴null、夜の煙火と桶振りをhighlight根拠とした。
+- 全件scheduleは公式時刻のみ。素材は直接品質確認済みなしで全件未採用。Google Mapsで深志・鉾持・七久里の一意な神社地点を直接確認、仲町のみ未確定。新規研究メモは既存exclude matsuri/research/配下。
+- finalize-additions.js prepareで新規5件を静的化、ハブ全種・検索を再生成、今回新規5URLのみsitemap追記。XMLパース成功。新規5件＋終了更新2件とshared全12 JSのnode --check、git diff --check、slug/id/canonical・title/meta/H1・Event JSON-LD・必須プレースホルダー・script順・ハブ/検索登録を確認。FESTIVAL_SLUGS338件・重複なし。既存333件のうち終了更新2件以外のfestivalファイル変更なし。
+- data integrity：338件hard issue 0、既知heuristic 1（神田祭off_year_has_dates）。ローカルブラウザは新規5＋終了更新2件を390×844・1440×900で確認、横スクロールなし・console errorなし。FAQとschedule表示も確認。一覧338件、長野8件、開催前0件。開催中は上野天神祭・中津川、まもなく開催は三谷祭の表示を確認。
+- 全国333→338件、長野3→8件。中部は新潟8・富山8・石川8・福井6・山梨5・長野8・岐阜7・静岡8・愛知23。他県掲載件数不変、全国47都道府県が目標3件以上。連続0件0、地方完了再判定なし、次回も全国深掘り。直近5営業日：10/19宮城5、20岐阜4、21追加記録なし、22山梨2、23長野5。同県3営業日連続に非該当。
+- 公開前の記録。最終commit hash、Pages・本番、IndexNow一括POSTの成否と通知URL、派生ファイル競合の有無、clean確認、X下書きは完了報告に記載する。
