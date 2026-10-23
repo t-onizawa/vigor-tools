@@ -5052,3 +5052,20 @@ commit `2b5da25`／キャッシュ修正`7522f44`／`ab4f35b`）
 - data integrity：338件hard issue 0、既知heuristic 1（神田祭off_year_has_dates）。ローカルブラウザは新規5＋終了更新2件を390×844・1440×900で確認、横スクロールなし・console errorなし。FAQとschedule表示も確認。一覧338件、長野8件、開催前0件。開催中は上野天神祭・中津川、まもなく開催は三谷祭の表示を確認。
 - 全国333→338件、長野3→8件。中部は新潟8・富山8・石川8・福井6・山梨5・長野8・岐阜7・静岡8・愛知23。他県掲載件数不変、全国47都道府県が目標3件以上。連続0件0、地方完了再判定なし、次回も全国深掘り。直近5営業日：10/19宮城5、20岐阜4、21追加記録なし、22山梨2、23長野5。同県3営業日連続に非該当。
 - 公開前の記録。最終commit hash、Pages・本番、IndexNow一括POSTの成否と通知URL、派生ファイル競合の有無、clean確認、X下書きは完了報告に記載する。
+
+### 2026-10-24 毎日新規追加：全国深掘り（広島県5件）
+
+- origin/main 9b0103fcから新規専用worktreeで実行。元のmain・未コミット/未追跡差分には触れない。候補ストックなし。全国初期掲載完了後の新規探索として掲載3件の広島県を優先し、尾道・東広島・呉・三原・三次・福山・廿日市の自治体/神社/観光協会/主催者情報を確認した。
+- 採用5件：尾道ベッチャー祭、酒まつり（東広島・西条）、亀山神社秋祭り（呉）、三原神明市、三次きんさい祭。2026年を明記した一次情報で日程確認。尾道は11/1〜3 confirmed、他4件は当年の全日程が過去のためended。年度推測なし。今回の既存祭り終了更新は0件。全339件のdata.jsとindex.htmlは変更なし。
+- 尾道ベッチャー祭：https://onomichi.main.jp/betcha/index.html / https://www.ononavi.jp/spots/detail.html?detail_id=211 。一宮神社（吉備津彦神社）の11月1〜3日の大祭を1ページにまとめる。尾道みなと祭でのベッチャー太鼓出演とは別。市内の移動行列を曳き回しに分類しない。 神輿=true、他3特徴null。highlight根拠：三面の鬼神と獅子が神輿とともに尾道の中心街を巡る。ささらや祝棒を用いる厄払いの風景と、奉納ベッチャー太鼓がこの祭りらしい見どころ。
+- 酒まつり（東広島・西条）：https://sakematsuri.com/ / https://sakematsuri.com/access/ / https://sakematsuri.com/sakematsuri-kaijyo/main-kaijyo/ / https://sakematsuri.com/sakematsuri-kaijyo/fuubutushi/ / https://higashihiroshima-kanko.jp/event/sakematsuri/ 。主催は東広島市観光協会、主管は酒まつり実行委員会。JR西条駅周辺の酒蔵・各会場を含む同一の酒まつり。愛媛の西条まつりや春の酒蔵行事とは別。公式名は酒まつりで、表示名の括弧は所在地の識別用。 神輿=true、他3特徴null。highlight根拠：西条の酒蔵通りを巡り、酒と地域の食に触れる秋の祭り。全国のお酒を集める会場や美酒鍋に加え、大酒林神輿の行列も楽しめる。
+- 亀山神社秋祭り（呉）：https://www.kameyama-jinja.com/gyoujimaturi.html / https://www.kameyama-jinja.com/informationreitaisai.html / https://www.kameyama-jinja.com/ 。呉市清水の亀山神社が斎行する宵宮祭・例祭の2日間。神社は正式には例祭、通称例大祭と説明。11月の小宮の小祭り、他地域の亀山八幡宮の祭りは含めない。 神輿=true、他3特徴null。highlight根拠：やぶと呼ばれる鬼と俵みこし「とんぼ」の奉納が、呉の秋を彩る。宵宮の露店や奉納行事、翌日の大神輿渡御まで、神社と町を結ぶ祭礼を見られる。
+- 三原神明市：https://www.city.mihara.hiroshima.jp/site/kanko/193614.html / https://www.mihara-kankou.com/event/1547 / https://www.mhr-cci.or.jp/shinmei/ 。三原神明市協賛会による神明市。「神明さん」「だるま市」は同じ祭りの呼び方。北側の神明市だけを扱い、南側で同時開催のみはら神麺市、プディングフェスティバル、DARUMARTは含めない。 神輿=null、他3特徴null。highlight根拠：JR三原駅北側の町並みに、だるまや植木を売る店と多彩な露店が続く。神明大だるまを目印に、備後路に春を告げる市のにぎわいを歩いて味わえる。
+- 三次きんさい祭：https://kinsai.net/ / https://kinsai.net/about / https://kinsai.net/topic / https://miyoshi-cci.or.jp/aboutus/ 。三次きんさい祭実行委員会による第48回のパレードと公式会場を1ページにまとめる。出演先の他祭り、講習会、支援ゴルフは含めない。2027年6月5日の第49回発表と2026年7月25日の第48回開催概要を明確に区別し、2026年データに翌年日程を混ぜない。 神輿=null、他3特徴null。highlight根拠：紙太鼓の音と「三次どんちゃん」のリズムに乗り、市民の列が三次町から十日市へ進む。町をつなぐ市民大パレードと、各会場のステージや交流のにぎわいが見どころ。
+- 三次の2027/6/5発表と2026/7/25開催概要は区別し、恒常パターンを「毎年7月」と固定しない。翌年日程を2026年データへ混ぜない。呉の正式呼称は神社自身の説明に合わせ例祭（通称例大祭）とした。
+- 見送り：福山二上りおどり大会は市立大学の2026/8/13参加記録を確認したが、祭り公式サイトが503で当年の開催主体・独立ページ範囲の全条件を今回確認し切れず保留（https://www.fcu.ac.jp/contribution/cooperation/news/2026/08/2026.html / https://fukuyama-natsumatsuri.jp/）。吉和夏まつりは地域コミュニティの2026/8/11予定と雨天8/15振替案内を確認したが、当年実施日・主催・全体範囲の確認を完了できず保留（https://yoshiwa-community-navi.com/archives/2654）。品質確認済みの上限超過候補ストックはなし。
+- Google Mapsで5地点を一意に確認してlat/lngを記録。駐車場は尾道null、西条/三次true、呉/三原false。呉の通常参拝40台と祭り時間帯閉鎖は別、三原の同時開催・別主体企画を混ぜない。素材は動画ページ・投稿者・画像品質を直接検証していないため全件不採用。映像探索を目的とした追加調査はしていない。研究メモは既存excludeのmatsuri/research/配下。
+- finalize-additions.js prepareで新規5件の静的化、特徴/県/地方/月ハブ・検索再生成、今回新規5URLのみsitemap末尾追記。中部ハブの並び順変化は日付依存の既存生成スクリプト出力（件数・データ変更なし）。XMLパース、node --check（新規5件と全shared JS）、git diff --check、slug/id/canonical/title/H1/meta/JSON-LD、必須placeholder・script順、ハブ/検索登録を確認。344slug重複なし。
+- data integrity：344件hard issue 0、既知heuristic 1（kanda-matsuri off_year_has_dates、開始前から存在）。390×844と1440×900で新規5ページをブラウザ確認し横スクロールなし・console errorなし、schedule/FAQの内容も一致。一覧344件、広島県8件、開催前は尾道1件。開催中・まもなく開催領域で既存の上野天神祭・三谷祭・金田稲荷の表示を確認し、新規終了4件が混ざらないことを確認。
+- 全国339→344件、広島3→8件。中国は鳥取3・島根3・岡山3・広島8・山口3（全県初期目標3以上）。連続0件0、地方完了再判定なし、次回も全国深掘り。直近5営業日：10/19宮城5、20岐阜4、21追加記録なし、22山梨2、23長野5（別タスクの浅草酉の市1件は本タスク実績と区別）。同一県3営業日連続に非該当。
+- 公開前の実績記録。最終commit hash、fetch/FF/競合有無、Pages・本番、IndexNow通知対象URLと結果、clean確認、X下書きは完了報告で確定する。

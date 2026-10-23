@@ -2710,5 +2710,45 @@ const SEARCH_INDEX = [
     "prefecture": "東京都",
     "city": "台東区千束",
     "firstDate": "2026-11-07"
+  },
+  {
+    "slug": "onomichi-betcha-matsuri",
+    "name": "尾道ベッチャー祭",
+    "officialName": "吉備津彦神社大祭 尾道ベッチャー祭",
+    "prefecture": "広島県",
+    "city": "尾道市",
+    "firstDate": "2026-11-01"
+  },
+  {
+    "slug": "saijo-sake-matsuri",
+    "name": "酒まつり（東広島・西条）",
+    "officialName": "酒まつり",
+    "prefecture": "広島県",
+    "city": "東広島市",
+    "firstDate": "2026-10-10"
+  },
+  {
+    "slug": "kure-kameyama-jinja-aki-matsuri",
+    "name": "亀山神社秋祭り（呉）",
+    "officialName": "亀山神社例祭（秋祭り・例大祭）",
+    "prefecture": "広島県",
+    "city": "呉市",
+    "firstDate": "2026-10-10"
+  },
+  {
+    "slug": "mihara-shinmei-ichi",
+    "name": "三原神明市",
+    "officialName": "三原神明市",
+    "prefecture": "広島県",
+    "city": "三原市",
+    "firstDate": "2026-02-06"
+  },
+  {
+    "slug": "miyoshi-kinsai-matsuri",
+    "name": "三次きんさい祭",
+    "officialName": "三次きんさい祭",
+    "prefecture": "広島県",
+    "city": "三次市",
+    "firstDate": "2026-07-25"
   }
 ];
