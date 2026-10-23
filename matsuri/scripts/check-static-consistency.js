@@ -142,6 +142,7 @@ function checkFestival(slug, hubs, searchIndex) {
     for (const s of ev.subEvent || []) {
       const d = String(s.startDate || "").slice(0, 10);
       if (!dates.includes(d)) add(slug, "ERROR", "jsonld.subevent-date", "subEventの日付がdata.jsのdatesに含まれない", s.startDate);
+      if (/頃|ごろ|予定|目安|終了|開始予定/.test(s.name || "")) add(slug, "WARN", "jsonld.subevent-approx", "目安・予定・終了を示すsubEventが確定時刻として出力されている（8-3：目安時刻は「頃」「〜」付きで非出力にする）", `${s.name} ${s.startDate}`);
     }
   }
 
