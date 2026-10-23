@@ -29,3 +29,9 @@
 ### 2026-10-08 毎日品質改善
 
 - 開催間近の再調査。既存の公式動画を動画ページで直接確認したが、既定サムネイルは大きな文字が重なりヒーロー基準を満たさないためbackgroundImageには転用しない。atmosphereMediaと既存座標は維持し、追加なし。
+
+### 2026-10-22 毎日品質改善
+
+一次情報：https://myouken.com/
+
+祭り公式と八代市動画ギャラリー https://www.kinasse-yatsushiro.jp/galleries/movie を直接確認。候補 https://www.youtube.com/watch?v=YKGs_Yl47cU を直接確認。八代妙見祭オフィシャル、1290人、3706回、1:13、2022年開催を告知するTrailer。hqdefaultは獅子実写に大きなTRAILER2022等の文字。代替フレーム検証は未完了のため背景保留。告知映像を代表動画へ追加しない。既存動画・座標維持。

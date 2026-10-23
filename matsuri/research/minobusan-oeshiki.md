@@ -31,3 +31,9 @@
 ## 実装・検証
 
 既存スキーマ・詳細テンプレートを使用し、共通script順、schedule/関連/FAQのプレースホルダーを保持。静的内容・Event JSON-LD・ハブ・検索・sitemapはfinalize-additions.js prepareで生成。最終結果はBacklogの2026-10-22記録と完了報告へ記載。research/は既存_config.ymlのexclude対象。
+
+### 2026-10-22 毎日品質改善
+
+一次情報：https://www.kuonji.jp/event1011-13/
+
+久遠寺公式の御会式案内を直接開き、他寺院の御会式や別日演奏会を混在させない。山梨県観光 https://www.yamanashi-kankou.jp/kankou/internettv/n_1083.html に2012年10月12日撮影の万燈行列と県著作権の記載を直接確認。ただしYouTubeリンクの直接取得が失敗し、投稿者・実画像の検証は未完了で画像・動画は保留。既存座標維持。
