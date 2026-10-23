@@ -29,3 +29,9 @@
 ## 実装・検証
 
 既存スキーマ・最新詳細テンプレートを使用。schedule・関連祭り・FAQのプレースホルダーと共通script順を維持。finalize-additions.js prepareで静的内容・JSON-LD・ハブ・検索・sitemapを生成。検証結果と公開結果はBacklogの2026-10-23記録・完了報告へ記載。research/は既存_config.ymlのexclude対象。
+
+### 2026-10-23 毎日品質改善
+
+一次情報：https://inashi-kankoukyoukai.jp/events/takato_toromatsuri2026/
+
+観光協会URLは取得不能のため、県観光公式 https://db.go-nagano.net/topics_detail11/id=11811 を直接確認し、宵祭り・本祭りと点灯の範囲を照合。候補 https://www.youtube.com/watch?v=_oADyPTxrjQ を直接確認：Shun Shimizu（2人）、82回、2:30、2026年灯籠祭の通り・ほおずき提灯等を説明。hqdefault/0は夜の通りの実写だがブレが強く、1〜3は120×90。背景追加なし。動画は本編全体の構成・発信者ページの確認未完了で保留。少数登録者という理由だけでは除外していない。既存座標維持。

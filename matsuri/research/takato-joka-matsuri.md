@@ -29,3 +29,9 @@
 ## 実装・検証
 
 既存スキーマ・最新詳細テンプレートを使用。schedule・関連祭り・FAQのプレースホルダーと共通script順を維持。finalize-additions.js prepareで静的内容・JSON-LD・ハブ・検索・sitemapを生成。検証結果と公開結果はBacklogの2026-10-23記録・完了報告へ記載。research/は既存_config.ymlのexclude対象。
+
+### 2026-10-23 毎日品質改善
+
+一次情報：https://db.go-nagano.net/topics_detail11/id=21786
+
+県観光公式で城下通りのよさこい・阿波踊り・他芸能・花火を照合。候補 https://www.youtube.com/watch?v=6Jt47YEFaik を直接確認：afterglow.of.awaodori（796人）、274回、8:01、2026年9月5日の5団体の流し踊りと説明。祭り全体のうち阿波踊りのみで新規代表動画は見送り。hqdefault/0は城下風景に大きな題字、1〜3は120×90の踊りで背景画質不足。画像なし。既存mapReferenceは通り・駐車場周辺を示し候補複数のため座標は維持。

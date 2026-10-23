@@ -31,3 +31,9 @@ hasDashi/hasMikoshi/hasDanceOnDashi="n/a"、hasParade=false、highlightTime=both
 ## 構造化データの注意
 
 日程が非連続（11/7と11/19）のため、生成ロジックはEvent JSON-LDを startDate=11/7 / endDate=11/19 の範囲で出力する（連続13日間の開催と読める）。subEventで各日0:00の開始を出力して補っているが、親Eventの範囲は生成ロジックの制約。Founder承認が必要な生成ロジック変更の課題として報告済み（JSON-LD時刻問題の分類とあわせて）。
+
+### 2026-10-23 毎日品質改善
+
+一次情報：https://otorisama.or.jp/kotoshi.html
+
+鷲神社公式で令和8年11月7日・19日、各日0〜24時と確認。候補 https://www.youtube.com/watch?v=_N3q5EXEbO0 を直接確認：Tokyo VR（1.37万人）、8479回、46:58、2022年浅草酉の市。長尺歩行記録のため代表動画は追加しない。hqdefault/0は中央の大きな題字、1〜3は120×90で背景用途に不足し画像なし。Google Mapsを既存queryで検索し浅草 鷲神社、千束3丁目18-7、otorisama.or.jpを一意に照合。place URLの!3d35.7225235!4d139.7919508を採用しlat/lng追加。座標未確認という古い地図noteを、鷲神社一点を示す注記へ修正。巡行・市全体の範囲を表す座標ではない。

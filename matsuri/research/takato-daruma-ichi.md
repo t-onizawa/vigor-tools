@@ -28,3 +28,9 @@
 ## 実装・検証
 
 既存スキーマ・最新詳細テンプレートを使用。schedule・関連祭り・FAQのプレースホルダーと共通script順を維持。finalize-additions.js prepareで静的内容・JSON-LD・ハブ・検索・sitemapを生成。検証結果と公開結果はBacklogの2026-10-23記録・完了報告へ記載。research/は既存_config.ymlのexclude対象。
+
+### 2026-10-23 毎日品質改善
+
+一次情報：https://www.pref.nagano.lg.jp/tokyokanko/pressreleases/documents/2026arukumadayori2gatsugou.pdf
+
+県の2026年2月案内と伊那谷観光局の鉾持神社・参道のだるま市説明を直接確認。候補 https://www.youtube.com/watch?v=K8bRhcQQgBE を直接確認：Nishiyama2021_山のあなた（480人）、169回、4:06、2025年2月11日の市と説明。hqdefault/0は複数写真と題字の合成、1〜3は参拝・だるまの120×90。ヒーロー用途の単一構図・解像度を満たせず画像見送り。再生終盤3:27で橋など周辺観光の実写を確認、祭り全体の映像構成と発信者継続性の確認は未完了で動画保留。既存座標維持。
