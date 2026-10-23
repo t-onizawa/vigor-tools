@@ -12,6 +12,8 @@
  *   node matsuri/scripts/check-static-consistency.js --slug a,b 対象を絞る
  *   node matsuri/scripts/check-static-consistency.js --root DIR  別のmatsuri/を検査（テスト用）
  *   node matsuri/scripts/check-static-consistency.js --strict   ERRORがあれば終了コード1
+ *   node matsuri/scripts/check-static-consistency.js --save-baseline FILE  現在の結果を基準値として保存
+ *   node matsuri/scripts/check-static-consistency.js --baseline FILE       基準値との増減（新規・解消）を表示
  *
  * 重大度: ERROR=事実の食い違いの可能性が高い / WARN=要確認 / INFO=形式差・設計上の差
  */
@@ -222,6 +224,25 @@ function main() {
       console.log(`\n[${sev}] ${list.length}件`);
       list.forEach((f) => console.log(`  ${f.slug} | ${f.check} | ${f.message}${f.detail ? " | " + f.detail : ""}`));
     }
+  }
+  const keyOf = (f) => `${f.severity}|${f.slug}|${f.check}`;
+  const counts = { ERROR: by("ERROR").length, WARN: by("WARN").length, INFO: by("INFO").length };
+  const byCheck = {};
+  findings.forEach((f) => { byCheck[f.check] = (byCheck[f.check] || 0) + 1; });
+  if (opt("--save-baseline")) {
+    const out = { savedAt: new Date().toISOString().slice(0, 10), scanned: targets.length, counts, byCheck, keys: findings.map(keyOf).sort() };
+    fs.writeFileSync(path.resolve(opt("--save-baseline")), JSON.stringify(out, null, 2) + "\n");
+    console.log(`\n基準値を保存しました: ${opt("--save-baseline")}（ERROR ${counts.ERROR} / WARN ${counts.WARN} / INFO ${counts.INFO}）`);
+  }
+  if (opt("--baseline")) {
+    const base = JSON.parse(fs.readFileSync(path.resolve(opt("--baseline")), "utf8"));
+    const cur = new Set(findings.map(keyOf)), old = new Set(base.keys);
+    const added = [...cur].filter((k) => !old.has(k)).sort(), resolved = [...old].filter((k) => !cur.has(k)).sort();
+    console.log(`\n=== 基準値(${base.savedAt})との比較 ===`);
+    for (const sev of ["ERROR", "WARN", "INFO"]) console.log(`  ${sev}: ${base.counts[sev]} → ${counts[sev]}（${counts[sev] - base.counts[sev] >= 0 ? "+" : ""}${counts[sev] - base.counts[sev]}）`);
+    console.log(`  新規 ${added.length}件 / 解消 ${resolved.length}件`);
+    added.forEach((k) => console.log(`    + ${k}`));
+    resolved.forEach((k) => console.log(`    - ${k}`));
   }
   if (flag("--strict") && by("ERROR").length) process.exit(1);
 }
