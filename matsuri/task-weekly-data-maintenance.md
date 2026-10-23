@@ -19,18 +19,22 @@ VIGOR MATSURIの週次データ整合性チェックと、検証成功時の自�
 
 ## 機械チェック（スクリプト実行・2026-10-20追加）
 
-調査・確認に入る前に、次の2つを実行する。LLMによる再確認は不要で、
+通常のended化は日次cron（毎日4:07 JST）が実行する
+`auto-end-festivals.js`だけが担当する。週次保守は同スクリプトを実行せず、
+手動のeventStatus書き換えによる通常のended化も行わない。
+週次は日次cronの動作確認・例外検知・報告のみを担当する。
+
+調査・確認に入る前に、次を実行する。LLMによる再確認は不要で、
 結果の「要確認」「NG」だけを後続の調査対象にする。
 
-1. `node matsuri/scripts/auto-end-festivals.js --regenerate`
-   - `confirmed`のまま全日程が過去日の祭りを`ended`へ直す（0件なら
-     何も変更されない）。修正件数・対象slugを完了報告に記載する
-2. `node matsuri/scripts/weekly-health-check.js --save`
+1. `node matsuri/scripts/weekly-health-check.js --save`
    - 実行内容：全data.jsの構文、`git diff --check`、
      `check-data-integrity.js`、id/slug/FESTIVAL_SLUGS整合、
      詳細ページのcanonical・JSON-LD、開催中／まもなく開催の日付整合、
      出典URLのGET確認（前回との差分付き）、動画(oEmbed)の削除・非公開、
-     今週末ページ自動更新の最終成功日時（48時間超で要確認）
+     今週末ページ自動更新の最終成功日時（48時間超で要確認）、
+     mainの最新の日次schedule実行とended化ステップの成否、
+     日本時間基準のended化対象の残存件数・slug（全年度）
    - 結果表をそのまま完了報告に貼る。`--save`により
      `research/health-check-last.json`が更新されるので、変更があれば
      他の変更と一緒にcommitする（次回の「前回から新規」判定に使う）
@@ -38,7 +42,12 @@ VIGOR MATSURIの週次データ整合性チェックと、検証成功時の自�
      timeoutは「要確認」（確定ではない）。新規に異常になったURLだけ
      ブラウザで確認し、公式サイト移転などが確定できたものだけ修正する
    - 動画は「新規」の削除・非公開・埋込不可のみ対象にする
-   - `NG`が出た項目は原因を調べて直す。直せない場合は保留事項として報告
+   - `NG`が出た項目は原因を調べて直す。ただし通常のended化に関する
+     更新漏れ・日次cronの失敗は週次で代行修正・再実行しない。
+     対象slug・年度・日付、該当run・失敗ステップ等を調査し、
+     確認できた原因と未確認事項を例外として報告する。
+     `unconfirmed`は日次ended化の対象外であり、日次cronの更新漏れと
+     混同しない。その他の直せない問題は保留事項として報告する
 
 ## 調査・確認
 
@@ -86,7 +95,8 @@ VIGOR MATSURIの週次データ整合性チェックと、検証成功時の自�
 ## 自動反映してよい変更
 
 - 開催日確定
-- eventStatus更新
+- 一次情報に基づくeventStatus更新（開催確認・中止・延期など）。
+  日程経過に伴う通常のended化は日次cron専任のため禁止する
 - confirmation.confirmedDate更新
 - 公式情報源更新
 - 明確なリンク切れ修正
@@ -118,6 +128,8 @@ VIGOR MATSURIの週次データ整合性チェックと、検証成功時の自�
 - 確認件数
 - 更新した祭り
 - 見送った項目
+- 日次cronの動作確認結果とended化の更新漏れ・例外（対象slug・年度・
+  日付、run・失敗ステップ、原因／未確認事項。異常なしの場合も明記）
 - 根拠URL
 - commit hash（変更なしの場合は「なし」）
 - main反映結果
@@ -145,6 +157,11 @@ node matsuri/scripts/indexnow-notify-changed.js --from {作業開始時のorigin
 ## 変更履歴
 
 ```
+2026-10-23（ended化の担当を日次cronへ一本化）
+    週次によるauto-end-festivals.js実行と通常のended化を廃止。
+    週次は日次schedule・ended化ステップの成否と更新漏れを検知・報告する。
+    一次情報に基づく開催確認・中止・延期等のeventStatus更新は引き続き許可。
+
 2026-10-20（機械チェックをスクリプト化）
     毎週LLMが行っていた機械的な確認（構文・整合性・canonical/JSON-LD・
     出典URL・動画・今週末ワークフロー）と、confirmed_but_all_pastの

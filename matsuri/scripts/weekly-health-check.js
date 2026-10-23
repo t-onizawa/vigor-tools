@@ -7,7 +7,7 @@
 //   --save         URL/動画チェック結果を matsuri/research/health-check-last.json に保存（次回との差分用）
 //   --skip-urls    出典URLのGET確認を省略
 //   --skip-media   動画(oEmbed)確認を省略
-//   --skip-gh      今週末ワークフローの最終成功確認を省略
+//   --skip-gh      今週末ワークフロー・日次cronの実行確認を省略
 // 終了コード: fail が1件でもあれば1。
 
 const fs = require("fs");
@@ -128,6 +128,7 @@ function checkDetailPages(festivals) {
 
 function checkDateConsistency(festivals) {
   const warns = [];
+  const pending = [];
   const live = [];
   const soon = [];
   const addDays = (iso, n) => new Date(Date.parse(`${iso}T00:00:00Z`) + n * 86400000).toISOString().slice(0, 10);
@@ -138,6 +139,9 @@ function checkDateConsistency(festivals) {
       if (dates.length === 0) continue;
       const first = dates[0];
       const last = dates[dates.length - 1];
+      if (["confirmed", "scheduled_pending_official"].includes(y.eventStatus) && last < TODAY) {
+        pending.push(`${slug} (${y.year}): ${y.eventStatus}, dates=${dates.join(",")}`);
+      }
       if (y.eventStatus === "ended" && last >= TODAY) warns.push(`${slug} (${y.year}): ended だが ${last} は今日以降`);
       if (y.eventStatus === "confirmed" && first <= TODAY && TODAY <= last) live.push(`${slug} (${first}〜${last})`);
       else if (y.eventStatus === "confirmed" && first > TODAY && first <= horizon) soon.push(`${slug} (${first})`);
@@ -148,6 +152,8 @@ function checkDateConsistency(festivals) {
     ...live.map((s) => `開催中: ${s}`),
     ...soon.map((s) => `まもなく: ${s}`)
   ].slice(0, 40));
+  add("日次ended化の更新漏れ（読み取り専用）", pending.length ? "fail" : "ok",
+    `日本時間 ${TODAY} / 残存${pending.length}件（全年度、週次では修正しない）`, pending);
 }
 
 async function mapLimit(items, limit, fn) {
@@ -276,6 +282,32 @@ function checkWeekendWorkflow() {
   }
 }
 
+function checkDailyCron() {
+  const name = "日次cron / ended化ステップ";
+  try {
+    // 成功runだけに絞ると直近の失敗を隠してしまう。手動・push実行とも区別する。
+    const out = execFileSync("gh", ["run", "list", "--workflow", "weekend-page.yml", "--branch", "main", "--event", "schedule", "--limit", "1", "--json", "status,conclusion,createdAt,databaseId,url"],
+      { cwd: ROOT, encoding: "utf8", stdio: ["ignore", "pipe", "pipe"] });
+    const run = JSON.parse(out)[0];
+    if (!run) return add(name, "warn", "mainの日次schedule実行が見つからない");
+    const items = [`run ${run.databaseId}: ${run.url}`];
+    const hours = (Date.now() - Date.parse(run.createdAt)) / 3600000;
+    const jobs = JSON.parse(execFileSync("gh", ["run", "view", String(run.databaseId), "--json", "jobs"],
+      { cwd: ROOT, encoding: "utf8", stdio: ["ignore", "pipe", "pipe"] })).jobs || [];
+    const steps = jobs.flatMap((job) => job.steps || []);
+    const ended = steps.find((step) => step.name === "End finished festivals");
+    items.push(...steps.filter((step) => step.conclusion === "failure").map((step) => `失敗ステップ: ${step.name}`));
+    const failed = run.status === "completed" && run.conclusion !== "success";
+    const stepFailed = ended?.conclusion === "failure";
+    const ok = run.status === "completed" && run.conclusion === "success"
+      && ended?.status === "completed" && ended.conclusion === "success" && hours <= 48;
+    add(name, failed || stepFailed ? "fail" : (ok ? "ok" : "warn"),
+      `最新schedule: ${run.status}/${run.conclusion || "未確定"} / 開始 ${run.createdAt} (${hours.toFixed(1)}時間前) / ended化: ${ended ? `${ended.status}/${ended.conclusion || "未確定"}` : "ステップなし"}（週次では再実行しない）`, items);
+  } catch (err) {
+    add(name, "warn", `取得できず動作未確認 (${String(err.message).split("\n")[0]})`);
+  }
+}
+
 function render() {
   const mark = { ok: "OK", warn: "要確認", fail: "NG", skip: "SKIP" };
   const lines = [`# MATSURI 週次ヘルスチェック (${TODAY})`, "", "| チェック | 結果 | 内容 |", "|---|---|---|"];
@@ -298,7 +330,10 @@ async function main() {
   checkDateConsistency(festivals);
   if (!has("--skip-urls")) await checkSourceUrls(festivals, prev, store);
   if (!has("--skip-media")) await checkMedia(festivals, prev, store);
-  if (!has("--skip-gh")) checkWeekendWorkflow();
+  if (!has("--skip-gh")) {
+    checkWeekendWorkflow();
+    checkDailyCron();
+  }
 
   if (has("--save") && (store.sourceUrls || store.media)) {
     fs.writeFileSync(LAST_FILE, `${JSON.stringify({ checkedAt: TODAY, sourceUrls: store.sourceUrls || prev.sourceUrls, media: store.media || prev.media }, null, 1)}\n`);
