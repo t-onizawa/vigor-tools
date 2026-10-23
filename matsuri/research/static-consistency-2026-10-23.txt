@@ -1,0 +1,59 @@
+=== VIGOR MATSURI 静的ページ整合性チェック（読み取り専用・警告のみ） ===
+対象: 338件 / ERROR 10 / WARN 16 / INFO 15
+
+[検査項目別の件数]
+  status.stale-pending: 10
+  title.date-missing: 8
+  description.date-missing: 5
+  og.description: 5
+  twitter.description: 5
+  status.pending-while-confirmed: 4
+  title.first-date: 3
+  parking.title: 1
+
+[ERROR] 10件
+  annaka-matsuri | status.stale-pending | 終了済みなのにtitle/descriptionに「開催予定・発表待ち・未発表」が残っている | 日程未発表
+  chichibu-ryusei-matsuri | status.stale-pending | 終了済みなのにtitle/descriptionに「開催予定・発表待ち・未発表」が残っている | 開催予定
+  funabashi-daijingu-reitaisai | status.stale-pending | 終了済みなのにtitle/descriptionに「開催予定・発表待ち・未発表」が残っている | 開催予定
+  ikegami-honmonji-oeshiki | status.stale-pending | 終了済みなのにtitle/descriptionに「開催予定・発表待ち・未発表」が残っている | 開催予定
+  kanuma-imamiya-matsuri | status.stale-pending | 終了済みなのにtitle/descriptionに「開催予定・発表待ち・未発表」が残っている | 開催予定
+  niihama-taiko-matsuri | status.stale-pending | 終了済みなのにtitle/descriptionに「開催予定・発表待ち・未発表」が残っている | 開催予定
+  ohara-hadaka-matsuri | status.stale-pending | 終了済みなのにtitle/descriptionに「開催予定・発表待ち・未発表」が残っている | 開催予定
+  shimonita-aki-matsuri | status.stale-pending | 終了済みなのにtitle/descriptionに「開催予定・発表待ち・未発表」が残っている | 日程未発表
+  umi-hachimangu-hojoya | status.stale-pending | 終了済みなのにtitle/descriptionに「開催予定・発表待ち・未発表」が残っている | 開催予定
+  wakamatsu-minato-matsuri | status.stale-pending | 終了済みなのにtitle/descriptionに「開催予定・発表待ち・未発表」が残っている | 開催予定
+
+[WARN] 16件
+  chichibu-yomatsuri | status.pending-while-confirmed | confirmedなのに「開催予定・発表待ち・未発表」が残っている（詳細未公開による意図的な表記なら要確認） | 開催予定
+  kanada-inari-jinko-sai | og.description | og:descriptionがdescriptionと異なる（意図的な別文面の可能性。事実情報は要確認）
+  kanada-inari-jinko-sai | twitter.description | twitter:descriptionがdescriptionと異なる（意図的な別文面の可能性。事実情報は要確認）
+  kanada-inari-jinko-sai | status.pending-while-confirmed | confirmedなのに「開催予定・発表待ち・未発表」が残っている（詳細未公開による意図的な表記なら要確認） | 開催予定
+  kawara-tsuruoka-yabusame | og.description | og:descriptionがdescriptionと異なる（意図的な別文面の可能性。事実情報は要確認）
+  kawara-tsuruoka-yabusame | twitter.description | twitter:descriptionがdescriptionと異なる（意図的な別文面の可能性。事実情報は要確認）
+  kishu-odori-bundara-bushi | title.first-date | titleにdata.jsの首日(2026-07-31)が含まれない | 紀州おどり「ぶんだら節」｜2026年8月1日に開催されました | MATSURI
+  seitan-chi-matsuri | parking.title | titleの駐車場表記がdata.jsと異なる | 未確認 / data=なし
+  tagawa-coalmine-festival | og.description | og:descriptionがdescriptionと異なる（意図的な別文面の可能性。事実情報は要確認）
+  tagawa-coalmine-festival | twitter.description | twitter:descriptionがdescriptionと異なる（意図的な別文面の可能性。事実情報は要確認）
+  tagawa-coalmine-festival | status.pending-while-confirmed | confirmedなのに「開催予定・発表待ち・未発表」が残っている（詳細未公開による意図的な表記なら要確認） | 開催予定
+  umi-hachimangu-hojoya | og.description | og:descriptionがdescriptionと異なる（意図的な別文面の可能性。事実情報は要確認）
+  umi-hachimangu-hojoya | twitter.description | twitter:descriptionがdescriptionと異なる（意図的な別文面の可能性。事実情報は要確認）
+  wakamatsu-minato-matsuri | og.description | og:descriptionがdescriptionと異なる（意図的な別文面の可能性。事実情報は要確認）
+  wakamatsu-minato-matsuri | twitter.description | twitter:descriptionがdescriptionと異なる（意図的な別文面の可能性。事実情報は要確認）
+  yokosuka-mikoshi-parade | status.pending-while-confirmed | confirmedなのに「開催予定・発表待ち・未発表」が残っている（詳細未公開による意図的な表記なら要確認） | 開催予定
+
+[INFO] 15件
+  annaka-matsuri | title.date-missing | titleに日付表記がない | あんなか祭り｜2026年日程未発表（公式詳細発表待ち） | MATSURI
+  annaka-matsuri | description.date-missing | descriptionに日付表記がない | 群馬県安中市のあんなか祭りは、2026年の具体的な日程が未発表（公式詳細発表待ち）です。山車・神輿・曳き回し・巡行が確認されている祭りです。2026年の駐車場情
+  fukagawa-hachiman-matsuri | title.date-missing | titleに日付表記がない | 深川八幡祭り | 祭を探す
+  fukagawa-hachiman-matsuri | description.date-missing | descriptionに日付表記がない | 深川八幡祭り（東京都江東区）の開催情報や見どころを紹介。「水かけ祭り」として知られ、沿道から担ぎ手に一斉に水が浴びせられる、江戸三大祭りの一つです。3年に1度、
+  hinokuni-matsuri | title.date-missing | titleに日付表記がない | 火の国まつり｜熊本県熊本市・2026年は開催中止 | MATSURI
+  kanda-matsuri | title.date-missing | titleに日付表記がない | 神田祭｜2026年は陰祭り（本祭なし） | MATSURI
+  kawagoe-matsuri | title.date-missing | titleに日付表記がない | 川越氷川祭（川越まつり） | 祭を探す
+  kawagoe-matsuri | description.date-missing | descriptionに日付表記がない | 埼玉県川越市で開催される川越氷川祭（川越まつり）の開催情報や見どころを紹介。特徴は、向かい合う山車同士が囃子で競演する「曳っかわせ」が夜に最高潮の盛り上がりを見
+  ojiyashi-ushi-no-tsunotsuki | title.first-date | titleにdata.jsの首日(2026-05-03)が含まれない | おぢや牛の角突き｜新潟県小千谷市・2026年11月1日ほか開催・国指定の闘牛行事・駐車場あり・小千谷駅 | MATSURI
+  ryugasaki-tsukumai | title.date-missing | titleに日付表記がない | 龍ケ崎の撞舞・八坂神社祇園祭 | 祭を探す
+  ryugasaki-tsukumai | description.date-missing | descriptionに日付表記がない | 龍ケ崎の撞舞・八坂神社祇園祭（茨城県龍ケ崎市）の開催情報や見どころを紹介。カエルの面をつけた舞男が高さ約14mの柱に登り、綱の上で曲芸を行う「撞舞」は、関東三奇
+  shimonita-aki-matsuri | title.date-missing | titleに日付表記がない | 下仁田秋まつり｜2026年日程未発表（公式詳細発表待ち） | MATSURI
+  shimonita-aki-matsuri | description.date-missing | descriptionに日付表記がない | 群馬県下仁田町の下仁田秋まつりは、2026年の具体的な日程が未発表（公式詳細発表待ち）です。山車・神輿・山車上の踊り・曳き回し・巡行が確認されている祭りです。2
+  yamakoshi-ushi-no-tsunotsuki | title.first-date | titleにdata.jsの首日(2026-04-29)が含まれない | 越後山古志「牛の角突き」大会｜新潟県長岡市・2026年11月3日ほか開催・伝統の闘牛・駐車場あり・長岡駅シャトルバス | MATSURI
+  yatsushiro-myouken-sai | title.date-missing | titleに日付表記がない | 八代妙見祭｜熊本県八代市・2026年は神幸行列中止 | MATSURI
