@@ -2702,5 +2702,13 @@ const SEARCH_INDEX = [
     "prefecture": "長野県",
     "city": "飯田市山本",
     "firstDate": "2026-10-03"
+  },
+  {
+    "slug": "asakusa-tori-no-ichi",
+    "name": "浅草の酉の市",
+    "officialName": "鷲神社 例祭（酉の市）・長國寺",
+    "prefecture": "東京都",
+    "city": "台東区千束",
+    "firstDate": "2026-11-07"
   }
 ];
