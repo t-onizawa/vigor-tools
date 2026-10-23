@@ -32,10 +32,14 @@ const FESTIVAL = {
   },
   yearlyInfo: [{
     year: 2026, eventStatus: "confirmed", dates: ["2026-11-07", "2026-11-08"],
+    schedule: [
+      { date: "2026-11-07", dayLabel: "1日目（2026年・飯能市公式の発表）", items: [{ time: "12:00〜21:00", label: "開催時間（催し物の内容は公式が決まり次第更新としており、未発表）" }] },
+      { date: "2026-11-08", dayLabel: "2日目（2026年・飯能市公式の発表）", items: [{ time: "9:00〜21:00", label: "開催時間（催し物の内容は公式が決まり次第更新としており、未発表）" }] }
+    ],
     access: { hasParking: null, parkingNote: "2026年の臨時駐車場・交通規制詳細は未発表。" },
     confirmation: {
-      confirmedDate: "2026-09-21", sources: ["https://www.city.hanno.lg.jp/kanko_bunka_sports/kankojoho/oshirase/10535.html"],
-      note: "飯能市公式で、2026年11月7日・8日の開催日と開催時間を確認。"
+      confirmedDate: "2026-10-23", sources: ["https://www.city.hanno.lg.jp/kanko_bunka_sports/kankojoho/oshirase/10535.html"],
+      note: "飯能市公式（2026年8月27日更新）で、2026年11月7日（土）正午から午後9時、8日（日）午前9時から午後9時の開催日時を確認。催し物の内容・交通規制は公式が決まり次第更新としており、未発表のため掲載していない。"
     }
   }]
 };
