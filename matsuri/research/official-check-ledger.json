@@ -1,0 +1,124 @@
+{
+  "version": 1,
+  "createdOn": "2026-10-23",
+  "purpose": "確定済み祭りの時程・駐車場・交通規制の公式更新を、開催14日前・7日前に確認するための台帳。確認予定日・公式URL・最終確認日・変更有無・次回確認日を管理する。",
+  "rules": [
+    "台帳は記録であり、実行主体ではない。予定日が記載されていることは、確認が自動実行されることを意味しない",
+    "確認は公式一次情報の原文（ページ本文・PDF原文）を直接取得して行う。取得できなかった場合は status を failed とし、確認済みにしない",
+    "result は unchanged（変更なし）/ changed（変更あり）/ failed（取得失敗）のいずれか。changed の場合は反映コミットを commit に記録する",
+    "予定日を過ぎてから実施した確認は late=true と記録する",
+    "未公開情報・個人情報（個人の連絡先等）は記載しない。公式に公開されたURLと、公開情報の要約のみ",
+    "祭りデータ（data.js）の更新は本台帳の確認作業では行わない。更新は matsuri/CLAUDE.md 8節の委任範囲に従い、別途PMのセッションで行う"
+  ],
+  "statusValues": ["pending", "done", "failed"],
+  "items": [
+    {
+      "id": "hanno-matsuri",
+      "name": "飯能まつり",
+      "eventDates": ["2026-11-07", "2026-11-08"],
+      "scope": ["schedule", "traffic", "parking", "undecided-items"],
+      "sources": [
+        { "url": "https://hanno-tourism.jp/hanno-matsuri/", "role": "観光協会公式（詳細タイムスケジュール・催し物）" },
+        { "url": "https://www.city.hanno.lg.jp/kanko_bunka_sports/kankojoho/oshirase/10535.html", "role": "市公式（開催日時。催し物・交通規制は決まり次第更新と案内）" }
+      ],
+      "checks": [
+        { "offset": 14, "due": "2026-10-24", "status": "done", "checkedOn": "2026-10-23", "late": false, "early": true, "result": "changed", "commit": "5bb07372", "note": "観光協会公式サイトに両日の詳細タイムスケジュールを確認し反映。出店者・参加団体・ステージ出演団体は公式で「未定」" },
+        { "offset": 7, "due": "2026-10-31", "status": "pending", "note": "未定項目（出店者・参加団体・出演団体）と、交通規制・臨時駐車場の公表を確認" }
+      ],
+      "lastChecked": "2026-10-23",
+      "lastResult": "changed",
+      "nextCheck": "2026-10-31"
+    },
+    {
+      "id": "karatsu-kunchi",
+      "name": "唐津くんち",
+      "eventDates": ["2026-11-02", "2026-11-03", "2026-11-04"],
+      "scope": ["schedule", "traffic", "parking"],
+      "sources": [
+        { "url": "https://www.city.karatsu.lg.jp/page/26467.html", "role": "市公式（2026年の巡行開始時刻・駐車場）" },
+        { "url": "https://www.city.karatsu.lg.jp/uploaded/attachment/27799.pdf", "role": "市公式の巡行マップPDF（交通規制の原文確認が未了）" },
+        { "url": "https://www.karatsu-kankou.jp/feature/karatsukunchi/", "role": "観光協会（2026-10-23時点でサーバーエラー/メンテナンス。取得不可）" },
+        { "url": "https://www.karatsu-jinja.org/kunti", "role": "唐津神社（年度記載なし。2026年の確定情報としては使わない参考）" }
+      ],
+      "checks": [
+        { "offset": 14, "due": "2026-10-19", "status": "done", "checkedOn": "2026-10-23", "late": true, "result": "changed", "commit": "7207d9b3", "note": "台帳導入前。市公式の巡行開始時刻・駐車場を反映" },
+        { "offset": 7, "due": "2026-10-26", "status": "pending", "note": "巡行マップPDFの原文確認（交通規制の範囲）、観光協会サイトの復旧確認、市ページの更新確認" }
+      ],
+      "lastChecked": "2026-10-23",
+      "lastResult": "changed",
+      "nextCheck": "2026-10-26",
+      "openIssues": ["巡行マップPDFの原文確認（未確認課題）"]
+    },
+    {
+      "id": "honjo-matsuri",
+      "name": "本庄まつり",
+      "eventDates": ["2026-11-02", "2026-11-03"],
+      "scope": ["schedule", "traffic", "parking"],
+      "sources": [
+        { "url": "https://www.honjo-kanko.jp/topics/none/20261014_10704/", "role": "本庄市観光協会の2026年記事（時程）" },
+        { "url": "https://www.honjo-kanko.jp/topics/", "role": "観光協会のお知らせ一覧（更新確認用）" },
+        { "url": "https://dashi-live.com/honjyo/", "role": "観光協会が案内する山車アプリ（参考）" }
+      ],
+      "checks": [
+        { "offset": 14, "due": "2026-10-19", "status": "done", "checkedOn": "2026-10-23", "late": true, "result": "changed", "commit": "7207d9b3", "note": "台帳導入前。観光協会記事の時程を反映" },
+        { "offset": 7, "due": "2026-10-26", "status": "pending", "note": "交通規制図（広報ほんじょうおしらせ版10月15日号の折込）の公開有無と、駐車場の記載の有無を確認" }
+      ],
+      "lastChecked": "2026-10-23",
+      "lastResult": "changed",
+      "nextCheck": "2026-10-26",
+      "openIssues": ["交通規制図（広報折込）の原文確認（未確認課題）。広報の掲載URLは未特定"]
+    },
+    {
+      "id": "kitamoto-yoi-matsuri",
+      "name": "北本まつり「宵まつり」",
+      "eventDates": ["2026-11-07"],
+      "scope": ["schedule", "traffic", "parking"],
+      "sources": [
+        { "url": "https://www.city.kitamoto.lg.jp/kanko/event/aki/18464.html", "role": "北本市公式（時程・駐車場・バス迂回。2026-10-16更新）" }
+      ],
+      "checks": [
+        { "offset": 14, "due": "2026-10-24", "status": "done", "checkedOn": "2026-10-23", "late": false, "early": true, "result": "changed", "commit": "2971cf07", "note": "時程・駐車場・バス迂回を反映" },
+        { "offset": 7, "due": "2026-10-31", "status": "pending", "note": "ページの更新日と内容の変更を確認" }
+      ],
+      "lastChecked": "2026-10-23",
+      "lastResult": "changed",
+      "nextCheck": "2026-10-31"
+    },
+    {
+      "id": "tochigi-aki-matsuri",
+      "name": "とちぎ秋まつり",
+      "eventDates": ["2026-11-14", "2026-11-15"],
+      "scope": ["schedule", "traffic", "parking"],
+      "sources": [
+        { "url": "https://www.city.tochigi.lg.jp/site/tourism/26060.html", "role": "市公式（2026-09-18更新。時程・規制・駐車場の記載なし）" },
+        { "url": "https://www.city.tochigi.lg.jp/uploaded/attachment/66925.pdf", "role": "公式チラシ表面（アクセス図に駐車場＋シャトルバス約15分の案内のみ）" },
+        { "url": "https://www.city.tochigi.lg.jp/uploaded/attachment/66926.pdf", "role": "公式チラシ裏面（山車紹介。時程なし）" },
+        { "url": "https://www.tochigi-kankou.or.jp/", "role": "観光協会（2026-10-23時点でメンテナンス中。取得不可）" }
+      ],
+      "checks": [
+        { "offset": 14, "due": "2026-10-31", "status": "pending", "note": "2026-10-23に事前確認（変更なし・追加できる情報なし）。本確認は10/31", "preliminary": { "checkedOn": "2026-10-23", "result": "unchanged" } },
+        { "offset": 7, "due": "2026-11-07", "status": "pending", "note": "時程・駐車場・シャトルバス・交通規制が揃った段階でFounderへ報告（現時点では変更しない）" }
+      ],
+      "lastChecked": "2026-10-23",
+      "lastResult": "unchanged",
+      "nextCheck": "2026-10-31"
+    },
+    {
+      "id": "chichibu-yomatsuri",
+      "name": "秩父夜祭",
+      "eventDates": ["2026-12-02", "2026-12-03"],
+      "scope": ["schedule", "traffic", "parking"],
+      "sources": [
+        { "url": "https://navi.city.chichibu.lg.jp/info/2026/10/31171/", "role": "秩父市公式（2026-10-13更新。臨時駐車場・交通案内図は準備中）" },
+        { "url": "https://www.chichibuji.gr.jp/event/yomatsuri/", "role": "秩父観光協会（秩父夜祭の案内）" }
+      ],
+      "checks": [
+        { "offset": 14, "due": "2026-11-18", "status": "pending", "note": "初回は11/16から実施可（Founder計画：11月中旬に再調査）。臨時駐車場・交通案内図・時程の公開を確認" },
+        { "offset": 7, "due": "2026-11-25", "status": "pending", "note": "公開された交通規制・駐車場・時程の変更を確認" }
+      ],
+      "lastChecked": null,
+      "lastResult": null,
+      "nextCheck": "2026-11-18"
+    }
+  ]
+}
