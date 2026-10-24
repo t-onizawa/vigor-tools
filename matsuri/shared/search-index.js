@@ -2750,5 +2750,45 @@ const SEARCH_INDEX = [
     "prefecture": "広島県",
     "city": "三次市",
     "firstDate": "2026-07-25"
+  },
+  {
+    "slug": "ushimado-aki-matsuri",
+    "name": "牛窓秋祭り",
+    "officialName": "牛窓秋祭り（牛窓神社秋季祭礼）",
+    "prefecture": "岡山県",
+    "city": "瀬戸内市",
+    "firstDate": "2026-10-25"
+  },
+  {
+    "slug": "tokumori-jinja-taisai",
+    "name": "徳守神社まつり（徳守大祭）",
+    "officialName": "徳守神社大祭式例祭（徳守大祭）",
+    "prefecture": "岡山県",
+    "city": "津山市",
+    "firstDate": "2026-10-24"
+  },
+  {
+    "slug": "katsuyama-kenka-danjiri",
+    "name": "勝山祭（勝山喧嘩だんじり）",
+    "officialName": "勝山祭",
+    "prefecture": "岡山県",
+    "city": "真庭市",
+    "firstDate": "2026-10-18"
+  },
+  {
+    "slug": "bizen-yaki-matsuri",
+    "name": "備前焼まつり",
+    "officialName": "備前焼まつり",
+    "prefecture": "岡山県",
+    "city": "備前市",
+    "firstDate": "2026-10-17"
+  },
+  {
+    "slug": "tsuyama-gongo-matsuri",
+    "name": "津山納涼ごんごまつり",
+    "officialName": "津山納涼ごんごまつりIN吉井川",
+    "prefecture": "岡山県",
+    "city": "津山市",
+    "firstDate": "2026-08-01"
   }
 ];
