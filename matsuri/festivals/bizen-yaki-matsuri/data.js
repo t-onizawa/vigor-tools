@@ -29,7 +29,15 @@ const FESTIVAL = {
     },
     "highlightComment": "陶芸の里・伊部を歩き、作家の器や焼き物に出会う二日間。店舗や特設会場の作品を見比べ、町全体に広がる備前焼の手仕事とにぎわいを楽しめる。",
     "atmosphereMedia": [],
-    "backgroundImage": null,
+    "backgroundImage": {
+      "type": "youtube",
+      "contentId": "D5eyKmGPRq0",
+      "sourceUrl": "https://www.youtube.com/watch?v=D5eyKmGPRq0",
+      "publisher": "OHK公式チャンネル",
+      "publisherType": "local_media",
+      "checkedDate": "2026-10-25",
+      "note": "第42回備前焼まつりの現地報道。展示された備前焼の器が明瞭に写る文字装飾のないサムネイルを採用。"
+    },
     "confirmation": {
       "verified": true,
       "confirmedDate": "2026-10-25",

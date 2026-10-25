@@ -51,3 +51,7 @@ backgroundImage=null、atmosphereMedia=[]。一次情報調査中に映像リン
 ## 検証記録
 
 finalize-additions.js prepareで新規ページの静的化・ハブ/検索再生成・今回のURLだけのsitemap追記を行う。静的検証と390×844／1440×900のブラウザ検証結果は当日のBacklog実績と完了報告に記載する。
+
+### 2026-10-25 毎日品質改善
+
+- 画像1件採用。県公式 https://www.okayama-kanko.jp/event/detail_12692.html を直接確認。sYSsK6oXOtcの動画ページでOHK公式チャンネル、登録4.1万人、4,311視聴、1:50、2026年10月20日の現地報道と確認。サムネイルを直接開き、笹で飾られただんじりと参加者の実写・装飾文字なしを確認。優先度1でbackgroundImageに採用。publisherType=local_media。本編の再生も確認したが、安全対策の解説を含むニュースの代表動画適性は未確定のためatmosphereMediaは保留。一次情報と一致しない映像説明を付加しない。

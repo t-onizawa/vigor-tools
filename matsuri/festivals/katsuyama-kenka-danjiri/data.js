@@ -29,7 +29,15 @@ const FESTIVAL = {
     },
     "highlightComment": "城下町の町並みを神輿とだんじりが進み、夜にはだんじり同士の力比べへ。鐘と掛け声、正面からぶつかり押し合う姿が、昼の巡行とは異なる迫力を生む。",
     "atmosphereMedia": [],
-    "backgroundImage": null,
+    "backgroundImage": {
+      "type": "youtube",
+      "contentId": "sYSsK6oXOtc",
+      "sourceUrl": "https://www.youtube.com/watch?v=sYSsK6oXOtc",
+      "publisher": "OHK公式チャンネル",
+      "publisherType": "local_media",
+      "checkedDate": "2026-10-25",
+      "note": "2026年の現地報道。だんじりと担い手が写る文字装飾のないサムネイルを採用。"
+    },
     "confirmation": {
       "verified": true,
       "confirmedDate": "2026-10-25",

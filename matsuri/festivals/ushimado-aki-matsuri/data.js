@@ -29,7 +29,15 @@ const FESTIVAL = {
     },
     "highlightComment": "海辺の牛窓を、神輿と竜頭・船形のだんじりが巡る。地区ごとのしゃぎりや、異国風の衣装で奉納される唐子踊など、港町に伝わる祭礼の表情にふれられる。",
     "atmosphereMedia": [],
-    "backgroundImage": null,
+    "backgroundImage": {
+      "type": "youtube",
+      "contentId": "d3zjAxEylwI",
+      "sourceUrl": "https://www.youtube.com/watch?v=d3zjAxEylwI",
+      "publisher": "牛窓神社",
+      "publisherType": "official",
+      "checkedDate": "2026-10-25",
+      "note": "神社公式の秋祭り映像。だんじりと町を歩く人々が写る文字装飾のないサムネイルを採用。"
+    },
     "confirmation": {
       "verified": true,
       "confirmedDate": "2026-10-25",

@@ -49,3 +49,7 @@ backgroundImage=null、atmosphereMedia=[]。一次情報調査中に映像リン
 ## 検証記録
 
 finalize-additions.js prepareで新規ページの静的化・ハブ/検索再生成・今回のURLだけのsitemap追記を行う。静的検証と390×844／1440×900のブラウザ検証結果は当日のBacklog実績と完了報告に記載する。
+
+### 2026-10-25 毎日品質改善
+
+- 画像1件採用。市公式 https://www.city.bizen.okayama.jp/soshiki/105/39340.html （bizen.lg.jpへ転送）を直接確認。D5eyKmGPRq0の動画ページでOHK公式チャンネル、登録4.1万人、3,094視聴、1:06、2026年10月17日の第42回現地報道を確認。hqdefaultを直接目視し、展示された備前焼の器の実写・文字装飾なしを確認。市公式の『作品が一堂に会する祭り』と対応する主役を写した背景として優先度1で採用。publisherType=local_media。ニュース短編の代表動画としての構成判定は未完で、atmosphereMediaは追加しない。既存年度日程・SEO文言は変更なし。
