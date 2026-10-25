@@ -22,7 +22,7 @@ const FESTIVAL = {
     confirmation: { verified: true, confirmedDate: "2026-07-31", sources: ["https://yokosuka-kanko.com/events/46th_mikoshi/"] }
   },
   yearlyInfo: [{
-    year: 2026, eventStatus: "confirmed", dates: ["2026-10-25"],
+    year: 2026, eventStatus: "ended", dates: ["2026-10-25"],
     access: { hasParking: false, parkingNote: "公式案内では会場駐車場なし。公共交通機関を利用してください。" },
     confirmation: {
       confirmedDate: "2026-09-21", sources: ["https://yokosuka-kanko.com/events/47th_mikoshi/"],
