@@ -2790,5 +2790,37 @@ const SEARCH_INDEX = [
     "prefecture": "岡山県",
     "city": "津山市",
     "firstDate": "2026-08-01"
+  },
+  {
+    "slug": "mochigase-nagashibina",
+    "name": "もちがせ流しびな",
+    "officialName": "用瀬の流しびな（もちがせ流しびな行事）",
+    "prefecture": "鳥取県",
+    "city": "鳥取市用瀬町",
+    "firstDate": "2026-04-19"
+  },
+  {
+    "slug": "kaigara-bushi-matsuri",
+    "name": "貝がら節祭り",
+    "officialName": "貝がら節祭り",
+    "prefecture": "鳥取県",
+    "city": "鳥取市気高町",
+    "firstDate": "2026-08-01"
+  },
+  {
+    "slug": "chizu-odorinsai",
+    "name": "来んさい！見んさい！踊りん祭！！",
+    "officialName": "来んさい！見んさい！踊りん祭！！",
+    "prefecture": "鳥取県",
+    "city": "八頭郡智頭町",
+    "firstDate": "2026-09-05"
+  },
+  {
+    "slug": "kotoura-hakuhosai",
+    "name": "白鳳祭",
+    "officialName": "火と食の祭り 白鳳祭",
+    "prefecture": "鳥取県",
+    "city": "東伯郡琴浦町",
+    "firstDate": "2026-08-02"
   }
 ];
