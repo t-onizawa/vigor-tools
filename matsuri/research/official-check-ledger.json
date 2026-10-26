@@ -42,12 +42,12 @@
       ],
       "checks": [
         { "offset": 14, "due": "2026-10-19", "status": "done", "checkedOn": "2026-10-23", "late": true, "result": "changed", "commit": "7207d9b3", "note": "台帳導入前。市公式の巡行開始時刻・駐車場を反映" },
-        { "offset": 7, "due": "2026-10-26", "status": "pending", "note": "巡行マップPDFの原文確認（交通規制の範囲）、観光協会サイトの復旧確認、市ページの更新確認" }
+        { "offset": 7, "due": "2026-10-26", "status": "done", "checkedOn": "2026-10-26", "late": false, "result": "unchanged", "note": "市公式ページは更新日2026-10-06のまま、巡行開始時刻・駐車場の記載は反映済み内容と同一。巡行マップPDF(27799.pdf)は取得できたが、文字情報のない画像のみのPDFで原文テキストを検証できないため、規制時間帯・範囲は確認不能として反映しない。観光協会サイトはHTTP 403で取得不可" }
       ],
-      "lastChecked": "2026-10-23",
-      "lastResult": "changed",
-      "nextCheck": "2026-10-26",
-      "openIssues": ["巡行マップPDFの原文確認（未確認課題）"]
+      "lastChecked": "2026-10-26",
+      "lastResult": "unchanged",
+      "nextCheck": "2026-10-31",
+      "openIssues": ["巡行マップPDFは画像のみで原文テキストを検証できない（規制時間帯・範囲は確認不能）。文字情報で公開された公式ソースが出るか、10/31に再確認する"]
     },
     {
       "id": "honjo-matsuri",
@@ -61,12 +61,12 @@
       ],
       "checks": [
         { "offset": 14, "due": "2026-10-19", "status": "done", "checkedOn": "2026-10-23", "late": true, "result": "changed", "commit": "7207d9b3", "note": "台帳導入前。観光協会記事の時程を反映" },
-        { "offset": 7, "due": "2026-10-26", "status": "pending", "note": "交通規制図（広報ほんじょうおしらせ版10月15日号の折込）の公開有無と、駐車場の記載の有無を確認" }
+        { "offset": 7, "due": "2026-10-26", "status": "done", "checkedOn": "2026-10-26", "late": false, "result": "unchanged", "note": "観光協会の2026年記事は反映済み内容と同一。市の広報ほんじょうおしらせ版2026年10月15日号PDF(osirase2026_1015.pdf、4ページ)の本文テキストを抽出して確認したが、交通規制図・駐車場の記載はなく、折込は別紙とみられる。市サイト内でも規制図の掲載は見つからず、規制の時間帯・範囲と駐車場は確認不能として反映しない" }
       ],
-      "lastChecked": "2026-10-23",
-      "lastResult": "changed",
-      "nextCheck": "2026-10-26",
-      "openIssues": ["交通規制図（広報折込）の原文確認（未確認課題）。広報の掲載URLは未特定"]
+      "lastChecked": "2026-10-26",
+      "lastResult": "unchanged",
+      "nextCheck": "2026-10-31",
+      "openIssues": ["交通規制図（広報折込）はオンラインで公開が確認できない（確認不能）。広報おしらせ版の掲載ページは https://www.city.honjo.lg.jp/soshiki/kikakuzaisei/hishokoho/kouhouhonjo/kouhouhonjooshiraseban_saishinban/22006.html 。10/31に観光協会・市サイトを再確認する"]
     },
     {
       "id": "kitamoto-yoi-matsuri",

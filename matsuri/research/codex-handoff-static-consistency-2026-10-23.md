@@ -39,3 +39,22 @@ data.js（唯一の正）と、生成済みの静的HTML・ハブ・検索イン
 - ERROR 10（終了済みなのに「開催予定／日程未発表」が残る10ページ）
 - WARN 56（subEventの目安時刻40、og/twitter description の別文面10、確定済みで「開催予定」が残る4、他2）
 - INFO 15（日付のない旧形式タイトル・説明など設計上の差）
+
+---
+
+## 状況メモ（2026-10-26 PM追記）— Codex担当への引き渡し
+
+**確認結果:** コミット `b3c5751b`（週次データ保守 2026-10-26）のレポートには、静的整合性チェック（`check-static-consistency.js`）が**含まれていない**。`task-weekly-data-maintenance.md` も 2026-10-23（`fea49489`）から更新がなく、本ファイルの変更案は未反映。MATSURI PMはworkflow・Scheduled Taskを変更していない（変更はCodex担当・Founder側）。
+
+**重複しない根拠（週次レポートの現行項目との差）:**
+- 週次レポートの「詳細ページ canonical / JSON-LD：問題0件」「開催日と eventStatus の整合：ended矛盾0件」は、data.js側の整合とcanonical/JSON-LD構造の検査。静的HTMLのtitle・description・og・twitter・H1・ハブカードとdata.jsの突き合わせはしていない。
+- 実際に、同じ週次レポートが「ended矛盾0件」と報告した2026-10-26時点で、本チェッカーは終了済みなのにheadに「開催予定」が残るページを8件検出している（下記）。この種の異常は現行の週次項目では検知されない。
+
+**2026-10-26時点のチェッカー出力（PM修正後・origin/main反映前の作業ツリー）:** ERROR 8 / WARN 14 / INFO 11（353件対象）
+- ERROR 8件は全て `status.stale-pending`（終了済みなのにhead文言が「開催予定」のまま）: funabashi-daijingu-reitaisai / ikegami-honmonji-oeshiki / kanada-inari-jinko-sai / kanuma-imamiya-matsuri / niihama-taiko-matsuri / ohara-hadaka-matsuri / umi-hachimangu-hojoya / yokosuka-mikoshi-parade。日次cronのended化（status変更）後にheadが再生成されないことが原因。報告のみ（修正はFounder承認後にPMが個別に実施）。
+- PMがFounder承認の下で本日修正済み: 秩父龍勢祭り・あんなか祭り・下仁田秋まつり・若松みなと祭り（head）、JSON-LD subEvent（25ページ・40件）。
+
+**Codex担当にお願いしたいこと（実施判断はFounder/Codex）:**
+1. `task-weekly-data-maintenance.md` に、本ファイル「追加ステップ」の1項目（`node matsuri/scripts/check-static-consistency.js --baseline matsuri/research/static-consistency-baseline.json`、読み取り専用）を追加し、週次レポートの表に「静的ページ整合性」行を足す。
+2. 失敗（スクリプト不在・エラー終了）は「確認済み」にせず失敗として記録する。
+3. 基準値ファイルは週次タスクでは更新しない（PMがFounder承認後に更新）。
