@@ -29,6 +29,7 @@ function updateProgress() {
   if (isComplete) {
     result.className = 'result complete';
     result.textContent = COMPLETE_MESSAGE;
+    if (window.VigorEvents) VigorEvents.complete();
   } else if (count >= Math.ceil(TOTAL * 0.7)) {
     result.className = 'result halfway';
     result.textContent = 'ほぼ確認できています。最後まで見てみましょう。';

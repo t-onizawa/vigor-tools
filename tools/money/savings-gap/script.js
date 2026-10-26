@@ -50,6 +50,7 @@ form.addEventListener('submit', function (e) {
   document.getElementById('history-saved-block').hidden = true;
 
   resultSection.hidden = false;
+  if (window.VigorEvents) VigorEvents.complete();
   form.hidden = true;
   window.scrollTo({ top: 0, behavior: 'smooth' });
 });

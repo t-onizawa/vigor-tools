@@ -18,6 +18,7 @@ function updateProgress() {
   if (count === TOTAL) {
     result.className = 'result complete';
     result.textContent = 'すべて確認完了。見直し候補メモに書き留めておきましょう。';
+    if (window.VigorEvents) VigorEvents.complete();
   } else if (count >= Math.ceil(TOTAL * 0.7)) {
     result.className = 'result halfway';
     result.textContent = 'ほぼ把握できています。最後まで確認してみましょう。';

@@ -78,6 +78,7 @@ document.getElementById('calc-btn').addEventListener('click', function () {
   document.getElementById('profile-saved-block').hidden = true;
 
   resultSection.hidden = false;
+  if (window.VigorEvents) VigorEvents.complete();
   window.scrollTo({ top: 0, behavior: 'smooth' });
 });
 

@@ -58,6 +58,7 @@ function showResult(savings, monthlyExpense, severance) {
 
   form.hidden = true;
   resultSection.hidden = false;
+  if (window.VigorEvents) VigorEvents.complete();
   window.scrollTo({ top: 0, behavior: 'smooth' });
 }
 
