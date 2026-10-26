@@ -58,3 +58,10 @@ data.js（唯一の正）と、生成済みの静的HTML・ハブ・検索イン
 1. `task-weekly-data-maintenance.md` に、本ファイル「追加ステップ」の1項目（`node matsuri/scripts/check-static-consistency.js --baseline matsuri/research/static-consistency-baseline.json`、読み取り専用）を追加し、週次レポートの表に「静的ページ整合性」行を足す。
 2. 失敗（スクリプト不在・エラー終了）は「確認済み」にせず失敗として記録する。
 3. 基準値ファイルは週次タスクでは更新しない（PMがFounder承認後に更新）。
+
+### 2026-10-26 基準値更新（Founder承認済み）
+Founder承認の下でhead修正12件（秩父龍勢・あんなか・下仁田・若松・鹿沼・新居浜・横須賀・船橋・池上・大原・金田・宇美）とJSON-LD subEvent修正（25ページ）を実施した結果を新基準値として保存した。
+- 新基準値: ERROR 0 / WARN 14 / INFO 14（353件対象）。旧基準値（2026-10-23: ERROR 10 / WARN 56 / INFO 15）はgit履歴に残る。
+- **ERROR 0は「正常」の判定ではない。** チェッカーが検査する項目（head文言・JSON-LD・ハブカードとdata.jsの整合）に矛盾が検出されないという意味に限る。残るWARN 14（og/twitterの別文面、確定済みで「開催予定」が残る等）とINFO 14（日付のない旧形式title等）は未解決の確認事項で、事実の正しさ（公式との一致）は検査していない。
+- 「例年」表記に直したページ（船橋・池上・大原）は、設計上 title/description の日付なしINFOが新規に出る（意図した表記）。
+- 週次保守への組み込み案（上記「追加ステップ」「報告基準」）は未反映のまま。実施はCodex担当・Founder判断。MATSURI PMはworkflowを変更していない。

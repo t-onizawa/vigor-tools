@@ -5,7 +5,8 @@
   "rules": [
     "台帳は記録であり、実行主体ではない。予定日が記載されていることは、確認が自動実行されることを意味しない",
     "確認は公式一次情報の原文（ページ本文・PDF原文）を直接取得して行う。取得できなかった場合は status を failed とし、確認済みにしない",
-    "result は unchanged（変更なし）/ changed（変更あり）/ failed（取得失敗）のいずれか。changed の場合は反映コミットを commit に記録する",
+    "result は公式ページ本文の変更有無（unchanged / changed / failed）。changed の場合は反映コミットを commit に記録する",
+    "規制図・PDF等の詳細資料は result とは別に detailResult で記録する（verified＝原文テキストで確認 / unverifiable＝取得できない・画像のみ等で原文を確認できない / n-a＝対象なし）。「公式ページに変更なし」と「詳細資料は確認不能」を混同しない。unverifiable の内容は祭りページに転記しない",
     "予定日を過ぎてから実施した確認は late=true と記録する",
     "未公開情報・個人情報（個人の連絡先等）は記載しない。公式に公開されたURLと、公開情報の要約のみ",
     "祭りデータ（data.js）の更新は本台帳の確認作業では行わない。更新は matsuri/CLAUDE.md 8節の委任範囲に従い、別途PMのセッションで行う"
@@ -42,7 +43,7 @@
       ],
       "checks": [
         { "offset": 14, "due": "2026-10-19", "status": "done", "checkedOn": "2026-10-23", "late": true, "result": "changed", "commit": "7207d9b3", "note": "台帳導入前。市公式の巡行開始時刻・駐車場を反映" },
-        { "offset": 7, "due": "2026-10-26", "status": "done", "checkedOn": "2026-10-26", "late": false, "result": "unchanged", "note": "市公式ページは更新日2026-10-06のまま、巡行開始時刻・駐車場の記載は反映済み内容と同一。巡行マップPDF(27799.pdf)は取得できたが、文字情報のない画像のみのPDFで原文テキストを検証できないため、規制時間帯・範囲は確認不能として反映しない。観光協会サイトはHTTP 403で取得不可" }
+        { "offset": 7, "due": "2026-10-26", "status": "done", "checkedOn": "2026-10-26", "late": false, "result": "unchanged", "detailResult": "unverifiable", "note": "市公式ページは更新日2026-10-06のまま、巡行開始時刻・駐車場の記載は反映済み内容と同一。巡行マップPDF(27799.pdf)は取得できたが、文字情報のない画像のみのPDFで原文テキストを検証できないため、規制時間帯・範囲は確認不能として反映しない。観光協会サイトはHTTP 403で取得不可" }
       ],
       "lastChecked": "2026-10-26",
       "lastResult": "unchanged",
@@ -61,7 +62,7 @@
       ],
       "checks": [
         { "offset": 14, "due": "2026-10-19", "status": "done", "checkedOn": "2026-10-23", "late": true, "result": "changed", "commit": "7207d9b3", "note": "台帳導入前。観光協会記事の時程を反映" },
-        { "offset": 7, "due": "2026-10-26", "status": "done", "checkedOn": "2026-10-26", "late": false, "result": "unchanged", "note": "観光協会の2026年記事は反映済み内容と同一。市の広報ほんじょうおしらせ版2026年10月15日号PDF(osirase2026_1015.pdf、4ページ)の本文テキストを抽出して確認したが、交通規制図・駐車場の記載はなく、折込は別紙とみられる。市サイト内でも規制図の掲載は見つからず、規制の時間帯・範囲と駐車場は確認不能として反映しない" }
+        { "offset": 7, "due": "2026-10-26", "status": "done", "checkedOn": "2026-10-26", "late": false, "result": "unchanged", "detailResult": "unverifiable", "note": "観光協会の2026年記事は反映済み内容と同一。市の広報ほんじょうおしらせ版2026年10月15日号PDF(osirase2026_1015.pdf、4ページ)の本文テキストを抽出して確認したが、交通規制図・駐車場の記載はなく、折込は別紙とみられる。市サイト内でも規制図の掲載は見つからず、規制の時間帯・範囲と駐車場は確認不能として反映しない" }
       ],
       "lastChecked": "2026-10-26",
       "lastResult": "unchanged",
