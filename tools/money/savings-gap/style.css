@@ -140,3 +140,17 @@
 @media (max-width: 480px) {
   .total-value { font-size: 1.7rem; }
 }
+}
+
+/* 旗艦改修で追加したガイドコンテンツ用（Day 3-5） */
+.guide p { line-height: 1.8; margin: 0 0 1rem; }
+.guide-table { width: 100%; border-collapse: collapse; margin: 0 0 1rem; font-size: 0.92rem; }
+.guide-table th, .guide-table td { border: 1px solid rgba(0, 0, 0, 0.18); padding: 0.45rem 0.6rem; text-align: right; }
+.guide-table th:first-child, .guide-table td:first-child { text-align: left; }
+.guide-table thead th { background: rgba(0, 0, 0, 0.05); }
+.guide-steps { line-height: 1.8; margin: 0 0 1rem; padding-left: 1.4rem; }
+.guide-list { line-height: 1.8; margin: 0 0 1rem; padding-left: 1.2rem; }
+.guide-list li { margin-bottom: 0.6rem; }
+.faq-item { margin-bottom: 1.4rem; }
+.faq-item h3 { font-size: 1rem; margin: 0 0 0.4rem; }
+.faq-item p { line-height: 1.8; margin: 0; }
