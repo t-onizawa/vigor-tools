@@ -2822,5 +2822,37 @@ const SEARCH_INDEX = [
     "prefecture": "鳥取県",
     "city": "東伯郡琴浦町",
     "firstDate": "2026-08-02"
+  },
+  {
+    "slug": "tsuwano-sagimai",
+    "name": "津和野の鷺舞神事",
+    "officialName": "津和野弥栄神社の鷺舞神事",
+    "prefecture": "島根県",
+    "city": "鹿足郡津和野町",
+    "firstDate": "2026-07-20"
+  },
+  {
+    "slug": "tsuwano-tonomachi-bonodori",
+    "name": "津和野殿町盆踊り",
+    "officialName": "津和野殿町盆踊り（殿町盆踊り大会）",
+    "prefecture": "島根県",
+    "city": "鹿足郡津和野町",
+    "firstDate": "2026-08-15"
+  },
+  {
+    "slug": "sekishu-hamakko-natsu-matsuri",
+    "name": "石州浜っ子夏まつり",
+    "officialName": "石州浜っ子夏まつり",
+    "prefecture": "島根県",
+    "city": "浜田市",
+    "firstDate": "2026-08-01"
+  },
+  {
+    "slug": "gonokawa-matsuri",
+    "name": "江の川祭",
+    "officialName": "光と水の祭典 江の川祭",
+    "prefecture": "島根県",
+    "city": "江津市",
+    "firstDate": "2026-08-15"
   }
 ];
