@@ -216,6 +216,15 @@ function getLatestConfirmedDate(festival, currentYear) {
   return dates[dates.length - 1] || null;
 }
 
+// subEventは「確定した開始時刻」だけを出力する。ラベルが終了・目安・予定の時刻を
+// 示す場合は出力しない（matsuri/CLAUDE.md 8節：目安時刻は確定時刻として出さない）。
+// 「宵祭開始（21:30頃まで）」のように、開始は固定で終了側だけが目安のラベルは、
+// 「…まで」を含む括弧書きを除いて判定し、固定開始時刻を残す。
+function isConfirmedStartLabel(label) {
+  const core = String(label || "").replace(/[（(][^）)]*まで[）)]/g, "");
+  return !/頃|ごろ|予定|目安|終了/.test(core);
+}
+
 function buildEventJsonLd(festival, currentYear, canonicalUrl) {
   const dates = Array.isArray(currentYear.dates) ? currentYear.dates : [];
   if (dates.length === 0) return null;
@@ -253,6 +262,7 @@ function buildEventJsonLd(festival, currentYear, canonicalUrl) {
       (day.items || []).forEach((item) => {
         const isoTime = normalizeTimeToIso(item.time);
         if (!isoTime) return;
+        if (!isConfirmedStartLabel(item.label)) return;
         subEvents.push({
           "@type": "Event",
           name: item.label,
