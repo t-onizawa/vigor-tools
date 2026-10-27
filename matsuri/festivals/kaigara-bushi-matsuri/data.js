@@ -29,7 +29,15 @@ const FESTIVAL = {
     },
     "highlightComment": "浜村観光道路とヤサホーパークを舞台に、貝がら節総踊りが夏の夜を彩る。地域に伝わる歌と踊りを、大勢で踊るにぎわいの中で感じられる。",
     "atmosphereMedia": [],
-    "backgroundImage": null,
+    "backgroundImage": {
+      "type": "youtube",
+      "contentId": "mG41g2f_SaM",
+      "sourceUrl": "https://www.youtube.com/watch?v=mG41g2f_SaM",
+      "publisher": "KENTA TV",
+      "publisherType": "individual",
+      "checkedDate": "2026-10-27",
+      "note": "2026年8月1日の貝がら節祭り総踊り映像。夕暮れの会場で獅子を載せた屋台が写る、文字装飾のないサムネイルを採用。"
+    },
     "confirmation": {
       "verified": true,
       "confirmedDate": "2026-10-26",

@@ -22,8 +22,8 @@ const FESTIVAL = {
       "label": "稲佐神社",
       "pointType": "shrine",
       "query": "稲佐神社 佐賀県杵島郡白石町辺田2925",
-      "lat": null,
-      "lng": null,
+      "lat": 33.1631847,
+      "lng": 130.1011401,
       "mapUrl": "https://www.google.com/maps/search/?api=1&query=%E7%A8%B2%E4%BD%90%E7%A5%9E%E7%A4%BE%20%E4%BD%90%E8%B3%80%E7%9C%8C%E6%9D%B5%E5%B3%B6%E9%83%A1%E7%99%BD%E7%9F%B3%E7%94%BA%E8%BE%BA%E7%94%B02925",
       "note": "公式案内の会場・観覧の基準地点。"
     },

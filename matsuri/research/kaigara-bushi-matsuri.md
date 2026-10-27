@@ -45,3 +45,11 @@ backgroundImage=null、atmosphereMedia=[]。調査中に動画リンクを見か
 
 finalize-additions.js prepareで静的生成・ハブ/検索再生成・今回URLのみsitemap追記を実施。静的・390×844/1440×900検証結果はBacklogの本日ログと完了報告に記録する。
 
+## 2026-10-27 品質改善（10月26日開始分・通常枠）
+
+- 一次情報 https://www.city.tottori.lg.jp/page/49098.html を直接確認。2026年8月1日、浜村観光道路・ヤサホーパークの開催報告。
+- 候補「貝がら節祭り総踊り☆貝がら節祭2026.8.1」https://www.youtube.com/watch?v=mG41g2f_SaM を直接確認。KENTA TV、登録者3260人、343回視聴、2026/08/01公開、12:47。気高町浜村の場所表示。確認済みバッジは確認できず。
+- backgroundImage採用・優先度1。hqdefault.jpgを直接開き、夕暮れの会場で獅子を載せた屋台が写る文字なし実写を確認。「踊り手の画像」とは記録しない。
+- atmosphereMediaは見送り。総踊りの通し記録で、短い総合ダイジェストではない。検索で見つけた28分の別ダイジェストも入口用途には長く、未採用。
+- 位置情報・年度情報・noteは変更しない。
+

@@ -29,7 +29,15 @@ const FESTIVAL = {
     },
     "highlightComment": "智頭宿の往来を踊り子のパレードが進み、駅前の特設ステージへにぎわいがつながる。よさこいをはじめ多彩なチームの演舞と、最後の総踊りが町を彩る。",
     "atmosphereMedia": [],
-    "backgroundImage": null,
+    "backgroundImage": {
+      "type": "youtube",
+      "contentId": "AlU6_oZ10D8",
+      "sourceUrl": "https://www.youtube.com/watch?v=AlU6_oZ10D8",
+      "publisher": "福永ファーム",
+      "publisherType": "individual",
+      "checkedDate": "2026-10-27",
+      "note": "2026年智頭町の踊りん祭でのチーム満天星の演舞。赤・青の衣装の踊り手が写る、文字装飾のない夜のステージ画像を採用。"
+    },
     "confirmation": {
       "verified": true,
       "confirmedDate": "2026-10-26",

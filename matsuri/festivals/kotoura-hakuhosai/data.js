@@ -22,8 +22,8 @@ const FESTIVAL = {
       "label": "東伯総合公園（多目的広場のある公園）",
       "pointType": "park",
       "query": "東伯総合公園 鳥取県琴浦町田越560",
-      "lat": null,
-      "lng": null,
+      "lat": 35.4954246,
+      "lng": 133.6805486,
       "mapUrl": "https://www.google.com/maps/search/?api=1&query=%E6%9D%B1%E4%BC%AF%E7%B7%8F%E5%90%88%E5%85%AC%E5%9C%92%20%E9%B3%A5%E5%8F%96%E7%9C%8C%E7%90%B4%E6%B5%A6%E7%94%BA%E7%94%B0%E8%B6%8A560",
       "note": "会場を理解するための基準地点。催し・巡行の全範囲を示すものではない。"
     },

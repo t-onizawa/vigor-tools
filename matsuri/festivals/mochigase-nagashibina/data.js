@@ -29,7 +29,15 @@ const FESTIVAL = {
     },
     "highlightComment": "紙の男女一対の雛を桟俵にのせ、桃の小枝や季節の花とともに千代川へ送る。川辺で無病息災を願う、用瀬の暮らしに根ざした春の行事にふれられる。",
     "atmosphereMedia": [],
-    "backgroundImage": null,
+    "backgroundImage": {
+      "type": "youtube",
+      "contentId": "-5FeYkWoIHs",
+      "sourceUrl": "https://www.youtube.com/watch?v=-5FeYkWoIHs",
+      "publisher": "用瀬流し雛",
+      "publisherType": "individual",
+      "checkedDate": "2026-10-27",
+      "note": "2021年公開の行事紹介映像。雨の川辺で参加者が雛を流す、文字装飾のない実写サムネイルを採用。投稿元の運営主体は未確定のため公式扱いしない。"
+    },
     "confirmation": {
       "verified": true,
       "confirmedDate": "2026-10-26",
