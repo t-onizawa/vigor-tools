@@ -28,8 +28,29 @@ const FESTIVAL = {
       "note": "開催地またはアクセスの基準地点。巡行・観覧範囲全体を表す座標ではない。"
     },
     "highlightComment": "白鷺の姿をした舞い手が、囃子に合わせて羽を広げる。弥栄神社の神輿に供奉し、町内の決まった場所で奉納される舞を通して、城下町に伝わる祇園の神事にふれられる。",
-    "atmosphereMedia": [],
-    "backgroundImage": null,
+    "notableDesignation": "国指定重要無形民俗文化財「津和野弥栄神社の鷺舞」",
+    "atmosphereMedia": [
+      {
+        "type": "youtube",
+        "url": "https://www.youtube.com/watch?v=-shY0Bckqbc",
+        "contentId": "-shY0Bckqbc",
+        "title": "津和野弥栄神社の鷺舞 2016 町内巡行｜祇園祭のご神幸【島根・津和野】",
+        "publisher": "zipang sky",
+        "publisherType": "individual",
+        "purpose": "festival_atmosphere",
+        "publishedYear": 2016,
+        "checkedDate": "2026-10-27"
+      }
+    ],
+    "backgroundImage": {
+      "type": "youtube",
+      "contentId": "-shY0Bckqbc",
+      "sourceUrl": "https://www.youtube.com/watch?v=-shY0Bckqbc",
+      "publisher": "zipang sky",
+      "publisherType": "individual",
+      "checkedDate": "2026-10-27",
+      "note": "2016年7月20日の町内巡行映像。抽出フレームは拡大時の画質が不足したため、鷺の白い羽と町内の行列を判別できるデフォルト画像を優先度3で採用。画像内の2016年表記は過去開催時のもの。"
+    },
     "confirmation": {
       "verified": true,
       "confirmedDate": "2026-10-27",

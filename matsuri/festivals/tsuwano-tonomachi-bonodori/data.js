@@ -29,7 +29,15 @@ const FESTIVAL = {
     },
     "highlightComment": "黒い頭巾と白い長振袖の踊り手が、殿町通りに踊りの輪をつくる。保存会の公演に続いて一般参加の時間もあり、太鼓や石見神楽とともに、津和野の盆の夜を体感できる。",
     "atmosphereMedia": [],
-    "backgroundImage": null,
+    "backgroundImage": {
+      "type": "youtube",
+      "contentId": "jChHRnEHwuY",
+      "sourceUrl": "https://www.youtube.com/watch?v=jChHRnEHwuY",
+      "publisher": "英すけっぷ",
+      "publisherType": "individual",
+      "checkedDate": "2026-10-27",
+      "note": "2022年公開の殿町通りの津和野踊り映像。提灯の下で黒頭巾・白い衣装の踊り手が連なる、文字装飾のない実写サムネイルを採用。"
+    },
     "confirmation": {
       "verified": true,
       "confirmedDate": "2026-10-27",
