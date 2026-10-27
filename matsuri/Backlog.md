@@ -5109,3 +5109,18 @@ commit `2b5da25`／キャッシュ修正`7522f44`／`ab4f35b`）
 - integrity：353件hard issue 0、既知heuristic 1（kanda-matsuri off_year_has_dates、開始時から同じ）。ローカルブラウザ全4件390×844/1440×900、横スクロールなし・console errorなし、FAQ・時程の描画を確認。貝がら節の未確認駅欄が文字列nullになる表示を発見し、新規データのみ確認済み会場拠点の文字列に修正・再生成・両サイズで再検証した。UI/共有ロジック変更なし。一覧353・鳥取7・開催前0、まもなく開催は佐賀バルーン/宮﨑神宮/田川の3件で新規終了4件が混ざらない。開催中は当日該当なし。
 - 全国349→353、鳥取3→7。中国は鳥取7・島根3・岡山8・広島8・山口3（全県目標3以上）。連続0件0、地方完了再判定なし、次回も全国深掘り。直近5営業日（前回まで10/19宮城5、20岐阜4、21追加記録なし、22山梨2、23長野5）、今回を含む10/20～26は岐阜4・21記録なし・山梨2・長野5・鳥取4。同県3営業日連続に非該当。週末10/24広島5・25岡山5とも区別。
 - sitemap追加：https://vigorlab.net/matsuri/festivals/mochigase-nagashibina/ / https://vigorlab.net/matsuri/festivals/kaigara-bushi-matsuri/ / https://vigorlab.net/matsuri/festivals/chizu-odorinsai/ / https://vigorlab.net/matsuri/festivals/kotoura-hakuhosai/ 。公開前記録。最終hash、fetch/FF・競合、Pages・本番、IndexNow出力とURL、clean、X投稿下書きは完了報告で確定する。
+
+## 2026-10-27 新規祭り追加（全国深掘り・島根県4件）
+
+- 採用：津和野の鷺舞神事、津和野殿町盆踊り、石州浜っ子夏まつり、江の川祭。全国353→357件、島根3→7件。全件2026年日程を一次情報で確認し、過去日につきended。翌年日程は推測しない。
+- 発見経路：全国初期掲載完了後の低密度県の新規探索。島根県観光連盟の夏祭り特集から主催・地域公式へ。津和野町・浜田市・江津市・益田市を確認。一次情報の発行主体8系統：県観光連盟、津和野町観光協会、津和野町教育委員会、津和野盆踊り実行委員会、津和野町商工会、浜田市観光協会、江の川祭実行委員会／江津商工会議所、高津川花火大会実行委員会。
+- 5件未満の理由：益田水郷祭／高津川花火大会は、県の復活・改称紹介に対し主催は「同時開催：第54回益田水郷祭」と記載。別催事を同一ページへ混在させる恐れがあるため保留。https://takatsugawa.jp/ / https://www.kankou-shimane.com/feature/74210 。益田市観光協会記事は403で内容確認できず転記しない。品質適合済みの未掲載ストックはなし。
+- 鷺舞：https://tsuwano-kanko.net/xo_event/鷺舞神事（渡御）/ / https://tsuwano-kanko.net/xo_event/鷺舞神事（還御）/ / https://tsuwano-kanko.net/info/sagimai/ / https://tsuwano-bunka.net/cultural-property/detail_sagi-mai/ 。弥栄神社祇園祭礼の渡御7/20・還御7/27を対象とし、期間中毎日開催としない。子鷺単独・他地域・8月盆踊りは除外。町文化財解説の神輿供奉を根拠にhasMikoshi=true、その他null。夕方。白鷺の姿・羽・囃子・町内奉納をhighlight根拠とする。恒常の目安時刻を2026年確定scheduleへ転用せず、駐車場未確認。町の保存会紹介記事は直接取得できず公開データの出典から除外。
+- 殿町盆踊り：https://odori.tsuwano.ne.jp/ / https://odori.tsuwano.ne.jp/?page_id=10 / https://tsuwano.shoko-shimane.or.jp/2026/08/13/5323/ 。8/15殿町盆踊り大会のみ、周辺週間行事や他地区・7月神事は除外。黒頭巾・白長振袖と保存会／全員参加の踊りをhighlight根拠とする。地上踊りにつき4featuresはnull、night。公式予定時刻は「頃」を残す。多胡・あぜみち17時以降無料、太皷谷稲成神社第二終日無料、シャトルなし。
+- 浜っ子夏：https://kankou-hamada.or.jp/archives/36283 / https://kankou-hamada.or.jp/guidepost/10351 。8/1浜田漁港の夏まつりのみ。春の大名行列は除外。2026年固有案内を優先し、恒常紹介の古い花火数・ステージを転用しない。港花火・音楽花火・屋台をhighlight根拠、4features=null、night。会場内950台有料、浜田駅北口等シャトル。地図は駅のアクセス拠点であり花火会場そのものではない。
+- 江の川：https://sites.google.com/view/gonogawa / https://sites.google.com/view/gonogawa/イベントスケジュール / https://sites.google.com/view/gonogawa/会場マップ / https://www.iwami.or.jp/gotsucci/gonogawa/ 。実行委員会の8/15前夜祭＋8/16本祭のみ。長期の星高山点灯を開催日に含めない。市音頭・灯ろうの水上イルミネーション・河口花火をhighlight根拠、4features=null、both。旧市役所立入・駐車禁止を明記。
+- 素材全件未採用、探索を目的化せず。Google Mapsで4基準地点を直接一意に確認。研究メモは既存excludeのmatsuri/research/。UI・新スキーマ変更なし。
+- finalize-additions.js prepare成功。新規4件静的化、該当特徴・県・地方・月ハブと検索再生成、今回4URLのみsitemap末尾追記、XMLパース成功。357slug重複なし、node --check、slug/id/canonical/JSON-LD/必須セクション/script順確認。既存353件のdata.js/index.html計706ファイル不変。
+- integrity hard issue 0、既存heuristic 1（kanda-matsuri off_year_has_dates）。終了ステータスの機械修正0件。新規全4件390×844/1440×900、横スクロールなし・console errorなし。FAQ重複語を新規データのみで修正・再生成・再検証。一覧357、島根7、島根の開催前0。まもなく開催は佐賀バルーン・宮﨑神宮・田川の既存3件で、新規終了4件混入なし。開催中は当日該当なし。
+- 中国掲載：鳥取7・島根7・岡山8・広島8・山口3（各目標3以上）。連続0件0、地方完了の再判定なし、次回全国深掘り。直近5営業日10/21記録なし・22山梨2・23長野5・26鳥取4・27島根4、同県3営業日連続非該当。週末24広島5・25岡山5は別計上。
+- sitemap追加：https://vigorlab.net/matsuri/festivals/tsuwano-sagimai/ / https://vigorlab.net/matsuri/festivals/tsuwano-tonomachi-bonodori/ / https://vigorlab.net/matsuri/festivals/sekishu-hamakko-natsu-matsuri/ / https://vigorlab.net/matsuri/festivals/gonokawa-matsuri/ 。公開前記録。最終hash・fetch/FF・競合・Pages・本番・IndexNow・clean・X下書きは完了報告で確定。
