@@ -2854,5 +2854,45 @@ const SEARCH_INDEX = [
     "prefecture": "島根県",
     "city": "江津市",
     "firstDate": "2026-08-15"
+  },
+  {
+    "slug": "hikari-suo-hashiramatsu",
+    "name": "ふるさとの火まつり周防柱松",
+    "officialName": "ふるさとの火まつり周防柱松",
+    "prefecture": "山口県",
+    "city": "光市",
+    "firstDate": "2026-08-01"
+  },
+  {
+    "slug": "yamasaki-hachimangu-honyama-shinji",
+    "name": "山崎八幡宮の本山神事",
+    "officialName": "山崎八幡宮の本山神事",
+    "prefecture": "山口県",
+    "city": "周南市",
+    "firstDate": "2026-09-27"
+  },
+  {
+    "slug": "kintaikyo-matsuri",
+    "name": "錦帯橋まつり",
+    "officialName": "錦帯橋まつり",
+    "prefecture": "山口県",
+    "city": "岩国市",
+    "firstDate": "2026-04-29"
+  },
+  {
+    "slug": "hagi-jidai-matsuri",
+    "name": "萩時代まつり",
+    "officialName": "萩時代まつり",
+    "prefecture": "山口県",
+    "city": "萩市",
+    "firstDate": "2026-11-15"
+  },
+  {
+    "slug": "shimonoseki-kaikyo-matsuri",
+    "name": "しものせき海峡まつり",
+    "officialName": "しものせき海峡まつり",
+    "prefecture": "山口県",
+    "city": "下関市",
+    "firstDate": "2026-05-02"
   }
 ];

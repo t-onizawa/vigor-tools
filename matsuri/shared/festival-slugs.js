@@ -44,3 +44,4 @@ FESTIVAL_SLUGS.push("onomichi-betcha-matsuri", "saijo-sake-matsuri", "kure-kamey
 FESTIVAL_SLUGS.push("ushimado-aki-matsuri", "tokumori-jinja-taisai", "katsuyama-kenka-danjiri", "bizen-yaki-matsuri", "tsuyama-gongo-matsuri");
 FESTIVAL_SLUGS.push("mochigase-nagashibina", "kaigara-bushi-matsuri", "chizu-odorinsai", "kotoura-hakuhosai");
 FESTIVAL_SLUGS.push("tsuwano-sagimai", "tsuwano-tonomachi-bonodori", "sekishu-hamakko-natsu-matsuri", "gonokawa-matsuri");
+FESTIVAL_SLUGS.push("hikari-suo-hashiramatsu", "yamasaki-hachimangu-honyama-shinji", "kintaikyo-matsuri", "hagi-jidai-matsuri", "shimonoseki-kaikyo-matsuri");

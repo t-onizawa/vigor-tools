@@ -5124,3 +5124,18 @@ commit `2b5da25`／キャッシュ修正`7522f44`／`ab4f35b`）
 - integrity hard issue 0、既存heuristic 1（kanda-matsuri off_year_has_dates）。終了ステータスの機械修正0件。新規全4件390×844/1440×900、横スクロールなし・console errorなし。FAQ重複語を新規データのみで修正・再生成・再検証。一覧357、島根7、島根の開催前0。まもなく開催は佐賀バルーン・宮﨑神宮・田川の既存3件で、新規終了4件混入なし。開催中は当日該当なし。
 - 中国掲載：鳥取7・島根7・岡山8・広島8・山口3（各目標3以上）。連続0件0、地方完了の再判定なし、次回全国深掘り。直近5営業日10/21記録なし・22山梨2・23長野5・26鳥取4・27島根4、同県3営業日連続非該当。週末24広島5・25岡山5は別計上。
 - sitemap追加：https://vigorlab.net/matsuri/festivals/tsuwano-sagimai/ / https://vigorlab.net/matsuri/festivals/tsuwano-tonomachi-bonodori/ / https://vigorlab.net/matsuri/festivals/sekishu-hamakko-natsu-matsuri/ / https://vigorlab.net/matsuri/festivals/gonokawa-matsuri/ 。公開前記録。最終hash・fetch/FF・競合・Pages・本番・IndexNow・clean・X下書きは完了報告で確定。
+
+## 2026-10-28 新規祭り追加（全国深掘り・山口県5件）
+
+- 採用：ふるさとの火まつり周防柱松、山崎八幡宮の本山神事、錦帯橋まつり、萩時代まつり、しものせき海峡まつり。全国357→362件、山口3→8件。候補ストックは空。低密度県を県・市観光協会、市役所等の公式案内から新規探索。
+- 見送り：降松神社秋季例大祭。2026年10月11日の祭典時刻が県観光サイト https://yamaguchi-tourism.jp/event/detail_11139.html と下松市観光協会 https://kudamatsu-kanko.jp/kudamatu-maturi/ で食い違うため実装しない。
+- 光市の柱松：https://www.city.hikari.lg.jp/soshiki/7/kanko_1/hikarishinoibento/14882.html 。周防コミュニティセンター主催の立野西庄・旭橋周辺、8月1日。約15mの籠へ松明を投げ入れる火祭り。岩国市周東町祖生の同名に近い柱松とは別。山車・神輿・山車上踊り・曳き回し未確認、夜。日程終了。
+- 周南市の本山神事：https://www.city.shunan.lg.jp/soshiki/107/71252.html / https://www.city.shunan.lg.jp/site/kanko/72956.html 。秋季例大祭の9月27日本山神事を対象とし他日を推測しない。山車を坂から突き落とす神事を根拠に山車あり、他特徴未確認。日程終了。
+- 岩国市の錦帯橋まつり：https://iwakuni-kanko.jp/kintaikyomatsuri / https://yamaguchi-tourism.jp/event/detail_18762.html 。4月29日の第48回、実行委員会。錦帯橋の大名行列・奴道中を見どころとし、10月の岩国祭と区別。古い年次の料金・時刻は転用しない。歩く行列を曳き回しへ分類せず、特徴未確認、昼。日程終了。
+- 萩時代まつり：https://www.hagishi.com/search/detail.php?d=900036 / https://www.hagishi.com/?p=32498 。11月15日の実行委員会主催、萩大名行列・萩時代パレードを対象。別主催で同時開催の萩ふるさとまつりを混在させない。毛槍や草履舞を見どころに、特徴未確認、昼。2026開催を公式確認しconfirmed。
+- 下関市の海峡まつり：https://shimonoseki.travel/kaikyo_fes/ / https://yamaguchi-tourism.jp/event/detail_10440.html / https://www.city.shimonoseki.lg.jp/site/kouhou/156820.html 。5月2〜4日、合同会議が案内する祭りを対象とし先帝祭・源平まつりを構成行事として扱う。2026年5月3日は雨で屋外催し・海上パレードが中止、一部シーモール屋内に変更されたと市報で確認。特徴未確認、昼。日程終了。
+- 全5件、地図座標・素材は直接確認したものがなく未採用。公開範囲とアクセス・駐車場の未確認箇所は推測しない。既存357件のdata.jsとindex.html計714ファイル不変。
+- prepare成功、362slug重複なし、sitemap XML・新規ページのslug/id/canonical/Event JSON-LD・必須セクション・script順・全shared JS構文・git diff --check合格。整合性hard issue 0、既存heuristic kanda-matsuri 1件。過去日自動修正0件。
+- 新規5件の390×844・1440×900で横スクロールなし・console errorなし、一覧362件、山口県8件、山口県の開催前2件、まもなく開催表示を確認。
+- 中国内掲載数：鳥取7・島根7・岡山8・広島8・山口8。連続0件0、次回全国深掘り、地方完了の再判定なし。直近5営業日10/22山梨2、23長野5、26鳥取4、27島根4、28山口5。同一県3営業日連続に非該当。
+- sitemap新規5URLは今回分のみ追記。最終commit・fetch/FF・Pages・本番・IndexNow・clean・X下書きは完了報告で確定する。
