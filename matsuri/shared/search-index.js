@@ -2894,5 +2894,29 @@ const SEARCH_INDEX = [
     "prefecture": "山口県",
     "city": "下関市",
     "firstDate": "2026-05-02"
+  },
+  {
+    "slug": "ayabe-minatsuki-matsuri",
+    "name": "あやべ水無月まつり",
+    "officialName": "あやべ水無月まつり",
+    "prefecture": "京都府",
+    "city": "綾部市",
+    "firstDate": "2026-07-25"
+  },
+  {
+    "slug": "miyazu-toro-nagashi-hanabi",
+    "name": "宮津燈籠流し花火大会",
+    "officialName": "宮津燈籠流し花火大会",
+    "prefecture": "京都府",
+    "city": "宮津市",
+    "firstDate": "2026-08-16"
+  },
+  {
+    "slug": "kyotamba-takeno-hikiyama",
+    "name": "竹野の曳山巡行",
+    "officialName": "竹野の曳山巡行",
+    "prefecture": "京都府",
+    "city": "船井郡京丹波町",
+    "firstDate": "2026-10-11"
   }
 ];
