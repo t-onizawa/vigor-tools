@@ -28,3 +28,9 @@
 ### 2026-10-17 素材調査未完了（次回再調査）
 
 - https://www.city.saga.lg.jp/city-promotion/promotion/18/index.html の2023公式ダイジェスト埋込 https://www.youtube.com/watch?v=Q5EY8j0qU-M を直接確認。「//Digest Movie// 2023 Saga International Balloon Fiesta」、- Official - Saga International Balloon Fiesta（7,750人）、18分03秒、約1.1万回視聴。hqdefaultと0〜3を直接開いた。デフォルト/0は会場空撮と大ロゴで気球本体を主役として判別できず、1は人物コラージュ、2・3はインタビュー人物でいずれも背景不採用。長いダイジェストで、今回本編全体のインタビュー比率を確定していないため動画は採用保留。既存データを変更しない。
+
+### 2026-10-29 ドローンショーと直前天気の見通しを追記
+
+- 追記内容（Founder承認済み）：11/3（火・祝）17:55〜18:10のドローンショー（4,050機・国内最大規模・観覧無料、夜間係留の直前）と、5日間の天気の見通しを hayashiNote に追記。11/3のスケジュールにも17:55ドローンショーを追加。
+- 根拠：ドローンショーは佐賀経済新聞（Yahoo!ニュース経由）で確認。天気は時事ドットコム週間予報（2026-10-28 17:00発表）：10/30雨80%、10/31 20%、11/1 30%、11/2 60%、11/3 30%。11/2は当初見通し（夜は回復傾向）から悪化したため中止・変更注意を明記。
+- 生成物：generate-static-content.js で詳細ページを再生成（JSON-LDにドローンショーのsubEvent追加）。ハブ再生成は差分なし。check-data-integrity PASS、check-static-consistency 当該ページの指摘ゼロ。
