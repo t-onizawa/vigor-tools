@@ -2918,5 +2918,45 @@ const SEARCH_INDEX = [
     "prefecture": "京都府",
     "city": "船井郡京丹波町",
     "firstDate": "2026-10-11"
+  },
+  {
+    "slug": "sasayama-kasuga-jinja-aki-matsuri",
+    "name": "丹波篠山春日神社秋祭り",
+    "officialName": "丹波篠山春日神社秋季例祭",
+    "prefecture": "兵庫県",
+    "city": "丹波篠山市",
+    "firstDate": "2026-10-17"
+  },
+  {
+    "slug": "inazume-jinja-aki-reitaisai",
+    "name": "稲爪神社秋例大祭",
+    "officialName": "稲爪神社秋例大祭",
+    "prefecture": "兵庫県",
+    "city": "明石市",
+    "firstDate": "2026-10-10"
+  },
+  {
+    "slug": "miki-omiya-hachimangu-aki-matsuri",
+    "name": "三木秋まつり（大宮八幡宮）",
+    "officialName": "大宮八幡宮秋祭り（例大祭）",
+    "prefecture": "兵庫県",
+    "city": "三木市",
+    "firstDate": "2026-10-10"
+  },
+  {
+    "slug": "miki-iwatsubo-jinja-aki-matsuri",
+    "name": "播州三木秋祭り（岩壺神社）",
+    "officialName": "岩壺神社秋まつり",
+    "prefecture": "兵庫県",
+    "city": "三木市",
+    "firstDate": "2026-10-17"
+  },
+  {
+    "slug": "akashi-shigosen-dontokoi-matsuri",
+    "name": "明石子午線どんとこいまつり",
+    "officialName": "明石子午線どんとこいまつり",
+    "prefecture": "兵庫県",
+    "city": "明石市",
+    "firstDate": "2026-10-11"
   }
 ];
