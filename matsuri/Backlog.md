@@ -5159,3 +5159,10 @@ commit `2b5da25`／キャッシュ修正`7522f44`／`ab4f35b`）
 - 一次情報：丹波篠山市観光協会 https://tourism.sasayama.jp/kasugajinja_syureisai/ 、明石観光協会 https://www.yokoso-akashi.jp/index.php/event/3145 と https://www.yokoso-akashi.jp/event/3121 、大宮八幡宮 https://miki-oomiya.net/ 、三木市観光協会 https://www.mikishi-kankou.com/event-info/event-info-1366/ 。名称・範囲・特徴・日程は各researchに記録。
 - 2026年開催日は全て過去のためeventStatusはended。特徴の裏付けがない項目はnull。大宮八幡宮と岩壺神社は別の祭礼。明石子午線どんとこいまつりは同日同公園の明石城まつりと別主催の踊りの催しとして区別。
 - 対象エリアは全国初期掲載後の深掘り。連続0件は0回。地方完了の新たな判定なし、次回も全国。直近営業日の追加：10/26鳥取4、10/27島根4、10/28山口5、10/29京都3、10/30追加未完了、10/31兵庫5。3営業日連続偏重なし。
+
+## 2026-11-01 新規祭り追加（全国深掘り・大阪府5件）
+
+- 候補ストック空。掲載3件の大阪府を優先し堺市・富田林市・枚方市・八尾市・高槻市の自治体・主催者の一次情報を確認。西区だんじりパレード、富田林寺内町燈路、枚方まつり、八尾河内音頭まつり、市民フェスタ高槻まつりを採用。全国370→375件、大阪3→8件。
+- 2026年日程は終了、eventStatusはended。山車・曳き回しは西区だんじりパレードのみ確認しtrue、その他の分類に根拠のない項目はnull。各催しの範囲と出典はresearchに記録。堺のパレードは別の個別神社祭礼と分け、八尾の市民まつりは常光寺の盆踊りと混同しない。
+- 一次情報：https://www.city.sakai.lg.jp/nishi/torikumi/machidukuritorikumi/kuiki/danziri.html 、https://www.city.tondabayashi.lg.jp/soshiki/36/76474.html 、https://www.city.hirakata.osaka.jp/0000050932.html 、https://www.city.yao.osaka.jp/bunka_sports_event/bunka_geijutsu_reikishi/1011078/1023714.html 、https://www.faq.city.takatsuki.osaka.jp/faq/detail.aspx?id=265
+- 全国初期掲載後の深掘り、連続0件0回、地方完了の再判定なし。次回も全国。直近追加は鳥取・島根・山口・京都・兵庫・大阪と異なり、同一府県3営業日連続なし。新規5ページをsitemapに追記。最新の公開結果は完了報告に記載。

@@ -2958,5 +2958,45 @@ const SEARCH_INDEX = [
     "prefecture": "兵庫県",
     "city": "明石市",
     "firstDate": "2026-10-11"
+  },
+  {
+    "slug": "sakai-nishiku-danjiri-parade",
+    "name": "堺市西区だんじりパレード",
+    "officialName": "西区だんじりパレード",
+    "prefecture": "大阪府",
+    "city": "堺市西区",
+    "firstDate": "2026-10-04"
+  },
+  {
+    "slug": "tondabayashi-jinaimachi-toro",
+    "name": "富田林寺内町燈路",
+    "officialName": "富田林寺内町燈路",
+    "prefecture": "大阪府",
+    "city": "富田林市",
+    "firstDate": "2026-08-22"
+  },
+  {
+    "slug": "hirakata-matsuri",
+    "name": "枚方まつり",
+    "officialName": "枚方まつり",
+    "prefecture": "大阪府",
+    "city": "枚方市",
+    "firstDate": "2026-09-26"
+  },
+  {
+    "slug": "yao-kawachi-ondo-matsuri",
+    "name": "八尾河内音頭まつり",
+    "officialName": "八尾河内音頭まつり",
+    "prefecture": "大阪府",
+    "city": "八尾市",
+    "firstDate": "2026-10-31"
+  },
+  {
+    "slug": "takatsuki-shimin-festa-matsuri",
+    "name": "市民フェスタ高槻まつり",
+    "officialName": "市民フェスタ高槻まつり",
+    "prefecture": "大阪府",
+    "city": "高槻市",
+    "firstDate": "2026-08-01"
   }
 ];
