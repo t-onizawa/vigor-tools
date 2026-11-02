@@ -2998,5 +2998,21 @@ const SEARCH_INDEX = [
     "prefecture": "大阪府",
     "city": "高槻市",
     "firstDate": "2026-08-01"
+  },
+  {
+    "slug": "shimanto-kuroson-mura-matsuri",
+    "name": "しまんと黒尊むらまつり",
+    "officialName": "しまんと黒尊むらまつり",
+    "prefecture": "高知県",
+    "city": "四万十市",
+    "firstDate": "2026-11-21"
+  },
+  {
+    "slug": "sukumo-shiminsai",
+    "name": "市民祭宿毛まつり",
+    "officialName": "市民祭宿毛まつり",
+    "prefecture": "高知県",
+    "city": "宿毛市",
+    "firstDate": "2026-10-10"
   }
 ];
