@@ -1,15 +1,15 @@
 # VIGOR LAB Weekly Analytics
 
-Report date: 2026-10-25
-Period: 2026-10-17〜2026-10-23
-Previous period: 2026-10-10〜2026-10-16
+Report date: 2026-11-01
+Period: 2026-10-24〜2026-10-30
+Previous period: 2026-10-17〜2026-10-23
 Internal traffic filtering: 現在状態は未確認。前回確認時は「除外・テスト」。除外済みとは断定しない。
 
 ## Executive Summary
 
-- Webクリック376→193（-183）、表示回数25,746→12,700（-13,046）。
-- GA4アクティブユーザー670→377、Organic Search669→346。MATSURI表示回数872→662。
-- 検索上位は龍勢・生誕地まつりから中津川菓子祭り・菟田野秋祭り・金魚と鯉の郷まつりへ移った。
+- Webクリック193→82（-111）、表示回数12,700→7,265（-5,435）。
+- GA4アクティブユーザー377→199、Organic Search 346→183。MATSURI表示回数662→318。
+- Web CTRは1.52%→1.13%、エンゲージメント率は56.35%→47.14%へ低下した。
 
 ## KPI
 
@@ -17,48 +17,49 @@ Internal traffic filtering: 現在状態は未確認。前回確認時は「除�
 
 | 指標 | 今週 | 前週 | 差分 | 増減率 |
 |---|---:|---:|---:|---:|
-| SC表示回数（Web+動画） | 12,700 | 25,746 | -13,046 | -50.7% |
-| SCクリック（Web+動画） | 193 | 376 | -183 | -48.7% |
-| GA4 アクティブユーザー | 377 | 670 | -293 | -43.7% |
-| GA4 新規ユーザー | 374 | 658 | -284 | -43.2% |
-| GA4 セッション | 417 | 730 | -313 | -42.9% |
-| GA4 表示回数 | 671 | 881 | -210 | -23.8% |
-| エンゲージメント率 | 56.35% | 55.34% | +1.01pt | — |
-| 平均エンゲージメント時間（秒/アクティブユーザー） | 41.92 | 17.71 | +24.21 | 136.7% |
-| Organic Search | 346 | 669 | -323 | -48.3% |
-| Direct | 42 | 37 | +5 | 13.5% |
-| Referral | 12 | 18 | -6 | -33.3% |
+| SC表示回数（Web+動画） | 7,265 | 12,700 | -5,435 | -42.8% |
+| SCクリック（Web+動画） | 82 | 193 | -111 | -57.5% |
+| GA4 アクティブユーザー | 199 | 377 | -178 | -47.2% |
+| GA4 新規ユーザー | 192 | 374 | -182 | -48.7% |
+| GA4 セッション | 227 | 417 | -190 | -45.6% |
+| GA4 表示回数 | 324 | 671 | -347 | -51.7% |
+| エンゲージメント率 | 47.14% | 56.35% | -9.22pt | — |
+| 平均エンゲージメント時間（秒/アクティブユーザー） | 34.88 | 41.92 | -7.03 | -16.8% |
+| Organic Search | 183 | 346 | -163 | -47.1% |
+| Direct | 31 | 42 | -11 | -26.2% |
+| Referral | 7 | 12 | -5 | -41.7% |
 
 ### VIGOR TOOLS
 
 | 指標 | 今週 | 前週 | 差分 | 増減率 |
 |---|---:|---:|---:|---:|
 | Organic流入 | 0 | 0 | 0 | — |
-| 表示回数 | 5 | 5 | 0 | 0.0% |
+| 表示回数 | 2 | 5 | -3 | -60.0% |
 
-上位ページ：/tools/buy/rayban-meta/ 4表示、/tools/ 1表示。
-初反応ページ：前回保存レポートとの比較では /tools/ が再登場。過去にも反応があり、新規初反応とはしない。5表示と少数のため継続観測に留める。
+上位ページ：/tools/buy/rayban-meta/ 1表示、/tools/money/survival-fund/ 1表示。
+survival-fundは前回掲載されていないが、全履歴での初反応かは未確認。絶対数が小さいため増減率のみで評価しない。
 
 ### VIGOR MATSURI
 
 | 指標 | 今週 | 前週 | 差分 | 増減率 |
 |---|---:|---:|---:|---:|
-| Organic流入 | 346 | 669 | -323 | -48.3% |
-| 表示回数 | 662 | 872 | -210 | -24.1% |
-| SC Web+動画クリック（MATSURI限定） | 193 | 376 | -183 | -48.7% |
-| SC表示回数（MATSURI限定） | 12,705 | 25,747 | -13,042 | -50.7% |
+| Organic流入 | 183 | 346 | -163 | -47.1% |
+| 表示回数 | 318 | 662 | -344 | -52.0% |
+| SC Web+動画クリック（MATSURI限定） | 82 | 193 | -111 | -57.5% |
+| SC表示回数（MATSURI限定） | 7,257 | 12,705 | -5,448 | -42.9% |
 
 上位ページ（GA4）：
-- /matsuri/festivals/nagasu-kingyo-koi-no-sato-matsuri/：60表示
-- /matsuri/festivals/utano-aki-matsuri/：42表示
-- /matsuri/festivals/nakatsugawa-furusato-jiman-kashi-matsuri/：40表示
-- /matsuri/festivals/nagoya-matsuri/：38表示
-- /matsuri/：26表示
-- /matsuri/festivals/wakamatsu-minato-matsuri/：23表示
-- /matsuri/festivals/kanada-inari-jinko-sai/：21表示
-- /matsuri/festivals/inasa-jinja-okunchi/：17表示
-- /matsuri/festivals/koromo-matsuri/：13表示
-- /matsuri/index.html：13表示
+
+- /matsuri/festivals/nakatsugawa-furusato-jiman-kashi-matsuri/：41表示
+- /matsuri/festivals/kanada-inari-jinko-sai/：20表示
+- /matsuri/festivals/yagorodon-matsuri/：15表示
+- /matsuri/festivals/utano-aki-matsuri/：13表示
+- /matsuri/：11表示
+- /matsuri/festivals/kaigara-bushi-matsuri/：9表示
+- /matsuri/festivals/onomichi-betcha-matsuri/：8表示
+- /matsuri/festivals/tokumori-jinja-taisai/：8表示
+- /matsuri/festivals/tsuwano-sagimai/：7表示
+- /matsuri/festivals/ushimado-aki-matsuri/：7表示
 
 ## Search Console
 
@@ -66,12 +67,12 @@ Internal traffic filtering: 現在状態は未確認。前回確認時は「除�
 
 | 指標 | 今週 | 前週 | 差分 | 増減率 |
 |---|---:|---:|---:|---:|
-| クリック | 193 | 376 | -183 | -48.7% |
-| 表示回数 | 12,700 | 25,746 | -13,046 | -50.7% |
-| CTR | 1.52% | 1.46% | +0.06pt | — |
-| 平均順位 | 9.09 | 8.52 | +0.57 | — |
+| クリック | 82 | 193 | -111 | -57.5% |
+| 表示回数 | 7,265 | 12,700 | -5,435 | -42.8% |
+| CTR | 1.13% | 1.52% | -0.39pt | — |
+| 平均順位 | 10.28 | 9.09 | +1.19 | — |
 
-平均順位は数値が小さいほど上位。今週は約0.57低下。
+平均順位は数値が小さいほど上位。今週は約1.19低下。
 
 ### Video
 
@@ -79,16 +80,16 @@ Internal traffic filtering: 現在状態は未確認。前回確認時は「除�
 
 ### Other
 
-画像検索：0クリック、66表示（前週84）、CTR 0%、平均順位72.23（前週67.11）。
+画像検索：0クリック、97表示（前週66）、CTR 0%、平均順位67.01（前週72.23）。
 Discover・Google News・ニュース検索：いずれも両期間0クリック・0表示。
 
 ## Week over Week
 
-- Webクリック-48.7%、表示回数-50.7%。CTRは1.46%→1.52%と約0.06pt上昇。
-- GA4 Organic Searchは669→346、セッション730→417、表示回数881→671。
-- MATSURIのOrganic流入は-48.3%、表示回数は-24.1%。
-- TOOLS表示回数は5で横ばい、Organic流入は0。
-- 平均エンゲージメント時間は17.71→41.92秒/アクティブユーザー。今回初めて正しい指標から両期間を算出した。
+- Webクリック-57.5%、表示回数-42.8%、CTRは約0.39pt低下。
+- GA4 Organic Searchは346→183、セッション417→227、表示回数671→324。
+- MATSURIのOrganic流入は-47.1%、表示回数は-52.0%。
+- TOOLSは5→2表示、Organic流入は0。少数のため絶対数で記録。
+- 平均エンゲージメント時間は41.92→34.88秒/アクティブユーザー。
 
 ## Top Pages
 
@@ -96,123 +97,123 @@ Discover・Google News・ニュース検索：いずれも両期間0クリック
 
 | ページ | クリック | 表示回数 |
 |---|---:|---:|
-| /matsuri/festivals/nakatsugawa-furusato-jiman-kashi-matsuri/ | 30 | 2603 |
-| /matsuri/festivals/utano-aki-matsuri/ | 23 | 290 |
-| /matsuri/festivals/nagasu-kingyo-koi-no-sato-matsuri/ | 20 | 522 |
-| /matsuri/festivals/kanada-inari-jinko-sai/ | 18 | 857 |
-| /matsuri/festivals/wakamatsu-minato-matsuri/ | 12 | 350 |
-| /matsuri/festivals/nada-kenka-matsuri/ | 7 | 302 |
-| /matsuri/festivals/nagoya-matsuri/ | 7 | 715 |
-| /matsuri/festivals/inasa-jinja-okunchi/ | 6 | 190 |
-| /matsuri/festivals/yagorodon-matsuri/ | 6 | 142 |
-| /matsuri/festivals/fukudomi-jinja-okunchi/ | 4 | 32 |
+| /matsuri/festivals/kanada-inari-jinko-sai/ | 10 | 615 |
+| /matsuri/festivals/nakatsugawa-furusato-jiman-kashi-matsuri/ | 6 | 926 |
+| /matsuri/festivals/tochigi-aki-matsuri/ | 6 | 250 |
+| /matsuri/festivals/tokumori-jinja-taisai/ | 4 | 158 |
+| /matsuri/festivals/wakamatsu-minato-matsuri/ | 4 | 50 |
+| /matsuri/festivals/yagorodon-matsuri/ | 4 | 165 |
+| /matsuri/festivals/yokosuka-mikoshi-parade/ | 3 | 238 |
+| /matsuri/festivals/nagasu-kingyo-koi-no-sato-matsuri/ | 2 | 32 |
+| /matsuri/prefectures/kanagawa/ | 2 | 73 |
+| /matsuri/features/dashi/ | 1 | 22 |
 
 ### Google Organic Landing Pages
 
 Google単独（sessionSource=google、Organic Search）：
+
 | 指標 | 今週 | 前週 | 差分 | 増減率 |
 |---|---:|---:|---:|---:|
-| セッション | 209 | 434 | -225 | -51.8% |
-| アクティブユーザー | 199 | 400 | -201 | -50.2% |
-| 新規ユーザー | 199 | 395 | -196 | -49.6% |
+| セッション | 102 | 209 | -107 | -51.2% |
+| アクティブユーザー | 96 | 199 | -103 | -51.8% |
+| 新規ユーザー | 93 | 199 | -106 | -53.3% |
 
 | ランディングページ | 表示回数 | ユーザー | エンゲージメント時間（合計秒） |
 |---|---:|---:|---:|
-| /matsuri/festivals/utano-aki-matsuri/ | 30 | 23 | 376 |
-| /matsuri/festivals/nakatsugawa-furusato-jiman-kashi-matsuri/ | 27 | 23 | 250 |
-| /matsuri/festivals/nagasu-kingyo-koi-no-sato-matsuri/ | 25 | 22 | 297 |
-| /matsuri/festivals/kanada-inari-jinko-sai/ | 21 | 17 | 344 |
-| /matsuri/festivals/wakamatsu-minato-matsuri/ | 17 | 14 | 181 |
-| /matsuri/festivals/nagoya-matsuri/ | 14 | 12 | 375 |
-| /matsuri/festivals/nada-kenka-matsuri/ | 10 | 6 | 149 |
-| /matsuri/festivals/tochigi-aki-matsuri/ | 8 | 4 | 221 |
-| /matsuri/festivals/yagorodon-matsuri/ | 8 | 6 | 121 |
-| /matsuri/festivals/koromo-matsuri/ | 7 | 6 | 100 |
+| /matsuri/festivals/nakatsugawa-furusato-jiman-kashi-matsuri/ | 21 | 20 | 209 |
+| /matsuri/festivals/kanada-inari-jinko-sai/ | 14 | 10 | 116 |
+| /matsuri/festivals/wakamatsu-minato-matsuri/ | 7 | 5 | 242 |
+| /matsuri/festivals/yagorodon-matsuri/ | 6 | 4 | 121 |
+| /matsuri/features/dashi/ | 4 | 1 | 90 |
+| /matsuri/festivals/tokumori-jinja-taisai/ | 4 | 4 | 25 |
+| /matsuri/festivals/yokosuka-mikoshi-parade/ | 4 | 4 | 36 |
+| /matsuri/festivals/sawara-natsu-matsuri/ | 3 | 1 | 33 |
+| /matsuri/prefectures/kanagawa/ | 3 | 2 | 851 |
+| /matsuri/festivals/kure-kameyama-jinja-aki-matsuri/ | 2 | 2 | 28 |
 
 ## Top Queries
 
 | Webクエリ | クリック | 表示回数 |
 |---|---:|---:|
-| 金魚と鯉の郷まつり | 6 | 127 |
-| 菟田野秋祭り2026 | 4 | 29 |
-| 中津川 菓子 祭り 2026 | 3 | 327 |
-| 中津川菓子祭り2026 | 3 | 187 |
-| 菓子祭り中津川 2026 | 3 | 268 |
-| 菟田野 秋祭り 2026 | 3 | 46 |
-| 金田 祭り | 3 | 37 |
-| 中津川 菓子祭り 2026 | 2 | 387 |
-| 中津川菓子祭り 2026 | 2 | 276 |
-| 弥五郎どん祭り スケジュール | 2 | 32 |
+| 弥五郎どん祭り スケジュール | 2 | 22 |
+| 徳 守 神社 祭り 2026 | 2 | 11 |
+| 栃木市祭り2026 | 2 | 7 |
+| 金田稲荷神社神幸祭 | 2 | 20 |
+| 2026松山秋祭り | 1 | 2 |
+| ふるさとじまん祭中津川 | 1 | 7 |
+| 中津川 菓子 祭り 2026 駐 車場 | 1 | 26 |
+| 二宮神社 例大祭 | 1 | 1 |
+| 八代 妙見祭 2026 | 1 | 2 |
+| 呉秋祭り2026 | 1 | 1 |
 
-匿名化と上位10件制限により、クエリ合計は全体に一致しない。
+匿名化と上位10件の制限により、クエリ合計は全体に一致しない。
 
 ## New Signals
 
-- 中津川菓子祭りが2,603表示・30クリックで首位。前週上位10ページ外から登場した。
-- 菟田野秋祭りが290表示・23クリック、金魚と鯉の郷まつりが522表示・20クリック。
-- 若松みなと祭りは123→350表示、10→12クリック。
-- 初表示クエリ・初クリックページは上位10件だけでは確定できない。
-- 動画検索の伸び、新しいTOOLS初反応は確認できない。
+- 栃木秋祭りが250表示・6クリック、徳守神社大祭が158表示・4クリックで今週上位10ページに登場した。
+- 弥五郎どん祭りは142→165表示、6→4クリック。
+- TOOLSのsurvival-fundが1表示。前回レポートには掲載されていないが、全履歴での初反応かは未確認。
+- 初表示クエリ・初クリックページは上位10件だけでは確定できない。動画検索で伸びたページはなかった。
 
 ## Watch
 
-- SC表示回数・クリックとGA4 Organic流入が揃って約半減。
-- 検索上位のページ構成が大きく変わり、開催時期による需要変化かは未確定。
-- Google単独セッション434→209とSC Webクリック376→193は同方向。定義差があるため完全一致は求めない。
-- 内部除外の現在状態と不自然なアクセスの有無は、今回の集計値だけでは判定できない。
+- SCクリック193→82、GA4 Organic Search 346→183と検索流入が2週続けて減少した。
+- 中津川菓子祭りは2,603→926表示、30→6クリック。ページ全体の急落を観察。
+- Google単独セッション209→102とSC Webクリック193→82は同方向。両者の定義は異なる。
+- 内部除外の現在状態と、不自然なアクセスの有無は今回の集計値だけでは判定できない。
 
 ## Product Status
 
 ### TOOLS
 
-Stable
+Flat
 
-表示回数は5→5、Organic流入は0→0。
-主なページはrayban-metaの4表示で、少数の反応が継続している。
+Organic流入は0→0、表示回数は5→2。
+survival-fundの1表示を確認したが、絶対数は小さい。
 
 ### MATSURI
 
 Investigate
 
-SCクリック376→193、Organic流入669→346、表示回数872→662と減少。
-季節的なページ入れ替わりを含め、減少の継続性を観測する状態。
+SCクリック193→82、Organic流入346→183、GA4表示回数662→318と減少。
+検索上位ページの入れ替わりと減少の継続性を観測する状態。
 
 ## PM Review Candidates
 
-- 検索・Organic流入の約半減と上位ページ入れ替わりの関連を確認する候補。
-- 中津川菓子祭り・菟田野秋祭り・金魚と鯉の郷まつりの反応の継続観察。
-- 内部トラフィック除外の現状確認をレビュー候補とする。
+- SC・GA4検索流入の2週連続減少と、上位ページ入れ替わりの関連確認。
+- 中津川菓子祭りの表示・クリック急減と、栃木秋祭り等への移行の継続確認。
+- 内部トラフィック除外の現状確認。
 
 ## Data Notes
 
 - 正本を全文読み、指定スクリプトで両期間を取得。全6カテゴリでerror:null。
-- SCの日別dataState:finalにより最新確定日10月23日を確認。GA4も同じ7日間。
-- スクリプトのga4_google_organicは全Organic Searchであるため、Google単独は追加のsessionSource=googleフィルタで取得した。
-- 平均エンゲージメント時間はuserEngagementDuration÷activeUsersで算出。averageSessionDurationは使用していない。
+- SC dataState:finalの日別データで最新確定日10月30日を確認。GA4も同じ7日間。
+- スクリプトのga4_google_organicは全Organic Search。Google単独は追加のsessionSource=googleフィルタで取得した。
+- 平均エンゲージメント時間はuserEngagementDuration÷activeUsers。averageSessionDurationは使用していない。
 - Googleランディングページ表の時間はuserEngagementDurationの合計秒。表示回数はランディングページに紐づくセッション内の表示で、当該ページ自体のPVとは異なる。
-- MATSURI限定SC値はpageにhttps://vigorlab.net/matsuri/を含むフィルタで取得。ページ集計のためサイト全体（プロパティ集計）と表示回数がわずかに異なる。
-- 画像・Discover・Google News・ニュースを同APIの集計クエリで追加取得し、非対応クエリ次元は指定していない。
-- 内部トラフィック除外の現在状態は未確認。前回の「除外・テスト」を参考情報として記載。
-- 開始時mainはorigin/mainより1コミット先行・40コミット遅れで分岐。未追跡の下書き・調査ファイルには触れず、仕様に従いpush保留。
-- Roadmapは直近4保存レポート（9/27、10/4、10/18、今回）合計。期間の空白・重複を含み、暦月実績や月間ユニークユーザーそのものではない。
+- MATSURI限定SC値はpageにhttps://vigorlab.net/matsuri/を含む条件で取得。ページ集計のためサイト全体のプロパティ集計と表示回数が異なる。
+- 画像・Discover・Google News・ニュースはAPIの集計クエリで追加取得した。
+- 内部トラフィック除外の現在状態は未確認。以前の「除外・テスト」を参考情報として記載。
+- 開始時mainはorigin/mainより6コミット遅れ、未追跡の下書き・調査ファイルあり。対象と重ならないことを確認しfast-forward同期。
+- Roadmapは直近4保存レポート（10/4、10/18、10/25、今回）合計。期間の空白を含み、暦月実績や月間ユニークユーザーそのものではない。
 
 ## Roadmap進捗
 
 | 指標 | 今月換算値 | 目標（H2 2026末） | 達成率 |
 |---|---:|---:|---:|
-| 月間PV | 1,923（直近4レポート合計） | 1万〜3万 | 19.2% |
-| 月間UU | 1,302（直近4レポート合計） | 6千〜2万 | 21.7% |
+| 月間PV | 2,087（直近4レポート合計） | 1万〜3万 | 20.9% |
+| 月間UU | 1,398（直近4レポート合計） | 6千〜2万 | 23.3% |
 
 ## Next Actions
 
 ### TOOLS
 
-5表示の小規模な反応の継続観察を推奨。
+2表示の小規模な反応の継続観察を推奨。
 
 ### MATSURI
 
-検索・Organic流入減少と上位ページ入れ替わりの継続観察を推奨。
+検索・Organic流入の減少と上位ページ入れ替わりの継続観察を推奨。
 
 ### LAB全体
 
-Google単独流入とSCの同方向の減少、内部除外状態の確認をレビュー候補として推奨。
+GA4とSCの同方向の減少、および内部除外状態の確認をレビュー候補として推奨。
