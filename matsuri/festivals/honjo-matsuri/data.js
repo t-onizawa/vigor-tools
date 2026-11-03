@@ -40,7 +40,7 @@ const FESTIVAL = {
     confirmation: { verified: true, confirmedDate: "2026-07-30", sources: ["https://www.honjo-kanko.jp/event/honjomatsuri/", "https://www.honjo-kanko.jp/honjo-matsuri/highlight/"] }
   },
   yearlyInfo: [{
-    year: 2026, eventStatus: "confirmed", dates: ["2026-11-02", "2026-11-03"],
+    year: 2026, eventStatus: "ended", dates: ["2026-11-02", "2026-11-03"],
     schedule: [
       { date: "2026-11-02", dayLabel: "1日目（2026年・本庄市観光協会の発表）", items: [
         { time: "午後", label: "各町内の山車の曳き廻し（時刻は公式に記載なし）" }
