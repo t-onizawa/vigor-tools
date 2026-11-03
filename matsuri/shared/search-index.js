@@ -3014,5 +3014,45 @@ const SEARCH_INDEX = [
     "prefecture": "高知県",
     "city": "宿毛市",
     "firstDate": "2026-10-10"
+  },
+  {
+    "slug": "todoroki-aki-matsuri",
+    "name": "轟秋祭り",
+    "officialName": "轟秋祭り",
+    "prefecture": "徳島県",
+    "city": "海陽町",
+    "firstDate": "2026-11-08"
+  },
+  {
+    "slug": "yamashiro-tanuki-matsuri",
+    "name": "やましろ狸まつり",
+    "officialName": "やましろ狸まつり",
+    "prefecture": "徳島県",
+    "city": "三好市",
+    "firstDate": "2026-11-14"
+  },
+  {
+    "slug": "tokushima-odori-festa",
+    "name": "徳島おどりフェスタ",
+    "officialName": "徳島おどりフェスタ",
+    "prefecture": "徳島県",
+    "city": "徳島市",
+    "firstDate": "2026-10-31"
+  },
+  {
+    "slug": "ishii-noryo-natsu-matsuri",
+    "name": "石井町納涼夏祭り",
+    "officialName": "石井町納涼夏祭り",
+    "prefecture": "徳島県",
+    "city": "石井町",
+    "firstDate": "2026-08-01"
+  },
+  {
+    "slug": "shishikui-hachiman-jinja-matsuri",
+    "name": "宍喰八幡神社祭り",
+    "officialName": "宍喰八幡神社祭り",
+    "prefecture": "徳島県",
+    "city": "海陽町",
+    "firstDate": "2026-09-26"
   }
 ];

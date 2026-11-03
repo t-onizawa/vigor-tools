@@ -5173,3 +5173,11 @@ commit `2b5da25`／キャッシュ修正`7522f44`／`ab4f35b`）
 - 一次情報：https://www.city.shimanto.lg.jp/soshiki/26/13132.html 、https://www.city.sukumo.kochi.jp/docs-18/46545.html 。前者は同時開催のウォーキングを祭り本体へ混在させず、後者は四万十市の市民祭と区別。
 - 四万十市・宿毛市・中土佐町・須崎市・安芸市の自治体情報を確認。しまんと市民祭は離れた複数日程の開催結果、久礼八幡宮大祭は2026年日程、須崎縁日商店街祭は開催準備中の詳細、安芸のグルメまつりは同時開催行事との範囲の確定が不十分なため見送り。追加の検索サービスはエラーで利用できず、候補探索の継続が保留。
 - 全国初期掲載後の深掘り、連続0件0回、地方完了の再判定なし。次回も全国。直近追加は10/27島根4・10/28山口5・10/29京都3・10/31兵庫5・11/1大阪5で同一府県3営業日連続なし。今回の2ページのみsitemapに追記。
+
+## 2026-11-04 新規祭り追加（全国深掘り・徳島県5件）
+
+- 候補ストック空。低密度の徳島県から、轟秋祭り、やましろ狸まつり、徳島おどりフェスタ、石井町納涼夏祭り、宍喰八幡神社祭りを追加。全国377→382件、徳島3→8件。
+- 徳島県・海陽町観光協会・徳島県観光協会・石井町の一次情報で名称、範囲、日程、特徴を確認。轟とやましろは2026年11月開催確認済み、残る3件は日程終了。轟は神輿あり、宍喰は団尻・曳き回しあり。それ以外に根拠のない特徴は未確認。徳島おどりフェスタは夏の徳島市阿波おどり・同時開催の別祭りと区別。
+- 一次情報：https://www.kaiyo-kankou.jp/event/event-1055/ 、https://www.awanavi.jp/archives/event/1263 、https://www.pref.tokushima.lg.jp/ippannokata/kyoiku/kanko/7315687/ 、https://www.town.ishii.lg.jp/docs/2026061500028/ 、https://www.kaiyo-kankou.jp/event/event-1013/ 。
+- 見送り：こまつしま秋の阿波踊りは2026年の中止を小松島市が告知（https://www.city.komatsushima.lg.jp/docs/6392381.html）。ナカまつりは公式ページの日付欄に令和7年と土曜の不一致があり判断保留。
+- 整合性チェックの過去日程6件を自動ended化：honjo-matsuri、ohara-matsuri、onomichi-betcha-matsuri、saga-international-balloon-fiesta、yagorodon-matsuri、yamakoshi-ushi-no-tsunotsuki。sitemapに今回の新規5URLを追記。全国深掘り・連続0件0回・次回も全国。直近の追加は山口・京都・兵庫・大阪・高知で同一県3営業日連続なし。
