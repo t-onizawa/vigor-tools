@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="情報漏洩が「起きたかもしれない」と思ったら、上から順に実行するだけ。専門用語なしの初動チェックリスト（最初の15分／1時間以内／その日のうち／3〜5日以内／30日以内）。個人情報保護委員会・IPAの公式情報に基づきます。">
+  <title>情報漏洩が起きたかもしれないときの初動フロー — VIGOR TOOLS</title>
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="VIGOR TOOLS">
+  <meta property="og:title" content="情報漏洩が起きたかもしれないときの初動フロー — VIGOR TOOLS">
+  <meta property="og:description" content="情報漏洩が「起きたかもしれない」と思ったら、上から順に実行するだけ。専門用語なしの初動チェックリスト（最初の15分／1時間以内／その日のうち／3〜5日以内／30日以内）。個人情報保護委員会・IPAの公式情報に基づきます。">
+  <meta property="og:url" content="https://vigorlab.net/tools/work/leak-response/">
+  <meta property="og:image" content="https://vigorlab.net/assets/brand/og-image.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="情報漏洩が起きたかもしれないときの初動フロー — VIGOR TOOLS">
+  <meta name="twitter:description" content="情報漏洩が「起きたかもしれない」と思ったら、上から順に実行するだけ。専門用語なしの初動チェックリスト（最初の15分／1時間以内／その日のうち／3〜5日以内／30日以内）。個人情報保護委員会・IPAの公式情報に基づきます。">
+  <meta name="twitter:image" content="https://vigorlab.net/assets/brand/og-image.png">
+  <link rel="canonical" href="https://vigorlab.net/tools/work/leak-response/">
+  <link rel="icon" href="/assets/brand/favicon.svg" type="image/svg+xml">
+  <link rel="icon" href="/favicon.ico" sizes="any">
+  <link rel="icon" type="image/png" href="/favicon-48x48.png" sizes="48x48">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <link rel="manifest" href="/assets/brand/site.webmanifest">
+<script src="/assets/analytics.js" defer></script>
+<style>
+  :root{
+    --ink:#1f2430; --sub:#5b6472; --line:#e3e6ec; --bg:#f6f7f9;
+    --red:#b3261e; --amber:#b45309; --gold:#a16207; --blue:#1d4ed8; --slate:#475569;
+    --ok:#15803d;
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{margin:0;background:var(--bg);color:var(--ink);
+    font-family:"Hiragino Kaku Gothic ProN","Hiragino Sans","Noto Sans JP",-apple-system,"Segoe UI",sans-serif;
+    line-height:1.75;font-size:16px;-webkit-text-size-adjust:100%}
+  .wrap{max-width:780px;margin:0 auto;padding:0 16px 64px}
+  .breadcrumb{display:flex;align-items:center;gap:.4rem;flex-wrap:wrap;font-size:12.5px;color:var(--sub);padding-top:18px}
+  .breadcrumb a{color:var(--sub);text-decoration:none}
+  .breadcrumb a:hover{color:var(--ink)}
+  .breadcrumb .sep{color:#9aa3b2}
+  header.hero{padding:18px 0 8px}
+  .kicker{font-size:13px;font-weight:700;letter-spacing:.12em;color:var(--red)}
+  h1{font-size:28px;line-height:1.4;margin:8px 0 12px}
+  .lead{color:var(--sub);font-size:15.5px;margin:0 0 6px}
+  .lead strong{color:var(--ink)}
+  .progressbar{position:sticky;top:0;z-index:20;background:rgba(255,255,255,.94);
+    backdrop-filter:blur(6px);border-bottom:1px solid var(--line);
+    margin:18px -16px 26px;padding:10px 16px}
+  .progressbar .row{display:flex;justify-content:space-between;align-items:baseline;font-size:14px}
+  .progressbar .count{font-weight:700}
+  .bar{height:8px;background:#e8ebf0;border-radius:99px;overflow:hidden;margin-top:6px}
+  .bar i{display:block;height:100%;width:0;background:var(--ok);border-radius:99px;transition:width .25s ease}
+  section.phase{background:#fff;border:1px solid var(--line);border-radius:14px;
+    padding:20px 18px 10px;margin:0 0 22px}
+  .phase-head{display:flex;align-items:center;gap:12px;margin:0 0 6px}
+  .phase-badge{flex:none;font-weight:800;font-size:14px;color:#fff;border-radius:8px;padding:4px 10px}
+  .p1 .phase-badge{background:var(--red)} .p2 .phase-badge{background:var(--amber)}
+  .p3 .phase-badge{background:var(--gold)} .p4 .phase-badge{background:var(--blue)}
+  .p5 .phase-badge{background:var(--slate)}
+  .phase-head h2{font-size:19px;margin:0}
+  .phase-note{color:var(--sub);font-size:14px;margin:0 0 12px}
+  label.task{display:flex;gap:12px;align-items:flex-start;background:#fff;
+    border:1px solid var(--line);border-radius:10px;padding:12px 14px;margin:0 0 9px;cursor:pointer}
+  label.task:hover{border-color:#c9cfda}
+  label.task input{flex:none;width:22px;height:22px;margin-top:4px;accent-color:var(--ok);cursor:pointer}
+  label.task .t{font-weight:600}
+  label.task .why{display:block;font-weight:400;font-size:13.5px;color:var(--sub);margin-top:3px}
+  label.task.done{background:#f2fbf5;border-color:#bbe6c6}
+  label.task.done .t{color:#7a8494;text-decoration:line-through}
+  label.task ol.sub{margin:8px 0 2px;padding-left:22px;font-weight:400;font-size:15px}
+  label.task ol.sub li{margin:2px 0}
+  .donts{background:#fdf3f2;border:1px solid #f3cfcb;border-radius:14px;padding:20px 18px 12px;margin:0 0 22px}
+  .donts h2{font-size:19px;margin:0 0 10px;color:var(--red)}
+  .donts ul{list-style:none;margin:0;padding:0}
+  .donts li{padding:8px 0 8px 30px;position:relative;border-bottom:1px dashed #eec5c0;font-size:15.5px}
+  .donts li:last-child{border-bottom:none}
+  .donts li::before{content:"✕";position:absolute;left:2px;top:8px;color:var(--red);font-weight:800}
+  .donts .why{color:var(--sub);font-size:13.5px}
+  .card{background:#fff;border:1px solid var(--line);border-radius:14px;padding:20px 18px 12px;margin:0 0 22px}
+  .card h2{font-size:19px;margin:0 0 10px}
+  .card h3{font-size:16px;margin:18px 0 6px}
+  .card p,.card li{font-size:15.5px}
+  .card ul,.card ol{margin:6px 0 12px;padding-left:22px}
+  .contact{border:1px solid var(--line);border-radius:10px;padding:12px 14px;margin:0 0 9px}
+  .contact .name{font-weight:700}
+  .contact .how{font-size:14.5px;color:var(--sub)}
+  .contact a{color:var(--blue);word-break:break-all}
+  .prep label{display:block;font-size:14px;font-weight:700;margin:14px 0 4px}
+  .prep input{width:100%;font-size:16px;padding:10px 12px;border:1px solid #c9cfda;border-radius:8px;background:#fffdf5}
+  .note{font-size:13.5px;color:var(--sub)}
+  .note li{margin:4px 0}
+  .actions{display:flex;gap:10px;flex-wrap:wrap;margin:26px 0 6px}
+  button{font-size:15px;font-weight:700;border-radius:10px;padding:12px 18px;cursor:pointer;border:1px solid var(--ink)}
+  button.primary{background:var(--ink);color:#fff}
+  button.ghost{background:#fff;color:var(--ink);border-color:#c9cfda}
+  footer{color:var(--sub);font-size:13px;margin-top:34px;border-top:1px solid var(--line);padding-top:16px}
+  footer a{color:var(--blue)}
+  .related{margin-top:30px}
+  .related h2{font-size:17px;margin:0 0 4px}
+  .related .sub{color:var(--sub);font-size:14px;margin:0 0 12px}
+  .related a.item{display:flex;align-items:center;gap:10px;background:#fff;border:1px solid var(--line);border-radius:10px;padding:12px 14px;margin:0 0 9px;color:var(--ink);text-decoration:none}
+  .related a.item:hover{border-color:#c9cfda}
+  .related .badge{flex:none;font-size:12px;font-weight:700;background:#eef1f6;border-radius:6px;padding:2px 8px;color:var(--slate)}
+  .related .name{font-weight:600}
+  .related .arrow{margin-left:auto;color:var(--sub)}
+  @media (max-width:560px){ h1{font-size:24px} .wrap{padding:0 12px 48px} .progressbar{margin:14px -12px 20px;padding:10px 12px} }
+  @media print{
+    body{background:#fff;font-size:11pt;line-height:1.6}
+    .wrap{max-width:none;padding:0}
+    .progressbar,.actions,.breadcrumb,.related{display:none !important}
+    section.phase,.card,.donts{break-inside:avoid;border-color:#bbb;margin-bottom:12px;padding:12px 12px 4px}
+    label.task{padding:7px 9px;margin-bottom:5px}
+    header.hero{padding:0 0 4px}
+    h1{font-size:20pt}
+    a{color:var(--ink);text-decoration:none}
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<nav class="breadcrumb">
+  <a href="../../">VIGOR TOOLS</a>
+  <span class="sep">›</span>
+  <a href="../">仕事</a>
+  <span class="sep">›</span>
+  <span>情報漏洩の初動フロー</span>
+</nav>
+
+<header class="hero">
+  <div class="kicker">中小企業の経営者・個人事業主の方へ</div>
+  <h1>情報漏洩が起きたかもしれないときの<br>初動フロー</h1>
+  <p class="lead">お客様の情報などが外に出てしまった<strong>「かもしれない」</strong>と思ったら、<strong>上から順に実行</strong>してください。確実に漏れたと分かる前でも使って大丈夫です。国のルールでは「漏れたおそれ」の段階でも報告が必要な場合があります。</p>
+  <p class="lead">専門用語は使っていません。各項目の（理由）まで読めば、なぜそれが必要かも分かります。チェックはこのページに保存されます。</p>
+</header>
+
+<div class="progressbar" aria-live="polite">
+  <div class="row"><span>進みぐあい</span><span class="count"><span id="doneCount">0</span> / 28 項目</span></div>
+  <div class="bar"><i id="barFill"></i></div>
+</div>
+
+<section class="phase p1">
+  <div class="phase-head"><span class="phase-badge">STEP 1</span><h2>まず最初の15分でやること</h2></div>
+  <p class="phase-note">あわてて消したり切ったりするのが一番の失敗です。まず「記録を残す」「広がりを止める」。</p>
+
+  <label class="task"><input type="checkbox" class="cb"><span><span class="t">画面に表示されているものやファイルを、消さない。パソコンの電源も切らない</span><span class="why">理由：あとで専門家が原因を調べるときの手がかり＝「記録」が、消したり電源を切ったりすると失われてしまうから</span></span></label>
+
+  <label class="task"><input type="checkbox" class="cb"><span><span class="t">おかしいパソコンを、ネットワークから切り離す</span><span class="why">LANケーブルを抜く、Wi-Fiを切る。ただし電源は切らない。理由：被害が他へ広がるのを止めるため</span></span></label>
+
+  <label class="task"><input type="checkbox" class="cb"><span><span class="t">画面の表示を、スマートフォンで写真に撮る</span><span class="why">理由：エラー表示や脅迫文は、あとで消えてしまうことがあるから</span></span></label>
+
+  <label class="task"><input type="checkbox" class="cb"><span><span class="t">「いつ、何に気づいたか」を紙やメモアプリに書く</span><span class="why">理由：あとで報告や説明をするとき、この最初のメモが一番頼りになるから</span></span></label>
+
+  <label class="task"><input type="checkbox" class="cb"><span><span class="t">対応の責任者を決め、従業員がいる場合は社長（経営者）へすぐ電話する</span><span class="why">理由：バラバラに動くと、かえって被害や混乱が広がるから</span></span></label>
+
+  <label class="task"><input type="checkbox" class="cb"><span><span class="t">「お金を払え」という脅迫文が出ていたら、払わない。相手に連絡もしない</span><span class="why">理由：払っても元に戻る保証はなく、警察や専門家に相談してから動くべきだから</span></span></label>
+</section>
+
+<section class="phase p2">
+  <div class="phase-head"><span class="phase-badge">STEP 2</span><h2>1時間以内にやること</h2></div>
+  <p class="phase-note">被害の範囲を見立てて、広がりを止めます。</p>
+
+  <label class="task"><input type="checkbox" class="cb"><span><span class="t">何の情報が関係しそうか、思いつく範囲で書き出す</span><span class="why">例：お客様の名前・住所・電話番号、クレジットカードの情報、健康診断の結果など。理由：あとの報告やお客様への連絡の範囲が決まるから</span></span></label>
+
+  <label class="task"><input type="checkbox" class="cb"><span><span class="t">他のパソコンやスマホにも、同じような異変がないか見る</span><span class="why">理由：1台だけの問題とは限らないから</span></span></label>
+
+  <label class="task"><input type="checkbox" class="cb"><span><span class="t">大事なアカウント（メール、ネットバンク、クラウドサービスなど）のパスワードを、「無事な別の機械」から変更する</span><span class="why">理由：異変のあるパソコンで変更すると、その内容も盗まれるおそれがあるから。同じパスワードを使い回しているサービスも一緒に変える</span></span></label>
+
+  <label class="task"><input type="checkbox" class="cb"><span><span class="t">間違って情報を公開・送信してしまった場合は、まず公開を止める</span><span class="why">公開設定を「非公開」に戻す。送ってしまったメールは取り消せないことが多いので、送信先に「削除のお願い」の連絡を入れる。理由：見られる時間が短いほど被害が小さいから</span></span></label>
+
+  <label class="task"><input type="checkbox" class="cb"><span><span class="t">パソコンやシステムの面倒を見てもらっている会社・担当者に電話する</span><span class="why">理由：自分たちだけで触り続けると、記録が上書きされて原因が分からなくなることがあるから</span></span></label>
+
+  <label class="task"><input type="checkbox" class="cb"><span><span class="t">犯罪の疑いがある場合（勝手に侵入された形跡、盗難など）は、警察相談専用電話「#9110」に電話する</span><span class="why">緊急の場合は110番。理由：早い段階で警察に相談しておくと、その後の対応の助言がもらえるから</span></span></label>
+</section>
+
+<section class="phase p3">
+  <div class="phase-head"><span class="phase-badge">STEP 3</span><h2>その日のうちにやること</h2></div>
+  <p class="phase-note">記録を固めて、相談と連絡の受け皿を作ります。</p>
+
+  <label class="task"><input type="checkbox" class="cb"><span><span class="t">できごとを、時系列のメモにまとめる</span><span class="why">いつ・どこで・誰が・何を・どうしたか、の順で書く。理由：報告・説明・保険などの場面で、共通して必要になるから</span></span></label>
+
+  <label class="task"><input type="checkbox" class="cb"><span><span class="t">情報が関係しそうな人数の見当をつける</span><span class="why">例：「お客様名簿の約300人分」のように、おおよそでよい。理由：報告が必要かどうかを判断する材料になるから</span></span></label>
+
+  <label class="task"><input type="checkbox" class="cb"><span><span class="t">証拠になりそうな記録（メール、操作の記録、写真）を、別の場所にもコピーして保管する</span><span class="why">理由：元の機械が壊れたり、記録が自動で消えたりすることがあるから</span></span></label>
+
+  <label class="task"><input type="checkbox" class="cb"><span><span class="t">お客様からの問い合わせを受ける連絡先（電話番号やメール）を決めておく</span><span class="why">理由：お客様が不安になって連絡してきたとき、受け皿がないと混乱が大きくなるから</span></span></label>
+
+  <label class="task"><input type="checkbox" class="cb"><span><span class="t">クレジットカードの情報が関係しそうなら、契約しているカード会社や決済代行会社にも連絡する</span><span class="why">理由：カードの不正利用を早く止めるため</span></span></label>
+
+  <label class="task"><input type="checkbox" class="cb"><span><span class="t">無料の公的相談窓口に連絡する</span><span class="why">連絡先はこのページの下部。理由：お金をかけずに、「まず何をすべきか」の助言がもらえるから。IPAの企業向け窓口はメールで相談でき、不正アクセス専用の電話窓口もある</span></span></label>
+</section>
+
+<section class="phase p4">
+  <div class="phase-head"><span class="phase-badge">STEP 4</span><h2>3〜5日以内にやること</h2></div>
+  <p class="phase-note">国のルールで決まった報告の期限があります。まずこの時期に「速報（第一報）」を出します。</p>
+
+  <label class="task"><input type="checkbox" class="cb"><span><span class="t">報告が必要なケースに当てはまるか、次の4つで確認する</span>
+    <ol class="sub">
+      <li>病歴や健康診断の結果など、特にデリケートな情報が含まれている</li>
+      <li>クレジットカード番号や、送金・決済に使えるIDとパスワードの組み合わせが漏れた（かもしれない）</li>
+      <li>不正アクセス、ウイルス、盗難、従業員の持ち出しなど「悪い目的の行為」が疑われる</li>
+      <li>関係する人数が1,000人を超える</li>
+    </ol>
+    <span class="why">理由：このどれかに当てはまると、個人情報保護委員会への報告と、本人へのお知らせが法律上の義務になるから。当てはまるか迷う場合は、相談窓口に聞いてから判断する</span></span></label>
+
+  <label class="task"><input type="checkbox" class="cb"><span><span class="t">個人情報保護委員会へ「速報（第一報）」を出す</span><span class="why">委員会のホームページにある「漏えい等報告フォーム」から送る。期限の目安は、事態を知った日から概ね3〜5日以内。この時点では、分かっている範囲の内容でよい。理由：法律で決められた義務で、遅れるほど対応が後手になるから。※業種によっては、報告先が委員会ではなく国の所管省庁になる場合があります（委員会のページで確認できます）</span></span></label>
+
+  <label class="task"><input type="checkbox" class="cb"><span><span class="t">情報が漏れた可能性のあるお客様本人へ、分かっている範囲で速やかにお知らせする</span><span class="why">何が起きたか、どんな情報か、自分で気をつけてほしいこと（不審なメールを開かない等）、問い合わせ先を書く。理由：これも法律上の義務で、お客様が二次被害を防ぐために必要だから</span></span></label>
+
+  <label class="task"><input type="checkbox" class="cb"><span><span class="t">仕事の取引先や、仕事を頼まれている元請けなどへも連絡する</span><span class="why">理由：相手の会社にも報告義務や対応が発生することがあり、後から知らされると信頼を失うから</span></span></label>
+
+  <label class="task"><input type="checkbox" class="cb"><span><span class="t">必要なら、専門の調査会社や弁護士への相談を始める</span><span class="why">理由：原因の本格的な調査は、専用の技術と機材がないとできないから。公的窓口で専門業者の紹介を受けられることもある</span></span></label>
+</section>
+
+<section class="phase p5">
+  <div class="phase-head"><span class="phase-badge">STEP 5</span><h2>30日以内にやること</h2></div>
+  <p class="phase-note">正式な報告（確報）と、再発防止までがゴールです。</p>
+
+  <label class="task"><input type="checkbox" class="cb"><span><span class="t">個人情報保護委員会へ「確報（正式な報告）」を出す</span><span class="why">期限は、事態を知った日から30日以内。ただし、不正アクセスなど「悪い目的の行為」が疑われる場合は60日以内。理由：原因や再発防止策まで含めた正式報告が義務だから</span></span></label>
+
+  <label class="task"><input type="checkbox" class="cb"><span><span class="t">調査が終わっていなければ、分かる範囲で出して、判明した時点で追加の報告をする</span><span class="why">理由：「全部分かるまで出さない」は認められておらず、分かる範囲で出すのがルールだから</span></span></label>
+
+  <label class="task"><input type="checkbox" class="cb"><span><span class="t">原因と、再発防止のためにやることを決める</span><span class="why">例：パスワードの管理方法を変える、ソフトを最新に保つ、情報を持つ人を絞る。理由：確報に書く必要があり、同じ事故を繰り返さないため</span></span></label>
+
+  <label class="task"><input type="checkbox" class="cb"><span><span class="t">お客様本人へ連絡できない場合は、ホームページ等でのお知らせと、問い合わせ窓口の設置で代える</span><span class="why">理由：連絡先が分からない場合などの代替方法として認められているから</span></span></label>
+
+  <label class="task"><input type="checkbox" class="cb"><span><span class="t">壊れたシステムやパソコンの復旧は、専門家の確認を受けてから行う</span><span class="why">理由：原因を取り除く前に元に戻すと、再び被害を受けることがあるから</span></span></label>
+</section>
+
+<section class="donts">
+  <h2>やってはいけないこと</h2>
+  <ul>
+    <li><strong>証拠を消す</strong>（ファイルの削除、機械の初期化、記録の破棄）<span class="why">――調べる手段がなくなり、報告も説明もできなくなります</span></li>
+    <li><strong>事実を隠す、小さく見せる</strong><span class="why">――後から発覚した場合、法律の問題だけでなく、お客様や取引先からの信頼を失います</span></li>
+    <li><strong>事実確認の前に、勝手にSNSなどで公表・謝罪文を出す</strong><span class="why">――内容が間違っていた場合に訂正が困難です。まず問い合わせ窓口を決め、分かった事実の範囲で伝えます</span></li>
+    <li><strong>「漏れていません」と、確認できていないのに断言する</strong><span class="why">――後で事実と違うと判明すると、説明全体の信用がなくなります</span></li>
+    <li><strong>脅迫してきた相手にお金を払う、直接交渉する</strong><span class="why">――解決の保証はなく、警察・専門家への相談が先です</span></li>
+    <li><strong>異変のあったパソコンをそのまま使い続ける</strong>（ネットにつないだまま業務を続ける）<span class="why">――被害が広がるおそれがあります</span></li>
+    <li><strong>担当者がバラバラにお客様へ連絡する</strong><span class="why">――伝える内容が食い違うと混乱します。連絡は窓口と文面をそろえてから</span></li>
+  </ul>
+</section>
+
+<section class="card">
+  <h2>専門家・相談窓口</h2>
+  <p>困ったときは、この順番で考えるのがおすすめです。まずは無料の公的窓口から。</p>
+
+  <div class="contact">
+    <div class="name">IPA 企業組織向けサイバーセキュリティ相談窓口（メール）</div>
+    <div class="how">メール：<a href="mailto:cs-support@ipa.go.jp">cs-support@ipa.go.jp</a> ――「まず何をすべきか」の助言と、専門業者の紹介を受けられます（調査そのものは行いません）</div>
+  </div>
+  <div class="contact">
+    <div class="name">IPA 不正アクセス特別相談窓口（事業者向け・電話）</div>
+    <div class="how">電話：<a href="tel:0367595760">03-6759-5760</a>（平日9:30〜17:30、12:00〜13:00を除く）</div>
+  </div>
+  <div class="contact">
+    <div class="name">IPA 情報セキュリティ安心相談窓口（個人向け・電話）</div>
+    <div class="how">電話：<a href="tel:0359787509">03-5978-7509</a>（平日10:00〜17:00）</div>
+  </div>
+  <div class="contact">
+    <div class="name">警察への相談</div>
+    <div class="how">相談は <a href="tel:%239110">#9110</a>（警察相談専用電話）、緊急時は <a href="tel:110">110番</a>。都道府県警察にはサイバー犯罪の相談窓口もあります</div>
+  </div>
+  <div class="contact">
+    <div class="name">個人情報保護委員会（国のルールに基づく報告先）</div>
+    <div class="how">ホームページの「漏えい等報告フォーム」から報告します：<a href="https://www.ppc.go.jp/personalinfo/legal/leakAction/" target="_blank" rel="noopener">漏えい等の対応とお役立ち資料</a></div>
+  </div>
+  <p class="note">原因の本格調査が必要なら専門業者へ（公的窓口で紹介を受けるか、普段システムを頼んでいる会社に相談）。お客様への伝え方や法律の判断に迷ったら、弁護士や顧問の税理士・社労士など身近な専門家へ。</p>
+</section>
+
+<section class="card prep">
+  <h2>今のうちに書いておく欄</h2>
+  <p>平常時に記入しておくと、事故の日に慌てません。入力内容はこのブラウザに保存されます。</p>
+  <label for="prep1">システムを頼んでいる会社・担当者（会社名／電話番号）</label>
+  <input id="prep1" type="text" autocomplete="off">
+  <label for="prep2">ネット回線・プロバイダの連絡先</label>
+  <input id="prep2" type="text" autocomplete="off">
+  <label for="prep3">顧問の税理士・弁護士・社労士</label>
+  <input id="prep3" type="text" autocomplete="off">
+  <label for="prep4">会社の問い合わせ窓口にする電話番号</label>
+  <input id="prep4" type="text" autocomplete="off">
+  <label for="prep5">お客様名簿や大事な情報が置いてある場所</label>
+  <input id="prep5" type="text" autocomplete="off">
+</section>
+
+<div class="actions noprint">
+  <button class="primary" type="button" onclick="window.print()">印刷する（紙に貼っておく用）</button>
+  <button class="ghost" type="button" id="resetBtn">チェックをすべて外す</button>
+</div>
+
+<section class="card">
+  <h2>注意書き</h2>
+  <ul class="note">
+    <li>個別のケースが報告義務に当てはまるかの最終判断は、このシートだけでは行えません。際どい場合は、個人情報保護委員会の案内を確認するか、公的相談窓口・専門家に確認してください。</li>
+    <li>一部の業種では、漏えい等の報告先が個人情報保護委員会ではなく、国の所管省庁になります。</li>
+    <li>カード会社・決済代行会社への連絡は、不正利用を止めるための実務上一般的な対応として記載しています。契約ごとの具体的な通知ルールは、各社の案内をご確認ください。</li>
+    <li>このシートは「お客様の情報などの個人情報」が関係する事故を中心にしています。個人情報を含まない社内情報だけの事故では、委員会への報告が不要な場合があります。</li>
+    <li>相談窓口の電話番号・受付時間は2026年11月に公式ページで確認した情報です。変わっている場合があるため、利用時に各機関のページで再確認してください。</li>
+  </ul>
+  <h3>出典（公式情報）</h3>
+  <ul class="note">
+    <li>個人情報保護委員会「<a href="https://www.ppc.go.jp/personalinfo/legal/leakAction/" target="_blank" rel="noopener">漏えい等の対応とお役立ち資料</a>」「<a href="https://www.ppc.go.jp/news/kaiseihou_feature/roueitouhoukoku_gimuka/" target="_blank" rel="noopener">漏えい等報告・本人への通知の義務化について</a>」</li>
+    <li>IPA「<a href="https://www.ipa.go.jp/security/guide/sme/ug65p90000019cbk-att/sme_guideline_v4.0_app_8.pdf" target="_blank" rel="noopener">中小企業のためのセキュリティインシデント対応の手引き</a>」（情報セキュリティ対策ガイドライン付録8）</li>
+    <li>IPA「<a href="https://www.ipa.go.jp/security/support/soudan.html" target="_blank" rel="noopener">サイバーセキュリティ 相談・届出窓口一覧</a>」「<a href="https://www.ipa.go.jp/security/support/incident-support.html" target="_blank" rel="noopener">不正アクセス対策特設サイト</a>」「<a href="https://www.ipa.go.jp/security/anshin/about.html" target="_blank" rel="noopener">情報セキュリティ安心相談窓口について</a>」</li>
+    <li>警察庁「<a href="https://www.gov-online.go.jp/kurashinosodan/list/fu_npsc.html" target="_blank" rel="noopener">警察相談専用電話『#9110』番</a>」（政府広報オンライン）</li>
+  </ul>
+</section>
+
+<section class="related">
+  <h2>次はこちら</h2>
+  <p class="sub">あわせて確認しておきたいツールです。</p>
+  <a class="item" href="../handover-check/"><span class="badge">チェックリスト</span><span class="name">仕事の引き継ぎ漏れチェック</span><span class="arrow">→</span></a>
+  <a class="item" href="../priority-sheet/"><span class="badge">テンプレート</span><span class="name">仕事の優先順位整理シート</span><span class="arrow">→</span></a>
+  <a class="item" href="../../"><span class="badge">VIGOR TOOLS</span><span class="name">ツール一覧へ戻る</span><span class="arrow">→</span></a>
+</section>
+
+<footer>
+  情報漏洩が起きたかもしれないときの初動フロー ― 一般的な初動の目安として、個人情報保護委員会・IPAの公式情報に基づいて作成しました。
+</footer>
+
+</div>
+
+<script src="/tools/shared/tool-events.js"></script>
+<script>
+(function(){
+  var KEY='leakflow-v1';
+  var boxes=Array.prototype.slice.call(document.querySelectorAll('input.cb'));
+  var preps=['prep1','prep2','prep3','prep4','prep5'].map(function(id){return document.getElementById(id);});
+  var countEl=document.getElementById('doneCount');
+  var barEl=document.getElementById('barFill');
+  function save(){
+    var state={checks:boxes.map(function(b){return b.checked;}),prep:{}};
+    preps.forEach(function(p){ if(p) state.prep[p.id]=p.value; });
+    try{ localStorage.setItem(KEY, JSON.stringify(state)); }catch(e){}
+  }
+  function paint(){
+    var done=0;
+    boxes.forEach(function(b){
+      if(b.checked) done++;
+      b.closest('label.task').classList.toggle('done', b.checked);
+    });
+    countEl.textContent=done;
+    barEl.style.width=(boxes.length? (done/boxes.length*100):0)+'%';
+  }
+  try{
+    var raw=localStorage.getItem(KEY);
+    if(raw){
+      var s=JSON.parse(raw);
+      if(s.checks) boxes.forEach(function(b,i){ b.checked=!!s.checks[i]; });
+      if(s.prep) preps.forEach(function(p){ if(p && s.prep[p.id]) p.value=s.prep[p.id]; });
+    }
+  }catch(e){}
+  boxes.forEach(function(b){ b.addEventListener('change', function(){ paint(); save(); if(window.VigorEvents && boxes.every(function(x){ return x.checked; })) VigorEvents.complete(); }); });
+  preps.forEach(function(p){ if(p) p.addEventListener('input', save); });
+  document.getElementById('resetBtn').addEventListener('click', function(){
+    if(!confirm('チェックをすべて外しますか？（記入欄の内容は残ります）')) return;
+    boxes.forEach(function(b){ b.checked=false; });
+    paint(); save();
+  });
+  paint();
+})();
+</script>
+</body>
+</html>
