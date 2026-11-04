@@ -2900,4 +2900,24 @@
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
+  <url>
+    <loc>https://vigorlab.net/matsuri/festivals/uwajima-yoshida-oneri/</loc>
+    <lastmod>2026-11-05</lastmod><changefreq>yearly</changefreq><priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://vigorlab.net/matsuri/festivals/kikuma-otouma-matsuri/</loc>
+    <lastmod>2026-11-05</lastmod><changefreq>yearly</changefreq><priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://vigorlab.net/matsuri/festivals/oyamazumi-nukiho-sai/</loc>
+    <lastmod>2026-11-05</lastmod><changefreq>yearly</changefreq><priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://vigorlab.net/matsuri/festivals/isono-jinja-sairei/</loc>
+    <lastmod>2026-11-05</lastmod><changefreq>yearly</changefreq><priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://vigorlab.net/matsuri/festivals/oyamazumi-ubusuna-taisai/</loc>
+    <lastmod>2026-11-05</lastmod><changefreq>yearly</changefreq><priority>0.7</priority>
+  </url>
 </urlset>

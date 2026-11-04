@@ -5181,3 +5181,10 @@ commit `2b5da25`／キャッシュ修正`7522f44`／`ab4f35b`）
 - 一次情報：https://www.kaiyo-kankou.jp/event/event-1055/ 、https://www.awanavi.jp/archives/event/1263 、https://www.pref.tokushima.lg.jp/ippannokata/kyoiku/kanko/7315687/ 、https://www.town.ishii.lg.jp/docs/2026061500028/ 、https://www.kaiyo-kankou.jp/event/event-1013/ 。
 - 見送り：こまつしま秋の阿波踊りは2026年の中止を小松島市が告知（https://www.city.komatsushima.lg.jp/docs/6392381.html）。ナカまつりは公式ページの日付欄に令和7年と土曜の不一致があり判断保留。
 - 整合性チェックの過去日程6件を自動ended化：honjo-matsuri、ohara-matsuri、onomichi-betcha-matsuri、saga-international-balloon-fiesta、yagorodon-matsuri、yamakoshi-ushi-no-tsunotsuki。sitemapに今回の新規5URLを追記。全国深掘り・連続0件0回・次回も全国。直近の追加は山口・京都・兵庫・大阪・高知で同一県3営業日連続なし。
+
+## 2026-11-05 新規祭り追加（全国深掘り・愛媛県5件）
+
+- 候補ストック空。低密度の愛媛県から吉田祭のお練り行事、菊間祭り（お供馬の走り込み）、大山祇神社抜穂祭、伊曽乃神社祭礼、大山祇神社産須奈大祭を追加。全国382→387件、愛媛3→8件。2026年の公式日程は全て過去のためended。
+- 今治市・宇和島市・西条市・神社・文化庁の一次情報で名称・範囲・日程・特徴を確認。吉田祭は11月3日のお練り行事に限定し宇和島市中心部の牛鬼まつりと区別。大山祇神社の抜穂祭と産須奈大祭は別祭典。伊曽乃神社祭礼は西条まつりのうち同神社の祭礼に限定し、他神社の祭礼は含めない。確認できない特徴はnull。
+- 一次情報：https://www.city.uwajima.ehime.jp/event/branding/yosidamatsuri-r8.html 、https://kunishitei.bunka.go.jp/heritage/detail/302/00001046 、https://www.city.imabari.ehime.jp/event/?a=106 、https://kamoj.sakura.ne.jp/ 、https://www.city.imabari.ehime.jp/event/?a=133 、https://oomishimagu.jp/worship/worship03/ 、https://www.city.saijo.ehime.jp/soshiki/kanko/isonojinja-sairei.html 、https://www.city.saijo.ehime.jp/soshiki/citypromo/event-annual12.html 、https://www.city.imabari.ehime.jp/event/?a=132 、https://oomishima-j.esnet.ed.jp/plugin/blogs/show/1/2/3872 。
+- 唐津くんち（karatsu-kunchi）を全日程経過により自動ended化。sitemapに今回の新規5URLのみ追記。全国深掘り、連続0件0回、次回も全国。直近の追加は京都・兵庫・大阪・高知・徳島で同一県3営業日連続なし。

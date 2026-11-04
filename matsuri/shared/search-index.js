@@ -3054,5 +3054,45 @@ const SEARCH_INDEX = [
     "prefecture": "徳島県",
     "city": "海陽町",
     "firstDate": "2026-09-26"
+  },
+  {
+    "slug": "uwajima-yoshida-oneri",
+    "name": "吉田祭のお練り行事",
+    "officialName": "吉田祭のお練り行事",
+    "prefecture": "愛媛県",
+    "city": "宇和島市",
+    "firstDate": "2026-11-03"
+  },
+  {
+    "slug": "kikuma-otouma-matsuri",
+    "name": "菊間祭り（お供馬の走り込み）",
+    "officialName": "菊間祭り（お供馬の走り込み）",
+    "prefecture": "愛媛県",
+    "city": "今治市",
+    "firstDate": "2026-10-17"
+  },
+  {
+    "slug": "oyamazumi-nukiho-sai",
+    "name": "大山祇神社抜穂祭",
+    "officialName": "大山祇神社抜穂祭",
+    "prefecture": "愛媛県",
+    "city": "今治市",
+    "firstDate": "2026-10-19"
+  },
+  {
+    "slug": "isono-jinja-sairei",
+    "name": "伊曽乃神社祭礼",
+    "officialName": "伊曽乃神社祭礼",
+    "prefecture": "愛媛県",
+    "city": "西条市",
+    "firstDate": "2026-10-15"
+  },
+  {
+    "slug": "oyamazumi-ubusuna-taisai",
+    "name": "大山祇神社産須奈大祭",
+    "officialName": "大山祇神社産須奈大祭",
+    "prefecture": "愛媛県",
+    "city": "今治市",
+    "firstDate": "2026-10-04"
   }
 ];
