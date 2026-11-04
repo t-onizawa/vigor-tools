@@ -3,17 +3,17 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="情報漏洩が「起きたかもしれない」と思ったら、上から順に実行するだけ。専門用語なしの初動チェックリスト（最初の15分／1時間以内／その日のうち／3〜5日以内／30日以内）。個人情報保護委員会・IPAの公式情報に基づきます。">
+  <meta name="description" content="情報漏洩が「起きたかもしれない」と思ったら、優先順位に沿って確認できる初動チェックリスト。全28項目、専門用語なし（最初の15分／1時間以内／その日のうち／3〜5日以内／30日以内）。個人情報保護委員会・IPAの公式情報に基づきます。">
   <title>情報漏洩が起きたかもしれないときの初動フロー — VIGOR TOOLS</title>
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="VIGOR TOOLS">
   <meta property="og:title" content="情報漏洩が起きたかもしれないときの初動フロー — VIGOR TOOLS">
-  <meta property="og:description" content="情報漏洩が「起きたかもしれない」と思ったら、上から順に実行するだけ。専門用語なしの初動チェックリスト（最初の15分／1時間以内／その日のうち／3〜5日以内／30日以内）。個人情報保護委員会・IPAの公式情報に基づきます。">
+  <meta property="og:description" content="情報漏洩が「起きたかもしれない」と思ったら、優先順位に沿って確認できる初動チェックリスト。全28項目、専門用語なし（最初の15分／1時間以内／その日のうち／3〜5日以内／30日以内）。個人情報保護委員会・IPAの公式情報に基づきます。">
   <meta property="og:url" content="https://vigorlab.net/tools/work/leak-response/">
   <meta property="og:image" content="https://vigorlab.net/assets/brand/og-image.png">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="情報漏洩が起きたかもしれないときの初動フロー — VIGOR TOOLS">
-  <meta name="twitter:description" content="情報漏洩が「起きたかもしれない」と思ったら、上から順に実行するだけ。専門用語なしの初動チェックリスト（最初の15分／1時間以内／その日のうち／3〜5日以内／30日以内）。個人情報保護委員会・IPAの公式情報に基づきます。">
+  <meta name="twitter:description" content="情報漏洩が「起きたかもしれない」と思ったら、優先順位に沿って確認できる初動チェックリスト。全28項目、専門用語なし（最初の15分／1時間以内／その日のうち／3〜5日以内／30日以内）。個人情報保護委員会・IPAの公式情報に基づきます。">
   <meta name="twitter:image" content="https://vigorlab.net/assets/brand/og-image.png">
   <link rel="canonical" href="https://vigorlab.net/tools/work/leak-response/">
   <link rel="icon" href="/assets/brand/favicon.svg" type="image/svg+xml">
@@ -143,7 +143,7 @@
   <div class="phase-head"><span class="phase-badge">STEP 1</span><h2>まず最初の15分でやること</h2></div>
   <p class="phase-note">あわてて消したり切ったりするのが一番の失敗です。まず「記録を残す」「広がりを止める」。</p>
 
-  <label class="task"><input type="checkbox" class="cb"><span><span class="t">画面に表示されているものやファイルを、消さない。パソコンの電源も切らない</span><span class="why">理由：あとで専門家が原因を調べるときの手がかり＝「記録」が、消したり電源を切ったりすると失われてしまうから</span></span></label>
+  <label class="task"><input type="checkbox" class="cb"><span><span class="t">画面に表示されているものやファイルを、消さない。パソコンの電源も、原則として不用意に切らない</span><span class="why">理由：あとで専門家が原因を調べるときの手がかり＝「記録」が、消したり電源を切ったりすると失われてしまうから。ただし、発煙・発火など安全上の危険がある場合は電源を切って安全を優先する</span></span></label>
 
   <label class="task"><input type="checkbox" class="cb"><span><span class="t">おかしいパソコンを、ネットワークから切り離す</span><span class="why">LANケーブルを抜く、Wi-Fiを切る。ただし電源は切らない。理由：被害が他へ広がるのを止めるため</span></span></label>
 
@@ -151,22 +151,22 @@
 
   <label class="task"><input type="checkbox" class="cb"><span><span class="t">「いつ、何に気づいたか」を紙やメモアプリに書く</span><span class="why">理由：あとで報告や説明をするとき、この最初のメモが一番頼りになるから</span></span></label>
 
-  <label class="task"><input type="checkbox" class="cb"><span><span class="t">対応の責任者を決め、従業員がいる場合は社長（経営者）へすぐ電話する</span><span class="why">理由：バラバラに動くと、かえって被害や混乱が広がるから</span></span></label>
+  <label class="task"><input type="checkbox" class="cb"><span><span class="t">従業員が気づいた場合は、すぐ社長（経営者）や対応責任者へ電話する。経営者本人が気づいた場合は、社内の連絡担当を1人決める</span><span class="why">理由：バラバラに動くと、かえって被害や混乱が広がるから。まず「誰に知らせるか」をそろえる</span></span></label>
 
   <label class="task"><input type="checkbox" class="cb"><span><span class="t">「お金を払え」という脅迫文が出ていたら、払わない。相手に連絡もしない</span><span class="why">理由：払っても元に戻る保証はなく、警察や専門家に相談してから動くべきだから</span></span></label>
 </section>
 
 <section class="phase p2">
   <div class="phase-head"><span class="phase-badge">STEP 2</span><h2>1時間以内にやること</h2></div>
-  <p class="phase-note">被害の範囲を見立てて、広がりを止めます。</p>
+  <p class="phase-note">被害の範囲を見立てて、広がりを止めます。メールの誤送信や端末の紛失のときは、このSTEPの4番目（公開を止める／遠隔ロック）を先にやってください。</p>
 
-  <label class="task"><input type="checkbox" class="cb"><span><span class="t">何の情報が関係しそうか、思いつく範囲で書き出す</span><span class="why">例：お客様の名前・住所・電話番号、クレジットカードの情報、健康診断の結果など。理由：あとの報告やお客様への連絡の範囲が決まるから</span></span></label>
+  <label class="task"><input type="checkbox" class="cb"><span><span class="t">何の情報が関係しそうか、思いつく範囲で書き出す</span><span class="why">例：お客様の名前・住所・電話番号、従業員や応募者の情報、取引先担当者の連絡先、クレジットカードの情報、健康診断の結果、マイナンバーなど。理由：あとの報告やお客様への連絡の範囲が決まるから</span></span></label>
 
   <label class="task"><input type="checkbox" class="cb"><span><span class="t">他のパソコンやスマホにも、同じような異変がないか見る</span><span class="why">理由：1台だけの問題とは限らないから</span></span></label>
 
-  <label class="task"><input type="checkbox" class="cb"><span><span class="t">大事なアカウント（メール、ネットバンク、クラウドサービスなど）のパスワードを、「無事な別の機械」から変更する</span><span class="why">理由：異変のあるパソコンで変更すると、その内容も盗まれるおそれがあるから。同じパスワードを使い回しているサービスも一緒に変える</span></span></label>
+  <label class="task"><input type="checkbox" class="cb"><span><span class="t">大事なアカウント（メール、ネットバンク、クラウドサービスなど）のパスワードを、「無事な別の機械」から変更する。あわせて二段階認証を有効にし、他の端末のログインを解除する</span><span class="why">理由：異変のあるパソコンで変更すると、その内容も盗まれるおそれがあるから。同じパスワードを使い回しているサービスも一緒に変える。不正利用の疑いがあるアカウントを優先する</span></span></label>
 
-  <label class="task"><input type="checkbox" class="cb"><span><span class="t">間違って情報を公開・送信してしまった場合は、まず公開を止める</span><span class="why">公開設定を「非公開」に戻す。送ってしまったメールは取り消せないことが多いので、送信先に「削除のお願い」の連絡を入れる。理由：見られる時間が短いほど被害が小さいから</span></span></label>
+  <label class="task"><input type="checkbox" class="cb"><span><span class="t">間違って情報を公開・送信してしまった場合は、まず公開を止める</span><span class="why">公開設定を「非公開」に戻す。送ってしまったメールは取り消せないことが多いので、送信先に「削除のお願い」の連絡を入れる。パソコンやスマホを紛失した場合は、遠隔ロックやデータ消去の機能を使い、警察へ遺失届も出す。理由：見られる・使われる時間が短いほど被害が小さいから</span></span></label>
 
   <label class="task"><input type="checkbox" class="cb"><span><span class="t">パソコンやシステムの面倒を見てもらっている会社・担当者に電話する</span><span class="why">理由：自分たちだけで触り続けると、記録が上書きされて原因が分からなくなることがあるから</span></span></label>
 
@@ -181,33 +181,37 @@
 
   <label class="task"><input type="checkbox" class="cb"><span><span class="t">情報が関係しそうな人数の見当をつける</span><span class="why">例：「お客様名簿の約300人分」のように、おおよそでよい。理由：報告が必要かどうかを判断する材料になるから</span></span></label>
 
-  <label class="task"><input type="checkbox" class="cb"><span><span class="t">証拠になりそうな記録（メール、操作の記録、写真）を、別の場所にもコピーして保管する</span><span class="why">理由：元の機械が壊れたり、記録が自動で消えたりすることがあるから</span></span></label>
+  <label class="task"><input type="checkbox" class="cb"><span><span class="t">報告が必要なケースに当てはまるか、その日のうちに確認する</span>
+    <span style="display:block;font-weight:400;font-size:15px;margin-top:4px">個人データの漏えい等が発生した、またはそのおそれがあり、次の<strong>どれか1つでも当てはまれば</strong>、報告と本人へのお知らせが必要なケースです。</span>
+    <ol class="sub">
+      <li>マイナンバー（特定個人情報）が含まれている</li>
+      <li>病歴や健康診断の結果など、特にデリケートな情報が含まれている</li>
+      <li>クレジットカード番号など、財産的な被害につながりうる情報が漏れた（かもしれない）</li>
+      <li>不正アクセス、ウイルス、盗難、従業員による持ち出しなど「不正な目的の行為」による漏えい等、またはそのおそれがある</li>
+      <li>関係する人数が1,000人を超える</li>
+    </ol>
+    <span class="why">理由：報告の期限は「事態を知った日」から数えるため、判定を先延ばしにすると速報（STEP 4）が間に合わなくなるから。最終的な判断は、個人情報保護委員会のガイドラインと案内に従ってください。マイナンバーが含まれる場合は、委員会の専用フォームから報告します（含まれているか分からない場合も、専用フォーム側に案内されます）。ウイルス感染（ランサムウェア等）や記録の滅失・毀損でも、上のケースに当てはまれば報告対象になります</span></span></label>
+
+  <label class="task"><input type="checkbox" class="cb"><span><span class="t">証拠になりそうな記録（メール、ログイン履歴・アクセスログなどの操作の記録、写真）を、別の場所にもコピーして保管する</span><span class="why">理由：元の機械が壊れたり、記録が自動で消えたりすることがあるから。記録は上書き・削除しないでそのまま保全する</span></span></label>
 
   <label class="task"><input type="checkbox" class="cb"><span><span class="t">お客様からの問い合わせを受ける連絡先（電話番号やメール）を決めておく</span><span class="why">理由：お客様が不安になって連絡してきたとき、受け皿がないと混乱が大きくなるから</span></span></label>
 
-  <label class="task"><input type="checkbox" class="cb"><span><span class="t">クレジットカードの情報が関係しそうなら、契約しているカード会社や決済代行会社にも連絡する</span><span class="why">理由：カードの不正利用を早く止めるため</span></span></label>
+  <label class="task"><input type="checkbox" class="cb"><span><span class="t">クレジットカードやネットバンキングの情報が関係しそうなら、カード会社・決済代行会社・銀行にも連絡する</span><span class="why">理由：カードや口座の不正利用を早く止めるため</span></span></label>
 
-  <label class="task"><input type="checkbox" class="cb"><span><span class="t">無料の公的相談窓口に連絡する</span><span class="why">連絡先はこのページの下部。理由：お金をかけずに、「まず何をすべきか」の助言がもらえるから。IPAの企業向け窓口はメールで相談でき、不正アクセス専用の電話窓口もある</span></span></label>
+  <label class="task"><input type="checkbox" class="cb"><span><span class="t">無料の公的相談窓口に連絡する</span><span class="why">連絡先はこのページの下部。理由：お金をかけずに、「まず何をすべきか」の助言がもらえるから。IPAの企業向け窓口はメールで相談でき、不正アクセス専用の電話窓口もある。なお、相談窓口への相談は、法律上の「報告」とは別のものです</span></span></label>
+
+  <label class="task"><input type="checkbox" class="cb"><span><span class="t">サイバー保険などの損害保険に入っている場合は、保険会社にも早めに連絡する</span><span class="why">理由：事故対応にかかる費用が保険の対象になる場合があり、連絡が遅れると対象にならないことがあるから</span></span></label>
 </section>
 
 <section class="phase p4">
   <div class="phase-head"><span class="phase-badge">STEP 4</span><h2>3〜5日以内にやること</h2></div>
   <p class="phase-note">国のルールで決まった報告の期限があります。まずこの時期に「速報（第一報）」を出します。</p>
 
-  <label class="task"><input type="checkbox" class="cb"><span><span class="t">報告が必要なケースに当てはまるか、次の4つで確認する</span>
-    <ol class="sub">
-      <li>病歴や健康診断の結果など、特にデリケートな情報が含まれている</li>
-      <li>クレジットカード番号や、送金・決済に使えるIDとパスワードの組み合わせが漏れた（かもしれない）</li>
-      <li>不正アクセス、ウイルス、盗難、従業員の持ち出しなど「悪い目的の行為」が疑われる</li>
-      <li>関係する人数が1,000人を超える</li>
-    </ol>
-    <span class="why">理由：このどれかに当てはまると、個人情報保護委員会への報告と、本人へのお知らせが法律上の義務になるから。当てはまるか迷う場合は、相談窓口に聞いてから判断する</span></span></label>
+  <label class="task"><input type="checkbox" class="cb"><span><span class="t">個人情報保護委員会へ「速報（第一報）」を出す</span><span class="why">委員会のホームページにある「漏えい等報告フォーム」から送る（マイナンバーが含まれる場合は専用フォーム）。速報は「速やかに」が原則で、期限の目安は、報告対象となる事態を知った日から概ね3〜5日以内です。これは「その期間まで待ってよい」という意味ではありません。この時点では、分かっている範囲の内容でよい。理由：法律で決められた義務で、遅れるほど対応が後手になるから。※業種によっては、報告先が委員会ではなく国の所管省庁になる場合があります（例：金融機関は金融庁、医療機関は厚生労働省。委員会のページで確認できます）</span></span></label>
 
-  <label class="task"><input type="checkbox" class="cb"><span><span class="t">個人情報保護委員会へ「速報（第一報）」を出す</span><span class="why">委員会のホームページにある「漏えい等報告フォーム」から送る。期限の目安は、事態を知った日から概ね3〜5日以内。この時点では、分かっている範囲の内容でよい。理由：法律で決められた義務で、遅れるほど対応が後手になるから。※業種によっては、報告先が委員会ではなく国の所管省庁になる場合があります（委員会のページで確認できます）</span></span></label>
+  <label class="task"><input type="checkbox" class="cb"><span><span class="t">情報が漏れた可能性のあるお客様本人へ、分かっている範囲で速やかにお知らせする</span><span class="why">何が起きたか、どんな情報か、自分で気をつけてほしいこと（不審なメールを開かない等）、問い合わせ先を書く。STEP 3の確認で「報告が必要なケース」に当てはまる場合は、これは法律上の義務です。当てはまらない場合でも、お客様が二次被害を防げるよう、基本的に知らせるのが望ましい対応です。連絡先が分からないなど直接連絡できない場合は、ホームページ等でのお知らせと、問い合わせ窓口の設置で代えることができます</span></span></label>
 
-  <label class="task"><input type="checkbox" class="cb"><span><span class="t">情報が漏れた可能性のあるお客様本人へ、分かっている範囲で速やかにお知らせする</span><span class="why">何が起きたか、どんな情報か、自分で気をつけてほしいこと（不審なメールを開かない等）、問い合わせ先を書く。理由：これも法律上の義務で、お客様が二次被害を防ぐために必要だから</span></span></label>
-
-  <label class="task"><input type="checkbox" class="cb"><span><span class="t">仕事の取引先や、仕事を頼まれている元請けなどへも連絡する</span><span class="why">理由：相手の会社にも報告義務や対応が発生することがあり、後から知らされると信頼を失うから</span></span></label>
+  <label class="task"><input type="checkbox" class="cb"><span><span class="t">仕事を委託されている場合は、委託元の会社へ速やかに連絡する。取引先や元請けへも連絡する</span><span class="why">理由：委託先（受託者）が委託元へ速やかに通知すれば、自社の個人情報保護委員会への報告と、本人へのお知らせが不要になる場合があるから（委員会への報告より先に、まず委託元へ）。契約書に事故が起きたときの連絡ルール（事故連絡条項）がないかも確認する。相手の会社にも報告義務や対応が発生することがあり、後から知らされると信頼を失うから</span></span></label>
 
   <label class="task"><input type="checkbox" class="cb"><span><span class="t">必要なら、専門の調査会社や弁護士への相談を始める</span><span class="why">理由：原因の本格的な調査は、専用の技術と機材がないとできないから。公的窓口で専門業者の紹介を受けられることもある</span></span></label>
 </section>
@@ -216,13 +220,11 @@
   <div class="phase-head"><span class="phase-badge">STEP 5</span><h2>30日以内にやること</h2></div>
   <p class="phase-note">正式な報告（確報）と、再発防止までがゴールです。</p>
 
-  <label class="task"><input type="checkbox" class="cb"><span><span class="t">個人情報保護委員会へ「確報（正式な報告）」を出す</span><span class="why">期限は、事態を知った日から30日以内。ただし、不正アクセスなど「悪い目的の行為」が疑われる場合は60日以内。理由：原因や再発防止策まで含めた正式報告が義務だから</span></span></label>
+  <label class="task"><input type="checkbox" class="cb"><span><span class="t">個人情報保護委員会へ「確報（正式な報告）」を出す</span><span class="why">期限は、事態を知った日から30日以内（土日祝日も含めて数えます）。ただし、不正アクセスなど「不正な目的の行為」が疑われる場合は60日以内。理由：原因や再発防止策まで含めた正式報告が義務だから</span></span></label>
 
   <label class="task"><input type="checkbox" class="cb"><span><span class="t">調査が終わっていなければ、分かる範囲で出して、判明した時点で追加の報告をする</span><span class="why">理由：「全部分かるまで出さない」は認められておらず、分かる範囲で出すのがルールだから</span></span></label>
 
   <label class="task"><input type="checkbox" class="cb"><span><span class="t">原因と、再発防止のためにやることを決める</span><span class="why">例：パスワードの管理方法を変える、ソフトを最新に保つ、情報を持つ人を絞る。理由：確報に書く必要があり、同じ事故を繰り返さないため</span></span></label>
-
-  <label class="task"><input type="checkbox" class="cb"><span><span class="t">お客様本人へ連絡できない場合は、ホームページ等でのお知らせと、問い合わせ窓口の設置で代える</span><span class="why">理由：連絡先が分からない場合などの代替方法として認められているから</span></span></label>
 
   <label class="task"><input type="checkbox" class="cb"><span><span class="t">壊れたシステムやパソコンの復旧は、専門家の確認を受けてから行う</span><span class="why">理由：原因を取り除く前に元に戻すと、再び被害を受けることがあるから</span></span></label>
 </section>
@@ -232,7 +234,7 @@
   <ul>
     <li><strong>証拠を消す</strong>（ファイルの削除、機械の初期化、記録の破棄）<span class="why">――調べる手段がなくなり、報告も説明もできなくなります</span></li>
     <li><strong>事実を隠す、小さく見せる</strong><span class="why">――後から発覚した場合、法律の問題だけでなく、お客様や取引先からの信頼を失います</span></li>
-    <li><strong>事実確認の前に、勝手にSNSなどで公表・謝罪文を出す</strong><span class="why">――内容が間違っていた場合に訂正が困難です。まず問い合わせ窓口を決め、分かった事実の範囲で伝えます</span></li>
+    <li><strong>確認できていない情報を、憶測でSNSなどに発信する</strong><span class="why">――内容が間違っていた場合に訂正が困難です。まず問い合わせ窓口を決め、分かった事実の範囲で伝えます</span></li>
     <li><strong>「漏れていません」と、確認できていないのに断言する</strong><span class="why">――後で事実と違うと判明すると、説明全体の信用がなくなります</span></li>
     <li><strong>脅迫してきた相手にお金を払う、直接交渉する</strong><span class="why">――解決の保証はなく、警察・専門家への相談が先です</span></li>
     <li><strong>異変のあったパソコンをそのまま使い続ける</strong>（ネットにつないだまま業務を続ける）<span class="why">――被害が広がるおそれがあります</span></li>
@@ -253,7 +255,7 @@
     <div class="how">電話：<a href="tel:0367595760">03-6759-5760</a>（平日9:30〜17:30、12:00〜13:00を除く）</div>
   </div>
   <div class="contact">
-    <div class="name">IPA 情報セキュリティ安心相談窓口（個人向け・電話）</div>
+    <div class="name">IPA 情報セキュリティ安心相談窓口（個人の方・従業員の方向け・電話）</div>
     <div class="how">電話：<a href="tel:0359787509">03-5978-7509</a>（平日10:00〜17:00）</div>
   </div>
   <div class="contact">
@@ -261,15 +263,15 @@
     <div class="how">相談は <a href="tel:%239110">#9110</a>（警察相談専用電話）、緊急時は <a href="tel:110">110番</a>。都道府県警察にはサイバー犯罪の相談窓口もあります</div>
   </div>
   <div class="contact">
-    <div class="name">個人情報保護委員会（国のルールに基づく報告先）</div>
-    <div class="how">ホームページの「漏えい等報告フォーム」から報告します：<a href="https://www.ppc.go.jp/personalinfo/legal/leakAction/" target="_blank" rel="noopener">漏えい等の対応とお役立ち資料</a></div>
+    <div class="name">個人情報保護委員会（個人情報のルールを所管する国の機関／報告先）</div>
+    <div class="how">ホームページの「漏えい等報告フォーム」から報告します：<a href="https://www.ppc.go.jp/personalinfo/legal/leakAction/" target="_blank" rel="noopener">漏えい等の対応とお役立ち資料</a>。マイナンバー（特定個人情報）が含まれる場合は、専用フォームから報告します（IPA＝情報処理推進機構は、相談窓口を運営する国の機関です）</div>
   </div>
   <p class="note">原因の本格調査が必要なら専門業者へ（公的窓口で紹介を受けるか、普段システムを頼んでいる会社に相談）。お客様への伝え方や法律の判断に迷ったら、弁護士や顧問の税理士・社労士など身近な専門家へ。</p>
 </section>
 
 <section class="card prep">
   <h2>今のうちに書いておく欄</h2>
-  <p>平常時に記入しておくと、事故の日に慌てません。入力内容はこのブラウザに保存されます。</p>
+  <p>平常時に記入しておくと、事故の日に慌てません。入力内容はこのブラウザに保存されます。共用のパソコンでは、機密情報やパスワードなどを入力しないでください。</p>
   <label for="prep1">システムを頼んでいる会社・担当者（会社名／電話番号）</label>
   <input id="prep1" type="text" autocomplete="off">
   <label for="prep2">ネット回線・プロバイダの連絡先</label>
@@ -291,7 +293,8 @@
   <h2>注意書き</h2>
   <ul class="note">
     <li>個別のケースが報告義務に当てはまるかの最終判断は、このシートだけでは行えません。際どい場合は、個人情報保護委員会の案内を確認するか、公的相談窓口・専門家に確認してください。</li>
-    <li>一部の業種では、漏えい等の報告先が個人情報保護委員会ではなく、国の所管省庁になります。</li>
+    <li>一部の業種では、漏えい等の報告先が個人情報保護委員会ではなく、国の所管省庁になります（例：金融機関は金融庁、医療機関は厚生労働省）。</li>
+    <li>報告が不要なケースと判断した場合でも、対応の記録は残し、再発防止の対策を行ってください。</li>
     <li>カード会社・決済代行会社への連絡は、不正利用を止めるための実務上一般的な対応として記載しています。契約ごとの具体的な通知ルールは、各社の案内をご確認ください。</li>
     <li>このシートは「お客様の情報などの個人情報」が関係する事故を中心にしています。個人情報を含まない社内情報だけの事故では、委員会への報告が不要な場合があります。</li>
     <li>相談窓口の電話番号・受付時間は2026年11月に公式ページで確認した情報です。変わっている場合があるため、利用時に各機関のページで再確認してください。</li>
