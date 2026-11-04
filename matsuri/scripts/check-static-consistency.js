@@ -81,7 +81,8 @@ const nonPast = (s) => [...s].sort();
 
 function checkDatesInText(slug, where, text, dates, year, severityMismatch) {
   if (!dates.length) return;
-  const found = extractDates(text, year);
+  // 「荒天の場合は〇月〇日に延期」等の延期・予備日の記載は開催日ではないため除外する
+  const found = extractDates(text.replace(/[^。]*(?:延期|順延|予備日)[^。]*(?:。|$)/g, ""), year);
   if (!found.size) { add(slug, "INFO", `${where}.date-missing`, `${where}に日付表記がない`, text.slice(0, 80)); return; }
   const first = dates[0], last = dates[dates.length - 1];
   const outside = nonPast(found).filter((d) => d < first || d > last);
@@ -151,7 +152,7 @@ function checkFestival(slug, hubs, searchIndex) {
   const pk = Y.access ? Y.access.hasParking : undefined;
   // 駐車場の表記
   const pkLabel = pk === true ? "あり" : pk === false ? "なし" : pk === "n/a" ? "該当なし" : "未確認";
-  const dm = desc && (desc.match(/駐車場(?:情報)?は(あり|なし|未確認|要確認)/) || desc.match(/\d{4}年は駐車場(あり|なし)/));
+  const dm = desc && (desc.match(/駐車場(?:情報)?は(あり(?!ません)|なし|未確認|要確認)/) || desc.match(/\d{4}年は駐車場(あり|なし)/));
   if (dm && dm[1] !== pkLabel && !(pkLabel === "未確認" && dm[1] === "要確認")) add(slug, "ERROR", "parking.description", "descriptionの駐車場表記がdata.jsと異なる", `${dm[1]} / data=${pkLabel}`);
   const body = (html.match(/<span class="detail-term">駐車場<\/span><span class="detail-value">([^<]*)</) || [])[1];
   if (body && body !== pkLabel) add(slug, "ERROR", "parking.body", "本文の駐車場表記がdata.jsと異なる", `${body} / data=${pkLabel}`);
