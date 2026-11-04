@@ -869,6 +869,22 @@
     });
   }
 
+  function appendAlternateLink(container, className, href, text) {
+    let list = container.querySelector("ul.alternate-links");
+    if (!list) {
+      list = document.createElement("ul");
+      list.className = "alternate-links";
+      container.append(list);
+    }
+    const li = document.createElement("li");
+    li.className = className;
+    const a = document.createElement("a");
+    a.href = href;
+    a.textContent = text;
+    li.append(a);
+    list.append(li);
+  }
+
   function renderMonthHubLink(currentFestival, yearlyInfo) {
     if (LOCALE === "en") return;
     const MONTH_HUB_SLUGS = { 7: "july", 8: "august", 9: "september" };
@@ -883,13 +899,7 @@
     const section = byId("alternate-links-section");
     if (!container || !section) return;
 
-    const p = document.createElement("p");
-    p.className = "month-hub-link";
-    const a = document.createElement("a");
-    a.href = `../../months/${slug}/`;
-    a.textContent = `${MONTH_HUB_LABELS[month]}の祭りをもっと見る`;
-    p.append(a);
-    container.append(p);
+    appendAlternateLink(container, "month-hub-link", `../../months/${slug}/`, `${MONTH_HUB_LABELS[month]}の祭り`);
     section.hidden = false;
   }
 
@@ -905,13 +915,7 @@
     const section = byId("alternate-links-section");
     if (!container || !section) return;
 
-    const p = document.createElement("p");
-    p.className = "prefecture-hub-link";
-    const a = document.createElement("a");
-    a.href = `../../prefectures/${areaTag}/`;
-    a.textContent = `${prefectureLabel}の祭りをもっと見る`;
-    p.append(a);
-    container.append(p);
+    appendAlternateLink(container, "prefecture-hub-link", `../../prefectures/${areaTag}/`, `${prefectureLabel}の祭り`);
     section.hidden = false;
   }
 

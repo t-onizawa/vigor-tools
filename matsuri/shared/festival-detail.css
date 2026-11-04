@@ -1035,6 +1035,15 @@ p {
   margin-top: 10px;
 }
 
+.alternate-links-section .alternate-links {
+  margin: 0;
+  padding-left: 1.25em;
+}
+
+.alternate-links-section .alternate-links li + li {
+  margin-top: 10px;
+}
+
 #schedule-heading::before,
 #access-heading::before,
 #map-heading::before,
