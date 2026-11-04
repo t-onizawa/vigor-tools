@@ -455,6 +455,7 @@ function renderHubPage(config, items, experienceTags, cssVersion) {
   const cards = items.map((item) => renderFestivalCard(item, experienceTags)).join("\n");
   const description = config.description(count);
   const auxiliaryLink = config.auxiliaryLink ? `      ${config.auxiliaryLink}\n` : "";
+  const headerLinks = config.headerLinks ? `\n        <p class="back-to-list">${config.headerLinks.join("<br>")}</p>` : "";
   const explainer = config.explainerHtml ? `${config.explainerHtml}\n` : "";
   return `<!doctype html>
 <html lang="ja">
@@ -493,7 +494,7 @@ function renderHubPage(config, items, experienceTags, cssVersion) {
       <header class="list-header">
         <nav class="breadcrumb" aria-label="パンくずリスト"><a href="../../index.html">MATSURI</a> &gt; <span>${config.breadcrumbLabel}</span></nav>
         <h1>${config.h1}</h1>
-        <p class="header-description">${config.intro(count)}</p>
+        <p class="header-description">${config.intro(count)}</p>${headerLinks}
       </header>
 ${explainer}${auxiliaryLink}      ${renderFilterSection(config.filters)}      <p class="count-text" id="hub-count-text">${count}件を掲載中</p>
       <div class="festival-list">

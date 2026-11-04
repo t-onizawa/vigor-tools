@@ -29,12 +29,13 @@ function main() {
     const selected = sortFestivalItems(groupedItems);
     const prefecture = selected[0].festival.prefecture;
     const regionEntry = Object.entries(REGIONS).find(([, region]) => region.prefectures.includes(areaTag));
-    const regionLink = regionEntry && generatedRegions.has(regionEntry[0])
-      ? `<p class="back-to-list"><a href="../../regions/${regionEntry[0]}/">${regionEntry[1].label}の祭りをもっと見る →</a></p>`
-      : "";
-    const weekendLink = regionEntry
-      ? `<p class="back-to-list"><a href="../../this-weekend/#weekend-${regionEntry[0]}">${regionEntry[1].label}の今週末の祭りを見る →</a></p>`
-      : `<p class="back-to-list"><a href="../../this-weekend/">今週末の祭りを見る →</a></p>`;
+    const headerLinks = [];
+    if (regionEntry && generatedRegions.has(regionEntry[0])) {
+      headerLinks.push(`<a href="../../regions/${regionEntry[0]}/">${regionEntry[1].label}の祭りをもっと見る →</a>`);
+    }
+    headerLinks.push(regionEntry
+      ? `<a href="../../this-weekend/#weekend-${regionEntry[0]}">${regionEntry[1].label}の今週末の祭りを見る →</a>`
+      : `<a href="../../this-weekend/">今週末の祭りを見る →</a>`);
     const canonical = `https://vigorlab.net/matsuri/prefectures/${areaTag}/`;
     const html = renderHubPage({
       h1: `${prefecture}の祭り一覧`,
@@ -44,7 +45,7 @@ function main() {
       description: (count) => `${prefecture}で2026年に開催される祭り${count}件をまとめました。開催日程・アクセス・山車や神輿などの見どころを比較できます。`,
       jsonDescription: (count) => `${prefecture}で2026年に開催される祭り${count}件をまとめました。`,
       intro: (count) => `${prefecture}で開催される祭り${count}件を日程順にまとめました。`,
-      auxiliaryLink: regionLink + weekendLink,
+      headerLinks,
       filters: { feature: true, month: true }
     }, selected, experienceTags, cssVersion);
     writePage(`prefectures/${areaTag}`, html, selected.length, prefecture);
