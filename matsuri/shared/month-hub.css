@@ -126,3 +126,7 @@
   color: var(--muted);
   font-size: 0.78rem;
 }
+
+.list-header .back-to-list {
+  margin-top: 16px;
+}
