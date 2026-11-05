@@ -5188,3 +5188,10 @@ commit `2b5da25`／キャッシュ修正`7522f44`／`ab4f35b`）
 - 今治市・宇和島市・西条市・神社・文化庁の一次情報で名称・範囲・日程・特徴を確認。吉田祭は11月3日のお練り行事に限定し宇和島市中心部の牛鬼まつりと区別。大山祇神社の抜穂祭と産須奈大祭は別祭典。伊曽乃神社祭礼は西条まつりのうち同神社の祭礼に限定し、他神社の祭礼は含めない。確認できない特徴はnull。
 - 一次情報：https://www.city.uwajima.ehime.jp/event/branding/yosidamatsuri-r8.html 、https://kunishitei.bunka.go.jp/heritage/detail/302/00001046 、https://www.city.imabari.ehime.jp/event/?a=106 、https://kamoj.sakura.ne.jp/ 、https://www.city.imabari.ehime.jp/event/?a=133 、https://oomishimagu.jp/worship/worship03/ 、https://www.city.saijo.ehime.jp/soshiki/kanko/isonojinja-sairei.html 、https://www.city.saijo.ehime.jp/soshiki/citypromo/event-annual12.html 、https://www.city.imabari.ehime.jp/event/?a=132 、https://oomishima-j.esnet.ed.jp/plugin/blogs/show/1/2/3872 。
 - 唐津くんち（karatsu-kunchi）を全日程経過により自動ended化。sitemapに今回の新規5URLのみ追記。全国深掘り、連続0件0回、次回も全国。直近の追加は京都・兵庫・大阪・高知・徳島で同一県3営業日連続なし。
+
+## 2026-11-06 新規祭り追加（全国深掘り・香川県5件）
+
+- 候補ストックを確認し、掲載密度の低い香川県から、さぬき豊浜ちょうさ祭、観音寺祭り、大野原祭り、宇多津秋まつり、宇佐八幡宮秋季例大祭を追加。全国387→392件、香川3→8件。2026年の日程は全て経過したためended。
+- 観音寺市・宇多津町観光協会と高松市の宇佐八幡宮の一次情報で対象・日程・特徴を確認。観音寺市内の3祭りはそれぞれ豊浜地区・琴弾八幡宮・大野原八幡神社の別祭礼。宇多津は観光協会が一体の秋まつりとして案内する範囲に限定。宇佐八幡宮はさぬき市の宇佐神社と区別した。確証のない特徴はnull。
+- 一次情報：https://www.city.kanonji.kagawa.jp/soshiki/21/364.html 、https://kanonji-kanko.jp/toyohama-festival/ 、https://kanonji-kanko.jp/kanonji-festival/ 、https://kanonji-kanko.jp/onohara-festival/ 、https://utazu-kanko.jp/event/900.html 、https://www.usahachimangu.jp/ 。
+- 富士宮まつり（fujinomiya-matsuri）を全日程経過により自動ended化。sitemapに今回の新規5URLのみ追記。全国深掘り、連続0件0回、次回も全国。直近は兵庫・大阪・高知・徳島・愛媛で同一県3営業日連続なし。

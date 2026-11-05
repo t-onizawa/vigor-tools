@@ -3094,5 +3094,45 @@ const SEARCH_INDEX = [
     "prefecture": "愛媛県",
     "city": "今治市",
     "firstDate": "2026-10-04"
+  },
+  {
+    "slug": "sanuki-toyohama-chohsa-matsuri",
+    "name": "さぬき豊浜ちょうさ祭",
+    "officialName": "さぬき豊浜ちょうさ祭",
+    "prefecture": "香川県",
+    "city": "観音寺市",
+    "firstDate": "2026-10-09"
+  },
+  {
+    "slug": "kanonji-matsuri",
+    "name": "観音寺祭り",
+    "officialName": "琴弾八幡宮秋季大祭",
+    "prefecture": "香川県",
+    "city": "観音寺市",
+    "firstDate": "2026-10-16"
+  },
+  {
+    "slug": "onohara-matsuri",
+    "name": "大野原祭り",
+    "officialName": "大野原八幡神社秋季例大祭",
+    "prefecture": "香川県",
+    "city": "観音寺市",
+    "firstDate": "2026-10-16"
+  },
+  {
+    "slug": "utazu-aki-matsuri",
+    "name": "宇多津秋まつり",
+    "officialName": "宇多津秋まつり",
+    "prefecture": "香川県",
+    "city": "宇多津町",
+    "firstDate": "2026-10-23"
+  },
+  {
+    "slug": "takamatsu-usa-hachimangu-aki-reitaisai",
+    "name": "宇佐八幡宮秋季例大祭",
+    "officialName": "宇佐八幡宮秋季例大祭",
+    "prefecture": "香川県",
+    "city": "高松市",
+    "firstDate": "2026-10-03"
   }
 ];
