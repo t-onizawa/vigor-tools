@@ -2940,4 +2940,10 @@
     <loc>https://vigorlab.net/matsuri/festivals/takamatsu-usa-hachimangu-aki-reitaisai/</loc>
     <lastmod>2026-11-06</lastmod><changefreq>yearly</changefreq><priority>0.7</priority>
   </url>
+  <url>
+    <loc>https://vigorlab.net/tools/work/leak-prevention/</loc>
+    <lastmod>2026-11-06</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
 </urlset>

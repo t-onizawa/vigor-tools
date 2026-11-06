@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="情報漏洩を「起こさないため」の基本対策を、IT担当者がいない小さな会社・お店向けに言い換えたチェックリスト。全22項目、専門用語なし。国家サイバー統括室の注意喚起（2026年11月）とIPAガイドライン第4.0版に基づきます。">
+<title>情報漏洩を防ぐ基本対策チェック — VIGOR TOOLS</title>
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="VIGOR TOOLS">
+<meta property="og:title" content="情報漏洩を防ぐ基本対策チェック — VIGOR TOOLS">
+<meta property="og:description" content="情報漏洩を「起こさないため」の基本対策を、IT担当者がいない小さな会社・お店向けに言い換えたチェックリスト。全22項目、専門用語なし。国家サイバー統括室の注意喚起（2026年11月）とIPAガイドライン第4.0版に基づきます。">
+<meta property="og:url" content="https://vigorlab.net/tools/work/leak-prevention/">
+<meta property="og:image" content="https://vigorlab.net/assets/brand/og-image.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="情報漏洩を防ぐ基本対策チェック — VIGOR TOOLS">
+<meta name="twitter:description" content="情報漏洩を「起こさないため」の基本対策を、IT担当者がいない小さな会社・お店向けに言い換えたチェックリスト。全22項目、専門用語なし。国家サイバー統括室の注意喚起（2026年11月）とIPAガイドライン第4.0版に基づきます。">
+<meta name="twitter:image" content="https://vigorlab.net/assets/brand/og-image.png">
+<link rel="canonical" href="https://vigorlab.net/tools/work/leak-prevention/">
+<link rel="icon" href="/assets/brand/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" type="image/png" href="/favicon-48x48.png" sizes="48x48">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="manifest" href="/assets/brand/site.webmanifest">
+<script src="/assets/analytics.js" defer></script>
+<style>
+:root{
+--ink:#1f2430; --sub:#5b6472; --line:#e3e6ec; --bg:#f6f7f9;
+--red:#b3261e; --amber:#b45309; --gold:#a16207; --blue:#1d4ed8; --slate:#475569;
+--teal:#0f766e; --plum:#6d28d9;
+--ok:#15803d;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);
+font-family:"Hiragino Kaku Gothic ProN","Hiragino Sans","Noto Sans JP",-apple-system,"Segoe UI",sans-serif;
+line-height:1.75;font-size:16px;-webkit-text-size-adjust:100%}
+.wrap{max-width:780px;margin:0 auto;padding:0 16px 64px}
+.breadcrumb{display:flex;align-items:center;gap:.4rem;flex-wrap:wrap;font-size:12.5px;color:var(--sub);padding-top:18px}
+.breadcrumb a{color:var(--sub);text-decoration:none}
+.breadcrumb a:hover{color:var(--ink)}
+.breadcrumb.sep{color:#9aa3b2}
+header.hero{padding:18px 0 8px}
+.kicker{font-size:13px;font-weight:700;letter-spacing:.12em;color:var(--teal)}
+h1{font-size:28px;line-height:1.4;margin:8px 0 12px}
+.lead{color:var(--sub);font-size:15.5px;margin:0 0 6px}
+.lead strong{color:var(--ink)}
+.progressbar{position:sticky;top:0;z-index:20;background:rgba(255,255,255,.94);
+backdrop-filter:blur(6px);border-bottom:1px solid var(--line);
+margin:18px -16px 26px;padding:10px 16px}
+.progressbar.row{display:flex;justify-content:space-between;align-items:baseline;font-size:14px}
+.progressbar.count{font-weight:700}
+.bar{height:8px;background:#e8ebf0;border-radius:99px;overflow:hidden;margin-top:6px}
+.bar i{display:block;height:100%;width:0;background:var(--ok);border-radius:99px;transition:width.25s ease}
+section.phase{background:#fff;border:1px solid var(--line);border-radius:14px;
+padding:20px 18px 10px;margin:0 0 22px}
+.phase-head{display:flex;align-items:center;gap:12px;margin:0 0 6px}
+.phase-badge{flex:none;font-weight:800;font-size:14px;color:#fff;border-radius:8px;padding:4px 10px}
+.p1.phase-badge{background:var(--red)}.p2.phase-badge{background:var(--amber)}
+.p3.phase-badge{background:var(--gold)}.p4.phase-badge{background:var(--blue)}
+.p5.phase-badge{background:var(--slate)}.p6.phase-badge{background:var(--teal)}
+.p7.phase-badge{background:var(--plum)}
+.phase-head h2{font-size:19px;margin:0}
+.phase-note{color:var(--sub);font-size:14px;margin:0 0 12px}
+label.task{display:flex;gap:12px;align-items:flex-start;background:#fff;
+border:1px solid var(--line);border-radius:10px;padding:12px 14px;margin:0 0 9px;cursor:pointer}
+label.task:hover{border-color:#c9cfda}
+label.task input{flex:none;width:22px;height:22px;margin-top:4px;accent-color:var(--ok);cursor:pointer}
+label.task.t{font-weight:600}
+label.task.why{display:block;font-weight:400;font-size:13.5px;color:var(--sub);margin-top:3px}
+label.task.done{background:#f2fbf5;border-color:#bbe6c6}
+label.task.done.t{color:#7a8494;text-decoration:line-through}
+.donts{background:#fdf3f2;border:1px solid #f3cfcb;border-radius:14px;padding:20px 18px 12px;margin:0 0 22px}
+.donts h2{font-size:19px;margin:0 0 10px;color:var(--red)}
+.donts ul{list-style:none;margin:0;padding:0}
+.donts li{padding:8px 0 8px 30px;position:relative;border-bottom:1px dashed #eec5c0;font-size:15.5px}
+.donts li:last-child{border-bottom:none}
+.donts li::before{content:"✕";position:absolute;left:2px;top:8px;color:var(--red);font-weight:800}
+.donts.why{color:var(--sub);font-size:13.5px}
+.card{background:#fff;border:1px solid var(--line);border-radius:14px;padding:20px 18px 12px;margin:0 0 22px}
+.card h2{font-size:19px;margin:0 0 10px}
+.card h3{font-size:16px;margin:18px 0 6px}
+.card p,.card li{font-size:15.5px}
+.card ul,.card ol{margin:6px 0 12px;padding-left:22px}
+.note{font-size:13.5px;color:var(--sub)}
+.note li{margin:4px 0}
+.actions{display:flex;gap:10px;flex-wrap:wrap;margin:26px 0 6px}
+button{font-size:15px;font-weight:700;border-radius:10px;padding:12px 18px;cursor:pointer;border:1px solid var(--ink)}
+button.primary{background:var(--ink);color:#fff}
+button.ghost{background:#fff;color:var(--ink);border-color:#c9cfda}
+footer{color:var(--sub);font-size:13px;margin-top:34px;border-top:1px solid var(--line);padding-top:16px}
+footer a{color:var(--blue)}
+.related{margin-top:30px}
+.related h2{font-size:17px;margin:0 0 4px}
+.related.sub{color:var(--sub);font-size:14px;margin:0 0 12px}
+.related a.item{display:flex;align-items:center;gap:10px;background:#fff;border:1px solid var(--line);border-radius:10px;padding:12px 14px;margin:0 0 9px;color:var(--ink);text-decoration:none}
+.related a.item:hover{border-color:#c9cfda}
+.related.badge{flex:none;font-size:12px;font-weight:700;background:#eef1f6;border-radius:6px;padding:2px 8px;color:var(--slate)}
+.related.name{font-weight:600}
+.related.arrow{margin-left:auto;color:var(--sub)}
+@media (max-width:560px){ h1{font-size:24px}.wrap{padding:0 12px 48px}.progressbar{margin:14px -12px 20px;padding:10px 12px}}
+@media print{
+body{background:#fff;font-size:11pt;line-height:1.6}
+.wrap{max-width:none;padding:0}
+.progressbar,.actions,.breadcrumb,.related{display:none!important}
+section.phase,.card,.donts{break-inside:avoid;border-color:#bbb;margin-bottom:12px;padding:12px 12px 4px}
+label.task{padding:7px 9px;margin-bottom:5px}
+header.hero{padding:0 0 4px}
+h1{font-size:20pt}
+a{color:var(--ink);text-decoration:none}
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<nav class="breadcrumb">
+<a href="../../">VIGOR TOOLS</a>
+<span class="sep">›</span>
+<a href="../">仕事</a>
+<span class="sep">›</span>
+<span>情報漏洩を防ぐ基本対策</span>
+</nav>
+
+<header class="hero">
+<div class="kicker">中小企業・小さなお店の経営者の方へ</div>
+<h1>情報漏洩を「起こさないため」の<br>基本対策チェック</h1>
+<p class="lead">漏洩が<strong>起きてからでは遅い対策</strong>を、平常時に確認するためのチェックです。国家サイバー統括室の注意喚起（2026年11月）とIPAのガイドラインを、<strong>小さな会社で実行できる言い方</strong>に置き換えました。</p>
+<p class="lead">専門用語は使っていません。「分からない」が分かっただけでも前進です。その項目は、そのまま委託先や専門家に聞くリストとして使えます。チェックはこのページに保存され、送信されることはありません。</p>
+</header>
+
+<div class="progressbar" aria-live="polite">
+<div class="row"><span>進みぐあい</span><span class="count"><span id="doneCount">0</span> / 22 項目</span></div>
+<div class="bar"><i id="barFill"></i></div>
+</div>
+
+<section class="phase p1">
+<div class="phase-head"><span class="phase-badge">STEP 1</span><h2>公開しているサイト・アプリがある場合（ここから）</h2></div>
+<p class="phase-note">最近の漏洩事件の多くは、公開しているサイトやアプリの弱点から入られています。ホームページやネットショップ、予約サイトなどがある会社は、ここが最初です。</p>
+
+<label class="task"><input type="checkbox" class="cb"><span><span class="t">サイト・アプリと、その部品（プラグインやテーマなど）を最新に保つ</span><span class="why">理由：古い部分の弱点が、一番の入口になっているから。本体だけでなく、追加した部品も含めて更新します</span></span></label>
+
+<label class="task"><input type="checkbox" class="cb"><span><span class="t">管理画面のログインを強くする</span><span class="why">長く複雑なパスワードに加えて、二段階認証を必ず入れます。二段階認証は、認証アプリやパスキーを優先してください（SMSは「無いより良い」という位置づけです）</span></span></label>
+
+<label class="task"><input type="checkbox" class="cb"><span><span class="t">公開しているサイト・アプリ・管理画面の一覧を作る</span><span class="why">理由：忘れられた古いページや、もう使っていない管理画面が放置されがちだから。存在を忘れたものは守れません。一覧には、名前・管理している人・更新の状況を書きます</span></span></label>
+
+<label class="task"><input type="checkbox" class="cb"><span><span class="t">アプリの中に、鍵になる情報（パスワードや接続情報）を埋め込んでいないか、制作会社に確認する</span><span class="why">理由：公開されたアプリを調べられて、中の情報から会社の仕組みに入られる手口が確認されているから。自分では判断できないので、作った会社に聞く項目です</span></span></label>
+</section>
+
+<section class="phase p2">
+<div class="phase-head"><span class="phase-badge">STEP 2</span><h2>会社のパソコン・基本の守り</h2></div>
+<p class="phase-note">特別なことをしなくても、基本をそろえるだけで入口は大きく減ります。</p>
+
+<label class="task"><input type="checkbox" class="cb"><span><span class="t">ソフトを最新に保つ</span><span class="why">パソコンやスマホの基本ソフトも、仕事で使うソフトも。更新のお知らせが出たら先延ばしせず、自動更新にできるものは自動にします</span></span></label>
+
+<label class="task"><input type="checkbox" class="cb"><span><span class="t">サポートが終わったソフト・機器を使い続けない</span><span class="why">理由：守りの更新が止まったものは、弱点が残り続けるから。どうしてもすぐ替えられない場合は、ネットにつなげない使い方に切り替え、買い替えの時期を決めてください</span></span></label>
+
+<label class="task"><input type="checkbox" class="cb"><span><span class="t">ウイルス対策ソフトを入れ、警告を放置しない</span><span class="why">警告が出たら「よく分からないから閉じる」にせず、委託先や専門家に相談します</span></span></label>
+
+<label class="task"><input type="checkbox" class="cb"><span><span class="t">バックアップを取り、戻せるか試しておく</span><span class="why">大切な情報のコピーを、本体とは離れた場所にも置きます。取るだけでなく、実際に戻せるかを一度試してください。戻せないバックアップは、いざというとき役に立ちません</span></span></label>
+</section>
+
+<section class="phase p3">
+<div class="phase-head"><span class="phase-badge">STEP 3</span><h2>アカウントと権限</h2></div>
+<p class="phase-note">「入り方」の管理です。漏洩の多くは、盗まれたパスワードや、放置されたアカウントから広がります。</p>
+
+<label class="task"><input type="checkbox" class="cb"><span><span class="t">パスワードは長く、使い回さない</span><span class="why">サービスごとに変え、管理アプリで管理します。「全部同じ」が一番危ない状態です</span></span></label>
+
+<label class="task"><input type="checkbox" class="cb"><span><span class="t">二段階認証を有効にする</span><span class="why">特に、管理者のアカウント、メール、クラウドサービスを優先します</span></span></label>
+
+<label class="task"><input type="checkbox" class="cb"><span><span class="t">使っていないアカウントや権限を消す</span><span class="why">退職した人の分、もう使っていないサービスへの入り方も含みます</span></span></label>
+
+<label class="task"><input type="checkbox" class="cb"><span><span class="t">管理者権限を持つ人を絞り、普段の仕事用と分ける</span><span class="why">理由：何でもできる入り方を普段から使っていると、それを取られたときの被害が最大になるから</span></span></label>
+</section>
+
+<section class="phase p4">
+<div class="phase-head"><span class="phase-badge">STEP 4</span><h2>機器・ネットワークとクラウド</h2></div>
+<p class="phase-note">会社の「出入口」と、クラウドに置いた情報の見え方を確認します。</p>
+
+<label class="task"><input type="checkbox" class="cb"><span><span class="t">事務所のルーターなどの初期パスワードを変更し、最新に保つ</span><span class="why">買ったときのままのパスワードは、事実上かかっていないのと同じです</span></span></label>
+
+<label class="task"><input type="checkbox" class="cb"><span><span class="t">外出先や自宅から会社の仕組みに入る接続（リモート接続）を見直す</span><span class="why">使っていない接続は止め、使うものは二段階認証を入れます</span></span></label>
+
+<label class="task"><input type="checkbox" class="cb"><span><span class="t">クラウドの共有設定を確認する</span><span class="why">共有リンクが「リンクを知っている誰でも見られる」状態になっていないか。お客様の情報が入ったファイルは特に確認します</span></span></label>
+</section>
+
+<section class="phase p5">
+<div class="phase-head"><span class="phase-badge">STEP 5</span><h2>情報の持ち方</h2></div>
+<p class="phase-note">持っている情報が少ないほど、漏れたときの被害も、守る手間も小さくなります。</p>
+
+<label class="task"><input type="checkbox" class="cb"><span><span class="t">使い終わったお客様の情報を消す</span><span class="why">理由：持っている情報が多いほど、漏れたときの被害も、守る手間も大きくなるから。注文や対応が終わった情報の保存期間を決めてください</span></span></label>
+
+<label class="task"><input type="checkbox" class="cb"><span><span class="t">お客様の情報に触れる人を、必要な範囲に絞る</span><span class="why">全員が全部見られる状態にしない。誰が・何のために触れるのかが決まっている状態を作ります</span></span></label>
+</section>
+
+<section class="phase p6">
+  <div class="phase-head"><span class="phase-badge">STEP 6</span><h2>人と委託先</h2></div>
+  <p class="phase-note">仕組みだけでなく、「人」と「任せている相手」も守りの一部です。</p>
+
+  <label class="task"><input type="checkbox" class="cb"><span><span class="t">怪しいメールや連絡への対応ルールと、報告先を決めて共有する</span><span class="why">迷ったら開かず、決めた相手に知らせる。おかしいと気づいた人が、すぐ誰かに言えることが大事です</span></span></label>
+
+  <label class="task"><input type="checkbox" class="cb"><span><span class="t">委託先に、対策の中身を確認する</span><span class="why">「対策していますか」ではなく、更新の管理の仕方、管理者のログインの守り方、弱点の検査、問題を見つけたときの報告と直し方を聞きます。答えが返ってこない場合は、それ自体が確認結果です</span></span></label>
+
+  <label class="task"><input type="checkbox" class="cb"><span><span class="t">委託先との契約に「漏れたときの連絡」と「お仕事終了後のデータ削除」を入れる</span><span class="why">理由：起きてから揉めないため。渡した情報が相手の会社に残り続けないようにします</span></span></label>
+</section>
+
+<section class="phase p7">
+  <div class="phase-head"><span class="phase-badge">STEP 7</span><h2>もしもの備え</h2></div>
+  <p class="phase-note">予防をしても、起きる可能性はゼロにはなりません。起きた日に慌てないための備えです。</p>
+
+  <label class="task"><input type="checkbox" class="cb"><span><span class="t">連絡先を平常時に書いておく</span><span class="why">委託先、相談窓口、社内の責任者。発生時用の「<a href="../leak-response/">情報漏洩が起きたかもしれないときの初動フロー</a>」にある記入欄とセットで使います。国の相談窓口＝IPA 不正アクセス特別相談窓口 03-6759-5760（平日9:30〜17:30）</span></span></label>
+
+  <label class="task"><input type="checkbox" class="cb"><span><span class="t">見直しの日を決める</span><span class="why">年1〜2回の定期見直しに加えて、退職・機器の交換・サービスの変更・大きな弱点のニュースがあったときにも見直します</span></span></label>
+</section>
+
+<section class="donts">
+  <h2>やってはいけないこと</h2>
+  <ul>
+    <li><strong>更新を先延ばしにし続ける</strong><span class="why">――古いままの部分が、一番の入口になります</span></li>
+    <li><strong>サポートが終わったソフト・機器を、そのままネットにつないで使い続ける</strong></li>
+    <li><strong>パスワードを会社全体で共有したり、付箋や表計算ファイルに書いて回す</strong></li>
+    <li><strong>「委託先に任せてあるから大丈夫」と確認しない</strong><span class="why">――任せることと、確認しないことは違います</span></li>
+  </ul>
+</section>
+
+<div class="actions noprint">
+  <button class="primary" type="button" onclick="window.print()">印刷する（事務所に貼っておく用）</button>
+  <button class="ghost" type="button" id="resetBtn">チェックをすべて外す</button>
+</div>
+
+<section class="card">
+  <h2>注意書き</h2>
+  <ul class="note">
+    <li>このチェックは、公的機関の資料を参考に、小規模事業者が取り組みやすい基本項目を独自に整理したものです。原典の全項目や技術的要件を網羅するものではなく、これらを実施すれば漏洩しない、という保証をするものでもありません。</li>
+    <li>専門的な仕組み（専門の監視体制や、公開前の本格的な脆弱性診断など）が必要な場合は、専門家や委託先に相談してください。</li>
+    <li>既に漏洩が起きた、起きたかもしれない場合は、「<a href="../leak-response/">情報漏洩が起きたかもしれないときの初動フロー</a>」（全28項目）を参照してください。</li>
+    <li>相談窓口の電話番号・受付時間は2026年11月に公式ページで確認した情報です。変わっている場合があるため、利用時に各機関のページで再確認してください。</li>
+  </ul>
+  <h3>出典（公式情報）</h3>
+  <ul class="note">
+    <li>内閣官房 国家サイバー統括室「<a href="https://www.cyber.go.jp/pdf/press/261105_taiou.pdf" target="_blank" rel="noopener">個人情報の漏えい等につながる不正アクセスへの対策について ～ウェブサイトやモバイルアプリに関する基本的な対策の徹底～</a>」（2026年11月5日）――このチェックは、この注意喚起の内容を踏まえ、小さな会社向けに言い換えたものです</li>
+    <li>IPA「<a href="https://www.ipa.go.jp/security/guide/sme/about.html" target="_blank" rel="noopener">中小企業の情報セキュリティ対策ガイドライン 第4.0版</a>」（2026年3月27日公開）</li>
+    <li>IPA「<a href="https://www.ipa.go.jp/security/guide/vuln/guideforsmbguideline.html" target="_blank" rel="noopener">中小企業のためのセキュリティインシデント対応の手引き</a>」（もしもの備え・相談窓口）</li>
+  </ul>
+</section>
+
+<section class="related">
+  <h2>情報漏洩対策シリーズ</h2>
+  <p class="sub">起きる前と、起きたあと。あわせて使えます。</p>
+  <a class="item" href="../leak-response/"><span class="badge">発生時</span><span class="name">情報漏洩が起きたかもしれないときの初動フロー（全28項目）</span><span class="arrow">→</span></a>
+  <a class="item" href="../handover-check/"><span class="badge">チェックリスト</span><span class="name">仕事の引き継ぎ漏れチェック</span><span class="arrow">→</span></a>
+  <a class="item" href="../../"><span class="badge">VIGOR TOOLS</span><span class="name">ツール一覧へ戻る</span><span class="arrow">→</span></a>
+</section>
+
+<footer>
+  情報漏洩を防ぐ基本対策チェック ― 国家サイバー統括室の注意喚起とIPAの公式情報に基づき、小さな会社向けに言い換えて作成しました。
+</footer>
+
+</div>
+
+<script src="/tools/shared/tool-events.js"></script>
+<script>
+(function(){
+  var KEY='leakprev-v1';
+  var boxes=Array.prototype.slice.call(document.querySelectorAll('input.cb'));
+  var countEl=document.getElementById('doneCount');
+  var barEl=document.getElementById('barFill');
+  function save(){
+    var state={checks:boxes.map(function(b){return b.checked;})};
+    try{ localStorage.setItem(KEY, JSON.stringify(state)); }catch(e){}
+  }
+  function paint(){
+    var done=0;
+    boxes.forEach(function(b){
+      if(b.checked) done++;
+      b.closest('label.task').classList.toggle('done', b.checked);
+    });
+    countEl.textContent=done;
+    barEl.style.width=(boxes.length? (done/boxes.length*100):0)+'%';
+  }
+  try{
+    var raw=localStorage.getItem(KEY);
+    if(raw){
+      var s=JSON.parse(raw);
+      if(s.checks) boxes.forEach(function(b,i){ b.checked=!!s.checks[i]; });
+    }
+  }catch(e){}
+  boxes.forEach(function(b){ b.addEventListener('change', function(){ paint(); save(); if(window.VigorEvents && boxes.every(function(x){ return x.checked; })) VigorEvents.complete(); }); });
+  document.getElementById('resetBtn').addEventListener('click', function(){
+    if(!confirm('チェックをすべて外しますか？')) return;
+    boxes.forEach(function(b){ b.checked=false; });
+    paint(); save();
+  });
+  paint();
+})();
+</script>
+</body>
+</html>
