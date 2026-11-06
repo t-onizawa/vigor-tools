@@ -5195,3 +5195,10 @@ commit `2b5da25`／キャッシュ修正`7522f44`／`ab4f35b`）
 - 観音寺市・宇多津町観光協会と高松市の宇佐八幡宮の一次情報で対象・日程・特徴を確認。観音寺市内の3祭りはそれぞれ豊浜地区・琴弾八幡宮・大野原八幡神社の別祭礼。宇多津は観光協会が一体の秋まつりとして案内する範囲に限定。宇佐八幡宮はさぬき市の宇佐神社と区別した。確証のない特徴はnull。
 - 一次情報：https://www.city.kanonji.kagawa.jp/soshiki/21/364.html 、https://kanonji-kanko.jp/toyohama-festival/ 、https://kanonji-kanko.jp/kanonji-festival/ 、https://kanonji-kanko.jp/onohara-festival/ 、https://utazu-kanko.jp/event/900.html 、https://www.usahachimangu.jp/ 。
 - 富士宮まつり（fujinomiya-matsuri）を全日程経過により自動ended化。sitemapに今回の新規5URLのみ追記。全国深掘り、連続0件0回、次回も全国。直近は兵庫・大阪・高知・徳島・愛媛で同一県3営業日連続なし。
+
+## 2026-11-07 新規祭り追加（全国深掘り・岩手県4件／青森県1件）
+
+- 候補ストック空。掲載密度の低い岩手・青森を対象に、一戸まつり、軽米秋まつり、大槌まつり、土沢まつり、さんのへ秋まつりを追加。全国392→397件、岩手4→8件、青森4→5件。2026年日程は全て経過したためended。
+- 岩手県・青森県公式観光サイトで探索し、一戸町・軽米町観光協会・大槌町観光交流協会・花巻商工会議所・三戸町の一次情報を確認。一戸・軽米・三戸は各町の別祭り、土沢は花巻市東和町の祭りで花巻中心部の花巻まつりと別。大槌は観光協会が一体の祭りとして扱う二社の例大祭に限定。根拠のない分類はnull。
+- 一次情報：https://www.town.ichinohe.iwate.jp/soshikikarasagasu/shokokankoka/1/394.html 、https://www.karumai-kanko.jp/14092 、https://www.karumai-kanko.jp/13384 、https://otsuchi-ta.com/event-info/?p=11160 、https://hanamaki-cci.or.jp/?p=5419 、https://www.jcci.or.jp/news/news/2026/0916141210.html 、https://www.town.sannohe.aomori.jp/soshiki/machidukuri/kankou/matsuri_ibento/4355.html 。
+- 全国初期掲載後の深掘り。sitemapに今回の5 URLのみ追記。連続0件0回、次回も全国。直近は大阪・高知・徳島・愛媛・香川で同一県3営業日連続なし。hard issueは0件、既知の神田祭heuristicは保留。

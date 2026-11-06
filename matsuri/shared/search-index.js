@@ -3134,5 +3134,45 @@ const SEARCH_INDEX = [
     "prefecture": "香川県",
     "city": "高松市",
     "firstDate": "2026-10-03"
+  },
+  {
+    "slug": "ichinohe-matsuri",
+    "name": "一戸まつり",
+    "officialName": "八坂・稲荷神社例大祭一戸まつり",
+    "prefecture": "岩手県",
+    "city": "一戸町",
+    "firstDate": "2026-08-28"
+  },
+  {
+    "slug": "karumai-aki-matsuri",
+    "name": "軽米秋まつり",
+    "officialName": "軽米秋まつり",
+    "prefecture": "岩手県",
+    "city": "軽米町",
+    "firstDate": "2026-09-19"
+  },
+  {
+    "slug": "otsuchi-matsuri",
+    "name": "大槌まつり",
+    "officialName": "大槌祭り",
+    "prefecture": "岩手県",
+    "city": "大槌町",
+    "firstDate": "2026-09-18"
+  },
+  {
+    "slug": "tsuchizawa-matsuri",
+    "name": "土沢まつり",
+    "officialName": "土沢まつり",
+    "prefecture": "岩手県",
+    "city": "花巻市",
+    "firstDate": "2026-09-20"
+  },
+  {
+    "slug": "sannohe-aki-matsuri",
+    "name": "さんのへ秋まつり",
+    "officialName": "さんのへ秋まつり",
+    "prefecture": "青森県",
+    "city": "三戸町",
+    "firstDate": "2026-09-25"
   }
 ];
