@@ -39,11 +39,11 @@ test("見出しは本体と日付span・囲み括弧なし", () => {
     const { start, end } = page.weekendRange(asOf);
     const short = (date) => date.split("-").slice(1).map(Number).join("/");
     const dates = `${short(start)}(土)〜${short(end)}(日)`;
-    assert(html.includes(`<h1>今週末の祭り <span class="weekend-title-dates">${dates}</span></h1>`));
+    assert(html.includes(`<h1>関東・関西・全国の今週末の祭り <span class="weekend-title-dates">${dates}</span></h1>`));
     assert(!/<h1>[^<]*（/.test(html));
     assert(html.includes(".weekend-title-dates{display:block;"));
     assert(html.includes('white-space:nowrap'));
-    assert(html.includes('<title>今週末の祭り｜開催確認済みの祭りを探す | MATSURI</title>'));
+    assert(html.includes('<title>今週末の祭り｜関東・関西・全国の開催確認済みを地域別に | MATSURI</title>'));
   }
 });
 test("日曜・月曜・JST境界", () => {

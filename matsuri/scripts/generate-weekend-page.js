@@ -5,8 +5,8 @@ const path = require("path");
 const { MONTHS, REGIONS, MATSURI_ROOT, loadHubData, renderMonthPage } = require("./lib/hub-shared");
 const OUTPUT = path.join(MATSURI_ROOT, "this-weekend/index.html");
 const CANONICAL = "https://vigorlab.net/matsuri/this-weekend/";
-const TITLE = "今週末の祭り｜開催確認済みの祭りを探す | MATSURI";
-const DESCRIPTION = "今週末に開催が確認できた全国の祭りを、日程・地域・見どころ・駐車場情報から探せます。近日開催の祭りや月別・地域別の探し方も紹介します。";
+const TITLE = "今週末の祭り｜関東・関西・全国の開催確認済みを地域別に | MATSURI";
+const DESCRIPTION = "関東・関西（近畿）・東北・九州など、今週末に開催が確認できた祭りを地域別に一覧。日程・見どころ・駐車場情報つき。公式で日付を確認できた祭りだけを毎日更新しています。";
 const escape = (s) => String(s ?? "").replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
 
 function todayJst(now = new Date()) {
@@ -137,7 +137,7 @@ function renderPage(model, experienceTags, cssVersion, updatedDate) {
   const featureLinks = [["dashi", "山車"], ["mikoshi", "神輿"], ["odori", "踊り"], ["hikimawashi", "曳き回し"], ["night", "夜が見どころ"]].map(([slug, label]) => `<a href="../features/${slug}/">${label}</a>`).join(" ／ ");
   const main = `<main class="page-shell" data-weekend-start="${model.range.start}" data-weekend-end="${model.range.end}">
 <!-- 自動生成: matsuri/scripts/generate-weekend-page.js（手動編集せず生成元を更新） -->
-<header class="list-header"><nav class="breadcrumb" aria-label="パンくずリスト"><a href="../">MATSURI</a> &gt; <span>今週末の祭り</span></nav><h1>今週末の祭り <span class="weekend-title-dates">${shortDate(model.range.start)}(土)〜${shortDate(model.range.end)}(日)</span></h1><p id="weekend-lead" class="header-description">${lead}</p></header>
+<header class="list-header"><nav class="breadcrumb" aria-label="パンくずリスト"><a href="../">MATSURI</a> &gt; <span>今週末の祭り</span></nav><h1>関東・関西・全国の今週末の祭り <span class="weekend-title-dates">${shortDate(model.range.start)}(土)〜${shortDate(model.range.end)}(日)</span></h1><p id="weekend-lead" class="header-description">${lead}</p></header>
 <p id="weekend-stale-banner" role="status" hidden>この情報は更新待ちです。最新の祭りは月別・地域別からご覧ください。</p>
 ${weekendBlock}
 ${section("upcoming-section", "開催中・もうすぐ開催", model.upcoming)}
