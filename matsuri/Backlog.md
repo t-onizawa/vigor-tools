@@ -5202,3 +5202,10 @@ commit `2b5da25`／キャッシュ修正`7522f44`／`ab4f35b`）
 - 岩手県・青森県公式観光サイトで探索し、一戸町・軽米町観光協会・大槌町観光交流協会・花巻商工会議所・三戸町の一次情報を確認。一戸・軽米・三戸は各町の別祭り、土沢は花巻市東和町の祭りで花巻中心部の花巻まつりと別。大槌は観光協会が一体の祭りとして扱う二社の例大祭に限定。根拠のない分類はnull。
 - 一次情報：https://www.town.ichinohe.iwate.jp/soshikikarasagasu/shokokankoka/1/394.html 、https://www.karumai-kanko.jp/14092 、https://www.karumai-kanko.jp/13384 、https://otsuchi-ta.com/event-info/?p=11160 、https://hanamaki-cci.or.jp/?p=5419 、https://www.jcci.or.jp/news/news/2026/0916141210.html 、https://www.town.sannohe.aomori.jp/soshiki/machidukuri/kankou/matsuri_ibento/4355.html 。
 - 全国初期掲載後の深掘り。sitemapに今回の5 URLのみ追記。連続0件0回、次回も全国。直近は大阪・高知・徳島・愛媛・香川で同一県3営業日連続なし。hard issueは0件、既知の神田祭heuristicは保留。
+
+## 2026-11-08 新規祭り追加（全国深掘り・青森県5件）
+
+- 候補ストック空。掲載密度の低い青森県から、十和田市秋まつり、しちのへ秋まつり、六戸秋まつり、三沢まつり、名川秋まつりを追加。全国397→402件、青森5→10件。2026年の日程は全て経過したためended。
+- 十和田市・七戸町・六戸町・三沢市観光協会・南部町観光協会／県の一次情報を確認。5件はそれぞれ別市町の祭り。名川秋まつりは南部町剣吉地区を対象とし、三戸町のさんのへ秋まつりと区別。名川の山車上の踊りは県データで確認し、他の4件は未確認。
+- 一次情報：https://www.city.towada.lg.jp/kanko/event/akimatsuri.html 、https://towada-akimatsuri.info/ 、https://www.town.shichinohe.lg.jp/gyosei/tourism-events/event/post-221.html 、https://www.town.rokunohe.aomori.jp/docs/2026070400012/ 、https://kite-misawa.com/event/misawamatsuri/ 、https://nanbu-kanko.net/?p=743 、https://opendata.pref.aomori.lg.jp/dataset/2013/resource/24477/content.html 。
+- のへじ祇園まつりは公式の2026年8月23日に対応する曜日の記載が食い違うため、詳細確認待ち。北本まつり宵まつり（kitamoto-yoi-matsuri）を全日程経過により自動ended化。sitemapに今回の5 URLのみ追記。全国深掘り、連続0件0回、次回も全国。直近は高知・徳島・愛媛・香川・岩手／青森で、青森は今回を含め2実行連続。

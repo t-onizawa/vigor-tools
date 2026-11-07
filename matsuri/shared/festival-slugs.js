@@ -54,3 +54,4 @@ FESTIVAL_SLUGS.push("ishii-noryo-natsu-matsuri", "shishikui-hachiman-jinja-matsu
 FESTIVAL_SLUGS.push("uwajima-yoshida-oneri", "kikuma-otouma-matsuri", "oyamazumi-nukiho-sai", "isono-jinja-sairei", "oyamazumi-ubusuna-taisai");
 FESTIVAL_SLUGS.push("sanuki-toyohama-chohsa-matsuri", "kanonji-matsuri", "onohara-matsuri", "utazu-aki-matsuri", "takamatsu-usa-hachimangu-aki-reitaisai");
 FESTIVAL_SLUGS.push("ichinohe-matsuri", "karumai-aki-matsuri", "otsuchi-matsuri", "tsuchizawa-matsuri", "sannohe-aki-matsuri");
+FESTIVAL_SLUGS.push("towada-aki-matsuri", "shichinohe-aki-matsuri", "rokunohe-aki-matsuri", "misawa-matsuri", "nagawa-aki-matsuri");

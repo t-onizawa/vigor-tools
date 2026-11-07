@@ -3174,5 +3174,45 @@ const SEARCH_INDEX = [
     "prefecture": "青森県",
     "city": "三戸町",
     "firstDate": "2026-09-25"
+  },
+  {
+    "slug": "towada-aki-matsuri",
+    "name": "十和田市秋まつり",
+    "officialName": "十和田市秋まつり",
+    "prefecture": "青森県",
+    "city": "十和田市",
+    "firstDate": "2026-09-04"
+  },
+  {
+    "slug": "shichinohe-aki-matsuri",
+    "name": "しちのへ秋まつり",
+    "officialName": "しちのへ秋まつり",
+    "prefecture": "青森県",
+    "city": "七戸町",
+    "firstDate": "2026-09-04"
+  },
+  {
+    "slug": "rokunohe-aki-matsuri",
+    "name": "六戸秋まつり",
+    "officialName": "六戸秋まつり",
+    "prefecture": "青森県",
+    "city": "六戸町",
+    "firstDate": "2026-09-04"
+  },
+  {
+    "slug": "misawa-matsuri",
+    "name": "三沢まつり",
+    "officialName": "三沢まつり",
+    "prefecture": "青森県",
+    "city": "三沢市",
+    "firstDate": "2026-08-20"
+  },
+  {
+    "slug": "nagawa-aki-matsuri",
+    "name": "名川秋まつり",
+    "officialName": "名川秋まつり",
+    "prefecture": "青森県",
+    "city": "南部町",
+    "firstDate": "2026-09-05"
   }
 ];
