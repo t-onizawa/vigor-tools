@@ -23,7 +23,7 @@ const FESTIVAL = {
     confirmation: { verified: true, confirmedDate: "2026-08-11", sources: ["https://www.city.kitamoto.lg.jp/kanko/event/aki/18464.html", "https://www.city.kitamoto.lg.jp/kanko/gourmet_shopping/2/1423533254557.html"] }
   },
   yearlyInfo: [{
-    year: 2026, eventStatus: "confirmed", dates: ["2026-11-07"],
+    year: 2026, eventStatus: "ended", dates: ["2026-11-07"],
     schedule: [
       {
         date: "2026-11-07",
