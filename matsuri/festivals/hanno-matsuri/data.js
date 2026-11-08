@@ -31,7 +31,7 @@ const FESTIVAL = {
     confirmation: { verified: true, confirmedDate: "2026-07-30", sources: ["https://www.city.hanno.lg.jp/soshikikarasagasu/kyoikubu/hakubutsukan/bunkazaitanto/bunkazai/452.html", "https://www.city.hanno.lg.jp/soshikikarasagasu/kyoikubu/hakubutsukan/bunkazaitanto/bunkazai/minzoku/index.html"] }
   },
   yearlyInfo: [{
-    year: 2026, eventStatus: "confirmed", dates: ["2026-11-07", "2026-11-08"],
+    year: 2026, eventStatus: "ended", dates: ["2026-11-07", "2026-11-08"],
     schedule: [
       { date: "2026-11-07", dayLabel: "1日目（2026年・奥むさし飯能観光協会の公式発表）", items: [
         { time: "12:00〜20:00", label: "マルシェ（飯能中央通り。出店者は公式で未定）" },
