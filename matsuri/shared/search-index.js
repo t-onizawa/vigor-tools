@@ -3214,5 +3214,45 @@ const SEARCH_INDEX = [
     "prefecture": "青森県",
     "city": "南部町",
     "firstDate": "2026-09-05"
+  },
+  {
+    "slug": "obanazawa-hanagasa-matsuri",
+    "name": "おばなざわ花笠まつり",
+    "officialName": "おばなざわ花笠まつり",
+    "prefecture": "山形県",
+    "city": "尾花沢市",
+    "firstDate": "2026-08-27"
+  },
+  {
+    "slug": "murayama-tokunai-matsuri",
+    "name": "むらやま徳内まつり",
+    "officialName": "むらやま徳内まつり",
+    "prefecture": "山形県",
+    "city": "村山市",
+    "firstDate": "2026-08-21"
+  },
+  {
+    "slug": "tendo-natsu-matsuri",
+    "name": "天童夏まつり",
+    "officialName": "天童夏まつり",
+    "prefecture": "山形県",
+    "city": "天童市",
+    "firstDate": "2026-08-08"
+  },
+  {
+    "slug": "oishida-ishinsai",
+    "name": "大石田まつり「維新祭」",
+    "officialName": "大石田まつり「維新祭」",
+    "prefecture": "山形県",
+    "city": "大石田町",
+    "firstDate": "2026-08-15"
+  },
+  {
+    "slug": "higashine-matsuri",
+    "name": "ひがしね祭",
+    "officialName": "ひがしね祭",
+    "prefecture": "山形県",
+    "city": "東根市",
+    "firstDate": "2026-08-10"
   }
 ];

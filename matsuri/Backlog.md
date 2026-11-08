@@ -5209,3 +5209,10 @@ commit `2b5da25`／キャッシュ修正`7522f44`／`ab4f35b`）
 - 十和田市・七戸町・六戸町・三沢市観光協会・南部町観光協会／県の一次情報を確認。5件はそれぞれ別市町の祭り。名川秋まつりは南部町剣吉地区を対象とし、三戸町のさんのへ秋まつりと区別。名川の山車上の踊りは県データで確認し、他の4件は未確認。
 - 一次情報：https://www.city.towada.lg.jp/kanko/event/akimatsuri.html 、https://towada-akimatsuri.info/ 、https://www.town.shichinohe.lg.jp/gyosei/tourism-events/event/post-221.html 、https://www.town.rokunohe.aomori.jp/docs/2026070400012/ 、https://kite-misawa.com/event/misawamatsuri/ 、https://nanbu-kanko.net/?p=743 、https://opendata.pref.aomori.lg.jp/dataset/2013/resource/24477/content.html 。
 - のへじ祇園まつりは公式の2026年8月23日に対応する曜日の記載が食い違うため、詳細確認待ち。北本まつり宵まつり（kitamoto-yoi-matsuri）を全日程経過により自動ended化。sitemapに今回の5 URLのみ追記。全国深掘り、連続0件0回、次回も全国。直近は高知・徳島・愛媛・香川・岩手／青森で、青森は今回を含め2実行連続。
+
+## 2026-11-09 新規祭り追加（全国深掘り・山形県5件）
+
+- 候補ストック空。掲載密度の低い山形県から、おばなざわ花笠まつり、むらやま徳内まつり、天童夏まつり、大石田まつり「維新祭」、ひがしね祭を追加。全国402→407件、山形4→9件。2026年の日程は全て経過したためended。
+- 尾花沢市・村山市・天童市・大石田町・ひがしね祭実行委員会の一次情報を確認。尾花沢の花笠まつりは山形市の花笠まつりと別。大石田の維新祭は8月15日の駅前行事に限定し、翌日の花火大会と混同しない。ひがしね祭は8月11日の雨天による一部中止・会場変更を記載。根拠のない分類はnull。
+- 一次情報：https://www.city.obanazawa.yamagata.jp/kanko/kanko-topics/4412 、https://www.city.murayama.lg.jp/kanko/tokunai/tokunaimaturi.html 、https://www.murayamatokunai.jp/ 、https://www.city.tendo.yamagata.jp/tourism/event/event-summer_tendo.html 、https://www.town.oishida.yamagata.jp/kankou/matsuri/ishinsai.html 、https://higashine-shikisai.com/h-fes/ 。
+- ながい黒獅子まつりは2026年の回数表記が公式情報間で第35回・第36回と食い違うため見送り。飯能まつり（hanno-matsuri）と轟秋祭り（todoroki-aki-matsuri）を全日程経過により自動ended化。sitemapに今回の新規5 URLを追記。全国深掘り、連続0件0回、次回も全国。青森県の連続追加は今回途切れた。
