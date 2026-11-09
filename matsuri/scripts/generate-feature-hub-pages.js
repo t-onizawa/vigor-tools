@@ -116,6 +116,7 @@ function main() {
       jsonDescription: copy ? copy.jsonDescription : (count) => `2026年に${hub.label}が見どころの祭り${count}件をまとめました。`,
       intro: copy ? copy.intro : (count) => `${hub.label}が見どころの祭り${count}件を日程順にまとめました。`,
       mikoshiLine: hub.slug === "mikoshi",
+      itemListUrlOnly: hub.slug === "mikoshi",
       filters: { area: "full", month: true },
       explainerHtml: FEATURE_EXPLAINERS[hub.slug]
     }, selected, experienceTags, cssVersion);

@@ -438,7 +438,8 @@ function renderHubPage(config, items, experienceTags, cssVersion) {
     "@type": "ListItem",
     position: index + 1,
     url: `https://vigorlab.net/matsuri/festivals/${festival.id}/`,
-    name: festival.name
+    // 神輿ハブはURL列挙のみ（Eventは各祭りの詳細ページに集約し、一覧には重ねない）
+    ...(config.itemListUrlOnly ? {} : { name: festival.name })
   }));
   const collectionJsonLd = {
     "@context": "https://schema.org",
