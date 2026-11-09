@@ -115,6 +115,7 @@ function main() {
       description: copy ? copy.description : (count) => `2026年に${hub.label}が見どころの祭り${count}件をまとめました。開催日程・アクセス・山車や神輿などの特徴を比較できます。`,
       jsonDescription: copy ? copy.jsonDescription : (count) => `2026年に${hub.label}が見どころの祭り${count}件をまとめました。`,
       intro: copy ? copy.intro : (count) => `${hub.label}が見どころの祭り${count}件を日程順にまとめました。`,
+      mikoshiLine: hub.slug === "mikoshi",
       filters: { area: "full", month: true },
       explainerHtml: FEATURE_EXPLAINERS[hub.slug]
     }, selected, experienceTags, cssVersion);

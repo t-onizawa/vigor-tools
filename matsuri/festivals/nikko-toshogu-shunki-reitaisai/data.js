@@ -25,6 +25,17 @@ const FESTIVAL = {
       mapUrl: "https://www.google.com/maps/search/?api=1&query=日光東照宮+栃木県日光市",
       note: "18日の行列は二荒山神社から御旅所を経て東照宮へ還御します。"
     },
+    mikoshiHighlight: {
+      summary: "神輿渡御祭「百物揃千人武者行列」では、三基の神輿と武者が1キロに及ぶ隊列で御旅所へ向かう。",
+      viewingSpot: null,
+      timings: [
+        { year: 2026, date: "2026-05-18", time: "11:00頃", label: "神輿渡御祭「百物揃千人武者行列」（日光二荒山神社前を進発）" }
+      ],
+      sources: [
+        "https://www.nikko-kankou.org/public/event/27"
+      ],
+      confirmedOn: "2026-11-09"
+    },
     highlightComment: "神輿3基と鎧武者が約1kmを進む「百物揃千人武者行列」が、春季例大祭を締めくくる。",
     atmosphereMedia: [{
       type: "youtube",

@@ -27,6 +27,17 @@ const FESTIVAL = {
       mapUrl: "https://www.google.com/maps/search/?api=1&query=成田山新勝寺+千葉県成田市成田1",
       note: "成田山新勝寺は成田祇園祭の中心となる宗教施設です。"
     },
+    mikoshiHighlight: {
+      summary: "10台の山車・屋台と御輿1台が繰り出し、3日間にわたって成田山表参道とその周辺を巡行する。",
+      viewingSpot: null,
+      timings: [
+        { year: 2026, date: "2026-07-10", time: "午後から", label: "御輿と山車・屋台の巡行（7月12日まで）" }
+      ],
+      sources: [
+        "http://www.nrtk.jp/enjoy/shikisaisai/gion-festival.html"
+      ],
+      confirmedOn: "2026-11-09"
+    },
     highlightComment: "最終日、10台の山車・屋台が表参道の急坂を駆け上がる「総引き」が最大のハイライト。夜のライトアップも名物。",
     atmosphereMedia: [],
     confirmation: {

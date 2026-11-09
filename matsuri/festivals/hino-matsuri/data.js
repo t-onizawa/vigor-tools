@@ -6,6 +6,15 @@ const FESTIVAL = {
     features: { hasDashi: true, hasMikoshi: true, hasDanceOnDashi: null, hasParade: true, highlightTime: "day", hayashiNote: "宵祭では提灯を灯した曳山と祭ばやし、本祭では神子・神輿を中心とする神幸行列と曳山巡行が行われる。" },
     access: { nearestStation: "JR近江八幡駅または近江鉄道日野駅から北畑口行バス「綿向神社前」下車、徒歩約3分" },
     mapReference: { label: "馬見岡綿向神社", pointType: "shrine", query: "馬見岡綿向神社 滋賀県日野町村井705", lat: null, lng: null, mapUrl: "https://www.google.com/maps/search/?api=1&query=馬見岡綿向神社+滋賀県日野町村井705", note: "本祭の宮入と神幸行列の中心となる神社を基準地点とした。" },
+    mikoshiHighlight: {
+      summary: "本社とお旅所の間を、神子や神輿を中心とした行列が渡る「神幸の祭り」。",
+      viewingSpot: null,
+      timings: [],
+      sources: [
+        "https://www.town.shiga-hino.lg.jp/0000003699.html"
+      ],
+      confirmedOn: "2026-11-09"
+    },
     highlightComment: "県内最多16基の曳山で知られ、本祭では神子・神輿を中心とした古式の神幸行列と曳山巡行を一度に見られる。",
     atmosphereMedia: [], backgroundImage: null,
     confirmation: { verified: true, confirmedDate: "2026-09-13", sources: ["https://www.town.shiga-hino.lg.jp/0000003699.html", "https://hino-kanko.jp/festival/hinomatsuri/"] }

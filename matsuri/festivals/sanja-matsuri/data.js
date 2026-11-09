@@ -25,6 +25,20 @@ const FESTIVAL = {
       mapUrl: "https://www.google.com/maps/search/?api=1&query=浅草神社+東京都台東区",
       note: "本社神輿は浅草神社から氏子44町を渡御します。"
     },
+    mikoshiHighlight: {
+      summary: "本社神輿3基が早朝に宮出しし、各町を渡って夕方から順次、浅草神社へ宮入りする。",
+      viewingSpot: null,
+      timings: [
+        { year: 2026, date: "2026-05-17", time: "7:00", label: "本社神輿の宮出し（浅草神社境内・浅草寺境内）" },
+        { year: 2026, date: "2026-05-17", time: "19:00頃から", label: "本社神輿の宮入（順次。順序は当日の進行で変わる）" }
+      ],
+      sources: [
+        "https://www.sanjasama.jp/detail260517miyadashi.html",
+        "https://www.sanjasama.jp/detail260517miyatogyo.html",
+        "https://www.sanjasama.jp/detail260517miyairi.html"
+      ],
+      confirmedOn: "2026-11-09"
+    },
     highlightComment: "本社神輿3基が早朝に同時に宮出しされ、浅草の氏子44町を一日かけて渡御する。",
     atmosphereMedia: [{
       type: "youtube",

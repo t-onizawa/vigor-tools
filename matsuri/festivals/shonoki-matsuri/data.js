@@ -27,6 +27,15 @@ const FESTIVAL = {
       "mapUrl": "https://www.google.com/maps/search/?api=1&query=%E7%A8%B2%E7%A9%8D%E7%A5%9E%E7%A4%BE%20%E5%B1%B1%E6%A2%A8%E7%9C%8C%E7%94%B2%E5%BA%9C%E5%B8%82%E5%A4%AA%E7%94%B0%E7%94%BA10-2",
       "note": "稲積神社を示す基準地点。神輿渡御の経路全体を表す座標ではない。"
     },
+    "mikoshiHighlight": {
+      "summary": "例大祭に続いて神輿渡御が行われて近隣を練り歩き、宮入は荘厳で見物人で賑わう。",
+      "viewingSpot": null,
+      "timings": [],
+      "sources": [
+        "https://www.inazumijinjya.com/event/detail/31"
+      ],
+      "confirmedOn": "2026-11-09"
+    },
     "highlightComment": "稲積神社の神輿渡御と、植木市や露店を巡り、甲府で親しまれる春の祭りのにぎわいにふれられる。",
     "atmosphereMedia": [],
     "backgroundImage": null,

@@ -25,6 +25,18 @@ const FESTIVAL = {
       mapUrl: "https://www.google.com/maps/search/?api=1&query=稲毛神社+神奈川県川崎市",
       note: "神幸祭は稲毛神社から氏子23町会を巡幸します。"
     },
+    mikoshiHighlight: {
+      summary: "最終日の神幸祭では、神社大みこし2基「孔雀」「玉」が丸一日かけて氏子町会を巡る。",
+      viewingSpot: null,
+      timings: [
+        { year: 2026, date: "2026-06-20", time: "12:45〜15:10頃", label: "町内みこし連合渡御" },
+        { year: 2026, date: "2026-06-21", time: "6:30〜20:00", label: "神幸祭（神社大みこし渡御）" }
+      ],
+      sources: [
+        "https://www.takemikatsuchi.net/schedulelist/sannousai/"
+      ],
+      confirmedOn: "2026-11-09"
+    },
     highlightComment: "「孔雀」「玉」と呼ばれる男女2基の大神輿が氏子23町会を巡り、神の結婚から御子神誕生までを表す。",
     atmosphereMedia: [{
       type: "youtube",

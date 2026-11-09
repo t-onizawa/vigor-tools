@@ -232,7 +232,7 @@ function renderVideoBadge() {
   return '<span class="meta-item meta-item--video" role="img" aria-label="動画あり" title="動画あり"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true"><rect x="1" y="4" width="22" height="16" rx="4" fill="none" stroke="currentColor" stroke-width="1.6"/><polygon points="10,8.5 10,15.5 16,12" fill="currentColor"/></svg></span>';
 }
 
-function renderFestivalCard(item, experienceTags) {
+function renderFestivalCard(item, experienceTags, options = {}) {
   const { festival, yearlyInfo } = item;
   const constantInfo = festival.constantInfo || {};
   const features = constantInfo.features || {};
@@ -249,6 +249,10 @@ function renderFestivalCard(item, experienceTags) {
     (experienceTag ? `<span class="experience-tag-chip">${escapeHtml(experienceTag)}</span>` : "");
   const video = media.length > 0 ? renderVideoBadge() : "";
   const highlight = constantInfo.highlightComment ? `          <p class="highlight-comment">${escapeHtml(constantInfo.highlightComment)}</p>\n` : "";
+  // 神輿ハブ限定：mikoshiHighlightがある祭りは、見どころ一文を既存のhighlight-commentと同じ見た目で追加する。
+  const mikoshiLine = options.mikoshiLine && constantInfo.mikoshiHighlight && constantInfo.mikoshiHighlight.summary
+    ? `          <p class="highlight-comment">神輿の見どころ：${escapeHtml(constantInfo.mikoshiHighlight.summary)}</p>\n`
+    : "";
   const featureKeys = CARD_FEATURE_ITEMS.filter(([, key]) => features[key] === true).map(([, key]) => key).join(",");
   const months = Array.isArray(yearlyInfo.dates) && yearlyInfo.dates.length > 0
     ? [...new Set(yearlyInfo.dates.map((d) => Number(d.slice(5, 7))))].join(",")
@@ -262,7 +266,7 @@ function renderFestivalCard(item, experienceTags) {
           <p class="item-date">${escapeHtml(formatDateRange(yearlyInfo))}</p>
           <div class="card-feature-chips">${chips}</div>
           <div class="card-meta">${renderMetaItem("見どころ", HIGHLIGHT_TIME_LABELS[features.highlightTime] || "未確認", "meta-item--highlight-time")}${renderMetaItem("駐車場", parkingText(access.hasParking))}${video}${statusBadge}</div>
-${highlight}        </div>
+${highlight}${mikoshiLine}        </div>
       </a>`;
 }
 
@@ -452,7 +456,7 @@ function renderHubPage(config, items, experienceTags, cssVersion) {
       { "@type": "ListItem", position: 2, name: config.breadcrumbLabel, item: config.canonical }
     ]
   };
-  const cards = items.map((item) => renderFestivalCard(item, experienceTags)).join("\n");
+  const cards = items.map((item) => renderFestivalCard(item, experienceTags, { mikoshiLine: config.mikoshiLine === true })).join("\n");
   const description = config.description(count);
   const auxiliaryLink = config.auxiliaryLink ? `      ${config.auxiliaryLink}\n` : "";
   const headerLinks = config.headerLinks ? `\n        <p class="back-to-list">${config.headerLinks.join("<br>")}</p>` : "";

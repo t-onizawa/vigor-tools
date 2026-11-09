@@ -27,6 +27,17 @@ const FESTIVAL = {
       mapUrl: "https://www.google.com/maps/search/?api=1&query=忠敬橋+千葉県香取市佐原",
       note: "山車の曳き回し・のの字廻しは本宿地区一帯で行われます。忠敬橋周辺は代表的な観覧スポットの一つです。"
     },
+    mikoshiHighlight: {
+      summary: "八坂神社の神輿が神幸として各町内を回る。",
+      viewingSpot: null,
+      timings: [
+        { year: 2026, date: "2026-07-12", time: "11:00から", label: "御神輿の神幸（八坂神社〜各町内）" }
+      ],
+      sources: [
+        "https://www.city.katori.lg.jp/sightseeing/matsuri/introduction/natsu.html"
+      ],
+      confirmedOn: "2026-11-09"
+    },
     highlightComment: "山車を豪快に回転させる「のの字廻し」の曲曳きが最大の見どころ。小江戸の町並みを進む姿も見応えがある。",
     notableDesignation: "国指定重要無形民俗文化財「佐原の山車行事」（2004年指定）、関東3大山車祭りの一つ",
     atmosphereMedia: [{ type: "youtube", url: "https://www.youtube.com/watch?v=w5blXOurDeM", contentId: "w5blXOurDeM", title: "公式【佐原の大祭 夏祭り編】若衆の心意気　江戸優りのスゴ技＜千葉＞", publisher: "おかえり 日本の祭り", publisherType: "official", purpose: "festival_atmosphere", publishedYear: 2022, checkedDate: "2026-09-03" }],

@@ -27,6 +27,18 @@ const FESTIVAL = {
       mapUrl: "https://www.google.com/maps/search/?api=1&query=大國魂神社+東京都府中市宮町3-1",
       note: "大國魂神社は府中くらやみ祭の中心となる神社です。"
     },
+    mikoshiHighlight: {
+      summary: "祭の最大の見どころは、花火の合図で8基の神輿が御旅所へ渡御する「おいで」。",
+      viewingSpot: null,
+      timings: [
+        { year: 2026, date: "2026-05-05", time: "18:00", label: "神輿渡御「おいで」（大國魂神社ほか）" },
+        { year: 2026, date: "2026-05-06", time: "4:00", label: "神輿還御（御旅所を出て各町内を巡行し、神社へ戻る）" }
+      ],
+      sources: [
+        "https://www.city.fuchu.tokyo.jp/kanko/event/kurayamimatsuri.html"
+      ],
+      confirmedOn: "2026-11-09"
+    },
     highlightComment: "白丁姿の担ぎ手と大太鼓に先導され、8基の神輿が渡御する「おいで」が最大の見どころ。",
     atmosphereMedia: [
       {

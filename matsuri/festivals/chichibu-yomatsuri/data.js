@@ -27,6 +27,15 @@ const FESTIVAL = {
       mapUrl: "https://www.google.com/maps/search/?api=1&query=秩父神社+埼玉県秩父市番場町1-3",
       note: "秩父神社は例大祭の中心となる神社です。屋台の曳行・団子坂の曳き上げは秩父市街地一帯で行われます。"
     },
+    mikoshiHighlight: {
+      summary: "御神幸行列が御旅所に到着すると、亀の子石の背に大幣束が立てられ、神輿が安置される。",
+      viewingSpot: null,
+      timings: [],
+      sources: [
+        "https://www.chichibu-matsuri.jp/yomatsuri/"
+      ],
+      confirmedOn: "2026-11-09"
+    },
     highlightComment: "最大20tの屋台が「団子坂」と呼ばれる急坂を曳き上げられる。",
     atmosphereMedia: [{
       type: "youtube",

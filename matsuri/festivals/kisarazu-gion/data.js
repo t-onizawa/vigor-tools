@@ -27,6 +27,17 @@ const FESTIVAL = {
       mapUrl: "https://www.google.com/maps/search/?api=1&query=八剱八幡神社+千葉県木更津市富士見1丁目6-15",
       note: "八剱八幡神社は木更津祇園祭の中心となる神社です。"
     },
+    mikoshiHighlight: {
+      summary: "関東一の大神輿といわれる、重さ約1.5トンの神輿が巡行する。",
+      viewingSpot: null,
+      timings: [
+        { year: 2026, date: "2026-07-11", time: null, label: "大神輿巡幸（7月11日・12日）" }
+      ],
+      sources: [
+        "https://maruchiba.jp/event/detail_11429.html"
+      ],
+      confirmedOn: "2026-11-09"
+    },
     highlightComment: "約170年前に造られた「関東随一の二天棒」、重さ1.5トンの大神輿が「関東三大神輿」の一つとして渡御する。",
     atmosphereMedia: [],
     confirmation: {

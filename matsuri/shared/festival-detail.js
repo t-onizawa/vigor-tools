@@ -903,6 +903,81 @@
     section.hidden = false;
   }
 
+  // 神輿の見どころ欄。constantInfo.mikoshiHighlightがある祭りだけ表示する（任意項目）。
+  // 時刻は年度付きのものだけを、表示中の年度と一致する場合に限って出す。
+  function renderMikoshiHighlight(currentFestival, yearlyInfo) {
+    if (LOCALE === "en") return;
+    const highlight = currentFestival.constantInfo && currentFestival.constantInfo.mikoshiHighlight;
+    if (!highlight || !highlight.summary) return;
+
+    const anchor = document.getElementById("features-heading");
+    const anchorSection = anchor && anchor.closest("section");
+    if (!anchorSection) return;
+
+    const section = document.createElement("section");
+    section.className = "info-section";
+    section.id = "mikoshi-highlight-section";
+    section.setAttribute("aria-labelledby", "mikoshi-highlight-heading");
+
+    const heading = document.createElement("h2");
+    heading.id = "mikoshi-highlight-heading";
+    heading.textContent = "神輿の見どころ";
+    const summary = document.createElement("p");
+    summary.textContent = highlight.summary;
+    section.append(heading, summary);
+
+    if (highlight.viewingSpot) {
+      const item = document.createElement("div");
+      item.className = "detail-item";
+      const term = document.createElement("span");
+      term.className = "detail-term";
+      term.textContent = "見やすい場所";
+      const value = document.createElement("span");
+      value.className = "detail-value";
+      value.textContent = highlight.viewingSpot;
+      item.append(term, value);
+      const list = document.createElement("div");
+      list.className = "detail-list";
+      list.append(item);
+      section.append(list);
+    }
+
+    const timings = (highlight.timings || []).filter((t) => t.year === yearlyInfo.year);
+    if (timings.length > 0) {
+      const sub = document.createElement("h3");
+      sub.textContent = `${yearlyInfo.year}年の神輿の動き（公式発表）`;
+      const list = document.createElement("ul");
+      timings.forEach((t) => {
+        const li = document.createElement("li");
+        li.textContent = `${formatDate(t.date)}${t.time ? ` ${t.time}` : ""}　${t.label}`;
+        list.append(li);
+      });
+      section.append(sub, list);
+    }
+
+    const note = document.createElement("p");
+    note.className = "detail-note";
+    note.append("出典：");
+    (highlight.sources || []).forEach((url, index) => {
+      if (index > 0) note.append("、");
+      const a = document.createElement("a");
+      a.href = url;
+      a.target = "_blank";
+      a.rel = "noopener noreferrer";
+      a.textContent = new URL(url).hostname;
+      note.append(a);
+    });
+    note.append(`（確認日：${highlight.confirmedOn}）`);
+    const more = document.createElement("p");
+    const moreLink = document.createElement("a");
+    moreLink.href = "../../features/mikoshi/";
+    moreLink.textContent = "神輿のある祭りを探す →";
+    more.append(moreLink);
+    section.append(note, more);
+
+    anchorSection.insertAdjacentElement("afterend", section);
+  }
+
   function renderFeatureHubLink(currentFestival) {
     if (LOCALE === "en") return;
     const features = (currentFestival.constantInfo && currentFestival.constantInfo.features) || {};
@@ -1189,6 +1264,7 @@
   renderMapReference(festivalMapReference, festivalName);
   renderRelatedFestivals(festival, currentYear);
   renderFaq(festival, currentYear);
+  renderMikoshiHighlight(festival, currentYear);
   renderFeatureHubLink(festival);
   renderMonthHubLink(festival, currentYear);
   renderPrefectureHubLink(festival);

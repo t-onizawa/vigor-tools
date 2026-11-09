@@ -795,4 +795,18 @@ v0.18  2026-10-19
     整理。初期設計の4種（main_venue/shrine/viewing_point/other）に、
     実際に使われている7種（venue/route/area/station/landmark/park/
     start_point）を追記した。データの値は変更していない。
+
+v0.19  2026-11-09
+    `constantInfo.mikoshiHighlight`（任意）を追加（Founder承認済み）。神輿を
+    見に行く人向けに「何が・いつ・どこで見られるか」を、一次情報で確認できた
+    祭りだけに載せる。形は { summary（80字以内）, viewingSpot（文字列|null）,
+    timings（[{year, date, time|null, label}]、既定は空）, sources（出典URL、
+    必須）, confirmedOn（確認日、必須） }。時刻（timings）は年度付きのものだけを
+    置き、詳細ページは表示中の年度と一致するものだけを出す（年度不明の「例年の
+    時刻」は置かない）。summaryは神輿の特徴など年度に依存しない事実に限る。
+    「担げる（参加できる）」情報は一次情報で確認できた場合に限り追加する方針で、
+    今回はフィールドを設けていない。`hasMikoshi`がtrueの祭り以外には設定できない
+    （check-data-integrity.jsで検査）。未設定の祭りでは欄を表示しない。
+    詳細ページは「神輿の見どころ」欄と神輿ハブへのリンク、神輿ハブのカードには
+    見どころ一文を出す。第1段階は「これから開催される順」に21件を入力した。
 ```

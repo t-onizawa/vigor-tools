@@ -78,6 +78,26 @@ function checkNoteDateHints(festival, yearly) {
   return findings;
 }
 
+// constantInfo.mikoshiHighlight（任意）の構造検証。一次情報の出典・確認日を必須にし、
+// 神輿を持たない祭り（hasMikoshiがtrueでない）への設定、年度不明の時刻を弾く。
+function checkMikoshiHighlight(festival, hard) {
+  const highlight = festival.constantInfo && festival.constantInfo.mikoshiHighlight;
+  if (highlight === undefined) return;
+  const bad = (detail) => hard.push({ type: "invalid_mikoshi_highlight", detail });
+  if (highlight === null || typeof highlight !== "object") return bad("オブジェクトではない");
+  if (!festival.constantInfo.features || festival.constantInfo.features.hasMikoshi !== true) bad("hasMikoshi=trueではない祭りに設定されている");
+  if (typeof highlight.summary !== "string" || highlight.summary.length === 0 || highlight.summary.length > 80) bad("summaryは1〜80文字の文字列");
+  if (highlight.viewingSpot !== null && typeof highlight.viewingSpot !== "string") bad("viewingSpotは文字列またはnull");
+  if (!Array.isArray(highlight.sources) || highlight.sources.length === 0 || !highlight.sources.every((u) => /^https?:\/\//.test(u))) bad("sourcesはhttp(s)のURL配列が必須");
+  if (!/^\d{4}-\d{2}-\d{2}$/.test(highlight.confirmedOn || "")) bad("confirmedOnはYYYY-MM-DD");
+  if (!Array.isArray(highlight.timings)) return bad("timingsは配列");
+  highlight.timings.forEach((t, index) => {
+    if (!Number.isInteger(t.year) || !/^\d{4}-\d{2}-\d{2}$/.test(t.date || "") || Number(t.date.slice(0, 4)) !== t.year) bad(`timings[${index}]のyear/dateが不正（年度付きの日付が必須）`);
+    if (t.time !== null && typeof t.time !== "string") bad(`timings[${index}].timeは文字列またはnull`);
+    if (typeof t.label !== "string" || t.label.length === 0) bad(`timings[${index}].labelが空`);
+  });
+}
+
 function checkFestival(slug, festival) {
   const hard = [];
   const heuristic = [];
@@ -142,6 +162,8 @@ function checkFestival(slug, festival) {
       hard.push({ type: "status_confirmed_like_no_yearly_sources", detail: `status=${status}` });
     }
   }
+
+  checkMikoshiHighlight(festival, hard);
 
   heuristic.push(...checkNoteDateHints(festival, yearly));
 
