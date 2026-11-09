@@ -5216,3 +5216,10 @@ commit `2b5da25`／キャッシュ修正`7522f44`／`ab4f35b`）
 - 尾花沢市・村山市・天童市・大石田町・ひがしね祭実行委員会の一次情報を確認。尾花沢の花笠まつりは山形市の花笠まつりと別。大石田の維新祭は8月15日の駅前行事に限定し、翌日の花火大会と混同しない。ひがしね祭は8月11日の雨天による一部中止・会場変更を記載。根拠のない分類はnull。
 - 一次情報：https://www.city.obanazawa.yamagata.jp/kanko/kanko-topics/4412 、https://www.city.murayama.lg.jp/kanko/tokunai/tokunaimaturi.html 、https://www.murayamatokunai.jp/ 、https://www.city.tendo.yamagata.jp/tourism/event/event-summer_tendo.html 、https://www.town.oishida.yamagata.jp/kankou/matsuri/ishinsai.html 、https://higashine-shikisai.com/h-fes/ 。
 - ながい黒獅子まつりは2026年の回数表記が公式情報間で第35回・第36回と食い違うため見送り。飯能まつり（hanno-matsuri）と轟秋祭り（todoroki-aki-matsuri）を全日程経過により自動ended化。sitemapに今回の新規5 URLを追記。全国深掘り、連続0件0回、次回も全国。青森県の連続追加は今回途切れた。
+
+## 2026-11-10 新規祭り追加（全国深掘り・滋賀1／京都1／三重3）
+
+- 候補ストック空。掲載密度の低い近畿から米原曳山まつり、葛城神社秋の大祭・曳山巡行、大淀祇園祭、関宿祇園夏まつり、伊勢まつりを追加。全国407→412件、滋賀4→5件・京都6→7件・三重4→7件。2026年日程は全て経過したためended。
+- 米原市、京丹波町の曳山保存委員会、明和町・大淀祇園祭公式、亀山市、伊勢市の一次情報で日程と範囲を確認。米原と長浜の曳山祭、大淀・関宿と京都の祇園祭、伊勢まつりと神宮行事の初穂曳を区別。山車上の子ども歌舞伎は踊りへ分類しない。未確認の特徴はnull。
+- 一次情報：https://www.city.maibara.lg.jp/kanko/station/jr_maibara/23573.html 、https://hikiyamahozonkai.com/ 、https://www.town.meiwa.mie.jp/main/soshiki/saikuuato/kankok/event/3239.html 、https://www.oizugion.com/en/news/2026info 、https://www.city.kameyama.mie.jp/kosodate_yuyu/events/2026062300535/ 、https://www.city.ise.mie.jp/machi/community/isematsuri/1020217.html 。
+- 波切のわらじ祭りは2026年の神事と催しの日程・範囲に相違が見られ見送り。大津祭は公式情報に2026年の日付と曜日・年の不一致があり見送り。sitemapに新規5 URLのみ追記。全国深掘り、連続0件0回、次回も全国。hard issue 0件、神田祭heuristicは確認待ち。

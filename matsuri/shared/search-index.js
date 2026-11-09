@@ -3254,5 +3254,45 @@ const SEARCH_INDEX = [
     "prefecture": "山形県",
     "city": "東根市",
     "firstDate": "2026-08-10"
+  },
+  {
+    "slug": "maibara-hikiyama-matsuri",
+    "name": "米原曳山まつり",
+    "officialName": "米原曳山まつり",
+    "prefecture": "滋賀県",
+    "city": "米原市",
+    "firstDate": "2026-10-10"
+  },
+  {
+    "slug": "kyotamba-katsuragi-hikiyama",
+    "name": "葛城神社秋の大祭・曳山巡行",
+    "officialName": "葛城神社秋の大祭・曳山巡行",
+    "prefecture": "京都府",
+    "city": "京丹波町",
+    "firstDate": "2026-10-11"
+  },
+  {
+    "slug": "oizu-gion-matsuri",
+    "name": "大淀祇園祭",
+    "officialName": "大淀祇園祭",
+    "prefecture": "三重県",
+    "city": "明和町",
+    "firstDate": "2026-07-24"
+  },
+  {
+    "slug": "seki-juku-gion-natsumatsuri",
+    "name": "関宿祇園夏まつり",
+    "officialName": "関宿祇園夏まつり",
+    "prefecture": "三重県",
+    "city": "亀山市",
+    "firstDate": "2026-07-18"
+  },
+  {
+    "slug": "ise-matsuri",
+    "name": "伊勢まつり",
+    "officialName": "伊勢まつり",
+    "prefecture": "三重県",
+    "city": "伊勢市",
+    "firstDate": "2026-10-10"
   }
 ];
