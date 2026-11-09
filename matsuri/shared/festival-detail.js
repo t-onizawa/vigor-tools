@@ -903,6 +903,19 @@
     section.hidden = false;
   }
 
+  function renderFeatureHubLink(currentFestival) {
+    if (LOCALE === "en") return;
+    const features = (currentFestival.constantInfo && currentFestival.constantInfo.features) || {};
+    if (features.hasMikoshi !== true) return;
+
+    const container = byId("alternate-links-list");
+    const section = byId("alternate-links-section");
+    if (!container || !section) return;
+
+    appendAlternateLink(container, "feature-hub-link", "../../features/mikoshi/", "神輿のある祭りを探す");
+    section.hidden = false;
+  }
+
   async function renderPrefectureHubLink(currentFestival) {
     if (LOCALE === "en") return;
     const areaTag = currentFestival.areaTag;
@@ -1176,6 +1189,7 @@
   renderMapReference(festivalMapReference, festivalName);
   renderRelatedFestivals(festival, currentYear);
   renderFaq(festival, currentYear);
+  renderFeatureHubLink(festival);
   renderMonthHubLink(festival, currentYear);
   renderPrefectureHubLink(festival);
   renderLodgingCta(festival);
