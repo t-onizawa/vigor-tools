@@ -71,6 +71,32 @@ function titleFor(hub, count) {
   return `${hub.label}が見られる祭り${count}件【2026年版】｜MATSURI`;
 }
 
+// 神輿ハブは「見に行きたい人」の探す意図に寄せた文言にする（2026-11-09 Founder承認）。
+// 件数・年号はtitleに入れない（件数の増減や年度更新でtitleが変わらないようにする）。
+// 他の特徴ハブの文言は従来どおり。
+function latestConfirmedDate(items) {
+  const dates = [];
+  for (const { festival, yearlyInfo } of items) {
+    const sources = [festival.constantInfo && festival.constantInfo.confirmation, yearlyInfo && yearlyInfo.confirmation];
+    for (const confirmation of sources) {
+      if (confirmation && /^\d{4}-\d{2}-\d{2}$/.test(confirmation.confirmedDate || "")) dates.push(confirmation.confirmedDate);
+    }
+  }
+  return dates.sort().pop() || null;
+}
+
+function mikoshiCopy(updated) {
+  const updatedText = updated ? `掲載内容の最終確認日は${updated.replace(/^(\d{4})-(\d{2})-(\d{2})$/, (m, y, mo, d) => `${y}年${Number(mo)}月${Number(d)}日`)}です。` : "";
+  return {
+    title: () => "神輿が見られる祭りを探す｜全国の神輿渡御の見どころ・宮出し・宮入り【MATSURI】",
+    h1: "神輿が見られる祭りを探す",
+    breadcrumbLabel: "神輿が見られる祭り",
+    description: () => "全国の神輿が見られる祭りを、地域・月で探せます。神輿渡御・宮出し・宮入りの見どころ、日程、アクセスを祭りごとにまとめています。",
+    jsonDescription: () => "全国の神輿が見られる祭りを、地域・月で探せます。",
+    intro: (count) => `全国${count}件の神輿が見られる祭りを掲載しています。地域・月で絞り込み、気になる祭りの詳細ページで日程・アクセス・神輿の見どころを確認できます。${updatedText}`
+  };
+}
+
 function main() {
   const { items, experienceTags, cssVersion } = loadHubData();
   for (const hub of FEATURE_HUBS) {
@@ -80,14 +106,15 @@ function main() {
     }));
     if (selected.length < MINIMUM_HUB_COUNT) continue;
     const canonical = `https://vigorlab.net/matsuri/features/${hub.slug}/`;
+    const copy = hub.slug === "mikoshi" ? mikoshiCopy(latestConfirmedDate(selected)) : null;
     const html = renderHubPage({
-      h1: `${hub.label}が見どころの祭り一覧`,
-      breadcrumbLabel: `${hub.label}が見どころの祭り`,
+      h1: copy ? copy.h1 : `${hub.label}が見どころの祭り一覧`,
+      breadcrumbLabel: copy ? copy.breadcrumbLabel : `${hub.label}が見どころの祭り`,
       canonical,
-      title: (count) => titleFor(hub, count),
-      description: (count) => `2026年に${hub.label}が見どころの祭り${count}件をまとめました。開催日程・アクセス・山車や神輿などの特徴を比較できます。`,
-      jsonDescription: (count) => `2026年に${hub.label}が見どころの祭り${count}件をまとめました。`,
-      intro: (count) => `${hub.label}が見どころの祭り${count}件を日程順にまとめました。`,
+      title: copy ? copy.title : (count) => titleFor(hub, count),
+      description: copy ? copy.description : (count) => `2026年に${hub.label}が見どころの祭り${count}件をまとめました。開催日程・アクセス・山車や神輿などの特徴を比較できます。`,
+      jsonDescription: copy ? copy.jsonDescription : (count) => `2026年に${hub.label}が見どころの祭り${count}件をまとめました。`,
+      intro: copy ? copy.intro : (count) => `${hub.label}が見どころの祭り${count}件を日程順にまとめました。`,
       filters: { area: "full", month: true },
       explainerHtml: FEATURE_EXPLAINERS[hub.slug]
     }, selected, experienceTags, cssVersion);
