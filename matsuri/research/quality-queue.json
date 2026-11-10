@@ -24,10 +24,10 @@
       "slug": "hagi-jidai-matsuri",
       "lane": "0",
       "reason": "開催が近く、背景画像と動画が未設定",
-      "status": "queued",
-      "lastTouchedOn": null,
+      "status": "in_progress",
+      "lastTouchedOn": "2026-11-10",
       "result": null,
-      "memo": ""
+      "memo": "萩テレビ候補の投稿者・長さ・画像を直接確認。本編の構成と他候補を確認し、採否を決める。"
     }
   ]
 }
