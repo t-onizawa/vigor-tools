@@ -1,0 +1,33 @@
+{
+  "version": 1,
+  "updatedOn": "2026-11-10",
+  "items": [
+    {
+      "slug": "inasa-jinja-ohitaki-matsuri",
+      "lane": "0",
+      "reason": "開催が近く、背景画像と動画が未設定",
+      "status": "done",
+      "lastTouchedOn": "2026-11-10",
+      "result": "rejected-all",
+      "memo": "県公式の祭り案内を直接確認。対象行事のYouTube素材は今回の検索で特定できず。座標は設定済み。"
+    },
+    {
+      "slug": "asakusa-tori-no-ichi",
+      "lane": "0",
+      "reason": "開催が近く、背景画像または動画が未設定",
+      "status": "queued",
+      "lastTouchedOn": null,
+      "result": null,
+      "memo": ""
+    },
+    {
+      "slug": "hagi-jidai-matsuri",
+      "lane": "0",
+      "reason": "開催が近く、背景画像と動画が未設定",
+      "status": "queued",
+      "lastTouchedOn": null,
+      "result": null,
+      "memo": ""
+    }
+  ]
+}
