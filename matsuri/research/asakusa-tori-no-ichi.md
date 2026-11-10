@@ -37,3 +37,9 @@ hasDashi/hasMikoshi/hasDanceOnDashi="n/a"、hasParade=false、highlightTime=both
 一次情報：https://otorisama.or.jp/kotoshi.html
 
 鷲神社公式で令和8年11月7日・19日、各日0〜24時と確認。候補 https://www.youtube.com/watch?v=_N3q5EXEbO0 を直接確認：Tokyo VR（1.37万人）、8479回、46:58、2022年浅草酉の市。長尺歩行記録のため代表動画は追加しない。hqdefault/0は中央の大きな題字、1〜3は120×90で背景用途に不足し画像なし。Google Mapsを既存queryで検索し浅草 鷲神社、千束3丁目18-7、otorisama.or.jpを一意に照合。place URLの!3d35.7225235!4d139.7919508を採用しlat/lng追加。座標未確認という古い地図noteを、鷲神社一点を示す注記へ修正。巡行・市全体の範囲を表す座標ではない。
+
+### 2026-11-10 日次品質改善：素材見送り
+
+- 一次情報 https://otorisama.or.jp/ および公式投稿 https://www.youtube.com/watch?v=MrBIFxY5xzs を直接確認。動画ページの投稿者は「浅草鷲神社公式チャンネル」、視聴16581回、長さ42895秒（約11時間55分）。参道を固定点で長時間配信する記録で、短時間の代表動画用途に合わないため動画は見送り。
+- 背景画像は同動画の https://i.ytimg.com/vi/MrBIFxY5xzs/hqdefault.jpg と0〜3.jpgを直接開いて確認。標準画像は大きな「LIVE配信」等の文字が主役に重なる。0.jpgは黒画像、1〜3.jpgは120×90の俯瞰で主役が小さく背景用の画質・構図に不足するため、いずれも見送り。
+- 座標は設定済み。画像・動画の追加なし。

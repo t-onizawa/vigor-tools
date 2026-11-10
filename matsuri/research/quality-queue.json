@@ -15,10 +15,10 @@
       "slug": "asakusa-tori-no-ichi",
       "lane": "0",
       "reason": "開催が近く、背景画像または動画が未設定",
-      "status": "queued",
-      "lastTouchedOn": null,
-      "result": null,
-      "memo": ""
+      "status": "done",
+      "lastTouchedOn": "2026-11-10",
+      "result": "rejected-all",
+      "memo": "鷲神社公式配信を直接確認。約12時間の固定点配信で動画見送り、画像は文字が大きく他フレームも低解像度。"
     },
     {
       "slug": "hagi-jidai-matsuri",
