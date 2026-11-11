@@ -33,10 +33,10 @@
       "slug": "shimanto-kuroson-mura-matsuri",
       "lane": "0",
       "reason": "開催が近く背景画像と動画が未設定",
-      "status": "queued",
-      "lastTouchedOn": null,
-      "result": null,
-      "memo": ""
+      "status": "done",
+      "lastTouchedOn": "2026-11-11",
+      "result": "rejected-all",
+      "memo": "市公式の祭り案内を直接確認。対象行事の動画・動画由来画像を特定できず見送り。"
     },
     {
       "slug": "yamashiro-tanuki-matsuri",
