@@ -42,10 +42,10 @@
       "slug": "yamashiro-tanuki-matsuri",
       "lane": "0",
       "reason": "開催が近く背景画像と動画が未設定",
-      "status": "queued",
-      "lastTouchedOn": null,
+      "status": "in_progress",
+      "lastTouchedOn": "2026-11-11",
       "result": null,
-      "memo": ""
+      "memo": "徳島新聞の候補動画と背景画像を直接確認。背景採用候補の表示テストと動画本編の内容確認が必要。"
     }
   ]
 }
