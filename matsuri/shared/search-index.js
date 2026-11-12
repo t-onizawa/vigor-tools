@@ -3294,5 +3294,13 @@ const SEARCH_INDEX = [
     "prefecture": "三重県",
     "city": "伊勢市",
     "firstDate": "2026-10-10"
+  },
+  {
+    "slug": "asamai-hachiman-saiten",
+    "name": "浅舞八幡神社祭典",
+    "officialName": "浅舞八幡神社祭典",
+    "prefecture": "秋田県",
+    "city": "横手市",
+    "firstDate": "2026-09-19"
   }
 ];

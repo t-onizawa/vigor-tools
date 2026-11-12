@@ -57,3 +57,4 @@ FESTIVAL_SLUGS.push("ichinohe-matsuri", "karumai-aki-matsuri", "otsuchi-matsuri"
 FESTIVAL_SLUGS.push("towada-aki-matsuri", "shichinohe-aki-matsuri", "rokunohe-aki-matsuri", "misawa-matsuri", "nagawa-aki-matsuri");
 FESTIVAL_SLUGS.push("obanazawa-hanagasa-matsuri", "murayama-tokunai-matsuri", "tendo-natsu-matsuri", "oishida-ishinsai", "higashine-matsuri");
 FESTIVAL_SLUGS.push("maibara-hikiyama-matsuri", "kyotamba-katsuragi-hikiyama", "oizu-gion-matsuri", "seki-juku-gion-natsumatsuri", "ise-matsuri");
+FESTIVAL_SLUGS.push("asamai-hachiman-saiten");

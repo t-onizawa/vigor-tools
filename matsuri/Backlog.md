@@ -38,6 +38,11 @@ Updated: 2026-09-08（英語版7ページ・関連JP6ページのsitemap.xml反�
 （該当なし）
 ```
 
+### 新規祭り 調査中（2026-11-13）
+
+- 大館神明社例祭（秋田県大館市）：神社と実行委員会の案内で毎年9月10・11日の祭礼、曳山巡行を確認。2026年実施状況・既存掲載との重複、残る採用条件を次回確認する。https://odate-shinmei.com/ 、https://odate-shinmei.jp/event
+- 矢島八朔まつり（秋田県由利本荘市）：2026年9月12・13日の開催案内を確認。市と観光協会の神楽出発時刻に差があり、正確な取り扱いを要確認。https://www.city.yurihonjo.lg.jp/1001506/1001551/1001583/1001689/1008888.html 、https://yurihonjo-kanko.jp/event/%E7%9F%A2%E5%B3%B6%E5%85%AB%E6%9C%94%E3%81%BE%E3%81%A4%E3%82%8A/
+
 ---
 
 ## 中長期戦略ロードマップ（2026-08-05 Founder承認）
@@ -5223,3 +5228,9 @@ commit `2b5da25`／キャッシュ修正`7522f44`／`ab4f35b`）
 - 米原市、京丹波町の曳山保存委員会、明和町・大淀祇園祭公式、亀山市、伊勢市の一次情報で日程と範囲を確認。米原と長浜の曳山祭、大淀・関宿と京都の祇園祭、伊勢まつりと神宮行事の初穂曳を区別。山車上の子ども歌舞伎は踊りへ分類しない。未確認の特徴はnull。
 - 一次情報：https://www.city.maibara.lg.jp/kanko/station/jr_maibara/23573.html 、https://hikiyamahozonkai.com/ 、https://www.town.meiwa.mie.jp/main/soshiki/saikuuato/kankok/event/3239.html 、https://www.oizugion.com/en/news/2026info 、https://www.city.kameyama.mie.jp/kosodate_yuyu/events/2026062300535/ 、https://www.city.ise.mie.jp/machi/community/isematsuri/1020217.html 。
 - 波切のわらじ祭りは2026年の神事と催しの日程・範囲に相違が見られ見送り。大津祭は公式情報に2026年の日付と曜日・年の不一致があり見送り。sitemapに新規5 URLのみ追記。全国深掘り、連続0件0回、次回も全国。hard issue 0件、神田祭heuristicは確認待ち。
+
+## 2026-11-13 新規祭り追加（全国深掘り・秋田県1件）
+
+- 前2回の調査を継続し浅舞八幡神社祭典（横手市）を追加。全国412→413件、秋田6→7件。2026年9月19・20日の予定日経過によりended。日程は観光連盟カレンダーの事前掲載情報であり、実施結果の別途確認は保留。
+- 横手市 https://www.city.yokote.lg.jp/kanko/1004035/1004514.html 、横手市観光推進機構 https://yokote-kankou.jp/contents/%E6%B5%85%E8%88%9E%E5%85%AB%E5%B9%A1%E7%A5%9E%E7%A4%BE%E7%A5%AD%E5%85%B8/ 、秋田県観光連盟 https://akita-fun.jp/pamphlet_download/11/download.pdf を確認。山車・曳き回しあり、神輿・山車上の踊りは未確認。
+- 大館神明社例祭、矢島八朔まつりは上記調査中リストに記録。採用・追加数は1件、追加した祭りの全国深掘りを次回も続ける。連続0件の運用カウントは本番表示確認後に0へ戻る。
