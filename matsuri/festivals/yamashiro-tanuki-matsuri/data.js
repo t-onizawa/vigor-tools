@@ -21,7 +21,15 @@ const FESTIVAL = {
     "mapReference": null,
     "highlightComment": "狸伝説にちなんだメイクや襖絵の展示、マルシェやステージを楽しめる。",
     "atmosphereMedia": [],
-    "backgroundImage": null,
+    "backgroundImage": {
+      "type": "youtube",
+      "contentId": "2GMG_jbIrvE",
+      "sourceUrl": "https://www.youtube.com/watch?v=2GMG_jbIrvE",
+      "publisher": "徳島新聞動画 TPV(Tokushima Press Video)",
+      "publisherType": "local_media",
+      "checkedDate": "2026-11-12",
+      "note": "狸の着ぐるみと参加者の行列を捉えた現地実写。右上の小さなロゴは主役の判別を妨げない。"
+    },
     "confirmation": {
       "verified": true,
       "confirmedDate": "2026-11-04",

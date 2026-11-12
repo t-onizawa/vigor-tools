@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedOn": "2026-11-11",
+  "updatedOn": "2026-11-12",
   "items": [
     {
       "slug": "inasa-jinja-ohitaki-matsuri",
@@ -42,10 +42,10 @@
       "slug": "yamashiro-tanuki-matsuri",
       "lane": "0",
       "reason": "開催が近く背景画像と動画が未設定",
-      "status": "in_progress",
-      "lastTouchedOn": "2026-11-11",
-      "result": null,
-      "memo": "徳島新聞の候補動画と背景画像を直接確認。背景採用候補の表示テストと動画本編の内容確認が必要。"
+      "status": "done",
+      "lastTouchedOn": "2026-11-12",
+      "result": "added-image",
+      "memo": "徳島新聞の狸の着ぐるみ行列の実写サムネイルを背景に採用。代表動画は行列の単一場面のため見送り。"
     }
   ]
 }
