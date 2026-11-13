@@ -3302,5 +3302,13 @@ const SEARCH_INDEX = [
     "prefecture": "秋田県",
     "city": "横手市",
     "firstDate": "2026-09-19"
+  },
+  {
+    "slug": "odate-shinmeisha-reisai",
+    "name": "大館神明社例祭",
+    "officialName": "大館神明社例祭余興奉納行事",
+    "prefecture": "秋田県",
+    "city": "大館市",
+    "firstDate": "2026-09-10"
   }
 ];
