@@ -46,6 +46,33 @@
       "lastTouchedOn": "2026-11-12",
       "result": "added-image",
       "memo": "徳島新聞の狸の着ぐるみ行列の実写サムネイルを背景に採用。代表動画は行列の単一場面のため見送り。"
+    },
+    {
+      "slug": "kasuga-wakamiya-onmatsuri",
+      "lane": "0",
+      "reason": "開催が近く素材が未設定",
+      "status": "in_progress",
+      "lastTouchedOn": "2026-11-13",
+      "result": null,
+      "memo": "奈良県の紙芝居動画は実写でないため背景・雰囲気動画に不適。他の実写候補を確認する。"
+    },
+    {
+      "slug": "oomiwa-sake-matsuri",
+      "lane": "0",
+      "reason": "開催が近く素材が未設定",
+      "status": "queued",
+      "lastTouchedOn": null,
+      "result": null,
+      "memo": ""
+    },
+    {
+      "slug": "tochigi-aki-matsuri",
+      "lane": "0",
+      "reason": "開催が近く素材が未設定",
+      "status": "queued",
+      "lastTouchedOn": null,
+      "result": null,
+      "memo": ""
     }
   ]
 }
