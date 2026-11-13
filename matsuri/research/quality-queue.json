@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedOn": "2026-11-12",
+  "updatedOn": "2026-11-13",
   "items": [
     {
       "slug": "inasa-jinja-ohitaki-matsuri",
@@ -24,10 +24,10 @@
       "slug": "hagi-jidai-matsuri",
       "lane": "0",
       "reason": "開催が近く、背景画像と動画が未設定",
-      "status": "in_progress",
-      "lastTouchedOn": "2026-11-12",
-      "result": null,
-      "memo": "1候補は単一場面のため動画見送り。別候補の本編全体の構成確認が残る。"
+      "status": "done",
+      "lastTouchedOn": "2026-11-13",
+      "result": "added-image",
+      "memo": "時代パレードの現地実写を背景に採用。動画は通し記録や別催事を含む候補のため見送り。"
     },
     {
       "slug": "shimanto-kuroson-mura-matsuri",

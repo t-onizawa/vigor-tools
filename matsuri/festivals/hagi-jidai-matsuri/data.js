@@ -21,7 +21,15 @@ const FESTIVAL = {
     "mapReference": null,
     "highlightComment": "萩大名行列が毛槍を投げ渡しながら城下町を巡り、草履舞も披露する。午後は歴代藩主や奇兵隊に扮した時代パレードが金谷神社へ向かう。",
     "atmosphereMedia": [],
-    "backgroundImage": null,
+    "backgroundImage": {
+      "type": "youtube",
+      "contentId": "oryDDlpXuvY",
+      "sourceUrl": "https://www.youtube.com/watch?v=oryDDlpXuvY",
+      "publisher": "kasumisou",
+      "publisherType": "individual",
+      "checkedDate": "2026-11-13",
+      "note": "萩時代パレードの行列を捉えた現地実写。文字の重なりがなく行列を判別できる。"
+    },
     "confirmation": {
       "verified": true,
       "confirmedDate": "2026-10-28",
