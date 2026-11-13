@@ -1,0 +1,150 @@
+/* English practical briefs (matsuri/en/guides/). Extends shared/festival-detail.css. */
+
+/* Long-form single column; the shared two-column desktop grid is for festival detail pages. */
+main.page-shell.guide-page {
+  display: block;
+  width: min(100%, 820px);
+}
+.guide-meta {
+  margin: 10px 0 0;
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+
+.guide-banner {
+  margin: 16px 0 0;
+  padding: 12px 14px;
+  border: 1px solid var(--brand-red);
+  background: #fff;
+  font-weight: 600;
+}
+
+.guide-lead {
+  margin: 14px 0 0;
+}
+
+.guide-box {
+  padding: 14px 16px;
+  border: 1px solid var(--line);
+  background: var(--surface);
+}
+
+.guide-box h2,
+.guide-box h3 {
+  margin-top: 0;
+}
+
+.guide-box ul {
+  margin: 8px 0 0;
+  padding-left: 1.2em;
+}
+
+.guide-box--pending {
+  border-color: var(--accent-muted);
+  background: var(--indigo-tint);
+}
+
+.tag {
+  display: inline-block;
+  margin-right: 6px;
+  padding: 0 7px;
+  border: 1px solid var(--line);
+  border-radius: 3px;
+  background: var(--badge);
+  color: var(--accent-strong);
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  vertical-align: 1px;
+}
+
+.tag--pending {
+  border-color: var(--accent);
+  color: var(--accent);
+  background: #fff;
+}
+
+.tag--note {
+  border-style: dashed;
+  background: #fff;
+  color: var(--muted);
+}
+
+.guide-table-wrap {
+  margin: 10px 0;
+  overflow-x: auto;
+}
+
+.guide-table {
+  width: 100%;
+  min-width: 460px;
+  border-collapse: collapse;
+  font-size: 0.95rem;
+}
+
+.guide-table caption {
+  padding: 0 0 6px;
+  color: var(--muted);
+  font-size: 0.85rem;
+  text-align: left;
+}
+
+.guide-table th,
+.guide-table td {
+  padding: 7px 10px;
+  border: 1px solid var(--line);
+  text-align: left;
+  vertical-align: top;
+  font-variant-numeric: tabular-nums;
+}
+
+.guide-table th {
+  background: var(--badge);
+  font-weight: 700;
+}
+
+.guide-table .ja {
+  display: block;
+  color: var(--muted);
+  font-size: 0.8rem;
+}
+
+.guide-source {
+  margin: 10px 0 0;
+  color: var(--muted);
+  font-size: 0.88rem;
+}
+
+.guide-source a {
+  color: var(--accent);
+}
+
+.guide-list {
+  margin: 8px 0;
+  padding-left: 1.2em;
+}
+
+.guide-list li + li {
+  margin-top: 6px;
+}
+
+.guide-toc {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px 14px;
+  margin: 14px 0 0;
+  padding: 0;
+  list-style: none;
+  font-size: 0.92rem;
+}
+
+.guide-toc a {
+  color: var(--accent);
+}
+
+@media (max-width: 480px) {
+  .guide-box {
+    padding: 12px;
+  }
+}
