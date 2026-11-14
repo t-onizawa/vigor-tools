@@ -59,3 +59,4 @@ FESTIVAL_SLUGS.push("obanazawa-hanagasa-matsuri", "murayama-tokunai-matsuri", "t
 FESTIVAL_SLUGS.push("maibara-hikiyama-matsuri", "kyotamba-katsuragi-hikiyama", "oizu-gion-matsuri", "seki-juku-gion-natsumatsuri", "ise-matsuri");
 FESTIVAL_SLUGS.push("asamai-hachiman-saiten");
 FESTIVAL_SLUGS.push("odate-shinmeisha-reisai");
+FESTIVAL_SLUGS.push("fukushima-daijingu-reitaisai");

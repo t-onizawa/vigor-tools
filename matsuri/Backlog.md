@@ -42,6 +42,10 @@ Updated: 2026-09-08（英語版7ページ・関連JP6ページのsitemap.xml反�
 
 - 矢島八朔まつり（秋田県由利本荘市）：2026年9月12・13日の開催案内を確認。市と観光協会の神楽出発時刻に差があり、正確な取り扱いを要確認。https://www.city.yurihonjo.lg.jp/1001506/1001551/1001583/1001689/1008888.html 、https://yurihonjo-kanko.jp/event/%E7%9F%A2%E5%B3%B6%E5%85%AB%E6%9C%94%E3%81%BE%E3%81%A4%E3%82%8A/
 
+2026-11-15再確認：市の矢島地区案内は神楽出発18:15、観光協会は18:20。公式情報の具体時刻が不一致のため停止条件により引き続き保留。市 https://www.city.yurihonjo.lg.jp/yashima/hassaku/hassaku.htm 、観光協会 https://yurihonjo-kanko.jp/event/%E7%9F%A2%E5%B3%B6%E5%85%AB%E6%9C%94%E3%81%BE%E3%81%A4%E3%82%8A/ 。
+
+2026-11-15全国深掘り：福島大神宮例大祭（北海道福島町）を追加。北海道8→9件、全国414→415件。北海道福島町観光協会の2026年9月11・12・13・16日案内、神輿・山車と四ヶ散米行列を確認。過去日のためended。https://be-happy-fukushima.com/oshirase/annual-festival/ 。秋田県の連続追加は2回で途切れた。全日程経過に伴いoomiwa-sake-matsuriとyamashiro-tanuki-matsuriを機械的にendedへ変更。
+
 大館神明社例祭は2026-11-14に新規追加。市の2026年9月10・11日案内と、実行委員会・観光協会の祭礼範囲を確認。山車・神輿・曳き回しあり、山車上の踊りは未確認。直近の同一県追加は秋田2回連続。全国413→414件、秋田7→8件。
 
 ---

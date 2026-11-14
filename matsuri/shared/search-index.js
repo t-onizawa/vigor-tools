@@ -3310,5 +3310,13 @@ const SEARCH_INDEX = [
     "prefecture": "秋田県",
     "city": "大館市",
     "firstDate": "2026-09-10"
+  },
+  {
+    "slug": "fukushima-daijingu-reitaisai",
+    "name": "福島大神宮例大祭",
+    "officialName": "福島大神宮例大祭",
+    "prefecture": "北海道",
+    "city": "松前郡福島町",
+    "firstDate": "2026-09-11"
   }
 ];
