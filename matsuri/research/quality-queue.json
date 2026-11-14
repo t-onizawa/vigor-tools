@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedOn": "2026-11-13",
+  "updatedOn": "2026-11-14",
   "items": [
     {
       "slug": "inasa-jinja-ohitaki-matsuri",
@@ -51,10 +51,10 @@
       "slug": "kasuga-wakamiya-onmatsuri",
       "lane": "0",
       "reason": "開催が近く素材が未設定",
-      "status": "in_progress",
-      "lastTouchedOn": "2026-11-13",
-      "result": null,
-      "memo": "奈良県の紙芝居動画は実写でないため背景・雰囲気動画に不適。他の実写候補を確認する。"
+      "status": "done",
+      "lastTouchedOn": "2026-11-14",
+      "result": "added-image",
+      "memo": "お渡り式の騎馬行列の実写サムネイルを背景に採用。雰囲気動画は長尺の通し記録のため見送り。"
     },
     {
       "slug": "oomiwa-sake-matsuri",
