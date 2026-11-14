@@ -60,15 +60,24 @@
       "slug": "oomiwa-sake-matsuri",
       "lane": "0",
       "reason": "開催が近く素材が未設定",
+      "status": "in_progress",
+      "lastTouchedOn": "2026-11-14",
+      "result": null,
+      "memo": "奈良テレビNEWSの酒まつり動画とサムネイル・自動フレームを直接確認。全体の構成と他候補を確認して採否判断。"
+    },
+    {
+      "slug": "tochigi-aki-matsuri",
+      "lane": "0",
+      "reason": "開催が近く素材が未設定",
       "status": "queued",
       "lastTouchedOn": null,
       "result": null,
       "memo": ""
     },
     {
-      "slug": "tochigi-aki-matsuri",
+      "slug": "yatsushiro-myouken-sai",
       "lane": "0",
-      "reason": "開催が近く素材が未設定",
+      "reason": "開催が近く背景画像が未設定。前回の素材調査は10月22日",
       "status": "queued",
       "lastTouchedOn": null,
       "result": null,
