@@ -40,7 +40,7 @@ const FESTIVAL = {
     confirmation: { verified: true, confirmedDate: "2026-07-31", sources: ["https://www.city.tochigi.lg.jp/site/tourism/26060.html"] }
   },
   yearlyInfo: [{
-    year: 2026, eventStatus: "confirmed", dates: ["2026-11-14", "2026-11-15"],
+    year: 2026, eventStatus: "ended", dates: ["2026-11-14", "2026-11-15"],
     access: { hasParking: null, parkingNote: "2026年の臨時駐車場・交通規制詳細は公式案内を確認。" },
     confirmation: { confirmedDate: "2026-07-31", sources: ["https://www.city.tochigi.lg.jp/site/tourism/26060.html"], note: "栃木市公式が2026年11月14日・15日の開催を告知。" }
   }]

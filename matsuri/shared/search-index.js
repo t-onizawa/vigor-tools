@@ -3318,5 +3318,13 @@ const SEARCH_INDEX = [
     "prefecture": "北海道",
     "city": "松前郡福島町",
     "firstDate": "2026-09-11"
+  },
+  {
+    "slug": "motomiya-aki-matsuri",
+    "name": "もとみや秋祭り",
+    "officialName": "もとみや秋祭り",
+    "prefecture": "福島県",
+    "city": "本宮市",
+    "firstDate": "2026-10-23"
   }
 ];
