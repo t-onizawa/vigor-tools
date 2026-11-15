@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedOn": "2026-11-14",
+  "updatedOn": "2026-11-15",
   "items": [
     {
       "slug": "inasa-jinja-ohitaki-matsuri",
@@ -60,10 +60,10 @@
       "slug": "oomiwa-sake-matsuri",
       "lane": "0",
       "reason": "開催が近く素材が未設定",
-      "status": "in_progress",
-      "lastTouchedOn": "2026-11-14",
-      "result": null,
-      "memo": "奈良テレビNEWSの酒まつり動画とサムネイル・自動フレームを直接確認。全体の構成と他候補を確認して採否判断。"
+      "status": "done",
+      "lastTouchedOn": "2026-11-15",
+      "result": "added-video",
+      "memo": "奈良新聞の2025年祭典映像を動画に採用。背景候補は文字重なり・低解像度のため見送り。"
     },
     {
       "slug": "tochigi-aki-matsuri",

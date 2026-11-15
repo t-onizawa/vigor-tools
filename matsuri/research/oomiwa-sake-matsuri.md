@@ -53,3 +53,8 @@ backgroundImage=null、atmosphereMedia=[]。直接確認した適合素材なし
 - 奈良テレビNEWSの https://www.youtube.com/watch?v=sUn_Rf-yChA を直接開き、投稿者・2024年の酒まつり・1分24秒を確認。動画にはニュースキャスターと祭礼の現地映像がある。全体の構成と動画採否は未確認。
 - https://i.ytimg.com/vi/sUn_Rf-yChA/hqdefault.jpg は文字付きの杉玉の写真。0は同じ画像、1はニュースキャスター、2は杉玉、3は参列者の画像。背景としての適否は未確定。次回は他の候補も確認し、画像・動画をそれぞれ判断する。
 - 追加候補 https://www.youtube.com/watch?v=5XqPJTQ_fM0 はサムネイル https://i.ytimg.com/vi/5XqPJTQ_fM0/hqdefault.jpg を直接確認。巫女の舞が写るが中央に縦書き文字が重なる。動画ページの直接確認と自動フレームの確認は未実施。
+
+### 2026-11-15 素材調査
+
+- 動画： https://www.youtube.com/watch?v=5XqPJTQ_fM0 を直接開き、奈良新聞による2025年の祭典の1分22秒の映像と確認。拝殿・奉納酒・神職の祈願・巫女の奉献や舞の実写を含むため、雰囲気動画として採用。
+- 背景：同動画の https://i.ytimg.com/vi/5XqPJTQ_fM0/hqdefault.jpg は巫女の前に大きく文字が重なり、0も同じ。1・2は奉納酒、3は舞の映像だが小さく低解像度のため見送り。前回確認した奈良テレビNEWS候補は杉玉の画像で、祭礼の場面をより直接示す背景としては採用を保留。

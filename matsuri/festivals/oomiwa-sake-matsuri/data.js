@@ -28,7 +28,19 @@ const FESTIVAL = {
       "note": "公式案内に対応する会場の基準地点。巡行全域を示すものではない。"
     },
     "highlightComment": "酒造家や杜氏が新酒の醸造安全を祈り、杉を手にした巫女の神楽と新しい大杉玉が酒造りの季節を伝える。",
-    "atmosphereMedia": [],
+    "atmosphereMedia": [
+      {
+        "type": "youtube",
+        "url": "https://www.youtube.com/watch?v=5XqPJTQ_fM0",
+        "contentId": "5XqPJTQ_fM0",
+        "title": "酒まつり　うま酒みわの舞　大神神社　奈良県桜井市",
+        "publisher": "奈良新聞",
+        "publisherType": "local_media",
+        "purpose": "festival_atmosphere",
+        "publishedYear": 2025,
+        "checkedDate": "2026-11-15"
+      }
+    ],
     "backgroundImage": null,
     "confirmation": {
       "verified": true,
