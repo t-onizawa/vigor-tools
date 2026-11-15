@@ -68,11 +68,11 @@
     {
       "slug": "tochigi-aki-matsuri",
       "lane": "0",
-      "reason": "開催が近く素材が未設定",
-      "status": "queued",
-      "lastTouchedOn": null,
+      "reason": "背景・動画は既存設定済み。代表地点の座標が未設定",
+      "status": "in_progress",
+      "lastTouchedOn": "2026-11-15",
       "result": null,
-      "memo": ""
+      "memo": "市公式と動画候補・画像を直接確認。既存素材との役割と蔵の街大通りの座標を引き続き確認。"
     },
     {
       "slug": "yatsushiro-myouken-sai",
