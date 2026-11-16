@@ -3326,5 +3326,21 @@ const SEARCH_INDEX = [
     "prefecture": "福島県",
     "city": "本宮市",
     "firstDate": "2026-10-23"
+  },
+  {
+    "slug": "harimichi-abare-dashi",
+    "name": "針道のあばれ山車",
+    "officialName": "諏訪神社例大祭 針道のあばれ山車",
+    "prefecture": "福島県",
+    "city": "二本松市",
+    "firstDate": "2026-10-10"
+  },
+  {
+    "slug": "obama-montsuki-matsuri",
+    "name": "小浜の紋付祭り",
+    "officialName": "塩松神社秋季例大祭小浜の紋付祭り",
+    "prefecture": "福島県",
+    "city": "二本松市",
+    "firstDate": "2026-10-10"
   }
 ];

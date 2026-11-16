@@ -46,6 +46,8 @@ Updated: 2026-09-08（英語版7ページ・関連JP6ページのsitemap.xml反�
 
 2026-11-16再確認：上記の矢島八朔まつりの時刻不一致は解消を確認できず保留。福島稲荷神社秋の例大祭（福島県福島市）は、神社公式 https://www.fukushima-inari.com/information/2535.html の連山車17:30と観光協会 https://www.f-kankou.jp/event/32826 の17:00が不一致のため要確認。
 
+2026-11-17全国深掘り：針道のあばれ山車と小浜の紋付祭り（福島県二本松市）を追加。二本松市の https://www.city.nihonmatsu.lg.jp/kouhou_koucyo/houdou/kisya/r8/page014421.html と https://www.city.nihonmatsu.lg.jp/kankou/matsuri/dashi/page003369.html を確認。2026年10月10・11日の案内は過去日のため両件ended。異なる神社・地区の祭礼。矢島八朔まつりと福島稲荷神社例大祭は時刻不一致の確認待ち。全国416→418件、福島9→11件。
+
 2026-11-16全国深掘り：もとみや秋祭り（福島県本宮市）を追加。市の開催案内 https://www.city.motomiya.lg.jp/site/kanko/motomiya-akimatsuri.html と開催後報告 https://www.city.motomiya.lg.jp/site/kanko/2026motomiyaaki.html で2026年10月23〜25日を確認。過去日のためended。全国415→416件、福島8→9件。hagi-jidai-matsuriとtochigi-aki-matsuriを全日程経過により自動ended化。
 
 2026-11-15全国深掘り：福島大神宮例大祭（北海道福島町）を追加。北海道8→9件、全国414→415件。北海道福島町観光協会の2026年9月11・12・13・16日案内、神輿・山車と四ヶ散米行列を確認。過去日のためended。https://be-happy-fukushima.com/oshirase/annual-festival/ 。秋田県の連続追加は2回で途切れた。全日程経過に伴いoomiwa-sake-matsuriとyamashiro-tanuki-matsuriを機械的にendedへ変更。
