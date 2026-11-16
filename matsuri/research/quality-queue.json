@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedOn": "2026-11-15",
+  "updatedOn": "2026-11-16",
   "items": [
     {
       "slug": "inasa-jinja-ohitaki-matsuri",
@@ -69,15 +69,33 @@
       "slug": "tochigi-aki-matsuri",
       "lane": "0",
       "reason": "背景・動画は既存設定済み。代表地点の座標が未設定",
-      "status": "in_progress",
-      "lastTouchedOn": "2026-11-15",
-      "result": null,
-      "memo": "市公式と動画候補・画像を直接確認。既存素材との役割と蔵の街大通りの座標を引き続き確認。"
+      "status": "done",
+      "lastTouchedOn": "2026-11-16",
+      "result": "rejected-all",
+      "memo": "追加動画は長尺の巡行記録、画像は文字重なり・低解像度のため見送り。通りの代表座標は一意に定められず。"
     },
     {
       "slug": "yatsushiro-myouken-sai",
       "lane": "0",
       "reason": "開催が近く背景画像が未設定。前回の素材調査は10月22日",
+      "status": "queued",
+      "lastTouchedOn": null,
+      "result": null,
+      "memo": ""
+    },
+    {
+      "slug": "akashi-shigosen-dontokoi-matsuri",
+      "lane": "1",
+      "reason": "背景画像と動画が未設定で、素材調査履歴なし",
+      "status": "queued",
+      "lastTouchedOn": null,
+      "result": null,
+      "memo": ""
+    },
+    {
+      "slug": "asamai-hachiman-saiten",
+      "lane": "1",
+      "reason": "背景画像と動画が未設定で、素材調査履歴なし",
       "status": "queued",
       "lastTouchedOn": null,
       "result": null,

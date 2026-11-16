@@ -47,3 +47,9 @@
 
 - 栃木市公式 https://www.city.tochigi.lg.jp/site/tourism/26060.html を直接確認。2026年11月15日の例幣使街道巡行と山車曳き体験、シャトルバス運行の中止が掲載されているため要確認リストに記録。
 - 既存データには県公式の動画と背景が既に設定され、キューの「素材が未設定」という理由は不正確。新たな候補 https://www.youtube.com/watch?v=UbekF-kQWpQ の動画ページと https://i.ytimg.com/vi/UbekF-kQWpQ/hqdefault.jpg および0〜3のフレームを直接確認。既定画像は大きな文字、2・3は山車の実写だが低解像度。既存素材との役割・採否と座標は引き続き確認する。
+
+### 2026-11-16 素材調査
+
+- 栃木市公式 https://www.city.tochigi.lg.jp/site/tourism/26060.html を直接確認。対象は蔵の街の人形山車巡行。既存の背景・代表動画は維持。
+- 候補 https://www.youtube.com/watch?v=UbekF-kQWpQ を直接再確認。投稿者は山車・屋台祭り探訪、55分52秒。長尺の巡行記録で既存の代表動画と役割が重なるため動画の追加は見送り。背景画像は https://i.ytimg.com/vi/UbekF-kQWpQ/hqdefault.jpg の大きな文字が山車に重なり、前回直接確認した2・3のフレームも低解像度のため見送り。
+- 蔵の街大通りは範囲が広く、既存の地図参照地点を一意に特定する根拠がないため座標は推測せず見送り。
