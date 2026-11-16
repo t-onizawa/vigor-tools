@@ -78,10 +78,10 @@
       "slug": "yatsushiro-myouken-sai",
       "lane": "0",
       "reason": "開催が近く背景画像が未設定。前回の素材調査は10月22日",
-      "status": "queued",
-      "lastTouchedOn": null,
+      "status": "in_progress",
+      "lastTouchedOn": "2026-11-16",
       "result": null,
-      "memo": ""
+      "memo": "ohjagaの2024年動画と文字なし亀蛇サムネイルを取得・確認。ブラウザー接続エラーで動画画面と採用後表示検証が未完了。"
     },
     {
       "slug": "akashi-shigosen-dontokoi-matsuri",

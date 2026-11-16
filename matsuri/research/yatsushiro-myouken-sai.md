@@ -35,3 +35,8 @@
 一次情報：https://myouken.com/
 
 祭り公式と八代市動画ギャラリー https://www.kinasse-yatsushiro.jp/galleries/movie を直接確認。候補 https://www.youtube.com/watch?v=YKGs_Yl47cU を直接確認。八代妙見祭オフィシャル、1290人、3706回、1:13、2022年開催を告知するTrailer。hqdefaultは獅子実写に大きなTRAILER2022等の文字。代替フレーム検証は未完了のため背景保留。告知映像を代表動画へ追加しない。既存動画・座標維持。
+
+### 2026-11-16 素材調査途中
+
+- 候補 https://www.youtube.com/watch?v=xUMFtVf-bGs のページを直接取得し、投稿者 ohjaga、題名「２０２４年 八代妙見祭」、18分5秒を確認。https://i.ytimg.com/vi/xUMFtVf-bGs/hqdefault.jpg を直接開き、文字のない亀蛇の現地写真を確認した。
+- ブラウザーのデバッガー接続エラーと in-app browser 不可により、動画の画面上での確認と追加後の画面幅別検証ができず、素材の採否は保留。次回は動画ページをブラウザーで開き撮影・投稿状況を確認し、採用時は2画面サイズで表示検証する。既存動画・座標は変更なし。
