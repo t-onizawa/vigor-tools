@@ -41,7 +41,15 @@ const FESTIVAL = {
         "checkedDate": "2026-09-16"
       }
     ],
-    "backgroundImage": null,
+    "backgroundImage": {
+      "type": "youtube",
+      "contentId": "xUMFtVf-bGs",
+      "sourceUrl": "https://www.youtube.com/watch?v=xUMFtVf-bGs",
+      "publisher": "ohjaga",
+      "publisherType": "individual",
+      "checkedDate": "2026-11-17",
+      "note": "優先度1。亀蛇を写した文字のない現地実写を背景として採用。"
+    },
     "confirmation": {
       "verified": true,
       "confirmedDate": "2026-09-08",

@@ -40,3 +40,7 @@
 
 - 候補 https://www.youtube.com/watch?v=xUMFtVf-bGs のページを直接取得し、投稿者 ohjaga、題名「２０２４年 八代妙見祭」、18分5秒を確認。https://i.ytimg.com/vi/xUMFtVf-bGs/hqdefault.jpg を直接開き、文字のない亀蛇の現地写真を確認した。
 - ブラウザーのデバッガー接続エラーと in-app browser 不可により、動画の画面上での確認と追加後の画面幅別検証ができず、素材の採否は保留。次回は動画ページをブラウザーで開き撮影・投稿状況を確認し、採用時は2画面サイズで表示検証する。既存動画・座標は変更なし。
+
+### 2026-11-17 素材調査
+
+- 背景画像に https://www.youtube.com/watch?v=xUMFtVf-bGs を採用。動画ページで投稿者 ohjaga、登録者3910人、2024年の祭り映像を直接確認。https://i.ytimg.com/vi/xUMFtVf-bGs/hqdefault.jpg は亀蛇の現地実写で文字がなく、背景候補の優先度1に該当する。既存の公式動画は維持し、動画の追加は行わない。

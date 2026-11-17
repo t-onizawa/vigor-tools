@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedOn": "2026-11-16",
+  "updatedOn": "2026-11-17",
   "items": [
     {
       "slug": "inasa-jinja-ohitaki-matsuri",
@@ -78,10 +78,10 @@
       "slug": "yatsushiro-myouken-sai",
       "lane": "0",
       "reason": "開催が近く背景画像が未設定。前回の素材調査は10月22日",
-      "status": "in_progress",
-      "lastTouchedOn": "2026-11-16",
-      "result": null,
-      "memo": "ohjagaの2024年動画と文字なし亀蛇サムネイルを取得・確認。ブラウザー接続エラーで動画画面と採用後表示検証が未完了。"
+      "status": "done",
+      "lastTouchedOn": "2026-11-17",
+      "result": "added-image",
+      "memo": "ohjagaの2024年動画ページと文字なしの亀蛇実写サムネイルを確認し背景に採用。既存動画は維持。"
     },
     {
       "slug": "akashi-shigosen-dontokoi-matsuri",
