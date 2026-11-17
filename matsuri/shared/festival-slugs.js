@@ -62,3 +62,4 @@ FESTIVAL_SLUGS.push("odate-shinmeisha-reisai");
 FESTIVAL_SLUGS.push("fukushima-daijingu-reitaisai");
 FESTIVAL_SLUGS.push("motomiya-aki-matsuri");
 FESTIVAL_SLUGS.push("harimichi-abare-dashi", "obama-montsuki-matsuri");
+FESTIVAL_SLUGS.push("yagawa-jinja-tanabata-matsuri");

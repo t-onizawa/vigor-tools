@@ -3342,5 +3342,13 @@ const SEARCH_INDEX = [
     "prefecture": "福島県",
     "city": "二本松市",
     "firstDate": "2026-10-10"
+  },
+  {
+    "slug": "yagawa-jinja-tanabata-matsuri",
+    "name": "矢川神社七夕まつり",
+    "officialName": "七夕まつり",
+    "prefecture": "滋賀県",
+    "city": "甲賀市",
+    "firstDate": "2026-07-07"
   }
 ];
