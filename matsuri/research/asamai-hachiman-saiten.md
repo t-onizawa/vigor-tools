@@ -8,3 +8,7 @@
 - https://www.city.yokote.lg.jp/kanko/1004035/1004514.html
 - https://yokote-kankou.jp/contents/%E6%B5%85%E8%88%9E%E5%85%AB%E5%B9%A1%E7%A5%9E%E7%A4%BE%E7%A5%AD%E5%85%B8/
 - https://akita-fun.jp/pamphlet_download/11/download.pdf
+
+### 2026-11-17 素材調査途中
+
+- https://www.youtube.com/watch?v=Pu89ltEPOIA を直接開き、浅舞八幡神社の「神輿渡御及び山車巡行」動画（9分58秒）の冒頭に現地の祭礼映像があることを確認。全編の構成や解説比率、背景用サムネイル・代替フレームは未確認のため、画像・動画とも採否を保留する。
