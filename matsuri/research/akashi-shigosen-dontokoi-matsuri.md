@@ -9,3 +9,8 @@
 - アクセス：JR・山陽電車明石駅から徒歩5分。2026年の祭り専用駐車場は公式案内で確認できません。
 - 一次情報：
   - https://www.yokoso-akashi.jp/event/3121
+
+### 2026-11-17 素材調査
+
+- 背景画像： https://www.youtube.com/watch?v=MY-CoWpLPTw の動画ページを直接開き、tsuji chou、登録者1800人、2023年明石公園の演舞、5分29秒を確認。 https://i.ytimg.com/vi/MY-CoWpLPTw/hqdefault.jpg を直接開き、踊り手の文字のない現地実写を確認したため優先度1で採用。
+- 雰囲気動画：同動画は一つのチームの演舞に限られ、祭り全体の複数要素を示す代表動画としては採用しない。

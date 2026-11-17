@@ -87,10 +87,10 @@
       "slug": "akashi-shigosen-dontokoi-matsuri",
       "lane": "1",
       "reason": "背景画像と動画が未設定で、素材調査履歴なし",
-      "status": "queued",
-      "lastTouchedOn": null,
-      "result": null,
-      "memo": ""
+      "status": "done",
+      "lastTouchedOn": "2026-11-17",
+      "result": "added-image",
+      "memo": "明石公園の踊りの文字なし実写を背景に採用。単一チームの演舞動画は代表動画には採用しない。"
     },
     {
       "slug": "asamai-hachiman-saiten",

@@ -21,7 +21,15 @@ const FESTIVAL = {
     "mapReference": null,
     "highlightComment": "明石公園の各会場でチームごとの踊りやダンスが披露され、観客も一体となって楽しめる。",
     "atmosphereMedia": [],
-    "backgroundImage": null,
+    "backgroundImage": {
+      "type": "youtube",
+      "contentId": "MY-CoWpLPTw",
+      "sourceUrl": "https://www.youtube.com/watch?v=MY-CoWpLPTw",
+      "publisher": "tsuji chou",
+      "publisherType": "individual",
+      "checkedDate": "2026-11-17",
+      "note": "優先度1。明石公園での踊りを写した文字のない現地実写。"
+    },
     "confirmation": {
       "verified": true,
       "confirmedDate": "2026-10-31",
