@@ -3350,5 +3350,13 @@ const SEARCH_INDEX = [
     "prefecture": "滋賀県",
     "city": "甲賀市",
     "firstDate": "2026-07-07"
+  },
+  {
+    "slug": "tsuru-furusato-jidai-matsuri",
+    "name": "ふるさと時代祭り（八朔祭）",
+    "officialName": "ふるさと時代祭り（八朔祭）",
+    "prefecture": "山梨県",
+    "city": "都留市",
+    "firstDate": "2026-09-05"
   }
 ];
