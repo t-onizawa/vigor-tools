@@ -100,6 +100,33 @@
       "lastTouchedOn": "2026-11-18",
       "result": "added-image",
       "memo": "神社公式動画の文字なしお囃子実写を背景に採用。歴史解説中心の動画は代表動画として採用しない。"
+    },
+    {
+      "slug": "fukushima-daijingu-reitaisai",
+      "lane": "1",
+      "reason": "背景画像と動画が未設定で、素材調査履歴なし",
+      "status": "in_progress",
+      "lastTouchedOn": "2026-11-18",
+      "result": null,
+      "memo": "福島町の2015年祭礼動画と画像・代替フレームを確認。文字や解像度が課題のため別候補と動画全体を確認。"
+    },
+    {
+      "slug": "higashine-matsuri",
+      "lane": "1",
+      "reason": "背景画像と動画が未設定で、素材調査履歴なし",
+      "status": "queued",
+      "lastTouchedOn": null,
+      "result": null,
+      "memo": ""
+    },
+    {
+      "slug": "hirakata-matsuri",
+      "lane": "1",
+      "reason": "背景画像と動画が未設定で、素材調査履歴なし",
+      "status": "queued",
+      "lastTouchedOn": null,
+      "result": null,
+      "memo": ""
     }
   ]
 }

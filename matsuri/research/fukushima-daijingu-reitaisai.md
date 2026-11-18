@@ -8,3 +8,7 @@
 - https://be-happy-fukushima.com/oshirase/annual-festival/
 - https://be-happy-fukushima.com/event/fukushima-daijingu/
 - https://hokkaidojinjacho.jp/%E7%A6%8F%E5%B3%B6%E5%A4%A7%E7%A5%9E%E5%AE%AE/
+
+### 2026-11-18 素材調査途中
+
+- 候補 https://www.youtube.com/watch?v=dy38tC41qdA を直接開き、福島町の2015年渡御祭での山車と踊りを扱う「良き候北加伊道映像部」の映像と確認。 https://i.ytimg.com/vi/dy38tC41qdA/hqdefault.jpg は画面左右の大きな文字が重なる。0〜3も直接確認し、1〜3は現地の踊りや山車だが低解像度かつ左上に文字がある。別候補と動画の全体構成を確認し、背景・動画の採否を判断する。
