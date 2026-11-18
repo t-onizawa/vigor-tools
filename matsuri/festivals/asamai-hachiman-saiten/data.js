@@ -19,7 +19,15 @@ const FESTIVAL = {
     mapReference: null,
     highlightComment: "浅舞の町内を山車が巡り、宵祭りには山車とお囃子の共演が披露されます。",
     atmosphereMedia: [],
-    backgroundImage: null,
+    backgroundImage: {
+      type: "youtube",
+      contentId: "fndXXVzXRag",
+      sourceUrl: "https://www.youtube.com/watch?v=fndXXVzXRag",
+      publisher: "浅舞八幡神社",
+      publisherType: "official",
+      checkedDate: "2026-11-18",
+      note: "優先度1。祭りのお囃子を写した文字のない現地実写。"
+    },
     confirmation: { verified: true, confirmedDate: "2026-11-13", sources: ["https://www.city.yokote.lg.jp/kanko/1004035/1004514.html", "https://yokote-kankou.jp/contents/%E6%B5%85%E8%88%9E%E5%85%AB%E5%B9%A1%E7%A5%9E%E7%A4%BE%E7%A5%AD%E5%85%B8/"] }
   },
   yearlyInfo: [{

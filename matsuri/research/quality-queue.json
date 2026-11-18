@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedOn": "2026-11-17",
+  "updatedOn": "2026-11-18",
   "items": [
     {
       "slug": "inasa-jinja-ohitaki-matsuri",
@@ -96,10 +96,10 @@
       "slug": "asamai-hachiman-saiten",
       "lane": "1",
       "reason": "背景画像と動画が未設定で、素材調査履歴なし",
-      "status": "in_progress",
-      "lastTouchedOn": "2026-11-17",
-      "result": null,
-      "memo": "神社の9分58秒の祭礼動画を直接確認。全編の構成とサムネイル・代替フレームを次回確認する。"
+      "status": "done",
+      "lastTouchedOn": "2026-11-18",
+      "result": "added-image",
+      "memo": "神社公式動画の文字なしお囃子実写を背景に採用。歴史解説中心の動画は代表動画として採用しない。"
     }
   ]
 }
