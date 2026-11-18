@@ -527,6 +527,10 @@ p {
   min-height: 100px;
 }
 
+.feature-grid:empty {
+  display: none;
+}
+
 .feature-badge {
   display: flex;
   align-items: center;
@@ -1201,6 +1205,7 @@ p {
     display: grid;
     grid-template-columns: minmax(0, 3fr) minmax(0, 2fr);
     column-gap: 20px;
+    align-items: start;
   }
 
   .festival-header,
