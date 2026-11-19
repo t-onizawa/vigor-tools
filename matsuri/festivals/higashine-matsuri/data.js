@@ -21,7 +21,15 @@ const FESTIVAL = {
     "mapReference": null,
     "highlightComment": "七夕提灯行列や踊りの競演を柱とし、神輿や多彩な演目で東根の夏を盛り上げる。2026年8月11日は雨天で一部中止となり、踊りや神輿は会場変更を主催者が発表した。",
     "atmosphereMedia": [],
-    "backgroundImage": null,
+    "backgroundImage": {
+      "type": "youtube",
+      "contentId": "9RztncTTqJA",
+      "sourceUrl": "https://www.youtube.com/watch?v=9RztncTTqJA",
+      "publisher": "山形新聞オンライン",
+      "publisherType": "local_media",
+      "checkedDate": "2026-11-19",
+      "note": "優先度1。ひがしね祭の踊りの競演を写した現地実写。"
+    },
     "confirmation": {
       "verified": true,
       "confirmedDate": "2026-11-09",

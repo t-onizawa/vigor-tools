@@ -114,10 +114,10 @@
       "slug": "higashine-matsuri",
       "lane": "1",
       "reason": "背景画像と動画が未設定で、素材調査履歴なし",
-      "status": "queued",
-      "lastTouchedOn": null,
-      "result": null,
-      "memo": ""
+      "status": "done",
+      "lastTouchedOn": "2026-11-19",
+      "result": "added-image",
+      "memo": "山形新聞の踊りの実写を背景に採用。動画は競演の一場面に限られるため見送り。"
     },
     {
       "slug": "hirakata-matsuri",

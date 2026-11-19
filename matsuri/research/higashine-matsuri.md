@@ -8,3 +8,8 @@
 - features：山車 未確認、神輿 true、曳き回し・山車上の踊りは未確認、時間帯 both。
 - 一次情報：
   - https://higashine-shikisai.com/h-fes/
+
+### 2026-11-19 素材調査
+
+- 背景： https://www.youtube.com/watch?v=9RztncTTqJA を直接開き、山形新聞オンラインによる第48回ひがしね祭の「おどりの競演」映像（1分18秒）と確認。 https://i.ytimg.com/vi/9RztncTTqJA/hqdefault.jpg を直接確認し、踊りの実写で右上の小さな新聞社ロゴが主役を妨げないため優先度1で採用。
+- 動画：同候補は「おどりの競演」に限った映像で、提灯行列・神輿など祭り全体の複数要素を示す代表動画としては見送る。
