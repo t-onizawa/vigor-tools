@@ -9,3 +9,9 @@
 - 一次情報：
   - https://www.city.hirakata.osaka.jp/0000050932.html
   - https://www.city.hirakata.osaka.jp/suidou/0000054397.html
+
+### 2026-11-19 素材調査
+
+- 枚方市公式 https://www.city.hirakata.osaka.jp/0000050932.html を直接確認し、枚方市駅周辺の各会場で催す市民まつりであることを確認した。
+- 動画候補 https://www.youtube.com/watch?v=dWiBLUT7KoE を直接開き、投稿者 Gorimon 2、55分58秒、駅周辺の再開発を含む街歩きであることを確認。祭り以外が主題の長尺動画で、祭りの雰囲気を短く伝える代表動画には採用しない。
+- 背景画像： https://i.ytimg.com/vi/dWiBLUT7KoE/hqdefault.jpg を直接確認。駅前の建物とバスに大きな文字を重ねたもので、祭りの主役を視覚的に示していないため見送り。今回確認した範囲で基準を満たす別の動画・背景素材は見つからなかった。

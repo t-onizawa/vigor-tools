@@ -123,10 +123,10 @@
       "slug": "hirakata-matsuri",
       "lane": "1",
       "reason": "背景画像と動画が未設定で、素材調査履歴なし",
-      "status": "queued",
-      "lastTouchedOn": null,
-      "result": null,
-      "memo": ""
+      "status": "done",
+      "lastTouchedOn": "2026-11-19",
+      "result": "rejected-all",
+      "memo": "市公式と駅周辺の動画・画像を直接確認。候補は街歩き中心の長尺で、画像も祭りを示さず見送り。"
     }
   ]
 }
