@@ -3358,5 +3358,13 @@ const SEARCH_INDEX = [
     "prefecture": "山梨県",
     "city": "都留市",
     "firstDate": "2026-09-05"
+  },
+  {
+    "slug": "aki-noryo-shiminsai",
+    "name": "安芸納涼市民祭",
+    "officialName": "安芸納涼市民祭",
+    "prefecture": "高知県",
+    "city": "安芸市",
+    "firstDate": "2026-08-01"
   }
 ];
