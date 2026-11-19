@@ -703,6 +703,10 @@
     if (!section || !primaryInfo || !primaryInfo.parentElement) {
       return;
     }
+    // 列ラッパー内に静的配置済みなら移動しない（左右カラムの構造を壊さない）
+    if (section.closest(".detail-col")) {
+      return;
+    }
     const nextSibling = primaryInfo.nextElementSibling;
     primaryInfo.parentElement.insertBefore(section, nextSibling);
   }

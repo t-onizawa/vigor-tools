@@ -82,6 +82,15 @@ a {
   margin-top: 12px;
 }
 
+/* 列ラッパー自体には余白を付けず、先頭のカードに従来どおり適用する */
+.festival-header.has-hero + .primary-info + .detail-col {
+  margin-top: 0;
+}
+
+.festival-header.has-hero + .primary-info + .detail-col > :first-child {
+  margin-top: 12px;
+}
+
 .hero-background {
   position: absolute;
   inset: -16px;
@@ -529,6 +538,11 @@ p {
 
 .feature-grid:empty {
   display: none;
+}
+
+/* PC 2カラム用の列ラッパー。1カラム表示では透過し、従来の縦並びと同じにする */
+.detail-col {
+  display: contents;
 }
 
 .feature-badge {
@@ -1158,6 +1172,10 @@ p {
     margin-top: 22px;
   }
 
+  .festival-header.has-hero + .primary-info + .detail-col > :first-child {
+    margin-top: 22px;
+  }
+
   .festival-header {
     padding-bottom: 32px;
   }
@@ -1217,6 +1235,14 @@ p {
 
   .festival-header { grid-row: 1; }
   .primary-info { grid-row: 2; }
+
+  /* 列ラッパーがあるページは、左右を独立して縦に積む（行の高さを共有しない） */
+  .detail-col {
+    display: block;
+    min-width: 0;
+  }
+  .detail-col-main { grid-column: 1; grid-row: 3; }
+  .detail-col-side { grid-column: 2; grid-row: 3; }
 
   #highlight-comment-section { grid-column: 1; grid-row: 3; }
   section[aria-labelledby="access-heading"] { grid-column: 2; grid-row: 3; }
