@@ -5,7 +5,7 @@ const FESTIVAL = {
     schedulePattern: "例年9月",
     features: { hasDashi: true, hasMikoshi: true, hasDanceOnDashi: null, hasParade: true, highlightTime: "both", hayashiNote: "福島町の祭礼行列では、四ヶ散米行列や神輿に各町内会の山車が続きます。" },
     access: { nearestStation: "木古内駅から函館バスで福島下車、徒歩約5分" }, mapReference: null,
-    highlightComment: "福島町の祭礼行列では、四ヶ散米行列や神輿に各町内会の山車が続きます。", atmosphereMedia: [], backgroundImage: null,
+    highlightComment: "福島町の祭礼行列では、四ヶ散米行列や神輿に各町内会の山車が続きます。", atmosphereMedia: [], backgroundImage: {type:"youtube",contentId:"hvXQWENFWPs",sourceUrl:"https://www.youtube.com/watch?v=hvXQWENFWPs",publisher:"泰平山実行委員会",publisherType:"individual",checkedDate:"2026-11-19",note:"優先度1。2026年祭礼行列の踊りを写した文字のない現地実写。"},
     confirmation: { verified: true, confirmedDate: "2026-11-15", sources: ["https://be-happy-fukushima.com/event/fukushima-daijingu/", "https://hokkaidojinjacho.jp/%E7%A6%8F%E5%B3%B6%E5%A4%A7%E7%A5%9E%E5%AE%AE/"] }
   },
   yearlyInfo: [{ year: 2026, eventStatus: "ended", dates: ["2026-09-11", "2026-09-12", "2026-09-13", "2026-09-16"],
