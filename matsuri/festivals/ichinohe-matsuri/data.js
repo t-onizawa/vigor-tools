@@ -21,7 +21,15 @@ const FESTIVAL = {
     "mapReference": null,
     "highlightComment": "八坂神社と稲荷神社の例大祭に、手作りの風流山車と神輿、根反鹿踊りなどの郷土芸能が繰り出す。",
     "atmosphereMedia": [],
-    "backgroundImage": null,
+    "backgroundImage": {
+      "type": "youtube",
+      "contentId": "bTPcbU8pWP0",
+      "sourceUrl": "https://www.youtube.com/watch?v=bTPcbU8pWP0",
+      "publisher": "kamesansg2002",
+      "publisherType": "individual",
+      "checkedDate": "2026-11-20",
+      "note": "優先度1。一戸まつりの上町組山車の巡行を写した現地実写。"
+    },
     "confirmation": {
       "verified": true,
       "confirmedDate": "2026-11-07",

@@ -8,3 +8,9 @@
 - features：山車 true、神輿 true、曳き回し true、時間帯 both。山車上の踊りは未確認。
 - 一次情報：
   - https://www.town.ichinohe.iwate.jp/soshikikarasagasu/shokokankoka/1/394.html
+
+## 2026-11-20 素材調査
+
+- 画像・動画候補：https://www.youtube.com/watch?v=bTPcbU8pWP0 を直接確認。投稿者 kamesansg2002、登録者約1,180人、4分52秒、594回視聴。2026年8月30日の上町組の山車巡行を撮影した動画で、投稿者の説明も同じ場面を示す。
+- デフォルトサムネイル https://i.ytimg.com/vi/bTPcbU8pWP0/hqdefault.jpg を直接確認。文字なしで山車の現地実写が写る。上下に黒帯があるが、詳細ヒーローを390×844・1440×900で確認し、山車が判別でき、表示崩れもないため優先度1で採用。
+- 動画は山車巡行の一場面であり、祭り全体を伝える代表動画としては見送り。
