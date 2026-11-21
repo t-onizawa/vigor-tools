@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedOn": "2026-11-20",
+  "updatedOn": "2026-11-21",
   "items": [
     {
       "slug": "inasa-jinja-ohitaki-matsuri",
@@ -124,9 +124,9 @@
       "lane": "1",
       "reason": "背景画像と動画が未設定で、素材調査履歴なし",
       "status": "in_progress",
-      "lastTouchedOn": "2026-11-20",
+      "lastTouchedOn": "2026-11-21",
       "result": null,
-      "memo": "hana katumiの候補動画と文字入りサムネイルを確認。自動抽出4画像と他の代表動画候補を直接確認する。"
+      "memo": "候補の自動抽出4画像と中テレ公式動画ページを確認。別候補の画像・中テレ動画本編の内容を引き続き確認する。"
     },
     {
       "slug": "ichinohe-matsuri",
