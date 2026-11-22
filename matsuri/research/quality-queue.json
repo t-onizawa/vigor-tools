@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedOn": "2026-11-21",
+  "updatedOn": "2026-11-22",
   "items": [
     {
       "slug": "inasa-jinja-ohitaki-matsuri",
@@ -123,10 +123,10 @@
       "slug": "harimichi-abare-dashi",
       "lane": "1",
       "reason": "背景画像と動画が未設定で、素材調査履歴なし",
-      "status": "in_progress",
-      "lastTouchedOn": "2026-11-21",
-      "result": null,
-      "memo": "2候補の抽出画像と中テレ・市公式動画ページを確認。動画本編の構成と別画像候補を引き続き確認する。"
+      "status": "done",
+      "lastTouchedOn": "2026-11-22",
+      "result": "added-image",
+      "memo": "2023年の人形山車を写した文字なし実写を背景に採用。動画は代表としての構成を確認できず追加しない。"
     },
     {
       "slug": "ichinohe-matsuri",

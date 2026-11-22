@@ -15,6 +15,12 @@
 - 別候補 https://www.youtube.com/watch?v=6_fHLeK_v44 を直接確認。hana katumi、18分35秒、2026年の山車激突の映像。デフォルト画像 https://i.ytimg.com/vi/6_fHLeK_v44/hqdefault.jpg は大きな文字入り。次回、画像の自動抽出フレームと中テレ動画の本編を確認し、採否を判断する。
 - 追加確認：上記候補の自動抽出画像0〜3を直接確認。0・1は大きな文字入り、2・3は文字なしだが120×90の低解像度。背景採用は保留。
 - 二本松市公式 https://www.youtube.com/watch?v=lgK6RB6lG18 を直接確認。5分3秒、登録者525人、9,713回視聴。説明は山車製作から祭り当日までの50日間であり、映像全体の構成を次回確認。デフォルト画像 https://i.ytimg.com/vi/lgK6RB6lG18/hqdefault.jpg は文字が大きく重なっている。
+
+## 2026-11-22 素材調査
+
+- https://www.youtube.com/watch?v=S504j8ozquI を直接確認。hana katumi、登録者4,430人、6分10秒、約6,700回視聴。2023年の針道のあばれ山車を撮影した動画。
+- 画像 https://i.ytimg.com/vi/S504j8ozquI/hqdefault.jpg を直接確認。文字なしで人形山車と曳き手の実写が判別できるため、優先度1で背景に採用。
+- 動画候補は祭り全体を代表する構成を直接確認できていないため追加しない。位置情報はmapReference自体がnullのため対象外。
 - 二本松市が2026年10月10・11日の開催と山車もみ合い、主催する針道若連連合会を案内。予定日経過につきended。市公式案内の11日13:30〜15:30をscheduleへ記録。
 - 山車・曳き回しあり、神輿と山車上の踊りは未確認。山車もみ合いは昼、臨時駐車場あり。アクセス拠点は針道商店街。
 - https://www.city.nihonmatsu.lg.jp/kankou/matsuri/dashi/page003369.html
