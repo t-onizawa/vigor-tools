@@ -3406,5 +3406,13 @@ const SEARCH_INDEX = [
     "prefecture": "大分県",
     "city": "臼杵市",
     "firstDate": "2026-08-29"
+  },
+  {
+    "slug": "onogawa-kassen-matsuri",
+    "name": "大野川合戦まつり",
+    "officialName": "大野川合戦まつり",
+    "prefecture": "大分県",
+    "city": "大分市",
+    "firstDate": "2026-11-14"
   }
 ];
