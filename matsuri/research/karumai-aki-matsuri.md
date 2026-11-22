@@ -10,3 +10,8 @@
   - https://www.karumai-kanko.jp/14092
   - https://www.karumai-kanko.jp/13384
   - https://www.karumai-kanko.jp/14227
+
+## 2026-11-22 素材調査
+
+- https://www.youtube.com/watch?v=mWcDZw7-aAM を直接確認。投稿者はみちのくの山車・芸能、登録者約2,290人、47分48秒、約3,880回視聴。2025年の軽米秋まつりを記録した長尺動画のため代表動画には採用しない。
+- https://i.ytimg.com/vi/mWcDZw7-aAM/hqdefault.jpg を直接確認。雨の中の山車巡行を写した文字なしの現地実写で、優先度1の背景画像として採用。

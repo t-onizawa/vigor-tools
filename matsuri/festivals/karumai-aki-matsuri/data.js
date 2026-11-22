@@ -21,7 +21,15 @@ const FESTIVAL = {
     "mapReference": null,
     "highlightComment": "軽米町中心部を神輿や山車、郷土芸能が巡り、軽米音頭の流し踊りが夜を彩る。",
     "atmosphereMedia": [],
-    "backgroundImage": null,
+    "backgroundImage": {
+      "type": "youtube",
+      "contentId": "mWcDZw7-aAM",
+      "sourceUrl": "https://www.youtube.com/watch?v=mWcDZw7-aAM",
+      "publisher": "みちのくの山車・芸能",
+      "publisherType": "individual",
+      "checkedDate": "2026-11-22",
+      "note": "優先度1。軽米秋まつりの山車巡行を写した現地実写。"
+    },
     "confirmation": {
       "verified": true,
       "confirmedDate": "2026-11-07",
