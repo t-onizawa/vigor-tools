@@ -66,3 +66,7 @@ FESTIVAL_SLUGS.push("yagawa-jinja-tanabata-matsuri");
 FESTIVAL_SLUGS.push("tsuru-furusato-jidai-matsuri");
 FESTIVAL_SLUGS.push("aki-noryo-shiminsai");
 FESTIVAL_SLUGS.push("hagiwara-tenjinsha-natsumatsuri");
+FESTIVAL_SLUGS.push("yajima-hassaku-matsuri");
+FESTIVAL_SLUGS.push("fukushima-inari-jinja-reitaisai");
+FESTIVAL_SLUGS.push("hita-tenryo-matsuri");
+FESTIVAL_SLUGS.push("usuki-sekibutsu-himatsuri");

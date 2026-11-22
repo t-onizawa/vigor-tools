@@ -3374,5 +3374,37 @@ const SEARCH_INDEX = [
     "prefecture": "大分県",
     "city": "大分市",
     "firstDate": "2026-08-21"
+  },
+  {
+    "slug": "yajima-hassaku-matsuri",
+    "name": "矢島八朔まつり",
+    "officialName": "矢島八朔まつり",
+    "prefecture": "秋田県",
+    "city": "由利本荘市",
+    "firstDate": "2026-09-12"
+  },
+  {
+    "slug": "fukushima-inari-jinja-reitaisai",
+    "name": "福島稲荷神社例大祭",
+    "officialName": "福島稲荷神社例大祭",
+    "prefecture": "福島県",
+    "city": "福島市",
+    "firstDate": "2026-10-10"
+  },
+  {
+    "slug": "hita-tenryo-matsuri",
+    "name": "日田天領まつり",
+    "officialName": "日田天領まつり",
+    "prefecture": "大分県",
+    "city": "日田市",
+    "firstDate": "2026-11-14"
+  },
+  {
+    "slug": "usuki-sekibutsu-himatsuri",
+    "name": "国宝臼杵石仏火まつり",
+    "officialName": "国宝臼杵石仏火まつり",
+    "prefecture": "大分県",
+    "city": "臼杵市",
+    "firstDate": "2026-08-29"
   }
 ];

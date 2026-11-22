@@ -1,0 +1,6 @@
+const FESTIVAL = {
+ id: "hita-tenryo-matsuri", name: "日田天領まつり", officialName: "日田天領まつり", prefecture: "大分県", city: "日田市", areaTag: "oita",
+ constantInfo: { schedulePattern: "例年11月の土曜・日曜（千年あかりと同時開催）", features: { hasDashi: null, hasMikoshi: null, hasDanceOnDashi: null, hasParade: null, highlightTime: "daytime", hayashiNote: "天領時代の賑わいを再現する西国筋郡代着任行列や、時代衣装でのまち歩きが行われます。" }, access: { nearestStation: "JR日田駅" }, mapReference: null, highlightComment: "天領時代の賑わいを再現する西国筋郡代着任行列や、時代衣装でのまち歩きが行われます。※開催時刻は公式発表に幅があります。", atmosphereMedia: [], backgroundImage: null,
+ confirmation: { verified: true, confirmedDate: "2026-11-22", sources: ["https://www.city.hita.oita.jp/site/hitanioideyo/2235.html", "https://tenryo.oidehita.com/"] } },
+ yearlyInfo: [{ year: 2026, eventStatus: "ended", dates: ["2026-11-14", "2026-11-15"], access: { hasParking: true, parkingNote: "会場周辺駐車場は予約制・有料（一般車両1,500円/各時間帯。akippaで予約）。詳細は市の開催案内を確認してください。" }, confirmation: { confirmedDate: "2026-11-22", sources: ["https://www.city.hita.oita.jp/site/hitanioideyo/2235.html", "https://tenryo.oidehita.com/"], note: "2026年の開催日程は経過済み。市の開催案内は10:00〜16:30。西国筋郡代着任行列は15日13:00〜16:00。終了時刻は公式発表に幅がある（調査時点で、市の別の案内では16:00とする記載があった）。" }, schedule: [] }]
+};
