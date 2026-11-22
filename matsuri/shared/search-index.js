@@ -3366,5 +3366,13 @@ const SEARCH_INDEX = [
     "prefecture": "高知県",
     "city": "安芸市",
     "firstDate": "2026-08-01"
+  },
+  {
+    "slug": "hagiwara-tenjinsha-natsumatsuri",
+    "name": "萩原天神社夏季例大祭",
+    "officialName": "萩原天神社夏季例大祭",
+    "prefecture": "大分県",
+    "city": "大分市",
+    "firstDate": "2026-08-21"
   }
 ];

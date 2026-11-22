@@ -65,3 +65,4 @@ FESTIVAL_SLUGS.push("harimichi-abare-dashi", "obama-montsuki-matsuri");
 FESTIVAL_SLUGS.push("yagawa-jinja-tanabata-matsuri");
 FESTIVAL_SLUGS.push("tsuru-furusato-jidai-matsuri");
 FESTIVAL_SLUGS.push("aki-noryo-shiminsai");
+FESTIVAL_SLUGS.push("hagiwara-tenjinsha-natsumatsuri");
