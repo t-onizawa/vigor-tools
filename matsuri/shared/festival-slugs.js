@@ -71,3 +71,4 @@ FESTIVAL_SLUGS.push("fukushima-inari-jinja-reitaisai");
 FESTIVAL_SLUGS.push("hita-tenryo-matsuri");
 FESTIVAL_SLUGS.push("usuki-sekibutsu-himatsuri");
 FESTIVAL_SLUGS.push("onogawa-kassen-matsuri");
+FESTIVAL_SLUGS.push("misu-taimatsu-matsuri");

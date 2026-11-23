@@ -3414,5 +3414,13 @@ const SEARCH_INDEX = [
     "prefecture": "大分県",
     "city": "大分市",
     "firstDate": "2026-11-14"
+  },
+  {
+    "slug": "misu-taimatsu-matsuri",
+    "name": "三栖の炬火祭",
+    "officialName": "三栖の炬火祭",
+    "prefecture": "京都府",
+    "city": "京都市伏見区",
+    "firstDate": "2026-10-11"
   }
 ];
