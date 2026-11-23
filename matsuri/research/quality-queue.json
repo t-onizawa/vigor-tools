@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedOn": "2026-11-22",
+  "updatedOn": "2026-11-23",
   "items": [
     {
       "slug": "inasa-jinja-ohitaki-matsuri",
@@ -123,10 +123,10 @@
       "slug": "inazume-jinja-aki-reitaisai",
       "lane": "1",
       "reason": "背景画像と動画が未設定で、素材調査履歴なし",
-      "status": "in_progress",
-      "lastTouchedOn": "2026-11-22",
-      "result": null,
-      "memo": "参加大学の祭礼記事を直接確認。画像・動画候補の探索と直接確認を続ける。"
+      "status": "done",
+      "lastTouchedOn": "2026-11-23",
+      "result": "rejected-all",
+      "memo": "獅子舞動画と画像を直接確認。対象祭礼当日の撮影か不明、画像は文字重なりや小さな構図のため見送り。"
     },
     {
       "slug": "karumai-aki-matsuri",

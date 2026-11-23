@@ -1,5 +1,11 @@
 # 稲爪神社秋例大祭
 
+## 2026-11-23 素材調査
+
+- 動画候補 https://www.youtube.com/watch?v=msm9zSOVS7k を直接確認。投稿者「獅子ROCK.」、登録者26人、5分38秒、497回視聴。説明は稲爪神社の奉納獅子舞だが秋例大祭当日の撮影か確認できず、祈祷舞の単一演目でもあるため代表動画は見送り。
+- 画像候補 https://i.ytimg.com/vi/msm9zSOVS7k/hqdefault.jpg および0〜3.jpgを直接確認。デフォルトと0は獅子に大きな文字が重なり、1は説明文字入り、2・3は120×90の小画像で獅子の姿が小さく、撮影が対象祭礼の日かも確認できないため見送り。
+- 前回、参加大学の祭礼報告 https://www.kobegakuin.ac.jp/education/faculty_humanities/news/bc84d3c163ddb270981a.html を直接確認。画像はYouTubeサムネイルとして参照できないため不採用。
+
 ## 2026-11-22 素材調査（途中）
 
 - 神戸学院大学の参加報告 https://www.kobegakuin.ac.jp/education/faculty_humanities/news/bc84d3c163ddb270981a.html を直接確認。神輿行列・献灯屋台等の写真と参加報告があるが、同記事は本サイトのYouTubeサムネイル採用方式に直結しないため、素材は未採用。
