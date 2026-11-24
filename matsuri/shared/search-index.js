@@ -3422,5 +3422,21 @@ const SEARCH_INDEX = [
     "prefecture": "京都府",
     "city": "京都市伏見区",
     "firstDate": "2026-10-11"
+  },
+  {
+    "slug": "origami-inari-chomeisai",
+    "name": "折上稲荷神社 長命祭",
+    "officialName": "長命祭",
+    "prefecture": "京都府",
+    "city": "京都市山科区",
+    "firstDate": "2026-11-08"
+  },
+  {
+    "slug": "kaku-no-ichi",
+    "name": "賀来の市",
+    "officialName": "賀来神社仲秋祭",
+    "prefecture": "大分県",
+    "city": "大分市",
+    "firstDate": "2026-09-01"
   }
 ];

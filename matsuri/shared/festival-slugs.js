@@ -72,3 +72,4 @@ FESTIVAL_SLUGS.push("hita-tenryo-matsuri");
 FESTIVAL_SLUGS.push("usuki-sekibutsu-himatsuri");
 FESTIVAL_SLUGS.push("onogawa-kassen-matsuri");
 FESTIVAL_SLUGS.push("misu-taimatsu-matsuri");
+FESTIVAL_SLUGS.push("origami-inari-chomeisai", "kaku-no-ichi");
