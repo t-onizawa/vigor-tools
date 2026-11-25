@@ -21,7 +21,15 @@ const FESTIVAL = {
     "mapReference": null,
     "highlightComment": "琴弾八幡宮にちょうさが奉納され、例年は夜の花火とライトアップされた太鼓台の競演が見られる。",
     "atmosphereMedia": [],
-    "backgroundImage": null,
+    "backgroundImage": {
+      "type": "youtube",
+      "contentId": "RPtahP8IEtI",
+      "sourceUrl": "https://www.youtube.com/watch?v=RPtahP8IEtI",
+      "publisher": "末広栄二",
+      "publisherType": "individual",
+      "checkedDate": "2026-11-25",
+      "note": "優先度3。観音寺祭りの夜の太鼓台を写した現地実写。"
+    },
     "confirmation": {
       "verified": true,
       "confirmedDate": "2026-11-06",

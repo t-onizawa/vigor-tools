@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedOn": "2026-11-24",
+  "updatedOn": "2026-11-25",
   "items": [
     {
       "slug": "inasa-jinja-ohitaki-matsuri",
@@ -123,10 +123,10 @@
       "slug": "kanonji-matsuri",
       "lane": "1",
       "reason": "背景画像と動画が未設定で、素材調査履歴なし",
-      "status": "in_progress",
-      "lastTouchedOn": "2026-11-24",
-      "result": null,
-      "memo": "3件の長尺映像と画像を確認。文字なしフレームは低解像度のため、表示品質を確認して採否を決める。"
+      "status": "done",
+      "lastTouchedOn": "2026-11-25",
+      "result": "added-image",
+      "memo": "末広栄二の動画の夜の太鼓台画像を背景に採用。文字なしの抽出画像は低画質で見送り。動画は長尺のため見送り。"
     },
     {
       "slug": "inazume-jinja-aki-reitaisai",
