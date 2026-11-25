@@ -1,0 +1,435 @@
+{
+  "end": "2026-10-19",
+  "periods": {
+    "28": [
+      "2026-09-22",
+      "2026-10-19"
+    ],
+    "previous28": [
+      "2026-08-25",
+      "2026-09-21"
+    ],
+    "90": [
+      "2026-07-22",
+      "2026-10-19"
+    ],
+    "previous90": [
+      "2026-04-23",
+      "2026-07-21"
+    ]
+  },
+  "totals": {
+    "28": {
+      "date": {
+        "clicks": 1063,
+        "impressions": 57254,
+        "CTR": 0.01856638837461138,
+        "position": 8.535106717434589
+      },
+      "page": {
+        "clicks": 1063,
+        "impressions": 57254,
+        "CTR": 0.01856638837461138,
+        "position": 8.535106717434589
+      },
+      "query": {
+        "clicks": 446,
+        "impressions": 29476,
+        "CTR": 0.015130953996471706,
+        "position": 9.043594788980865
+      }
+    },
+    "previous28": {
+      "date": {
+        "clicks": 227,
+        "impressions": 13214,
+        "CTR": 0.01717874981080672,
+        "position": 11.438247313455426
+      },
+      "page": {
+        "clicks": 227,
+        "impressions": 13214,
+        "CTR": 0.01717874981080672,
+        "position": 11.438247313455426
+      },
+      "query": {
+        "clicks": 89,
+        "impressions": 6294,
+        "CTR": 0.014140451223387354,
+        "position": 14.179218303145854
+      }
+    },
+    "90": {
+      "date": {
+        "clicks": 1311,
+        "impressions": 71349,
+        "CTR": 0.01837446915864273,
+        "position": 9.249912402416292
+      },
+      "page": {
+        "clicks": 1311,
+        "impressions": 71349,
+        "CTR": 0.01837446915864273,
+        "position": 9.249912402416292
+      },
+      "query": {
+        "clicks": 542,
+        "impressions": 36130,
+        "CTR": 0.015001383891502906,
+        "position": 10.204262385828951
+      }
+    },
+    "previous90": {
+      "date": {
+        "clicks": 0,
+        "impressions": 0,
+        "CTR": null,
+        "position": null
+      },
+      "page": {
+        "clicks": 0,
+        "impressions": 0,
+        "CTR": null,
+        "position": null
+      },
+      "query": {
+        "clicks": 0,
+        "impressions": 0,
+        "CTR": null,
+        "position": null
+      }
+    }
+  },
+  "types": {
+    "28": [
+      {
+        "type": "プログラム・見どころ",
+        "queries": 8,
+        "clicks": 59,
+        "impressions": 1408,
+        "CTR": 0.04190340909090909,
+        "position": 6.509232954545454
+      },
+      {
+        "type": "その他",
+        "queries": 857,
+        "clicks": 202,
+        "impressions": 17005,
+        "CTR": 0.011878859159070861,
+        "position": 9.470391061452514
+      },
+      {
+        "type": "祭り名＋年",
+        "queries": 163,
+        "clicks": 131,
+        "impressions": 8147,
+        "CTR": 0.01607953848042224,
+        "position": 8.108751687737817
+      },
+      {
+        "type": "祭り名のみ",
+        "queries": 78,
+        "clicks": 31,
+        "impressions": 1263,
+        "CTR": 0.02454473475851148,
+        "position": 9.244655581947743
+      },
+      {
+        "type": "時間・日程",
+        "queries": 44,
+        "clicks": 10,
+        "impressions": 876,
+        "CTR": 0.01141552511415525,
+        "position": 10.528538812785389
+      },
+      {
+        "type": "地域名＋祭り",
+        "queries": 86,
+        "clicks": 5,
+        "impressions": 453,
+        "CTR": 0.011037527593818985,
+        "position": 9.161147902869757
+      },
+      {
+        "type": "交通規制・駐車場",
+        "queries": 26,
+        "clicks": 7,
+        "impressions": 232,
+        "CTR": 0.03017241379310345,
+        "position": 16.301724137931036
+      },
+      {
+        "type": "屋台",
+        "queries": 11,
+        "clicks": 1,
+        "impressions": 41,
+        "CTR": 0.024390243902439025,
+        "position": 21.073170731707318
+      },
+      {
+        "type": "花火",
+        "queries": 12,
+        "clicks": 0,
+        "impressions": 35,
+        "CTR": 0.0,
+        "position": 11.4
+      },
+      {
+        "type": "2027",
+        "queries": 4,
+        "clicks": 0,
+        "impressions": 7,
+        "CTR": 0.0,
+        "position": 18.428571428571427
+      },
+      {
+        "type": "混雑・アクセス",
+        "queries": 1,
+        "clicks": 0,
+        "impressions": 1,
+        "CTR": 0.0,
+        "position": 7.0
+      },
+      {
+        "type": "直近",
+        "queries": 8,
+        "clicks": 0,
+        "impressions": 8,
+        "CTR": 0.0,
+        "position": 8.5
+      }
+    ],
+    "90": [
+      {
+        "type": "プログラム・見どころ",
+        "queries": 8,
+        "clicks": 59,
+        "impressions": 1409,
+        "CTR": 0.04187366926898509,
+        "position": 6.551454932576295
+      },
+      {
+        "type": "その他",
+        "queries": 1430,
+        "clicks": 248,
+        "impressions": 20121,
+        "CTR": 0.01232543114159336,
+        "position": 10.843496844093236
+      },
+      {
+        "type": "祭り名＋年",
+        "queries": 286,
+        "clicks": 171,
+        "impressions": 11066,
+        "CTR": 0.015452738116754022,
+        "position": 8.3558648111332
+      },
+      {
+        "type": "祭り名のみ",
+        "queries": 142,
+        "clicks": 38,
+        "impressions": 1469,
+        "CTR": 0.025867937372362152,
+        "position": 13.041524846834582
+      },
+      {
+        "type": "時間・日程",
+        "queries": 69,
+        "clicks": 10,
+        "impressions": 954,
+        "CTR": 0.010482180293501049,
+        "position": 13.123689727463312
+      },
+      {
+        "type": "地域名＋祭り",
+        "queries": 113,
+        "clicks": 6,
+        "impressions": 619,
+        "CTR": 0.009693053311793215,
+        "position": 10.0
+      },
+      {
+        "type": "交通規制・駐車場",
+        "queries": 38,
+        "clicks": 9,
+        "impressions": 349,
+        "CTR": 0.025787965616045846,
+        "position": 20.11461318051576
+      },
+      {
+        "type": "屋台",
+        "queries": 15,
+        "clicks": 1,
+        "impressions": 53,
+        "CTR": 0.018867924528301886,
+        "position": 29.9811320754717
+      },
+      {
+        "type": "花火",
+        "queries": 37,
+        "clicks": 0,
+        "impressions": 63,
+        "CTR": 0.0,
+        "position": 25.96825396825397
+      },
+      {
+        "type": "2027",
+        "queries": 5,
+        "clicks": 0,
+        "impressions": 8,
+        "CTR": 0.0,
+        "position": 18.875
+      },
+      {
+        "type": "混雑・アクセス",
+        "queries": 1,
+        "clicks": 0,
+        "impressions": 1,
+        "CTR": 0.0,
+        "position": 7.0
+      },
+      {
+        "type": "直近",
+        "queries": 18,
+        "clicks": 0,
+        "impressions": 18,
+        "CTR": 0.0,
+        "position": 29.444444444444443
+      }
+    ]
+  },
+  "endedClicks28": 971,
+  "endedShareOfPageClicks": 0.9134524929444967,
+  "endedShareOfDateClicks": 0.9134524929444967,
+  "ga4": {
+    "28-total": {
+      "rows": [
+        {
+          "eventCount": 1
+        }
+      ],
+      "rowCount": 1,
+      "metadata": "currency_code: \"JPY\"\ntime_zone: \"Asia/Tokyo\"\n"
+    },
+    "28-pagePath": {
+      "rows": [
+        {
+          "pagePath": "/matsuri/festivals/karatsu-kunchi/",
+          "eventCount": 1
+        }
+      ],
+      "rowCount": 1,
+      "metadata": "currency_code: \"JPY\"\ntime_zone: \"Asia/Tokyo\"\n"
+    },
+    "28-eventName": {
+      "rows": [
+        {
+          "eventName": "lodging_cta_click",
+          "eventCount": 1
+        }
+      ],
+      "rowCount": 1,
+      "metadata": "currency_code: \"JPY\"\ntime_zone: \"Asia/Tokyo\"\n"
+    },
+    "90-total": {
+      "rows": [
+        {
+          "eventCount": 15
+        }
+      ],
+      "rowCount": 1,
+      "metadata": "currency_code: \"JPY\"\ntime_zone: \"Asia/Tokyo\"\n"
+    },
+    "90-pagePath": {
+      "rows": [
+        {
+          "pagePath": "/matsuri/festivals/ishioka-omatsuri/",
+          "eventCount": 13
+        },
+        {
+          "pagePath": "/matsuri/festivals/aomori-nebuta-matsuri/",
+          "eventCount": 1
+        },
+        {
+          "pagePath": "/matsuri/festivals/karatsu-kunchi/",
+          "eventCount": 1
+        }
+      ],
+      "rowCount": 3,
+      "metadata": "currency_code: \"JPY\"\ntime_zone: \"Asia/Tokyo\"\n"
+    },
+    "90-eventName": {
+      "rows": [
+        {
+          "eventName": "lodging_cta_click",
+          "eventCount": 15
+        }
+      ],
+      "rowCount": 1,
+      "metadata": "currency_code: \"JPY\"\ntime_zone: \"Asia/Tokyo\"\n"
+    }
+  },
+  "metadataCount": 331,
+  "lodgingPages": [
+    "aomori-nebuta-matsuri",
+    "chichibu-yomatsuri",
+    "gion-matsuri",
+    "gujo-odori",
+    "hakata-gion-yamakasa",
+    "hino-matsuri",
+    "ishioka-omatsuri",
+    "kakunodate-hiburi-kamakura",
+    "kamihinokinai-kamifusen-age",
+    "karatsu-kunchi",
+    "kumano-hayatama-reitaisai-mifune-matsuri",
+    "kumano-jofuku-mantosai",
+    "kumano-ohanabi-taikai",
+    "matsuyama-autumn-festival",
+    "nada-kenka-matsuri",
+    "nagasaki-kunchi",
+    "naha-otsunahiki-matsuri",
+    "niihama-taiko-matsuri",
+    "owara-kaze-no-bon",
+    "sapporo-snow-festival",
+    "sendai-otsunahiki",
+    "soma-nomaoi",
+    "takayama-sanno-matsuri",
+    "tenjin-matsuri",
+    "ueno-tenjin-matsuri",
+    "yugawara-yassa-matsuri"
+  ],
+  "queryPatterns": [
+    [
+      "2027",
+      "2027"
+    ],
+    [
+      "直近",
+      "今日|今週末|今月|明日|週末|本日|今週|近く"
+    ],
+    [
+      "交通規制・駐車場",
+      "交通規制|駐車場|通行止め"
+    ],
+    [
+      "時間・日程",
+      "時間|タイムスケジュール|何時|日程"
+    ],
+    [
+      "プログラム・見どころ",
+      "プログラム|見どころ|内容"
+    ],
+    [
+      "屋台",
+      "屋台|露店"
+    ],
+    [
+      "花火",
+      "花火"
+    ],
+    [
+      "混雑・アクセス",
+      "混雑|アクセス|行き方"
+    ]
+  ]
+}

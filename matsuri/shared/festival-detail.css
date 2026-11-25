@@ -971,6 +971,12 @@ p {
   margin-top: 12px;
 }
 
+.ad-disclosure {
+  margin-top: 8px;
+  color: var(--muted, #6b6b6b);
+  font-size: 0.78rem;
+}
+
 .search-link-icon {
   flex: none;
   width: 20px;

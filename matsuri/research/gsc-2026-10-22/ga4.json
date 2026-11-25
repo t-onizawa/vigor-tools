@@ -1,0 +1,68 @@
+{
+  "28-total": {
+    "rows": [
+      {
+        "eventCount": 1
+      }
+    ],
+    "rowCount": 1,
+    "metadata": "currency_code: \"JPY\"\ntime_zone: \"Asia/Tokyo\"\n"
+  },
+  "28-pagePath": {
+    "rows": [
+      {
+        "pagePath": "/matsuri/festivals/karatsu-kunchi/",
+        "eventCount": 1
+      }
+    ],
+    "rowCount": 1,
+    "metadata": "currency_code: \"JPY\"\ntime_zone: \"Asia/Tokyo\"\n"
+  },
+  "28-eventName": {
+    "rows": [
+      {
+        "eventName": "lodging_cta_click",
+        "eventCount": 1
+      }
+    ],
+    "rowCount": 1,
+    "metadata": "currency_code: \"JPY\"\ntime_zone: \"Asia/Tokyo\"\n"
+  },
+  "90-total": {
+    "rows": [
+      {
+        "eventCount": 15
+      }
+    ],
+    "rowCount": 1,
+    "metadata": "currency_code: \"JPY\"\ntime_zone: \"Asia/Tokyo\"\n"
+  },
+  "90-pagePath": {
+    "rows": [
+      {
+        "pagePath": "/matsuri/festivals/ishioka-omatsuri/",
+        "eventCount": 13
+      },
+      {
+        "pagePath": "/matsuri/festivals/aomori-nebuta-matsuri/",
+        "eventCount": 1
+      },
+      {
+        "pagePath": "/matsuri/festivals/karatsu-kunchi/",
+        "eventCount": 1
+      }
+    ],
+    "rowCount": 3,
+    "metadata": "currency_code: \"JPY\"\ntime_zone: \"Asia/Tokyo\"\n"
+  },
+  "90-eventName": {
+    "rows": [
+      {
+        "eventName": "lodging_cta_click",
+        "eventCount": 15
+      }
+    ],
+    "rowCount": 1,
+    "metadata": "currency_code: \"JPY\"\ntime_zone: \"Asia/Tokyo\"\n"
+  }
+}

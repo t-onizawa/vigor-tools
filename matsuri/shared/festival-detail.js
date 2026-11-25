@@ -1026,6 +1026,22 @@
     return { url, linkType: "plain" };
   }
 
+  // 開催までの日数をバケット化する（GA4のカーディナリティ抑制）
+  function getDaysUntilBucket(yearlyInfo) {
+    const dates = yearlyInfo && Array.isArray(yearlyInfo.dates) ? yearlyInfo.dates : [];
+    if (dates.length === 0) return "unknown";
+    const todayJst = new Date(Date.now() + 9 * 3600 * 1000).toISOString().slice(0, 10);
+    const first = dates[0];
+    const last = dates[dates.length - 1];
+    if (todayJst > last) return "ended";
+    if (todayJst >= first) return "ongoing";
+    const days = Math.round((new Date(`${first}T00:00:00Z`) - new Date(`${todayJst}T00:00:00Z`)) / 86400000);
+    if (days <= 7) return "0-7";
+    if (days <= 30) return "8-30";
+    if (days <= 90) return "31-90";
+    return "91+";
+  }
+
   function renderLodgingCta(currentFestival) {
     const section = byId("lodging-section");
     if (!section) return;
@@ -1034,18 +1050,53 @@
     if (!link) return;
 
     const { url, linkType } = buildLodgingUrl(currentFestival);
+    const isAffiliate = linkType === "affiliate";
+    const daysBucket = getDaysUntilBucket(currentYear);
+    // 日付指定の検索URL（チェックイン日付き）か、エリア検索かの区別
+    const linkDestination = /[?&](f_nen1|f_hi1|checkin)=/.test(decodeURIComponent(url)) ? "dated" : "area";
+    const commonParams = {
+      festival_slug: currentFestival.id,
+      festival_name: festivalName,
+      prefecture: currentFestival.prefecture || "",
+      days_until_event: daysBucket,
+      program: "rakuten",
+      transport_type: "beacon"
+    };
 
     link.href = url;
+    link.rel = isAffiliate ? "sponsored noopener noreferrer" : "noopener noreferrer";
+    link.textContent = LOCALE === "en" ? "Search hotels on Rakuten Travel →" : "楽天トラベルで周辺の宿を探す →";
+
+    if (isAffiliate && !section.querySelector(".ad-disclosure")) {
+      const note = document.createElement("p");
+      note.className = "ad-disclosure";
+      note.textContent = LOCALE === "en"
+        ? "PR: This link is an affiliate link to Rakuten Travel."
+        : "【PR】このリンクは楽天トラベルのアフィリエイトリンクです。";
+      link.parentElement.insertAdjacentElement("afterend", note);
+    }
+
     link.addEventListener("click", () => {
       sendGaEvent("lodging_cta_click", {
-        festival_slug: currentFestival.id,
-        festival_name: festivalName,
+        ...commonParams,
         link_url: url,
-        link_type: linkType
+        link_type: linkType,
+        link_destination: linkDestination
       });
     });
 
     section.hidden = false;
+
+    // 宿泊セクションが実際に見えたら1回だけ送る（アコーディオンが閉じている間は発火しない）
+    if (typeof IntersectionObserver === "function") {
+      const observer = new IntersectionObserver((entries) => {
+        if (entries.some((entry) => entry.isIntersecting)) {
+          observer.disconnect();
+          sendGaEvent("lodging_section_view", commonParams);
+        }
+      }, { threshold: 0.5 });
+      observer.observe(section);
+    }
   }
 
   async function loadRelatedFestival(slug) {

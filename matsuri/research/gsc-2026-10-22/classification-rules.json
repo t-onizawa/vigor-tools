@@ -1,0 +1,46 @@
+{
+  "priority": [
+    [
+      "2027",
+      "2027"
+    ],
+    [
+      "直近",
+      "今日|今週末|今月|明日|週末|本日|今週|近く"
+    ],
+    [
+      "交通規制・駐車場",
+      "交通規制|駐車場|通行止め"
+    ],
+    [
+      "時間・日程",
+      "時間|タイムスケジュール|何時|日程"
+    ],
+    [
+      "プログラム・見どころ",
+      "プログラム|見どころ|内容"
+    ],
+    [
+      "屋台",
+      "屋台|露店"
+    ],
+    [
+      "花火",
+      "花火"
+    ],
+    [
+      "混雑・アクセス",
+      "混雑|アクセス|行き方"
+    ]
+  ],
+  "normalization": "remove spaces, punctuation, hyphen and long sound mark; lowercase",
+  "nameFields": [
+    "name",
+    "officialName"
+  ],
+  "alias": "parenthetical contents",
+  "regionFields": [
+    "prefecture",
+    "city"
+  ]
+}

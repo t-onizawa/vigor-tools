@@ -1,0 +1,21 @@
+{
+  "festival_slug": [
+    {
+      "apiName": "customEvent:festival_slug",
+      "description": "An event scoped custom dimension for your Analytics property."
+    }
+  ],
+  "festival_name": [
+    {
+      "apiName": "customEvent:festival_name",
+      "description": "An event scoped custom dimension for your Analytics property."
+    }
+  ],
+  "link_url": [
+    {
+      "apiName": "customEvent:link_url",
+      "description": "An event scoped custom dimension for your Analytics property."
+    }
+  ],
+  "link_type": []
+}

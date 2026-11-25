@@ -1,0 +1,34 @@
+{
+  "rows": [
+    {
+      "pagePath": "/matsuri/festivals/ishioka-omatsuri/",
+      "customEvent:festival_slug": "(not set)",
+      "customEvent:festival_name": "(not set)",
+      "customEvent:link_url": "(not set)",
+      "eventCount": 11
+    },
+    {
+      "pagePath": "/matsuri/festivals/ishioka-omatsuri/",
+      "customEvent:festival_slug": "ishioka-omatsuri",
+      "customEvent:festival_name": "石岡のおまつり",
+      "customEvent:link_url": "https://a.r10.to/h5g3zb",
+      "eventCount": 2
+    },
+    {
+      "pagePath": "/matsuri/festivals/aomori-nebuta-matsuri/",
+      "customEvent:festival_slug": "aomori-nebuta-matsuri",
+      "customEvent:festival_name": "青森ねぶた祭",
+      "customEvent:link_url": "https://kw.travel.rakuten.co.jp/keyword/Search.do?charset=utf-8&f_max=30&l-id=topC_search_keyword&f_",
+      "eventCount": 1
+    },
+    {
+      "pagePath": "/matsuri/festivals/karatsu-kunchi/",
+      "customEvent:festival_slug": "karatsu-kunchi",
+      "customEvent:festival_name": "唐津くんち",
+      "customEvent:link_url": "https://kw.travel.rakuten.co.jp/keyword/Search.do?charset=utf-8&f_max=30&l-id=topC_search_keyword&f_",
+      "eventCount": 1
+    }
+  ],
+  "rowCount": 4,
+  "metadata": "currency_code: \"JPY\"\ntime_zone: \"Asia/Tokyo\"\n"
+}

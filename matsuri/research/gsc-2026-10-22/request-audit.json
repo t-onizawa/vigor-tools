@@ -1,0 +1,199 @@
+[
+  {
+    "start": "2026-10-08",
+    "end": "2026-10-22",
+    "dimensions": [
+      "date"
+    ],
+    "filtered": false,
+    "rows": 12,
+    "request_sizes": [
+      12
+    ],
+    "limit_hit": false,
+    "pagination": false
+  },
+  {
+    "start": "2026-09-22",
+    "end": "2026-10-19",
+    "dimensions": [
+      "date"
+    ],
+    "filtered": true,
+    "rows": 28,
+    "request_sizes": [
+      28
+    ],
+    "limit_hit": false,
+    "pagination": false
+  },
+  {
+    "start": "2026-09-22",
+    "end": "2026-10-19",
+    "dimensions": [
+      "page"
+    ],
+    "filtered": true,
+    "rows": 357,
+    "request_sizes": [
+      357
+    ],
+    "limit_hit": false,
+    "pagination": false
+  },
+  {
+    "start": "2026-09-22",
+    "end": "2026-10-19",
+    "dimensions": [
+      "query"
+    ],
+    "filtered": true,
+    "rows": 1298,
+    "request_sizes": [
+      1298
+    ],
+    "limit_hit": false,
+    "pagination": false
+  },
+  {
+    "start": "2026-08-25",
+    "end": "2026-09-21",
+    "dimensions": [
+      "date"
+    ],
+    "filtered": true,
+    "rows": 28,
+    "request_sizes": [
+      28
+    ],
+    "limit_hit": false,
+    "pagination": false
+  },
+  {
+    "start": "2026-08-25",
+    "end": "2026-09-21",
+    "dimensions": [
+      "page"
+    ],
+    "filtered": true,
+    "rows": 233,
+    "request_sizes": [
+      233
+    ],
+    "limit_hit": false,
+    "pagination": false
+  },
+  {
+    "start": "2026-08-25",
+    "end": "2026-09-21",
+    "dimensions": [
+      "query"
+    ],
+    "filtered": true,
+    "rows": 972,
+    "request_sizes": [
+      972
+    ],
+    "limit_hit": false,
+    "pagination": false
+  },
+  {
+    "start": "2026-07-22",
+    "end": "2026-10-19",
+    "dimensions": [
+      "date"
+    ],
+    "filtered": true,
+    "rows": 90,
+    "request_sizes": [
+      90
+    ],
+    "limit_hit": false,
+    "pagination": false
+  },
+  {
+    "start": "2026-07-22",
+    "end": "2026-10-19",
+    "dimensions": [
+      "page"
+    ],
+    "filtered": true,
+    "rows": 396,
+    "request_sizes": [
+      396
+    ],
+    "limit_hit": false,
+    "pagination": false
+  },
+  {
+    "start": "2026-07-22",
+    "end": "2026-10-19",
+    "dimensions": [
+      "query"
+    ],
+    "filtered": true,
+    "rows": 2162,
+    "request_sizes": [
+      2162
+    ],
+    "limit_hit": false,
+    "pagination": false
+  },
+  {
+    "start": "2026-04-23",
+    "end": "2026-07-21",
+    "dimensions": [
+      "date"
+    ],
+    "filtered": true,
+    "rows": 13,
+    "request_sizes": [
+      13
+    ],
+    "limit_hit": false,
+    "pagination": false
+  },
+  {
+    "start": "2026-04-23",
+    "end": "2026-07-21",
+    "dimensions": [
+      "page"
+    ],
+    "filtered": true,
+    "rows": 0,
+    "request_sizes": [
+      0
+    ],
+    "limit_hit": false,
+    "pagination": false
+  },
+  {
+    "start": "2026-04-23",
+    "end": "2026-07-21",
+    "dimensions": [
+      "query"
+    ],
+    "filtered": true,
+    "rows": 0,
+    "request_sizes": [
+      0
+    ],
+    "limit_hit": false,
+    "pagination": false
+  },
+  {
+    "start": "2026-07-22",
+    "end": "2026-10-19",
+    "dimensions": [
+      "query",
+      "page"
+    ],
+    "filtered": true,
+    "rows": 2203,
+    "request_sizes": [
+      2203
+    ],
+    "limit_hit": false,
+    "pagination": false
+  }
+]
