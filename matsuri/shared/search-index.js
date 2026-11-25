@@ -3438,5 +3438,13 @@ const SEARCH_INDEX = [
     "prefecture": "大分県",
     "city": "大分市",
     "firstDate": "2026-09-01"
+  },
+  {
+    "slug": "tottori-oshiro-matsuri",
+    "name": "鳥取三十二万石お城まつり",
+    "officialName": "鳥取三十二万石お城まつり",
+    "prefecture": "鳥取県",
+    "city": "鳥取市",
+    "firstDate": "2026-10-03"
   }
 ];
