@@ -120,6 +120,15 @@
       "memo": "山形新聞の踊りの実写を背景に採用。動画は競演の一場面に限られるため見送り。"
     },
     {
+      "slug": "ise-matsuri",
+      "lane": "1",
+      "reason": "背景画像と動画が未設定で素材調査履歴なし",
+      "status": "in_progress",
+      "lastTouchedOn": "2026-11-25",
+      "result": null,
+      "memo": "市公式の祭り案内を直接確認。祭り全体を表す画像・動画候補を探索し直接確認する。"
+    },
+    {
       "slug": "kanonji-matsuri",
       "lane": "1",
       "reason": "背景画像と動画が未設定で、素材調査履歴なし",
