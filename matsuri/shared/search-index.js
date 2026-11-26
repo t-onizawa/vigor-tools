@@ -3446,5 +3446,13 @@ const SEARCH_INDEX = [
     "prefecture": "鳥取県",
     "city": "鳥取市",
     "firstDate": "2026-10-03"
+  },
+  {
+    "slug": "sannoji-tanada-matsuri",
+    "name": "山王寺棚田祭",
+    "officialName": "山王寺棚田祭",
+    "prefecture": "島根県",
+    "city": "雲南市",
+    "firstDate": "2026-11-08"
   }
 ];
