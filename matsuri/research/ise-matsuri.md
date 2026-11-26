@@ -1,5 +1,10 @@
 # 伊勢まつり 調査メモ
 
+## 2026-11-26 素材調査（途中）
+
+- CBCテレビ公式の動画 https://www.youtube.com/watch?v=aqXcQDg7D8g とサムネイル画像 https://i.ytimg.com/vi/aqXcQDg7D8g/hqdefault.jpg を直接確認。2023年の特別企画であるディズニーパレードが中心で、通常の市民祭り全体を代表する画像・動画としては採用しない。
+- パレード・演奏・踊りなど市民祭りの通常の様子が確認できる別候補の直接確認が必要。画像・動画とも未追加。
+
 ## 2026-11-25 素材調査（途中）
 
 - 伊勢市公式 https://www.city.ise.mie.jp/machi/community/isematsuri/ を直接確認。市民主体のパレード・イベント・出展を含む祭りと確認。
