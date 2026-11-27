@@ -1,0 +1,6 @@
+const FESTIVAL = {
+ id: "sanbe-matsuri", name: "さんべ祭", officialName: "さんべ祭", prefecture: "島根県", city: "大田市", areaTag: "shimane",
+ constantInfo: { schedulePattern: "例年秋ごろ", features: { hasDashi: null, hasMikoshi: null, hasDanceOnDashi: null, hasParade: null, highlightTime: "day", hayashiNote: "三瓶地域の団体による展示・体験やステージが行われる。" }, access: { nearestStation: "JR大田市駅から車で約30分" }, mapReference: null, highlightComment: "三瓶地域の団体による展示や体験ブースが集まり、地元の神楽などをステージで楽しめる。", atmosphereMedia: [], backgroundImage: null,
+ confirmation: { verified: true, confirmedDate: "2026-11-28", sources: ["https://sanbe.niye.go.jp/eventdata/%E7%AC%AC46%E5%9B%9E%E3%81%95%E3%82%93%E3%81%B9%E7%A5%AD/", "https://sanbe.niye.go.jp/wp-content/uploads/2026/08/0152fe5586d9d51def7764d35217153d.pdf"] } },
+ yearlyInfo: [{ year: 2026, eventStatus: "ended", dates: ["2026-10-03"], access: { hasParking: true, parkingNote: "2026年は駐車場と臨時駐車場が案内され、乗り合わせが呼びかけられました。" }, confirmation: { confirmedDate: "2026-11-28", sources: ["https://sanbe.niye.go.jp/eventdata/%E7%AC%AC46%E5%9B%9E%E3%81%95%E3%82%93%E3%81%B9%E7%A5%AD/", "https://sanbe.niye.go.jp/wp-content/uploads/2026/08/0152fe5586d9d51def7764d35217153d.pdf"], note: "主催の国立三瓶青少年交流の家が2026年10月3日開催と終了を案内。さんべ祭を対象とし、同時開催行事は個別には扱わない。" }, schedule: [] }]
+};

@@ -75,3 +75,4 @@ FESTIVAL_SLUGS.push("misu-taimatsu-matsuri");
 FESTIVAL_SLUGS.push("origami-inari-chomeisai", "kaku-no-ichi");
 FESTIVAL_SLUGS.push("tottori-oshiro-matsuri");
 FESTIVAL_SLUGS.push("sannoji-tanada-matsuri");
+FESTIVAL_SLUGS.push("sanbe-matsuri");

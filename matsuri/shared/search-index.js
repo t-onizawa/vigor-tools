@@ -3454,5 +3454,13 @@ const SEARCH_INDEX = [
     "prefecture": "島根県",
     "city": "雲南市",
     "firstDate": "2026-11-08"
+  },
+  {
+    "slug": "sanbe-matsuri",
+    "name": "さんべ祭",
+    "officialName": "さんべ祭",
+    "prefecture": "島根県",
+    "city": "大田市",
+    "firstDate": "2026-10-03"
   }
 ];
