@@ -21,7 +21,15 @@ const FESTIVAL = {
     "mapReference": null,
     "highlightComment": "伊勢市駅周辺で、市民によるパレードや演奏、踊り、展示・出店が繰り広げられる。",
     "atmosphereMedia": [],
-    "backgroundImage": null,
+    "backgroundImage": {
+      "type": "youtube",
+      "contentId": "XAd8v8hyTo8",
+      "sourceUrl": "https://www.youtube.com/watch?v=XAd8v8hyTo8",
+      "publisher": "5030117jiro",
+      "publisherType": "individual",
+      "checkedDate": "2026-11-28",
+      "note": "優先度1。2024年伊勢まつりの宮後ねぶたを写した現地実写。"
+    },
     "confirmation": {
       "verified": true,
       "confirmedDate": "2026-11-10",

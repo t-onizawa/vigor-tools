@@ -123,10 +123,10 @@
       "slug": "ise-matsuri",
       "lane": "1",
       "reason": "背景画像と動画が未設定で素材調査履歴なし",
-      "status": "in_progress",
-      "lastTouchedOn": "2026-11-27",
-      "result": null,
-      "memo": "伊勢音頭パレードと宮後祭心会の動画・画像を直接確認。代表動画には不向きで画像も文字や遠景等が課題。別候補を確認する。"
+      "status": "done",
+      "lastTouchedOn": "2026-11-28",
+      "result": "added-image",
+      "memo": "宮後ねぶたの現地実写を背景画像に採用。動画は祭り全体を表す候補を確認できず見送り。"
     },
     {
       "slug": "kanonji-matsuri",
